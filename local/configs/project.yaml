@@ -1,0 +1,8 @@
+---
+name: hal-rt1176-cm4
+description: A hardware abstraction layer.
+
+version:
+  major: 0
+  minor: 1
+  patch: 0

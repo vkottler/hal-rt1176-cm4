@@ -1,0 +1,25 @@
+# =====================================
+# generator=datazen
+# version=3.1.4
+# hash=2564b957b9d2a4f571f7a8cffddf818e
+# =====================================
+---
+project:
+  name: hal-rt1176-cm4
+
+  github: {owner: &self vkottler}
+  version: {major: 0, minor: 1, patch: 0}
+variants:
+  clang:
+    suffix: &clang_version "-17"
+
+  debug:
+    suffix: &gcc_version "-13"
+  opt:
+    suffix: *gcc_version
+
+  clang-opt:
+    suffix: *clang_version
+
+includes:
+  - local/yambs.yaml
