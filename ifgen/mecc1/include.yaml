@@ -1,0 +1,976 @@
+---
+structs:
+  mecc1:
+    description: MECC64
+    instances:
+      - name: MECC1
+        address: '0x40014000'
+      - name: MECC2
+        address: '0x40018000'
+    fields:
+      - name: ERR_STATUS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Error Interrupt Status Register
+        fields:
+          - name: ADDR_ERR3
+            description: OCRAM Access Error On Bank3
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ADDR_ERR2
+            description: OCRAM Access Error On Bank2
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: ADDR_ERR1
+            description: OCRAM Access Error On Bank1
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: ADDR_ERR0
+            description: OCRAM Access Error On Bank0
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: STRB_ERR3
+            description: AXI Strobe Error On OCRAM Bank3
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: STRB_ERR2
+            description: AXI Strobe Error On OCRAM Bank2
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: STRB_ERR1
+            description: AXI Strobe Error On OCRAM Bank1
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: STRB_ERR0
+            description: AXI Strobe Error On OCRAM Bank0
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: MULTI_ERR3
+            description: Multiple Bits Error On OCRAM Bank3
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: MULTI_ERR2
+            description: Multiple Bits Error On OCRAM Bank2
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: MULTI_ERR1
+            description: Multiple Bits Error On OCRAM Bank1
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: MULTI_ERR0
+            description: Multiple Bits Error On OCRAM Bank0
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: SINGLE_ERR3
+            description: Single Bit Error On OCRAM Bank3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: SINGLE_ERR2
+            description: Single Bit Error On OCRAM Bank2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: SINGLE_ERR1
+            description: Single Bit Error On OCRAM Bank1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SINGLE_ERR0
+            description: Single Bit Error On OCRAM Bank0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: ERR_STAT_EN
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Error Interrupt Status Enable Register
+        fields:
+          - name: ADDR_ERR3_STAT_EN
+            description: OCRAM Access Error Status Enable On Bank3
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ADDR_ERR2_STAT_EN
+            description: OCRAM Access Error Status Enable On Bank2
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: ADDR_ERR1_STAT_EN
+            description: OCRAM Access Error Status Enable On Bank1
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: ADDR_ERR0_STAT_EN
+            description: OCRAM Access Error Status Enable On Bank0
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: STRB_ERR3_STAT_EN
+            description: AXI Strobe Error Status Enable On OCRAM Bank3
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: STRB_ERR2_STAT_EN
+            description: AXI Strobe Error Status Enable On OCRAM Bank2
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: STRB_ERR1_STAT_EN
+            description: AXI Strobe Error Status Enable On OCRAM Bank1
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: STRB_ERR0_STAT_EN
+            description: AXI Strobe Error Status Enable On OCRAM Bank0
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: MULTI_ERR3_STAT_EN
+            description: Multiple Bits Error Status Enable On OCRAM Bank3
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: MULTI_ERR2_STAT_EN
+            description: Multiple Bits Error Status Enable On OCRAM Bank2
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: MULTI_ERR1_STAT_EN
+            description: Multiple Bits Error Status Enable On OCRAM Bank1
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: MULTI_ERR0_STAT_EN
+            description: Multiple Bits Error Status Enable On OCRAM Bank0
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: SINGLE_ERR3_STAT_EN
+            description: Single Bit Error Status Enable On OCRAM Bank3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: SINGLE_ERR2_STAT_EN
+            description: Single Bit Error Status Enable On OCRAM Bank2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: SINGLE_ERR1_STAT_EN
+            description: Single Bit Error Status Enable On OCRAM Bank1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SINGLE_ERR0_STAT_EN
+            description: Single Bit Error Status Enable On OCRAM Bank0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: ERR_SIG_EN
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) Error Interrupt Enable Register
+        fields:
+          - name: ADDR_ERR3_SIG_EN
+            description: OCRAM Access Error Interrupt Enable On Bank3
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ADDR_ERR2_SIG_EN
+            description: OCRAM Access Error Interrupt Enable On Bank2
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: ADDR_ERR1_SIG_EN
+            description: OCRAM Access Error Interrupt Enable On Bank1
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: ADDR_ERR0_SIG_EN
+            description: OCRAM Access Error Interrupt Enable On Bank0
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: STRB_ERR3_SIG_EN
+            description: AXI Strobe Error Interrupt Enable On OCRAM Bank3
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: STRB_ERR2_SIG_EN
+            description: AXI Strobe Error Interrupt Enable On OCRAM Bank2
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: STRB_ERR1_SIG_EN
+            description: AXI Strobe Error Interrupt Enable On OCRAM Bank1
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: STRB_ERR0_SIG_EN
+            description: AXI Strobe Error Interrupt Enable On OCRAM Bank0
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: MULTI_ERR3_SIG_EN
+            description: Multiple Bits Error Interrupt Enable On OCRAM Bank3
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: MULTI_ERR2_SIG_EN
+            description: Multiple Bits Error Interrupt Enable On OCRAM Bank2
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: MULTI_ERR1_SIG_EN
+            description: Multiple Bits Error Interrupt Enable On OCRAM Bank1
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: MULTI_ERR0_SIG_EN
+            description: Multiple Bits Error Interrupt Enable On OCRAM Bank0
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: SINGLE_ERR3_SIG_EN
+            description: Single Bit Error Interrupt Enable On OCRAM Bank3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: SINGLE_ERR2_SIG_EN
+            description: Single Bit Error Interrupt Enable On OCRAM Bank2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: SINGLE_ERR1_SIG_EN
+            description: Single Bit Error Interrupt Enable On OCRAM Bank1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SINGLE_ERR0_SIG_EN
+            description: Single Bit Error Interrupt Enable On OCRAM Bank0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: ERR_DATA_INJ_LOW0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) Error Injection On LOW 32 bits Of OCRAM Bank0 Write
+          Data
+        fields:
+          - name: ERR_DATA_INJ
+            description: Error Injection On LOW 32 bits Of OCRAM Bank0 Write Data
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: ERR_DATA_INJ_HIGH0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) Error Injection On HIGH 32 bits Of OCRAM Bank0 Write
+          Data
+        fields:
+          - name: ERR_DATA_INJ
+            description: Error Injection On HIGH 32 bits Of OCRAM Bank0 Write Data
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: ERR_ECC_INJ0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) Error Injection On 8 bits ECC code Of OCRAM Bank0
+          Write Data
+        fields:
+          - name: ERR_ECC_INJ
+            description: Error Injection On 8 bits ECC code Of OCRAM Bank0 Write Data
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: ERR_DATA_INJ_LOW1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) Error Injection On LOW 32 bits Of OCRAM Bank1 Write
+          Data
+        fields:
+          - name: ERR_DATA_INJ
+            description: Error Injection On LOW 32 bits Of OCRAM Bank1 Write Data
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: ERR_DATA_INJ_HIGH1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) Error Injection On HIGH 32 bits Of OCRAM Bank1 Write
+          Data
+        fields:
+          - name: ERR_DATA_INJ
+            description: Error Injection On HIGH 32 bits Of OCRAM Bank1 Write Data
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: ERR_ECC_INJ1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) Error Injection On 8 bits ECC code Of OCRAM Bank1
+          Write Data
+        fields:
+          - name: ERR_ECC_INJ
+            description: Error Injection On 8 bits ECC code Of OCRAM Bank1 Write Data
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: ERR_DATA_INJ_LOW2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) Error Injection On LOW 32 bits Of OCRAM Bank2 Write
+          Data
+        fields:
+          - name: ERR_DATA_INJ
+            description: Error Injection On LOW 32 bits Of OCRAM Bank2 Write Data
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: ERR_DATA_INJ_HIGH2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) Error Injection On HIGH 32 bits Of OCRAM Bank2 Write
+          Data
+        fields:
+          - name: ERR_DATA_INJ
+            description: Error Injection On HIGH 32 bits Of OCRAM Bank2 Write Data
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: ERR_ECC_INJ2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) Error Injection On 8 bits ECC code Of OCRAM Bank2
+          Write Data
+        fields:
+          - name: ERR_ECC_INJ
+            description: Error Injection On 8 bits ECC code Of OCRAM Bank2 Write Data
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: ERR_DATA_INJ_LOW3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) Error Injection On LOW 32 bits Of OCRAM Bank3 Write
+          Data
+        fields:
+          - name: ERR_DATA_INJ
+            description: Error Injection On LOW 32 bits Of OCRAM Bank3 Write Data
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: ERR_DATA_INJ_HIGH3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 52
+        description: (read-write) Error Injection On HIGH 32 bits Of OCRAM Bank3 Write
+          Data
+        fields:
+          - name: ERR_DATA_INJ
+            description: Error Injection On HIGH 32 bits Of OCRAM Bank3 Write Data
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: ERR_ECC_INJ3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 56
+        description: (read-write) Error Injection On 8 bits ECC code Of OCRAM Bank3
+          Write Data
+        fields:
+          - name: ERR_ECC_INJ
+            description: Error Injection On 8 bits ECC code Of OCRAM Bank3 Write Data
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SINGLE_ERR_ADDR_ECC0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 60
+        description: (read-write) Single Error Address And ECC code On OCRAM Bank0
+        fields:
+          - name: SINGLE_ERR_ADDR
+            description: Single Error Address On OCRAM Bank0
+            index: 8
+            width: 19
+            read: true
+            write: false
+          - name: SINGLE_ERR_ECC
+            description: Single Error ECC code On OCRAM Bank0
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: SINGLE_ERR_DATA_LOW0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 64
+        description: (read-write) LOW 32 Bits Single Error Read Data On OCRAM Bank0
+        fields:
+          - name: SINGLE_ERR_DATA
+            description: LOW 32 Bits Single Error Read Data On OCRAM Bank0
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: SINGLE_ERR_DATA_HIGH0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 68
+        description: (read-write) HIGH 32 Bits Single Error Read Data On OCRAM Bank0
+        fields:
+          - name: SINGLE_ERR_DATA
+            description: HIGH 32 Bits Single Error Read Data On OCRAM Bank0
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: SINGLE_ERR_POS_LOW0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 72
+        description: (read-write) LOW Single Error Bit Position On OCRAM Bank0
+        fields:
+          - name: SINGLE_ERR_POS
+            description: LOW Single Error Bit Position On OCRAM Bank0
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: SINGLE_ERR_POS_HIGH0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 76
+        description: (read-write) HIGH Single Error Bit Position On OCRAM Bank0
+        fields:
+          - name: SINGLE_ERR_POS
+            description: HIGH Single Error Bit Position On OCRAM Bank0
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: SINGLE_ERR_ADDR_ECC1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 80
+        description: (read-write) Single Error Address And ECC code On OCRAM Bank1
+        fields:
+          - name: SINGLE_ERR_ADDR
+            description: Single Error Address On OCRAM Bank1
+            index: 8
+            width: 19
+            read: true
+            write: false
+          - name: SINGLE_ERR_ECC
+            description: Single Error ECC code On OCRAM Bank1
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: SINGLE_ERR_DATA_LOW1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 84
+        description: (read-write) LOW 32 Bits Single Error Read Data On OCRAM Bank1
+        fields:
+          - name: SINGLE_ERR_DATA
+            description: LOW 32 Bits Single Error Read Data On OCRAM Bank1
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: SINGLE_ERR_DATA_HIGH1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 88
+        description: (read-write) HIGH 32 Bits Single Error Read Data On OCRAM Bank1
+        fields:
+          - name: SINGLE_ERR_DATA
+            description: HIGH 32 Bits Single Error Read Data On OCRAM Bank1
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: SINGLE_ERR_POS_LOW1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 92
+        description: (read-write) LOW Single Error Bit Position On OCRAM Bank1
+        fields:
+          - name: SINGLE_ERR_POS
+            description: LOW Single Error Bit Position On OCRAM Bank1
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: SINGLE_ERR_POS_HIGH1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 96
+        description: (read-write) HIGH Single Error Bit Position On OCRAM Bank1
+        fields:
+          - name: SINGLE_ERR_POS
+            description: HIGH Single Error Bit Position On OCRAM Bank1
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: SINGLE_ERR_ADDR_ECC2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 100
+        description: (read-write) Single Error Address And ECC code On OCRAM Bank2
+        fields:
+          - name: SINGLE_ERR_ADDR
+            description: Single Error Address On OCRAM Bank2
+            index: 8
+            width: 19
+            read: true
+            write: false
+          - name: SINGLE_ERR_ECC
+            description: Single Error ECC code On OCRAM Bank2
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: SINGLE_ERR_DATA_LOW2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 104
+        description: (read-write) LOW 32 Bits Single Error Read Data On OCRAM Bank2
+        fields:
+          - name: SINGLE_ERR_DATA
+            description: LOW 32 Bits Single Error Read Data On OCRAM Bank2
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: SINGLE_ERR_DATA_HIGH2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 108
+        description: (read-write) HIGH 32 Bits Single Error Read Data On OCRAM Bank2
+        fields:
+          - name: SINGLE_ERR_DATA
+            description: HIGH 32 Bits Single Error Read Data On OCRAM Bank2
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: SINGLE_ERR_POS_LOW2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 112
+        description: (read-write) LOW Single Error Bit Position On OCRAM Bank2
+        fields:
+          - name: SINGLE_ERR_POS
+            description: LOW Single Error Bit Position On OCRAM Bank2
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: SINGLE_ERR_POS_HIGH2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 116
+        description: (read-write) HIGH Single Error Bit Position On OCRAM Bank2
+        fields:
+          - name: SINGLE_ERR_POS
+            description: HIGH Single Error Bit Position On OCRAM Bank2
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: SINGLE_ERR_ADDR_ECC3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 120
+        description: (read-write) Single Error Address And ECC code On OCRAM Bank3
+        fields:
+          - name: SINGLE_ERR_ADDR
+            description: Single Error Address On OCRAM Bank3
+            index: 8
+            width: 19
+            read: true
+            write: false
+          - name: SINGLE_ERR_ECC
+            description: Single Error ECC code On OCRAM Bank3
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: SINGLE_ERR_DATA_LOW3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 124
+        description: (read-write) LOW 32 Bits Single Error Read Data On OCRAM Bank3
+        fields:
+          - name: SINGLE_ERR_DATA
+            description: LOW 32 Bits Single Error Read Data On OCRAM Bank3
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: SINGLE_ERR_DATA_HIGH3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 128
+        description: (read-write) HIGH 32 Bits Single Error Read Data On OCRAM Bank3
+        fields:
+          - name: SINGLE_ERR_DATA
+            description: HIGH 32 Bits Single Error Read Data On OCRAM Bank3
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: SINGLE_ERR_POS_LOW3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 132
+        description: (read-write) LOW Single Error Bit Position On OCRAM Bank3
+        fields:
+          - name: SINGLE_ERR_POS
+            description: LOW Single Error Bit Position On OCRAM Bank3
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: SINGLE_ERR_POS_HIGH3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 136
+        description: (read-write) HIGH Single Error Bit Position On OCRAM Bank3
+        fields:
+          - name: SINGLE_ERR_POS
+            description: HIGH Single Error Bit Position On OCRAM Bank3
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: MULTI_ERR_ADDR_ECC0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 140
+        description: (read-write) Multiple Error Address And ECC code On OCRAM Bank0
+        fields:
+          - name: MULTI_ERR_ADDR
+            description: Multiple Error Address On OCRAM Bank0
+            index: 8
+            width: 19
+            read: true
+            write: false
+          - name: MULTI_ERR_ECC
+            description: Multiple Error ECC code On OCRAM Bank0
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: MULTI_ERR_DATA_LOW0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 144
+        description: (read-write) LOW 32 Bits Multiple Error Read Data On OCRAM Bank0
+        fields:
+          - name: MULTI_ERR_DATA
+            description: LOW 32 Bits Multiple Error Read Data On OCRAM Bank0
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: MULTI_ERR_DATA_HIGH0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 148
+        description: (read-write) HIGH 32 Bits Multiple Error Read Data On OCRAM Bank0
+        fields:
+          - name: MULTI_ERR_DATA
+            description: HIGH 32 Bits Multiple Error Read Data On OCRAM Bank0
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: MULTI_ERR_ADDR_ECC1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 152
+        description: (read-write) Multiple Error Address And ECC code On OCRAM Bank1
+        fields:
+          - name: MULTI_ERR_ADDR
+            description: Multiple Error Address On OCRAM Bank1
+            index: 8
+            width: 19
+            read: true
+            write: false
+          - name: MULTI_ERR_ECC
+            description: Multiple Error ECC code On OCRAM Bank1
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: MULTI_ERR_DATA_LOW1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 156
+        description: (read-write) LOW 32 Bits Multiple Error Read Data On OCRAM Bank1
+        fields:
+          - name: MULTI_ERR_DATA
+            description: LOW 32 Bits Multiple Error Read Data On OCRAM Bank1
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: MULTI_ERR_DATA_HIGH1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 160
+        description: (read-write) HIGH 32 Bits Multiple Error Read Data On OCRAM Bank1
+        fields:
+          - name: MULTI_ERR_DATA
+            description: HIGH 32 Bits Multiple Error Read Data On OCRAM Bank1
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: MULTI_ERR_ADDR_ECC2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 164
+        description: (read-write) Multiple Error Address And ECC code On OCRAM Bank2
+        fields:
+          - name: MULTI_ERR_ADDR
+            description: Multiple Error Address On OCRAM Bank2
+            index: 8
+            width: 19
+            read: true
+            write: false
+          - name: MULTI_ERR_ECC
+            description: Multiple Error ECC code On OCRAM Bank2
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: MULTI_ERR_DATA_LOW2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 168
+        description: (read-write) LOW 32 Bits Multiple Error Read Data On OCRAM Bank2
+        fields:
+          - name: MULTI_ERR_DATA
+            description: LOW 32 Bits Multiple Error Read Data On OCRAM Bank2
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: MULTI_ERR_DATA_HIGH2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 172
+        description: (read-write) HIGH 32 Bits Multiple Error Read Data On OCRAM Bank2
+        fields:
+          - name: MULTI_ERR_DATA
+            description: HIGH 32 Bits Multiple Error Read Data On OCRAM Bank2
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: MULTI_ERR_ADDR_ECC3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 176
+        description: (read-write) Multiple Error Address And ECC code On OCRAM Bank3
+        fields:
+          - name: MULTI_ERR_ADDR
+            description: Multiple Error Address On OCRAM Bank3
+            index: 8
+            width: 19
+            read: true
+            write: false
+          - name: MULTI_ERR_ECC
+            description: Multiple Error ECC code On OCRAM Bank3
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: MULTI_ERR_DATA_LOW3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 180
+        description: (read-write) LOW 32 Bits Multiple Error Read Data On OCRAM Bank3
+        fields:
+          - name: MULTI_ERR_DATA
+            description: LOW 32 Bits Multiple Error Read Data On OCRAM Bank3
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: MULTI_ERR_DATA_HIGH3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 184
+        description: (read-write) HIGH 32 Bits Multiple Error Read Data On OCRAM Bank3
+        fields:
+          - name: MULTI_ERR_DATA
+            description: HIGH 32 Bits Multiple Error Read Data On OCRAM Bank3
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: PIPE_ECC_EN
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 256
+        description: (read-write) OCRAM Pipeline And ECC Enable
+        fields:
+          - name: ECC_EN
+            description: ECC Function Enable
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: WRITE_ADDR_PIPE_EN
+            description: Write Address Pipeline Enable
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: WRITE_DATA_PIPE_EN
+            description: Write Data Pipeline Enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: READ_ADDR_PIPE_EN
+            description: Read Address Pipeline Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: READ_DATA_WAIT_EN
+            description: Read Data Wait Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PENDING_STAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 260
+        description: (read-write) Pending Status
+        fields:
+          - name: WRITE_ADDR_PIPE_PENDING
+            description: Write Address Pipeline Pending
+            index: 3
+            width: 1
+            read: true
+            write: false
+          - name: WRITE_DATA_PIPE_PENDING
+            description: Write Data Pipeline Pending
+            index: 2
+            width: 1
+            read: true
+            write: false
+          - name: READ_ADDR_PIPE_PENDING
+            description: Read Address Pipeline Pending
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: READ_DATA_WAIT_PENDING
+            description: Read Data Wait Pending
+            index: 0
+            width: 1
+            read: true
+            write: false
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums: {}

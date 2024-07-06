@@ -1,0 +1,2872 @@
+---
+structs:
+  src:
+    description: SRC
+    instances:
+      - name: SRC
+        address: '0x40C04000'
+    fields:
+      - name: SCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) SRC Control Register
+        fields:
+          - name: BT_RELEASE_M7
+            description: cm7 core reset will be held until boot core write this bit
+              to 1 to release it.
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: BT_RELEASE_M4
+            description: cm4 core reset will be held until boot core write this bit
+              to 1 to release it.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SRMR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) SRC Reset Mode Register
+        fields:
+          - name: OVERVOLT_RESET_MODE
+            description: Jtag SW reset mode configuration
+            index: 20
+            width: 2
+            read: true
+            write: true
+            type: SRC_SRMR_OVERVOLT_RESET_MODE
+          - name: JTAGSW_RESET_MODE
+            description: Jtag SW reset mode configuration
+            index: 18
+            width: 2
+            read: true
+            write: true
+            type: SRC_SRMR_JTAGSW_RESET_MODE
+          - name: CSU_RESET_MODE
+            description: CSU reset mode configuration
+            index: 16
+            width: 2
+            read: true
+            write: true
+            type: SRC_SRMR_CSU_RESET_MODE
+          - name: TEMPSENSE_RESET_MODE
+            description: Tempsense reset mode configuration
+            index: 14
+            width: 2
+            read: true
+            write: true
+            type: SRC_SRMR_TEMPSENSE_RESET_MODE
+          - name: M7REQ_RESET_MODE
+            description: M7 request reset configuration
+            index: 12
+            width: 2
+            read: true
+            write: true
+            type: SRC_SRMR_M7REQ_RESET_MODE
+          - name: M4REQ_RESET_MODE
+            description: M4 request reset configuration
+            index: 10
+            width: 2
+            read: true
+            write: true
+            type: SRC_SRMR_M4REQ_RESET_MODE
+          - name: M7LOCKUP_RESET_MODE
+            description: M7 core lockup reset mode configuration
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: SRC_SRMR_M7LOCKUP_RESET_MODE
+          - name: M4LOCKUP_RESET_MODE
+            description: M4 core lockup reset mode configuration
+            index: 6
+            width: 2
+            read: true
+            write: true
+            type: SRC_SRMR_M4LOCKUP_RESET_MODE
+          - name: WDOG4_RESET_MODE
+            description: Wdog4 reset mode configuration
+            index: 4
+            width: 2
+            read: true
+            write: true
+            type: SRC_SRMR_WDOG4_RESET_MODE
+          - name: WDOG3_RESET_MODE
+            description: Wdog3 reset mode configuration
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: SRC_SRMR_WDOG3_RESET_MODE
+          - name: WDOG_RESET_MODE
+            description: Wdog reset mode configuration
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: SRC_SRMR_WDOG_RESET_MODE
+      - name: SBMR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) SRC Boot Mode Register 1
+        fields:
+          - name: BOOT_CFG4
+            description: Please see fusemap.
+            index: 24
+            width: 8
+            read: true
+            write: false
+          - name: BOOT_CFG3
+            description: Please see fusemap.
+            index: 16
+            width: 8
+            read: true
+            write: false
+          - name: BOOT_CFG2
+            description: Please see fusemap.
+            index: 8
+            width: 8
+            read: true
+            write: false
+          - name: BOOT_CFG1
+            description: Please see fusemap.
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: SBMR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) SRC Boot Mode Register 2
+        fields:
+          - name: BMOD
+            description: BMOD[1:0] shows the latched state of the BOOT_MODE1 and BOOT_MODE0
+              signals on the rising edge of POR_B
+            index: 24
+            width: 2
+            read: true
+            write: false
+          - name: BT_FUSE_SEL
+            description: BT_FUSE_SEL shows the state of the BT_FUSE_SEL fuse
+            index: 4
+            width: 1
+            read: true
+            write: false
+          - name: SEC_CONFIG
+            description: SECONFIG[1] shows the state of the SECONFIG[1] fuse
+            index: 0
+            width: 2
+            read: true
+            write: false
+      - name: SRSR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) SRC Reset Status Register
+        fields:
+          - name: CDOG_RST_M4
+            description: Indicates a reset has been caused by CDOG reset.
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: OVERVOLT_RST_M4
+            description: Indicates a reset has been caused by power suppy voltage
+              over the highest permitted level.
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: M7_LOCKUP_M4
+            description: Indicates a reset has been caused by M7 CPU lockup or software
+              setting of SYSRESETREQ bit in Application Interrupt and Reset Control
+              Register of the ARM core
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: M7_REQUEST_M4
+            description: Indicates whether reset was the result of m7 reset request.
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: TEMPSENSE_RST_B_M4
+            description: Temper Sensor software reset
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: WDOG4_RST_B_M4
+            description: IC Watchdog4 Time-out reset
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: WDOG3_RST_B_M4
+            description: IC Watchdog3 Time-out reset
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: JTAG_SW_RST_M4
+            description: JTAG software reset. Indicates whether the reset was the
+              result of software reset from JTAG.
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: JTAG_RST_B_M4
+            description: HIGH - Z JTAG reset. Indicates whether the reset was the
+              result of HIGH-Z reset from JTAG.
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: WDOG_RST_B_M4
+            description: IC Watchdog Time-out reset
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: IPP_USER_RESET_B_M4
+            description: Indicates whether the reset was the result of the ipp_user_reset_b
+              qualified reset.
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: CSU_RESET_B_M4
+            description: Indicates whether the reset was the result of the csu_reset_b
+              input.
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: M4_LOCKUP_M4
+            description: Indicates a reset has been caused by M4 CPU lockup or software
+              setting of SYSRESETREQ bit in Application Interrupt and Reset Control
+              Register of the ARM core
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: M4_REQUEST_M4
+            description: Indicates whether reset was the result of m4 reset request
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: IPP_RESET_B_M4
+            description: Indicates whether reset was the result of ipp_reset_b pin
+              (Power-up sequence)
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: CDOG_RST_M7
+            description: Indicates a reset has been caused by CDOG reset.
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: OVERVOLT_RST_M7
+            description: Indicates a reset has been caused by power suppy voltage
+              over the highest permitted level.
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: M4_LOCKUP_M7
+            description: Indicates a reset has been caused by M4 CPU lockup or software
+              setting of SYSRESETREQ bit in Application Interrupt and Reset Control
+              Register of the ARM core
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: M4_REQUEST_M7
+            description: Indicates whether reset was the result of m4 reset request.
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: TEMPSENSE_RST_B_M7
+            description: Temper Sensor software reset
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: WDOG4_RST_B_M7
+            description: IC Watchdog4 Time-out reset
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: WDOG3_RST_B_M7
+            description: IC Watchdog3 Time-out reset
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: JTAG_SW_RST_M7
+            description: JTAG software reset. Indicates whether the reset was the
+              result of software reset from JTAG.
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: JTAG_RST_B_M7
+            description: HIGH - Z JTAG reset. Indicates whether the reset was the
+              result of HIGH-Z reset from JTAG.
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: WDOG_RST_B_M7
+            description: IC Watchdog Time-out reset
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: IPP_USER_RESET_B_M7
+            description: Indicates whether the reset was the result of the ipp_user_reset_b
+              qualified reset.
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: CSU_RESET_B_M7
+            description: Indicates whether the reset was the result of the csu_reset_b
+              input.
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: M7_LOCKUP_M7
+            description: Indicates a reset has been caused by M7 CPU lockup or software
+              setting of SYSRESETREQ bit in Application Interrupt and Reset Control
+              Register of the ARM core
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: M7_REQUEST_M7
+            description: Indicates whether reset was the result of m7 reset request
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: IPP_RESET_B_M7
+            description: Indicates whether reset was the result of ipp_reset_b pin
+              (Power-up sequence)
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR
+        type: uint32_t
+        expected_size: 80
+        expected_offset: 20
+        array_length: 20
+        description: (read-write) SRC General Purpose Register
+        fields:
+          - name: GPR
+            description: General Purpose Register.
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: AUTHEN_MEGA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 512
+        description: (read-write) Slice Authentication Register
+        fields:
+          - name: LOCK_SETTING
+            description: Lock NONSECURE and USER
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: NONSECURE
+            description: Allow non-secure mode access
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: USER
+            description: Allow user mode access
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: LOCK_LIST
+            description: White list lock
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: WHITE_LIST
+            description: Domain ID white list
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: LOCK_ASSIGN
+            description: Assign list lock
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ASSIGN_LIST
+            description: when this bitfield set to 1, reset of slice would be subject
+              to corresponding core status transition
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: LOCK_MODE
+            description: Domain/Setpoint mode lock
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT_MODE
+            description: Control whether reset slice is in Setpoint mode
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: DOMAIN_MODE
+            description: Control whether reset slice is in domain mode
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL_MEGA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 516
+        description: (read-write) Slice Control Register
+        fields:
+          - name: SW_RESET
+            description: This is a self clearing bit
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SETPOINT_MEGA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 520
+        description: (read-write) Slice Setpoint Config Register
+        fields:
+          - name: SETPOINT15
+            description: SETPOINT15
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT14
+            description: SETPOINT14
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT13
+            description: SETPOINT13
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT12
+            description: SETPOINT12
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT11
+            description: SETPOINT11
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT10
+            description: SETPOINT10
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT9
+            description: SETPOINT9
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT8
+            description: SETPOINT8
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT7
+            description: SETPOINT7
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT6
+            description: SETPOINT6
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT5
+            description: SETPOINT5
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT4
+            description: SETPOINT4
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT3
+            description: SETPOINT3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT2
+            description: SETPOINT2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT1
+            description: SETPOINT1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT0
+            description: SETPOINT0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DOMAIN_MEGA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 524
+        description: (read-write) Slice Domain Config Register
+        fields:
+          - name: CPU1_SUSP
+            description: CPU mode setting for SUSPEND
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_STOP
+            description: CPU mode setting for STOP
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_WAIT
+            description: CPU mode setting for WAIT
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_RUN
+            description: CPU mode setting for RUN
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_SUSP
+            description: CPU mode setting for SUSPEND
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_STOP
+            description: CPU mode setting for STOP
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_WAIT
+            description: CPU mode setting for WAIT
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_RUN
+            description: CPU mode setting for RUN
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: STAT_MEGA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 528
+        description: (read-write) Slice Status Register
+        fields:
+          - name: RST_BY_SW
+            description: This bit indicate if the reset is caused by setting SW_RESET
+              bit.
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: RST_BY_HW
+            description: This bit indicate if the reset is caused by the power mode
+              transfer.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: UNDER_RST
+            description: This is a Read Only bit. It indicate if the reset is in process.
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: AUTHEN_DISPLAY
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 544
+        description: (read-write) Slice Authentication Register
+        fields:
+          - name: LOCK_SETTING
+            description: Lock NONSECURE and USER
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: NONSECURE
+            description: Allow non-secure mode access
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: USER
+            description: Allow user mode access
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: LOCK_LIST
+            description: White list lock
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: WHITE_LIST
+            description: Domain ID white list
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: LOCK_ASSIGN
+            description: Assign list lock
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ASSIGN_LIST
+            description: when this bitfield set to 1, reset of slice would be subject
+              to corresponding core status transition
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: LOCK_MODE
+            description: Domain/Setpoint mode lock
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT_MODE
+            description: Control whether reset slice is in Setpoint mode
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: DOMAIN_MODE
+            description: Control whether reset slice is in domain mode
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL_DISPLAY
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 548
+        description: (read-write) Slice Control Register
+        fields:
+          - name: SW_RESET
+            description: This is a self clearing bit
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SETPOINT_DISPLAY
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 552
+        description: (read-write) Slice Setpoint Config Register
+        fields:
+          - name: SETPOINT15
+            description: SETPOINT15
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT14
+            description: SETPOINT14
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT13
+            description: SETPOINT13
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT12
+            description: SETPOINT12
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT11
+            description: SETPOINT11
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT10
+            description: SETPOINT10
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT9
+            description: SETPOINT9
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT8
+            description: SETPOINT8
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT7
+            description: SETPOINT7
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT6
+            description: SETPOINT6
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT5
+            description: SETPOINT5
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT4
+            description: SETPOINT4
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT3
+            description: SETPOINT3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT2
+            description: SETPOINT2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT1
+            description: SETPOINT1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT0
+            description: SETPOINT0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DOMAIN_DISPLAY
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 556
+        description: (read-write) Slice Domain Config Register
+        fields:
+          - name: CPU1_SUSP
+            description: CPU mode setting for SUSPEND
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_STOP
+            description: CPU mode setting for STOP
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_WAIT
+            description: CPU mode setting for WAIT
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_RUN
+            description: CPU mode setting for RUN
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_SUSP
+            description: CPU mode setting for SUSPEND
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_STOP
+            description: CPU mode setting for STOP
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_WAIT
+            description: CPU mode setting for WAIT
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_RUN
+            description: CPU mode setting for RUN
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: STAT_DISPLAY
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 560
+        description: (read-write) Slice Status Register
+        fields:
+          - name: RST_BY_SW
+            description: This bit indicate if the reset is caused by setting SW_RESET
+              bit.
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: RST_BY_HW
+            description: This bit indicate if the reset is caused by the power mode
+              transfer.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: UNDER_RST
+            description: This is a Read Only bit. It indicate if the reset is in process.
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: AUTHEN_WAKEUP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 576
+        description: (read-write) Slice Authentication Register
+        fields:
+          - name: LOCK_SETTING
+            description: Lock NONSECURE and USER
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: NONSECURE
+            description: Allow non-secure mode access
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: USER
+            description: Allow user mode access
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: LOCK_LIST
+            description: White list lock
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: WHITE_LIST
+            description: Domain ID white list
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: LOCK_ASSIGN
+            description: Assign list lock
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ASSIGN_LIST
+            description: when this bitfield set to 1, reset of slice would be subject
+              to corresponding core status transition
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: LOCK_MODE
+            description: Domain/Setpoint mode lock
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT_MODE
+            description: Control whether reset slice is in Setpoint mode
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: DOMAIN_MODE
+            description: Control whether reset slice is in domain mode
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL_WAKEUP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 580
+        description: (read-write) Slice Control Register
+        fields:
+          - name: SW_RESET
+            description: This is a self clearing bit
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SETPOINT_WAKEUP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 584
+        description: (read-write) Slice Setpoint Config Register
+        fields:
+          - name: SETPOINT15
+            description: SETPOINT15
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT14
+            description: SETPOINT14
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT13
+            description: SETPOINT13
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT12
+            description: SETPOINT12
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT11
+            description: SETPOINT11
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT10
+            description: SETPOINT10
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT9
+            description: SETPOINT9
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT8
+            description: SETPOINT8
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT7
+            description: SETPOINT7
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT6
+            description: SETPOINT6
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT5
+            description: SETPOINT5
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT4
+            description: SETPOINT4
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT3
+            description: SETPOINT3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT2
+            description: SETPOINT2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT1
+            description: SETPOINT1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT0
+            description: SETPOINT0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DOMAIN_WAKEUP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 588
+        description: (read-write) Slice Domain Config Register
+        fields:
+          - name: CPU1_SUSP
+            description: CPU mode setting for SUSPEND
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_STOP
+            description: CPU mode setting for STOP
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_WAIT
+            description: CPU mode setting for WAIT
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_RUN
+            description: CPU mode setting for RUN
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_SUSP
+            description: CPU mode setting for SUSPEND
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_STOP
+            description: CPU mode setting for STOP
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_WAIT
+            description: CPU mode setting for WAIT
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_RUN
+            description: CPU mode setting for RUN
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: STAT_WAKEUP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 592
+        description: (read-write) Slice Status Register
+        fields:
+          - name: RST_BY_SW
+            description: This bit indicate if the reset is caused by setting SW_RESET
+              bit.
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: RST_BY_HW
+            description: This bit indicate if the reset is caused by the power mode
+              transfer.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: UNDER_RST
+            description: This is a Read Only bit. It indicate if the reset is in process.
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: AUTHEN_M4CORE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 640
+        description: (read-write) Slice Authentication Register
+        fields:
+          - name: LOCK_SETTING
+            description: Lock NONSECURE and USER
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: NONSECURE
+            description: Allow non-secure mode access
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: USER
+            description: Allow user mode access
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: LOCK_LIST
+            description: White list lock
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: WHITE_LIST
+            description: Domain ID white list
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: LOCK_ASSIGN
+            description: Assign list lock
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ASSIGN_LIST
+            description: when this bitfield set to 1, reset of slice would be subject
+              to corresponding core status transition
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: LOCK_MODE
+            description: Domain/Setpoint mode lock
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT_MODE
+            description: Control whether reset slice is in Setpoint mode
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: DOMAIN_MODE
+            description: Control whether reset slice is in domain mode
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL_M4CORE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 644
+        description: (read-write) Slice Control Register
+        fields:
+          - name: SW_RESET
+            description: This is a self clearing bit
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SETPOINT_M4CORE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 648
+        description: (read-write) Slice Setpoint Config Register
+        fields:
+          - name: SETPOINT15
+            description: SETPOINT15
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT14
+            description: SETPOINT14
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT13
+            description: SETPOINT13
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT12
+            description: SETPOINT12
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT11
+            description: SETPOINT11
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT10
+            description: SETPOINT10
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT9
+            description: SETPOINT9
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT8
+            description: SETPOINT8
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT7
+            description: SETPOINT7
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT6
+            description: SETPOINT6
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT5
+            description: SETPOINT5
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT4
+            description: SETPOINT4
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT3
+            description: SETPOINT3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT2
+            description: SETPOINT2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT1
+            description: SETPOINT1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT0
+            description: SETPOINT0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DOMAIN_M4CORE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 652
+        description: (read-write) Slice Domain Config Register
+        fields:
+          - name: CPU1_SUSP
+            description: CPU mode setting for SUSPEND
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_STOP
+            description: CPU mode setting for STOP
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_WAIT
+            description: CPU mode setting for WAIT
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_RUN
+            description: CPU mode setting for RUN
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_SUSP
+            description: CPU mode setting for SUSPEND
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_STOP
+            description: CPU mode setting for STOP
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_WAIT
+            description: CPU mode setting for WAIT
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_RUN
+            description: CPU mode setting for RUN
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: STAT_M4CORE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 656
+        description: (read-write) Slice Status Register
+        fields:
+          - name: RST_BY_SW
+            description: This bit indicate if the reset is caused by setting SW_RESET
+              bit.
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: RST_BY_HW
+            description: This bit indicate if the reset is caused by the power mode
+              transfer.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: UNDER_RST
+            description: This is a Read Only bit. It indicate if the reset is in process.
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: AUTHEN_M7CORE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 672
+        description: (read-write) Slice Authentication Register
+        fields:
+          - name: LOCK_SETTING
+            description: Lock NONSECURE and USER
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: NONSECURE
+            description: Allow non-secure mode access
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: USER
+            description: Allow user mode access
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: LOCK_LIST
+            description: White list lock
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: WHITE_LIST
+            description: Domain ID white list
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: LOCK_ASSIGN
+            description: Assign list lock
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ASSIGN_LIST
+            description: when this bitfield set to 1, reset of slice would be subject
+              to corresponding core status transition
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: LOCK_MODE
+            description: Domain/Setpoint mode lock
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT_MODE
+            description: Control whether reset slice is in Setpoint mode
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: DOMAIN_MODE
+            description: Control whether reset slice is in domain mode
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL_M7CORE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 676
+        description: (read-write) Slice Control Register
+        fields:
+          - name: SW_RESET
+            description: This is a self clearing bit
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SETPOINT_M7CORE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 680
+        description: (read-write) Slice Setpoint Config Register
+        fields:
+          - name: SETPOINT15
+            description: SETPOINT15
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT14
+            description: SETPOINT14
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT13
+            description: SETPOINT13
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT12
+            description: SETPOINT12
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT11
+            description: SETPOINT11
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT10
+            description: SETPOINT10
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT9
+            description: SETPOINT9
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT8
+            description: SETPOINT8
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT7
+            description: SETPOINT7
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT6
+            description: SETPOINT6
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT5
+            description: SETPOINT5
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT4
+            description: SETPOINT4
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT3
+            description: SETPOINT3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT2
+            description: SETPOINT2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT1
+            description: SETPOINT1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT0
+            description: SETPOINT0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DOMAIN_M7CORE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 684
+        description: (read-write) Slice Domain Config Register
+        fields:
+          - name: CPU1_SUSP
+            description: CPU mode setting for SUSPEND
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_STOP
+            description: CPU mode setting for STOP
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_WAIT
+            description: CPU mode setting for WAIT
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_RUN
+            description: CPU mode setting for RUN
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_SUSP
+            description: CPU mode setting for SUSPEND
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_STOP
+            description: CPU mode setting for STOP
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_WAIT
+            description: CPU mode setting for WAIT
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_RUN
+            description: CPU mode setting for RUN
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: STAT_M7CORE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 688
+        description: (read-write) Slice Status Register
+        fields:
+          - name: RST_BY_SW
+            description: This bit indicate if the reset is caused by setting SW_RESET
+              bit.
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: RST_BY_HW
+            description: This bit indicate if the reset is caused by the power mode
+              transfer.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: UNDER_RST
+            description: This is a Read Only bit. It indicate if the reset is in process.
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: AUTHEN_M4DEBUG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 704
+        description: (read-write) Slice Authentication Register
+        fields:
+          - name: LOCK_SETTING
+            description: Lock NONSECURE and USER
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: NONSECURE
+            description: Allow non-secure mode access
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: USER
+            description: Allow user mode access
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: LOCK_LIST
+            description: White list lock
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: WHITE_LIST
+            description: Domain ID white list
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: LOCK_ASSIGN
+            description: Assign list lock
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ASSIGN_LIST
+            description: when this bitfield set to 1, reset of slice would be subject
+              to corresponding core status transition
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: LOCK_MODE
+            description: Domain/Setpoint mode lock
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT_MODE
+            description: Control whether reset slice is in Setpoint mode
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: DOMAIN_MODE
+            description: Control whether reset slice is in domain mode
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL_M4DEBUG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 708
+        description: (read-write) Slice Control Register
+        fields:
+          - name: SW_RESET
+            description: This is a self clearing bit
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SETPOINT_M4DEBUG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 712
+        description: (read-write) Slice Setpoint Config Register
+        fields:
+          - name: SETPOINT15
+            description: SETPOINT15
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT14
+            description: SETPOINT14
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT13
+            description: SETPOINT13
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT12
+            description: SETPOINT12
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT11
+            description: SETPOINT11
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT10
+            description: SETPOINT10
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT9
+            description: SETPOINT9
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT8
+            description: SETPOINT8
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT7
+            description: SETPOINT7
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT6
+            description: SETPOINT6
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT5
+            description: SETPOINT5
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT4
+            description: SETPOINT4
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT3
+            description: SETPOINT3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT2
+            description: SETPOINT2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT1
+            description: SETPOINT1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT0
+            description: SETPOINT0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DOMAIN_M4DEBUG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 716
+        description: (read-write) Slice Domain Config Register
+        fields:
+          - name: CPU1_SUSP
+            description: CPU mode setting for SUSPEND
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_STOP
+            description: CPU mode setting for STOP
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_WAIT
+            description: CPU mode setting for WAIT
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_RUN
+            description: CPU mode setting for RUN
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_SUSP
+            description: CPU mode setting for SUSPEND
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_STOP
+            description: CPU mode setting for STOP
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_WAIT
+            description: CPU mode setting for WAIT
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_RUN
+            description: CPU mode setting for RUN
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: STAT_M4DEBUG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 720
+        description: (read-write) Slice Status Register
+        fields:
+          - name: RST_BY_SW
+            description: This bit indicate if the reset is caused by setting SW_RESET
+              bit.
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: RST_BY_HW
+            description: This bit indicate if the reset is caused by the power mode
+              transfer.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: UNDER_RST
+            description: This is a Read Only bit. It indicate if the reset is in process.
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: AUTHEN_M7DEBUG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 736
+        description: (read-write) Slice Authentication Register
+        fields:
+          - name: LOCK_SETTING
+            description: Lock NONSECURE and USER
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: NONSECURE
+            description: Allow non-secure mode access
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: USER
+            description: Allow user mode access
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: LOCK_LIST
+            description: White list lock
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: WHITE_LIST
+            description: Domain ID white list
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: LOCK_ASSIGN
+            description: Assign list lock
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ASSIGN_LIST
+            description: when this bitfield set to 1, reset of slice would be subject
+              to corresponding core status transition
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: LOCK_MODE
+            description: Domain/Setpoint mode lock
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT_MODE
+            description: Control whether reset slice is in Setpoint mode
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: DOMAIN_MODE
+            description: Control whether reset slice is in domain mode
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL_M7DEBUG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 740
+        description: (read-write) Slice Control Register
+        fields:
+          - name: SW_RESET
+            description: This is a self clearing bit
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SETPOINT_M7DEBUG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 744
+        description: (read-write) Slice Setpoint Config Register
+        fields:
+          - name: SETPOINT15
+            description: SETPOINT15
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT14
+            description: SETPOINT14
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT13
+            description: SETPOINT13
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT12
+            description: SETPOINT12
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT11
+            description: SETPOINT11
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT10
+            description: SETPOINT10
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT9
+            description: SETPOINT9
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT8
+            description: SETPOINT8
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT7
+            description: SETPOINT7
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT6
+            description: SETPOINT6
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT5
+            description: SETPOINT5
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT4
+            description: SETPOINT4
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT3
+            description: SETPOINT3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT2
+            description: SETPOINT2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT1
+            description: SETPOINT1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT0
+            description: SETPOINT0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DOMAIN_M7DEBUG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 748
+        description: (read-write) Slice Domain Config Register
+        fields:
+          - name: CPU1_SUSP
+            description: CPU mode setting for SUSPEND
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_STOP
+            description: CPU mode setting for STOP
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_WAIT
+            description: CPU mode setting for WAIT
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_RUN
+            description: CPU mode setting for RUN
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_SUSP
+            description: CPU mode setting for SUSPEND
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_STOP
+            description: CPU mode setting for STOP
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_WAIT
+            description: CPU mode setting for WAIT
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_RUN
+            description: CPU mode setting for RUN
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: STAT_M7DEBUG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 752
+        description: (read-write) Slice Status Register
+        fields:
+          - name: RST_BY_SW
+            description: This bit indicate if the reset is caused by setting SW_RESET
+              bit.
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: RST_BY_HW
+            description: This bit indicate if the reset is caused by the power mode
+              transfer.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: UNDER_RST
+            description: This is a Read Only bit. It indicate if the reset is in process.
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: AUTHEN_USBPHY1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 768
+        description: (read-write) Slice Authentication Register
+        fields:
+          - name: LOCK_SETTING
+            description: Lock NONSECURE and USER
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: NONSECURE
+            description: Allow non-secure mode access
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: USER
+            description: Allow user mode access
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: LOCK_LIST
+            description: White list lock
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: WHITE_LIST
+            description: Domain ID white list
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: LOCK_ASSIGN
+            description: Assign list lock
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ASSIGN_LIST
+            description: when this bitfield set to 1, reset of slice would be subject
+              to corresponding core status transition
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: LOCK_MODE
+            description: Domain/Setpoint mode lock
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT_MODE
+            description: Control whether reset slice is in Setpoint mode
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: DOMAIN_MODE
+            description: Control whether reset slice is in domain mode
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL_USBPHY1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 772
+        description: (read-write) Slice Control Register
+        fields:
+          - name: SW_RESET
+            description: This is a self clearing bit
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SETPOINT_USBPHY1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 776
+        description: (read-write) Slice Setpoint Config Register
+        fields:
+          - name: SETPOINT15
+            description: SETPOINT15
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT14
+            description: SETPOINT14
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT13
+            description: SETPOINT13
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT12
+            description: SETPOINT12
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT11
+            description: SETPOINT11
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT10
+            description: SETPOINT10
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT9
+            description: SETPOINT9
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT8
+            description: SETPOINT8
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT7
+            description: SETPOINT7
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT6
+            description: SETPOINT6
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT5
+            description: SETPOINT5
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT4
+            description: SETPOINT4
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT3
+            description: SETPOINT3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT2
+            description: SETPOINT2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT1
+            description: SETPOINT1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT0
+            description: SETPOINT0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DOMAIN_USBPHY1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 780
+        description: (read-write) Slice Domain Config Register
+        fields:
+          - name: CPU1_SUSP
+            description: CPU mode setting for SUSPEND
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_STOP
+            description: CPU mode setting for STOP
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_WAIT
+            description: CPU mode setting for WAIT
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_RUN
+            description: CPU mode setting for RUN
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_SUSP
+            description: CPU mode setting for SUSPEND
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_STOP
+            description: CPU mode setting for STOP
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_WAIT
+            description: CPU mode setting for WAIT
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_RUN
+            description: CPU mode setting for RUN
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: STAT_USBPHY1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 784
+        description: (read-write) Slice Status Register
+        fields:
+          - name: RST_BY_SW
+            description: This bit indicate if the reset is caused by setting SW_RESET
+              bit.
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: RST_BY_HW
+            description: This bit indicate if the reset is caused by the power mode
+              transfer.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: UNDER_RST
+            description: This is a Read Only bit. It indicate if the reset is in process.
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: AUTHEN_USBPHY2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 800
+        description: (read-write) Slice Authentication Register
+        fields:
+          - name: LOCK_SETTING
+            description: Lock NONSECURE and USER
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: NONSECURE
+            description: Allow non-secure mode access
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: USER
+            description: Allow user mode access
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: LOCK_LIST
+            description: White list lock
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: WHITE_LIST
+            description: Domain ID white list
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: LOCK_ASSIGN
+            description: Assign list lock
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ASSIGN_LIST
+            description: when this bitfield set to 1, reset of slice would be subject
+              to corresponding core status transition
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: LOCK_MODE
+            description: Domain/Setpoint mode lock
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT_MODE
+            description: Control whether reset slice is in Setpoint mode
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: DOMAIN_MODE
+            description: Control whether reset slice is in domain mode
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL_USBPHY2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 804
+        description: (read-write) Slice Control Register
+        fields:
+          - name: SW_RESET
+            description: This is a self clearing bit
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SETPOINT_USBPHY2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 808
+        description: (read-write) Slice Setpoint Config Register
+        fields:
+          - name: SETPOINT15
+            description: SETPOINT15
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT14
+            description: SETPOINT14
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT13
+            description: SETPOINT13
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT12
+            description: SETPOINT12
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT11
+            description: SETPOINT11
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT10
+            description: SETPOINT10
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT9
+            description: SETPOINT9
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT8
+            description: SETPOINT8
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT7
+            description: SETPOINT7
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT6
+            description: SETPOINT6
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT5
+            description: SETPOINT5
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT4
+            description: SETPOINT4
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT3
+            description: SETPOINT3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT2
+            description: SETPOINT2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT1
+            description: SETPOINT1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SETPOINT0
+            description: SETPOINT0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DOMAIN_USBPHY2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 812
+        description: (read-write) Slice Domain Config Register
+        fields:
+          - name: CPU1_SUSP
+            description: CPU mode setting for SUSPEND
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_STOP
+            description: CPU mode setting for STOP
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_WAIT
+            description: CPU mode setting for WAIT
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: CPU1_RUN
+            description: CPU mode setting for RUN
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_SUSP
+            description: CPU mode setting for SUSPEND
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_STOP
+            description: CPU mode setting for STOP
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_WAIT
+            description: CPU mode setting for WAIT
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CPU0_RUN
+            description: CPU mode setting for RUN
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: STAT_USBPHY2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 816
+        description: (read-write) Slice Status Register
+        fields:
+          - name: RST_BY_SW
+            description: This bit indicate if the reset is caused by setting SW_RESET
+              bit.
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: RST_BY_HW
+            description: This bit indicate if the reset is caused by the power mode
+              transfer.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: UNDER_RST
+            description: This is a Read Only bit. It indicate if the reset is in process.
+            index: 0
+            width: 1
+            read: true
+            write: false
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  SRC_SRMR_OVERVOLT_RESET_MODE:
+    enum:
+      _0:
+        description: reset system
+        value: 0
+      _3:
+        description: do not reset anything
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SRC_SRMR_JTAGSW_RESET_MODE:
+    enum:
+      _0:
+        description: reset system
+        value: 0
+      _3:
+        description: do not reset anything
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SRC_SRMR_CSU_RESET_MODE:
+    enum:
+      _0:
+        description: reset system
+        value: 0
+      _3:
+        description: do not reset anything
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SRC_SRMR_TEMPSENSE_RESET_MODE:
+    enum:
+      _0:
+        description: reset system
+        value: 0
+      _3:
+        description: do not reset anything
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SRC_SRMR_M7REQ_RESET_MODE:
+    enum:
+      _0:
+        description: reset system
+        value: 0
+      _3:
+        description: do not reset anything
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SRC_SRMR_M4REQ_RESET_MODE:
+    enum:
+      _0:
+        description: reset system
+        value: 0
+      _3:
+        description: do not reset anything
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SRC_SRMR_M7LOCKUP_RESET_MODE:
+    enum:
+      _0:
+        description: reset system
+        value: 0
+      _3:
+        description: do not reset anything
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SRC_SRMR_M4LOCKUP_RESET_MODE:
+    enum:
+      _0:
+        description: reset system
+        value: 0
+      _3:
+        description: do not reset anything
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SRC_SRMR_WDOG4_RESET_MODE:
+    enum:
+      _0:
+        description: reset system
+        value: 0
+      _3:
+        description: do not reset anything
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SRC_SRMR_WDOG3_RESET_MODE:
+    enum:
+      _0:
+        description: reset system
+        value: 0
+      _3:
+        description: do not reset anything
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SRC_SRMR_WDOG_RESET_MODE:
+    enum:
+      _0:
+        description: reset system
+        value: 0
+      _3:
+        description: do not reset anything
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

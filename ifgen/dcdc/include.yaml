@@ -1,0 +1,791 @@
+---
+structs:
+  dcdc:
+    description: DCDC
+    instances:
+      - name: DCDC
+        address: '0x40CA8000'
+    fields:
+      - name: CTRL0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) DCDC Control Register 0
+        fields:
+          - name: CONTROL_MODE
+            description: Control mode
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: DEBUG_BITS
+            description: DEBUG_BITS[11:0]
+            index: 19
+            width: 12
+            read: true
+            write: true
+          - name: TRIM_HOLD
+            description: Hold trim input
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE_DCDC_CNT
+            description: Enable internal count for DCDC_OK timeout
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: STBY_LP_MODE_EN
+            description: DCDC low-power mode enable by GPC standby request
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_EN
+            description: DCDC low-power (LP) mode enable DCDC can't start up directly
+              into LP mode
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN
+            description: DCDC standby mode enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: DIG_EN
+            description: Enable the DCDC_DIG switching converter output
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE
+            description: DCDC Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) DCDC Control Register 1
+        fields:
+          - name: VDD1P0CTRL_STBY_TRG
+            description: 'Target value of VDD1P0 in standby mode, 25mV each step from
+              0x00 to 0x1F:'
+            index: 24
+            width: 5
+            read: true
+            write: true
+            type: DCDC_CTRL1_VDD1P0CTRL_STBY_TRG
+          - name: VDD1P8CTRL_STBY_TRG
+            description: 'Target value of VDD1P8 in standby mode, 25mV each step from
+              0x00 to 0x1F:'
+            index: 16
+            width: 5
+            read: true
+            write: true
+            type: DCDC_CTRL1_VDD1P8CTRL_STBY_TRG
+          - name: VDD1P0CTRL_TRG
+            description: 'Target value of VDD1P0 in buck mode, 25mV each step from
+              0x00 to 0x1F:'
+            index: 8
+            width: 5
+            read: true
+            write: true
+            type: DCDC_CTRL1_VDD1P0CTRL_TRG
+          - name: VDD1P8CTRL_TRG
+            description: 'Target value of VDD1P8 in buck mode, 25mV each step from
+              0x00 to 0x1F:'
+            index: 0
+            width: 5
+            read: true
+            write: true
+            type: DCDC_CTRL1_VDD1P8CTRL_TRG
+      - name: REG0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) DCDC Register 0
+        fields:
+          - name: STS_DC_OK
+            description: DCDC Output OK
+            index: 31
+            width: 1
+            read: true
+            write: false
+          - name: XTAL_24M_OK
+            description: 24M XTAL OK
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: XTALOK_DISABLE
+            description: Disable xtalok detection circuit
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: PWD_CMP_OFFSET
+            description: power down the out-of-range detection comparator
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: LP_HIGH_HYS
+            description: Low Power High Hysteric Value
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: PWD_HIGH_VDD1P0_DET
+            description: Power Down High Voltage Detection for VDD1P0
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: PWD_HIGH_VDD1P8_DET
+            description: Power Down High Voltage Detection for VDD1P8
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: PWD_CMP_DCDC_IN_DET
+            description: Set to "1" to power down the low voltage detection comparator
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: PWD_OVERCUR_DET
+            description: Power down overcurrent detection comparator
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: CUR_SNS_THRSH
+            description: Current Sense (detector) Threshold
+            index: 5
+            width: 3
+            read: true
+            write: true
+          - name: PWD_CUR_SNS_CMP
+            description: Power down signal of the current detector
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: PWD_OSC_INT
+            description: Power down internal ring oscillator
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: SEL_CLK
+            description: Select Clock
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: DISABLE_AUTO_CLK_SWITCH
+            description: Disable Auto Clock Switch
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: PWD_ZCD
+            description: Power Down Zero Cross Detection
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: REG1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) DCDC Register 1
+        fields:
+          - name: LOOPCTRL_EN_DF_HYST
+            description: Enable hysteresis in switching converter differential mode
+              analog comparators
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: LOOPCTRL_EN_CM_HYST
+            description: Enable hysteresis in switching converter common mode analog
+              comparators
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: LOOPCTRL_DF_HST_THRESH
+            description: Increase Threshold Detection
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: LOOPCTRL_CM_HST_THRESH
+            description: Increase Threshold Detection
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: LP_CMP_ISRC_SEL
+            description: Low Power Comparator Current Bias
+            index: 11
+            width: 2
+            read: true
+            write: true
+            type: DCDC_REG1_LP_CMP_ISRC_SEL
+          - name: VBG_TRIM
+            description: Trim Bandgap Voltage
+            index: 6
+            width: 5
+            read: true
+            write: true
+            type: DCDC_REG1_VBG_TRIM
+          - name: RLOAD_REG_EN_LPSR
+            description: Load Resistor Enable
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: DM_CTRL
+            description: DM Control
+            index: 3
+            width: 1
+            read: true
+            write: true
+      - name: REG2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) DCDC Register 2
+        fields:
+          - name: LOOPCTRL_TOGGLE_DIF
+            description: Set high to enable supply stepping to change only after the
+              differential control loop has toggled as well
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: DCM_SET_CTRL
+            description: DCM Set Control
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: BATTMONITOR_BATT_VAL
+            description: Software should be configured to place the battery voltage
+              in this register measured with an 8-mV LSB resolution through the ADC
+            index: 16
+            width: 10
+            read: true
+            write: true
+          - name: BATTMONITOR_EN_BATADJ
+            description: This bit enables the DCDC to improve efficiency and minimize
+              ripple using the information from the BATT_VAL field
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: LOOPCTRL_HYST_SIGN
+            description: Invert the sign of the hysteresis in DCDC analog comparators.
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: LOOPCTRL_RCSCALE_THRSH
+            description: Increase the threshold detection for RC scale circuit.
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: LOOPCTRL_EN_RCSCALE
+            description: Enable RC Scale
+            index: 9
+            width: 3
+            read: true
+            write: true
+          - name: LOOPCTRL_DC_FF
+            description: Two's complement feed forward step in duty cycle in the switching
+              DCDC converter
+            index: 6
+            width: 3
+            read: true
+            write: true
+          - name: LOOPCTRL_DC_R
+            description: Magnitude of proportional control parameter in the switching
+              DCDC converter control loop.
+            index: 2
+            width: 4
+            read: true
+            write: true
+          - name: LOOPCTRL_DC_C
+            description: Ratio of integral control parameter to proportional control
+              parameter in the switching DCDC converter, and can be used to optimize
+              efficiency and loop response
+            index: 0
+            width: 2
+            read: true
+            write: true
+      - name: REG3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) DCDC Register 3
+        fields:
+          - name: VDD1P8CTRL_DISABLE_STEP
+            description: Disable Step for VDD1P8
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: VDD1P0CTRL_DISABLE_STEP
+            description: Disable Step for VDD1P0
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: MISC_DELAY_TIMING
+            description: Miscellaneous Delay Timing
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: MINPWR_HALF_FETS
+            description: Use half switch FET
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: MINPWR_DC_HALFCLK
+            description: Set DCDC clock to half freqeuncy for continuous mode.
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: REG_FBK_SEL
+            description: Select the feedback point of the internal regulator
+            index: 22
+            width: 2
+            read: true
+            write: true
+          - name: DOUBLE_IBIAS_CMP_LP_LPSR
+            description: no description available
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: DISABLE_IDLE_SKIP
+            description: no description available
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: DISABLE_PULSE_SKIP
+            description: Disable Pulse Skip
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE_FF
+            description: no description available
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: OVERCUR_DETECT_OUT
+            description: signal "1" when overcurrent happens.
+            index: 17
+            width: 1
+            read: true
+            write: false
+          - name: OVERVOLT_VDD1P0_DET_OUT
+            description: signal "1" when overvoltage on the VDD1P0 output happens
+            index: 16
+            width: 1
+            read: true
+            write: false
+          - name: OVERVOLT_VDD1P8_DET_OUT
+            description: signal "1" when overvoltage on the VDD1P8 output happens
+            index: 15
+            width: 1
+            read: true
+            write: false
+          - name: IN_BROWNOUT
+            description: signal "1" when the voltage on DCDC_IN is lower than 2.6V
+            index: 14
+            width: 1
+            read: true
+            write: false
+      - name: REG4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) DCDC Register 4
+        fields:
+          - name: ENABLE_SP
+            description: Configures CTRL0[ENABLE] (DCDC Enable) for Setpoints 0-15
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: REG5
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) DCDC Register 5
+        fields:
+          - name: DIG_EN_SP
+            description: Configures CTRL0[DIG_EN] (DCDC_DIG Enable) for Setpoints
+              0-15. Always set these bits to 1.
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: REG6
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) DCDC Register 6
+        fields:
+          - name: LP_MODE_SP
+            description: Configures CTRL0[LP_MODE_EN] (LP Mode Enable) for Setpoints
+              0-15
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: REG7
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) DCDC Register 7
+        fields:
+          - name: STBY_EN_SP
+            description: Configures CTRL0[STBY_EN] (Standby Enable) for Setpoints
+              0-15
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: REG7P
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) DCDC Register 7 plus
+        fields:
+          - name: STBY_LP_MODE_SP
+            description: Configures CTRL0[STBY_LP_MODE_EN] (LP Mode via GPC Enable)
+              for Setpoints 0-15
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: REG8
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) DCDC Register 8
+        fields:
+          - name: ANA_TRG_SP0
+            description: Configures CTRL1[VDD1P8CTRL_TRG] FOR Setpoints 0-3
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: REG9
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) DCDC Register 9
+        fields:
+          - name: ANA_TRG_SP1
+            description: Configures CTRL1[VDD1P8CTRL_TRG] FOR Setpoints 4-7
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: REG10
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 52
+        description: (read-write) DCDC Register 10
+        fields:
+          - name: ANA_TRG_SP2
+            description: Configures CTRL1[VDD1P8CTRL_TRG] FOR Setpoints 8-11
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: REG11
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 56
+        description: (read-write) DCDC Register 11
+        fields:
+          - name: ANA_TRG_SP3
+            description: Configures CTRL1[VDD1P8CTRL_TRG] FOR Setpoints 12-15
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: REG12
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 60
+        description: (read-write) DCDC Register 12
+        fields:
+          - name: DIG_TRG_SP0
+            description: Configures CTRL1[VDD1P0CTRL_TRG] FOR Setpoints 0-3
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: REG13
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 64
+        description: (read-write) DCDC Register 13
+        fields:
+          - name: DIG_TRG_SP1
+            description: Configures CTRL1[VDD1P0CTRL_TRG] FOR Setpoints 4-7
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: REG14
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 68
+        description: (read-write) DCDC Register 14
+        fields:
+          - name: DIG_TRG_SP2
+            description: Configures CTRL1[VDD1P0CTRL_TRG] FOR Setpoints 8-11
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: REG15
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 72
+        description: (read-write) DCDC Register 15
+        fields:
+          - name: DIG_TRG_SP3
+            description: Configures CTRL1[VDD1P0CTRL_TRG] FOR Setpoints 12-15
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: REG16
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 76
+        description: (read-write) DCDC Register 16
+        fields:
+          - name: ANA_STBY_TRG_SP0
+            description: Configures CTRL1[VDD1P8CTRL_STBY_TRG] FOR Setpoints 0-3
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: REG17
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 80
+        description: (read-write) DCDC Register 17
+        fields:
+          - name: ANA_STBY_TRG_SP1
+            description: Configures CTRL1[VDD1P8CTRL_STBY_TRG] FOR Setpoints 4-7
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: REG18
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 84
+        description: (read-write) DCDC Register 18
+        fields:
+          - name: ANA_STBY_TRG_SP2
+            description: Configures CTRL1[VDD1P8CTRL_STBY_TRG] FOR Setpoints 8-11
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: REG19
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 88
+        description: (read-write) DCDC Register 19
+        fields:
+          - name: ANA_STBY_TRG_SP3
+            description: Configures CTRL1[VDD1P8CTRL_STBY_TRG] FOR Setpoints 12-15
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: REG20
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 92
+        description: (read-write) DCDC Register 20
+        fields:
+          - name: DIG_STBY_TRG_SP0
+            description: Configures CTRL1[VDD1P0CTRL_STBY_TRG] FOR Setpoints 0-3
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: REG21
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 96
+        description: (read-write) DCDC Register 21
+        fields:
+          - name: DIG_STBY_TRG_SP1
+            description: Configures CTRL1[VDD1P0CTRL_STBY_TRG] FOR Setpoints 4-7
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: REG22
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 100
+        description: (read-write) DCDC Register 22
+        fields:
+          - name: DIG_STBY_TRG_SP2
+            description: Configures CTRL1[VDD1P0CTRL_STBY_TRG] FOR Setpoints 8-11
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: REG23
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 104
+        description: (read-write) DCDC Register 23
+        fields:
+          - name: DIG_STBY_TRG_SP3
+            description: Configures CTRL1[VDD1P0CTRL_STBY_TRG] FOR Setpoints 12-15
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: REG24
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 108
+        description: (read-write) DCDC Register 24
+        fields:
+          - name: OK_COUNT
+            description: Internal count for dcdc_ok timeout
+            index: 0
+            width: 32
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  DCDC_CTRL1_VDD1P0CTRL_STBY_TRG:
+    enum:
+      v0p625:
+        description: 0.625V
+        value: 0
+      v1p0:
+        description: 1.0V
+        value: 15
+      v1p4:
+        description: 1.4V
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  DCDC_CTRL1_VDD1P8CTRL_STBY_TRG:
+    enum:
+      v1p525:
+        description: 1.525V
+        value: 0
+      v1p8:
+        description: 1.8V
+        value: 11
+      v2p4:
+        description: 2.3V
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  DCDC_CTRL1_VDD1P0CTRL_TRG:
+    enum:
+      v0p6:
+        description: 0.6V
+        value: 0
+      v1p0:
+        description: 1.0V
+        value: 16
+      v1p375:
+        description: 1.375V
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  DCDC_CTRL1_VDD1P8CTRL_TRG:
+    enum:
+      v1p5:
+        description: 1.5V
+        value: 0
+      v1p8:
+        description: 1.8V
+        value: 12
+      v2p275:
+        description: 2.275V
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  DCDC_REG1_LP_CMP_ISRC_SEL:
+    enum:
+      _0:
+        description: 50nA
+        value: 0
+      _1:
+        description: 100nA
+        value: 1
+      _2:
+        description: 200nA
+        value: 2
+      _3:
+        description: 400nA
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  DCDC_REG1_VBG_TRIM:
+    enum:
+      minvolt:
+        description: 0.452V
+        value: 0
+      default:
+        description: 0.5V
+        value: 16
+      maxvolt:
+        description: 0.545V
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

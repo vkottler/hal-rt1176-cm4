@@ -1,0 +1,130 @@
+---
+structs:
+  TIMER_instance:
+    description: no description available
+    fields:
+      - name: LDVAL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Timer Load Value Register
+        fields:
+          - name: TSV
+            description: Timer Start Value
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: CVAL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Current Timer Value Register
+        fields:
+          - name: TVL
+            description: Current Timer Value
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: TCTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) Timer Control Register
+        fields:
+          - name: CHN
+            description: Chain Mode
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: TIE
+            description: Timer Interrupt Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: TEN
+            description: Timer Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: TFLG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) Timer Flag Register
+        fields:
+          - name: TIF
+            description: Timer Interrupt Flag
+            index: 0
+            width: 1
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+  pit1:
+    description: PIT
+    instances:
+      - name: PIT1
+        address: '0x400D8000'
+      - name: PIT2
+        address: '0x40CB0000'
+    fields:
+      - name: MCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) PIT Module Control Register
+        fields:
+          - name: MDIS
+            description: Module Disable for PIT
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: FRZ
+            description: Freeze
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LTMR64H
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 224
+        description: (read-write) PIT Upper Lifetime Timer Register
+        fields:
+          - name: LTH
+            description: Life Timer value
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: LTMR64L
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 228
+        description: (read-write) PIT Lower Lifetime Timer Register
+        fields:
+          - name: LTL
+            description: Life Timer value
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: TIMER
+        type: TIMER_instance
+        array_length: 4
+        description: no description available
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums: {}

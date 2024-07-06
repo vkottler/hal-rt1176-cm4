@@ -1,0 +1,207 @@
+---
+structs:
+  dcic1:
+    description: DCIC
+    instances:
+      - name: DCIC1
+        address: '0x40819000'
+      - name: DCIC2
+        address: '0x4081A000'
+    fields:
+      - name: DCICC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) DCIC Control Register
+        fields:
+          - name: CLK_POL
+            description: DISP_CLK signal polarity.
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_POL
+            description: VSYNC_IN signal polarity.
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: HSYNC_POL
+            description: HSYNC_IN signal polarity.
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: DE_POL
+            description: DATA_EN_IN signal polarity.
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: IC_EN
+            description: Integrity Check enable. Main enable switch.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DCICIC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) DCIC Interrupt Control Register
+        fields:
+          - name: EXT_SIG_EN
+            description: External controller mismatch indication signal.
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: FREEZE_MASK
+            description: Disable change of interrupt masks. "Sticky" bit which can
+              be set once and cleared by reset only.
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: FI_MASK
+            description: Functional Interrupt mask. Can be changed only while FREEZE_MASK
+              = 0.
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: EI_MASK
+            description: Error Interrupt mask. Can be changed only while FREEZE_MASK
+              = 0.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DCICS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) DCIC Status Register
+        fields:
+          - name: FI_STAT
+            description: Functional Interrupt status. Write "1" to clear.
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: EI_STAT
+            description: Error Interrupt status
+            index: 16
+            width: 1
+            read: true
+            write: false
+          - name: ROI_MATCH_STAT
+            description: Each set bit of this field indicates there was a mismatch
+              at the appropriate ROIs signature during the last frame
+            index: 0
+            width: 16
+            read: true
+            write: true
+            type: DCIC1_DCICS_ROI_MATCH_STAT
+      - name: DCICRC
+        type: uint32_t
+        expected_size: 64
+        expected_offset: 16
+        array_length: 16
+        description: (read-write) DCIC ROI Config Register
+        fields:
+          - name: ROI_EN
+            description: ROI tracking enable
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: ROI_FREEZE
+            description: When set, the only parameter of the ROI that can be changed
+              is the reference signature
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: START_OFFSET_Y
+            description: 'Row number of ROIs upper-left corner (Y coordinate) Range:
+              0 to 2^12-1'
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: START_OFFSET_X
+            description: 'Column number of ROIs upper-left corner (X coordinate) Range:
+              0 to 2^13-1'
+            index: 0
+            width: 13
+            read: true
+            write: true
+      - name: DCICRS
+        type: uint32_t
+        expected_size: 64
+        expected_offset: 20
+        array_length: 16
+        description: (read-write) DCIC ROI Size Register
+        fields:
+          - name: END_OFFSET_Y
+            description: 'Row number of ROIs lower-right corner (Y coordinate) Range:
+              1 to 2^12-1'
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: END_OFFSET_X
+            description: 'Column number of ROIs lower-right corner (X coordinate)
+              Range: 1 to 2^13-1'
+            index: 0
+            width: 13
+            read: true
+            write: true
+      - name: DCICRRS
+        type: uint32_t
+        expected_size: 64
+        expected_offset: 24
+        array_length: 16
+        description: (read-write) DCIC ROI Reference Signature Register
+        fields:
+          - name: REFERENCE_SIGNATURE
+            description: 32-bit expected signature (CRC calculation result) for the
+              ROI
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DCICRCS
+        type: uint32_t
+        expected_size: 64
+        expected_offset: 28
+        array_length: 16
+        description: (read-write) DCIC ROI Calculated Signature Register
+        fields:
+          - name: CALCULATED_SIGNATURE
+            description: 32-bit actual signature (CRC calculation result) for the
+              ROI during the last frame
+            index: 0
+            width: 32
+            read: true
+            write: false
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  DCIC1_DCICS_ROI_MATCH_STAT:
+    enum:
+      _0:
+        description: ROI calculated CRC matches expected signature
+        value: 0
+      _1:
+        description: Mismatch at ROI calculated CRC
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t

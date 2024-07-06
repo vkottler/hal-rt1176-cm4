@@ -1,0 +1,288 @@
+---
+structs:
+  dsi_host_dphy_intfc:
+    description: DSI HOST DPHY INTFC
+    instances:
+      - name: DSI_HOST_DPHY_INTFC
+        address: '0x4080C300'
+    fields:
+      - name: PD_TX
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) PD_TX
+        fields:
+          - name: PD_TX
+            description: Power Down input for D-PHY
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: M_PRG_HS_PREPARE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) M_PRG_HS_PREPARE
+        fields:
+          - name: M_PRG_HS_PREPARE
+            description: DPHY m_PRG_HS_PREPARE input
+            index: 0
+            width: 2
+            read: true
+            write: true
+      - name: MC_PRG_HS_PREPARE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) MC_PRG_HS_PREPARE
+        fields:
+          - name: MC_PRG_HS_PREPARE
+            description: DPHY mc_PRG_HS_PREPARE input
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: M_PRG_HS_ZERO
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) M_PRG_HS_ZERO
+        fields:
+          - name: M_PRG_HS_ZERO
+            description: DPHY m_PRG_HS_ZERO input
+            index: 0
+            width: 5
+            read: true
+            write: true
+      - name: MC_PRG_HS_ZERO
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) MC_PRG_HS_ZERO
+        fields:
+          - name: MC_PRG_HS_ZERO
+            description: DPHY mc_PRG_HS_ZERO input
+            index: 0
+            width: 6
+            read: true
+            write: true
+      - name: M_PRG_HS_TRAIL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) M_PRG_HS_TRAIL
+        fields:
+          - name: M_PRG_HS_TRAIL
+            description: DPHY m_PRG_HS_TRAIL input
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: MC_PRG_HS_TRAIL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) MC_PRG_HS_TRAIL
+        fields:
+          - name: MC_PRG_HS_TRAIL
+            description: DPHY mc_PRG_HS_TRAIL input
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: PD_PLL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) PD_PLL
+        fields:
+          - name: PD_PLL
+            description: Power-down signal
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: TST
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) TST
+        fields:
+          - name: TST
+            description: Test
+            index: 0
+            width: 6
+            read: true
+            write: true
+      - name: CN
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) CN
+        fields:
+          - name: CN
+            description: Control N divider
+            index: 0
+            width: 5
+            read: true
+            write: true
+      - name: CM
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) CM
+        fields:
+          - name: CM
+            description: Control M divider
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: CO
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) CO
+        fields:
+          - name: CO
+            description: Control O divider
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: DSI_HOST_DPHY_INTFC_CO_CO
+      - name: LOCK
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) LOCK
+        fields:
+          - name: LOCK
+            description: Lock Detect output
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: LOCK_BYP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 52
+        description: (read-write) LOCK_BYP
+        fields:
+          - name: LOCK_BYP
+            description: DPHY LOCK_BYP input
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: TX_RCAL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 56
+        description: (read-write) TX_RCAL
+        fields:
+          - name: TX_RCAL
+            description: On-chip termination control bits for manual calibration of
+              HS-TX
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: DSI_HOST_DPHY_INTFC_TX_RCAL_TX_RCAL
+      - name: AUTO_PD_EN
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 60
+        description: (read-write) AUTO_PD_EN
+        fields:
+          - name: AUTO_PD_EN
+            description: DPHY AUTO_PD_EN input
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: RXLPRP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 64
+        description: (read-write) RXLPRP
+        fields:
+          - name: RXLPRP
+            description: DPHY RXLPRP input
+            index: 0
+            width: 2
+            read: true
+            write: true
+      - name: RXCDRP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 68
+        description: (read-write) RXCDRP
+        fields:
+          - name: RXCDRP
+            description: DPHY RXCDRP input
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: DSI_HOST_DPHY_INTFC_RXCDRP_RXCDRP
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  DSI_HOST_DPHY_INTFC_CO_CO:
+    enum:
+      _0:
+        description: Divide by 1
+        value: 0
+      _1:
+        description: Divide by 2
+        value: 1
+      _2:
+        description: Divide by 4
+        value: 2
+      _3:
+        description: Divide by 8
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  DSI_HOST_DPHY_INTFC_TX_RCAL_TX_RCAL:
+    enum:
+      _0:
+        description: 20% higher than mid-range. Highest impedance setting
+        value: 0
+      _1:
+        description: Mid-range impedance setting (default)
+        value: 1
+      _2:
+        description: 15% lower than mid-range
+        value: 2
+      _3:
+        description: 25% lower than mid-range. Lowest impedance setting
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  DSI_HOST_DPHY_INTFC_RXCDRP_RXCDRP:
+    enum:
+      _0:
+        description: 344mV
+        value: 0
+      _1:
+        description: 325mV (Default)
+        value: 1
+      _2:
+        description: 307mV
+        value: 2
+      _3:
+        description: Invalid
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

@@ -1,0 +1,1941 @@
+---
+structs:
+  usdhc1:
+    description: uSDHC
+    instances:
+      - name: USDHC1
+        address: '0x40418000'
+      - name: USDHC2
+        address: '0x4041C000'
+    fields:
+      - name: DS_ADDR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) DMA System Address
+        fields:
+          - name: DS_ADDR
+            description: System address
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: BLK_ATT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Block Attributes
+        fields:
+          - name: BLKCNT
+            description: Blocks count for current transfer
+            index: 16
+            width: 16
+            read: true
+            write: true
+            type: USDHC1_BLK_ATT_BLKCNT
+          - name: BLKSIZE
+            description: Transfer block size
+            index: 0
+            width: 13
+            read: true
+            write: true
+            type: USDHC1_BLK_ATT_BLKSIZE
+      - name: CMD_ARG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) Command Argument
+        fields:
+          - name: CMDARG
+            description: Command argument
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: CMD_XFR_TYP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) Command Transfer Type
+        fields:
+          - name: CMDINX
+            description: Command index
+            index: 24
+            width: 6
+            read: true
+            write: true
+          - name: CMDTYP
+            description: Command type
+            index: 22
+            width: 2
+            read: true
+            write: true
+            type: USDHC1_CMD_XFR_TYP_CMDTYP
+          - name: DPSEL
+            description: Data present select
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: CICEN
+            description: Command index check enable
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: CCCEN
+            description: Command CRC check enable
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RSPTYP
+            description: Response type select
+            index: 16
+            width: 2
+            read: true
+            write: true
+            type: USDHC1_CMD_XFR_TYP_RSPTYP
+      - name: CMD_RSP0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) Command Response0
+        fields:
+          - name: CMDRSP0
+            description: Command response 0
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: CMD_RSP1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) Command Response1
+        fields:
+          - name: CMDRSP1
+            description: Command response 1
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: CMD_RSP2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) Command Response2
+        fields:
+          - name: CMDRSP2
+            description: Command response 2
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: CMD_RSP3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) Command Response3
+        fields:
+          - name: CMDRSP3
+            description: Command response 3
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: DATA_BUFF_ACC_PORT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) Data Buffer Access Port
+        fields:
+          - name: DATCONT
+            description: Data content
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: PRES_STATE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) Present State
+        fields:
+          - name: DLSL
+            description: DATA[7:0] line signal level
+            index: 24
+            width: 8
+            read: true
+            write: false
+            type: USDHC1_PRES_STATE_DLSL
+          - name: CLSL
+            description: CMD line signal level
+            index: 23
+            width: 1
+            read: true
+            write: false
+          - name: WPSPL
+            description: Write protect switch pin level
+            index: 19
+            width: 1
+            read: true
+            write: false
+          - name: CDPL
+            description: Card detect pin level
+            index: 18
+            width: 1
+            read: true
+            write: false
+          - name: CINST
+            description: Card inserted
+            index: 16
+            width: 1
+            read: true
+            write: false
+          - name: TSCD
+            description: Tap select change done
+            index: 15
+            width: 1
+            read: true
+            write: false
+          - name: RTR
+            description: Re-Tuning Request (only for SD3.0 SDR104 mode,and EMMC HS200
+              mode)
+            index: 12
+            width: 1
+            read: true
+            write: false
+          - name: BREN
+            description: Buffer read enable
+            index: 11
+            width: 1
+            read: true
+            write: false
+          - name: BWEN
+            description: Buffer write enable
+            index: 10
+            width: 1
+            read: true
+            write: false
+          - name: RTA
+            description: Read transfer active
+            index: 9
+            width: 1
+            read: true
+            write: false
+          - name: WTA
+            description: Write transfer active
+            index: 8
+            width: 1
+            read: true
+            write: false
+          - name: SDOFF
+            description: SD clock gated off internally
+            index: 7
+            width: 1
+            read: true
+            write: false
+          - name: PEROFF
+            description: IPG_PERCLK gated off internally
+            index: 6
+            width: 1
+            read: true
+            write: false
+          - name: HCKOFF
+            description: HCLK gated off internally
+            index: 5
+            width: 1
+            read: true
+            write: false
+          - name: IPGOFF
+            description: Peripheral clock gated off internally
+            index: 4
+            width: 1
+            read: true
+            write: false
+          - name: SDSTB
+            description: SD clock stable
+            index: 3
+            width: 1
+            read: true
+            write: false
+          - name: DLA
+            description: Data line active
+            index: 2
+            width: 1
+            read: true
+            write: false
+          - name: CDIHB
+            description: Command Inhibit Data (DATA)
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: CIHB
+            description: Command inhibit (CMD)
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: PROT_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) Protocol Control
+        fields:
+          - name: NON_EXACT_BLK_RD
+            description: Non-exact block read
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: WECRM
+            description: Wakeup event enable on SD card removal
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: WECINS
+            description: Wakeup event enable on SD card insertion
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: WECINT
+            description: Wakeup event enable on card interrupt
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: RD_DONE_NO_8CLK
+            description: Read performed number 8 clock
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: IABG
+            description: Interrupt at block gap
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RWCTL
+            description: Read wait control
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: CREQ
+            description: Continue request
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: SABGREQ
+            description: Stop at block gap request
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: DMASEL
+            description: DMA select
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: USDHC1_PROT_CTRL_DMASEL
+          - name: CDSS
+            description: Card detect signal selection
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: CDTL
+            description: Card detect test level
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: EMODE
+            description: Endian mode
+            index: 4
+            width: 2
+            read: true
+            write: true
+            type: USDHC1_PROT_CTRL_EMODE
+          - name: D3CD
+            description: DATA3 as card detection pin
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: DTW
+            description: Data transfer width
+            index: 1
+            width: 2
+            read: true
+            write: true
+            type: USDHC1_PROT_CTRL_DTW
+      - name: SYS_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) System Control
+        fields:
+          - name: RSTT
+            description: Reset tuning
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: INITA
+            description: Initialization active
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: RSTD
+            description: Software reset for data line
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: RSTC
+            description: Software reset for CMD line
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: RSTA
+            description: Software reset for all
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: IPP_RST_N
+            description: Hardware reset
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: DTOCV
+            description: Data timeout counter value
+            index: 16
+            width: 4
+            read: true
+            write: true
+            type: USDHC1_SYS_CTRL_DTOCV
+          - name: SDCLKFS
+            description: SDCLK frequency select
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: DVS
+            description: Divisor
+            index: 4
+            width: 4
+            read: true
+            write: true
+            type: USDHC1_SYS_CTRL_DVS
+      - name: INT_STATUS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) Interrupt Status
+        fields:
+          - name: DMAE
+            description: DMA error
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: TNE
+            description: 'Tuning error: (only for SD3.0 SDR104 mode and EMMC HS200
+              mode)'
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: AC12E
+            description: Auto CMD12 error
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: DEBE
+            description: Data end bit error
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: DCE
+            description: Data CRC error
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: DTOE
+            description: Data timeout error
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: CIE
+            description: Command index error
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: CEBE
+            description: Command end bit error
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: CCE
+            description: Command CRC error
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: CTOE
+            description: Command timeout error
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: TP
+            description: Tuning pass:(only for SD3.0 SDR104 mode and EMMC HS200 mode)
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: RTE
+            description: 'Re-tuning event: (only for SD3.0 SDR104 mode and EMMC HS200
+              mode)'
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: CINT
+            description: Card interrupt
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: CRM
+            description: Card removal
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: CINS
+            description: Card insertion
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: BRR
+            description: Buffer read ready
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: BWR
+            description: Buffer write ready
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: DINT
+            description: DMA interrupt
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: BGE
+            description: Block gap event
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: TC
+            description: Transfer complete
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CC
+            description: Command complete
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: INT_STATUS_EN
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 52
+        description: (read-write) Interrupt Status Enable
+        fields:
+          - name: DMAESEN
+            description: DMA error status enable
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: TNESEN
+            description: Tuning error status enable
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: AC12ESEN
+            description: Auto CMD12 error status enable
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: DEBESEN
+            description: Data end bit error status enable
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: DCESEN
+            description: Data CRC error status enable
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: DTOESEN
+            description: Data timeout error status enable
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: CIESEN
+            description: Command index error status enable
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: CEBESEN
+            description: Command end bit error status enable
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: CCESEN
+            description: Command CRC error status enable
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: CTOESEN
+            description: Command timeout error status enable
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: TPSEN
+            description: Tuning pass status enable
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: RTESEN
+            description: Re-tuning event status enable
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: CINTSEN
+            description: Card interrupt status enable
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: CRMSEN
+            description: Card removal status enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: CINSSEN
+            description: Card insertion status enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: BRRSEN
+            description: Buffer read ready status enable
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: BWRSEN
+            description: Buffer write ready status enable
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: DINTSEN
+            description: DMA interrupt status enable
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: BGESEN
+            description: Block gap event status enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: TCSEN
+            description: Transfer complete status enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CCSEN
+            description: Command complete status enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: INT_SIGNAL_EN
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 56
+        description: (read-write) Interrupt Signal Enable
+        fields:
+          - name: DMAEIEN
+            description: DMA error interrupt enable
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: TNEIEN
+            description: Tuning error interrupt enable
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: AC12EIEN
+            description: Auto CMD12 error interrupt enable
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: DEBEIEN
+            description: Data end bit error interrupt enable
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: DCEIEN
+            description: Data CRC error interrupt enable
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: DTOEIEN
+            description: Data timeout error interrupt enable
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: CIEIEN
+            description: Command index error interrupt enable
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: CEBEIEN
+            description: Command end bit error interrupt enable
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: CCEIEN
+            description: Command CRC error interrupt enable
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: CTOEIEN
+            description: Command timeout error interrupt enable
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: TPIEN
+            description: Tuning Pass interrupt enable
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: RTEIEN
+            description: Re-tuning event interrupt enable
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: CINTIEN
+            description: Card interrupt enable
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: CRMIEN
+            description: Card removal interrupt enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: CINSIEN
+            description: Card insertion interrupt enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: BRRIEN
+            description: Buffer read ready interrupt enable
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: BWRIEN
+            description: Buffer write ready interrupt enable
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: DINTIEN
+            description: DMA interrupt enable
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: BGEIEN
+            description: Block gap event interrupt enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: TCIEN
+            description: Transfer complete interrupt enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CCIEN
+            description: Command complete interrupt enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: AUTOCMD12_ERR_STATUS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 60
+        description: (read-write) Auto CMD12 Error Status
+        fields:
+          - name: SMP_CLK_SEL
+            description: Sample clock select
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: EXECUTE_TUNING
+            description: Execute tuning
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: CNIBAC12E
+            description: Command not issued by Auto CMD12 error
+            index: 7
+            width: 1
+            read: true
+            write: false
+          - name: AC12IE
+            description: Auto CMD12 / 23 index error
+            index: 4
+            width: 1
+            read: true
+            write: false
+          - name: AC12CE
+            description: Auto CMD12 / 23 CRC error
+            index: 3
+            width: 1
+            read: true
+            write: false
+          - name: AC12EBE
+            description: Auto CMD12 / 23 end bit error
+            index: 2
+            width: 1
+            read: true
+            write: false
+          - name: AC12TOE
+            description: Auto CMD12 / 23 timeout error
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: AC12NE
+            description: Auto CMD12 not executed
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: HOST_CTRL_CAP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 64
+        description: (read-write) Host Controller Capabilities
+        fields:
+          - name: VS18
+            description: Voltage support 1.8 V
+            index: 26
+            width: 1
+            read: true
+            write: false
+          - name: VS30
+            description: Voltage support 3.0 V
+            index: 25
+            width: 1
+            read: true
+            write: false
+          - name: VS33
+            description: Voltage support 3.3 V
+            index: 24
+            width: 1
+            read: true
+            write: false
+          - name: SRS
+            description: Suspend / resume support
+            index: 23
+            width: 1
+            read: true
+            write: false
+          - name: DMAS
+            description: DMA support
+            index: 22
+            width: 1
+            read: true
+            write: false
+          - name: HSS
+            description: High speed support
+            index: 21
+            width: 1
+            read: true
+            write: false
+          - name: ADMAS
+            description: ADMA support
+            index: 20
+            width: 1
+            read: true
+            write: false
+          - name: MBL
+            description: Max block length
+            index: 16
+            width: 3
+            read: true
+            write: false
+            type: USDHC1_HOST_CTRL_CAP_MBL
+          - name: USE_TUNING_SDR50
+            description: Use Tuning for SDR50
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: DDR50_SUPPORT
+            description: DDR50 support
+            index: 2
+            width: 1
+            read: true
+            write: false
+          - name: SDR104_SUPPORT
+            description: SDR104 support
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: SDR50_SUPPORT
+            description: SDR50 support
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: WTMK_LVL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 68
+        description: (read-write) Watermark Level
+        fields:
+          - name: WR_WML
+            description: Write watermark level
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: RD_WML
+            description: Read watermark level
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: MIX_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 72
+        description: (read-write) Mixer Control
+        fields:
+          - name: HS400_MODE
+            description: Enable HS400 mode
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: FBCLK_SEL
+            description: Feedback clock source selection (Only used for SD3.0, SDR104
+              mode and EMMC HS200 mode)
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: AUTO_TUNE_EN
+            description: Auto tuning enable (Only used for SD3.0, SDR104 mode and
+              and EMMC HS200 mode)
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: SMP_CLK_SEL
+            description: Clock selection
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: EXE_TUNE
+            description: 'Execute tuning: (Only used for SD3.0, SDR104 mode and EMMC
+              HS200 mode)'
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: AC23EN
+            description: Auto CMD23 enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: NIBBLE_POS
+            description: Nibble position indication
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: MSBSEL
+            description: Multi / Single block select
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: DTDSEL
+            description: Data transfer direction select
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: DDR_EN
+            description: Dual data rate mode selection
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: AC12EN
+            description: Auto CMD12 enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: BCEN
+            description: Block count enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: DMAEN
+            description: DMA enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: FORCE_EVENT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 80
+        description: (read-write) Force Event
+        fields:
+          - name: FEVTCINT
+            description: Force event card interrupt
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: FEVTDMAE
+            description: Force event DMA error
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: FEVTTNE
+            description: Force tuning error
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: FEVTAC12E
+            description: Force event Auto Command 12 error
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: FEVTDEBE
+            description: Force event data end bit error
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: FEVTDCE
+            description: Force event data CRC error
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: FEVTDTOE
+            description: Force event data time out error
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: FEVTCIE
+            description: Force event command index error
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: FEVTCEBE
+            description: Force event command end bit error
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: FEVTCCE
+            description: Force event command CRC error
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: FEVTCTOE
+            description: Force event command time out error
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: FEVTCNIBAC12E
+            description: Force event command not executed by Auto Command 12 error
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: FEVTAC12IE
+            description: Force event Auto Command 12 index error
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: FEVTAC12EBE
+            description: Force event Auto Command 12 end bit error
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: FEVTAC12CE
+            description: Force event auto command 12 CRC error
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: FEVTAC12TOE
+            description: Force event auto command 12 time out error
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: FEVTAC12NE
+            description: Force event auto command 12 not executed
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: ADMA_ERR_STATUS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 84
+        description: (read-write) ADMA Error Status
+        fields:
+          - name: ADMADCE
+            description: ADMA descriptor error
+            index: 3
+            width: 1
+            read: true
+            write: false
+          - name: ADMALME
+            description: ADMA length mismatch error
+            index: 2
+            width: 1
+            read: true
+            write: false
+          - name: ADMAES
+            description: ADMA error state (when ADMA error is occurred)
+            index: 0
+            width: 2
+            read: true
+            write: false
+      - name: ADMA_SYS_ADDR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 88
+        description: (read-write) ADMA System Address
+        fields:
+          - name: ADS_ADDR
+            description: ADMA system address
+            index: 2
+            width: 30
+            read: true
+            write: true
+      - name: DLL_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 96
+        description: (read-write) DLL (Delay Line) Control
+        fields:
+          - name: DLL_CTRL_REF_UPDATE_INT
+            description: DLL control loop update interval
+            index: 28
+            width: 4
+            read: true
+            write: true
+          - name: DLL_CTRL_SLV_UPDATE_INT
+            description: Slave delay line update interval
+            index: 20
+            width: 8
+            read: true
+            write: true
+          - name: DLL_CTRL_SLV_DLY_TARGET1
+            description: DLL slave delay target1
+            index: 16
+            width: 3
+            read: true
+            write: true
+          - name: DLL_CTRL_SLV_OVERRIDE_VAL
+            description: DLL slave override val
+            index: 9
+            width: 7
+            read: true
+            write: true
+          - name: DLL_CTRL_SLV_OVERRIDE
+            description: DLL slave override
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: DLL_CTRL_GATE_UPDATE
+            description: DLL gate update
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: DLL_CTRL_SLV_DLY_TARGET0
+            description: DLL slave delay target0
+            index: 3
+            width: 4
+            read: true
+            write: true
+          - name: DLL_CTRL_SLV_FORCE_UPD
+            description: DLL slave delay line
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: DLL_CTRL_RESET
+            description: DLL reset
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: DLL_CTRL_ENABLE
+            description: DLL and delay chain
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DLL_STATUS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 100
+        description: (read-write) DLL Status
+        fields:
+          - name: DLL_STS_REF_SEL
+            description: Reference delay line select taps
+            index: 9
+            width: 7
+            read: true
+            write: false
+          - name: DLL_STS_SLV_SEL
+            description: Slave delay line select status
+            index: 2
+            width: 7
+            read: true
+            write: false
+          - name: DLL_STS_REF_LOCK
+            description: Reference DLL lock status
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: DLL_STS_SLV_LOCK
+            description: Slave delay-line lock status
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: CLK_TUNE_CTRL_STATUS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 104
+        description: (read-write) CLK Tuning Control and Status
+        fields:
+          - name: PRE_ERR
+            description: PRE error
+            index: 31
+            width: 1
+            read: true
+            write: false
+          - name: TAP_SEL_PRE
+            description: TAP_SEL_PRE
+            index: 24
+            width: 7
+            read: true
+            write: false
+          - name: TAP_SEL_OUT
+            description: Delay cells added on the feedback clock between CLK_PRE and
+              CLK_OUT
+            index: 20
+            width: 4
+            read: true
+            write: false
+          - name: TAP_SEL_POST
+            description: Delay cells added on the feedback clock between CLK_OUT and
+              CLK_POST
+            index: 16
+            width: 4
+            read: true
+            write: false
+          - name: NXT_ERR
+            description: NXT error
+            index: 15
+            width: 1
+            read: true
+            write: false
+          - name: DLY_CELL_SET_PRE
+            description: delay cells on the feedback clock between the feedback clock
+              and CLK_PRE
+            index: 8
+            width: 7
+            read: true
+            write: true
+          - name: DLY_CELL_SET_OUT
+            description: Delay cells on the feedback clock between CLK_PRE and CLK_OUT
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: DLY_CELL_SET_POST
+            description: Delay cells on the feedback clock between CLK_OUT and CLK_POST
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: STROBE_DLL_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 112
+        description: (read-write) Strobe DLL control
+        fields:
+          - name: STROBE_DLL_CTRL_REF_UPDATE_INT
+            description: Strobe DLL control reference update interval
+            index: 28
+            width: 4
+            read: true
+            write: true
+          - name: STROBE_DLL_CTRL_SLV_UPDATE_INT
+            description: Strobe DLL control slave update interval
+            index: 20
+            width: 8
+            read: true
+            write: true
+          - name: STROBE_DLL_CTRL_SLV_OVERRIDE_VAL
+            description: Strobe DLL control slave Override value
+            index: 9
+            width: 7
+            read: true
+            write: true
+          - name: STROBE_DLL_CTRL_SLV_OVERRIDE
+            description: Strobe DLL control slave override
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: STROBE_DLL_CTRL_GATE_UPDATE
+            description: Strobe DLL control gate update
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: STROBE_DLL_CTRL_SLV_DLY_TARGET
+            description: Strobe DLL Control Slave Delay Target
+            index: 3
+            width: 4
+            read: true
+            write: true
+          - name: STROBE_DLL_CTRL_SLV_FORCE_UPD
+            description: Strobe DLL control slave force updated
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: STROBE_DLL_CTRL_RESET
+            description: Strobe DLL control reset
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: STROBE_DLL_CTRL_ENABLE
+            description: Strobe DLL control enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: STROBE_DLL_STATUS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 116
+        description: (read-write) Strobe DLL status
+        fields:
+          - name: STROBE_DLL_STS_REF_SEL
+            description: Strobe DLL status reference select
+            index: 9
+            width: 7
+            read: true
+            write: false
+          - name: STROBE_DLL_STS_SLV_SEL
+            description: Strobe DLL status slave select
+            index: 2
+            width: 7
+            read: true
+            write: false
+          - name: STROBE_DLL_STS_REF_LOCK
+            description: Strobe DLL status reference lock
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: STROBE_DLL_STS_SLV_LOCK
+            description: Strobe DLL status slave lock
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: VEND_SPEC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 192
+        description: (read-write) Vendor Specific Register
+        fields:
+          - name: CMD_BYTE_EN
+            description: Byte access
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CRC_CHK_DIS
+            description: CRC Check Disable
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: FRC_SDCLK_ON
+            description: Force CLK
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: AC12_WR_CHKBUSY_EN
+            description: Check busy enable
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: CONFLICT_CHK_EN
+            description: Conflict check enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: VSELECT
+            description: Voltage selection
+            index: 1
+            width: 1
+            read: true
+            write: true
+      - name: MMC_BOOT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 196
+        description: (read-write) MMC Boot
+        fields:
+          - name: BOOT_BLK_CNT
+            description: Stop At Block Gap value of automatic mode
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: DISABLE_TIME_OUT
+            description: Time out
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: AUTO_SABG_EN
+            description: Auto stop at block gap
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: BOOT_EN
+            description: Boot enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: BOOT_MODE
+            description: Boot mode
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: BOOT_ACK
+            description: BOOT ACK
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: DTOCV_ACK
+            description: Boot ACK time out
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: USDHC1_MMC_BOOT_DTOCV_ACK
+      - name: VEND_SPEC2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 200
+        description: (read-write) Vendor Specific 2 Register
+        fields:
+          - name: ACMD23_ARGU2_EN
+            description: Argument2 register enable for ACMD23
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: HS400_RD_CLK_STOP_EN
+            description: HS400 read clock stop enable
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: HS400_WR_CLK_STOP_EN
+            description: HS400 write clock stop enable
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: TUNING_CMD_EN
+            description: Tuning command enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: TUNING_1bit_EN
+            description: Tuning 1bit enable
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: TUNING_8bit_EN
+            description: Tuning 8bit enable
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: CARD_INT_D3_TEST
+            description: Card interrupt detection test
+            index: 3
+            width: 1
+            read: true
+            write: true
+      - name: TUNING_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 204
+        description: (read-write) Tuning Control
+        fields:
+          - name: STD_TUNING_EN
+            description: Standard tuning circuit and procedure enable
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: TUNING_WINDOW
+            description: Data window
+            index: 20
+            width: 3
+            read: true
+            write: true
+          - name: TUNING_STEP
+            description: TUNING_STEP
+            index: 16
+            width: 3
+            read: true
+            write: true
+          - name: TUNING_COUNTER
+            description: Tuning counter
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: DIS_CMD_CHK_FOR_STD_TUNING
+            description: Disable command check for standard tuning
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: TUNING_START_TAP
+            description: Tuning start
+            index: 0
+            width: 7
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  USDHC1_BLK_ATT_BLKCNT:
+    enum:
+      _0:
+        description: Stop count
+        value: 0
+      _1:
+        description: 1 block
+        value: 1
+      _2:
+        description: 2 blocks
+        value: 2
+      _65535:
+        description: 65535 blocks
+        value: 65535
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  USDHC1_BLK_ATT_BLKSIZE:
+    enum:
+      _0:
+        description: No data transfer
+        value: 0
+      _1:
+        description: 1 byte
+        value: 1
+      _2:
+        description: 2 bytes
+        value: 2
+      _3:
+        description: 3 bytes
+        value: 3
+      _4:
+        description: 4 bytes
+        value: 4
+      _511:
+        description: 511 bytes
+        value: 511
+      _512:
+        description: 512 bytes
+        value: 512
+      _2048:
+        description: 2048 bytes
+        value: 2048
+      _4096:
+        description: 4096 bytes
+        value: 4096
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  USDHC1_CMD_XFR_TYP_CMDTYP:
+    enum:
+      _0:
+        description: Normal other commands
+        value: 0
+      _1:
+        description: Suspend CMD52 for writing bus suspend in CCCR
+        value: 1
+      _2:
+        description: Resume CMD52 for writing function select in CCCR
+        value: 2
+      _3:
+        description: Abort CMD12, CMD52 for writing I/O Abort in CCCR
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  USDHC1_CMD_XFR_TYP_RSPTYP:
+    enum:
+      _0:
+        description: No response
+        value: 0
+      _1:
+        description: Response length 136
+        value: 1
+      _2:
+        description: Response length 48
+        value: 2
+      _3:
+        description: Response length 48, check busy after response
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  USDHC1_PRES_STATE_DLSL:
+    enum:
+      _0:
+        description: Data 0 line signal level
+        value: 0
+      _1:
+        description: Data 1 line signal level
+        value: 1
+      _2:
+        description: Data 2 line signal level
+        value: 2
+      _3:
+        description: Data 3 line signal level
+        value: 3
+      _4:
+        description: Data 4 line signal level
+        value: 4
+      _5:
+        description: Data 5 line signal level
+        value: 5
+      _6:
+        description: Data 6 line signal level
+        value: 6
+      _7:
+        description: Data 7 line signal level
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  USDHC1_PROT_CTRL_DMASEL:
+    enum:
+      _0:
+        description: No DMA or simple DMA is selected.
+        value: 0
+      _1:
+        description: ADMA1 is selected.
+        value: 1
+      _2:
+        description: ADMA2 is selected.
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  USDHC1_PROT_CTRL_EMODE:
+    enum:
+      _0:
+        description: Big endian mode
+        value: 0
+      _1:
+        description: Half word big endian mode
+        value: 1
+      _2:
+        description: Little endian mode
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  USDHC1_PROT_CTRL_DTW:
+    enum:
+      _0:
+        description: 1-bit mode
+        value: 0
+      _1:
+        description: 4-bit mode
+        value: 1
+      _2:
+        description: 8-bit mode
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  USDHC1_SYS_CTRL_DTOCV:
+    enum:
+      _0:
+        description: SDCLK x 2 14
+        value: 0
+      _1:
+        description: SDCLK x 2 15
+        value: 1
+      _2:
+        description: SDCLK x 2 16
+        value: 2
+      _3:
+        description: SDCLK x 2 17
+        value: 3
+      _4:
+        description: SDCLK x 2 18
+        value: 4
+      _5:
+        description: SDCLK x 2 19
+        value: 5
+      _6:
+        description: SDCLK x 2 20
+        value: 6
+      _7:
+        description: SDCLK x 2 21
+        value: 7
+      _8:
+        description: SDCLK x 2 22
+        value: 8
+      _9:
+        description: SDCLK x 2 23
+        value: 9
+      _10:
+        description: SDCLK x 2 24
+        value: 10
+      _11:
+        description: SDCLK x 2 25
+        value: 11
+      _12:
+        description: SDCLK x 2 26
+        value: 12
+      _13:
+        description: SDCLK x 2 27
+        value: 13
+      _14:
+        description: SDCLK x 2 28
+        value: 14
+      _15:
+        description: SDCLK x 2 29
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  USDHC1_SYS_CTRL_DVS:
+    enum:
+      _0:
+        description: Divide-by-1
+        value: 0
+      _1:
+        description: Divide-by-2
+        value: 1
+      _14:
+        description: Divide-by-15
+        value: 14
+      _15:
+        description: Divide-by-16
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  USDHC1_HOST_CTRL_CAP_MBL:
+    enum:
+      _0:
+        description: 512 bytes
+        value: 0
+      _1:
+        description: 1024 bytes
+        value: 1
+      _2:
+        description: 2048 bytes
+        value: 2
+      _3:
+        description: 4096 bytes
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  USDHC1_MMC_BOOT_DTOCV_ACK:
+    enum:
+      _0:
+        description: SDCLK x 2^14
+        value: 0
+      _1:
+        description: SDCLK x 2^15
+        value: 1
+      _2:
+        description: SDCLK x 2^16
+        value: 2
+      _3:
+        description: SDCLK x 2^17
+        value: 3
+      _4:
+        description: SDCLK x 2^18
+        value: 4
+      _5:
+        description: SDCLK x 2^19
+        value: 5
+      _6:
+        description: SDCLK x 2^20
+        value: 6
+      _7:
+        description: SDCLK x 2^21
+        value: 7
+      _14:
+        description: SDCLK x 2^28
+        value: 14
+      _15:
+        description: SDCLK x 2^29
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

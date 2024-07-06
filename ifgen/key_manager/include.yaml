@@ -1,0 +1,285 @@
+---
+structs:
+  key_manager:
+    description: KEYMGR
+    instances:
+      - name: KEY_MANAGER
+        address: '0x40C80000'
+    fields:
+      - name: MASTER_KEY_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) CSR Master Key Control Register
+        fields:
+          - name: LOCK
+            description: lock this register, prevent from writing. Default value comes
+              from FUSE_MASTER_KEY_SEL_LOCK.
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: SELECT
+            description: Key select for SNVS OTPMK. Default value comes from FUSE_MASTER_KEY_SEL.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: OTFAD1_KEY_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) CSR OTFAD-1 Key Control
+        fields:
+          - name: LOCK
+            description: lock this register, prevent from writing. Default value comes
+              from FUSE_OTFAD1_KEY_SEL_LOCK.
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: SELECT
+            description: key select for OTFAD-1. Default value comes from FUSE_OTFAD1_KEY_SEL.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: OTFAD2_KEY_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) CSR OTFAD-2 Key Control
+        fields:
+          - name: LOCK
+            description: lock this register, prevent from writing. Default value comes
+              from FUSE_OTFAD2_KEY_SEL_LOCK.
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: SELECT
+            description: key select for OTFAD-2. Default value comes from FUSE_OTFAD1_KEY_SEL.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: IEE_KEY_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) CSR IEE Key Control
+        fields:
+          - name: RELOAD
+            description: Restart load key signal for IEE
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PUF_KEY_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) CSR PUF Key Control
+        fields:
+          - name: LOCK
+            description: Lock signal for key select
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SLOT0_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1024
+        description: (read-write) Slot 0 Control
+        fields:
+          - name: LOCK_CONTROL
+            description: Lock control of this slot
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: TZ_USER
+            description: Allow user write access to this register and the slot it
+              controls
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: TZ_NS
+            description: Allow non-secure write access to this register and the slot
+              it controls
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: LOCK_LIST
+            description: Lock whitelist
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: WHITE_LIST
+            description: Whitelist
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: SLOT1_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1028
+        description: (read-write) Slot1 Control
+        fields:
+          - name: LOCK_CONTROL
+            description: Lock control of this slot
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: TZ_USER
+            description: Allow user write access to this register and the slot it
+              controls
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: TZ_NS
+            description: Allow non-secure write access to this register and the slot
+              it controls
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: LOCK_LIST
+            description: Lock whitelist
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: WHITE_LIST
+            description: Whitelist
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: SLOT2_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1032
+        description: (read-write) Slot2 Control
+        fields:
+          - name: LOCK_CONTROL
+            description: Lock control of this slot
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: TZ_USER
+            description: Allow user write access to this register and the slot it
+              controls
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: TZ_NS
+            description: Allow non-secure write access to this register and the slot
+              it controls
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: LOCK_LIST
+            description: Lock whitelist
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: WHITE_LIST
+            description: Whitelist
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: SLOT3_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1036
+        description: (read-write) Slot3 Control
+        fields:
+          - name: LOCK_CONTROL
+            description: Lock control of this slot
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: TZ_USER
+            description: Allow user write access to this register and the slot it
+              controls
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: TZ_NS
+            description: Allow non-secure write access to this register and the slot
+              it controls
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: LOCK_LIST
+            description: Lock whitelist
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: WHITE_LIST
+            description: Whitelist
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: SLOT4_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1040
+        description: (read-write) Slot 4 Control
+        fields:
+          - name: LOCK_CONTROL
+            description: Lock control of this slot
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: TZ_USER
+            description: Allow user write access to this register and the slot it
+              controls
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: TZ_NS
+            description: Allow non-secure write access to this register and the slot
+              it controls
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: LOCK_LIST
+            description: Lock whitelist
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: WHITE_LIST
+            description: Whitelist
+            index: 0
+            width: 4
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums: {}

@@ -1,0 +1,3183 @@
+---
+structs:
+  semc:
+    description: SEMC
+    instances:
+      - name: SEMC
+        address: '0x400D4000'
+    fields:
+      - name: MCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Module Control Register
+        fields:
+          - name: BTO
+            description: Bus timeout cycles
+            index: 24
+            width: 5
+            read: true
+            write: true
+            type: SEMC_MCR_BTO
+          - name: CTO
+            description: Command Execution timeout cycles
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: WPOL1
+            description: R/B# polarity for NAND device
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: WPOL0
+            description: WAIT/RDY polarity for SRAM/NOR
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: DQSMD
+            description: DQS (read strobe) mode
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: MDIS
+            description: Module Disable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SWRST
+            description: Software Reset
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: IOCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) IO MUX Control Register
+        fields:
+          - name: CLKX1_AO
+            description: SEMC_CLKX1 Always On
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: CLKX0_AO
+            description: SEMC_CLKX0 Always On
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: MUX_CLKX1
+            description: SEMC_CLKX1 function selection
+            index: 26
+            width: 2
+            read: true
+            write: true
+            type: SEMC_IOCR_MUX_CLKX1
+          - name: MUX_CLKX0
+            description: SEMC_CLKX0 function selection
+            index: 24
+            width: 2
+            read: true
+            write: true
+            type: SEMC_IOCR_MUX_CLKX0
+          - name: MUX_RDY
+            description: SEMC_RDY function selection
+            index: 20
+            width: 4
+            read: true
+            write: true
+            type: SEMC_IOCR_MUX_RDY
+          - name: MUX_CSX3
+            description: SEMC_CSX3 output selection
+            index: 16
+            width: 4
+            read: true
+            write: true
+            type: SEMC_IOCR_MUX_CSX3
+          - name: MUX_CSX2
+            description: SEMC_CSX2 output selection
+            index: 12
+            width: 4
+            read: true
+            write: true
+            type: SEMC_IOCR_MUX_CSX2
+          - name: MUX_CSX1
+            description: SEMC_CSX1 output selection
+            index: 8
+            width: 4
+            read: true
+            write: true
+            type: SEMC_IOCR_MUX_CSX1
+          - name: MUX_CSX0
+            description: SEMC_CSX0 output selection
+            index: 4
+            width: 4
+            read: true
+            write: true
+            type: SEMC_IOCR_MUX_CSX0
+          - name: MUX_A8
+            description: SEMC_ADDR08 output selection
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: SEMC_IOCR_MUX_A8
+      - name: BMCR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) Bus (AXI) Master Control Register 0
+        fields:
+          - name: WRWS
+            description: Weight of slave hit with Read/Write Switch
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: WSH
+            description: Weight of Slave Hit without read/write switch
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: WAGE
+            description: Weight of AGE
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: WQOS
+            description: Weight of QOS
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: BMCR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) Bus (AXI) Master Control Register 1
+        fields:
+          - name: WBR
+            description: Weight of Bank Rotation
+            index: 24
+            width: 8
+            read: true
+            write: true
+          - name: WRWS
+            description: Weight of slave hit without Read/Write Switch
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: WPH
+            description: Weight of Page Hit
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: WAGE
+            description: Weight of AGE
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: WQOS
+            description: Weight of QOS
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: BR
+        type: uint32_t
+        expected_size: 36
+        expected_offset: 16
+        array_length: 9
+        description: (read-write) Base Register n
+        fields:
+          - name: BA
+            description: Base Address
+            index: 12
+            width: 20
+            read: true
+            write: true
+          - name: MS
+            description: Memory size
+            index: 1
+            width: 5
+            read: true
+            write: true
+            type: SEMC_BR_MS
+          - name: VLD
+            description: Valid
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DLLCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 52
+        description: (read-write) DLL Control Register
+        fields:
+          - name: OVRDVAL
+            description: Override Value
+            index: 9
+            width: 6
+            read: true
+            write: true
+          - name: OVRDEN
+            description: Override Enable
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: SLVDLYTARGET
+            description: Delay Target for Slave
+            index: 3
+            width: 4
+            read: true
+            write: true
+          - name: DLLRESET
+            description: DLL Reset
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: DLLEN
+            description: DLL calibration enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: INTEN
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 56
+        description: (read-write) Interrupt Enable Register
+        fields:
+          - name: NDNOPENDEN
+            description: NAND no pending AXI access interrupt enable
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: NDPAGEENDEN
+            description: NAND page end interrupt enable
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: AXIBUSERREN
+            description: AXI bus error interrupt enable
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: AXICMDERREN
+            description: AXI command error interrupt enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: IPCMDERREN
+            description: IP command error interrupt enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: IPCMDDONEEN
+            description: IP command done interrupt enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: INTR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 60
+        description: (read-write) Interrupt Register
+        fields:
+          - name: NDNOPEND
+            description: NAND no pending AXI write transaction interrupt
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: NDPAGEEND
+            description: NAND page end interrupt
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: AXIBUSERR
+            description: AXI bus error interrupt
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: AXICMDERR
+            description: AXI command error interrupt
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: IPCMDERR
+            description: IP command error done interrupt
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: IPCMDDONE
+            description: IP command normal done interrupt
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SDRAMCR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 64
+        description: (read-write) SDRAM Control Register 0
+        fields:
+          - name: BANK2
+            description: 2 Bank selection bit
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: CL
+            description: CAS Latency
+            index: 10
+            width: 2
+            read: true
+            write: true
+            type: SEMC_SDRAMCR0_CL
+          - name: COL
+            description: Column address bit number
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: SEMC_SDRAMCR0_COL
+          - name: COL8
+            description: Column 8 selection
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: BL
+            description: Burst Length
+            index: 4
+            width: 3
+            read: true
+            write: true
+            type: SEMC_SDRAMCR0_BL
+          - name: PS
+            description: Port Size
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: SEMC_SDRAMCR0_PS
+      - name: SDRAMCR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 68
+        description: (read-write) SDRAM Control Register 1
+        fields:
+          - name: ACT2PRE
+            description: ACTIVE to PRECHARGE minimum time
+            index: 20
+            width: 4
+            read: true
+            write: true
+          - name: CKEOFF
+            description: CKE off minimum time
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: WRC
+            description: WRITE recovery time
+            index: 13
+            width: 3
+            read: true
+            write: true
+          - name: RFRC
+            description: REFRESH recovery time
+            index: 8
+            width: 5
+            read: true
+            write: true
+          - name: ACT2RW
+            description: ACTIVE to READ/WRITE delay
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: PRE2ACT
+            description: PRECHARGE to ACTIVE/REFRESH command wait time
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: SDRAMCR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 72
+        description: (read-write) SDRAM Control Register 2
+        fields:
+          - name: ITO
+            description: SDRAM idle timeout
+            index: 24
+            width: 8
+            read: true
+            write: true
+            type: SEMC_SDRAMCR2_ITO
+          - name: ACT2ACT
+            description: ACTIVE to ACTIVE delay
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: REF2REF
+            description: REFRESH to REFRESH delay
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SRRC
+            description: SELF REFRESH recovery time
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SDRAMCR3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 76
+        description: (read-write) SDRAM Control Register 3
+        fields:
+          - name: UT
+            description: Urgent refresh threshold
+            index: 24
+            width: 8
+            read: true
+            write: true
+            type: SEMC_SDRAMCR3_UT
+          - name: RT
+            description: Refresh timer period
+            index: 16
+            width: 8
+            read: true
+            write: true
+            type: SEMC_SDRAMCR3_RT
+          - name: PRESCALE
+            description: Prescaler period
+            index: 8
+            width: 8
+            read: true
+            write: true
+            type: SEMC_SDRAMCR3_PRESCALE
+          - name: REBL
+            description: Refresh burst length
+            index: 1
+            width: 3
+            read: true
+            write: true
+            type: SEMC_SDRAMCR3_REBL
+          - name: REN
+            description: Refresh enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: NANDCR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 80
+        description: (read-write) NAND Control Register 0
+        fields:
+          - name: COL
+            description: Column address bit number
+            index: 8
+            width: 3
+            read: true
+            write: true
+            type: SEMC_NANDCR0_COL
+          - name: EDO
+            description: EDO mode enabled
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: BL
+            description: Burst Length
+            index: 4
+            width: 3
+            read: true
+            write: true
+            type: SEMC_NANDCR0_BL
+          - name: SYNCEN
+            description: Synchronous Mode Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: PS
+            description: Port Size
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: NANDCR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 84
+        description: (read-write) NAND Control Register 1
+        fields:
+          - name: CEITV
+            description: CE# interval time
+            index: 28
+            width: 4
+            read: true
+            write: true
+          - name: TA
+            description: Turnaround time
+            index: 24
+            width: 4
+            read: true
+            write: true
+          - name: REH
+            description: RE# high time
+            index: 20
+            width: 4
+            read: true
+            write: true
+          - name: REL
+            description: RE# low time
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: WEH
+            description: WE# high time
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: WEL
+            description: WE# low time
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: CEH
+            description: CE# hold time
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: CES
+            description: CE# setup time
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: NANDCR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 88
+        description: (read-write) NAND Control Register 2
+        fields:
+          - name: TWB
+            description: WE# high to busy time
+            index: 24
+            width: 6
+            read: true
+            write: true
+          - name: TRR
+            description: Ready to RE# low time
+            index: 18
+            width: 6
+            read: true
+            write: true
+          - name: TADL
+            description: Address cycle to data loading time
+            index: 12
+            width: 6
+            read: true
+            write: true
+          - name: TRHW
+            description: RE# high to WE# low time
+            index: 6
+            width: 6
+            read: true
+            write: true
+          - name: TWHR
+            description: WE# high to RE# low time
+            index: 0
+            width: 6
+            read: true
+            write: true
+      - name: NANDCR3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 92
+        description: (read-write) NAND Control Register 3
+        fields:
+          - name: WDH
+            description: Write Data Hold time
+            index: 28
+            width: 4
+            read: true
+            write: true
+          - name: WDS
+            description: Write Data Setup time
+            index: 24
+            width: 4
+            read: true
+            write: true
+          - name: RDH
+            description: Read Data Hold time
+            index: 20
+            width: 4
+            read: true
+            write: true
+          - name: RDS
+            description: Read Data Setup time
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: CLE
+            description: NAND CLE Option
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: NDOPT3
+            description: NAND option bit 3
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: NDOPT2
+            description: NAND option bit 2
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: NDOPT1
+            description: NAND option bit 1
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: NORCR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 96
+        description: (read-write) NOR Control Register 0
+        fields:
+          - name: COL
+            description: Column Address bit width
+            index: 12
+            width: 4
+            read: true
+            write: true
+            type: SEMC_NORCR0_COL
+          - name: ADVH
+            description: ADV# level control during address hold state
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: ADVP
+            description: ADV# Polarity
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: AM
+            description: Address Mode
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: SEMC_NORCR0_AM
+          - name: BL
+            description: Burst Length
+            index: 4
+            width: 3
+            read: true
+            write: true
+            type: SEMC_NORCR0_BL
+          - name: SYNCEN
+            description: Synchronous Mode Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: PS
+            description: Port Size
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: NORCR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 100
+        description: (read-write) NOR Control Register 1
+        fields:
+          - name: REH
+            description: RE high time
+            index: 28
+            width: 4
+            read: true
+            write: true
+          - name: REL
+            description: RE low time
+            index: 24
+            width: 4
+            read: true
+            write: true
+          - name: WEH
+            description: WE high time
+            index: 20
+            width: 4
+            read: true
+            write: true
+          - name: WEL
+            description: WE low time
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: AH
+            description: Address hold time
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: AS
+            description: Address setup time
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: CEH
+            description: CE hold time
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: CES
+            description: CE setup time
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: NORCR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 104
+        description: (read-write) NOR Control Register 2
+        fields:
+          - name: RDH
+            description: Read hold time
+            index: 28
+            width: 4
+            read: true
+            write: true
+          - name: CEITV
+            description: CE# interval time
+            index: 24
+            width: 4
+            read: true
+            write: true
+          - name: RD
+            description: Read time
+            index: 20
+            width: 4
+            read: true
+            write: true
+          - name: LC
+            description: Latency count
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: AWDH
+            description: Address to write data hold time
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: TA
+            description: Turnaround time
+            index: 8
+            width: 4
+            read: true
+            write: true
+      - name: NORCR3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 108
+        description: (read-write) NOR Control Register 3
+        fields:
+          - name: AHSR
+            description: Address hold time for SYNC read
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: ASSR
+            description: Address setup time for SYNC read
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: SRAMCR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 112
+        description: (read-write) SRAM Control Register 0
+        fields:
+          - name: COL
+            description: Column Address bit width
+            index: 12
+            width: 4
+            read: true
+            write: true
+            type: SEMC_SRAMCR0_COL
+          - name: ADVH
+            description: ADV# level control during address hold state
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: ADVP
+            description: ADV# polarity
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: AM
+            description: Address Mode
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: SEMC_SRAMCR0_AM
+          - name: BL
+            description: Burst Length
+            index: 4
+            width: 3
+            read: true
+            write: true
+            type: SEMC_SRAMCR0_BL
+          - name: WAITSP
+            description: Wait Sample
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: WAITEN
+            description: Wait Enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: SYNCEN
+            description: Synchronous Mode Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: PS
+            description: Port Size
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SRAMCR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 116
+        description: (read-write) SRAM Control Register 1
+        fields:
+          - name: REH
+            description: RE high time
+            index: 28
+            width: 4
+            read: true
+            write: true
+          - name: REL
+            description: RE low time
+            index: 24
+            width: 4
+            read: true
+            write: true
+          - name: WEH
+            description: WE high time
+            index: 20
+            width: 4
+            read: true
+            write: true
+          - name: WEL
+            description: WE low time
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: AH
+            description: Address hold time
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: AS
+            description: Address setup time
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: CEH
+            description: CE hold time
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: CES
+            description: CE setup time
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: SRAMCR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 120
+        description: (read-write) SRAM Control Register 2
+        fields:
+          - name: RDH
+            description: Read hold time
+            index: 28
+            width: 4
+            read: true
+            write: true
+          - name: CEITV
+            description: CE# interval time
+            index: 24
+            width: 4
+            read: true
+            write: true
+          - name: RD
+            description: Read time
+            index: 20
+            width: 4
+            read: true
+            write: true
+          - name: LC
+            description: Latency count
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: AWDH
+            description: Address to write data hold time
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: TA
+            description: Turnaround time
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: WDH
+            description: Write Data hold time
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: WDS
+            description: Write Data setup time
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: SRAMCR3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 124
+        description: (read-write) SRAM Control Register 3
+      - name: DBICR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 128
+        description: (read-write) DBI-B Control Register 0
+        fields:
+          - name: COL
+            description: Column Address bit width
+            index: 12
+            width: 4
+            read: true
+            write: true
+            type: SEMC_DBICR0_COL
+          - name: BL
+            description: Burst Length
+            index: 4
+            width: 3
+            read: true
+            write: true
+            type: SEMC_DBICR0_BL
+          - name: PS
+            description: Port Size
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DBICR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 132
+        description: (read-write) DBI-B Control Register 1
+        fields:
+          - name: REH
+            description: RDX High Time
+            index: 24
+            width: 7
+            read: true
+            write: true
+          - name: REL
+            description: RDX Low Time
+            index: 16
+            width: 7
+            read: true
+            write: true
+          - name: WEH
+            description: WRX High Time
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: WEL
+            description: WRX Low Time
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: CEH
+            description: CSX Hold Time
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: CES
+            description: CSX Setup Time
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: DBICR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 136
+        description: (read-write) DBI-B Control Register 2
+        fields:
+          - name: CEITV
+            description: CSX interval time
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: IPCR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 144
+        description: (read-write) IP Command Control Register 0
+        fields:
+          - name: SA
+            description: Slave address
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: IPCR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 148
+        description: (read-write) IP Command Control Register 1
+        fields:
+          - name: NAND_EXT_ADDR
+            description: NAND Extended Address
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: DATSZ
+            description: Data Size in Byte
+            index: 0
+            width: 3
+            read: true
+            write: true
+            type: SEMC_IPCR1_DATSZ
+      - name: IPCR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 152
+        description: (read-write) IP Command Control Register 2
+        fields:
+          - name: BM3
+            description: Byte Mask for Byte 3 (IPTXDAT bit 31:24)
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: BM2
+            description: Byte Mask for Byte 2 (IPTXDAT bit 23:16)
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: BM1
+            description: Byte Mask for Byte 1 (IPTXDAT bit 15:8)
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: BM0
+            description: Byte Mask for Byte 0 (IPTXDAT bit 7:0)
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: IPCMD
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 156
+        description: (read-write) IP Command Register
+        fields:
+          - name: KEY
+            description: This field should be written with 0xA55A when trigging an
+              IP command for all device types
+            index: 16
+            width: 16
+            read: false
+            write: true
+          - name: CMD
+            description: 'SDRAM Commands: 0x8: Read 0x9: Write 0xA: Mode Register
+              Set 0xB: Active 0xC: Auto Refresh 0xD: Self Refresh 0xE: Precharge 0xF:
+              Precharge All Others: Reserved Self Refresh is sent to all SDRAM devices
+              because they share the same SEMC_CLK pin'
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: IPTXDAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 160
+        description: (read-write) TX DATA Register
+        fields:
+          - name: DAT
+            description: Data value to use for an IP write command
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: IPRXDAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 176
+        description: (read-write) RX DATA Register
+        fields:
+          - name: DAT
+            description: Data returned by device for an IP read command.
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: STS0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 192
+        description: (read-write) Status Register 0
+        fields:
+          - name: NARDY
+            description: Indicating NAND device Ready/WAIT# pin level.
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: IDLE
+            description: Indicating whether the SEMC is in idle state.
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: STS1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 196
+        description: (read-write) Status Register 1
+      - name: STS2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 200
+        description: (read-write) Status Register 2
+        fields:
+          - name: NDWRPEND
+            description: This field indicating whether there is pending AXI command
+              (write) to NAND device.
+            index: 3
+            width: 1
+            read: true
+            write: false
+      - name: STS3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 204
+        description: (read-write) Status Register 3
+      - name: STS4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 208
+        description: (read-write) Status Register 4
+      - name: STS5
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 212
+        description: (read-write) Status Register 5
+      - name: STS6
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 216
+        description: (read-write) Status Register 6
+      - name: STS7
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 220
+        description: (read-write) Status Register 7
+      - name: STS8
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 224
+        description: (read-write) Status Register 8
+      - name: STS9
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 228
+        description: (read-write) Status Register 9
+      - name: STS10
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 232
+        description: (read-write) Status Register 10
+      - name: STS11
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 236
+        description: (read-write) Status Register 11
+      - name: STS12
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 240
+        description: (read-write) Status Register 12
+        fields:
+          - name: NDADDR
+            description: This field indicating the last write address (AXI command)
+              to NAND device (without base address in SEMC_BR4).
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: STS13
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 244
+        description: (read-write) Status Register 13
+        fields:
+          - name: REFSEL
+            description: Sample clock reference delay line delay cell number selection.
+            index: 8
+            width: 6
+            read: true
+            write: false
+          - name: SLVSEL
+            description: Sample clock slave delay line delay cell number selection.
+            index: 2
+            width: 6
+            read: true
+            write: false
+          - name: REFLOCK
+            description: Sample clock reference delay line locked.
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: SLVLOCK
+            description: Sample clock slave delay line locked.
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: STS14
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 248
+        description: (read-write) Status Register 14
+      - name: STS15
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 252
+        description: (read-write) Status Register 15
+      - name: BR9
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 256
+        description: (read-write) Base Register 9
+        fields:
+          - name: BA
+            description: Base Address
+            index: 12
+            width: 20
+            read: true
+            write: true
+          - name: MS
+            description: Memory size
+            index: 1
+            width: 5
+            read: true
+            write: true
+            type: SEMC_BR9_MS
+          - name: VLD
+            description: Valid
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: BR10
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 260
+        description: (read-write) Base Register 10
+        fields:
+          - name: BA
+            description: Base Address
+            index: 12
+            width: 20
+            read: true
+            write: true
+          - name: MS
+            description: Memory size
+            index: 1
+            width: 5
+            read: true
+            write: true
+            type: SEMC_BR10_MS
+          - name: VLD
+            description: Valid
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: BR11
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 264
+        description: (read-write) Base Register 11
+        fields:
+          - name: BA
+            description: Base Address
+            index: 12
+            width: 20
+            read: true
+            write: true
+          - name: MS
+            description: Memory size
+            index: 1
+            width: 5
+            read: true
+            write: true
+            type: SEMC_BR11_MS
+          - name: VLD
+            description: Valid
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SRAMCR4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 288
+        description: (read-write) SRAM Control Register 4
+        fields:
+          - name: COL
+            description: Column Address bit width
+            index: 12
+            width: 4
+            read: true
+            write: true
+            type: SEMC_SRAMCR4_COL
+          - name: ADVH
+            description: ADV# level control during address hold state
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: ADVP
+            description: ADV# polarity
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: AM
+            description: Address Mode
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: SEMC_SRAMCR4_AM
+          - name: BL
+            description: Burst Length
+            index: 4
+            width: 3
+            read: true
+            write: true
+            type: SEMC_SRAMCR4_BL
+          - name: WAITSP
+            description: Wait Sample
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: WAITEN
+            description: Wait Enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: SYNCEN
+            description: Synchronous Mode Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: PS
+            description: Port Size
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SRAMCR5
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 292
+        description: (read-write) SRAM Control Register 5
+        fields:
+          - name: REH
+            description: RE high time
+            index: 28
+            width: 4
+            read: true
+            write: true
+          - name: REL
+            description: RE low time
+            index: 24
+            width: 4
+            read: true
+            write: true
+          - name: WEH
+            description: WE high time
+            index: 20
+            width: 4
+            read: true
+            write: true
+          - name: WEL
+            description: WE low time
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: AH
+            description: Address hold time
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: AS
+            description: Address setup time
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: CEH
+            description: CE hold time
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: CES
+            description: CE setup time
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: SRAMCR6
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 296
+        description: (read-write) SRAM Control Register 6
+        fields:
+          - name: RDH
+            description: Read hold time
+            index: 28
+            width: 4
+            read: true
+            write: true
+          - name: CEITV
+            description: CE# interval time
+            index: 24
+            width: 4
+            read: true
+            write: true
+          - name: RD
+            description: Read time
+            index: 20
+            width: 4
+            read: true
+            write: true
+          - name: LC
+            description: Latency count
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: AWDH
+            description: Address to write data hold time
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: TA
+            description: Turnaround time
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: WDH
+            description: Write Data hold time
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: WDS
+            description: Write Data setup time
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: DCCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 336
+        description: (read-write) Delay Chain Control Register
+        fields:
+          - name: SRAMXVAL
+            description: Clock delay line delay cell number selection value for SRAM
+              device 1-3.
+            index: 25
+            width: 5
+            read: true
+            write: true
+          - name: SRAMXEN
+            description: Delay chain insertion enable for SRAM device 1-3.
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: SRAM0VAL
+            description: Clock delay line delay cell number selection value for SRAM
+              device 0.
+            index: 17
+            width: 5
+            read: true
+            write: true
+          - name: SRAM0EN
+            description: Delay chain insertion enable for SRAM device 0.
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: NORVAL
+            description: Clock delay line delay cell number selection value for NOR
+              device.
+            index: 9
+            width: 5
+            read: true
+            write: true
+          - name: NOREN
+            description: Delay chain insertion enable for NOR device.
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: SDRAMVAL
+            description: Clock delay line delay cell number selection value for SDRAM
+              device.
+            index: 1
+            width: 5
+            read: true
+            write: true
+          - name: SDRAMEN
+            description: Delay chain insertion enable for SRAM device.
+            index: 0
+            width: 1
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  SEMC_MCR_BTO:
+    enum:
+      _0:
+        description: 255*1
+        value: 0
+      _1:
+        description: 255*2
+        value: 1
+      _31:
+        description: 255*231
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_IOCR_MUX_CLKX1:
+    enum:
+      _0:
+        description: Keep low
+        value: 0
+      _1:
+        description: NOR clock
+        value: 1
+      _2:
+        description: SRAM clock
+        value: 2
+      _3:
+        description: NOR and SRAM clock, suitable for Multi-Chip Product package
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_IOCR_MUX_CLKX0:
+    enum:
+      _0:
+        description: Keep low
+        value: 0
+      _1:
+        description: NOR clock
+        value: 1
+      _2:
+        description: SRAM clock
+        value: 2
+      _3:
+        description: NOR and SRAM clock, suitable for Multi-Chip Product package
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_IOCR_MUX_RDY:
+    enum:
+      _0:
+        description: NAND R/B# input
+        value: 0
+      _1:
+        description: SDRAM CS1
+        value: 1
+      _2:
+        description: SDRAM CS2
+        value: 2
+      _3:
+        description: SDRAM CS3
+        value: 3
+      _4:
+        description: NOR/SRAM Address bit 27 (A27) in Non-ADMUX mode
+        value: 4
+      _5:
+        description: NOR CE#
+        value: 5
+      _6:
+        description: SRAM CE# 0
+        value: 6
+      _7:
+        description: DBI CSX
+        value: 7
+      _8:
+        description: SRAM CE# 1
+        value: 8
+      _9:
+        description: SRAM CE# 2
+        value: 9
+      _10:
+        description: SRAM CE# 3
+        value: 10
+      _11:
+        description: NOR/SRAM Address bit 27
+        value: 11
+      _12:
+        description: NOR/SRAM Address bit 27
+        value: 12
+      _13:
+        description: NOR/SRAM Address bit 27
+        value: 13
+      _14:
+        description: NOR/SRAM Address bit 27
+        value: 14
+      _15:
+        description: NOR/SRAM Address bit 27
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_IOCR_MUX_CSX3:
+    enum:
+      _0:
+        description: NOR/SRAM Address bit 27 (A27) in Non-ADMUX mode
+        value: 0
+      _1:
+        description: SDRAM CS1
+        value: 1
+      _2:
+        description: SDRAM CS2
+        value: 2
+      _3:
+        description: SDRAM CS3
+        value: 3
+      _4:
+        description: NAND CE#
+        value: 4
+      _5:
+        description: NOR CE#
+        value: 5
+      _6:
+        description: SRAM CE# 0
+        value: 6
+      _7:
+        description: DBI CSX
+        value: 7
+      _8:
+        description: SRAM CE# 1
+        value: 8
+      _9:
+        description: SRAM CE# 2
+        value: 9
+      _10:
+        description: SRAM CE# 3
+        value: 10
+      _11:
+        description: NOR/SRAM Address bit 27 (A27)
+        value: 11
+      _12:
+        description: NOR/SRAM Address bit 27 (A27)
+        value: 12
+      _13:
+        description: NOR/SRAM Address bit 27 (A27)
+        value: 13
+      _14:
+        description: NOR/SRAM Address bit 27 (A27)
+        value: 14
+      _15:
+        description: NOR/SRAM Address bit 27 (A27)
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_IOCR_MUX_CSX2:
+    enum:
+      _0:
+        description: NOR/SRAM Address bit 26 (A26) in Non-ADMUX mode
+        value: 0
+      _1:
+        description: SDRAM CS1
+        value: 1
+      _2:
+        description: SDRAM CS2
+        value: 2
+      _3:
+        description: SDRAM CS3
+        value: 3
+      _4:
+        description: NAND CE#
+        value: 4
+      _5:
+        description: NOR CE#
+        value: 5
+      _6:
+        description: SRAM CE# 0
+        value: 6
+      _7:
+        description: DBI CSX
+        value: 7
+      _8:
+        description: SRAM CE# 1
+        value: 8
+      _9:
+        description: SRAM CE# 2
+        value: 9
+      _10:
+        description: SRAM CE# 3
+        value: 10
+      _11:
+        description: NOR/SRAM Address bit 26 (A26)
+        value: 11
+      _12:
+        description: NOR/SRAM Address bit 26 (A26)
+        value: 12
+      _13:
+        description: NOR/SRAM Address bit 26 (A26)
+        value: 13
+      _14:
+        description: NOR/SRAM Address bit 26 (A26)
+        value: 14
+      _15:
+        description: NOR/SRAM Address bit 26 (A26)
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_IOCR_MUX_CSX1:
+    enum:
+      _0:
+        description: NOR/SRAM Address bit 25 (A25) in Non-ADMUX mode
+        value: 0
+      _1:
+        description: SDRAM CS1
+        value: 1
+      _2:
+        description: SDRAM CS2
+        value: 2
+      _3:
+        description: SDRAM CS3
+        value: 3
+      _4:
+        description: NAND CE#
+        value: 4
+      _5:
+        description: NOR CE#
+        value: 5
+      _6:
+        description: SRAM CE# 0
+        value: 6
+      _7:
+        description: DBI CSX
+        value: 7
+      _8:
+        description: SRAM CE# 1
+        value: 8
+      _9:
+        description: SRAM CE# 2
+        value: 9
+      _10:
+        description: SRAM CE# 3
+        value: 10
+      _11:
+        description: NOR/SRAM Address bit 25 (A25)
+        value: 11
+      _12:
+        description: NOR/SRAM Address bit 25 (A25)
+        value: 12
+      _13:
+        description: NOR/SRAM Address bit 25 (A25)
+        value: 13
+      _14:
+        description: NOR/SRAM Address bit 25 (A25)
+        value: 14
+      _15:
+        description: NOR/SRAM Address bit 25 (A25)
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_IOCR_MUX_CSX0:
+    enum:
+      _0:
+        description: NOR/SRAM Address bit 24 (A24) in Non-ADMUX mode
+        value: 0
+      _1:
+        description: SDRAM CS1
+        value: 1
+      _2:
+        description: SDRAM CS2
+        value: 2
+      _3:
+        description: SDRAM CS3
+        value: 3
+      _4:
+        description: NAND CE#
+        value: 4
+      _5:
+        description: NOR CE#
+        value: 5
+      _6:
+        description: SRAM CE# 0
+        value: 6
+      _7:
+        description: DBI CSX
+        value: 7
+      _8:
+        description: SRAM CE# 1
+        value: 8
+      _9:
+        description: SRAM CE# 2
+        value: 9
+      _10:
+        description: SRAM CE# 3
+        value: 10
+      _11:
+        description: NOR/SRAM Address bit 24 (A24)
+        value: 11
+      _12:
+        description: NOR/SRAM Address bit 24 (A24)
+        value: 12
+      _13:
+        description: NOR/SRAM Address bit 24 (A24)
+        value: 13
+      _14:
+        description: NOR/SRAM Address bit 24 (A24)
+        value: 14
+      _15:
+        description: NOR/SRAM Address bit 24 (A24)
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_IOCR_MUX_A8:
+    enum:
+      _0:
+        description: SDRAM Address bit 8 (A8) or NOR/SRAM Address bit 24 (A24) in
+          ADMUX 16bit mode
+        value: 0
+      _1:
+        description: SDRAM Address bit 8 (A8) or NOR/SRAM Address bit 24 (A24) in
+          ADMUX 16bit mode
+        value: 1
+      _2:
+        description: SDRAM Address bit 8 (A8) or NOR/SRAM Address bit 24 (A24) in
+          ADMUX 16bit mode
+        value: 2
+      _3:
+        description: SDRAM Address bit 8 (A8) or NOR/SRAM Address bit 24 (A24) in
+          ADMUX 16bit mode
+        value: 3
+      _4:
+        description: NAND CE#
+        value: 4
+      _5:
+        description: NOR CE#
+        value: 5
+      _6:
+        description: SRAM CE# 0
+        value: 6
+      _7:
+        description: DBI CSX
+        value: 7
+      _8:
+        description: SRAM CE# 1
+        value: 8
+      _9:
+        description: SRAM CE# 2
+        value: 9
+      _10:
+        description: SRAM CE# 3
+        value: 10
+      _11:
+        description: SDRAM Address bit 8 (A8) or NOR/SRAM Address bit 24 (A24) in
+          ADMUX 16bit mode
+        value: 11
+      _12:
+        description: SDRAM Address bit 8 (A8) or NOR/SRAM Address bit 24 (A24) in
+          ADMUX 16bit mode
+        value: 12
+      _13:
+        description: SDRAM Address bit 8 (A8) or NOR/SRAM Address bit 24 (A24) in
+          ADMUX 16bit mode
+        value: 13
+      _14:
+        description: SDRAM Address bit 8 (A8) or NOR/SRAM Address bit 24 (A24) in
+          ADMUX 16bit mode
+        value: 14
+      _15:
+        description: SDRAM Address bit 8 (A8) or NOR/SRAM Address bit 24 (A24) in
+          ADMUX 16bit mode
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_BR_MS:
+    enum:
+      _0:
+        description: 4KB
+        value: 0
+      _1:
+        description: 8KB
+        value: 1
+      _2:
+        description: 16KB
+        value: 2
+      _3:
+        description: 32KB
+        value: 3
+      _4:
+        description: 64KB
+        value: 4
+      _5:
+        description: 128KB
+        value: 5
+      _6:
+        description: 256KB
+        value: 6
+      _7:
+        description: 512KB
+        value: 7
+      _8:
+        description: 1MB
+        value: 8
+      _9:
+        description: 2MB
+        value: 9
+      _10:
+        description: 4MB
+        value: 10
+      _11:
+        description: 8MB
+        value: 11
+      _12:
+        description: 16MB
+        value: 12
+      _13:
+        description: 32MB
+        value: 13
+      _14:
+        description: 64MB
+        value: 14
+      _15:
+        description: 128MB
+        value: 15
+      _16:
+        description: 256MB
+        value: 16
+      _17:
+        description: 512MB
+        value: 17
+      _18:
+        description: 1GB
+        value: 18
+      _19:
+        description: 2GB
+        value: 19
+      _20:
+        description: 4GB
+        value: 20
+      _21:
+        description: 4GB
+        value: 21
+      _22:
+        description: 4GB
+        value: 22
+      _23:
+        description: 4GB
+        value: 23
+      _24:
+        description: 4GB
+        value: 24
+      _25:
+        description: 4GB
+        value: 25
+      _26:
+        description: 4GB
+        value: 26
+      _27:
+        description: 4GB
+        value: 27
+      _28:
+        description: 4GB
+        value: 28
+      _29:
+        description: 4GB
+        value: 29
+      _30:
+        description: 4GB
+        value: 30
+      _31:
+        description: 4GB
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_SDRAMCR0_CL:
+    enum:
+      _0:
+        description: '1'
+        value: 0
+      _1:
+        description: '1'
+        value: 1
+      _2:
+        description: '2'
+        value: 2
+      _3:
+        description: '3'
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_SDRAMCR0_COL:
+    enum:
+      _0:
+        description: '12'
+        value: 0
+      _1:
+        description: '11'
+        value: 1
+      _2:
+        description: '10'
+        value: 2
+      _3:
+        description: '9'
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_SDRAMCR0_BL:
+    enum:
+      _0:
+        description: '1'
+        value: 0
+      _1:
+        description: '2'
+        value: 1
+      _2:
+        description: '4'
+        value: 2
+      _3:
+        description: '8'
+        value: 3
+      _4:
+        description: '8'
+        value: 4
+      _5:
+        description: '8'
+        value: 5
+      _6:
+        description: '8'
+        value: 6
+      _7:
+        description: '8'
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_SDRAMCR0_PS:
+    enum:
+      _0:
+        description: 8bit
+        value: 0
+      _1:
+        description: 16bit
+        value: 1
+      _2:
+        description: 32bit
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_SDRAMCR2_ITO:
+    enum:
+      _0:
+        description: IDLE timeout period is 256*Prescale period.
+        value: 0
+      _1:
+        description: IDLE timeout period is ITO*Prescale period.
+        value: 1
+      _2:
+        description: IDLE timeout period is ITO*Prescale period.
+        value: 2
+      _3:
+        description: IDLE timeout period is ITO*Prescale period.
+        value: 3
+      _4:
+        description: IDLE timeout period is ITO*Prescale period.
+        value: 4
+      _5:
+        description: IDLE timeout period is ITO*Prescale period.
+        value: 5
+      _6:
+        description: IDLE timeout period is ITO*Prescale period.
+        value: 6
+      _7:
+        description: IDLE timeout period is ITO*Prescale period.
+        value: 7
+      _8:
+        description: IDLE timeout period is ITO*Prescale period.
+        value: 8
+      _9:
+        description: IDLE timeout period is ITO*Prescale period.
+        value: 9
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_SDRAMCR3_UT:
+    enum:
+      _0:
+        description: 256*(Prescaler period)
+        value: 0
+      _1:
+        description: UT*(Prescaler period)
+        value: 1
+      _2:
+        description: UT*(Prescaler period)
+        value: 2
+      _3:
+        description: UT*(Prescaler period)
+        value: 3
+      _4:
+        description: UT*(Prescaler period)
+        value: 4
+      _5:
+        description: UT*(Prescaler period)
+        value: 5
+      _6:
+        description: UT*(Prescaler period)
+        value: 6
+      _7:
+        description: UT*(Prescaler period)
+        value: 7
+      _8:
+        description: UT*(Prescaler period)
+        value: 8
+      _9:
+        description: UT*(Prescaler period)
+        value: 9
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_SDRAMCR3_RT:
+    enum:
+      _0:
+        description: (256+1)*(Prescaler period)
+        value: 0
+      _1:
+        description: (RT+1)*(Prescaler period)
+        value: 1
+      _2:
+        description: (RT+1)*(Prescaler period)
+        value: 2
+      _3:
+        description: (RT+1)*(Prescaler period)
+        value: 3
+      _4:
+        description: (RT+1)*(Prescaler period)
+        value: 4
+      _5:
+        description: (RT+1)*(Prescaler period)
+        value: 5
+      _6:
+        description: (RT+1)*(Prescaler period)
+        value: 6
+      _7:
+        description: (RT+1)*(Prescaler period)
+        value: 7
+      _8:
+        description: (RT+1)*(Prescaler period)
+        value: 8
+      _9:
+        description: (RT+1)*(Prescaler period)
+        value: 9
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_SDRAMCR3_PRESCALE:
+    enum:
+      _0:
+        description: (256*16+1) clock cycles
+        value: 0
+      _1:
+        description: (PRESCALE*16+1) clock cycles
+        value: 1
+      _2:
+        description: (PRESCALE*16+1) clock cycles
+        value: 2
+      _3:
+        description: (PRESCALE*16+1) clock cycles
+        value: 3
+      _4:
+        description: (PRESCALE*16+1) clock cycles
+        value: 4
+      _5:
+        description: (PRESCALE*16+1) clock cycles
+        value: 5
+      _6:
+        description: (PRESCALE*16+1) clock cycles
+        value: 6
+      _7:
+        description: (PRESCALE*16+1) clock cycles
+        value: 7
+      _8:
+        description: (PRESCALE*16+1) clock cycles
+        value: 8
+      _9:
+        description: (PRESCALE*16+1) clock cycles
+        value: 9
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_SDRAMCR3_REBL:
+    enum:
+      _0:
+        description: '1'
+        value: 0
+      _1:
+        description: '2'
+        value: 1
+      _2:
+        description: '3'
+        value: 2
+      _3:
+        description: '4'
+        value: 3
+      _4:
+        description: '5'
+        value: 4
+      _5:
+        description: '6'
+        value: 5
+      _6:
+        description: '7'
+        value: 6
+      _7:
+        description: '8'
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_NANDCR0_COL:
+    enum:
+      _0:
+        description: '16'
+        value: 0
+      _1:
+        description: '15'
+        value: 1
+      _2:
+        description: '14'
+        value: 2
+      _3:
+        description: '13'
+        value: 3
+      _4:
+        description: '12'
+        value: 4
+      _5:
+        description: '11'
+        value: 5
+      _6:
+        description: '10'
+        value: 6
+      _7:
+        description: '9'
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_NANDCR0_BL:
+    enum:
+      _0:
+        description: '1'
+        value: 0
+      _1:
+        description: '2'
+        value: 1
+      _2:
+        description: '4'
+        value: 2
+      _3:
+        description: '8'
+        value: 3
+      _4:
+        description: '16'
+        value: 4
+      _5:
+        description: '32'
+        value: 5
+      _6:
+        description: '64'
+        value: 6
+      _7:
+        description: '64'
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_NORCR0_COL:
+    enum:
+      _0:
+        description: 12 Bits
+        value: 0
+      _1:
+        description: 11 Bits
+        value: 1
+      _2:
+        description: 10 Bits
+        value: 2
+      _3:
+        description: 9 Bits
+        value: 3
+      _4:
+        description: 8 Bits
+        value: 4
+      _5:
+        description: 7 Bits
+        value: 5
+      _6:
+        description: 6 Bits
+        value: 6
+      _7:
+        description: 5 Bits
+        value: 7
+      _8:
+        description: 4 Bits
+        value: 8
+      _9:
+        description: 3 Bits
+        value: 9
+      _10:
+        description: 2 Bits
+        value: 10
+      _11:
+        description: 12 Bits
+        value: 11
+      _12:
+        description: 12 Bits
+        value: 12
+      _13:
+        description: 12 Bits
+        value: 13
+      _14:
+        description: 12 Bits
+        value: 14
+      _15:
+        description: 12 Bits
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_NORCR0_AM:
+    enum:
+      _0:
+        description: Address/Data MUX mode (ADMUX)
+        value: 0
+      _1:
+        description: Advanced Address/Data MUX mode (AADM)
+        value: 1
+      _2:
+        description: Address/Data non-MUX mode (Non-ADMUX)
+        value: 2
+      _3:
+        description: Address/Data non-MUX mode (Non-ADMUX)
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_NORCR0_BL:
+    enum:
+      _0:
+        description: '1'
+        value: 0
+      _1:
+        description: '2'
+        value: 1
+      _2:
+        description: '4'
+        value: 2
+      _3:
+        description: '8'
+        value: 3
+      _4:
+        description: '16'
+        value: 4
+      _5:
+        description: '32'
+        value: 5
+      _6:
+        description: '64'
+        value: 6
+      _7:
+        description: '64'
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_SRAMCR0_COL:
+    enum:
+      _0:
+        description: 12 Bits
+        value: 0
+      _1:
+        description: 11 Bits
+        value: 1
+      _2:
+        description: 10 Bits
+        value: 2
+      _3:
+        description: 9 Bits
+        value: 3
+      _4:
+        description: 8 Bits
+        value: 4
+      _5:
+        description: 7 Bits
+        value: 5
+      _6:
+        description: 6 Bits
+        value: 6
+      _7:
+        description: 5 Bits
+        value: 7
+      _8:
+        description: 4 Bits
+        value: 8
+      _9:
+        description: 3 Bits
+        value: 9
+      _10:
+        description: 2 Bits
+        value: 10
+      _11:
+        description: 12 Bits
+        value: 11
+      _12:
+        description: 12 Bits
+        value: 12
+      _13:
+        description: 12 Bits
+        value: 13
+      _14:
+        description: 12 Bits
+        value: 14
+      _15:
+        description: 12 Bits
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_SRAMCR0_AM:
+    enum:
+      _0:
+        description: Address/Data MUX mode (ADMUX)
+        value: 0
+      _1:
+        description: Advanced Address/Data MUX mode (AADM)
+        value: 1
+      _2:
+        description: Address/Data non-MUX mode (Non-ADMUX)
+        value: 2
+      _3:
+        description: Address/Data non-MUX mode (Non-ADMUX)
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_SRAMCR0_BL:
+    enum:
+      _0:
+        description: '1'
+        value: 0
+      _1:
+        description: '2'
+        value: 1
+      _2:
+        description: '4'
+        value: 2
+      _3:
+        description: '8'
+        value: 3
+      _4:
+        description: '16'
+        value: 4
+      _5:
+        description: '32'
+        value: 5
+      _6:
+        description: '64'
+        value: 6
+      _7:
+        description: '64'
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_DBICR0_COL:
+    enum:
+      _0:
+        description: 12 Bits
+        value: 0
+      _1:
+        description: 11 Bits
+        value: 1
+      _2:
+        description: 10 Bits
+        value: 2
+      _3:
+        description: 9 Bits
+        value: 3
+      _4:
+        description: 8 Bits
+        value: 4
+      _5:
+        description: 7 Bits
+        value: 5
+      _6:
+        description: 6 Bits
+        value: 6
+      _7:
+        description: 5 Bits
+        value: 7
+      _8:
+        description: 4 Bits
+        value: 8
+      _9:
+        description: 3 Bits
+        value: 9
+      _10:
+        description: 2 Bits
+        value: 10
+      _11:
+        description: 12 Bits
+        value: 11
+      _12:
+        description: 12 Bits
+        value: 12
+      _13:
+        description: 12 Bits
+        value: 13
+      _14:
+        description: 12 Bits
+        value: 14
+      _15:
+        description: 12 Bits
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_DBICR0_BL:
+    enum:
+      _0:
+        description: '1'
+        value: 0
+      _1:
+        description: '2'
+        value: 1
+      _2:
+        description: '4'
+        value: 2
+      _3:
+        description: '8'
+        value: 3
+      _4:
+        description: '16'
+        value: 4
+      _5:
+        description: '32'
+        value: 5
+      _6:
+        description: '64'
+        value: 6
+      _7:
+        description: '64'
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_IPCR1_DATSZ:
+    enum:
+      _0:
+        description: '4'
+        value: 0
+      _1:
+        description: '1'
+        value: 1
+      _2:
+        description: '2'
+        value: 2
+      _3:
+        description: '3'
+        value: 3
+      _4:
+        description: '4'
+        value: 4
+      _5:
+        description: '4'
+        value: 5
+      _6:
+        description: '4'
+        value: 6
+      _7:
+        description: '4'
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_BR9_MS:
+    enum:
+      _0:
+        description: 4KB
+        value: 0
+      _1:
+        description: 8KB
+        value: 1
+      _2:
+        description: 16KB
+        value: 2
+      _3:
+        description: 32KB
+        value: 3
+      _4:
+        description: 64KB
+        value: 4
+      _5:
+        description: 128KB
+        value: 5
+      _6:
+        description: 256KB
+        value: 6
+      _7:
+        description: 512KB
+        value: 7
+      _8:
+        description: 1MB
+        value: 8
+      _9:
+        description: 2MB
+        value: 9
+      _10:
+        description: 4MB
+        value: 10
+      _11:
+        description: 8MB
+        value: 11
+      _12:
+        description: 16MB
+        value: 12
+      _13:
+        description: 32MB
+        value: 13
+      _14:
+        description: 64MB
+        value: 14
+      _15:
+        description: 128MB
+        value: 15
+      _16:
+        description: 256MB
+        value: 16
+      _17:
+        description: 512MB
+        value: 17
+      _18:
+        description: 1GB
+        value: 18
+      _19:
+        description: 2GB
+        value: 19
+      _20:
+        description: 4GB
+        value: 20
+      _21:
+        description: 4GB
+        value: 21
+      _22:
+        description: 4GB
+        value: 22
+      _23:
+        description: 4GB
+        value: 23
+      _24:
+        description: 4GB
+        value: 24
+      _25:
+        description: 4GB
+        value: 25
+      _26:
+        description: 4GB
+        value: 26
+      _27:
+        description: 4GB
+        value: 27
+      _28:
+        description: 4GB
+        value: 28
+      _29:
+        description: 4GB
+        value: 29
+      _30:
+        description: 4GB
+        value: 30
+      _31:
+        description: 4GB
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_BR10_MS:
+    enum:
+      _0:
+        description: 4KB
+        value: 0
+      _1:
+        description: 8KB
+        value: 1
+      _2:
+        description: 16KB
+        value: 2
+      _3:
+        description: 32KB
+        value: 3
+      _4:
+        description: 64KB
+        value: 4
+      _5:
+        description: 128KB
+        value: 5
+      _6:
+        description: 256KB
+        value: 6
+      _7:
+        description: 512KB
+        value: 7
+      _8:
+        description: 1MB
+        value: 8
+      _9:
+        description: 2MB
+        value: 9
+      _10:
+        description: 4MB
+        value: 10
+      _11:
+        description: 8MB
+        value: 11
+      _12:
+        description: 16MB
+        value: 12
+      _13:
+        description: 32MB
+        value: 13
+      _14:
+        description: 64MB
+        value: 14
+      _15:
+        description: 128MB
+        value: 15
+      _16:
+        description: 256MB
+        value: 16
+      _17:
+        description: 512MB
+        value: 17
+      _18:
+        description: 1GB
+        value: 18
+      _19:
+        description: 2GB
+        value: 19
+      _20:
+        description: 4GB
+        value: 20
+      _21:
+        description: 4GB
+        value: 21
+      _22:
+        description: 4GB
+        value: 22
+      _23:
+        description: 4GB
+        value: 23
+      _24:
+        description: 4GB
+        value: 24
+      _25:
+        description: 4GB
+        value: 25
+      _26:
+        description: 4GB
+        value: 26
+      _27:
+        description: 4GB
+        value: 27
+      _28:
+        description: 4GB
+        value: 28
+      _29:
+        description: 4GB
+        value: 29
+      _30:
+        description: 4GB
+        value: 30
+      _31:
+        description: 4GB
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_BR11_MS:
+    enum:
+      _0:
+        description: 4KB
+        value: 0
+      _1:
+        description: 8KB
+        value: 1
+      _2:
+        description: 16KB
+        value: 2
+      _3:
+        description: 32KB
+        value: 3
+      _4:
+        description: 64KB
+        value: 4
+      _5:
+        description: 128KB
+        value: 5
+      _6:
+        description: 256KB
+        value: 6
+      _7:
+        description: 512KB
+        value: 7
+      _8:
+        description: 1MB
+        value: 8
+      _9:
+        description: 2MB
+        value: 9
+      _10:
+        description: 4MB
+        value: 10
+      _11:
+        description: 8MB
+        value: 11
+      _12:
+        description: 16MB
+        value: 12
+      _13:
+        description: 32MB
+        value: 13
+      _14:
+        description: 64MB
+        value: 14
+      _15:
+        description: 128MB
+        value: 15
+      _16:
+        description: 256MB
+        value: 16
+      _17:
+        description: 512MB
+        value: 17
+      _18:
+        description: 1GB
+        value: 18
+      _19:
+        description: 2GB
+        value: 19
+      _20:
+        description: 4GB
+        value: 20
+      _21:
+        description: 4GB
+        value: 21
+      _22:
+        description: 4GB
+        value: 22
+      _23:
+        description: 4GB
+        value: 23
+      _24:
+        description: 4GB
+        value: 24
+      _25:
+        description: 4GB
+        value: 25
+      _26:
+        description: 4GB
+        value: 26
+      _27:
+        description: 4GB
+        value: 27
+      _28:
+        description: 4GB
+        value: 28
+      _29:
+        description: 4GB
+        value: 29
+      _30:
+        description: 4GB
+        value: 30
+      _31:
+        description: 4GB
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_SRAMCR4_COL:
+    enum:
+      _0:
+        description: 12 Bits
+        value: 0
+      _1:
+        description: 11 Bits
+        value: 1
+      _2:
+        description: 10 Bits
+        value: 2
+      _3:
+        description: 9 Bits
+        value: 3
+      _4:
+        description: 8 Bits
+        value: 4
+      _5:
+        description: 7 Bits
+        value: 5
+      _6:
+        description: 6 Bits
+        value: 6
+      _7:
+        description: 5 Bits
+        value: 7
+      _8:
+        description: 4 Bits
+        value: 8
+      _9:
+        description: 3 Bits
+        value: 9
+      _10:
+        description: 2 Bits
+        value: 10
+      _11:
+        description: 12 Bits
+        value: 11
+      _12:
+        description: 12 Bits
+        value: 12
+      _13:
+        description: 12 Bits
+        value: 13
+      _14:
+        description: 12 Bits
+        value: 14
+      _15:
+        description: 12 Bits
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_SRAMCR4_AM:
+    enum:
+      _0:
+        description: Address/Data MUX mode (ADMUX)
+        value: 0
+      _1:
+        description: Advanced Address/Data MUX mode (AADM)
+        value: 1
+      _2:
+        description: Address/Data non-MUX mode (Non-ADMUX)
+        value: 2
+      _3:
+        description: Address/Data non-MUX mode (Non-ADMUX)
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SEMC_SRAMCR4_BL:
+    enum:
+      _0:
+        description: '1'
+        value: 0
+      _1:
+        description: '2'
+        value: 1
+      _2:
+        description: '4'
+        value: 2
+      _3:
+        description: '8'
+        value: 3
+      _4:
+        description: '16'
+        value: 4
+      _5:
+        description: '32'
+        value: 5
+      _6:
+        description: '64'
+        value: 6
+      _7:
+        description: '64'
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

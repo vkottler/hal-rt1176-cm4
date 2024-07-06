@@ -1,0 +1,908 @@
+---
+structs:
+  sai1:
+    description: SAI
+    instances:
+      - name: SAI1
+        address: '0x40404000'
+    fields:
+      - name: VERID
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Version ID
+        fields:
+          - name: MAJOR
+            description: Major Version Number
+            index: 24
+            width: 8
+            read: true
+            write: false
+          - name: MINOR
+            description: Minor Version Number
+            index: 16
+            width: 8
+            read: true
+            write: false
+          - name: FEATURE
+            description: Feature Specification Number
+            index: 0
+            width: 16
+            read: true
+            write: false
+            type: SAI1_VERID_FEATURE
+      - name: PARAM
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Parameter
+        fields:
+          - name: FRAME
+            description: Frame Size
+            index: 16
+            width: 4
+            read: true
+            write: false
+          - name: FIFO
+            description: FIFO Size
+            index: 8
+            width: 4
+            read: true
+            write: false
+          - name: DATALINE
+            description: Number of Datalines
+            index: 0
+            width: 4
+            read: true
+            write: false
+      - name: TCSR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) Transmit Control
+        fields:
+          - name: TE
+            description: Transmitter Enable
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: STOPE
+            description: Stop Enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: DBGE
+            description: Debug Enable
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: BCE
+            description: Bit Clock Enable
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: FR
+            description: FIFO Reset
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: SR
+            description: Software Reset
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: WSF
+            description: Word Start Flag
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: SEF
+            description: Sync Error Flag
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: FEF
+            description: FIFO Error Flag
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: FWF
+            description: FIFO Warning Flag
+            index: 17
+            width: 1
+            read: true
+            write: false
+          - name: FRF
+            description: FIFO Request Flag
+            index: 16
+            width: 1
+            read: true
+            write: false
+          - name: WSIE
+            description: Word Start Interrupt Enable
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: SEIE
+            description: Sync Error Interrupt Enable
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: FEIE
+            description: FIFO Error Interrupt Enable
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: FWIE
+            description: FIFO Warning Interrupt Enable
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: FRIE
+            description: FIFO Request Interrupt Enable
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: FWDE
+            description: FIFO Warning DMA Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: FRDE
+            description: FIFO Request DMA Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: TCR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) Transmit Configuration 1
+        fields:
+          - name: TFW
+            description: Transmit FIFO Watermark
+            index: 0
+            width: 5
+            read: true
+            write: true
+      - name: TCR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) Transmit Configuration 2
+        fields:
+          - name: SYNC
+            description: Synchronous Mode
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: BCS
+            description: Bit Clock Swap
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: BCI
+            description: Bit Clock Input
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: MSEL
+            description: MCLK Select
+            index: 26
+            width: 2
+            read: true
+            write: true
+            type: SAI1_TCR2_MSEL
+          - name: BCP
+            description: Bit Clock Polarity
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: BCD
+            description: Bit Clock Direction
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: BYP
+            description: Bit Clock Bypass
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: DIV
+            description: Bit Clock Divide
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: TCR3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) Transmit Configuration 3
+        fields:
+          - name: CFR
+            description: Channel FIFO Reset
+            index: 24
+            width: 4
+            read: true
+            write: true
+          - name: TCE
+            description: Transmit Channel Enable
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: WDFL
+            description: Word Flag Configuration
+            index: 0
+            width: 5
+            read: true
+            write: true
+      - name: TCR4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) Transmit Configuration 4
+        fields:
+          - name: FCONT
+            description: FIFO Continue on Error
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: FCOMB
+            description: FIFO Combine Mode
+            index: 26
+            width: 2
+            read: true
+            write: true
+            type: SAI1_TCR4_FCOMB
+          - name: FPACK
+            description: FIFO Packing Mode
+            index: 24
+            width: 2
+            read: true
+            write: true
+            type: SAI1_TCR4_FPACK
+          - name: FRSZ
+            description: Frame size
+            index: 16
+            width: 5
+            read: true
+            write: true
+          - name: SYWD
+            description: Sync Width
+            index: 8
+            width: 5
+            read: true
+            write: true
+          - name: CHMOD
+            description: Channel Mode
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: MF
+            description: MSB First
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: FSE
+            description: Frame Sync Early
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ONDEM
+            description: On Demand Mode
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: FSP
+            description: Frame Sync Polarity
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: FSD
+            description: Frame Sync Direction
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: TCR5
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) Transmit Configuration 5
+        fields:
+          - name: WNW
+            description: Word N Width
+            index: 24
+            width: 5
+            read: true
+            write: true
+          - name: W0W
+            description: Word 0 Width
+            index: 16
+            width: 5
+            read: true
+            write: true
+          - name: FBT
+            description: First Bit Shifted
+            index: 8
+            width: 5
+            read: true
+            write: true
+      - name: TDR
+        type: uint32_t
+        expected_size: 16
+        expected_offset: 32
+        array_length: 4
+        description: (read-write) Transmit Data
+        fields:
+          - name: TDR
+            description: Transmit Data Register
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: TFR
+        type: uint32_t
+        expected_size: 16
+        expected_offset: 64
+        array_length: 4
+        description: (read-write) Transmit FIFO
+        fields:
+          - name: WCP
+            description: Write Channel Pointer
+            index: 31
+            width: 1
+            read: true
+            write: false
+          - name: WFP
+            description: Write FIFO Pointer
+            index: 16
+            width: 6
+            read: true
+            write: false
+          - name: RFP
+            description: Read FIFO Pointer
+            index: 0
+            width: 6
+            read: true
+            write: false
+      - name: TMR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 96
+        description: (read-write) Transmit Mask
+        fields:
+          - name: TWM
+            description: Transmit Word Mask
+            index: 0
+            width: 32
+            read: true
+            write: true
+            type: SAI1_TMR_TWM
+      - name: RCSR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 136
+        description: (read-write) Receive Control
+        fields:
+          - name: RE
+            description: Receiver Enable
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: STOPE
+            description: Stop Enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: DBGE
+            description: Debug Enable
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: BCE
+            description: Bit Clock Enable
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: FR
+            description: FIFO Reset
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: SR
+            description: Software Reset
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: WSF
+            description: Word Start Flag
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: SEF
+            description: Sync Error Flag
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: FEF
+            description: FIFO Error Flag
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: FWF
+            description: FIFO Warning Flag
+            index: 17
+            width: 1
+            read: true
+            write: false
+          - name: FRF
+            description: FIFO Request Flag
+            index: 16
+            width: 1
+            read: true
+            write: false
+          - name: WSIE
+            description: Word Start Interrupt Enable
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: SEIE
+            description: Sync Error Interrupt Enable
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: FEIE
+            description: FIFO Error Interrupt Enable
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: FWIE
+            description: FIFO Warning Interrupt Enable
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: FRIE
+            description: FIFO Request Interrupt Enable
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: FWDE
+            description: FIFO Warning DMA Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: FRDE
+            description: FIFO Request DMA Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: RCR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 140
+        description: (read-write) Receive Configuration 1
+        fields:
+          - name: RFW
+            description: Receive FIFO Watermark
+            index: 0
+            width: 5
+            read: true
+            write: true
+      - name: RCR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 144
+        description: (read-write) Receive Configuration 2
+        fields:
+          - name: SYNC
+            description: Synchronous Mode
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: BCS
+            description: Bit Clock Swap
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: BCI
+            description: Bit Clock Input
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: MSEL
+            description: MCLK Select
+            index: 26
+            width: 2
+            read: true
+            write: true
+            type: SAI1_RCR2_MSEL
+          - name: BCP
+            description: Bit Clock Polarity
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: BCD
+            description: Bit Clock Direction
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: BYP
+            description: Bit Clock Bypass
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: DIV
+            description: Bit Clock Divide
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: RCR3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 148
+        description: (read-write) Receive Configuration 3
+        fields:
+          - name: CFR
+            description: Channel FIFO Reset
+            index: 24
+            width: 4
+            read: true
+            write: true
+          - name: RCE
+            description: Receive Channel Enable
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: WDFL
+            description: Word Flag Configuration
+            index: 0
+            width: 5
+            read: true
+            write: true
+      - name: RCR4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 152
+        description: (read-write) Receive Configuration 4
+        fields:
+          - name: FCONT
+            description: FIFO Continue on Error
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: FCOMB
+            description: FIFO Combine Mode
+            index: 26
+            width: 2
+            read: true
+            write: true
+            type: SAI1_RCR4_FCOMB
+          - name: FPACK
+            description: FIFO Packing Mode
+            index: 24
+            width: 2
+            read: true
+            write: true
+            type: SAI1_RCR4_FPACK
+          - name: FRSZ
+            description: Frame Size
+            index: 16
+            width: 5
+            read: true
+            write: true
+          - name: SYWD
+            description: Sync Width
+            index: 8
+            width: 5
+            read: true
+            write: true
+          - name: MF
+            description: MSB First
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: FSE
+            description: Frame Sync Early
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ONDEM
+            description: On Demand Mode
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: FSP
+            description: Frame Sync Polarity
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: FSD
+            description: Frame Sync Direction
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: RCR5
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 156
+        description: (read-write) Receive Configuration 5
+        fields:
+          - name: WNW
+            description: Word N Width
+            index: 24
+            width: 5
+            read: true
+            write: true
+          - name: W0W
+            description: Word 0 Width
+            index: 16
+            width: 5
+            read: true
+            write: true
+          - name: FBT
+            description: First Bit Shifted
+            index: 8
+            width: 5
+            read: true
+            write: true
+      - name: RDR
+        type: uint32_t
+        expected_size: 16
+        expected_offset: 160
+        array_length: 4
+        description: (read-write) Receive Data
+        fields:
+          - name: RDR
+            description: Receive Data Register
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: RFR
+        type: uint32_t
+        expected_size: 16
+        expected_offset: 192
+        array_length: 4
+        description: (read-write) Receive FIFO
+        fields:
+          - name: WFP
+            description: Write FIFO Pointer
+            index: 16
+            width: 6
+            read: true
+            write: false
+          - name: RCP
+            description: Receive Channel Pointer
+            index: 15
+            width: 1
+            read: true
+            write: false
+          - name: RFP
+            description: Read FIFO Pointer
+            index: 0
+            width: 6
+            read: true
+            write: false
+      - name: RMR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 224
+        description: (read-write) Receive Mask
+        fields:
+          - name: RWM
+            description: Receive Word Mask
+            index: 0
+            width: 32
+            read: true
+            write: true
+            type: SAI1_RMR_RWM
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  SAI1_VERID_FEATURE:
+    enum:
+      STD:
+        description: Standard feature set.
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  SAI1_TCR2_MSEL:
+    enum:
+      BUS_CLOCK:
+        description: Bus Clock selected.
+        value: 0
+      MCLK1:
+        description: Master Clock (MCLK) 1 option selected.
+        value: 1
+      MCLK2:
+        description: Master Clock (MCLK) 2 option selected.
+        value: 2
+      MCLK3:
+        description: Master Clock (MCLK) 3 option selected.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SAI1_TCR4_FCOMB:
+    enum:
+      DISABLED:
+        description: FIFO combine mode disabled.
+        value: 0
+      ENABLED_ON_FIFO_READS:
+        description: FIFO combine mode enabled on FIFO reads (from transmit shift
+          registers).
+        value: 1
+      ENABLED_ON_FIFO_WRITES:
+        description: FIFO combine mode enabled on FIFO writes (by software).
+        value: 2
+      ENABLED_ON_FIFO_READS_WRITES:
+        description: FIFO combine mode enabled on FIFO reads (from transmit shift
+          registers) and writes (by software).
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SAI1_TCR4_FPACK:
+    enum:
+      DISABLED:
+        description: FIFO packing is disabled.
+        value: 0
+      EIGHT_BIT_FIFO_PACKING:
+        description: 8-bit FIFO packing is enabled.
+        value: 2
+      SIXTEEN_BIT_FIFO_PACKING:
+        description: 16-bit FIFO packing is enabled.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SAI1_TMR_TWM:
+    enum:
+      ENABLED:
+        description: Word N is enabled.
+        value: 0
+      MASKED:
+        description: Word N is masked. The transmit data pins are tri-stated or drive
+          zero when masked.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  SAI1_RCR2_MSEL:
+    enum:
+      BUS_CLOCK:
+        description: Bus Clock selected.
+        value: 0
+      MCLK1:
+        description: Master Clock (MCLK) 1 option selected.
+        value: 1
+      MCLK2:
+        description: Master Clock (MCLK) 2 option selected.
+        value: 2
+      MCLK3:
+        description: Master Clock (MCLK) 3 option selected.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SAI1_RCR4_FCOMB:
+    enum:
+      DISABLED:
+        description: FIFO combine mode disabled.
+        value: 0
+      ENA_ON_FIFO_WRITES:
+        description: FIFO combine mode enabled on FIFO writes (from receive shift
+          registers).
+        value: 1
+      ENA_ON_FIFO_READS:
+        description: FIFO combine mode enabled on FIFO reads (by software).
+        value: 2
+      ENA_ON_FIFO_WRITES_READS:
+        description: FIFO combine mode enabled on FIFO writes (from receive shift
+          registers) and reads (by software).
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SAI1_RCR4_FPACK:
+    enum:
+      DISABLED:
+        description: FIFO packing is disabled
+        value: 0
+      EIGHT_BIT_PACKING:
+        description: 8-bit FIFO packing is enabled
+        value: 2
+      SIXTEEN_BIT_PACKING:
+        description: 16-bit FIFO packing is enabled
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SAI1_RMR_RWM:
+    enum:
+      ENABLED:
+        description: Word N is enabled.
+        value: 0
+      MASKED:
+        description: Word N is masked.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t

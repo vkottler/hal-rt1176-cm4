@@ -1,0 +1,2547 @@
+---
+structs:
+  enet_1g:
+    description: ENET
+    instances:
+      - name: ENET_1G
+        address: '0x40420000'
+    fields:
+      - name: EIR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Interrupt Event Register
+        fields:
+          - name: BABR
+            description: Babbling Receive Error
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: BABT
+            description: Babbling Transmit Error
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: GRA
+            description: Graceful Stop Complete
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: TXF
+            description: Transmit Frame Interrupt
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: TXB
+            description: Transmit Buffer Interrupt
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: RXF
+            description: Receive Frame Interrupt
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: RXB
+            description: Receive Buffer Interrupt
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: MII
+            description: MII Interrupt.
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: EBERR
+            description: Ethernet Bus Error
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: LC
+            description: Late Collision
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: RL
+            description: Collision Retry Limit
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: UN
+            description: Transmit FIFO Underrun
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: PLR
+            description: Payload Receive Error
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: WAKEUP
+            description: Node Wakeup Request Indication
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: TS_AVAIL
+            description: Transmit Timestamp Available
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: TS_TIMER
+            description: Timestamp Timer
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: RXFLUSH_2
+            description: RX DMA Ring 2 flush indication
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: RXFLUSH_1
+            description: RX DMA Ring 1 flush indication
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: RXFLUSH_0
+            description: RX DMA Ring 0 flush indication
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: TXF2
+            description: Transmit frame interrupt, class 2
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: TXB2
+            description: Transmit buffer interrupt, class 2
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: RXF2
+            description: Receive frame interrupt, class 2
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: RXB2
+            description: Receive buffer interrupt, class 2
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: TXF1
+            description: Transmit frame interrupt, class 1
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: TXB1
+            description: Transmit buffer interrupt, class 1
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: RXF1
+            description: Receive frame interrupt, class 1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: RXB1
+            description: Receive buffer interrupt, class 1
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: EIMR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) Interrupt Mask Register
+        fields:
+          - name: BABR
+            description: BABR Interrupt Mask
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: BABT
+            description: BABT Interrupt Mask
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: GRA
+            description: GRA Interrupt Mask
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: TXF
+            description: TXF Interrupt Mask
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: TXB
+            description: TXB Interrupt Mask
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: RXF
+            description: RXF Interrupt Mask
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: RXB
+            description: RXB Interrupt Mask
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: MII
+            description: MII Interrupt Mask
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: EBERR
+            description: EBERR Interrupt Mask
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: LC
+            description: LC Interrupt Mask
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: RL
+            description: RL Interrupt Mask
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: UN
+            description: UN Interrupt Mask
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: PLR
+            description: PLR Interrupt Mask
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: WAKEUP
+            description: WAKEUP Interrupt Mask
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: TS_AVAIL
+            description: TS_AVAIL Interrupt Mask
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: TS_TIMER
+            description: TS_TIMER Interrupt Mask
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: RXFLUSH_2
+            description: Corresponds to interrupt source EIR[RXFLUSH_2] and determines
+              whether an interrupt condition can generate an interrupt
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: RXFLUSH_1
+            description: Corresponds to interrupt source EIR[RXFLUSH_1] and determines
+              whether an interrupt condition can generate an interrupt
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: RXFLUSH_0
+            description: Corresponds to interrupt source EIR[RXFLUSH_0] and determines
+              whether an interrupt condition can generate an interrupt
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: TXF2
+            description: Transmit frame interrupt, class 2
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: TXB2
+            description: Transmit buffer interrupt, class 2
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: RXF2
+            description: Receive frame interrupt, class 2
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: RXB2
+            description: Receive buffer interrupt, class 2
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: TXF1
+            description: Transmit frame interrupt, class 1
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: TXB1
+            description: Transmit buffer interrupt, class 1
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: RXF1
+            description: Receive frame interrupt, class 1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: RXB1
+            description: Receive buffer interrupt, class 1
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: RDAR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) Receive Descriptor Active Register - Ring 0
+        fields:
+          - name: RDAR
+            description: Receive Descriptor Active
+            index: 24
+            width: 1
+            read: true
+            write: true
+      - name: TDAR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) Transmit Descriptor Active Register - Ring 0
+        fields:
+          - name: TDAR
+            description: Transmit Descriptor Active
+            index: 24
+            width: 1
+            read: true
+            write: true
+      - name: ECR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) Ethernet Control Register
+        fields:
+          - name: TXC_DLY
+            description: Transmit clock delay
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: SVLANDBL
+            description: S-VLAN double tag
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: VLANUSE2ND
+            description: VLAN use second tag
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: SVLANEN
+            description: S-VLAN enable
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: DBSWP
+            description: Descriptor Byte Swapping Enable
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: DBGEN
+            description: Debug Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: SPEED
+            description: Selects between 10/100-Mbit/s and 1000-Mbit/s modes of operation.
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: EN1588
+            description: EN1588 Enable
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: SLEEP
+            description: Sleep Mode Enable
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: MAGICEN
+            description: Magic Packet Detection Enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ETHEREN
+            description: Ethernet Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: RESET
+            description: Ethernet MAC Reset
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: MMFR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 64
+        description: (read-write) MII Management Frame Register
+        fields:
+          - name: ST
+            description: Start Of Frame Delimiter
+            index: 30
+            width: 2
+            read: true
+            write: true
+          - name: OP
+            description: Operation Code
+            index: 28
+            width: 2
+            read: true
+            write: true
+          - name: PA
+            description: PHY Address
+            index: 23
+            width: 5
+            read: true
+            write: true
+          - name: RA
+            description: Register Address
+            index: 18
+            width: 5
+            read: true
+            write: true
+          - name: TA
+            description: Turn Around
+            index: 16
+            width: 2
+            read: true
+            write: true
+          - name: DATA
+            description: Management Frame Data
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: MSCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 68
+        description: (read-write) MII Speed Control Register
+        fields:
+          - name: HOLDTIME
+            description: Hold time On MDIO Output
+            index: 8
+            width: 3
+            read: true
+            write: true
+            type: ENET_1G_MSCR_HOLDTIME
+          - name: DIS_PRE
+            description: Disable Preamble
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: MII_SPEED
+            description: MII Speed
+            index: 1
+            width: 6
+            read: true
+            write: true
+      - name: MIBC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 100
+        description: (read-write) MIB Control Register
+        fields:
+          - name: MIB_DIS
+            description: Disable MIB Logic
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: MIB_IDLE
+            description: MIB Idle
+            index: 30
+            width: 1
+            read: true
+            write: false
+          - name: MIB_CLEAR
+            description: MIB Clear
+            index: 29
+            width: 1
+            read: true
+            write: true
+      - name: RCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 132
+        description: (read-write) Receive Control Register
+        fields:
+          - name: GRS
+            description: Graceful Receive Stopped
+            index: 31
+            width: 1
+            read: true
+            write: false
+          - name: NLC
+            description: Payload Length Check Disable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: MAX_FL
+            description: Maximum Frame Length
+            index: 16
+            width: 14
+            read: true
+            write: true
+          - name: CFEN
+            description: MAC Control Frame Enable
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: CRCFWD
+            description: Terminate/Forward Received CRC
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: PAUFWD
+            description: Terminate/Forward Pause Frames
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: PADEN
+            description: Enable Frame Padding Remove On Receive
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: RMII_10T
+            description: Enables 10-Mbit/s mode of the RMII or RGMII .
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: RMII_MODE
+            description: RMII Mode Enable
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: RGMII_EN
+            description: RGMII Mode Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: FCE
+            description: Flow Control Enable
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: BC_REJ
+            description: Broadcast Frame Reject
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: PROM
+            description: Promiscuous Mode
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: MII_MODE
+            description: Media Independent Interface Mode
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: DRT
+            description: Disable Receive On Transmit
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: LOOP
+            description: Internal Loopback
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: TCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 196
+        description: (read-write) Transmit Control Register
+        fields:
+          - name: CRCFWD
+            description: Forward Frame From Application With CRC
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: ADDINS
+            description: Set MAC Address On Transmit
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: ADDSEL
+            description: Source MAC Address Select On Transmit
+            index: 5
+            width: 3
+            read: true
+            write: true
+            type: ENET_1G_TCR_ADDSEL
+          - name: RFC_PAUSE
+            description: Receive Frame Control Pause
+            index: 4
+            width: 1
+            read: true
+            write: false
+          - name: TFC_PAUSE
+            description: Transmit Frame Control Pause
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: FDEN
+            description: Full-Duplex Enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: GTS
+            description: Graceful Transmit Stop
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PALR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 228
+        description: (read-write) Physical Address Lower Register
+        fields:
+          - name: PADDR1
+            description: Pause Address
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: PAUR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 232
+        description: (read-write) Physical Address Upper Register
+        fields:
+          - name: PADDR2
+            description: Bytes 4 (bits 31:24) and 5 (bits 23:16) of the 6-byte individual
+              address used for exact match, and the source address field in PAUSE
+              frames
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: TYPE
+            description: Type Field In PAUSE Frames
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: OPD
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 236
+        description: (read-write) Opcode/Pause Duration Register
+        fields:
+          - name: OPCODE
+            description: Opcode Field In PAUSE Frames
+            index: 16
+            width: 16
+            read: true
+            write: false
+          - name: PAUSE_DUR
+            description: Pause Duration
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: TXIC
+        type: uint32_t
+        expected_size: 12
+        expected_offset: 240
+        array_length: 3
+        description: (read-write) Transmit Interrupt Coalescing Register
+        fields:
+          - name: ICEN
+            description: Interrupt Coalescing Enable
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: ICCS
+            description: Interrupt Coalescing Timer Clock Source Select
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: ICFT
+            description: Interrupt coalescing frame count threshold
+            index: 20
+            width: 8
+            read: true
+            write: true
+          - name: ICTT
+            description: Interrupt coalescing timer threshold
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: RXIC
+        type: uint32_t
+        expected_size: 12
+        expected_offset: 256
+        array_length: 3
+        description: (read-write) Receive Interrupt Coalescing Register
+        fields:
+          - name: ICEN
+            description: Interrupt Coalescing Enable
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: ICCS
+            description: Interrupt Coalescing Timer Clock Source Select
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: ICFT
+            description: Interrupt coalescing frame count threshold
+            index: 20
+            width: 8
+            read: true
+            write: true
+          - name: ICTT
+            description: Interrupt coalescing timer threshold
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: IAUR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 280
+        description: (read-write) Descriptor Individual Upper Address Register
+        fields:
+          - name: IADDR1
+            description: Contains the upper 32 bits of the 64-bit hash table used
+              in the address recognition process for receive frames with a unicast
+              address
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: IALR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 284
+        description: (read-write) Descriptor Individual Lower Address Register
+        fields:
+          - name: IADDR2
+            description: Contains the lower 32 bits of the 64-bit hash table used
+              in the address recognition process for receive frames with a unicast
+              address
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: GAUR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 288
+        description: (read-write) Descriptor Group Upper Address Register
+        fields:
+          - name: GADDR1
+            description: Contains the upper 32 bits of the 64-bit hash table used
+              in the address recognition process for receive frames with a multicast
+              address
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: GALR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 292
+        description: (read-write) Descriptor Group Lower Address Register
+        fields:
+          - name: GADDR2
+            description: Contains the lower 32 bits of the 64-bit hash table used
+              in the address recognition process for receive frames with a multicast
+              address
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: TFWR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 324
+        description: (read-write) Transmit FIFO Watermark Register
+        fields:
+          - name: STRFWD
+            description: Store And Forward Enable
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: TFWR
+            description: Transmit FIFO Write
+            index: 0
+            width: 6
+            read: true
+            write: true
+            type: ENET_1G_TFWR_TFWR
+      - name: RDSR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 352
+        description: (read-write) Receive Descriptor Ring 1 Start Register
+        fields:
+          - name: R_DES_START
+            description: Pointer to the beginning of the receive buffer descriptor
+              queue 1.
+            index: 3
+            width: 29
+            read: true
+            write: true
+      - name: TDSR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 356
+        description: (read-write) Transmit Buffer Descriptor Ring 1 Start Register
+        fields:
+          - name: X_DES_START
+            description: Pointer to the beginning of transmit buffer descriptor queue
+              1.
+            index: 3
+            width: 29
+            read: true
+            write: true
+      - name: MRBR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 360
+        description: (read-write) Maximum Receive Buffer Size Register - Ring 1
+        fields:
+          - name: R_BUF_SIZE
+            description: Receive buffer size (in bytes)
+            index: 4
+            width: 7
+            read: true
+            write: true
+      - name: RDSR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 364
+        description: (read-write) Receive Descriptor Ring 2 Start Register
+        fields:
+          - name: R_DES_START
+            description: Pointer to the beginning of receive buffer descriptor queue
+              2.
+            index: 3
+            width: 29
+            read: true
+            write: true
+      - name: TDSR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 368
+        description: (read-write) Transmit Buffer Descriptor Ring 2 Start Register
+        fields:
+          - name: X_DES_START
+            description: Pointer to the beginning of transmit buffer descriptor queue
+              2.
+            index: 3
+            width: 29
+            read: true
+            write: true
+      - name: MRBR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 372
+        description: (read-write) Maximum Receive Buffer Size Register - Ring 2
+        fields:
+          - name: R_BUF_SIZE
+            description: Receive buffer size (in bytes)
+            index: 4
+            width: 7
+            read: true
+            write: true
+      - name: RDSR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 384
+        description: (read-write) Receive Descriptor Ring 0 Start Register
+        fields:
+          - name: R_DES_START
+            description: Pointer to the beginning of the receive buffer descriptor
+              queue. 0
+            index: 3
+            width: 29
+            read: true
+            write: true
+      - name: TDSR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 388
+        description: (read-write) Transmit Buffer Descriptor Ring 0 Start Register
+        fields:
+          - name: X_DES_START
+            description: Pointer to the beginning of the transmit buffer descriptor
+              queue.
+            index: 3
+            width: 29
+            read: true
+            write: true
+      - name: MRBR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 392
+        description: (read-write) Maximum Receive Buffer Size Register - Ring 0
+        fields:
+          - name: R_BUF_SIZE
+            description: Receive buffer size in bytes
+            index: 4
+            width: 7
+            read: true
+            write: true
+      - name: RSFL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 400
+        description: (read-write) Receive FIFO Section Full Threshold
+        fields:
+          - name: RX_SECTION_FULL
+            description: Value Of Receive FIFO Section Full Threshold
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: RSEM
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 404
+        description: (read-write) Receive FIFO Section Empty Threshold
+        fields:
+          - name: STAT_SECTION_EMPTY
+            description: RX Status FIFO Section Empty Threshold
+            index: 16
+            width: 5
+            read: true
+            write: true
+          - name: RX_SECTION_EMPTY
+            description: Value Of The Receive FIFO Section Empty Threshold
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: RAEM
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 408
+        description: (read-write) Receive FIFO Almost Empty Threshold
+        fields:
+          - name: RX_ALMOST_EMPTY
+            description: Value Of The Receive FIFO Almost Empty Threshold
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: RAFL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 412
+        description: (read-write) Receive FIFO Almost Full Threshold
+        fields:
+          - name: RX_ALMOST_FULL
+            description: Value Of The Receive FIFO Almost Full Threshold
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: TSEM
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 416
+        description: (read-write) Transmit FIFO Section Empty Threshold
+        fields:
+          - name: TX_SECTION_EMPTY
+            description: Value Of The Transmit FIFO Section Empty Threshold
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: TAEM
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 420
+        description: (read-write) Transmit FIFO Almost Empty Threshold
+        fields:
+          - name: TX_ALMOST_EMPTY
+            description: Value of Transmit FIFO Almost Empty Threshold
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: TAFL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 424
+        description: (read-write) Transmit FIFO Almost Full Threshold
+        fields:
+          - name: TX_ALMOST_FULL
+            description: Value Of The Transmit FIFO Almost Full Threshold
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: TIPG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 428
+        description: (read-write) Transmit Inter-Packet Gap
+        fields:
+          - name: IPG
+            description: Transmit Inter-Packet Gap
+            index: 0
+            width: 5
+            read: true
+            write: true
+      - name: FTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 432
+        description: (read-write) Frame Truncation Length
+        fields:
+          - name: TRUNC_FL
+            description: Frame Truncation Length
+            index: 0
+            width: 14
+            read: true
+            write: true
+      - name: TACC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 448
+        description: (read-write) Transmit Accelerator Function Configuration
+        fields:
+          - name: PROCHK
+            description: Enables insertion of protocol checksum.
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: IPCHK
+            description: Enables insertion of IP header checksum.
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: SHIFT16
+            description: TX FIFO Shift-16
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: RACC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 452
+        description: (read-write) Receive Accelerator Function Configuration
+        fields:
+          - name: SHIFT16
+            description: RX FIFO Shift-16
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: LINEDIS
+            description: Enable Discard Of Frames With MAC Layer Errors
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: PRODIS
+            description: Enable Discard Of Frames With Wrong Protocol Checksum
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: IPDIS
+            description: Enable Discard Of Frames With Wrong IPv4 Header Checksum
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: PADREM
+            description: Enable Padding Removal For Short IP Frames
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: RCMR
+        type: uint32_t
+        expected_size: 8
+        expected_offset: 456
+        array_length: 2
+        description: (read-write) Receive Classification Match Register for Class
+          n
+        fields:
+          - name: MATCHEN
+            description: Match Enable
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: CMP3
+            description: Compare 3
+            index: 12
+            width: 3
+            read: true
+            write: true
+          - name: CMP2
+            description: Compare 2
+            index: 8
+            width: 3
+            read: true
+            write: true
+          - name: CMP1
+            description: Compare 1
+            index: 4
+            width: 3
+            read: true
+            write: true
+          - name: CMP0
+            description: Compare 0
+            index: 0
+            width: 3
+            read: true
+            write: true
+      - name: DMACFG
+        type: uint32_t
+        expected_size: 8
+        expected_offset: 472
+        array_length: 2
+        description: (read-write) DMA Class Based Configuration
+        fields:
+          - name: CALC_NOIPG
+            description: Calculate no IPG
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: DMA_CLASS_EN
+            description: DMA class enable
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: IDLE_SLOPE
+            description: Idle slope
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: RDAR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 480
+        description: (read-write) Receive Descriptor Active Register - Ring 1
+        fields:
+          - name: RDAR
+            description: Receive Descriptor Active
+            index: 24
+            width: 1
+            read: true
+            write: true
+      - name: TDAR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 484
+        description: (read-write) Transmit Descriptor Active Register - Ring 1
+        fields:
+          - name: TDAR
+            description: Transmit Descriptor Active
+            index: 24
+            width: 1
+            read: true
+            write: true
+      - name: RDAR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 488
+        description: (read-write) Receive Descriptor Active Register - Ring 2
+        fields:
+          - name: RDAR
+            description: Receive Descriptor Active
+            index: 24
+            width: 1
+            read: true
+            write: true
+      - name: TDAR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 492
+        description: (read-write) Transmit Descriptor Active Register - Ring 2
+        fields:
+          - name: TDAR
+            description: Transmit Descriptor Active
+            index: 24
+            width: 1
+            read: true
+            write: true
+      - name: QOS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 496
+        description: (read-write) QOS Scheme
+        fields:
+          - name: RX_FLUSH2
+            description: RX Flush Ring 2
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: RX_FLUSH1
+            description: RX Flush Ring 1
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: RX_FLUSH0
+            description: RX Flush Ring 0
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: TX_SCHEME
+            description: TX scheme configuration
+            index: 0
+            width: 3
+            read: true
+            write: true
+            type: ENET_1G_QOS_TX_SCHEME
+      - name: RMON_T_PACKETS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 516
+        description: (read-write) Tx Packet Count Statistic Register
+        fields:
+          - name: TXPKTS
+            description: Packet count
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_T_BC_PKT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 520
+        description: (read-write) Tx Broadcast Packets Statistic Register
+        fields:
+          - name: TXPKTS
+            description: Broadcast packets
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_T_MC_PKT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 524
+        description: (read-write) Tx Multicast Packets Statistic Register
+        fields:
+          - name: TXPKTS
+            description: Multicast packets
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_T_CRC_ALIGN
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 528
+        description: (read-write) Tx Packets with CRC/Align Error Statistic Register
+        fields:
+          - name: TXPKTS
+            description: Packets with CRC/align error
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_T_UNDERSIZE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 532
+        description: (read-write) Tx Packets Less Than Bytes and Good CRC Statistic
+          Register
+        fields:
+          - name: TXPKTS
+            description: Number of transmit packets less than 64 bytes with good CRC
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_T_OVERSIZE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 536
+        description: (read-write) Tx Packets GT MAX_FL bytes and Good CRC Statistic
+          Register
+        fields:
+          - name: TXPKTS
+            description: Number of transmit packets greater than MAX_FL bytes with
+              good CRC
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_T_FRAG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 540
+        description: (read-write) Tx Packets Less Than 64 Bytes and Bad CRC Statistic
+          Register
+        fields:
+          - name: TXPKTS
+            description: Number of packets less than 64 bytes with bad CRC
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_T_JAB
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 544
+        description: (read-write) Tx Packets Greater Than MAX_FL bytes and Bad CRC
+          Statistic Register
+        fields:
+          - name: TXPKTS
+            description: Number of transmit packets greater than MAX_FL bytes and
+              bad CRC
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_T_COL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 548
+        description: (read-write) Tx Collision Count Statistic Register
+        fields:
+          - name: TXPKTS
+            description: Number of transmit collisions
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_T_P64
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 552
+        description: (read-write) Tx 64-Byte Packets Statistic Register
+        fields:
+          - name: TXPKTS
+            description: Number of 64-byte transmit packets
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_T_P65TO127
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 556
+        description: (read-write) Tx 65- to 127-byte Packets Statistic Register
+        fields:
+          - name: TXPKTS
+            description: Number of 65- to 127-byte transmit packets
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_T_P128TO255
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 560
+        description: (read-write) Tx 128- to 255-byte Packets Statistic Register
+        fields:
+          - name: TXPKTS
+            description: Number of 128- to 255-byte transmit packets
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_T_P256TO511
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 564
+        description: (read-write) Tx 256- to 511-byte Packets Statistic Register
+        fields:
+          - name: TXPKTS
+            description: Number of 256- to 511-byte transmit packets
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_T_P512TO1023
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 568
+        description: (read-write) Tx 512- to 1023-byte Packets Statistic Register
+        fields:
+          - name: TXPKTS
+            description: Number of 512- to 1023-byte transmit packets
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_T_P1024TO2047
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 572
+        description: (read-write) Tx 1024- to 2047-byte Packets Statistic Register
+        fields:
+          - name: TXPKTS
+            description: Number of 1024- to 2047-byte transmit packets
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_T_P_GTE2048
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 576
+        description: (read-write) Tx Packets Greater Than 2048 Bytes Statistic Register
+        fields:
+          - name: TXPKTS
+            description: Number of transmit packets greater than 2048 bytes
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_T_OCTETS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 580
+        description: (read-write) Tx Octets Statistic Register
+        fields:
+          - name: TXOCTS
+            description: Number of transmit octets
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: IEEE_T_DROP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 584
+        description: (read-write) Reserved Statistic Register
+      - name: IEEE_T_FRAME_OK
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 588
+        description: (read-write) Frames Transmitted OK Statistic Register
+        fields:
+          - name: COUNT
+            description: Number of frames transmitted OK
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: IEEE_T_1COL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 592
+        description: (read-write) Frames Transmitted with Single Collision Statistic
+          Register
+        fields:
+          - name: COUNT
+            description: Number of frames transmitted with one collision
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: IEEE_T_MCOL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 596
+        description: (read-write) Frames Transmitted with Multiple Collisions Statistic
+          Register
+        fields:
+          - name: COUNT
+            description: Number of frames transmitted with multiple collisions
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: IEEE_T_DEF
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 600
+        description: (read-write) Frames Transmitted after Deferral Delay Statistic
+          Register
+        fields:
+          - name: COUNT
+            description: Number of frames transmitted with deferral delay
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: IEEE_T_LCOL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 604
+        description: (read-write) Frames Transmitted with Late Collision Statistic
+          Register
+        fields:
+          - name: COUNT
+            description: Number of frames transmitted with late collision
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: IEEE_T_EXCOL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 608
+        description: (read-write) Frames Transmitted with Excessive Collisions Statistic
+          Register
+        fields:
+          - name: COUNT
+            description: Number of frames transmitted with excessive collisions
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: IEEE_T_MACERR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 612
+        description: (read-write) Frames Transmitted with Tx FIFO Underrun Statistic
+          Register
+        fields:
+          - name: COUNT
+            description: Number of frames transmitted with transmit FIFO underrun
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: IEEE_T_CSERR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 616
+        description: (read-write) Frames Transmitted with Carrier Sense Error Statistic
+          Register
+        fields:
+          - name: COUNT
+            description: Number of frames transmitted with carrier sense error
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: IEEE_T_SQE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 620
+        description: (read-write) Reserved Statistic Register
+        fields:
+          - name: COUNT
+            description: This read-only field is reserved and always has the value
+              0
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: IEEE_T_FDXFC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 624
+        description: (read-write) Flow Control Pause Frames Transmitted Statistic
+          Register
+        fields:
+          - name: COUNT
+            description: Number of flow-control pause frames transmitted
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: IEEE_T_OCTETS_OK
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 628
+        description: (read-write) Octet Count for Frames Transmitted w/o Error Statistic
+          Register
+        fields:
+          - name: COUNT
+            description: Octet count for frames transmitted without error Counts total
+              octets (includes header and FCS fields).
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: RMON_R_PACKETS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 644
+        description: (read-write) Rx Packet Count Statistic Register
+        fields:
+          - name: COUNT
+            description: Number of packets received
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_R_BC_PKT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 648
+        description: (read-write) Rx Broadcast Packets Statistic Register
+        fields:
+          - name: COUNT
+            description: Number of receive broadcast packets
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_R_MC_PKT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 652
+        description: (read-write) Rx Multicast Packets Statistic Register
+        fields:
+          - name: COUNT
+            description: Number of receive multicast packets
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_R_CRC_ALIGN
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 656
+        description: (read-write) Rx Packets with CRC/Align Error Statistic Register
+        fields:
+          - name: COUNT
+            description: Number of receive packets with CRC or align error
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_R_UNDERSIZE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 660
+        description: (read-write) Rx Packets with Less Than 64 Bytes and Good CRC
+          Statistic Register
+        fields:
+          - name: COUNT
+            description: Number of receive packets with less than 64 bytes and good
+              CRC
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_R_OVERSIZE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 664
+        description: (read-write) Rx Packets Greater Than MAX_FL and Good CRC Statistic
+          Register
+        fields:
+          - name: COUNT
+            description: Number of receive packets greater than MAX_FL and good CRC
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_R_FRAG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 668
+        description: (read-write) Rx Packets Less Than 64 Bytes and Bad CRC Statistic
+          Register
+        fields:
+          - name: COUNT
+            description: Number of receive packets with less than 64 bytes and bad
+              CRC
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_R_JAB
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 672
+        description: (read-write) Rx Packets Greater Than MAX_FL Bytes and Bad CRC
+          Statistic Register
+        fields:
+          - name: COUNT
+            description: Number of receive packets greater than MAX_FL and bad CRC
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_R_P64
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 680
+        description: (read-write) Rx 64-Byte Packets Statistic Register
+        fields:
+          - name: COUNT
+            description: Number of 64-byte receive packets
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_R_P65TO127
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 684
+        description: (read-write) Rx 65- to 127-Byte Packets Statistic Register
+        fields:
+          - name: COUNT
+            description: Number of 65- to 127-byte recieve packets
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_R_P128TO255
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 688
+        description: (read-write) Rx 128- to 255-Byte Packets Statistic Register
+        fields:
+          - name: COUNT
+            description: Number of 128- to 255-byte recieve packets
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_R_P256TO511
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 692
+        description: (read-write) Rx 256- to 511-Byte Packets Statistic Register
+        fields:
+          - name: COUNT
+            description: Number of 256- to 511-byte recieve packets
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_R_P512TO1023
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 696
+        description: (read-write) Rx 512- to 1023-Byte Packets Statistic Register
+        fields:
+          - name: COUNT
+            description: Number of 512- to 1023-byte recieve packets
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_R_P1024TO2047
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 700
+        description: (read-write) Rx 1024- to 2047-Byte Packets Statistic Register
+        fields:
+          - name: COUNT
+            description: Number of 1024- to 2047-byte recieve packets
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_R_P_GTE2048
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 704
+        description: (read-write) Rx Packets Greater than 2048 Bytes Statistic Register
+        fields:
+          - name: COUNT
+            description: Number of greater-than-2048-byte recieve packets
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: RMON_R_OCTETS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 708
+        description: (read-write) Rx Octets Statistic Register
+        fields:
+          - name: COUNT
+            description: Number of receive octets
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: IEEE_R_DROP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 712
+        description: (read-write) Frames not Counted Correctly Statistic Register
+        fields:
+          - name: COUNT
+            description: Frame count
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: IEEE_R_FRAME_OK
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 716
+        description: (read-write) Frames Received OK Statistic Register
+        fields:
+          - name: COUNT
+            description: Number of frames received OK
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: IEEE_R_CRC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 720
+        description: (read-write) Frames Received with CRC Error Statistic Register
+        fields:
+          - name: COUNT
+            description: Number of frames received with CRC error
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: IEEE_R_ALIGN
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 724
+        description: (read-write) Frames Received with Alignment Error Statistic Register
+        fields:
+          - name: COUNT
+            description: Number of frames received with alignment error
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: IEEE_R_MACERR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 728
+        description: (read-write) Receive FIFO Overflow Count Statistic Register
+        fields:
+          - name: COUNT
+            description: Receive FIFO overflow count
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: IEEE_R_FDXFC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 732
+        description: (read-write) Flow Control Pause Frames Received Statistic Register
+        fields:
+          - name: COUNT
+            description: Number of flow-control pause frames received
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: IEEE_R_OCTETS_OK
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 736
+        description: (read-write) Octet Count for Frames Received without Error Statistic
+          Register
+        fields:
+          - name: COUNT
+            description: Number of octets for frames received without error
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: ATCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1024
+        description: (read-write) Adjustable Timer Control Register
+        fields:
+          - name: SLAVE
+            description: Enable Timer Slave Mode
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: CAPTURE
+            description: Capture Timer Value
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: RESTART
+            description: Reset Timer
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: PINPER
+            description: Enables event signal output external pin frc_evt_period assertion
+              on period event
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: PEREN
+            description: Enable Periodical Event
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: OFFRST
+            description: Reset Timer On Offset Event
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: OFFEN
+            description: Enable One-Shot Offset Event
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: EN
+            description: Enable Timer
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: ATVR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1028
+        description: (read-write) Timer Value Register
+        fields:
+          - name: ATIME
+            description: A write sets the timer
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: ATOFF
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1032
+        description: (read-write) Timer Offset Register
+        fields:
+          - name: OFFSET
+            description: Offset value for one-shot event generation
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: ATPER
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1036
+        description: (read-write) Timer Period Register
+        fields:
+          - name: PERIOD
+            description: Value for generating periodic events
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: ATCOR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1040
+        description: (read-write) Timer Correction Register
+        fields:
+          - name: COR
+            description: Correction Counter Wrap-Around Value
+            index: 0
+            width: 31
+            read: true
+            write: true
+      - name: ATINC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1044
+        description: (read-write) Time-Stamping Clock Period Register
+        fields:
+          - name: INC_CORR
+            description: Correction Increment Value
+            index: 8
+            width: 7
+            read: true
+            write: true
+          - name: INC
+            description: Clock Period Of The Timestamping Clock (ts_clk) In Nanoseconds
+            index: 0
+            width: 7
+            read: true
+            write: true
+      - name: ATSTMP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1048
+        description: (read-write) Timestamp of Last Transmitted Frame
+        fields:
+          - name: TIMESTAMP
+            description: Timestamp of the last frame transmitted by the core that
+              had TxBD[TS] set the ff_tx_ts_frm signal asserted from the user application
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: TGSR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1540
+        description: (read-write) Timer Global Status Register
+        fields:
+          - name: TF3
+            description: Copy Of Timer Flag For Channel 3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: TF2
+            description: Copy Of Timer Flag For Channel 2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: TF1
+            description: Copy Of Timer Flag For Channel 1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: TF0
+            description: Copy Of Timer Flag For Channel 0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: TCSR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1544
+        description: (read-write) Timer Control Status Register
+        fields:
+          - name: TF
+            description: Timer Flag
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: TIE
+            description: Timer Interrupt Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: TMODE
+            description: Timer Mode
+            index: 2
+            width: 4
+            read: true
+            write: true
+            type: ENET_1G_TCSR0_TMODE
+          - name: TDRE
+            description: Timer DMA Request Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: TCCR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1548
+        description: (read-write) Timer Compare Capture Register
+        fields:
+          - name: TCC
+            description: Timer Capture Compare
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: TCSR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1552
+        description: (read-write) Timer Control Status Register
+        fields:
+          - name: TF
+            description: Timer Flag
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: TIE
+            description: Timer Interrupt Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: TMODE
+            description: Timer Mode
+            index: 2
+            width: 4
+            read: true
+            write: true
+            type: ENET_1G_TCSR1_TMODE
+          - name: TDRE
+            description: Timer DMA Request Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: TCCR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1556
+        description: (read-write) Timer Compare Capture Register
+        fields:
+          - name: TCC
+            description: Timer Capture Compare
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: TCSR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1560
+        description: (read-write) Timer Control Status Register
+        fields:
+          - name: TF
+            description: Timer Flag
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: TIE
+            description: Timer Interrupt Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: TMODE
+            description: Timer Mode
+            index: 2
+            width: 4
+            read: true
+            write: true
+            type: ENET_1G_TCSR2_TMODE
+          - name: TDRE
+            description: Timer DMA Request Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: TCCR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1564
+        description: (read-write) Timer Compare Capture Register
+        fields:
+          - name: TCC
+            description: Timer Capture Compare
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: TCSR3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1568
+        description: (read-write) Timer Control Status Register
+        fields:
+          - name: TF
+            description: Timer Flag
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: TIE
+            description: Timer Interrupt Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: TMODE
+            description: Timer Mode
+            index: 2
+            width: 4
+            read: true
+            write: true
+            type: ENET_1G_TCSR3_TMODE
+          - name: TDRE
+            description: Timer DMA Request Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: TCCR3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1572
+        description: (read-write) Timer Compare Capture Register
+        fields:
+          - name: TCC
+            description: Timer Capture Compare
+            index: 0
+            width: 32
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  ENET_1G_MSCR_HOLDTIME:
+    enum:
+      _1:
+        description: 1 internal module clock cycle
+        value: 0
+      _2:
+        description: 2 internal module clock cycles
+        value: 1
+      _3:
+        description: 3 internal module clock cycles
+        value: 2
+      _8:
+        description: 8 internal module clock cycles
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  ENET_1G_TCR_ADDSEL:
+    enum:
+      VAL_MAC:
+        description: Node MAC address programmed on PADDR1/2 registers.
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  ENET_1G_TFWR_TFWR:
+    enum:
+      _64_0:
+        description: 64 bytes written.
+        value: 0
+      _64_1:
+        description: 64 bytes written.
+        value: 1
+      _128:
+        description: 128 bytes written.
+        value: 2
+      _192:
+        description: 192 bytes written.
+        value: 3
+      _4032:
+        description: 4032 bytes written.
+        value: 63
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  ENET_1G_QOS_TX_SCHEME:
+    enum:
+      CREDIT:
+        description: Credit-based scheme
+        value: 0
+      RR:
+        description: Round-robin scheme
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  ENET_1G_TCSR0_TMODE:
+    enum:
+      DIS:
+        description: Timer Channel is disabled.
+        value: 0
+      RE:
+        description: Timer Channel is configured for Input Capture on rising edge.
+        value: 1
+      FE:
+        description: Timer Channel is configured for Input Capture on falling edge.
+        value: 2
+      BE:
+        description: Timer Channel is configured for Input Capture on both edges.
+        value: 3
+      OUT:
+        description: Timer Channel is configured for Output Compare - software only.
+        value: 4
+      TOGGLE:
+        description: Timer Channel is configured for Output Compare - toggle output
+          on compare.
+        value: 5
+      CLR:
+        description: Timer Channel is configured for Output Compare - clear output
+          on compare.
+        value: 6
+      SET_OUT:
+        description: Timer Channel is configured for Output Compare - set output on
+          compare.
+        value: 7
+      CLR_SET1:
+        description: Timer Channel is configured for Output Compare - set output on
+          compare, clear output on overflow.
+        value: 11
+      CLR_SET:
+        description: Timer Channel is configured for Output Compare - clear output
+          on compare, set output on overflow.
+        value: 10
+      OUT_CMP_LOW:
+        description: Timer Channel is configured for Output Compare - pulse output
+          low on compare for one 1588-clock cycle.
+        value: 14
+      OUT_CMP_HIGH:
+        description: Timer Channel is configured for Output Compare - pulse output
+          high on compare for one 1588-clock cycle.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  ENET_1G_TCSR1_TMODE:
+    enum:
+      DIS:
+        description: Timer Channel is disabled.
+        value: 0
+      RE:
+        description: Timer Channel is configured for Input Capture on rising edge.
+        value: 1
+      FE:
+        description: Timer Channel is configured for Input Capture on falling edge.
+        value: 2
+      BE:
+        description: Timer Channel is configured for Input Capture on both edges.
+        value: 3
+      OUT:
+        description: Timer Channel is configured for Output Compare - software only.
+        value: 4
+      TOGGLE:
+        description: Timer Channel is configured for Output Compare - toggle output
+          on compare.
+        value: 5
+      CLR:
+        description: Timer Channel is configured for Output Compare - clear output
+          on compare.
+        value: 6
+      SET_OUT:
+        description: Timer Channel is configured for Output Compare - set output on
+          compare.
+        value: 7
+      CLR_SET1:
+        description: Timer Channel is configured for Output Compare - set output on
+          compare, clear output on overflow.
+        value: 11
+      CLR_SET:
+        description: Timer Channel is configured for Output Compare - clear output
+          on compare, set output on overflow.
+        value: 10
+      OUT_CMP_LOW:
+        description: Timer Channel is configured for Output Compare - pulse output
+          low on compare for one 1588-clock cycle.
+        value: 14
+      OUT_CMP_HIGH:
+        description: Timer Channel is configured for Output Compare - pulse output
+          high on compare for one 1588-clock cycle.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  ENET_1G_TCSR2_TMODE:
+    enum:
+      DIS:
+        description: Timer Channel is disabled.
+        value: 0
+      RE:
+        description: Timer Channel is configured for Input Capture on rising edge.
+        value: 1
+      FE:
+        description: Timer Channel is configured for Input Capture on falling edge.
+        value: 2
+      BE:
+        description: Timer Channel is configured for Input Capture on both edges.
+        value: 3
+      OUT:
+        description: Timer Channel is configured for Output Compare - software only.
+        value: 4
+      TOGGLE:
+        description: Timer Channel is configured for Output Compare - toggle output
+          on compare.
+        value: 5
+      CLR:
+        description: Timer Channel is configured for Output Compare - clear output
+          on compare.
+        value: 6
+      SET_OUT:
+        description: Timer Channel is configured for Output Compare - set output on
+          compare.
+        value: 7
+      CLR_SET1:
+        description: Timer Channel is configured for Output Compare - set output on
+          compare, clear output on overflow.
+        value: 11
+      CLR_SET:
+        description: Timer Channel is configured for Output Compare - clear output
+          on compare, set output on overflow.
+        value: 10
+      OUT_CMP_LOW:
+        description: Timer Channel is configured for Output Compare - pulse output
+          low on compare for one 1588-clock cycle.
+        value: 14
+      OUT_CMP_HIGH:
+        description: Timer Channel is configured for Output Compare - pulse output
+          high on compare for one 1588-clock cycle.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  ENET_1G_TCSR3_TMODE:
+    enum:
+      DIS:
+        description: Timer Channel is disabled.
+        value: 0
+      RE:
+        description: Timer Channel is configured for Input Capture on rising edge.
+        value: 1
+      FE:
+        description: Timer Channel is configured for Input Capture on falling edge.
+        value: 2
+      BE:
+        description: Timer Channel is configured for Input Capture on both edges.
+        value: 3
+      OUT:
+        description: Timer Channel is configured for Output Compare - software only.
+        value: 4
+      TOGGLE:
+        description: Timer Channel is configured for Output Compare - toggle output
+          on compare.
+        value: 5
+      CLR:
+        description: Timer Channel is configured for Output Compare - clear output
+          on compare.
+        value: 6
+      SET_OUT:
+        description: Timer Channel is configured for Output Compare - set output on
+          compare.
+        value: 7
+      CLR_SET1:
+        description: Timer Channel is configured for Output Compare - set output on
+          compare, clear output on overflow.
+        value: 11
+      CLR_SET:
+        description: Timer Channel is configured for Output Compare - clear output
+          on compare, set output on overflow.
+        value: 10
+      OUT_CMP_LOW:
+        description: Timer Channel is configured for Output Compare - pulse output
+          low on compare for one 1588-clock cycle.
+        value: 14
+      OUT_CMP_HIGH:
+        description: Timer Channel is configured for Output Compare - pulse output
+          high on compare for one 1588-clock cycle.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

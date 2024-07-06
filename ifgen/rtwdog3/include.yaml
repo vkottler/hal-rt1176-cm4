@@ -1,0 +1,184 @@
+---
+structs:
+  rtwdog3:
+    description: WDOG
+    instances:
+      - name: RTWDOG3
+        address: '0x40038000'
+      - name: RTWDOG4
+        address: '0x40C10000'
+    fields:
+      - name: CS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Watchdog Control and Status Register
+        fields:
+          - name: WIN
+            description: Watchdog Window
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: FLG
+            description: Watchdog Interrupt Flag
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: CMD32EN
+            description: Enables or disables WDOG support for 32-bit (otherwise 16-bit
+              or 8-bit) refresh/unlock command write words
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: PRES
+            description: Watchdog prescaler
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ULK
+            description: Unlock status
+            index: 11
+            width: 1
+            read: true
+            write: false
+          - name: RCS
+            description: Reconfiguration Success
+            index: 10
+            width: 1
+            read: true
+            write: false
+          - name: CLK
+            description: Watchdog Clock
+            index: 8
+            width: 2
+            read: true
+            write: true
+          - name: EN
+            description: Watchdog Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: INT
+            description: Watchdog Interrupt
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: UPDATE
+            description: Allow updates
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: TST
+            description: Watchdog Test
+            index: 3
+            width: 2
+            read: true
+            write: true
+            type: RTWDOG3_CS_TST
+          - name: DBG
+            description: Debug Enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: WAIT
+            description: Wait Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: STOP
+            description: Stop Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CNT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Watchdog Counter Register
+        fields:
+          - name: CNTHIGH
+            description: High byte of the Watchdog Counter
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: CNTLOW
+            description: Low byte of the Watchdog Counter
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: TOVAL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) Watchdog Timeout Value Register
+        fields:
+          - name: TOVALHIGH
+            description: High byte of the timeout value
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: TOVALLOW
+            description: Low byte of the timeout value
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: WIN
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) Watchdog Window Register
+        fields:
+          - name: WINHIGH
+            description: High byte of Watchdog Window
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: WINLOW
+            description: Low byte of Watchdog Window
+            index: 0
+            width: 8
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  RTWDOG3_CS_TST:
+    enum:
+      _0:
+        description: Watchdog test mode disabled.
+        value: 0
+      _1:
+        description: Watchdog user mode enabled. (Watchdog test mode disabled.) After
+          testing the watchdog, software should use this setting to indicate that
+          the watchdog is functioning normally in user mode.
+        value: 1
+      _2:
+        description: Watchdog test mode enabled, only the low byte is used. CNT[CNTLOW]
+          is compared with TOVAL[TOVALLOW].
+        value: 2
+      _3:
+        description: Watchdog test mode enabled, only the high byte is used. CNT[CNTHIGH]
+          is compared with TOVAL[TOVALHIGH].
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

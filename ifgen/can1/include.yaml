@@ -1,0 +1,1295 @@
+---
+structs:
+  can1:
+    description: CAN
+    instances:
+      - name: CAN1
+        address: '0x400C4000'
+      - name: CAN2
+        address: '0x400C8000'
+      - name: CAN3
+        address: '0x40C3C000'
+    fields:
+      - name: MCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Module Configuration register
+        fields:
+          - name: MDIS
+            description: Module Disable
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: FRZ
+            description: Freeze Enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: RFEN
+            description: Rx FIFO Enable
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: HALT
+            description: Halt FlexCAN
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: NOTRDY
+            description: FlexCAN Not Ready
+            index: 27
+            width: 1
+            read: true
+            write: false
+          - name: WAKMSK
+            description: Wake Up Interrupt Mask
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: SOFTRST
+            description: Soft Reset
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: FRZACK
+            description: Freeze Mode Acknowledge
+            index: 24
+            width: 1
+            read: true
+            write: false
+          - name: SUPV
+            description: Supervisor Mode
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: SLFWAK
+            description: Self Wake Up
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: WRNEN
+            description: Warning Interrupt Enable
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: LPMACK
+            description: Low-Power Mode Acknowledge
+            index: 20
+            width: 1
+            read: true
+            write: false
+          - name: WAKSRC
+            description: Wake Up Source
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: DOZE
+            description: Doze Mode Enable
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: SRXDIS
+            description: Self Reception Disable
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: IRMQ
+            description: Individual Rx Masking And Queue Enable
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: DMA
+            description: DMA Enable
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: LPRIOEN
+            description: Local Priority Enable
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: AEN
+            description: Abort Enable
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: FDEN
+            description: CAN FD operation enable
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: IDAM
+            description: ID Acceptance Mode
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: CAN1_MCR_IDAM
+          - name: MAXMB
+            description: Number Of The Last Message Buffer
+            index: 0
+            width: 7
+            read: true
+            write: true
+      - name: CTRL1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Control 1 register
+        fields:
+          - name: PRESDIV
+            description: Prescaler Division Factor
+            index: 24
+            width: 8
+            read: true
+            write: true
+          - name: RJW
+            description: Resync Jump Width
+            index: 22
+            width: 2
+            read: true
+            write: true
+          - name: PSEG1
+            description: Phase Segment 1
+            index: 19
+            width: 3
+            read: true
+            write: true
+          - name: PSEG2
+            description: Phase Segment 2
+            index: 16
+            width: 3
+            read: true
+            write: true
+          - name: BOFFMSK
+            description: Bus Off Interrupt Mask
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ERRMSK
+            description: Error Interrupt Mask
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: CLKSRC
+            description: CAN Engine Clock Source
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: LPB
+            description: Loop Back Mode
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: TWRNMSK
+            description: Tx Warning Interrupt Mask
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: RWRNMSK
+            description: Rx Warning Interrupt Mask
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: SMP
+            description: CAN Bit Sampling
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: BOFFREC
+            description: Bus Off Recovery
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: TSYN
+            description: Timer Sync
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: LBUF
+            description: Lowest Buffer Transmitted First
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: LOM
+            description: Listen-Only Mode
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: PROPSEG
+            description: Propagation Segment
+            index: 0
+            width: 3
+            read: true
+            write: true
+      - name: TIMER
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) Free Running Timer
+        fields:
+          - name: TIMER
+            description: Timer Value
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: RXMGMASK
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) Rx Mailboxes Global Mask register
+        fields:
+          - name: MG
+            description: Rx Mailboxes Global Mask Bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: RX14MASK
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) Rx 14 Mask register
+        fields:
+          - name: RX14M
+            description: Rx Buffer 14 Mask Bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: RX15MASK
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) Rx 15 Mask register
+        fields:
+          - name: RX15M
+            description: Rx Buffer 15 Mask Bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: ECR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) Error Counter
+        fields:
+          - name: RXERRCNT_FAST
+            description: Receive Error Counter for fast bits
+            index: 24
+            width: 8
+            read: true
+            write: true
+          - name: TXERRCNT_FAST
+            description: Transmit Error Counter for fast bits
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: RXERRCNT
+            description: Receive Error Counter
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: TXERRCNT
+            description: Transmit Error Counter
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: ESR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) Error and Status 1 register
+        fields:
+          - name: BIT1ERR_FAST
+            description: Bit1 Error in the Data Phase of CAN FD frames with the BRS
+              bit set
+            index: 31
+            width: 1
+            read: true
+            write: false
+          - name: BIT0ERR_FAST
+            description: Bit0 Error in the Data Phase of CAN FD frames with the BRS
+              bit set
+            index: 30
+            width: 1
+            read: true
+            write: false
+          - name: CRCERR_FAST
+            description: Cyclic Redundancy Check Error in the CRC field of CAN FD
+              frames with the BRS bit set
+            index: 28
+            width: 1
+            read: true
+            write: false
+          - name: FRMERR_FAST
+            description: Form Error in the Data Phase of CAN FD frames with the BRS
+              bit set
+            index: 27
+            width: 1
+            read: true
+            write: false
+          - name: STFERR_FAST
+            description: Stuffing Error in the Data Phase of CAN FD frames with the
+              BRS bit set
+            index: 26
+            width: 1
+            read: true
+            write: false
+          - name: ERROVR
+            description: Error Overrun
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: ERRINT_FAST
+            description: Error interrupt for errors detected in Data Phase of CAN
+              FD frames with BRS bit set
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: BOFFDONEINT
+            description: Bus Off Done Interrupt
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: SYNCH
+            description: CAN Synchronization Status
+            index: 18
+            width: 1
+            read: true
+            write: false
+          - name: TWRNINT
+            description: Tx Warning Interrupt Flag
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: RWRNINT
+            description: Rx Warning Interrupt Flag
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: BIT1ERR
+            description: Bit1 Error
+            index: 15
+            width: 1
+            read: true
+            write: false
+          - name: BIT0ERR
+            description: Bit0 Error
+            index: 14
+            width: 1
+            read: true
+            write: false
+          - name: ACKERR
+            description: Acknowledge Error
+            index: 13
+            width: 1
+            read: true
+            write: false
+          - name: CRCERR
+            description: Cyclic Redundancy Check Error
+            index: 12
+            width: 1
+            read: true
+            write: false
+          - name: FRMERR
+            description: Form Error
+            index: 11
+            width: 1
+            read: true
+            write: false
+          - name: STFERR
+            description: Stuffing Error
+            index: 10
+            width: 1
+            read: true
+            write: false
+          - name: TXWRN
+            description: TX Error Warning
+            index: 9
+            width: 1
+            read: true
+            write: false
+          - name: RXWRN
+            description: Rx Error Warning
+            index: 8
+            width: 1
+            read: true
+            write: false
+          - name: IDLE
+            description: IDLE
+            index: 7
+            width: 1
+            read: true
+            write: false
+          - name: TX
+            description: FlexCAN In Transmission
+            index: 6
+            width: 1
+            read: true
+            write: false
+          - name: FLTCONF
+            description: Fault Confinement State
+            index: 4
+            width: 2
+            read: true
+            write: false
+            type: CAN1_ESR1_FLTCONF
+          - name: RX
+            description: FlexCAN In Reception
+            index: 3
+            width: 1
+            read: true
+            write: false
+          - name: BOFFINT
+            description: Bus Off Interrupt
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ERRINT
+            description: Error Interrupt
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: WAKINT
+            description: Wake-Up Interrupt
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: IMASK2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) Interrupt Masks 2 register
+        fields:
+          - name: BUF63TO32M
+            description: Buffer MBi Mask
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: IMASK1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) Interrupt Masks 1 register
+        fields:
+          - name: BUF31TO0M
+            description: Buffer MBi Mask
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: IFLAG2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) Interrupt Flags 2 register
+        fields:
+          - name: BUF63TO32I
+            description: Buffer MBi Interrupt
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: IFLAG1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) Interrupt Flags 1 register
+        fields:
+          - name: BUF31TO8I
+            description: Buffer MBi Interrupt
+            index: 8
+            width: 24
+            read: true
+            write: true
+          - name: BUF7I
+            description: Buffer MB7 Interrupt Or Rx FIFO Overflow
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: BUF6I
+            description: Buffer MB6 Interrupt Or Rx FIFO Warning
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: BUF5I
+            description: Buffer MB5 Interrupt Or Frames available in Rx FIFO
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: BUF4TO1I
+            description: Buffer MBi Interrupt Or Reserved
+            index: 1
+            width: 4
+            read: true
+            write: true
+          - name: BUF0I
+            description: Buffer MB0 Interrupt Or Clear FIFO bit
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 52
+        description: (read-write) Control 2 register
+        fields:
+          - name: ERRMSK_FAST
+            description: Error Interrupt Mask for errors detected in the data phase
+              of fast CAN FD frames
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: BOFFDONEMSK
+            description: Bus Off Done Interrupt Mask
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: ECRWRE
+            description: Error-correction Configuration Register Write Enable
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: WRMFRZ
+            description: Write-Access To Memory In Freeze Mode
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: RFFN
+            description: Number Of Rx FIFO Filters
+            index: 24
+            width: 4
+            read: true
+            write: true
+          - name: TASD
+            description: Tx Arbitration Start Delay
+            index: 19
+            width: 5
+            read: true
+            write: true
+          - name: MRP
+            description: Mailboxes Reception Priority
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: RRS
+            description: Remote Request Storing
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: EACEN
+            description: Entire Frame Arbitration Field Comparison Enable For Rx Mailboxes
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: TIMER_SRC
+            description: Timer Source
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: PREXCEN
+            description: Protocol Exception Enable
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: ISOCANFDEN
+            description: ISO CAN FD Enable
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: EDFLTDIS
+            description: Edge Filter Disable
+            index: 11
+            width: 1
+            read: true
+            write: true
+      - name: ESR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 56
+        description: (read-write) Error and Status 2 register
+        fields:
+          - name: LPTM
+            description: Lowest Priority Tx Mailbox
+            index: 16
+            width: 7
+            read: true
+            write: false
+          - name: VPS
+            description: Valid Priority Status
+            index: 14
+            width: 1
+            read: true
+            write: false
+          - name: IMB
+            description: Inactive Mailbox
+            index: 13
+            width: 1
+            read: true
+            write: false
+      - name: CRCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 68
+        description: (read-write) CRC register
+        fields:
+          - name: MBCRC
+            description: CRC Mailbox
+            index: 16
+            width: 7
+            read: true
+            write: false
+          - name: TXCRC
+            description: Transmitted CRC value
+            index: 0
+            width: 15
+            read: true
+            write: false
+      - name: RXFGMASK
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 72
+        description: (read-write) Rx FIFO Global Mask register
+        fields:
+          - name: FGM
+            description: Rx FIFO Global Mask Bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: RXFIR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 76
+        description: (read-write) Rx FIFO Information register
+        fields:
+          - name: IDHIT
+            description: Identifier Acceptance Filter Hit Indicator
+            index: 0
+            width: 9
+            read: true
+            write: false
+      - name: CBT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 80
+        description: (read-write) CAN Bit Timing register
+        fields:
+          - name: BTF
+            description: Bit Timing Format Enable
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: EPRESDIV
+            description: Extended Prescaler Division Factor
+            index: 21
+            width: 10
+            read: true
+            write: true
+          - name: ERJW
+            description: Extended Resync Jump Width
+            index: 16
+            width: 5
+            read: true
+            write: true
+          - name: EPROPSEG
+            description: Extended Propagation Segment
+            index: 10
+            width: 6
+            read: true
+            write: true
+          - name: EPSEG1
+            description: Extended Phase Segment 1
+            index: 5
+            width: 5
+            read: true
+            write: true
+          - name: EPSEG2
+            description: Extended Phase Segment 2
+            index: 0
+            width: 5
+            read: true
+            write: true
+      - name: CS0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 128
+        description: (read-write) Message Buffer 0 CS Register
+        fields:
+          - name: EDL
+            description: Extended Data Length. This bit distinguishes between CAN
+              format and CAN FD format frames. The EDL bit must not be set for Message
+              Buffers configured to RANSWER with code field 0b1010.
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: BRS
+            description: Bit Rate Switch. This bit defines whether the bit rate is
+              switched inside a CAN FD format frame.
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: ESI
+            description: Error State Indicator. This bit indicates if the transmitting
+              node is error active or error passive.
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: CODE
+            description: Message Buffer Code. This 4-bit field can be accessed (read
+              or write) by the CPU and by the FlexCAN module itself, as part of the
+              message buffer matching and arbitration process.
+            index: 24
+            width: 4
+            read: true
+            write: true
+          - name: SRR
+            description: Substitute Remote Request. Contains a fixed recessive bit.
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: IDE
+            description: ID Extended. One/zero for extended/standard format frame.
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: RTR
+            description: Remote Transmission Request. One/zero for remote/data frame.
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: DLC
+            description: Length of the data to be stored/transmitted.
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: TIME_STAMP
+            description: Free-Running Counter Time stamp. This 16-bit field is a copy
+              of the Free-Running Timer, captured for Tx and Rx frames at the time
+              when the beginning of the Identifier field appears on the CAN bus.
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: RXIMR
+        type: uint32_t
+        expected_size: 256
+        expected_offset: 2176
+        array_length: 64
+        description: (read-write) Rx Individual Mask registers
+        fields:
+          - name: MI
+            description: Individual Mask Bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: MECR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2784
+        description: (read-write) Memory Error Control register
+        fields:
+          - name: ECRWRDIS
+            description: Error Configuration Register Write Disable
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: HANCEI_MSK
+            description: Host Access With Non-Correctable Errors Interrupt Mask
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: FANCEI_MSK
+            description: FlexCAN Access With Non-Correctable Errors Interrupt Mask
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: CEI_MSK
+            description: Correctable Errors Interrupt Mask
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: HAERRIE
+            description: Host Access Error Injection Enable
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: FAERRIE
+            description: FlexCAN Access Error Injection Enable
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: EXTERRIE
+            description: Extended Error Injection Enable
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: RERRDIS
+            description: Error Report Disable
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: ECCDIS
+            description: Error Correction Disable
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: NCEFAFRZ
+            description: Non-Correctable Errors In FlexCAN Access Put Device In Freeze
+              Mode
+            index: 7
+            width: 1
+            read: true
+            write: true
+      - name: ERRIAR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2788
+        description: (read-write) Error Injection Address register
+        fields:
+          - name: INJADDR_H
+            description: Error Injection Address High
+            index: 2
+            width: 12
+            read: true
+            write: true
+          - name: INJADDR_L
+            description: Error Injection Address Low
+            index: 0
+            width: 2
+            read: true
+            write: false
+      - name: ERRIDPR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2792
+        description: (read-write) Error Injection Data Pattern register
+        fields:
+          - name: DFLIP
+            description: Data flip pattern
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: ERRIPPR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2796
+        description: (read-write) Error Injection Parity Pattern register
+        fields:
+          - name: PFLIP3
+            description: Parity Flip Pattern For Byte 3 (most significant)
+            index: 24
+            width: 5
+            read: true
+            write: true
+          - name: PFLIP2
+            description: Parity Flip Pattern For Byte 2
+            index: 16
+            width: 5
+            read: true
+            write: true
+          - name: PFLIP1
+            description: Parity Flip Pattern For Byte 1
+            index: 8
+            width: 5
+            read: true
+            write: true
+          - name: PFLIP0
+            description: Parity Flip Pattern For Byte 0 (Least Significant)
+            index: 0
+            width: 5
+            read: true
+            write: true
+      - name: RERRAR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2800
+        description: (read-write) Error Report Address register
+        fields:
+          - name: NCE
+            description: Non-Correctable Error
+            index: 24
+            width: 1
+            read: true
+            write: false
+          - name: SAID
+            description: SAID
+            index: 16
+            width: 3
+            read: true
+            write: false
+          - name: ERRADDR
+            description: Address Where Error Detected
+            index: 0
+            width: 14
+            read: true
+            write: false
+      - name: RERRDR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2804
+        description: (read-write) Error Report Data register
+        fields:
+          - name: RDATA
+            description: Raw data word read from memory with error
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: RERRSYNR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2808
+        description: (read-write) Error Report Syndrome register
+        fields:
+          - name: BE3
+            description: Byte Enabled For Byte 3 (most significant)
+            index: 31
+            width: 1
+            read: true
+            write: false
+          - name: SYND3
+            description: Error Syndrome For Byte 3 (most significant)
+            index: 24
+            width: 5
+            read: true
+            write: false
+          - name: BE2
+            description: Byte Enabled For Byte 2
+            index: 23
+            width: 1
+            read: true
+            write: false
+          - name: SYND2
+            description: Error Syndrome For Byte 2
+            index: 16
+            width: 5
+            read: true
+            write: false
+          - name: BE1
+            description: Byte Enabled For Byte 1
+            index: 15
+            width: 1
+            read: true
+            write: false
+          - name: SYND1
+            description: Error Syndrome for Byte 1
+            index: 8
+            width: 5
+            read: true
+            write: false
+          - name: BE0
+            description: Byte Enabled For Byte 0 (least significant)
+            index: 7
+            width: 1
+            read: true
+            write: false
+          - name: SYND0
+            description: Error Syndrome For Byte 0 (least significant)
+            index: 0
+            width: 5
+            read: true
+            write: false
+      - name: ERRSR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2812
+        description: (read-write) Error Status register
+        fields:
+          - name: HANCEIF
+            description: Host Access With Non-Correctable Error Interrupt Flag
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: FANCEIF
+            description: FlexCAN Access With Non-Correctable Error Interrupt Flag
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: CEIF
+            description: Correctable Error Interrupt Flag
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: HANCEIOF
+            description: Host Access With Non-Correctable Error Interrupt Overrun
+              Flag
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: FANCEIOF
+            description: FlexCAN Access With Non-Correctable Error Interrupt Overrun
+              Flag
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: CEIOF
+            description: Correctable Error Interrupt Overrun Flag
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: FDCTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 3072
+        description: (read-write) CAN FD Control register
+        fields:
+          - name: FDRATE
+            description: Bit Rate Switch Enable
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: MBDSR1
+            description: Message Buffer Data Size for Region 1
+            index: 19
+            width: 2
+            read: true
+            write: true
+            type: CAN1_FDCTRL_MBDSR1
+          - name: MBDSR0
+            description: Message Buffer Data Size for Region 0
+            index: 16
+            width: 2
+            read: true
+            write: true
+            type: CAN1_FDCTRL_MBDSR0
+          - name: TDCEN
+            description: Transceiver Delay Compensation Enable
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: TDCFAIL
+            description: Transceiver Delay Compensation Fail
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: TDCOFF
+            description: Transceiver Delay Compensation Offset
+            index: 8
+            width: 5
+            read: true
+            write: true
+          - name: TDCVAL
+            description: Transceiver Delay Compensation Value
+            index: 0
+            width: 6
+            read: true
+            write: false
+      - name: FDCBT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 3076
+        description: (read-write) CAN FD Bit Timing register
+        fields:
+          - name: FPRESDIV
+            description: Fast Prescaler Division Factor
+            index: 20
+            width: 10
+            read: true
+            write: true
+          - name: FRJW
+            description: Fast Resync Jump Width
+            index: 16
+            width: 3
+            read: true
+            write: true
+          - name: FPROPSEG
+            description: Fast Propagation Segment
+            index: 10
+            width: 5
+            read: true
+            write: true
+          - name: FPSEG1
+            description: Fast Phase Segment 1
+            index: 5
+            width: 3
+            read: true
+            write: true
+          - name: FPSEG2
+            description: Fast Phase Segment 2
+            index: 0
+            width: 3
+            read: true
+            write: true
+      - name: FDCRC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 3080
+        description: (read-write) CAN FD CRC register
+        fields:
+          - name: FD_MBCRC
+            description: CRC Mailbox Number for FD_TXCRC
+            index: 24
+            width: 7
+            read: true
+            write: false
+          - name: FD_TXCRC
+            description: Extended Transmitted CRC value
+            index: 0
+            width: 21
+            read: true
+            write: false
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  CAN1_MCR_IDAM:
+    enum:
+      one_full_ID:
+        description: 'Format A: One full ID (standard and extended) per ID filter
+          table element.'
+        value: 0
+      two_full_ID:
+        description: 'Format B: Two full standard IDs or two partial 14-bit (standard
+          and extended) IDs per ID filter table element.'
+        value: 1
+      four_partial_ID:
+        description: 'Format C: Four partial 8-bit standard IDs per ID filter table
+          element.'
+        value: 2
+      all_frames_rejected:
+        description: 'Format D: All frames rejected.'
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CAN1_ESR1_FLTCONF:
+    enum:
+      error_active:
+        description: Error Active
+        value: 0
+      error_passive:
+        description: Error Passive
+        value: 1
+      bus_off:
+        description: Bus Off
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CAN1_FDCTRL_MBDSR1:
+    enum:
+      _8_bytes:
+        description: Selects 8 bytes per message buffer.
+        value: 0
+      _16_bytes:
+        description: Selects 16 bytes per message buffer.
+        value: 1
+      _32_bytes:
+        description: Selects 32 bytes per message buffer.
+        value: 2
+      _64_bytes:
+        description: Selects 64 bytes per message buffer.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CAN1_FDCTRL_MBDSR0:
+    enum:
+      _8_bytes:
+        description: Selects 8 bytes per message buffer.
+        value: 0
+      _16_bytes:
+        description: Selects 16 bytes per message buffer.
+        value: 1
+      _32_bytes:
+        description: Selects 32 bytes per message buffer.
+        value: 2
+      _64_bytes:
+        description: Selects 64 bytes per message buffer.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

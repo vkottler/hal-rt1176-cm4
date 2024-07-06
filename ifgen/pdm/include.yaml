@@ -1,0 +1,1001 @@
+---
+structs:
+  pdm:
+    description: PDM
+    instances:
+      - name: PDM
+        address: '0x40C20000'
+    fields:
+      - name: CTRL_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) PDM Control register 1
+        fields:
+          - name: MDIS
+            description: Module Disable
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: DOZEN
+            description: DOZE enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: PDMIEN
+            description: PDM Enable
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: DBG
+            description: Debug Mode
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: SRES
+            description: Software-reset bit
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: DBGE
+            description: Module Enable in Debug
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: DISEL
+            description: DMA Interrupt Selection
+            index: 24
+            width: 2
+            read: true
+            write: true
+            type: PDM_CTRL_1_DISEL
+          - name: ERREN
+            description: Error Interruption Enable
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: CH7EN
+            description: Channel 7 Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: CH6EN
+            description: Channel 6 Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: CH5EN
+            description: Channel 5 Enable
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: CH4EN
+            description: Channel 4 Enable
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: CH3EN
+            description: Channel 3 Enable
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: CH2EN
+            description: Channel 2 Enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: CH1EN
+            description: Channel 1 Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CH0EN
+            description: Channel 0 Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) PDM Control register 2
+        fields:
+          - name: QSEL
+            description: Quality Mode
+            index: 25
+            width: 3
+            read: true
+            write: true
+            type: PDM_CTRL_2_QSEL
+          - name: CICOSR
+            description: CIC Decimation Rate
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: CLKDIV
+            description: Clock Divider
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: STAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) PDM Status register
+        fields:
+          - name: BSY_FIL
+            description: Busy Flag
+            index: 31
+            width: 1
+            read: true
+            write: false
+          - name: FIR_RDY
+            description: Filter Data Ready
+            index: 30
+            width: 1
+            read: true
+            write: false
+          - name: LOWFREQF
+            description: Low Frequency Flag
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: CH7F
+            description: Channel 7 Output Data Flag
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: CH6F
+            description: Channel 6 Output Data Flag
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: CH5F
+            description: Channel 5 Output Data Flag
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: CH4F
+            description: Channel 4 Output Data Flag
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: CH3F
+            description: Channel 3 Output Data Flag
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: CH2F
+            description: Channel 2 Output Data Flag
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: CH1F
+            description: Channel 1 Output Data Flag
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CH0F
+            description: Channel 0 Output Data Flag
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: FIFO_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) PDM FIFO Control register
+        fields:
+          - name: FIFOWMK
+            description: FIFO Watermark Control
+            index: 0
+            width: 3
+            read: true
+            write: true
+      - name: FIFO_STAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) PDM FIFO Status register
+        fields:
+          - name: FIFOUND7
+            description: FIFO Underflow Exception flag for Channel 7
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: FIFOUND6
+            description: FIFO Underflow Exception flag for Channel 6
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: FIFOUND5
+            description: FIFO Underflow Exception flag for Channel 5
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: FIFOUND4
+            description: FIFO Underflow Exception flag for Channel 4
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: FIFOUND3
+            description: FIFO Underflow Exception flag for Channel 3
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: FIFOUND2
+            description: FIFO Underflow Exception flag for Channel 2
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: FIFOUND1
+            description: FIFO Underflow Exception flag for Channel 1
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: FIFOUND0
+            description: FIFO Underflow Exception flag for Channel 0
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: FIFOOVF7
+            description: FIFO Overflow Exception flag for Channel 7
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: FIFOOVF6
+            description: FIFO Overflow Exception flag for Channel 6
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: FIFOOVF5
+            description: FIFO Overflow Exception flag for Channel 5
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: FIFOOVF4
+            description: FIFO Overflow Exception flag for Channel 4
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: FIFOOVF3
+            description: FIFO Overflow Exception flag for Channel 3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: FIFOOVF2
+            description: FIFO Overflow Exception flag for Channel 2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: FIFOOVF1
+            description: FIFO Overflow Exception flag for Channel 1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: FIFOOVF0
+            description: FIFO Overflow Exception flag for Channel 0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DATACH
+        type: uint32_t
+        expected_size: 32
+        expected_offset: 36
+        array_length: 8
+        description: (read-write) PDM Output Result Register
+        fields:
+          - name: DATA
+            description: Channel n Data
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: DC_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 100
+        description: (read-write) PDM DC Remover Control register
+        fields:
+          - name: DCCONFIG7
+            description: Channel 7 DC Remover Configuration
+            index: 14
+            width: 2
+            read: true
+            write: true
+            type: PDM_DC_CTRL_DCCONFIG7
+          - name: DCCONFIG6
+            description: Channel 6 DC Remover Configuration
+            index: 12
+            width: 2
+            read: true
+            write: true
+            type: PDM_DC_CTRL_DCCONFIG6
+          - name: DCCONFIG5
+            description: Channel 5 DC Remover Configuration
+            index: 10
+            width: 2
+            read: true
+            write: true
+            type: PDM_DC_CTRL_DCCONFIG5
+          - name: DCCONFIG4
+            description: Channel 4 DC Remover Configuration
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: PDM_DC_CTRL_DCCONFIG4
+          - name: DCCONFIG3
+            description: Channel 3 DC Remover Configuration
+            index: 6
+            width: 2
+            read: true
+            write: true
+            type: PDM_DC_CTRL_DCCONFIG3
+          - name: DCCONFIG2
+            description: Channel 2 DC Remover Configuration
+            index: 4
+            width: 2
+            read: true
+            write: true
+            type: PDM_DC_CTRL_DCCONFIG2
+          - name: DCCONFIG1
+            description: Channel 1 DC Remover Configuration
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: PDM_DC_CTRL_DCCONFIG1
+          - name: DCCONFIG0
+            description: Channel 0 DC Remover Configuration
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: PDM_DC_CTRL_DCCONFIG0
+      - name: RANGE_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 116
+        description: (read-write) PDM Range Control register
+        fields:
+          - name: RANGEADJ7
+            description: Channel 7 Range Adjustment
+            index: 28
+            width: 4
+            read: true
+            write: true
+          - name: RANGEADJ6
+            description: Channel 6 Range Adjustment
+            index: 24
+            width: 4
+            read: true
+            write: true
+          - name: RANGEADJ5
+            description: Channel 5 Range Adjustment
+            index: 20
+            width: 4
+            read: true
+            write: true
+          - name: RANGEADJ4
+            description: Channel 4 Range Adjustment
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: RANGEADJ3
+            description: Channel 3 Range Adjustment
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: RANGEADJ2
+            description: Channel 2 Range Adjustment
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: RANGEADJ1
+            description: Channel 1 Range Adjustment
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: RANGEADJ0
+            description: Channel 0 Range Adjustment
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: RANGE_STAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 124
+        description: (read-write) PDM Range Status register
+        fields:
+          - name: RANGEUNF7
+            description: Channel 7 Range Underflow Error Flag
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: RANGEUNF6
+            description: Channel 6 Range Underflow Error Flag
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: RANGEUNF5
+            description: Channel 5 Range Underflow Error Flag
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: RANGEUNF4
+            description: Channel 4 Range Underflow Error Flag
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: RANGEUNF3
+            description: Channel 3 Range Underflow Error Flag
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RANGEUNF2
+            description: Channel 2 Range Underflow Error Flag
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: RANGEUNF1
+            description: Channel 1 Range Underflow Error Flag
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: RANGEUNF0
+            description: Channel 0 Range Underflow Error Flag
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: RANGEOVF7
+            description: Channel 7 Range Overflow Error Flag
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: RANGEOVF6
+            description: Channel 6 Range Overflow Error Flag
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: RANGEOVF5
+            description: Channel 5 Range Overflow Error Flag
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: RANGEOVF4
+            description: Channel 4 Range Overflow Error Flag
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: RANGEOVF3
+            description: Channel 3 Range Overflow Error Flag
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: RANGEOVF2
+            description: Channel 2 Range Overflow Error Flag
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: RANGEOVF1
+            description: Channel 1 Range Overflow Error Flag
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: RANGEOVF0
+            description: Channel 0 Range Overflow Error Flag
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: VAD0_CTRL_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 144
+        description: (read-write) Voice Activity Detector 0 Control register
+        fields:
+          - name: VADCHSEL
+            description: Voice Activity Detector Channel Selector
+            index: 24
+            width: 3
+            read: true
+            write: true
+          - name: VADCICOSR
+            description: Voice Activity Detector CIC Oversampling Rate
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: VADINITT
+            description: Voice Activity Detector Initialization Time
+            index: 8
+            width: 5
+            read: true
+            write: true
+          - name: VADST10
+            description: Voice Activity Detector Internal Filters Initialization
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: VADERIE
+            description: Voice Activity Detector Error Interruption Enable
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: VADIE
+            description: Voice Activity Detector Interruption Enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: VADRST
+            description: Voice Activity Detector Reset
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: VADEN
+            description: Voice Activity Detector Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: VAD0_CTRL_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 148
+        description: (read-write) Voice Activity Detector 0 Control register
+        fields:
+          - name: VADFRENDIS
+            description: Voice Activity Detector Frame Energy Disable
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: VADPREFEN
+            description: Voice Activity Detector Pre Filter Enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: VADFOUTDIS
+            description: Voice Activity Detector Force Output Disable
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: VADFRAMET
+            description: Voice Activity Detector Frame Time
+            index: 16
+            width: 6
+            read: true
+            write: true
+          - name: VADINPGAIN
+            description: Voice Activity Detector Input Gain
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: VADHPF
+            description: Voice Activity Detector High-Pass Filter
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: PDM_VAD0_CTRL_2_VADHPF
+      - name: VAD0_STAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 152
+        description: (read-write) Voice Activity Detector 0 Status register
+        fields:
+          - name: VADINITF
+            description: Voice Activity Detector Initialization Flag
+            index: 31
+            width: 1
+            read: true
+            write: false
+          - name: VADINSATF
+            description: Voice Activity Detector Input Saturation Flag
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: VADEF
+            description: Voice Activity Detector Event Flag
+            index: 15
+            width: 1
+            read: true
+            write: false
+          - name: VADIF
+            description: Voice Activity Detector Interrupt Flag
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: VAD0_SCONFIG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 156
+        description: (read-write) Voice Activity Detector 0 Signal Configuration
+        fields:
+          - name: VADSFILEN
+            description: Voice Activity Detector Signal Filter Enable
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: VADSMAXEN
+            description: Voice Activity Detector Signal Maximum Enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: VADSGAIN
+            description: Voice Activity Detector Signal Gain
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: VAD0_NCONFIG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 160
+        description: (read-write) Voice Activity Detector 0 Noise Configuration
+        fields:
+          - name: VADNFILAUTO
+            description: Voice Activity Detector Noise Filter Auto
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: VADNMINEN
+            description: Voice Activity Detector Noise Minimum Enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: VADNDECEN
+            description: Voice Activity Detector Noise Decimation Enable
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: VADNOREN
+            description: Voice Activity Detector Noise OR Enable
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: VADNFILADJ
+            description: Voice Activity Detector Noise Filter Adjustment
+            index: 8
+            width: 5
+            read: true
+            write: true
+          - name: VADNGAIN
+            description: Voice Activity Detector Noise Gain
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: VAD0_NDATA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 164
+        description: (read-write) Voice Activity Detector 0 Noise Data
+        fields:
+          - name: VADNDATA
+            description: Voice Activity Detector Noise Data
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: VAD0_ZCD
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 168
+        description: (read-write) Voice Activity Detector 0 Zero-Crossing Detector
+        fields:
+          - name: VADZCDTH
+            description: Zero-Crossing Detector Threshold
+            index: 16
+            width: 10
+            read: true
+            write: true
+          - name: VADZCDADJ
+            description: Zero-Crossing Detector Adjustment
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: VADZCDAND
+            description: Zero-Crossing Detector AND Behavior
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: VADZCDAUTO
+            description: Zero-Crossing Detector Automatic Threshold
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: VADZCDEN
+            description: Zero-Crossing Detector Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  PDM_CTRL_1_DISEL:
+    enum:
+      all_disabled:
+        description: DMA and interrupt requests disabled
+        value: 0
+      dmareq_enabled:
+        description: DMA requests enabled
+        value: 1
+      intreq_enabled:
+        description: Interrupt requests enabled
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PDM_CTRL_2_QSEL:
+    enum:
+      mq_mode:
+        description: Medium quality mode
+        value: 0
+      hq_mode:
+        description: High quality mode
+        value: 1
+      vlq2_mode:
+        description: Very low quality 2 mode
+        value: 4
+      vlq1_mode:
+        description: Very low quality 1 mode
+        value: 5
+      vlq0_mode:
+        description: Very low quality 0 mode
+        value: 6
+      lq_mode:
+        description: Low quality mode
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PDM_DC_CTRL_DCCONFIG7:
+    enum:
+      _21Hz:
+        description: DC Remover cut-off at 21Hz
+        value: 0
+      _83Hz:
+        description: DC Remover cut-off at 83Hz
+        value: 1
+      _152Hz:
+        description: DC Remover cut-off at 152Hz
+        value: 2
+      bypass:
+        description: DC Remover is bypassed
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PDM_DC_CTRL_DCCONFIG6:
+    enum:
+      _21Hz:
+        description: DC Remover cut-off at 21Hz
+        value: 0
+      _83Hz:
+        description: DC Remover cut-off at 83Hz
+        value: 1
+      _152Hz:
+        description: DC Remover cut-off at 152Hz
+        value: 2
+      bypass:
+        description: DC Remover is bypassed
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PDM_DC_CTRL_DCCONFIG5:
+    enum:
+      _21Hz:
+        description: DC Remover cut-off at 21Hz
+        value: 0
+      _83Hz:
+        description: DC Remover cut-off at 83Hz
+        value: 1
+      _152Hz:
+        description: DC Remover cut-off at 152Hz
+        value: 2
+      bypass:
+        description: DC Remover is bypassed
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PDM_DC_CTRL_DCCONFIG4:
+    enum:
+      _21Hz:
+        description: DC Remover cut-off at 21Hz
+        value: 0
+      _83Hz:
+        description: DC Remover cut-off at 83Hz
+        value: 1
+      _152Hz:
+        description: DC Remover cut-off at 152Hz
+        value: 2
+      bypass:
+        description: DC Remover is bypassed
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PDM_DC_CTRL_DCCONFIG3:
+    enum:
+      _21Hz:
+        description: DC Remover cut-off at 21Hz
+        value: 0
+      _83Hz:
+        description: DC Remover cut-off at 83Hz
+        value: 1
+      _152Hz:
+        description: DC Remover cut-off at 152Hz
+        value: 2
+      bypass:
+        description: DC Remover is bypassed
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PDM_DC_CTRL_DCCONFIG2:
+    enum:
+      _21Hz:
+        description: DC Remover cut-off at 21Hz
+        value: 0
+      _83Hz:
+        description: DC Remover cut-off at 83Hz
+        value: 1
+      _152Hz:
+        description: DC Remover cut-off at 152Hz
+        value: 2
+      bypass:
+        description: DC Remover is bypassed
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PDM_DC_CTRL_DCCONFIG1:
+    enum:
+      _21Hz:
+        description: DC Remover cut-off at 21Hz
+        value: 0
+      _83Hz:
+        description: DC Remover cut-off at 83Hz
+        value: 1
+      _152Hz:
+        description: DC Remover cut-off at 152Hz
+        value: 2
+      bypass:
+        description: DC Remover is bypassed
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PDM_DC_CTRL_DCCONFIG0:
+    enum:
+      _21Hz:
+        description: DC Remover cut-off at 21Hz
+        value: 0
+      _83Hz:
+        description: DC Remover cut-off at 83Hz
+        value: 1
+      _152Hz:
+        description: DC Remover cut-off at 152Hz
+        value: 2
+      bypass:
+        description: DC Remover is bypassed
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PDM_VAD0_CTRL_2_VADHPF:
+    enum:
+      filt_bypass:
+        description: Filter bypassed.
+        value: 0
+      cutoff_1750Hz:
+        description: Cut-off frequency at 1750Hz.
+        value: 1
+      cutoff_215Hz:
+        description: Cut-off frequency at 215Hz.
+        value: 2
+      cutoff_102Hz:
+        description: Cut-off frequency at 102Hz.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

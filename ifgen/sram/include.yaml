@@ -1,0 +1,56 @@
+---
+structs:
+  sram:
+    description: Secure RAM
+    instances:
+      - name: SRAM
+        address: '0x40C9C000'
+    fields:
+      - name: CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12288
+        description: (read-write) Control Register
+        fields:
+          - name: LOCK_BIT
+            description: Lock bits
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: TAMPER_PWR_OFF_EN
+            description: Turn off power on tamper event (with lock)
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: TAMPER_BLOCK_EN
+            description: Tamper Block Enable (with lock)
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: PWR_EN
+            description: Power Enable (with lock)
+            index: 2
+            width: 4
+            read: true
+            write: true
+          - name: RAM_WR_EN
+            description: RAM Write Enable (with lock)
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: RAM_RD_EN
+            description: RAM Read Enable (with lock)
+            index: 0
+            width: 1
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums: {}

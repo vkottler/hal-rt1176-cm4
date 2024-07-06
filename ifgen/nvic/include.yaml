@@ -1,0 +1,1539 @@
+---
+structs:
+  nvic:
+    description: Nested Vectored Interrupt Controller
+    instances:
+      - name: NVIC
+        address: '0xE000E100'
+    fields:
+      - name: NVICISER0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Interrupt Set Enable Register n
+        fields:
+          - name: SETENA
+            description: Interrupt set enable bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: NVICISER1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Interrupt Set Enable Register n
+        fields:
+          - name: SETENA
+            description: Interrupt set enable bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: NVICISER2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) Interrupt Set Enable Register n
+        fields:
+          - name: SETENA
+            description: Interrupt set enable bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: NVICISER3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) Interrupt Set Enable Register n
+        fields:
+          - name: SETENA
+            description: Interrupt set enable bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: NVICICER0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 128
+        description: (read-write) Interrupt Clear Enable Register n
+        fields:
+          - name: CLRENA
+            description: Interrupt clear-enable bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: NVICICER1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 132
+        description: (read-write) Interrupt Clear Enable Register n
+        fields:
+          - name: CLRENA
+            description: Interrupt clear-enable bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: NVICICER2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 136
+        description: (read-write) Interrupt Clear Enable Register n
+        fields:
+          - name: CLRENA
+            description: Interrupt clear-enable bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: NVICICER3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 140
+        description: (read-write) Interrupt Clear Enable Register n
+        fields:
+          - name: CLRENA
+            description: Interrupt clear-enable bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: NVICISPR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 256
+        description: (read-write) Interrupt Set Pending Register n
+        fields:
+          - name: SETPEND
+            description: Interrupt set-pending bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: NVICISPR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 260
+        description: (read-write) Interrupt Set Pending Register n
+        fields:
+          - name: SETPEND
+            description: Interrupt set-pending bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: NVICISPR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 264
+        description: (read-write) Interrupt Set Pending Register n
+        fields:
+          - name: SETPEND
+            description: Interrupt set-pending bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: NVICISPR3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 268
+        description: (read-write) Interrupt Set Pending Register n
+        fields:
+          - name: SETPEND
+            description: Interrupt set-pending bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: NVICICPR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 384
+        description: (read-write) Interrupt Clear Pending Register n
+        fields:
+          - name: CLRPEND
+            description: Interrupt clear-pending bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: NVICICPR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 388
+        description: (read-write) Interrupt Clear Pending Register n
+        fields:
+          - name: CLRPEND
+            description: Interrupt clear-pending bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: NVICICPR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 392
+        description: (read-write) Interrupt Clear Pending Register n
+        fields:
+          - name: CLRPEND
+            description: Interrupt clear-pending bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: NVICICPR3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 396
+        description: (read-write) Interrupt Clear Pending Register n
+        fields:
+          - name: CLRPEND
+            description: Interrupt clear-pending bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: NVICIABR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 512
+        description: (read-write) Interrupt Active bit Register n
+        fields:
+          - name: ACTIVE
+            description: Interrupt active flags
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: NVICIABR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 516
+        description: (read-write) Interrupt Active bit Register n
+        fields:
+          - name: ACTIVE
+            description: Interrupt active flags
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: NVICIABR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 520
+        description: (read-write) Interrupt Active bit Register n
+        fields:
+          - name: ACTIVE
+            description: Interrupt active flags
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: NVICIABR3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 524
+        description: (read-write) Interrupt Active bit Register n
+        fields:
+          - name: ACTIVE
+            description: Interrupt active flags
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: NVICIP0
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 768
+        description: (read-write) Interrupt Priority Register 0
+        fields:
+          - name: PRI0
+            description: Priority of interrupt 0
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP1
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 769
+        description: (read-write) Interrupt Priority Register 1
+        fields:
+          - name: PRI1
+            description: Priority of interrupt 1
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP2
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 770
+        description: (read-write) Interrupt Priority Register 2
+        fields:
+          - name: PRI2
+            description: Priority of interrupt 2
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP3
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 771
+        description: (read-write) Interrupt Priority Register 3
+        fields:
+          - name: PRI3
+            description: Priority of interrupt 3
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP4
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 772
+        description: (read-write) Interrupt Priority Register 4
+        fields:
+          - name: PRI4
+            description: Priority of interrupt 4
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP5
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 773
+        description: (read-write) Interrupt Priority Register 5
+        fields:
+          - name: PRI5
+            description: Priority of interrupt 5
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP6
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 774
+        description: (read-write) Interrupt Priority Register 6
+        fields:
+          - name: PRI6
+            description: Priority of interrupt 6
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP7
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 775
+        description: (read-write) Interrupt Priority Register 7
+        fields:
+          - name: PRI7
+            description: Priority of interrupt 7
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP8
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 776
+        description: (read-write) Interrupt Priority Register 8
+        fields:
+          - name: PRI8
+            description: Priority of interrupt 8
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP9
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 777
+        description: (read-write) Interrupt Priority Register 9
+        fields:
+          - name: PRI9
+            description: Priority of interrupt 9
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP10
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 778
+        description: (read-write) Interrupt Priority Register 10
+        fields:
+          - name: PRI10
+            description: Priority of interrupt 10
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP11
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 779
+        description: (read-write) Interrupt Priority Register 11
+        fields:
+          - name: PRI11
+            description: Priority of interrupt 11
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP12
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 780
+        description: (read-write) Interrupt Priority Register 12
+        fields:
+          - name: PRI12
+            description: Priority of interrupt 12
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP13
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 781
+        description: (read-write) Interrupt Priority Register 13
+        fields:
+          - name: PRI13
+            description: Priority of interrupt 13
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP14
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 782
+        description: (read-write) Interrupt Priority Register 14
+        fields:
+          - name: PRI14
+            description: Priority of interrupt 14
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP15
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 783
+        description: (read-write) Interrupt Priority Register 15
+        fields:
+          - name: PRI15
+            description: Priority of interrupt 15
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP16
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 784
+        description: (read-write) Interrupt Priority Register 16
+        fields:
+          - name: PRI16
+            description: Priority of interrupt 16
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP17
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 785
+        description: (read-write) Interrupt Priority Register 17
+        fields:
+          - name: PRI17
+            description: Priority of interrupt 17
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP18
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 786
+        description: (read-write) Interrupt Priority Register 18
+        fields:
+          - name: PRI18
+            description: Priority of interrupt 18
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP19
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 787
+        description: (read-write) Interrupt Priority Register 19
+        fields:
+          - name: PRI19
+            description: Priority of interrupt 19
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP20
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 788
+        description: (read-write) Interrupt Priority Register 20
+        fields:
+          - name: PRI20
+            description: Priority of interrupt 20
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP21
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 789
+        description: (read-write) Interrupt Priority Register 21
+        fields:
+          - name: PRI21
+            description: Priority of interrupt 21
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP22
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 790
+        description: (read-write) Interrupt Priority Register 22
+        fields:
+          - name: PRI22
+            description: Priority of interrupt 22
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP23
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 791
+        description: (read-write) Interrupt Priority Register 23
+        fields:
+          - name: PRI23
+            description: Priority of interrupt 23
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP24
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 792
+        description: (read-write) Interrupt Priority Register 24
+        fields:
+          - name: PRI24
+            description: Priority of interrupt 24
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP25
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 793
+        description: (read-write) Interrupt Priority Register 25
+        fields:
+          - name: PRI25
+            description: Priority of interrupt 25
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP26
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 794
+        description: (read-write) Interrupt Priority Register 26
+        fields:
+          - name: PRI26
+            description: Priority of interrupt 26
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP27
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 795
+        description: (read-write) Interrupt Priority Register 27
+        fields:
+          - name: PRI27
+            description: Priority of interrupt 27
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP28
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 796
+        description: (read-write) Interrupt Priority Register 28
+        fields:
+          - name: PRI28
+            description: Priority of interrupt 28
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP29
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 797
+        description: (read-write) Interrupt Priority Register 29
+        fields:
+          - name: PRI29
+            description: Priority of interrupt 29
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP30
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 798
+        description: (read-write) Interrupt Priority Register 30
+        fields:
+          - name: PRI30
+            description: Priority of interrupt 30
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP31
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 799
+        description: (read-write) Interrupt Priority Register 31
+        fields:
+          - name: PRI31
+            description: Priority of interrupt 31
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP32
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 800
+        description: (read-write) Interrupt Priority Register 32
+        fields:
+          - name: PRI32
+            description: Priority of interrupt 32
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP33
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 801
+        description: (read-write) Interrupt Priority Register 33
+        fields:
+          - name: PRI33
+            description: Priority of interrupt 33
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP34
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 802
+        description: (read-write) Interrupt Priority Register 34
+        fields:
+          - name: PRI34
+            description: Priority of interrupt 34
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP35
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 803
+        description: (read-write) Interrupt Priority Register 35
+        fields:
+          - name: PRI35
+            description: Priority of interrupt 35
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP36
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 804
+        description: (read-write) Interrupt Priority Register 36
+        fields:
+          - name: PRI36
+            description: Priority of interrupt 36
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP37
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 805
+        description: (read-write) Interrupt Priority Register 37
+        fields:
+          - name: PRI37
+            description: Priority of interrupt 37
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP38
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 806
+        description: (read-write) Interrupt Priority Register 38
+        fields:
+          - name: PRI38
+            description: Priority of interrupt 38
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP39
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 807
+        description: (read-write) Interrupt Priority Register 39
+        fields:
+          - name: PRI39
+            description: Priority of interrupt 39
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP40
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 808
+        description: (read-write) Interrupt Priority Register 40
+        fields:
+          - name: PRI40
+            description: Priority of interrupt 40
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP41
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 809
+        description: (read-write) Interrupt Priority Register 41
+        fields:
+          - name: PRI41
+            description: Priority of interrupt 41
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP42
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 810
+        description: (read-write) Interrupt Priority Register 42
+        fields:
+          - name: PRI42
+            description: Priority of interrupt 42
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP43
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 811
+        description: (read-write) Interrupt Priority Register 43
+        fields:
+          - name: PRI43
+            description: Priority of interrupt 43
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP44
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 812
+        description: (read-write) Interrupt Priority Register 44
+        fields:
+          - name: PRI44
+            description: Priority of interrupt 44
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP45
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 813
+        description: (read-write) Interrupt Priority Register 45
+        fields:
+          - name: PRI45
+            description: Priority of interrupt 45
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP46
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 814
+        description: (read-write) Interrupt Priority Register 46
+        fields:
+          - name: PRI46
+            description: Priority of interrupt 46
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP47
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 815
+        description: (read-write) Interrupt Priority Register 47
+        fields:
+          - name: PRI47
+            description: Priority of interrupt 47
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP48
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 816
+        description: (read-write) Interrupt Priority Register 48
+        fields:
+          - name: PRI48
+            description: Priority of interrupt 48
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP49
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 817
+        description: (read-write) Interrupt Priority Register 49
+        fields:
+          - name: PRI49
+            description: Priority of interrupt 49
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP50
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 818
+        description: (read-write) Interrupt Priority Register 50
+        fields:
+          - name: PRI50
+            description: Priority of interrupt 50
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP51
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 819
+        description: (read-write) Interrupt Priority Register 51
+        fields:
+          - name: PRI51
+            description: Priority of interrupt 51
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP52
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 820
+        description: (read-write) Interrupt Priority Register 52
+        fields:
+          - name: PRI52
+            description: Priority of interrupt 52
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP53
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 821
+        description: (read-write) Interrupt Priority Register 53
+        fields:
+          - name: PRI53
+            description: Priority of interrupt 53
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP54
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 822
+        description: (read-write) Interrupt Priority Register 54
+        fields:
+          - name: PRI54
+            description: Priority of interrupt 54
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP55
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 823
+        description: (read-write) Interrupt Priority Register 55
+        fields:
+          - name: PRI55
+            description: Priority of interrupt 55
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP56
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 824
+        description: (read-write) Interrupt Priority Register 56
+        fields:
+          - name: PRI56
+            description: Priority of interrupt 56
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP57
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 825
+        description: (read-write) Interrupt Priority Register 57
+        fields:
+          - name: PRI57
+            description: Priority of interrupt 57
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP58
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 826
+        description: (read-write) Interrupt Priority Register 58
+        fields:
+          - name: PRI58
+            description: Priority of interrupt 58
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP59
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 827
+        description: (read-write) Interrupt Priority Register 59
+        fields:
+          - name: PRI59
+            description: Priority of interrupt 59
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP60
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 828
+        description: (read-write) Interrupt Priority Register 60
+        fields:
+          - name: PRI60
+            description: Priority of interrupt 60
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP61
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 829
+        description: (read-write) Interrupt Priority Register 61
+        fields:
+          - name: PRI61
+            description: Priority of interrupt 61
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP62
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 830
+        description: (read-write) Interrupt Priority Register 62
+        fields:
+          - name: PRI62
+            description: Priority of interrupt 62
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP63
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 831
+        description: (read-write) Interrupt Priority Register 63
+        fields:
+          - name: PRI63
+            description: Priority of interrupt 63
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP64
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 832
+        description: (read-write) Interrupt Priority Register 64
+        fields:
+          - name: PRI64
+            description: Priority of interrupt 64
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP65
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 833
+        description: (read-write) Interrupt Priority Register 65
+        fields:
+          - name: PRI65
+            description: Priority of interrupt 65
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP66
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 834
+        description: (read-write) Interrupt Priority Register 66
+        fields:
+          - name: PRI66
+            description: Priority of interrupt 66
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP67
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 835
+        description: (read-write) Interrupt Priority Register 67
+        fields:
+          - name: PRI67
+            description: Priority of interrupt 67
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP68
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 836
+        description: (read-write) Interrupt Priority Register 68
+        fields:
+          - name: PRI68
+            description: Priority of interrupt 68
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP69
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 837
+        description: (read-write) Interrupt Priority Register 69
+        fields:
+          - name: PRI69
+            description: Priority of interrupt 69
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP70
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 838
+        description: (read-write) Interrupt Priority Register 70
+        fields:
+          - name: PRI70
+            description: Priority of interrupt 70
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP71
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 839
+        description: (read-write) Interrupt Priority Register 71
+        fields:
+          - name: PRI71
+            description: Priority of interrupt 71
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP72
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 840
+        description: (read-write) Interrupt Priority Register 72
+        fields:
+          - name: PRI72
+            description: Priority of interrupt 72
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP73
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 841
+        description: (read-write) Interrupt Priority Register 73
+        fields:
+          - name: PRI73
+            description: Priority of interrupt 73
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP74
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 842
+        description: (read-write) Interrupt Priority Register 74
+        fields:
+          - name: PRI74
+            description: Priority of interrupt 74
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP75
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 843
+        description: (read-write) Interrupt Priority Register 75
+        fields:
+          - name: PRI75
+            description: Priority of interrupt 75
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP76
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 844
+        description: (read-write) Interrupt Priority Register 76
+        fields:
+          - name: PRI76
+            description: Priority of interrupt 76
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP77
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 845
+        description: (read-write) Interrupt Priority Register 77
+        fields:
+          - name: PRI77
+            description: Priority of interrupt 77
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP78
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 846
+        description: (read-write) Interrupt Priority Register 78
+        fields:
+          - name: PRI78
+            description: Priority of interrupt 78
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP79
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 847
+        description: (read-write) Interrupt Priority Register 79
+        fields:
+          - name: PRI79
+            description: Priority of interrupt 79
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP80
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 848
+        description: (read-write) Interrupt Priority Register 80
+        fields:
+          - name: PRI80
+            description: Priority of interrupt 80
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP81
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 849
+        description: (read-write) Interrupt Priority Register 81
+        fields:
+          - name: PRI81
+            description: Priority of interrupt 81
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP82
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 850
+        description: (read-write) Interrupt Priority Register 82
+        fields:
+          - name: PRI82
+            description: Priority of interrupt 82
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP83
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 851
+        description: (read-write) Interrupt Priority Register 83
+        fields:
+          - name: PRI83
+            description: Priority of interrupt 83
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP84
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 852
+        description: (read-write) Interrupt Priority Register 84
+        fields:
+          - name: PRI84
+            description: Priority of interrupt 84
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP85
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 853
+        description: (read-write) Interrupt Priority Register 85
+        fields:
+          - name: PRI85
+            description: Priority of interrupt 85
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP86
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 854
+        description: (read-write) Interrupt Priority Register 86
+        fields:
+          - name: PRI86
+            description: Priority of interrupt 86
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP87
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 855
+        description: (read-write) Interrupt Priority Register 87
+        fields:
+          - name: PRI87
+            description: Priority of interrupt 87
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP88
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 856
+        description: (read-write) Interrupt Priority Register 88
+        fields:
+          - name: PRI88
+            description: Priority of interrupt 88
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP89
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 857
+        description: (read-write) Interrupt Priority Register 89
+        fields:
+          - name: PRI89
+            description: Priority of interrupt 89
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP90
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 858
+        description: (read-write) Interrupt Priority Register 90
+        fields:
+          - name: PRI90
+            description: Priority of interrupt 90
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP91
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 859
+        description: (read-write) Interrupt Priority Register 91
+        fields:
+          - name: PRI91
+            description: Priority of interrupt 91
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP92
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 860
+        description: (read-write) Interrupt Priority Register 92
+        fields:
+          - name: PRI92
+            description: Priority of interrupt 92
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP93
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 861
+        description: (read-write) Interrupt Priority Register 93
+        fields:
+          - name: PRI93
+            description: Priority of interrupt 93
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP94
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 862
+        description: (read-write) Interrupt Priority Register 94
+        fields:
+          - name: PRI94
+            description: Priority of interrupt 94
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP95
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 863
+        description: (read-write) Interrupt Priority Register 95
+        fields:
+          - name: PRI95
+            description: Priority of interrupt 95
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP96
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 864
+        description: (read-write) Interrupt Priority Register 96
+        fields:
+          - name: PRI96
+            description: Priority of interrupt 96
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP97
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 865
+        description: (read-write) Interrupt Priority Register 97
+        fields:
+          - name: PRI97
+            description: Priority of interrupt 97
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP98
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 866
+        description: (read-write) Interrupt Priority Register 98
+        fields:
+          - name: PRI98
+            description: Priority of interrupt 98
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP99
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 867
+        description: (read-write) Interrupt Priority Register 99
+        fields:
+          - name: PRI99
+            description: Priority of interrupt 99
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP100
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 868
+        description: (read-write) Interrupt Priority Register 100
+        fields:
+          - name: PRI100
+            description: Priority of interrupt 100
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP101
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 869
+        description: (read-write) Interrupt Priority Register 101
+        fields:
+          - name: PRI101
+            description: Priority of interrupt 101
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP102
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 870
+        description: (read-write) Interrupt Priority Register 102
+        fields:
+          - name: PRI102
+            description: Priority of interrupt 102
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP103
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 871
+        description: (read-write) Interrupt Priority Register 103
+        fields:
+          - name: PRI103
+            description: Priority of interrupt 103
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP104
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 872
+        description: (read-write) Interrupt Priority Register 104
+        fields:
+          - name: PRI104
+            description: Priority of interrupt 104
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICIP105
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 873
+        description: (read-write) Interrupt Priority Register 105
+        fields:
+          - name: PRI105
+            description: Priority of interrupt 105
+            index: 4
+            width: 4
+            read: true
+            write: true
+      - name: NVICSTIR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 3584
+        description: (read-write) Software Trigger Interrupt Register
+        fields:
+          - name: INTID
+            description: Interrupt ID of the interrupt to trigger, in the range 0-239.
+              For example, a value of 0x03 specifies interrupt IRQ3.
+            index: 0
+            width: 9
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums: {}

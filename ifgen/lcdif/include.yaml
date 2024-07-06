@@ -1,0 +1,5234 @@
+---
+structs:
+  lcdif:
+    description: LCDIF Register Reference Index
+    instances:
+      - name: LCDIF
+        address: '0x40804000'
+    fields:
+      - name: CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) LCDIF General Control Register
+        fields:
+          - name: SFTRST
+            description: This bit must be set to zero to enable normal operation of
+              the LCDIF
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CLKGATE
+            description: This bit must be set to zero for normal operation
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: DATA_SHIFT_DIR
+            description: Use this bit to determine the direction of shift of transmit
+              data.
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: SHIFT_NUM_BITS
+            description: The data to be transmitted is shifted left or right by this
+              number of bits.
+            index: 21
+            width: 5
+            read: true
+            write: true
+          - name: BYPASS_COUNT
+            description: When this bit is 0, it means that LCDIF will stop the block
+              operation and turn off the RUN bit after the amount of data indicated
+              by the LCDIF_TRANSFER_COUNT register has been transferred out
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: DOTCLK_MODE
+            description: Set this bit to 1 to make the hardware go into the DOTCLK
+              mode, i
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: INPUT_DATA_SWIZZLE
+            description: This field specifies how to swap the bytes fetched by the
+              bus master interface
+            index: 14
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_CTRL_INPUT_DATA_SWIZZLE
+          - name: CSC_DATA_SWIZZLE
+            description: This field specifies how to swap the bytes after the data
+              has been converted into an internal representation of 24 bits per pixel
+              and before it is transmitted over the LCD interface bus
+            index: 12
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_CTRL_CSC_DATA_SWIZZLE
+          - name: LCD_DATABUS_WIDTH
+            description: LCD Data bus transfer width. When LUT enabled, this field
+              should be set to 0x01.
+            index: 10
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_CTRL_LCD_DATABUS_WIDTH
+          - name: WORD_LENGTH
+            description: Input data format.
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_CTRL_WORD_LENGTH
+          - name: ENABLE_PXP_HANDSHAKE
+            description: If this bit is set and LCDIF_MASTER bit is set, the LCDIF
+              will act as bus master and the handshake mechanism between LCDIF and
+              PXP will be turned on
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: MASTER
+            description: Set this bit to make the LCDIF act as a bus master
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: DATA_FORMAT_16_BIT
+            description: When this bit is 1 and WORD_LENGTH = 0, it implies that the
+              16-bit data is in ARGB555 format
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: DATA_FORMAT_18_BIT
+            description: Used only when WORD_LENGTH = 2, i.e. 18-bit.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: DATA_FORMAT_24_BIT
+            description: Used only when WORD_LENGTH = 3, i
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: RUN
+            description: When this bit is set by software, the LCDIF will begin transferring
+              data between the SoC and the display
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) LCDIF General Control Register
+        fields:
+          - name: SFTRST
+            description: This bit must be set to zero to enable normal operation of
+              the LCDIF
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CLKGATE
+            description: This bit must be set to zero for normal operation
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: DATA_SHIFT_DIR
+            description: Use this bit to determine the direction of shift of transmit
+              data.
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: SHIFT_NUM_BITS
+            description: The data to be transmitted is shifted left or right by this
+              number of bits.
+            index: 21
+            width: 5
+            read: true
+            write: true
+          - name: BYPASS_COUNT
+            description: When this bit is 0, it means that LCDIF will stop the block
+              operation and turn off the RUN bit after the amount of data indicated
+              by the LCDIF_TRANSFER_COUNT register has been transferred out
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: DOTCLK_MODE
+            description: Set this bit to 1 to make the hardware go into the DOTCLK
+              mode, i
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: INPUT_DATA_SWIZZLE
+            description: This field specifies how to swap the bytes fetched by the
+              bus master interface
+            index: 14
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_CTRL_SET_INPUT_DATA_SWIZZLE
+          - name: CSC_DATA_SWIZZLE
+            description: This field specifies how to swap the bytes after the data
+              has been converted into an internal representation of 24 bits per pixel
+              and before it is transmitted over the LCD interface bus
+            index: 12
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_CTRL_SET_CSC_DATA_SWIZZLE
+          - name: LCD_DATABUS_WIDTH
+            description: LCD Data bus transfer width. When LUT enabled, this field
+              should be set to 0x01.
+            index: 10
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_CTRL_SET_LCD_DATABUS_WIDTH
+          - name: WORD_LENGTH
+            description: Input data format.
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_CTRL_SET_WORD_LENGTH
+          - name: ENABLE_PXP_HANDSHAKE
+            description: If this bit is set and LCDIF_MASTER bit is set, the LCDIF
+              will act as bus master and the handshake mechanism between LCDIF and
+              PXP will be turned on
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: MASTER
+            description: Set this bit to make the LCDIF act as a bus master
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: DATA_FORMAT_16_BIT
+            description: When this bit is 1 and WORD_LENGTH = 0, it implies that the
+              16-bit data is in ARGB555 format
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: DATA_FORMAT_18_BIT
+            description: Used only when WORD_LENGTH = 2, i.e. 18-bit.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: DATA_FORMAT_24_BIT
+            description: Used only when WORD_LENGTH = 3, i
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: RUN
+            description: When this bit is set by software, the LCDIF will begin transferring
+              data between the SoC and the display
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) LCDIF General Control Register
+        fields:
+          - name: SFTRST
+            description: This bit must be set to zero to enable normal operation of
+              the LCDIF
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CLKGATE
+            description: This bit must be set to zero for normal operation
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: DATA_SHIFT_DIR
+            description: Use this bit to determine the direction of shift of transmit
+              data.
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: SHIFT_NUM_BITS
+            description: The data to be transmitted is shifted left or right by this
+              number of bits.
+            index: 21
+            width: 5
+            read: true
+            write: true
+          - name: BYPASS_COUNT
+            description: When this bit is 0, it means that LCDIF will stop the block
+              operation and turn off the RUN bit after the amount of data indicated
+              by the LCDIF_TRANSFER_COUNT register has been transferred out
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: DOTCLK_MODE
+            description: Set this bit to 1 to make the hardware go into the DOTCLK
+              mode, i
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: INPUT_DATA_SWIZZLE
+            description: This field specifies how to swap the bytes fetched by the
+              bus master interface
+            index: 14
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_CTRL_CLR_INPUT_DATA_SWIZZLE
+          - name: CSC_DATA_SWIZZLE
+            description: This field specifies how to swap the bytes after the data
+              has been converted into an internal representation of 24 bits per pixel
+              and before it is transmitted over the LCD interface bus
+            index: 12
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_CTRL_CLR_CSC_DATA_SWIZZLE
+          - name: LCD_DATABUS_WIDTH
+            description: LCD Data bus transfer width. When LUT enabled, this field
+              should be set to 0x01.
+            index: 10
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_CTRL_CLR_LCD_DATABUS_WIDTH
+          - name: WORD_LENGTH
+            description: Input data format.
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_CTRL_CLR_WORD_LENGTH
+          - name: ENABLE_PXP_HANDSHAKE
+            description: If this bit is set and LCDIF_MASTER bit is set, the LCDIF
+              will act as bus master and the handshake mechanism between LCDIF and
+              PXP will be turned on
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: MASTER
+            description: Set this bit to make the LCDIF act as a bus master
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: DATA_FORMAT_16_BIT
+            description: When this bit is 1 and WORD_LENGTH = 0, it implies that the
+              16-bit data is in ARGB555 format
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: DATA_FORMAT_18_BIT
+            description: Used only when WORD_LENGTH = 2, i.e. 18-bit.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: DATA_FORMAT_24_BIT
+            description: Used only when WORD_LENGTH = 3, i
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: RUN
+            description: When this bit is set by software, the LCDIF will begin transferring
+              data between the SoC and the display
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) LCDIF General Control Register
+        fields:
+          - name: SFTRST
+            description: This bit must be set to zero to enable normal operation of
+              the LCDIF
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CLKGATE
+            description: This bit must be set to zero for normal operation
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: DATA_SHIFT_DIR
+            description: Use this bit to determine the direction of shift of transmit
+              data.
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: SHIFT_NUM_BITS
+            description: The data to be transmitted is shifted left or right by this
+              number of bits.
+            index: 21
+            width: 5
+            read: true
+            write: true
+          - name: BYPASS_COUNT
+            description: When this bit is 0, it means that LCDIF will stop the block
+              operation and turn off the RUN bit after the amount of data indicated
+              by the LCDIF_TRANSFER_COUNT register has been transferred out
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: DOTCLK_MODE
+            description: Set this bit to 1 to make the hardware go into the DOTCLK
+              mode, i
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: INPUT_DATA_SWIZZLE
+            description: This field specifies how to swap the bytes fetched by the
+              bus master interface
+            index: 14
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_CTRL_TOG_INPUT_DATA_SWIZZLE
+          - name: CSC_DATA_SWIZZLE
+            description: This field specifies how to swap the bytes after the data
+              has been converted into an internal representation of 24 bits per pixel
+              and before it is transmitted over the LCD interface bus
+            index: 12
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_CTRL_TOG_CSC_DATA_SWIZZLE
+          - name: LCD_DATABUS_WIDTH
+            description: LCD Data bus transfer width. When LUT enabled, this field
+              should be set to 0x01.
+            index: 10
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_CTRL_TOG_LCD_DATABUS_WIDTH
+          - name: WORD_LENGTH
+            description: Input data format.
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_CTRL_TOG_WORD_LENGTH
+          - name: ENABLE_PXP_HANDSHAKE
+            description: If this bit is set and LCDIF_MASTER bit is set, the LCDIF
+              will act as bus master and the handshake mechanism between LCDIF and
+              PXP will be turned on
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: MASTER
+            description: Set this bit to make the LCDIF act as a bus master
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: DATA_FORMAT_16_BIT
+            description: When this bit is 1 and WORD_LENGTH = 0, it implies that the
+              16-bit data is in ARGB555 format
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: DATA_FORMAT_18_BIT
+            description: Used only when WORD_LENGTH = 2, i.e. 18-bit.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: DATA_FORMAT_24_BIT
+            description: Used only when WORD_LENGTH = 3, i
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: RUN
+            description: When this bit is set by software, the LCDIF will begin transferring
+              data between the SoC and the display
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) LCDIF General Control1 Register
+        fields:
+          - name: IMAGE_DATA_SELECT
+            description: Command Mode MIPI image data select bit
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CS_OUT_SELECT
+            description: This bit is CS0/CS1 valid select signals
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: BM_ERROR_IRQ_EN
+            description: This bit is set to enable bus master error interrupt in the
+              LCDIF master mode.
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: BM_ERROR_IRQ
+            description: This bit is set to indicate that an interrupt is requested
+              by the LCDIF block
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: RECOVER_ON_UNDERFLOW
+            description: Set this bit to enable the LCDIF block to recover in the
+              next field/frame if there was an underflow in the current field/frame
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: INTERLACE_FIELDS
+            description: Set this bit if it is required that the LCDIF block fetches
+              odd lines in one field and even lines in the other field
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: START_INTERLACE_FROM_SECOND_FIELD
+            description: The default is to grab the odd lines first and then the even
+              lines
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: FIFO_CLEAR
+            description: Set this bit to clear all the data in the latency FIFO (LFIFO),
+              TXFIFO and the RXFIFO.
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: IRQ_ON_ALTERNATE_FIELDS
+            description: If this bit is set, the LCDIF block will assert the cur_frame_done
+              interrupt only on alternate fields, otherwise it will issue the interrupt
+              on both odd and even field
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: BYTE_PACKING_FORMAT
+            description: This bitfield is used to show which data bytes in a 32-bit
+              word are valid
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: OVERFLOW_IRQ_EN
+            description: This bit is set to enable an overflow interrupt in the TXFIFO
+              in the write mode.
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: UNDERFLOW_IRQ_EN
+            description: This bit is set to enable an underflow interrupt in the TXFIFO
+              in the write mode.
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: CUR_FRAME_DONE_IRQ_EN
+            description: This bit is set to 1 enable an interrupt every time the hardware
+              enters in the vertical blanking state
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_EDGE_IRQ_EN
+            description: This bit is set to enable an interrupt every time the hardware
+              encounters the leading VSYNC edge in the VSYNC and DOTCLK modes, or
+              the beginning of every field in DVI mode
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: OVERFLOW_IRQ
+            description: This bit is set to indicate that an interrupt is requested
+              by the LCDIF block
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: UNDERFLOW_IRQ
+            description: This bit is set to indicate that an interrupt is requested
+              by the LCDIF block
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: CUR_FRAME_DONE_IRQ
+            description: This bit is set to indicate that an interrupt is requested
+              by the LCDIF block
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_EDGE_IRQ
+            description: This bit is set to indicate that an interrupt is requested
+              by the LCDIF block
+            index: 8
+            width: 1
+            read: true
+            write: true
+      - name: CTRL1_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) LCDIF General Control1 Register
+        fields:
+          - name: IMAGE_DATA_SELECT
+            description: Command Mode MIPI image data select bit
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CS_OUT_SELECT
+            description: This bit is CS0/CS1 valid select signals
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: BM_ERROR_IRQ_EN
+            description: This bit is set to enable bus master error interrupt in the
+              LCDIF master mode.
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: BM_ERROR_IRQ
+            description: This bit is set to indicate that an interrupt is requested
+              by the LCDIF block
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: RECOVER_ON_UNDERFLOW
+            description: Set this bit to enable the LCDIF block to recover in the
+              next field/frame if there was an underflow in the current field/frame
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: INTERLACE_FIELDS
+            description: Set this bit if it is required that the LCDIF block fetches
+              odd lines in one field and even lines in the other field
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: START_INTERLACE_FROM_SECOND_FIELD
+            description: The default is to grab the odd lines first and then the even
+              lines
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: FIFO_CLEAR
+            description: Set this bit to clear all the data in the latency FIFO (LFIFO),
+              TXFIFO and the RXFIFO.
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: IRQ_ON_ALTERNATE_FIELDS
+            description: If this bit is set, the LCDIF block will assert the cur_frame_done
+              interrupt only on alternate fields, otherwise it will issue the interrupt
+              on both odd and even field
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: BYTE_PACKING_FORMAT
+            description: This bitfield is used to show which data bytes in a 32-bit
+              word are valid
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: OVERFLOW_IRQ_EN
+            description: This bit is set to enable an overflow interrupt in the TXFIFO
+              in the write mode.
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: UNDERFLOW_IRQ_EN
+            description: This bit is set to enable an underflow interrupt in the TXFIFO
+              in the write mode.
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: CUR_FRAME_DONE_IRQ_EN
+            description: This bit is set to 1 enable an interrupt every time the hardware
+              enters in the vertical blanking state
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_EDGE_IRQ_EN
+            description: This bit is set to enable an interrupt every time the hardware
+              encounters the leading VSYNC edge in the VSYNC and DOTCLK modes, or
+              the beginning of every field in DVI mode
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: OVERFLOW_IRQ
+            description: This bit is set to indicate that an interrupt is requested
+              by the LCDIF block
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: UNDERFLOW_IRQ
+            description: This bit is set to indicate that an interrupt is requested
+              by the LCDIF block
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: CUR_FRAME_DONE_IRQ
+            description: This bit is set to indicate that an interrupt is requested
+              by the LCDIF block
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_EDGE_IRQ
+            description: This bit is set to indicate that an interrupt is requested
+              by the LCDIF block
+            index: 8
+            width: 1
+            read: true
+            write: true
+      - name: CTRL1_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) LCDIF General Control1 Register
+        fields:
+          - name: IMAGE_DATA_SELECT
+            description: Command Mode MIPI image data select bit
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CS_OUT_SELECT
+            description: This bit is CS0/CS1 valid select signals
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: BM_ERROR_IRQ_EN
+            description: This bit is set to enable bus master error interrupt in the
+              LCDIF master mode.
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: BM_ERROR_IRQ
+            description: This bit is set to indicate that an interrupt is requested
+              by the LCDIF block
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: RECOVER_ON_UNDERFLOW
+            description: Set this bit to enable the LCDIF block to recover in the
+              next field/frame if there was an underflow in the current field/frame
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: INTERLACE_FIELDS
+            description: Set this bit if it is required that the LCDIF block fetches
+              odd lines in one field and even lines in the other field
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: START_INTERLACE_FROM_SECOND_FIELD
+            description: The default is to grab the odd lines first and then the even
+              lines
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: FIFO_CLEAR
+            description: Set this bit to clear all the data in the latency FIFO (LFIFO),
+              TXFIFO and the RXFIFO.
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: IRQ_ON_ALTERNATE_FIELDS
+            description: If this bit is set, the LCDIF block will assert the cur_frame_done
+              interrupt only on alternate fields, otherwise it will issue the interrupt
+              on both odd and even field
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: BYTE_PACKING_FORMAT
+            description: This bitfield is used to show which data bytes in a 32-bit
+              word are valid
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: OVERFLOW_IRQ_EN
+            description: This bit is set to enable an overflow interrupt in the TXFIFO
+              in the write mode.
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: UNDERFLOW_IRQ_EN
+            description: This bit is set to enable an underflow interrupt in the TXFIFO
+              in the write mode.
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: CUR_FRAME_DONE_IRQ_EN
+            description: This bit is set to 1 enable an interrupt every time the hardware
+              enters in the vertical blanking state
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_EDGE_IRQ_EN
+            description: This bit is set to enable an interrupt every time the hardware
+              encounters the leading VSYNC edge in the VSYNC and DOTCLK modes, or
+              the beginning of every field in DVI mode
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: OVERFLOW_IRQ
+            description: This bit is set to indicate that an interrupt is requested
+              by the LCDIF block
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: UNDERFLOW_IRQ
+            description: This bit is set to indicate that an interrupt is requested
+              by the LCDIF block
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: CUR_FRAME_DONE_IRQ
+            description: This bit is set to indicate that an interrupt is requested
+              by the LCDIF block
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_EDGE_IRQ
+            description: This bit is set to indicate that an interrupt is requested
+              by the LCDIF block
+            index: 8
+            width: 1
+            read: true
+            write: true
+      - name: CTRL1_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) LCDIF General Control1 Register
+        fields:
+          - name: IMAGE_DATA_SELECT
+            description: Command Mode MIPI image data select bit
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CS_OUT_SELECT
+            description: This bit is CS0/CS1 valid select signals
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: BM_ERROR_IRQ_EN
+            description: This bit is set to enable bus master error interrupt in the
+              LCDIF master mode.
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: BM_ERROR_IRQ
+            description: This bit is set to indicate that an interrupt is requested
+              by the LCDIF block
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: RECOVER_ON_UNDERFLOW
+            description: Set this bit to enable the LCDIF block to recover in the
+              next field/frame if there was an underflow in the current field/frame
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: INTERLACE_FIELDS
+            description: Set this bit if it is required that the LCDIF block fetches
+              odd lines in one field and even lines in the other field
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: START_INTERLACE_FROM_SECOND_FIELD
+            description: The default is to grab the odd lines first and then the even
+              lines
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: FIFO_CLEAR
+            description: Set this bit to clear all the data in the latency FIFO (LFIFO),
+              TXFIFO and the RXFIFO.
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: IRQ_ON_ALTERNATE_FIELDS
+            description: If this bit is set, the LCDIF block will assert the cur_frame_done
+              interrupt only on alternate fields, otherwise it will issue the interrupt
+              on both odd and even field
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: BYTE_PACKING_FORMAT
+            description: This bitfield is used to show which data bytes in a 32-bit
+              word are valid
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: OVERFLOW_IRQ_EN
+            description: This bit is set to enable an overflow interrupt in the TXFIFO
+              in the write mode.
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: UNDERFLOW_IRQ_EN
+            description: This bit is set to enable an underflow interrupt in the TXFIFO
+              in the write mode.
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: CUR_FRAME_DONE_IRQ_EN
+            description: This bit is set to 1 enable an interrupt every time the hardware
+              enters in the vertical blanking state
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_EDGE_IRQ_EN
+            description: This bit is set to enable an interrupt every time the hardware
+              encounters the leading VSYNC edge in the VSYNC and DOTCLK modes, or
+              the beginning of every field in DVI mode
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: OVERFLOW_IRQ
+            description: This bit is set to indicate that an interrupt is requested
+              by the LCDIF block
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: UNDERFLOW_IRQ
+            description: This bit is set to indicate that an interrupt is requested
+              by the LCDIF block
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: CUR_FRAME_DONE_IRQ
+            description: This bit is set to indicate that an interrupt is requested
+              by the LCDIF block
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_EDGE_IRQ
+            description: This bit is set to indicate that an interrupt is requested
+              by the LCDIF block
+            index: 8
+            width: 1
+            read: true
+            write: true
+      - name: CTRL2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) LCDIF General Control2 Register
+        fields:
+          - name: OUTSTANDING_REQS
+            description: This bitfield indicates the maximum number of outstanding
+              transactions that LCDIF should request when it is acting as a bus master
+            index: 21
+            width: 3
+            read: true
+            write: true
+            type: LCDIF_CTRL2_OUTSTANDING_REQS
+          - name: BURST_LEN_8
+            description: By default, when the LCDIF is in the bus master mode, it
+              will issue AXI bursts of length 16 (except when in packed 24 bpp mode,
+              it will issue bursts of length 15)
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: ODD_LINE_PATTERN
+            description: This field determines the order of the RGB components of
+              each pixel in ODD lines (line numbers 1,3,5,
+            index: 16
+            width: 3
+            read: true
+            write: true
+            type: LCDIF_CTRL2_ODD_LINE_PATTERN
+          - name: EVEN_LINE_PATTERN
+            description: This field determines the order of the RGB components of
+              each pixel in EVEN lines (line numbers 2,4,6,
+            index: 12
+            width: 3
+            read: true
+            write: true
+            type: LCDIF_CTRL2_EVEN_LINE_PATTERN
+      - name: CTRL2_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) LCDIF General Control2 Register
+        fields:
+          - name: OUTSTANDING_REQS
+            description: This bitfield indicates the maximum number of outstanding
+              transactions that LCDIF should request when it is acting as a bus master
+            index: 21
+            width: 3
+            read: true
+            write: true
+            type: LCDIF_CTRL2_SET_OUTSTANDING_REQS
+          - name: BURST_LEN_8
+            description: By default, when the LCDIF is in the bus master mode, it
+              will issue AXI bursts of length 16 (except when in packed 24 bpp mode,
+              it will issue bursts of length 15)
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: ODD_LINE_PATTERN
+            description: This field determines the order of the RGB components of
+              each pixel in ODD lines (line numbers 1,3,5,
+            index: 16
+            width: 3
+            read: true
+            write: true
+            type: LCDIF_CTRL2_SET_ODD_LINE_PATTERN
+          - name: EVEN_LINE_PATTERN
+            description: This field determines the order of the RGB components of
+              each pixel in EVEN lines (line numbers 2,4,6,
+            index: 12
+            width: 3
+            read: true
+            write: true
+            type: LCDIF_CTRL2_SET_EVEN_LINE_PATTERN
+      - name: CTRL2_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) LCDIF General Control2 Register
+        fields:
+          - name: OUTSTANDING_REQS
+            description: This bitfield indicates the maximum number of outstanding
+              transactions that LCDIF should request when it is acting as a bus master
+            index: 21
+            width: 3
+            read: true
+            write: true
+            type: LCDIF_CTRL2_CLR_OUTSTANDING_REQS
+          - name: BURST_LEN_8
+            description: By default, when the LCDIF is in the bus master mode, it
+              will issue AXI bursts of length 16 (except when in packed 24 bpp mode,
+              it will issue bursts of length 15)
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: ODD_LINE_PATTERN
+            description: This field determines the order of the RGB components of
+              each pixel in ODD lines (line numbers 1,3,5,
+            index: 16
+            width: 3
+            read: true
+            write: true
+            type: LCDIF_CTRL2_CLR_ODD_LINE_PATTERN
+          - name: EVEN_LINE_PATTERN
+            description: This field determines the order of the RGB components of
+              each pixel in EVEN lines (line numbers 2,4,6,
+            index: 12
+            width: 3
+            read: true
+            write: true
+            type: LCDIF_CTRL2_CLR_EVEN_LINE_PATTERN
+      - name: CTRL2_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) LCDIF General Control2 Register
+        fields:
+          - name: OUTSTANDING_REQS
+            description: This bitfield indicates the maximum number of outstanding
+              transactions that LCDIF should request when it is acting as a bus master
+            index: 21
+            width: 3
+            read: true
+            write: true
+            type: LCDIF_CTRL2_TOG_OUTSTANDING_REQS
+          - name: BURST_LEN_8
+            description: By default, when the LCDIF is in the bus master mode, it
+              will issue AXI bursts of length 16 (except when in packed 24 bpp mode,
+              it will issue bursts of length 15)
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: ODD_LINE_PATTERN
+            description: This field determines the order of the RGB components of
+              each pixel in ODD lines (line numbers 1,3,5,
+            index: 16
+            width: 3
+            read: true
+            write: true
+            type: LCDIF_CTRL2_TOG_ODD_LINE_PATTERN
+          - name: EVEN_LINE_PATTERN
+            description: This field determines the order of the RGB components of
+              each pixel in EVEN lines (line numbers 2,4,6,
+            index: 12
+            width: 3
+            read: true
+            write: true
+            type: LCDIF_CTRL2_TOG_EVEN_LINE_PATTERN
+      - name: TRANSFER_COUNT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) LCDIF Horizontal and Vertical Valid Data Count Register
+        fields:
+          - name: V_COUNT
+            description: Number of horizontal lines per frame which contain valid
+              data
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: H_COUNT
+            description: Total valid data (pixels) in each horizontal line
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CUR_BUF
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 64
+        description: (read-write) LCD Interface Current Buffer Address Register
+        fields:
+          - name: ADDR
+            description: Address of the current frame being transmitted by LCDIF.
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: NEXT_BUF
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 80
+        description: (read-write) LCD Interface Next Buffer Address Register
+        fields:
+          - name: ADDR
+            description: Address of the next frame that will be transmitted by LCDIF.
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: VDCTRL0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 112
+        description: (read-write) LCDIF VSYNC Mode and Dotclk Mode Control Register0
+        fields:
+          - name: VSYNC_OEB
+            description: 0 means the VSYNC signal is an output, 1 means it is an input
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE_PRESENT
+            description: Setting this bit to 1 will make the hardware generate the
+              ENABLE signal in the DOTCLK mode, thereby making it the true RGB interface
+              along with the remaining three signals VSYNC, HSYNC and DOTCLK
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_POL
+            description: Default 0 active low during VSYNC_PULSE_WIDTH time and will
+              be high during the rest of the VSYNC period
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: HSYNC_POL
+            description: Default 0 active low during HSYNC_PULSE_WIDTH time and will
+              be high during the rest of the HSYNC period
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: DOTCLK_POL
+            description: Default is data launched at negative edge of DOTCLK and captured
+              at positive edge
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE_POL
+            description: Default 0 active low during valid data transfer on each horizontal
+              line.
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_PERIOD_UNIT
+            description: Default 0 for counting VSYNC_PERIOD in terms of DISPLAY CLOCK
+              (pix_clk) cycles
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_PULSE_WIDTH_UNIT
+            description: Default 0 for counting VSYNC_PULSE_WIDTH in terms of DISPLAY
+              CLOCK (pix_clk) cycles
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: HALF_LINE
+            description: Setting this bit to 1 will make the total VSYNC period equal
+              to the VSYNC_PERIOD field plus half the HORIZONTAL_PERIOD field (i
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: HALF_LINE_MODE
+            description: When this bit is 0, the first field (VSYNC period) will end
+              in half a horizontal line and the second field will begin with half
+              a horizontal line
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_PULSE_WIDTH
+            description: Number of units for which VSYNC signal is active
+            index: 0
+            width: 18
+            read: true
+            write: true
+      - name: VDCTRL0_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 116
+        description: (read-write) LCDIF VSYNC Mode and Dotclk Mode Control Register0
+        fields:
+          - name: VSYNC_OEB
+            description: 0 means the VSYNC signal is an output, 1 means it is an input
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE_PRESENT
+            description: Setting this bit to 1 will make the hardware generate the
+              ENABLE signal in the DOTCLK mode, thereby making it the true RGB interface
+              along with the remaining three signals VSYNC, HSYNC and DOTCLK
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_POL
+            description: Default 0 active low during VSYNC_PULSE_WIDTH time and will
+              be high during the rest of the VSYNC period
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: HSYNC_POL
+            description: Default 0 active low during HSYNC_PULSE_WIDTH time and will
+              be high during the rest of the HSYNC period
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: DOTCLK_POL
+            description: Default is data launched at negative edge of DOTCLK and captured
+              at positive edge
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE_POL
+            description: Default 0 active low during valid data transfer on each horizontal
+              line.
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_PERIOD_UNIT
+            description: Default 0 for counting VSYNC_PERIOD in terms of DISPLAY CLOCK
+              (pix_clk) cycles
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_PULSE_WIDTH_UNIT
+            description: Default 0 for counting VSYNC_PULSE_WIDTH in terms of DISPLAY
+              CLOCK (pix_clk) cycles
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: HALF_LINE
+            description: Setting this bit to 1 will make the total VSYNC period equal
+              to the VSYNC_PERIOD field plus half the HORIZONTAL_PERIOD field (i
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: HALF_LINE_MODE
+            description: When this bit is 0, the first field (VSYNC period) will end
+              in half a horizontal line and the second field will begin with half
+              a horizontal line
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_PULSE_WIDTH
+            description: Number of units for which VSYNC signal is active
+            index: 0
+            width: 18
+            read: true
+            write: true
+      - name: VDCTRL0_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 120
+        description: (read-write) LCDIF VSYNC Mode and Dotclk Mode Control Register0
+        fields:
+          - name: VSYNC_OEB
+            description: 0 means the VSYNC signal is an output, 1 means it is an input
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE_PRESENT
+            description: Setting this bit to 1 will make the hardware generate the
+              ENABLE signal in the DOTCLK mode, thereby making it the true RGB interface
+              along with the remaining three signals VSYNC, HSYNC and DOTCLK
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_POL
+            description: Default 0 active low during VSYNC_PULSE_WIDTH time and will
+              be high during the rest of the VSYNC period
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: HSYNC_POL
+            description: Default 0 active low during HSYNC_PULSE_WIDTH time and will
+              be high during the rest of the HSYNC period
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: DOTCLK_POL
+            description: Default is data launched at negative edge of DOTCLK and captured
+              at positive edge
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE_POL
+            description: Default 0 active low during valid data transfer on each horizontal
+              line.
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_PERIOD_UNIT
+            description: Default 0 for counting VSYNC_PERIOD in terms of DISPLAY CLOCK
+              (pix_clk) cycles
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_PULSE_WIDTH_UNIT
+            description: Default 0 for counting VSYNC_PULSE_WIDTH in terms of DISPLAY
+              CLOCK (pix_clk) cycles
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: HALF_LINE
+            description: Setting this bit to 1 will make the total VSYNC period equal
+              to the VSYNC_PERIOD field plus half the HORIZONTAL_PERIOD field (i
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: HALF_LINE_MODE
+            description: When this bit is 0, the first field (VSYNC period) will end
+              in half a horizontal line and the second field will begin with half
+              a horizontal line
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_PULSE_WIDTH
+            description: Number of units for which VSYNC signal is active
+            index: 0
+            width: 18
+            read: true
+            write: true
+      - name: VDCTRL0_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 124
+        description: (read-write) LCDIF VSYNC Mode and Dotclk Mode Control Register0
+        fields:
+          - name: VSYNC_OEB
+            description: 0 means the VSYNC signal is an output, 1 means it is an input
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE_PRESENT
+            description: Setting this bit to 1 will make the hardware generate the
+              ENABLE signal in the DOTCLK mode, thereby making it the true RGB interface
+              along with the remaining three signals VSYNC, HSYNC and DOTCLK
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_POL
+            description: Default 0 active low during VSYNC_PULSE_WIDTH time and will
+              be high during the rest of the VSYNC period
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: HSYNC_POL
+            description: Default 0 active low during HSYNC_PULSE_WIDTH time and will
+              be high during the rest of the HSYNC period
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: DOTCLK_POL
+            description: Default is data launched at negative edge of DOTCLK and captured
+              at positive edge
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE_POL
+            description: Default 0 active low during valid data transfer on each horizontal
+              line.
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_PERIOD_UNIT
+            description: Default 0 for counting VSYNC_PERIOD in terms of DISPLAY CLOCK
+              (pix_clk) cycles
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_PULSE_WIDTH_UNIT
+            description: Default 0 for counting VSYNC_PULSE_WIDTH in terms of DISPLAY
+              CLOCK (pix_clk) cycles
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: HALF_LINE
+            description: Setting this bit to 1 will make the total VSYNC period equal
+              to the VSYNC_PERIOD field plus half the HORIZONTAL_PERIOD field (i
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: HALF_LINE_MODE
+            description: When this bit is 0, the first field (VSYNC period) will end
+              in half a horizontal line and the second field will begin with half
+              a horizontal line
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_PULSE_WIDTH
+            description: Number of units for which VSYNC signal is active
+            index: 0
+            width: 18
+            read: true
+            write: true
+      - name: VDCTRL1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 128
+        description: (read-write) LCDIF VSYNC Mode and Dotclk Mode Control Register1
+        fields:
+          - name: VSYNC_PERIOD
+            description: Total number of units between two positive or two negative
+              edges of the VSYNC signal
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: VDCTRL2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 144
+        description: (read-write) LCDIF VSYNC Mode and Dotclk Mode Control Register2
+        fields:
+          - name: HSYNC_PULSE_WIDTH
+            description: Number of DISPLAY CLOCK (pix_clk) cycles for which HSYNC
+              signal is active.
+            index: 18
+            width: 14
+            read: true
+            write: true
+          - name: HSYNC_PERIOD
+            description: Total number of DISPLAY CLOCK (pix_clk) cycles between two
+              positive or two negative edges of the HSYNC signal
+            index: 0
+            width: 18
+            read: true
+            write: true
+      - name: VDCTRL3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 160
+        description: (read-write) LCDIF VSYNC Mode and Dotclk Mode Control Register3
+        fields:
+          - name: MUX_SYNC_SIGNALS
+            description: When this bit is set, the LCDIF block will internally mux
+              HSYNC with LCD_D14, DOTCLK with LCD_D13 and ENABLE with LCD_D12, otherwise
+              these signals will go out on separate pins
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_ONLY
+            description: This bit must be set to 1 in the VSYNC mode of operation,
+              and 0 in the DOTCLK mode of operation.
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: HORIZONTAL_WAIT_CNT
+            description: In the DOTCLK mode, wait for this number of clocks from falling
+              edge (or rising if HSYNC_POL is 1) of HSYNC signal to account for horizontal
+              back porch plus the number of DOTCLKs before the moving picture information
+              begins
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: VERTICAL_WAIT_CNT
+            description: In the VSYNC interface mode, wait for this number of DISPLAY
+              CLOCK (pix_clk) cycles from the falling VSYNC edge (or rising if VSYNC_POL
+              is 1) before starting LCD transactions and is applicable only if WAIT_FOR_VSYNC_EDGE
+              is set
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: VDCTRL4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 176
+        description: (read-write) LCDIF VSYNC Mode and Dotclk Mode Control Register4
+        fields:
+          - name: DOTCLK_DLY_SEL
+            description: This bitfield selects the amount of time by which the DOTCLK
+              signal should be delayed before coming out of the LCD_DOTCK pin
+            index: 29
+            width: 3
+            read: true
+            write: true
+          - name: SYNC_SIGNALS_ON
+            description: Set this field to 1 if the LCD controller requires that the
+              VSYNC or VSYNC/HSYNC/DOTCLK control signals should be active at least
+              one frame before the data transfers actually start and remain active
+              at least one frame after the data transfers end
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: DOTCLK_H_VALID_DATA_CNT
+            description: Total number of DISPLAY CLOCK (pix_clk) cycles on each horizontal
+              line that carry valid data in DOTCLK mode
+            index: 0
+            width: 18
+            read: true
+            write: true
+      - name: BM_ERROR_STAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 400
+        description: (read-write) Bus Master Error Status Register
+        fields:
+          - name: ADDR
+            description: Virtual address at which bus master error occurred.
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: CRC_STAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 416
+        description: (read-write) CRC Status Register
+        fields:
+          - name: CRC_VALUE
+            description: Calculated CRC value.
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: STAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 432
+        description: (read-write) LCD Interface Status Register
+        fields:
+          - name: PRESENT
+            description: '0: LCDIF not present on this product 1: LCDIF is present.'
+            index: 31
+            width: 1
+            read: true
+            write: false
+          - name: DMA_REQ
+            description: Reflects the current state of the DMA Request line for the
+              LCDIF
+            index: 30
+            width: 1
+            read: true
+            write: false
+          - name: LFIFO_FULL
+            description: Read only view of the signals that indicates LCD LFIFO is
+              full.
+            index: 29
+            width: 1
+            read: true
+            write: false
+          - name: LFIFO_EMPTY
+            description: Read only view of the signals that indicates LCD LFIFO is
+              empty.
+            index: 28
+            width: 1
+            read: true
+            write: false
+          - name: TXFIFO_FULL
+            description: Read only view of the signals that indicates LCD TXFIFO is
+              full.
+            index: 27
+            width: 1
+            read: true
+            write: false
+          - name: TXFIFO_EMPTY
+            description: Read only view of the signals that indicates LCD TXFIFO is
+              empty.
+            index: 26
+            width: 1
+            read: true
+            write: false
+          - name: LFIFO_COUNT
+            description: Read only view of the current count in Latency buffer (LFIFO).
+            index: 0
+            width: 9
+            read: true
+            write: false
+      - name: THRES
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 512
+        description: (read-write) LCDIF Threshold Register
+        fields:
+          - name: FASTCLOCK
+            description: This value should be set to a value of pixels, from 0 to
+              511
+            index: 16
+            width: 9
+            read: true
+            write: true
+      - name: PIGEONCTRL0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 896
+        description: (read-write) LCDIF Pigeon Mode Control0 Register
+        fields:
+          - name: LD_PERIOD
+            description: Period of pclk counter during LD phase
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: FD_PERIOD
+            description: Period of line counter during FD phase
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: PIGEONCTRL0_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 900
+        description: (read-write) LCDIF Pigeon Mode Control0 Register
+        fields:
+          - name: LD_PERIOD
+            description: Period of pclk counter during LD phase
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: FD_PERIOD
+            description: Period of line counter during FD phase
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: PIGEONCTRL0_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 904
+        description: (read-write) LCDIF Pigeon Mode Control0 Register
+        fields:
+          - name: LD_PERIOD
+            description: Period of pclk counter during LD phase
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: FD_PERIOD
+            description: Period of line counter during FD phase
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: PIGEONCTRL0_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 908
+        description: (read-write) LCDIF Pigeon Mode Control0 Register
+        fields:
+          - name: LD_PERIOD
+            description: Period of pclk counter during LD phase
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: FD_PERIOD
+            description: Period of line counter during FD phase
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: PIGEONCTRL1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 912
+        description: (read-write) LCDIF Pigeon Mode Control1 Register
+        fields:
+          - name: FRAME_CNT_CYCLES
+            description: Max cycles of frame counter
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: FRAME_CNT_PERIOD
+            description: Period of frame counter
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: PIGEONCTRL1_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 916
+        description: (read-write) LCDIF Pigeon Mode Control1 Register
+        fields:
+          - name: FRAME_CNT_CYCLES
+            description: Max cycles of frame counter
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: FRAME_CNT_PERIOD
+            description: Period of frame counter
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: PIGEONCTRL1_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 920
+        description: (read-write) LCDIF Pigeon Mode Control1 Register
+        fields:
+          - name: FRAME_CNT_CYCLES
+            description: Max cycles of frame counter
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: FRAME_CNT_PERIOD
+            description: Period of frame counter
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: PIGEONCTRL1_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 924
+        description: (read-write) LCDIF Pigeon Mode Control1 Register
+        fields:
+          - name: FRAME_CNT_CYCLES
+            description: Max cycles of frame counter
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: FRAME_CNT_PERIOD
+            description: Period of frame counter
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: PIGEONCTRL2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 928
+        description: (read-write) LCDIF Pigeon Mode Control2 Register
+        fields:
+          - name: PIGEON_CLK_GATE
+            description: Pigeon mode dot clock gate enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: PIGEON_DATA_EN
+            description: Pigeon mode data enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PIGEONCTRL2_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 932
+        description: (read-write) LCDIF Pigeon Mode Control2 Register
+        fields:
+          - name: PIGEON_CLK_GATE
+            description: Pigeon mode dot clock gate enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: PIGEON_DATA_EN
+            description: Pigeon mode data enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PIGEONCTRL2_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 936
+        description: (read-write) LCDIF Pigeon Mode Control2 Register
+        fields:
+          - name: PIGEON_CLK_GATE
+            description: Pigeon mode dot clock gate enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: PIGEON_DATA_EN
+            description: Pigeon mode data enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PIGEONCTRL2_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 940
+        description: (read-write) LCDIF Pigeon Mode Control2 Register
+        fields:
+          - name: PIGEON_CLK_GATE
+            description: Pigeon mode dot clock gate enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: PIGEON_DATA_EN
+            description: Pigeon mode data enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PIGEON_0_0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2048
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: STATE_MASK
+            description: state_mask = (FS|FB|FD|FE) and (LS|LB|LD|LE) , select any
+              combination of scan states as reference point for local counter to start
+              ticking
+            index: 24
+            width: 8
+            read: true
+            write: true
+            type: LCDIF_PIGEON_0_0_STATE_MASK
+          - name: MASK_CNT
+            description: When the global counter selected through MASK_CNT_SEL matches
+              value in this reg, pigeon local counter start ticking
+            index: 12
+            width: 12
+            read: true
+            write: true
+          - name: MASK_CNT_SEL
+            description: select global counters as mask condition, use together with
+              MASK_CNT
+            index: 8
+            width: 4
+            read: true
+            write: true
+            type: LCDIF_PIGEON_0_0_MASK_CNT_SEL
+          - name: OFFSET
+            description: offset on pclk unit
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: INC_SEL
+            description: Event to incrment local counter
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_PIGEON_0_0_INC_SEL
+          - name: POL
+            description: Polarity of signal output
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: EN
+            description: Enable pigeon Mode on this signal
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PIGEON_0_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2064
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: CLR_CNT
+            description: Deassert signal output when counter match this value
+            index: 16
+            width: 16
+            read: true
+            write: true
+            type: LCDIF_PIGEON_0_1_CLR_CNT
+          - name: SET_CNT
+            description: Assert signal output when counter match this value
+            index: 0
+            width: 16
+            read: true
+            write: true
+            type: LCDIF_PIGEON_0_1_SET_CNT
+      - name: PIGEON_0_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2080
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: SIG_ANOTHER
+            description: Select another signal for logic operation or as mask or counter
+              tick event
+            index: 4
+            width: 5
+            read: true
+            write: true
+            type: LCDIF_PIGEON_0_2_SIG_ANOTHER
+          - name: SIG_LOGIC
+            description: 'Logic operation with another signal: DIS/AND/OR/COND'
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: LCDIF_PIGEON_0_2_SIG_LOGIC
+      - name: PIGEON_1_0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2112
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: STATE_MASK
+            description: state_mask = (FS|FB|FD|FE) and (LS|LB|LD|LE) , select any
+              combination of scan states as reference point for local counter to start
+              ticking
+            index: 24
+            width: 8
+            read: true
+            write: true
+            type: LCDIF_PIGEON_1_0_STATE_MASK
+          - name: MASK_CNT
+            description: When the global counter selected through MASK_CNT_SEL matches
+              value in this reg, pigeon local counter start ticking
+            index: 12
+            width: 12
+            read: true
+            write: true
+          - name: MASK_CNT_SEL
+            description: select global counters as mask condition, use together with
+              MASK_CNT
+            index: 8
+            width: 4
+            read: true
+            write: true
+            type: LCDIF_PIGEON_1_0_MASK_CNT_SEL
+          - name: OFFSET
+            description: offset on pclk unit
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: INC_SEL
+            description: Event to incrment local counter
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_PIGEON_1_0_INC_SEL
+          - name: POL
+            description: Polarity of signal output
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: EN
+            description: Enable pigeon Mode on this signal
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PIGEON_1_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2128
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: CLR_CNT
+            description: Deassert signal output when counter match this value
+            index: 16
+            width: 16
+            read: true
+            write: true
+            type: LCDIF_PIGEON_1_1_CLR_CNT
+          - name: SET_CNT
+            description: Assert signal output when counter match this value
+            index: 0
+            width: 16
+            read: true
+            write: true
+            type: LCDIF_PIGEON_1_1_SET_CNT
+      - name: PIGEON_1_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2144
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: SIG_ANOTHER
+            description: Select another signal for logic operation or as mask or counter
+              tick event
+            index: 4
+            width: 5
+            read: true
+            write: true
+            type: LCDIF_PIGEON_1_2_SIG_ANOTHER
+          - name: SIG_LOGIC
+            description: 'Logic operation with another signal: DIS/AND/OR/COND'
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: LCDIF_PIGEON_1_2_SIG_LOGIC
+      - name: PIGEON_2_0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2176
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: STATE_MASK
+            description: state_mask = (FS|FB|FD|FE) and (LS|LB|LD|LE) , select any
+              combination of scan states as reference point for local counter to start
+              ticking
+            index: 24
+            width: 8
+            read: true
+            write: true
+            type: LCDIF_PIGEON_2_0_STATE_MASK
+          - name: MASK_CNT
+            description: When the global counter selected through MASK_CNT_SEL matches
+              value in this reg, pigeon local counter start ticking
+            index: 12
+            width: 12
+            read: true
+            write: true
+          - name: MASK_CNT_SEL
+            description: select global counters as mask condition, use together with
+              MASK_CNT
+            index: 8
+            width: 4
+            read: true
+            write: true
+            type: LCDIF_PIGEON_2_0_MASK_CNT_SEL
+          - name: OFFSET
+            description: offset on pclk unit
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: INC_SEL
+            description: Event to incrment local counter
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_PIGEON_2_0_INC_SEL
+          - name: POL
+            description: Polarity of signal output
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: EN
+            description: Enable pigeon Mode on this signal
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PIGEON_2_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2192
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: CLR_CNT
+            description: Deassert signal output when counter match this value
+            index: 16
+            width: 16
+            read: true
+            write: true
+            type: LCDIF_PIGEON_2_1_CLR_CNT
+          - name: SET_CNT
+            description: Assert signal output when counter match this value
+            index: 0
+            width: 16
+            read: true
+            write: true
+            type: LCDIF_PIGEON_2_1_SET_CNT
+      - name: PIGEON_2_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2208
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: SIG_ANOTHER
+            description: Select another signal for logic operation or as mask or counter
+              tick event
+            index: 4
+            width: 5
+            read: true
+            write: true
+            type: LCDIF_PIGEON_2_2_SIG_ANOTHER
+          - name: SIG_LOGIC
+            description: 'Logic operation with another signal: DIS/AND/OR/COND'
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: LCDIF_PIGEON_2_2_SIG_LOGIC
+      - name: PIGEON_3_0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2240
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: STATE_MASK
+            description: state_mask = (FS|FB|FD|FE) and (LS|LB|LD|LE) , select any
+              combination of scan states as reference point for local counter to start
+              ticking
+            index: 24
+            width: 8
+            read: true
+            write: true
+            type: LCDIF_PIGEON_3_0_STATE_MASK
+          - name: MASK_CNT
+            description: When the global counter selected through MASK_CNT_SEL matches
+              value in this reg, pigeon local counter start ticking
+            index: 12
+            width: 12
+            read: true
+            write: true
+          - name: MASK_CNT_SEL
+            description: select global counters as mask condition, use together with
+              MASK_CNT
+            index: 8
+            width: 4
+            read: true
+            write: true
+            type: LCDIF_PIGEON_3_0_MASK_CNT_SEL
+          - name: OFFSET
+            description: offset on pclk unit
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: INC_SEL
+            description: Event to incrment local counter
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_PIGEON_3_0_INC_SEL
+          - name: POL
+            description: Polarity of signal output
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: EN
+            description: Enable pigeon Mode on this signal
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PIGEON_3_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2256
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: CLR_CNT
+            description: Deassert signal output when counter match this value
+            index: 16
+            width: 16
+            read: true
+            write: true
+            type: LCDIF_PIGEON_3_1_CLR_CNT
+          - name: SET_CNT
+            description: Assert signal output when counter match this value
+            index: 0
+            width: 16
+            read: true
+            write: true
+            type: LCDIF_PIGEON_3_1_SET_CNT
+      - name: PIGEON_3_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2272
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: SIG_ANOTHER
+            description: Select another signal for logic operation or as mask or counter
+              tick event
+            index: 4
+            width: 5
+            read: true
+            write: true
+            type: LCDIF_PIGEON_3_2_SIG_ANOTHER
+          - name: SIG_LOGIC
+            description: 'Logic operation with another signal: DIS/AND/OR/COND'
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: LCDIF_PIGEON_3_2_SIG_LOGIC
+      - name: PIGEON_4_0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2304
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: STATE_MASK
+            description: state_mask = (FS|FB|FD|FE) and (LS|LB|LD|LE) , select any
+              combination of scan states as reference point for local counter to start
+              ticking
+            index: 24
+            width: 8
+            read: true
+            write: true
+            type: LCDIF_PIGEON_4_0_STATE_MASK
+          - name: MASK_CNT
+            description: When the global counter selected through MASK_CNT_SEL matches
+              value in this reg, pigeon local counter start ticking
+            index: 12
+            width: 12
+            read: true
+            write: true
+          - name: MASK_CNT_SEL
+            description: select global counters as mask condition, use together with
+              MASK_CNT
+            index: 8
+            width: 4
+            read: true
+            write: true
+            type: LCDIF_PIGEON_4_0_MASK_CNT_SEL
+          - name: OFFSET
+            description: offset on pclk unit
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: INC_SEL
+            description: Event to incrment local counter
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_PIGEON_4_0_INC_SEL
+          - name: POL
+            description: Polarity of signal output
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: EN
+            description: Enable pigeon Mode on this signal
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PIGEON_4_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2320
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: CLR_CNT
+            description: Deassert signal output when counter match this value
+            index: 16
+            width: 16
+            read: true
+            write: true
+            type: LCDIF_PIGEON_4_1_CLR_CNT
+          - name: SET_CNT
+            description: Assert signal output when counter match this value
+            index: 0
+            width: 16
+            read: true
+            write: true
+            type: LCDIF_PIGEON_4_1_SET_CNT
+      - name: PIGEON_4_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2336
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: SIG_ANOTHER
+            description: Select another signal for logic operation or as mask or counter
+              tick event
+            index: 4
+            width: 5
+            read: true
+            write: true
+            type: LCDIF_PIGEON_4_2_SIG_ANOTHER
+          - name: SIG_LOGIC
+            description: 'Logic operation with another signal: DIS/AND/OR/COND'
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: LCDIF_PIGEON_4_2_SIG_LOGIC
+      - name: PIGEON_5_0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2368
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: STATE_MASK
+            description: state_mask = (FS|FB|FD|FE) and (LS|LB|LD|LE) , select any
+              combination of scan states as reference point for local counter to start
+              ticking
+            index: 24
+            width: 8
+            read: true
+            write: true
+            type: LCDIF_PIGEON_5_0_STATE_MASK
+          - name: MASK_CNT
+            description: When the global counter selected through MASK_CNT_SEL matches
+              value in this reg, pigeon local counter start ticking
+            index: 12
+            width: 12
+            read: true
+            write: true
+          - name: MASK_CNT_SEL
+            description: select global counters as mask condition, use together with
+              MASK_CNT
+            index: 8
+            width: 4
+            read: true
+            write: true
+            type: LCDIF_PIGEON_5_0_MASK_CNT_SEL
+          - name: OFFSET
+            description: offset on pclk unit
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: INC_SEL
+            description: Event to incrment local counter
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_PIGEON_5_0_INC_SEL
+          - name: POL
+            description: Polarity of signal output
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: EN
+            description: Enable pigeon Mode on this signal
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PIGEON_5_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2384
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: CLR_CNT
+            description: Deassert signal output when counter match this value
+            index: 16
+            width: 16
+            read: true
+            write: true
+            type: LCDIF_PIGEON_5_1_CLR_CNT
+          - name: SET_CNT
+            description: Assert signal output when counter match this value
+            index: 0
+            width: 16
+            read: true
+            write: true
+            type: LCDIF_PIGEON_5_1_SET_CNT
+      - name: PIGEON_5_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2400
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: SIG_ANOTHER
+            description: Select another signal for logic operation or as mask or counter
+              tick event
+            index: 4
+            width: 5
+            read: true
+            write: true
+            type: LCDIF_PIGEON_5_2_SIG_ANOTHER
+          - name: SIG_LOGIC
+            description: 'Logic operation with another signal: DIS/AND/OR/COND'
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: LCDIF_PIGEON_5_2_SIG_LOGIC
+      - name: PIGEON_6_0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2432
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: STATE_MASK
+            description: state_mask = (FS|FB|FD|FE) and (LS|LB|LD|LE) , select any
+              combination of scan states as reference point for local counter to start
+              ticking
+            index: 24
+            width: 8
+            read: true
+            write: true
+            type: LCDIF_PIGEON_6_0_STATE_MASK
+          - name: MASK_CNT
+            description: When the global counter selected through MASK_CNT_SEL matches
+              value in this reg, pigeon local counter start ticking
+            index: 12
+            width: 12
+            read: true
+            write: true
+          - name: MASK_CNT_SEL
+            description: select global counters as mask condition, use together with
+              MASK_CNT
+            index: 8
+            width: 4
+            read: true
+            write: true
+            type: LCDIF_PIGEON_6_0_MASK_CNT_SEL
+          - name: OFFSET
+            description: offset on pclk unit
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: INC_SEL
+            description: Event to incrment local counter
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_PIGEON_6_0_INC_SEL
+          - name: POL
+            description: Polarity of signal output
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: EN
+            description: Enable pigeon Mode on this signal
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PIGEON_6_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2448
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: CLR_CNT
+            description: Deassert signal output when counter match this value
+            index: 16
+            width: 16
+            read: true
+            write: true
+            type: LCDIF_PIGEON_6_1_CLR_CNT
+          - name: SET_CNT
+            description: Assert signal output when counter match this value
+            index: 0
+            width: 16
+            read: true
+            write: true
+            type: LCDIF_PIGEON_6_1_SET_CNT
+      - name: PIGEON_6_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2464
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: SIG_ANOTHER
+            description: Select another signal for logic operation or as mask or counter
+              tick event
+            index: 4
+            width: 5
+            read: true
+            write: true
+            type: LCDIF_PIGEON_6_2_SIG_ANOTHER
+          - name: SIG_LOGIC
+            description: 'Logic operation with another signal: DIS/AND/OR/COND'
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: LCDIF_PIGEON_6_2_SIG_LOGIC
+      - name: PIGEON_7_0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2496
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: STATE_MASK
+            description: state_mask = (FS|FB|FD|FE) and (LS|LB|LD|LE) , select any
+              combination of scan states as reference point for local counter to start
+              ticking
+            index: 24
+            width: 8
+            read: true
+            write: true
+            type: LCDIF_PIGEON_7_0_STATE_MASK
+          - name: MASK_CNT
+            description: When the global counter selected through MASK_CNT_SEL matches
+              value in this reg, pigeon local counter start ticking
+            index: 12
+            width: 12
+            read: true
+            write: true
+          - name: MASK_CNT_SEL
+            description: select global counters as mask condition, use together with
+              MASK_CNT
+            index: 8
+            width: 4
+            read: true
+            write: true
+            type: LCDIF_PIGEON_7_0_MASK_CNT_SEL
+          - name: OFFSET
+            description: offset on pclk unit
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: INC_SEL
+            description: Event to incrment local counter
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_PIGEON_7_0_INC_SEL
+          - name: POL
+            description: Polarity of signal output
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: EN
+            description: Enable pigeon Mode on this signal
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PIGEON_7_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2512
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: CLR_CNT
+            description: Deassert signal output when counter match this value
+            index: 16
+            width: 16
+            read: true
+            write: true
+            type: LCDIF_PIGEON_7_1_CLR_CNT
+          - name: SET_CNT
+            description: Assert signal output when counter match this value
+            index: 0
+            width: 16
+            read: true
+            write: true
+            type: LCDIF_PIGEON_7_1_SET_CNT
+      - name: PIGEON_7_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2528
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: SIG_ANOTHER
+            description: Select another signal for logic operation or as mask or counter
+              tick event
+            index: 4
+            width: 5
+            read: true
+            write: true
+            type: LCDIF_PIGEON_7_2_SIG_ANOTHER
+          - name: SIG_LOGIC
+            description: 'Logic operation with another signal: DIS/AND/OR/COND'
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: LCDIF_PIGEON_7_2_SIG_LOGIC
+      - name: PIGEON_8_0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2560
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: STATE_MASK
+            description: state_mask = (FS|FB|FD|FE) and (LS|LB|LD|LE) , select any
+              combination of scan states as reference point for local counter to start
+              ticking
+            index: 24
+            width: 8
+            read: true
+            write: true
+            type: LCDIF_PIGEON_8_0_STATE_MASK
+          - name: MASK_CNT
+            description: When the global counter selected through MASK_CNT_SEL matches
+              value in this reg, pigeon local counter start ticking
+            index: 12
+            width: 12
+            read: true
+            write: true
+          - name: MASK_CNT_SEL
+            description: select global counters as mask condition, use together with
+              MASK_CNT
+            index: 8
+            width: 4
+            read: true
+            write: true
+            type: LCDIF_PIGEON_8_0_MASK_CNT_SEL
+          - name: OFFSET
+            description: offset on pclk unit
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: INC_SEL
+            description: Event to incrment local counter
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_PIGEON_8_0_INC_SEL
+          - name: POL
+            description: Polarity of signal output
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: EN
+            description: Enable pigeon Mode on this signal
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PIGEON_8_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2576
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: CLR_CNT
+            description: Deassert signal output when counter match this value
+            index: 16
+            width: 16
+            read: true
+            write: true
+            type: LCDIF_PIGEON_8_1_CLR_CNT
+          - name: SET_CNT
+            description: Assert signal output when counter match this value
+            index: 0
+            width: 16
+            read: true
+            write: true
+            type: LCDIF_PIGEON_8_1_SET_CNT
+      - name: PIGEON_8_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2592
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: SIG_ANOTHER
+            description: Select another signal for logic operation or as mask or counter
+              tick event
+            index: 4
+            width: 5
+            read: true
+            write: true
+            type: LCDIF_PIGEON_8_2_SIG_ANOTHER
+          - name: SIG_LOGIC
+            description: 'Logic operation with another signal: DIS/AND/OR/COND'
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: LCDIF_PIGEON_8_2_SIG_LOGIC
+      - name: PIGEON_9_0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2624
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: STATE_MASK
+            description: state_mask = (FS|FB|FD|FE) and (LS|LB|LD|LE) , select any
+              combination of scan states as reference point for local counter to start
+              ticking
+            index: 24
+            width: 8
+            read: true
+            write: true
+            type: LCDIF_PIGEON_9_0_STATE_MASK
+          - name: MASK_CNT
+            description: When the global counter selected through MASK_CNT_SEL matches
+              value in this reg, pigeon local counter start ticking
+            index: 12
+            width: 12
+            read: true
+            write: true
+          - name: MASK_CNT_SEL
+            description: select global counters as mask condition, use together with
+              MASK_CNT
+            index: 8
+            width: 4
+            read: true
+            write: true
+            type: LCDIF_PIGEON_9_0_MASK_CNT_SEL
+          - name: OFFSET
+            description: offset on pclk unit
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: INC_SEL
+            description: Event to incrment local counter
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_PIGEON_9_0_INC_SEL
+          - name: POL
+            description: Polarity of signal output
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: EN
+            description: Enable pigeon Mode on this signal
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PIGEON_9_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2640
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: CLR_CNT
+            description: Deassert signal output when counter match this value
+            index: 16
+            width: 16
+            read: true
+            write: true
+            type: LCDIF_PIGEON_9_1_CLR_CNT
+          - name: SET_CNT
+            description: Assert signal output when counter match this value
+            index: 0
+            width: 16
+            read: true
+            write: true
+            type: LCDIF_PIGEON_9_1_SET_CNT
+      - name: PIGEON_9_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2656
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: SIG_ANOTHER
+            description: Select another signal for logic operation or as mask or counter
+              tick event
+            index: 4
+            width: 5
+            read: true
+            write: true
+            type: LCDIF_PIGEON_9_2_SIG_ANOTHER
+          - name: SIG_LOGIC
+            description: 'Logic operation with another signal: DIS/AND/OR/COND'
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: LCDIF_PIGEON_9_2_SIG_LOGIC
+      - name: PIGEON_10_0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2688
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: STATE_MASK
+            description: state_mask = (FS|FB|FD|FE) and (LS|LB|LD|LE) , select any
+              combination of scan states as reference point for local counter to start
+              ticking
+            index: 24
+            width: 8
+            read: true
+            write: true
+            type: LCDIF_PIGEON_10_0_STATE_MASK
+          - name: MASK_CNT
+            description: When the global counter selected through MASK_CNT_SEL matches
+              value in this reg, pigeon local counter start ticking
+            index: 12
+            width: 12
+            read: true
+            write: true
+          - name: MASK_CNT_SEL
+            description: select global counters as mask condition, use together with
+              MASK_CNT
+            index: 8
+            width: 4
+            read: true
+            write: true
+            type: LCDIF_PIGEON_10_0_MASK_CNT_SEL
+          - name: OFFSET
+            description: offset on pclk unit
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: INC_SEL
+            description: Event to incrment local counter
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_PIGEON_10_0_INC_SEL
+          - name: POL
+            description: Polarity of signal output
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: EN
+            description: Enable pigeon Mode on this signal
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PIGEON_10_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2704
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: CLR_CNT
+            description: Deassert signal output when counter match this value
+            index: 16
+            width: 16
+            read: true
+            write: true
+            type: LCDIF_PIGEON_10_1_CLR_CNT
+          - name: SET_CNT
+            description: Assert signal output when counter match this value
+            index: 0
+            width: 16
+            read: true
+            write: true
+            type: LCDIF_PIGEON_10_1_SET_CNT
+      - name: PIGEON_10_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2720
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: SIG_ANOTHER
+            description: Select another signal for logic operation or as mask or counter
+              tick event
+            index: 4
+            width: 5
+            read: true
+            write: true
+            type: LCDIF_PIGEON_10_2_SIG_ANOTHER
+          - name: SIG_LOGIC
+            description: 'Logic operation with another signal: DIS/AND/OR/COND'
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: LCDIF_PIGEON_10_2_SIG_LOGIC
+      - name: PIGEON_11_0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2752
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: STATE_MASK
+            description: state_mask = (FS|FB|FD|FE) and (LS|LB|LD|LE) , select any
+              combination of scan states as reference point for local counter to start
+              ticking
+            index: 24
+            width: 8
+            read: true
+            write: true
+            type: LCDIF_PIGEON_11_0_STATE_MASK
+          - name: MASK_CNT
+            description: When the global counter selected through MASK_CNT_SEL matches
+              value in this reg, pigeon local counter start ticking
+            index: 12
+            width: 12
+            read: true
+            write: true
+          - name: MASK_CNT_SEL
+            description: select global counters as mask condition, use together with
+              MASK_CNT
+            index: 8
+            width: 4
+            read: true
+            write: true
+            type: LCDIF_PIGEON_11_0_MASK_CNT_SEL
+          - name: OFFSET
+            description: offset on pclk unit
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: INC_SEL
+            description: Event to incrment local counter
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: LCDIF_PIGEON_11_0_INC_SEL
+          - name: POL
+            description: Polarity of signal output
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: EN
+            description: Enable pigeon Mode on this signal
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PIGEON_11_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2768
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: CLR_CNT
+            description: Deassert signal output when counter match this value
+            index: 16
+            width: 16
+            read: true
+            write: true
+            type: LCDIF_PIGEON_11_1_CLR_CNT
+          - name: SET_CNT
+            description: Assert signal output when counter match this value
+            index: 0
+            width: 16
+            read: true
+            write: true
+            type: LCDIF_PIGEON_11_1_SET_CNT
+      - name: PIGEON_11_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2784
+        description: (read-write) Panel Interface Signal Generator Register
+        fields:
+          - name: SIG_ANOTHER
+            description: Select another signal for logic operation or as mask or counter
+              tick event
+            index: 4
+            width: 5
+            read: true
+            write: true
+            type: LCDIF_PIGEON_11_2_SIG_ANOTHER
+          - name: SIG_LOGIC
+            description: 'Logic operation with another signal: DIS/AND/OR/COND'
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: LCDIF_PIGEON_11_2_SIG_LOGIC
+      - name: LUT_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2816
+        description: (read-write) Look Up Table Control Register
+        fields:
+          - name: LUT_BYPASS
+            description: Setting this bit will bypass the LUT memory resource completely
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LUT0_ADDR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2832
+        description: (read-write) Lookup Table 0 Index Register
+        fields:
+          - name: ADDR
+            description: LUT indexed address pointer
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: LUT0_DATA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2848
+        description: (read-write) Lookup Table 0 Data Register
+        fields:
+          - name: DATA
+            description: Writing this field will load 4 bytes, aligned to four byte
+              boundaries, of data indexed by the ADDR field of the REG_LUT_CTRL register
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: LUT1_ADDR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2864
+        description: (read-write) Lookup Table 1 Index Register
+        fields:
+          - name: ADDR
+            description: LUT indexed address pointer
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: LUT1_DATA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2880
+        description: (read-write) Lookup Table 1 Data Register
+        fields:
+          - name: DATA
+            description: Writing this field will load 4 bytes, aligned to four byte
+              boundaries, of data indexed by the ADDR field of the REG_LUT_CTRL register
+            index: 0
+            width: 32
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  LCDIF_CTRL_INPUT_DATA_SWIZZLE:
+    enum:
+      NO_SWAP:
+        description: No byte swapping.(Little endian)
+        value: 0
+      BIG_ENDIAN_SWAP:
+        description: Big Endian swap (swap bytes 0,3 and 1,2).
+        value: 1
+      HWD_SWAP:
+        description: Swap half-words.
+        value: 2
+      HWD_BYTE_SWAP:
+        description: Swap bytes within each half-word.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL_CSC_DATA_SWIZZLE:
+    enum:
+      NO_SWAP:
+        description: No byte swapping.(Little endian)
+        value: 0
+      BIG_ENDIAN_SWAP:
+        description: Big Endian swap (swap bytes 0,3 and 1,2).
+        value: 1
+      HWD_SWAP:
+        description: Swap half-words.
+        value: 2
+      HWD_BYTE_SWAP:
+        description: Swap bytes within each half-word.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL_LCD_DATABUS_WIDTH:
+    enum:
+      _16_BIT:
+        description: 16-bit data bus mode.
+        value: 0
+      _8_BIT:
+        description: 8-bit data bus mode.
+        value: 1
+      _18_BIT:
+        description: 18-bit data bus mode.
+        value: 2
+      _24_BIT:
+        description: 24-bit data bus mode.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL_WORD_LENGTH:
+    enum:
+      _16_BIT:
+        description: Input data is 16 bits per pixel.
+        value: 0
+      _8_BIT:
+        description: Input data is 8 bits wide.
+        value: 1
+      _18_BIT:
+        description: Input data is 18 bits per pixel.
+        value: 2
+      _24_BIT:
+        description: Input data is 24 bits per pixel.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL_SET_INPUT_DATA_SWIZZLE:
+    enum:
+      NO_SWAP:
+        description: No byte swapping.(Little endian)
+        value: 0
+      BIG_ENDIAN_SWAP:
+        description: Big Endian swap (swap bytes 0,3 and 1,2).
+        value: 1
+      HWD_SWAP:
+        description: Swap half-words.
+        value: 2
+      HWD_BYTE_SWAP:
+        description: Swap bytes within each half-word.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL_SET_CSC_DATA_SWIZZLE:
+    enum:
+      NO_SWAP:
+        description: No byte swapping.(Little endian)
+        value: 0
+      BIG_ENDIAN_SWAP:
+        description: Big Endian swap (swap bytes 0,3 and 1,2).
+        value: 1
+      HWD_SWAP:
+        description: Swap half-words.
+        value: 2
+      HWD_BYTE_SWAP:
+        description: Swap bytes within each half-word.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL_SET_LCD_DATABUS_WIDTH:
+    enum:
+      _16_BIT:
+        description: 16-bit data bus mode.
+        value: 0
+      _8_BIT:
+        description: 8-bit data bus mode.
+        value: 1
+      _18_BIT:
+        description: 18-bit data bus mode.
+        value: 2
+      _24_BIT:
+        description: 24-bit data bus mode.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL_SET_WORD_LENGTH:
+    enum:
+      _16_BIT:
+        description: Input data is 16 bits per pixel.
+        value: 0
+      _8_BIT:
+        description: Input data is 8 bits wide.
+        value: 1
+      _18_BIT:
+        description: Input data is 18 bits per pixel.
+        value: 2
+      _24_BIT:
+        description: Input data is 24 bits per pixel.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL_CLR_INPUT_DATA_SWIZZLE:
+    enum:
+      NO_SWAP:
+        description: No byte swapping.(Little endian)
+        value: 0
+      BIG_ENDIAN_SWAP:
+        description: Big Endian swap (swap bytes 0,3 and 1,2).
+        value: 1
+      HWD_SWAP:
+        description: Swap half-words.
+        value: 2
+      HWD_BYTE_SWAP:
+        description: Swap bytes within each half-word.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL_CLR_CSC_DATA_SWIZZLE:
+    enum:
+      NO_SWAP:
+        description: No byte swapping.(Little endian)
+        value: 0
+      BIG_ENDIAN_SWAP:
+        description: Big Endian swap (swap bytes 0,3 and 1,2).
+        value: 1
+      HWD_SWAP:
+        description: Swap half-words.
+        value: 2
+      HWD_BYTE_SWAP:
+        description: Swap bytes within each half-word.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL_CLR_LCD_DATABUS_WIDTH:
+    enum:
+      _16_BIT:
+        description: 16-bit data bus mode.
+        value: 0
+      _8_BIT:
+        description: 8-bit data bus mode.
+        value: 1
+      _18_BIT:
+        description: 18-bit data bus mode.
+        value: 2
+      _24_BIT:
+        description: 24-bit data bus mode.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL_CLR_WORD_LENGTH:
+    enum:
+      _16_BIT:
+        description: Input data is 16 bits per pixel.
+        value: 0
+      _8_BIT:
+        description: Input data is 8 bits wide.
+        value: 1
+      _18_BIT:
+        description: Input data is 18 bits per pixel.
+        value: 2
+      _24_BIT:
+        description: Input data is 24 bits per pixel.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL_TOG_INPUT_DATA_SWIZZLE:
+    enum:
+      NO_SWAP:
+        description: No byte swapping.(Little endian)
+        value: 0
+      BIG_ENDIAN_SWAP:
+        description: Big Endian swap (swap bytes 0,3 and 1,2).
+        value: 1
+      HWD_SWAP:
+        description: Swap half-words.
+        value: 2
+      HWD_BYTE_SWAP:
+        description: Swap bytes within each half-word.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL_TOG_CSC_DATA_SWIZZLE:
+    enum:
+      NO_SWAP:
+        description: No byte swapping.(Little endian)
+        value: 0
+      BIG_ENDIAN_SWAP:
+        description: Big Endian swap (swap bytes 0,3 and 1,2).
+        value: 1
+      HWD_SWAP:
+        description: Swap half-words.
+        value: 2
+      HWD_BYTE_SWAP:
+        description: Swap bytes within each half-word.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL_TOG_LCD_DATABUS_WIDTH:
+    enum:
+      _16_BIT:
+        description: 16-bit data bus mode.
+        value: 0
+      _8_BIT:
+        description: 8-bit data bus mode.
+        value: 1
+      _18_BIT:
+        description: 18-bit data bus mode.
+        value: 2
+      _24_BIT:
+        description: 24-bit data bus mode.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL_TOG_WORD_LENGTH:
+    enum:
+      _16_BIT:
+        description: Input data is 16 bits per pixel.
+        value: 0
+      _8_BIT:
+        description: Input data is 8 bits wide.
+        value: 1
+      _18_BIT:
+        description: Input data is 18 bits per pixel.
+        value: 2
+      _24_BIT:
+        description: Input data is 24 bits per pixel.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL2_OUTSTANDING_REQS:
+    enum:
+      _1:
+        description: REQ_1
+        value: 0
+      _2:
+        description: REQ_2
+        value: 1
+      _4:
+        description: REQ_4
+        value: 2
+      _8:
+        description: REQ_8
+        value: 3
+      _16:
+        description: REQ_16
+        value: 4
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL2_ODD_LINE_PATTERN:
+    enum:
+      RGB:
+        description: RGB
+        value: 0
+      RBG:
+        description: RBG
+        value: 1
+      GBR:
+        description: GBR
+        value: 2
+      GRB:
+        description: GRB
+        value: 3
+      BRG:
+        description: BRG
+        value: 4
+      BGR:
+        description: BGR
+        value: 5
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL2_EVEN_LINE_PATTERN:
+    enum:
+      RGB:
+        description: RGB
+        value: 0
+      RBG:
+        description: RBG
+        value: 1
+      GBR:
+        description: GBR
+        value: 2
+      GRB:
+        description: GRB
+        value: 3
+      BRG:
+        description: BRG
+        value: 4
+      BGR:
+        description: BGR
+        value: 5
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL2_SET_OUTSTANDING_REQS:
+    enum:
+      _1:
+        description: REQ_1
+        value: 0
+      _2:
+        description: REQ_2
+        value: 1
+      _4:
+        description: REQ_4
+        value: 2
+      _8:
+        description: REQ_8
+        value: 3
+      _16:
+        description: REQ_16
+        value: 4
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL2_SET_ODD_LINE_PATTERN:
+    enum:
+      RGB:
+        description: RGB
+        value: 0
+      RBG:
+        description: RBG
+        value: 1
+      GBR:
+        description: GBR
+        value: 2
+      GRB:
+        description: GRB
+        value: 3
+      BRG:
+        description: BRG
+        value: 4
+      BGR:
+        description: BGR
+        value: 5
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL2_SET_EVEN_LINE_PATTERN:
+    enum:
+      RGB:
+        description: RGB
+        value: 0
+      RBG:
+        description: RBG
+        value: 1
+      GBR:
+        description: GBR
+        value: 2
+      GRB:
+        description: GRB
+        value: 3
+      BRG:
+        description: BRG
+        value: 4
+      BGR:
+        description: BGR
+        value: 5
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL2_CLR_OUTSTANDING_REQS:
+    enum:
+      _1:
+        description: REQ_1
+        value: 0
+      _2:
+        description: REQ_2
+        value: 1
+      _4:
+        description: REQ_4
+        value: 2
+      _8:
+        description: REQ_8
+        value: 3
+      _16:
+        description: REQ_16
+        value: 4
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL2_CLR_ODD_LINE_PATTERN:
+    enum:
+      RGB:
+        description: RGB
+        value: 0
+      RBG:
+        description: RBG
+        value: 1
+      GBR:
+        description: GBR
+        value: 2
+      GRB:
+        description: GRB
+        value: 3
+      BRG:
+        description: BRG
+        value: 4
+      BGR:
+        description: BGR
+        value: 5
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL2_CLR_EVEN_LINE_PATTERN:
+    enum:
+      RGB:
+        description: RGB
+        value: 0
+      RBG:
+        description: RBG
+        value: 1
+      GBR:
+        description: GBR
+        value: 2
+      GRB:
+        description: GRB
+        value: 3
+      BRG:
+        description: BRG
+        value: 4
+      BGR:
+        description: BGR
+        value: 5
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL2_TOG_OUTSTANDING_REQS:
+    enum:
+      _1:
+        description: REQ_1
+        value: 0
+      _2:
+        description: REQ_2
+        value: 1
+      _4:
+        description: REQ_4
+        value: 2
+      _8:
+        description: REQ_8
+        value: 3
+      _16:
+        description: REQ_16
+        value: 4
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL2_TOG_ODD_LINE_PATTERN:
+    enum:
+      RGB:
+        description: RGB
+        value: 0
+      RBG:
+        description: RBG
+        value: 1
+      GBR:
+        description: GBR
+        value: 2
+      GRB:
+        description: GRB
+        value: 3
+      BRG:
+        description: BRG
+        value: 4
+      BGR:
+        description: BGR
+        value: 5
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_CTRL2_TOG_EVEN_LINE_PATTERN:
+    enum:
+      RGB:
+        description: RGB
+        value: 0
+      RBG:
+        description: RBG
+        value: 1
+      GBR:
+        description: GBR
+        value: 2
+      GRB:
+        description: GRB
+        value: 3
+      BRG:
+        description: BRG
+        value: 4
+      BGR:
+        description: BGR
+        value: 5
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_0_0_STATE_MASK:
+    enum:
+      FS:
+        description: FRAME SYNC
+        value: 1
+      FB:
+        description: FRAME BEGIN
+        value: 2
+      FD:
+        description: FRAME DATA
+        value: 4
+      FE:
+        description: FRAME END
+        value: 8
+      LS:
+        description: LINE SYNC
+        value: 16
+      LB:
+        description: LINE BEGIN
+        value: 32
+      LD:
+        description: LINE DATA
+        value: 64
+      LE:
+        description: LINE END
+        value: 128
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_0_0_MASK_CNT_SEL:
+    enum:
+      HSTATE_CNT:
+        description: pclk counter within one hscan state
+        value: 0
+      HSTATE_CYCLE:
+        description: pclk cycle within one hscan state
+        value: 1
+      VSTATE_CNT:
+        description: line counter within one vscan state
+        value: 2
+      VSTATE_CYCLE:
+        description: line cycle within one vscan state
+        value: 3
+      FRAME_CNT:
+        description: frame counter
+        value: 4
+      FRAME_CYCLE:
+        description: frame cycle
+        value: 5
+      HCNT:
+        description: horizontal counter (pclk counter within one line )
+        value: 6
+      VCNT:
+        description: vertical counter (line counter within one frame)
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_0_0_INC_SEL:
+    enum:
+      PCLK:
+        description: pclk
+        value: 0
+      LINE:
+        description: Line start pulse
+        value: 1
+      FRAME:
+        description: Frame start pulse
+        value: 2
+      SIG_ANOTHER:
+        description: Use another signal as tick event
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_0_1_CLR_CNT:
+    enum:
+      CLEAR_USING_MASK:
+        description: Keep active until mask off
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LCDIF_PIGEON_0_1_SET_CNT:
+    enum:
+      START_ACTIVE:
+        description: Start as active
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LCDIF_PIGEON_0_2_SIG_ANOTHER:
+    enum:
+      CLEAR_USING_MASK:
+        description: Keep active until mask off
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_0_2_SIG_LOGIC:
+    enum:
+      DIS:
+        description: No logic operation
+        value: 0
+      AND:
+        description: sigout = sig_another AND this_sig
+        value: 1
+      OR:
+        description: sigout = sig_another OR this_sig
+        value: 2
+      MASK:
+        description: mask = sig_another AND other_masks
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_1_0_STATE_MASK:
+    enum:
+      FS:
+        description: FRAME SYNC
+        value: 1
+      FB:
+        description: FRAME BEGIN
+        value: 2
+      FD:
+        description: FRAME DATA
+        value: 4
+      FE:
+        description: FRAME END
+        value: 8
+      LS:
+        description: LINE SYNC
+        value: 16
+      LB:
+        description: LINE BEGIN
+        value: 32
+      LD:
+        description: LINE DATA
+        value: 64
+      LE:
+        description: LINE END
+        value: 128
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_1_0_MASK_CNT_SEL:
+    enum:
+      HSTATE_CNT:
+        description: pclk counter within one hscan state
+        value: 0
+      HSTATE_CYCLE:
+        description: pclk cycle within one hscan state
+        value: 1
+      VSTATE_CNT:
+        description: line counter within one vscan state
+        value: 2
+      VSTATE_CYCLE:
+        description: line cycle within one vscan state
+        value: 3
+      FRAME_CNT:
+        description: frame counter
+        value: 4
+      FRAME_CYCLE:
+        description: frame cycle
+        value: 5
+      HCNT:
+        description: horizontal counter (pclk counter within one line )
+        value: 6
+      VCNT:
+        description: vertical counter (line counter within one frame)
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_1_0_INC_SEL:
+    enum:
+      PCLK:
+        description: pclk
+        value: 0
+      LINE:
+        description: Line start pulse
+        value: 1
+      FRAME:
+        description: Frame start pulse
+        value: 2
+      SIG_ANOTHER:
+        description: Use another signal as tick event
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_1_1_CLR_CNT:
+    enum:
+      CLEAR_USING_MASK:
+        description: Keep active until mask off
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LCDIF_PIGEON_1_1_SET_CNT:
+    enum:
+      START_ACTIVE:
+        description: Start as active
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LCDIF_PIGEON_1_2_SIG_ANOTHER:
+    enum:
+      CLEAR_USING_MASK:
+        description: Keep active until mask off
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_1_2_SIG_LOGIC:
+    enum:
+      DIS:
+        description: No logic operation
+        value: 0
+      AND:
+        description: sigout = sig_another AND this_sig
+        value: 1
+      OR:
+        description: sigout = sig_another OR this_sig
+        value: 2
+      MASK:
+        description: mask = sig_another AND other_masks
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_2_0_STATE_MASK:
+    enum:
+      FS:
+        description: FRAME SYNC
+        value: 1
+      FB:
+        description: FRAME BEGIN
+        value: 2
+      FD:
+        description: FRAME DATA
+        value: 4
+      FE:
+        description: FRAME END
+        value: 8
+      LS:
+        description: LINE SYNC
+        value: 16
+      LB:
+        description: LINE BEGIN
+        value: 32
+      LD:
+        description: LINE DATA
+        value: 64
+      LE:
+        description: LINE END
+        value: 128
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_2_0_MASK_CNT_SEL:
+    enum:
+      HSTATE_CNT:
+        description: pclk counter within one hscan state
+        value: 0
+      HSTATE_CYCLE:
+        description: pclk cycle within one hscan state
+        value: 1
+      VSTATE_CNT:
+        description: line counter within one vscan state
+        value: 2
+      VSTATE_CYCLE:
+        description: line cycle within one vscan state
+        value: 3
+      FRAME_CNT:
+        description: frame counter
+        value: 4
+      FRAME_CYCLE:
+        description: frame cycle
+        value: 5
+      HCNT:
+        description: horizontal counter (pclk counter within one line )
+        value: 6
+      VCNT:
+        description: vertical counter (line counter within one frame)
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_2_0_INC_SEL:
+    enum:
+      PCLK:
+        description: pclk
+        value: 0
+      LINE:
+        description: Line start pulse
+        value: 1
+      FRAME:
+        description: Frame start pulse
+        value: 2
+      SIG_ANOTHER:
+        description: Use another signal as tick event
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_2_1_CLR_CNT:
+    enum:
+      CLEAR_USING_MASK:
+        description: Keep active until mask off
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LCDIF_PIGEON_2_1_SET_CNT:
+    enum:
+      START_ACTIVE:
+        description: Start as active
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LCDIF_PIGEON_2_2_SIG_ANOTHER:
+    enum:
+      CLEAR_USING_MASK:
+        description: Keep active until mask off
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_2_2_SIG_LOGIC:
+    enum:
+      DIS:
+        description: No logic operation
+        value: 0
+      AND:
+        description: sigout = sig_another AND this_sig
+        value: 1
+      OR:
+        description: sigout = sig_another OR this_sig
+        value: 2
+      MASK:
+        description: mask = sig_another AND other_masks
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_3_0_STATE_MASK:
+    enum:
+      FS:
+        description: FRAME SYNC
+        value: 1
+      FB:
+        description: FRAME BEGIN
+        value: 2
+      FD:
+        description: FRAME DATA
+        value: 4
+      FE:
+        description: FRAME END
+        value: 8
+      LS:
+        description: LINE SYNC
+        value: 16
+      LB:
+        description: LINE BEGIN
+        value: 32
+      LD:
+        description: LINE DATA
+        value: 64
+      LE:
+        description: LINE END
+        value: 128
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_3_0_MASK_CNT_SEL:
+    enum:
+      HSTATE_CNT:
+        description: pclk counter within one hscan state
+        value: 0
+      HSTATE_CYCLE:
+        description: pclk cycle within one hscan state
+        value: 1
+      VSTATE_CNT:
+        description: line counter within one vscan state
+        value: 2
+      VSTATE_CYCLE:
+        description: line cycle within one vscan state
+        value: 3
+      FRAME_CNT:
+        description: frame counter
+        value: 4
+      FRAME_CYCLE:
+        description: frame cycle
+        value: 5
+      HCNT:
+        description: horizontal counter (pclk counter within one line )
+        value: 6
+      VCNT:
+        description: vertical counter (line counter within one frame)
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_3_0_INC_SEL:
+    enum:
+      PCLK:
+        description: pclk
+        value: 0
+      LINE:
+        description: Line start pulse
+        value: 1
+      FRAME:
+        description: Frame start pulse
+        value: 2
+      SIG_ANOTHER:
+        description: Use another signal as tick event
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_3_1_CLR_CNT:
+    enum:
+      CLEAR_USING_MASK:
+        description: Keep active until mask off
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LCDIF_PIGEON_3_1_SET_CNT:
+    enum:
+      START_ACTIVE:
+        description: Start as active
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LCDIF_PIGEON_3_2_SIG_ANOTHER:
+    enum:
+      CLEAR_USING_MASK:
+        description: Keep active until mask off
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_3_2_SIG_LOGIC:
+    enum:
+      DIS:
+        description: No logic operation
+        value: 0
+      AND:
+        description: sigout = sig_another AND this_sig
+        value: 1
+      OR:
+        description: sigout = sig_another OR this_sig
+        value: 2
+      MASK:
+        description: mask = sig_another AND other_masks
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_4_0_STATE_MASK:
+    enum:
+      FS:
+        description: FRAME SYNC
+        value: 1
+      FB:
+        description: FRAME BEGIN
+        value: 2
+      FD:
+        description: FRAME DATA
+        value: 4
+      FE:
+        description: FRAME END
+        value: 8
+      LS:
+        description: LINE SYNC
+        value: 16
+      LB:
+        description: LINE BEGIN
+        value: 32
+      LD:
+        description: LINE DATA
+        value: 64
+      LE:
+        description: LINE END
+        value: 128
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_4_0_MASK_CNT_SEL:
+    enum:
+      HSTATE_CNT:
+        description: pclk counter within one hscan state
+        value: 0
+      HSTATE_CYCLE:
+        description: pclk cycle within one hscan state
+        value: 1
+      VSTATE_CNT:
+        description: line counter within one vscan state
+        value: 2
+      VSTATE_CYCLE:
+        description: line cycle within one vscan state
+        value: 3
+      FRAME_CNT:
+        description: frame counter
+        value: 4
+      FRAME_CYCLE:
+        description: frame cycle
+        value: 5
+      HCNT:
+        description: horizontal counter (pclk counter within one line )
+        value: 6
+      VCNT:
+        description: vertical counter (line counter within one frame)
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_4_0_INC_SEL:
+    enum:
+      PCLK:
+        description: pclk
+        value: 0
+      LINE:
+        description: Line start pulse
+        value: 1
+      FRAME:
+        description: Frame start pulse
+        value: 2
+      SIG_ANOTHER:
+        description: Use another signal as tick event
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_4_1_CLR_CNT:
+    enum:
+      CLEAR_USING_MASK:
+        description: Keep active until mask off
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LCDIF_PIGEON_4_1_SET_CNT:
+    enum:
+      START_ACTIVE:
+        description: Start as active
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LCDIF_PIGEON_4_2_SIG_ANOTHER:
+    enum:
+      CLEAR_USING_MASK:
+        description: Keep active until mask off
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_4_2_SIG_LOGIC:
+    enum:
+      DIS:
+        description: No logic operation
+        value: 0
+      AND:
+        description: sigout = sig_another AND this_sig
+        value: 1
+      OR:
+        description: sigout = sig_another OR this_sig
+        value: 2
+      MASK:
+        description: mask = sig_another AND other_masks
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_5_0_STATE_MASK:
+    enum:
+      FS:
+        description: FRAME SYNC
+        value: 1
+      FB:
+        description: FRAME BEGIN
+        value: 2
+      FD:
+        description: FRAME DATA
+        value: 4
+      FE:
+        description: FRAME END
+        value: 8
+      LS:
+        description: LINE SYNC
+        value: 16
+      LB:
+        description: LINE BEGIN
+        value: 32
+      LD:
+        description: LINE DATA
+        value: 64
+      LE:
+        description: LINE END
+        value: 128
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_5_0_MASK_CNT_SEL:
+    enum:
+      HSTATE_CNT:
+        description: pclk counter within one hscan state
+        value: 0
+      HSTATE_CYCLE:
+        description: pclk cycle within one hscan state
+        value: 1
+      VSTATE_CNT:
+        description: line counter within one vscan state
+        value: 2
+      VSTATE_CYCLE:
+        description: line cycle within one vscan state
+        value: 3
+      FRAME_CNT:
+        description: frame counter
+        value: 4
+      FRAME_CYCLE:
+        description: frame cycle
+        value: 5
+      HCNT:
+        description: horizontal counter (pclk counter within one line )
+        value: 6
+      VCNT:
+        description: vertical counter (line counter within one frame)
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_5_0_INC_SEL:
+    enum:
+      PCLK:
+        description: pclk
+        value: 0
+      LINE:
+        description: Line start pulse
+        value: 1
+      FRAME:
+        description: Frame start pulse
+        value: 2
+      SIG_ANOTHER:
+        description: Use another signal as tick event
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_5_1_CLR_CNT:
+    enum:
+      CLEAR_USING_MASK:
+        description: Keep active until mask off
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LCDIF_PIGEON_5_1_SET_CNT:
+    enum:
+      START_ACTIVE:
+        description: Start as active
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LCDIF_PIGEON_5_2_SIG_ANOTHER:
+    enum:
+      CLEAR_USING_MASK:
+        description: Keep active until mask off
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_5_2_SIG_LOGIC:
+    enum:
+      DIS:
+        description: No logic operation
+        value: 0
+      AND:
+        description: sigout = sig_another AND this_sig
+        value: 1
+      OR:
+        description: sigout = sig_another OR this_sig
+        value: 2
+      MASK:
+        description: mask = sig_another AND other_masks
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_6_0_STATE_MASK:
+    enum:
+      FS:
+        description: FRAME SYNC
+        value: 1
+      FB:
+        description: FRAME BEGIN
+        value: 2
+      FD:
+        description: FRAME DATA
+        value: 4
+      FE:
+        description: FRAME END
+        value: 8
+      LS:
+        description: LINE SYNC
+        value: 16
+      LB:
+        description: LINE BEGIN
+        value: 32
+      LD:
+        description: LINE DATA
+        value: 64
+      LE:
+        description: LINE END
+        value: 128
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_6_0_MASK_CNT_SEL:
+    enum:
+      HSTATE_CNT:
+        description: pclk counter within one hscan state
+        value: 0
+      HSTATE_CYCLE:
+        description: pclk cycle within one hscan state
+        value: 1
+      VSTATE_CNT:
+        description: line counter within one vscan state
+        value: 2
+      VSTATE_CYCLE:
+        description: line cycle within one vscan state
+        value: 3
+      FRAME_CNT:
+        description: frame counter
+        value: 4
+      FRAME_CYCLE:
+        description: frame cycle
+        value: 5
+      HCNT:
+        description: horizontal counter (pclk counter within one line )
+        value: 6
+      VCNT:
+        description: vertical counter (line counter within one frame)
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_6_0_INC_SEL:
+    enum:
+      PCLK:
+        description: pclk
+        value: 0
+      LINE:
+        description: Line start pulse
+        value: 1
+      FRAME:
+        description: Frame start pulse
+        value: 2
+      SIG_ANOTHER:
+        description: Use another signal as tick event
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_6_1_CLR_CNT:
+    enum:
+      CLEAR_USING_MASK:
+        description: Keep active until mask off
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LCDIF_PIGEON_6_1_SET_CNT:
+    enum:
+      START_ACTIVE:
+        description: Start as active
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LCDIF_PIGEON_6_2_SIG_ANOTHER:
+    enum:
+      CLEAR_USING_MASK:
+        description: Keep active until mask off
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_6_2_SIG_LOGIC:
+    enum:
+      DIS:
+        description: No logic operation
+        value: 0
+      AND:
+        description: sigout = sig_another AND this_sig
+        value: 1
+      OR:
+        description: sigout = sig_another OR this_sig
+        value: 2
+      MASK:
+        description: mask = sig_another AND other_masks
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_7_0_STATE_MASK:
+    enum:
+      FS:
+        description: FRAME SYNC
+        value: 1
+      FB:
+        description: FRAME BEGIN
+        value: 2
+      FD:
+        description: FRAME DATA
+        value: 4
+      FE:
+        description: FRAME END
+        value: 8
+      LS:
+        description: LINE SYNC
+        value: 16
+      LB:
+        description: LINE BEGIN
+        value: 32
+      LD:
+        description: LINE DATA
+        value: 64
+      LE:
+        description: LINE END
+        value: 128
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_7_0_MASK_CNT_SEL:
+    enum:
+      HSTATE_CNT:
+        description: pclk counter within one hscan state
+        value: 0
+      HSTATE_CYCLE:
+        description: pclk cycle within one hscan state
+        value: 1
+      VSTATE_CNT:
+        description: line counter within one vscan state
+        value: 2
+      VSTATE_CYCLE:
+        description: line cycle within one vscan state
+        value: 3
+      FRAME_CNT:
+        description: frame counter
+        value: 4
+      FRAME_CYCLE:
+        description: frame cycle
+        value: 5
+      HCNT:
+        description: horizontal counter (pclk counter within one line )
+        value: 6
+      VCNT:
+        description: vertical counter (line counter within one frame)
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_7_0_INC_SEL:
+    enum:
+      PCLK:
+        description: pclk
+        value: 0
+      LINE:
+        description: Line start pulse
+        value: 1
+      FRAME:
+        description: Frame start pulse
+        value: 2
+      SIG_ANOTHER:
+        description: Use another signal as tick event
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_7_1_CLR_CNT:
+    enum:
+      CLEAR_USING_MASK:
+        description: Keep active until mask off
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LCDIF_PIGEON_7_1_SET_CNT:
+    enum:
+      START_ACTIVE:
+        description: Start as active
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LCDIF_PIGEON_7_2_SIG_ANOTHER:
+    enum:
+      CLEAR_USING_MASK:
+        description: Keep active until mask off
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_7_2_SIG_LOGIC:
+    enum:
+      DIS:
+        description: No logic operation
+        value: 0
+      AND:
+        description: sigout = sig_another AND this_sig
+        value: 1
+      OR:
+        description: sigout = sig_another OR this_sig
+        value: 2
+      MASK:
+        description: mask = sig_another AND other_masks
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_8_0_STATE_MASK:
+    enum:
+      FS:
+        description: FRAME SYNC
+        value: 1
+      FB:
+        description: FRAME BEGIN
+        value: 2
+      FD:
+        description: FRAME DATA
+        value: 4
+      FE:
+        description: FRAME END
+        value: 8
+      LS:
+        description: LINE SYNC
+        value: 16
+      LB:
+        description: LINE BEGIN
+        value: 32
+      LD:
+        description: LINE DATA
+        value: 64
+      LE:
+        description: LINE END
+        value: 128
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_8_0_MASK_CNT_SEL:
+    enum:
+      HSTATE_CNT:
+        description: pclk counter within one hscan state
+        value: 0
+      HSTATE_CYCLE:
+        description: pclk cycle within one hscan state
+        value: 1
+      VSTATE_CNT:
+        description: line counter within one vscan state
+        value: 2
+      VSTATE_CYCLE:
+        description: line cycle within one vscan state
+        value: 3
+      FRAME_CNT:
+        description: frame counter
+        value: 4
+      FRAME_CYCLE:
+        description: frame cycle
+        value: 5
+      HCNT:
+        description: horizontal counter (pclk counter within one line )
+        value: 6
+      VCNT:
+        description: vertical counter (line counter within one frame)
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_8_0_INC_SEL:
+    enum:
+      PCLK:
+        description: pclk
+        value: 0
+      LINE:
+        description: Line start pulse
+        value: 1
+      FRAME:
+        description: Frame start pulse
+        value: 2
+      SIG_ANOTHER:
+        description: Use another signal as tick event
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_8_1_CLR_CNT:
+    enum:
+      CLEAR_USING_MASK:
+        description: Keep active until mask off
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LCDIF_PIGEON_8_1_SET_CNT:
+    enum:
+      START_ACTIVE:
+        description: Start as active
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LCDIF_PIGEON_8_2_SIG_ANOTHER:
+    enum:
+      CLEAR_USING_MASK:
+        description: Keep active until mask off
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_8_2_SIG_LOGIC:
+    enum:
+      DIS:
+        description: No logic operation
+        value: 0
+      AND:
+        description: sigout = sig_another AND this_sig
+        value: 1
+      OR:
+        description: sigout = sig_another OR this_sig
+        value: 2
+      MASK:
+        description: mask = sig_another AND other_masks
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_9_0_STATE_MASK:
+    enum:
+      FS:
+        description: FRAME SYNC
+        value: 1
+      FB:
+        description: FRAME BEGIN
+        value: 2
+      FD:
+        description: FRAME DATA
+        value: 4
+      FE:
+        description: FRAME END
+        value: 8
+      LS:
+        description: LINE SYNC
+        value: 16
+      LB:
+        description: LINE BEGIN
+        value: 32
+      LD:
+        description: LINE DATA
+        value: 64
+      LE:
+        description: LINE END
+        value: 128
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_9_0_MASK_CNT_SEL:
+    enum:
+      HSTATE_CNT:
+        description: pclk counter within one hscan state
+        value: 0
+      HSTATE_CYCLE:
+        description: pclk cycle within one hscan state
+        value: 1
+      VSTATE_CNT:
+        description: line counter within one vscan state
+        value: 2
+      VSTATE_CYCLE:
+        description: line cycle within one vscan state
+        value: 3
+      FRAME_CNT:
+        description: frame counter
+        value: 4
+      FRAME_CYCLE:
+        description: frame cycle
+        value: 5
+      HCNT:
+        description: horizontal counter (pclk counter within one line )
+        value: 6
+      VCNT:
+        description: vertical counter (line counter within one frame)
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_9_0_INC_SEL:
+    enum:
+      PCLK:
+        description: pclk
+        value: 0
+      LINE:
+        description: Line start pulse
+        value: 1
+      FRAME:
+        description: Frame start pulse
+        value: 2
+      SIG_ANOTHER:
+        description: Use another signal as tick event
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_9_1_CLR_CNT:
+    enum:
+      CLEAR_USING_MASK:
+        description: Keep active until mask off
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LCDIF_PIGEON_9_1_SET_CNT:
+    enum:
+      START_ACTIVE:
+        description: Start as active
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LCDIF_PIGEON_9_2_SIG_ANOTHER:
+    enum:
+      CLEAR_USING_MASK:
+        description: Keep active until mask off
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_9_2_SIG_LOGIC:
+    enum:
+      DIS:
+        description: No logic operation
+        value: 0
+      AND:
+        description: sigout = sig_another AND this_sig
+        value: 1
+      OR:
+        description: sigout = sig_another OR this_sig
+        value: 2
+      MASK:
+        description: mask = sig_another AND other_masks
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_10_0_STATE_MASK:
+    enum:
+      FS:
+        description: FRAME SYNC
+        value: 1
+      FB:
+        description: FRAME BEGIN
+        value: 2
+      FD:
+        description: FRAME DATA
+        value: 4
+      FE:
+        description: FRAME END
+        value: 8
+      LS:
+        description: LINE SYNC
+        value: 16
+      LB:
+        description: LINE BEGIN
+        value: 32
+      LD:
+        description: LINE DATA
+        value: 64
+      LE:
+        description: LINE END
+        value: 128
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_10_0_MASK_CNT_SEL:
+    enum:
+      HSTATE_CNT:
+        description: pclk counter within one hscan state
+        value: 0
+      HSTATE_CYCLE:
+        description: pclk cycle within one hscan state
+        value: 1
+      VSTATE_CNT:
+        description: line counter within one vscan state
+        value: 2
+      VSTATE_CYCLE:
+        description: line cycle within one vscan state
+        value: 3
+      FRAME_CNT:
+        description: frame counter
+        value: 4
+      FRAME_CYCLE:
+        description: frame cycle
+        value: 5
+      HCNT:
+        description: horizontal counter (pclk counter within one line )
+        value: 6
+      VCNT:
+        description: vertical counter (line counter within one frame)
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_10_0_INC_SEL:
+    enum:
+      PCLK:
+        description: pclk
+        value: 0
+      LINE:
+        description: Line start pulse
+        value: 1
+      FRAME:
+        description: Frame start pulse
+        value: 2
+      SIG_ANOTHER:
+        description: Use another signal as tick event
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_10_1_CLR_CNT:
+    enum:
+      CLEAR_USING_MASK:
+        description: Keep active until mask off
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LCDIF_PIGEON_10_1_SET_CNT:
+    enum:
+      START_ACTIVE:
+        description: Start as active
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LCDIF_PIGEON_10_2_SIG_ANOTHER:
+    enum:
+      CLEAR_USING_MASK:
+        description: Keep active until mask off
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_10_2_SIG_LOGIC:
+    enum:
+      DIS:
+        description: No logic operation
+        value: 0
+      AND:
+        description: sigout = sig_another AND this_sig
+        value: 1
+      OR:
+        description: sigout = sig_another OR this_sig
+        value: 2
+      MASK:
+        description: mask = sig_another AND other_masks
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_11_0_STATE_MASK:
+    enum:
+      FS:
+        description: FRAME SYNC
+        value: 1
+      FB:
+        description: FRAME BEGIN
+        value: 2
+      FD:
+        description: FRAME DATA
+        value: 4
+      FE:
+        description: FRAME END
+        value: 8
+      LS:
+        description: LINE SYNC
+        value: 16
+      LB:
+        description: LINE BEGIN
+        value: 32
+      LD:
+        description: LINE DATA
+        value: 64
+      LE:
+        description: LINE END
+        value: 128
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_11_0_MASK_CNT_SEL:
+    enum:
+      HSTATE_CNT:
+        description: pclk counter within one hscan state
+        value: 0
+      HSTATE_CYCLE:
+        description: pclk cycle within one hscan state
+        value: 1
+      VSTATE_CNT:
+        description: line counter within one vscan state
+        value: 2
+      VSTATE_CYCLE:
+        description: line cycle within one vscan state
+        value: 3
+      FRAME_CNT:
+        description: frame counter
+        value: 4
+      FRAME_CYCLE:
+        description: frame cycle
+        value: 5
+      HCNT:
+        description: horizontal counter (pclk counter within one line )
+        value: 6
+      VCNT:
+        description: vertical counter (line counter within one frame)
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_11_0_INC_SEL:
+    enum:
+      PCLK:
+        description: pclk
+        value: 0
+      LINE:
+        description: Line start pulse
+        value: 1
+      FRAME:
+        description: Frame start pulse
+        value: 2
+      SIG_ANOTHER:
+        description: Use another signal as tick event
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_11_1_CLR_CNT:
+    enum:
+      CLEAR_USING_MASK:
+        description: Keep active until mask off
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LCDIF_PIGEON_11_1_SET_CNT:
+    enum:
+      START_ACTIVE:
+        description: Start as active
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LCDIF_PIGEON_11_2_SIG_ANOTHER:
+    enum:
+      CLEAR_USING_MASK:
+        description: Keep active until mask off
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIF_PIGEON_11_2_SIG_LOGIC:
+    enum:
+      DIS:
+        description: No logic operation
+        value: 0
+      AND:
+        description: sigout = sig_another AND this_sig
+        value: 1
+      OR:
+        description: sigout = sig_another OR this_sig
+        value: 2
+      MASK:
+        description: mask = sig_another AND other_masks
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

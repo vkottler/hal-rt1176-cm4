@@ -1,0 +1,2192 @@
+---
+structs:
+  SM_instance:
+    description: no description available
+    fields:
+      - name: SMCNT
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 0
+        description: (read-write) Counter Register
+        fields:
+          - name: CNT
+            description: Counter Register Bits
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: SMINIT
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 2
+        description: (read-write) Initial Count Register
+        fields:
+          - name: INIT
+            description: Initial Count Register Bits
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SMCTRL2
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 4
+        description: (read-write) Control 2 Register
+        fields:
+          - name: DBGEN
+            description: Debug Enable
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: WAITEN
+            description: WAIT Enable
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: INDEP
+            description: Independent or Complementary Pair Operation
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: PWM23_INIT
+            description: PWM23 Initial Value
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: PWM45_INIT
+            description: PWM45 Initial Value
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: PWMX_INIT
+            description: PWM_X Initial Value
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: INIT_SEL
+            description: Initialization Control Select
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: PWM1_SMCTRL2_INIT_SEL
+          - name: FRCEN
+            description: FRCEN
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: FORCE
+            description: Force Initialization
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: FORCE_SEL
+            description: This read/write bit determines the source of the FORCE OUTPUT
+              signal for this submodule.
+            index: 3
+            width: 3
+            read: true
+            write: true
+            type: PWM1_SMCTRL2_FORCE_SEL
+          - name: RELOAD_SEL
+            description: Reload Source Select
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: CLK_SEL
+            description: Clock Source Select
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: PWM1_SMCTRL2_CLK_SEL
+      - name: SMCTRL
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 6
+        description: (read-write) Control Register
+        fields:
+          - name: LDFQ
+            description: Load Frequency
+            index: 12
+            width: 4
+            read: true
+            write: true
+            type: PWM1_SMCTRL_LDFQ
+          - name: HALF
+            description: Half Cycle Reload
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: FULL
+            description: Full Cycle Reload
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: DT
+            description: Deadtime
+            index: 8
+            width: 2
+            read: true
+            write: false
+          - name: COMPMODE
+            description: Compare Mode
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: PRSC
+            description: Prescaler
+            index: 4
+            width: 3
+            read: true
+            write: true
+            type: PWM1_SMCTRL_PRSC
+          - name: SPLIT
+            description: Split the DBLPWM signal to PWMA and PWMB
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: LDMOD
+            description: Load Mode Select
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: DBLX
+            description: PWMX Double Switching Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: DBLEN
+            description: Double Switching Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SMVAL0
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 10
+        description: (read-write) Value Register 0
+        fields:
+          - name: VAL0
+            description: Value Register 0
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SMFRACVAL1
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 12
+        description: (read-write) Fractional Value Register 1
+        fields:
+          - name: FRACVAL1
+            description: Fractional Value 1 Register
+            index: 11
+            width: 5
+            read: true
+            write: true
+      - name: SMVAL1
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 14
+        description: (read-write) Value Register 1
+        fields:
+          - name: VAL1
+            description: Value Register 1
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SMFRACVAL2
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 16
+        description: (read-write) Fractional Value Register 2
+        fields:
+          - name: FRACVAL2
+            description: Fractional Value 2
+            index: 11
+            width: 5
+            read: true
+            write: true
+      - name: SMVAL2
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 18
+        description: (read-write) Value Register 2
+        fields:
+          - name: VAL2
+            description: Value Register 2
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SMFRACVAL3
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 20
+        description: (read-write) Fractional Value Register 3
+        fields:
+          - name: FRACVAL3
+            description: Fractional Value 3
+            index: 11
+            width: 5
+            read: true
+            write: true
+      - name: SMVAL3
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 22
+        description: (read-write) Value Register 3
+        fields:
+          - name: VAL3
+            description: Value Register 3
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SMFRACVAL4
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 24
+        description: (read-write) Fractional Value Register 4
+        fields:
+          - name: FRACVAL4
+            description: Fractional Value 4
+            index: 11
+            width: 5
+            read: true
+            write: true
+      - name: SMVAL4
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 26
+        description: (read-write) Value Register 4
+        fields:
+          - name: VAL4
+            description: Value Register 4
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SMFRACVAL5
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 28
+        description: (read-write) Fractional Value Register 5
+        fields:
+          - name: FRACVAL5
+            description: Fractional Value 5
+            index: 11
+            width: 5
+            read: true
+            write: true
+      - name: SMVAL5
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 30
+        description: (read-write) Value Register 5
+        fields:
+          - name: VAL5
+            description: Value Register 5
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SMFRCTRL
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 32
+        description: (read-write) Fractional Control Register
+        fields:
+          - name: TEST
+            description: Test Status Bit
+            index: 15
+            width: 1
+            read: true
+            write: false
+          - name: FRAC45_EN
+            description: Fractional Cycle Placement Enable for PWM_B
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: FRAC23_EN
+            description: Fractional Cycle Placement Enable for PWM_A
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: FRAC1_EN
+            description: Fractional Cycle PWM Period Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+      - name: SMOCTRL
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 34
+        description: (read-write) Output Control Register
+        fields:
+          - name: PWMA_IN
+            description: PWM_A Input
+            index: 15
+            width: 1
+            read: true
+            write: false
+          - name: PWMB_IN
+            description: PWM_B Input
+            index: 14
+            width: 1
+            read: true
+            write: false
+          - name: PWMX_IN
+            description: PWM_X Input
+            index: 13
+            width: 1
+            read: true
+            write: false
+          - name: POLA
+            description: PWM_A Output Polarity
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: POLB
+            description: PWM_B Output Polarity
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: POLX
+            description: PWM_X Output Polarity
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: PWMAFS
+            description: PWM_A Fault State
+            index: 4
+            width: 2
+            read: true
+            write: true
+            type: PWM1_SMOCTRL_PWMAFS
+          - name: PWMBFS
+            description: PWM_B Fault State
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: PWM1_SMOCTRL_PWMBFS
+          - name: PWMXFS
+            description: PWM_X Fault State
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: PWM1_SMOCTRL_PWMXFS
+      - name: SMSTS
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 36
+        description: (read-write) Status Register
+        fields:
+          - name: RUF
+            description: Registers Updated Flag
+            index: 14
+            width: 1
+            read: true
+            write: false
+          - name: REF
+            description: Reload Error Flag
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: RF
+            description: Reload Flag
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: CFA1
+            description: Capture Flag A1
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: CFA0
+            description: Capture Flag A0
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: CFB1
+            description: Capture Flag B1
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: CFB0
+            description: Capture Flag B0
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: CFX1
+            description: Capture Flag X1
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: CFX0
+            description: Capture Flag X0
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: CMPF
+            description: Compare Flags
+            index: 0
+            width: 6
+            read: true
+            write: true
+            type: PWM1_SMSTS_CMPF
+      - name: SMINTEN
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 38
+        description: (read-write) Interrupt Enable Register
+        fields:
+          - name: REIE
+            description: Reload Error Interrupt Enable
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: RIE
+            description: Reload Interrupt Enable
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: CA1IE
+            description: Capture A 1 Interrupt Enable
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: CA0IE
+            description: Capture A 0 Interrupt Enable
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: CB1IE
+            description: Capture B 1 Interrupt Enable
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: CB0IE
+            description: Capture B 0 Interrupt Enable
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: CX1IE
+            description: Capture X 1 Interrupt Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: CX0IE
+            description: Capture X 0 Interrupt Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: CMPIE
+            description: Compare Interrupt Enables
+            index: 0
+            width: 6
+            read: true
+            write: true
+            type: PWM1_SMINTEN_CMPIE
+      - name: SMDMAEN
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 40
+        description: (read-write) DMA Enable Register
+        fields:
+          - name: VALDE
+            description: Value Registers DMA Enable
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: FAND
+            description: FIFO Watermark AND Control
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: CAPTDE
+            description: Capture DMA Enable Source Select
+            index: 6
+            width: 2
+            read: true
+            write: true
+            type: PWM1_SMDMAEN_CAPTDE
+          - name: CA1DE
+            description: Capture A1 FIFO DMA Enable
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: CA0DE
+            description: Capture A0 FIFO DMA Enable
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: CB1DE
+            description: Capture B1 FIFO DMA Enable
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: CB0DE
+            description: Capture B0 FIFO DMA Enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: CX1DE
+            description: Capture X1 FIFO DMA Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CX0DE
+            description: Capture X0 FIFO DMA Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SMTCTRL
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 42
+        description: (read-write) Output Trigger Control Register
+        fields:
+          - name: PWAOT0
+            description: Output Trigger 0 Source Select
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: PWBOT1
+            description: Output Trigger 1 Source Select
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: TRGFRQ
+            description: Trigger frequency
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: OUT_TRIG_EN
+            description: Output Trigger Enables
+            index: 0
+            width: 6
+            read: true
+            write: true
+            type: PWM1_SMTCTRL_OUT_TRIG_EN
+      - name: SMDISMAP0
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 44
+        description: (read-write) Fault Disable Mapping Register 0
+        fields:
+          - name: DIS0X
+            description: PWM_X Fault Disable Mask 0
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: DIS0B
+            description: PWM_B Fault Disable Mask 0
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: DIS0A
+            description: PWM_A Fault Disable Mask 0
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: SMDTCNT0
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 48
+        description: (read-write) Deadtime Count Register 0
+        fields:
+          - name: DTCNT0
+            description: DTCNT0
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SMDTCNT1
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 50
+        description: (read-write) Deadtime Count Register 1
+        fields:
+          - name: DTCNT1
+            description: DTCNT1
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SMCAPTCTRLA
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 52
+        description: (read-write) Capture Control A Register
+        fields:
+          - name: CA1CNT
+            description: Capture A1 FIFO Word Count
+            index: 13
+            width: 3
+            read: true
+            write: false
+          - name: CA0CNT
+            description: Capture A0 FIFO Word Count
+            index: 10
+            width: 3
+            read: true
+            write: false
+          - name: CFAWM
+            description: Capture A FIFOs Water Mark
+            index: 8
+            width: 2
+            read: true
+            write: true
+          - name: EDGCNTA_EN
+            description: Edge Counter A Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: INP_SELA
+            description: Input Select A
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: EDGA1
+            description: Edge A 1
+            index: 4
+            width: 2
+            read: true
+            write: true
+            type: PWM1_SMCAPTCTRLA_EDGA1
+          - name: EDGA0
+            description: Edge A 0
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: PWM1_SMCAPTCTRLA_EDGA0
+          - name: ONESHOTA
+            description: One Shot Mode A
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ARMA
+            description: Arm A
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SMCAPTCOMPA
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 54
+        description: (read-write) Capture Compare A Register
+        fields:
+          - name: EDGCNTA
+            description: Edge Counter A
+            index: 8
+            width: 8
+            read: true
+            write: false
+          - name: EDGCMPA
+            description: Edge Compare A
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SMCAPTCTRLB
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 56
+        description: (read-write) Capture Control B Register
+        fields:
+          - name: CB1CNT
+            description: Capture B1 FIFO Word Count
+            index: 13
+            width: 3
+            read: true
+            write: false
+          - name: CB0CNT
+            description: Capture B0 FIFO Word Count
+            index: 10
+            width: 3
+            read: true
+            write: false
+          - name: CFBWM
+            description: Capture B FIFOs Water Mark
+            index: 8
+            width: 2
+            read: true
+            write: true
+          - name: EDGCNTB_EN
+            description: Edge Counter B Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: INP_SELB
+            description: Input Select B
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: EDGB1
+            description: Edge B 1
+            index: 4
+            width: 2
+            read: true
+            write: true
+            type: PWM1_SMCAPTCTRLB_EDGB1
+          - name: EDGB0
+            description: Edge B 0
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: PWM1_SMCAPTCTRLB_EDGB0
+          - name: ONESHOTB
+            description: One Shot Mode B
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ARMB
+            description: Arm B
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SMCAPTCOMPB
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 58
+        description: (read-write) Capture Compare B Register
+        fields:
+          - name: EDGCNTB
+            description: Edge Counter B
+            index: 8
+            width: 8
+            read: true
+            write: false
+          - name: EDGCMPB
+            description: Edge Compare B
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SMCAPTCTRLX
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 60
+        description: (read-write) Capture Control X Register
+        fields:
+          - name: CX1CNT
+            description: Capture X1 FIFO Word Count
+            index: 13
+            width: 3
+            read: true
+            write: false
+          - name: CX0CNT
+            description: Capture X0 FIFO Word Count
+            index: 10
+            width: 3
+            read: true
+            write: false
+          - name: CFXWM
+            description: Capture X FIFOs Water Mark
+            index: 8
+            width: 2
+            read: true
+            write: true
+          - name: EDGCNTX_EN
+            description: Edge Counter X Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: INP_SELX
+            description: Input Select X
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: EDGX1
+            description: Edge X 1
+            index: 4
+            width: 2
+            read: true
+            write: true
+            type: PWM1_SMCAPTCTRLX_EDGX1
+          - name: EDGX0
+            description: Edge X 0
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: PWM1_SMCAPTCTRLX_EDGX0
+          - name: ONESHOTX
+            description: One Shot Mode Aux
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ARMX
+            description: Arm X
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SMCAPTCOMPX
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 62
+        description: (read-write) Capture Compare X Register
+        fields:
+          - name: EDGCNTX
+            description: Edge Counter X
+            index: 8
+            width: 8
+            read: true
+            write: false
+          - name: EDGCMPX
+            description: Edge Compare X
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SMCVAL0
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 64
+        description: (read-write) Capture Value 0 Register
+        fields:
+          - name: CAPTVAL0
+            description: CAPTVAL0
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: SMCVAL0CYC
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 66
+        description: (read-write) Capture Value 0 Cycle Register
+        fields:
+          - name: CVAL0CYC
+            description: CVAL0CYC
+            index: 0
+            width: 4
+            read: true
+            write: false
+      - name: SMCVAL1
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 68
+        description: (read-write) Capture Value 1 Register
+        fields:
+          - name: CAPTVAL1
+            description: CAPTVAL1
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: SMCVAL1CYC
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 70
+        description: (read-write) Capture Value 1 Cycle Register
+        fields:
+          - name: CVAL1CYC
+            description: CVAL1CYC
+            index: 0
+            width: 4
+            read: true
+            write: false
+      - name: SMCVAL2
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 72
+        description: (read-write) Capture Value 2 Register
+        fields:
+          - name: CAPTVAL2
+            description: CAPTVAL2
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: SMCVAL2CYC
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 74
+        description: (read-write) Capture Value 2 Cycle Register
+        fields:
+          - name: CVAL2CYC
+            description: CVAL2CYC
+            index: 0
+            width: 4
+            read: true
+            write: false
+      - name: SMCVAL3
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 76
+        description: (read-write) Capture Value 3 Register
+        fields:
+          - name: CAPTVAL3
+            description: CAPTVAL3
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: SMCVAL3CYC
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 78
+        description: (read-write) Capture Value 3 Cycle Register
+        fields:
+          - name: CVAL3CYC
+            description: CVAL3CYC
+            index: 0
+            width: 4
+            read: true
+            write: false
+      - name: SMCVAL4
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 80
+        description: (read-write) Capture Value 4 Register
+        fields:
+          - name: CAPTVAL4
+            description: CAPTVAL4
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: SMCVAL4CYC
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 82
+        description: (read-write) Capture Value 4 Cycle Register
+        fields:
+          - name: CVAL4CYC
+            description: CVAL4CYC
+            index: 0
+            width: 4
+            read: true
+            write: false
+      - name: SMCVAL5
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 84
+        description: (read-write) Capture Value 5 Register
+        fields:
+          - name: CAPTVAL5
+            description: CAPTVAL5
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: SMCVAL5CYC
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 86
+        description: (read-write) Capture Value 5 Cycle Register
+        fields:
+          - name: CVAL5CYC
+            description: CVAL5CYC
+            index: 0
+            width: 4
+            read: true
+            write: false
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+  pwm1:
+    description: PWM
+    instances:
+      - name: PWM1
+        address: '0x4018C000'
+      - name: PWM2
+        address: '0x40190000'
+      - name: PWM3
+        address: '0x40194000'
+      - name: PWM4
+        address: '0x40198000'
+    fields:
+      - name: SM
+        type: SM_instance
+        array_length: 4
+        description: no description available
+      - name: OUTEN
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 384
+        description: (read-write) Output Enable Register
+        fields:
+          - name: PWMA_EN
+            description: PWM_A Output Enables
+            index: 8
+            width: 4
+            read: true
+            write: true
+            type: PWM1_OUTEN_PWMA_EN
+          - name: PWMB_EN
+            description: PWM_B Output Enables
+            index: 4
+            width: 4
+            read: true
+            write: true
+            type: PWM1_OUTEN_PWMB_EN
+          - name: PWMX_EN
+            description: PWM_X Output Enables
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: PWM1_OUTEN_PWMX_EN
+      - name: MASK
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 386
+        description: (read-write) Mask Register
+        fields:
+          - name: MASKA
+            description: PWM_A Masks
+            index: 8
+            width: 4
+            read: true
+            write: true
+            type: PWM1_MASK_MASKA
+          - name: MASKB
+            description: PWM_B Masks
+            index: 4
+            width: 4
+            read: true
+            write: true
+            type: PWM1_MASK_MASKB
+          - name: MASKX
+            description: PWM_X Masks
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: PWM1_MASK_MASKX
+      - name: SWCOUT
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 388
+        description: (read-write) Software Controlled Output Register
+        fields:
+          - name: SM3OUT23
+            description: Submodule 3 Software Controlled Output 23
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: SM3OUT45
+            description: Submodule 3 Software Controlled Output 45
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: SM2OUT23
+            description: Submodule 2 Software Controlled Output 23
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: SM2OUT45
+            description: Submodule 2 Software Controlled Output 45
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: SM1OUT23
+            description: Submodule 1 Software Controlled Output 23
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: SM1OUT45
+            description: Submodule 1 Software Controlled Output 45
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: SM0OUT23
+            description: Submodule 0 Software Controlled Output 23
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SM0OUT45
+            description: Submodule 0 Software Controlled Output 45
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DTSRCSEL
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 390
+        description: (read-write) PWM Source Select Register
+        fields:
+          - name: SM3SEL23
+            description: Submodule 3 PWM23 Control Select
+            index: 14
+            width: 2
+            read: true
+            write: true
+            type: PWM1_DTSRCSEL_SM3SEL23
+          - name: SM3SEL45
+            description: Submodule 3 PWM45 Control Select
+            index: 12
+            width: 2
+            read: true
+            write: true
+            type: PWM1_DTSRCSEL_SM3SEL45
+          - name: SM2SEL23
+            description: Submodule 2 PWM23 Control Select
+            index: 10
+            width: 2
+            read: true
+            write: true
+            type: PWM1_DTSRCSEL_SM2SEL23
+          - name: SM2SEL45
+            description: Submodule 2 PWM45 Control Select
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: PWM1_DTSRCSEL_SM2SEL45
+          - name: SM1SEL23
+            description: Submodule 1 PWM23 Control Select
+            index: 6
+            width: 2
+            read: true
+            write: true
+            type: PWM1_DTSRCSEL_SM1SEL23
+          - name: SM1SEL45
+            description: Submodule 1 PWM45 Control Select
+            index: 4
+            width: 2
+            read: true
+            write: true
+            type: PWM1_DTSRCSEL_SM1SEL45
+          - name: SM0SEL23
+            description: Submodule 0 PWM23 Control Select
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: PWM1_DTSRCSEL_SM0SEL23
+          - name: SM0SEL45
+            description: Submodule 0 PWM45 Control Select
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: PWM1_DTSRCSEL_SM0SEL45
+      - name: MCTRL
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 392
+        description: (read-write) Master Control Register
+        fields:
+          - name: IPOL
+            description: Current Polarity
+            index: 12
+            width: 4
+            read: true
+            write: true
+            type: PWM1_MCTRL_IPOL
+          - name: RUN
+            description: Run
+            index: 8
+            width: 4
+            read: true
+            write: true
+            type: PWM1_MCTRL_RUN
+          - name: CLDOK
+            description: Clear Load Okay
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: LDOK
+            description: Load Okay
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: PWM1_MCTRL_LDOK
+      - name: MCTRL2
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 394
+        description: (read-write) Master Control 2 Register
+        fields:
+          - name: MONPLL
+            description: Monitor PLL State
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: PWM1_MCTRL2_MONPLL
+      - name: FCTRL0
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 396
+        description: (read-write) Fault Control Register
+        fields:
+          - name: FLVL
+            description: Fault Level
+            index: 12
+            width: 4
+            read: true
+            write: true
+            type: PWM1_FCTRL0_FLVL
+          - name: FAUTO
+            description: Automatic Fault Clearing
+            index: 8
+            width: 4
+            read: true
+            write: true
+            type: PWM1_FCTRL0_FAUTO
+          - name: FSAFE
+            description: Fault Safety Mode
+            index: 4
+            width: 4
+            read: true
+            write: true
+            type: PWM1_FCTRL0_FSAFE
+          - name: FIE
+            description: Fault Interrupt Enables
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: PWM1_FCTRL0_FIE
+      - name: FSTS0
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 398
+        description: (read-write) Fault Status Register
+        fields:
+          - name: FHALF
+            description: Half Cycle Fault Recovery
+            index: 12
+            width: 4
+            read: true
+            write: true
+            type: PWM1_FSTS0_FHALF
+          - name: FFPIN
+            description: Filtered Fault Pins
+            index: 8
+            width: 4
+            read: true
+            write: false
+          - name: FFULL
+            description: Full Cycle
+            index: 4
+            width: 4
+            read: true
+            write: true
+            type: PWM1_FSTS0_FFULL
+          - name: FFLAG
+            description: Fault Flags
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: PWM1_FSTS0_FFLAG
+      - name: FFILT0
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 400
+        description: (read-write) Fault Filter Register
+        fields:
+          - name: GSTR
+            description: Fault Glitch Stretch Enable
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: FILT_CNT
+            description: Fault Filter Count
+            index: 8
+            width: 3
+            read: true
+            write: true
+          - name: FILT_PER
+            description: Fault Filter Period
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: FTST0
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 402
+        description: (read-write) Fault Test Register
+        fields:
+          - name: FTEST
+            description: Fault Test
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: FCTRL20
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 404
+        description: (read-write) Fault Control 2 Register
+        fields:
+          - name: NOCOMB
+            description: No Combinational Path From Fault Input To PWM Output
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: PWM1_FCTRL20_NOCOMB
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  PWM1_SMCTRL2_INIT_SEL:
+    enum:
+      PWM_X:
+        description: Local sync (PWM_X) causes initialization.
+        value: 0
+      MASTER_RELOAD:
+        description: Master reload from submodule 0 causes initialization. This setting
+          should not be used in submodule 0 as it will force the INIT signal to logic
+          0. The submodule counter will only reinitialize when a master reload occurs.
+        value: 1
+      MASTER_SYNC:
+        description: Master sync from submodule 0 causes initialization. This setting
+          should not be used in submodule 0 as it will force the INIT signal to logic
+          0.
+        value: 2
+      EXT_SYNC:
+        description: EXT_SYNC causes initialization.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_SMCTRL2_FORCE_SEL:
+    enum:
+      LOCAL:
+        description: The local force signal, CTRL2[FORCE], from this submodule is
+          used to force updates.
+        value: 0
+      MASTER:
+        description: The master force signal from submodule 0 is used to force updates.
+          This setting should not be used in submodule 0 as it will hold the FORCE
+          OUTPUT signal to logic 0.
+        value: 1
+      LOCAL_RELOAD:
+        description: The local reload signal from this submodule is used to force
+          updates without regard to the state of LDOK.
+        value: 2
+      MASTER_RELOAD:
+        description: The master reload signal from submodule0 is used to force updates
+          if LDOK is set. This setting should not be used in submodule0 as it will
+          hold the FORCE OUTPUT signal to logic 0.
+        value: 3
+      LOCAL_SYNC:
+        description: The local sync signal from this submodule is used to force updates.
+        value: 4
+      MASTER_SYNC:
+        description: The master sync signal from submodule0 is used to force updates.
+          This setting should not be used in submodule0 as it will hold the FORCE
+          OUTPUT signal to logic 0.
+        value: 5
+      EXT_FORCE:
+        description: The external force signal, EXT_FORCE, from outside the PWM module
+          causes updates.
+        value: 6
+      EXT_SYNC:
+        description: The external sync signal, EXT_SYNC, from outside the PWM module
+          causes updates.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_SMCTRL2_CLK_SEL:
+    enum:
+      IPBUS:
+        description: The IPBus clock is used as the clock for the local prescaler
+          and counter.
+        value: 0
+      EXT_CLK:
+        description: EXT_CLK is used as the clock for the local prescaler and counter.
+        value: 1
+      AUX_CLK:
+        description: Submodule 0's clock (AUX_CLK) is used as the source clock for
+          the local prescaler and counter. This setting should not be used in submodule
+          0 as it will force the clock to logic 0.
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_SMCTRL_LDFQ:
+    enum:
+      PWM:
+        description: Every PWM opportunity
+        value: 0
+      _2PWM:
+        description: Every 2 PWM opportunities
+        value: 1
+      _3PWM:
+        description: Every 3 PWM opportunities
+        value: 2
+      _4PWM:
+        description: Every 4 PWM opportunities
+        value: 3
+      _5PWM:
+        description: Every 5 PWM opportunities
+        value: 4
+      _6PWM:
+        description: Every 6 PWM opportunities
+        value: 5
+      _7PWM:
+        description: Every 7 PWM opportunities
+        value: 6
+      _8PWM:
+        description: Every 8 PWM opportunities
+        value: 7
+      _9PWM:
+        description: Every 9 PWM opportunities
+        value: 8
+      _10PWM:
+        description: Every 10 PWM opportunities
+        value: 9
+      _11PWM:
+        description: Every 11 PWM opportunities
+        value: 10
+      _12PWM:
+        description: Every 12 PWM opportunities
+        value: 11
+      _13PWM:
+        description: Every 13 PWM opportunities
+        value: 12
+      _14PWM:
+        description: Every 14 PWM opportunities
+        value: 13
+      _15PWM:
+        description: Every 15 PWM opportunities
+        value: 14
+      _16PWM:
+        description: Every 16 PWM opportunities
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_SMCTRL_PRSC:
+    enum:
+      ONE:
+        description: Prescaler 1
+        value: 0
+      TWO:
+        description: Prescaler 2
+        value: 1
+      FOUR:
+        description: Prescaler 4
+        value: 2
+      EIGHT:
+        description: Prescaler 8
+        value: 3
+      SIXTEEN:
+        description: Prescaler 16
+        value: 4
+      THIRTYTWO:
+        description: Prescaler 32
+        value: 5
+      SIXTYFOUR:
+        description: Prescaler 64
+        value: 6
+      HUNDREDTWENTYEIGHT:
+        description: Prescaler 128
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_SMOCTRL_PWMAFS:
+    enum:
+      LOGIC_0:
+        description: Output is forced to logic 0 state prior to consideration of output
+          polarity control.
+        value: 0
+      LOGIC_1:
+        description: Output is forced to logic 1 state prior to consideration of output
+          polarity control.
+        value: 1
+      TRISTATED:
+        description: Output is tristated.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_SMOCTRL_PWMBFS:
+    enum:
+      LOGIC_0:
+        description: Output is forced to logic 0 state prior to consideration of output
+          polarity control.
+        value: 0
+      LOGIC_1:
+        description: Output is forced to logic 1 state prior to consideration of output
+          polarity control.
+        value: 1
+      TRISTATED:
+        description: Output is tristated.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_SMOCTRL_PWMXFS:
+    enum:
+      LOGIC_0:
+        description: Output is forced to logic 0 state prior to consideration of output
+          polarity control.
+        value: 0
+      LOGIC_1:
+        description: Output is forced to logic 1 state prior to consideration of output
+          polarity control.
+        value: 1
+      TRISTATED:
+        description: Output is tristated.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_SMSTS_CMPF:
+    enum:
+      NO_EVENT:
+        description: No compare event has occurred for a particular VALx value.
+        value: 0
+      EVENT:
+        description: A compare event has occurred for a particular VALx value.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_SMINTEN_CMPIE:
+    enum:
+      DISABLED:
+        description: The corresponding STS[CMPF] bit will not cause an interrupt request.
+        value: 0
+      ENABLED:
+        description: The corresponding STS[CMPF] bit will cause an interrupt request.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_SMDMAEN_CAPTDE:
+    enum:
+      DISABLED:
+        description: Read DMA requests disabled.
+        value: 0
+      EXCEEDFIFO:
+        description: Exceeding a FIFO watermark sets the DMA read request. This requires
+          at least one of DMAEN[CA1DE], DMAEN[CA0DE], DMAEN[CB1DE], DMAEN[CB0DE],
+          DMAEN[CX1DE], or DMAEN[CX0DE] to also be set in order to determine to which
+          watermark(s) the DMA request is sensitive.
+        value: 1
+      LOCAL_SYNC:
+        description: A local sync (VAL1 matches counter) sets the read DMA request.
+        value: 2
+      LOCAL_RELOAD:
+        description: A local reload (STS[RF] being set) sets the read DMA request.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_SMTCTRL_OUT_TRIG_EN:
+    enum:
+      VAL0:
+        description: PWM_OUT_TRIG0 will set when the counter value matches the VAL0
+          value.
+        value: 63
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_SMCAPTCTRLA_EDGA1:
+    enum:
+      DISABLED:
+        description: Disabled
+        value: 0
+      FALLING_EDGE:
+        description: Capture falling edges
+        value: 1
+      RISING_EDGE:
+        description: Capture rising edges
+        value: 2
+      ANY_EDGE:
+        description: Capture any edge
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_SMCAPTCTRLA_EDGA0:
+    enum:
+      DISABLED:
+        description: Disabled
+        value: 0
+      FALLING_EDGE:
+        description: Capture falling edges
+        value: 1
+      RISING_EDGE:
+        description: Capture rising edges
+        value: 2
+      ANY_EDGE:
+        description: Capture any edge
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_SMCAPTCTRLB_EDGB1:
+    enum:
+      DISABLED:
+        description: Disabled
+        value: 0
+      FALLING_EDGE:
+        description: Capture falling edges
+        value: 1
+      RISING_EDGE:
+        description: Capture rising edges
+        value: 2
+      ANY_EDGE:
+        description: Capture any edge
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_SMCAPTCTRLB_EDGB0:
+    enum:
+      DISABLED:
+        description: Disabled
+        value: 0
+      FALLING_EDGE:
+        description: Capture falling edges
+        value: 1
+      RISING_EDGE:
+        description: Capture rising edges
+        value: 2
+      ANY_EDGE:
+        description: Capture any edge
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_SMCAPTCTRLX_EDGX1:
+    enum:
+      DISABLED:
+        description: Disabled
+        value: 0
+      FALLING_EDGE:
+        description: Capture falling edges
+        value: 1
+      RISING_EDGE:
+        description: Capture rising edges
+        value: 2
+      ANY_EDGE:
+        description: Capture any edge
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_SMCAPTCTRLX_EDGX0:
+    enum:
+      DISABLED:
+        description: Disabled
+        value: 0
+      FALLING_EDGE:
+        description: Capture falling edges
+        value: 1
+      RISING_EDGE:
+        description: Capture rising edges
+        value: 2
+      ANY_EDGE:
+        description: Capture any edge
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_OUTEN_PWMA_EN:
+    enum:
+      DISABLED:
+        description: PWM_A output disabled.
+        value: 0
+      ENABLED:
+        description: PWM_A output enabled.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_OUTEN_PWMB_EN:
+    enum:
+      DISABLED:
+        description: PWM_B output disabled.
+        value: 0
+      ENABLED:
+        description: PWM_B output enabled.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_OUTEN_PWMX_EN:
+    enum:
+      DISABLED:
+        description: PWM_X output disabled.
+        value: 0
+      ENABLED:
+        description: PWM_X output enabled.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_MASK_MASKA:
+    enum:
+      NORMAL:
+        description: PWM_A output normal.
+        value: 0
+      MASKED:
+        description: PWM_A output masked.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_MASK_MASKB:
+    enum:
+      NORMAL:
+        description: PWM_B output normal.
+        value: 0
+      MASKED:
+        description: PWM_B output masked.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_MASK_MASKX:
+    enum:
+      NORMAL:
+        description: PWM_X output normal.
+        value: 0
+      MASKED:
+        description: PWM_X output masked.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_DTSRCSEL_SM3SEL23:
+    enum:
+      SM3PWM23:
+        description: Generated SM3PWM23 signal is used by the deadtime logic.
+        value: 0
+      INVERTED_SM3PWM23:
+        description: Inverted generated SM3PWM23 signal is used by the deadtime logic.
+        value: 1
+      SM3OUT23:
+        description: SWCOUT[SM3OUT23] is used by the deadtime logic.
+        value: 2
+      PWM3_EXTA:
+        description: PWM3_EXTA signal is used by the deadtime logic.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_DTSRCSEL_SM3SEL45:
+    enum:
+      SM3PWM45:
+        description: Generated SM3PWM45 signal is used by the deadtime logic.
+        value: 0
+      INVERTED_SM3PWM45:
+        description: Inverted generated SM3PWM45 signal is used by the deadtime logic.
+        value: 1
+      SM3OUT45:
+        description: SWCOUT[SM3OUT45] is used by the deadtime logic.
+        value: 2
+      PWM3_EXTB:
+        description: PWM3_EXTB signal is used by the deadtime logic.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_DTSRCSEL_SM2SEL23:
+    enum:
+      SM2PWM23:
+        description: Generated SM2PWM23 signal is used by the deadtime logic.
+        value: 0
+      INVERTED_SM2PWM23:
+        description: Inverted generated SM2PWM23 signal is used by the deadtime logic.
+        value: 1
+      SM2OUT23:
+        description: SWCOUT[SM2OUT23] is used by the deadtime logic.
+        value: 2
+      PWM2_EXTA:
+        description: PWM2_EXTA signal is used by the deadtime logic.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_DTSRCSEL_SM2SEL45:
+    enum:
+      SM2PWM45:
+        description: Generated SM2PWM45 signal is used by the deadtime logic.
+        value: 0
+      INVERTED_SM2PWM45:
+        description: Inverted generated SM2PWM45 signal is used by the deadtime logic.
+        value: 1
+      SM2OUT45:
+        description: SWCOUT[SM2OUT45] is used by the deadtime logic.
+        value: 2
+      PWM2_EXTB:
+        description: PWM2_EXTB signal is used by the deadtime logic.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_DTSRCSEL_SM1SEL23:
+    enum:
+      SM1PWM23:
+        description: Generated SM1PWM23 signal is used by the deadtime logic.
+        value: 0
+      INVERTED_SM1PWM23:
+        description: Inverted generated SM1PWM23 signal is used by the deadtime logic.
+        value: 1
+      SM1OUT23:
+        description: SWCOUT[SM1OUT23] is used by the deadtime logic.
+        value: 2
+      PWM1_EXTA:
+        description: PWM1_EXTA signal is used by the deadtime logic.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_DTSRCSEL_SM1SEL45:
+    enum:
+      SM1PWM45:
+        description: Generated SM1PWM45 signal is used by the deadtime logic.
+        value: 0
+      INVERTED_SM1PWM45:
+        description: Inverted generated SM1PWM45 signal is used by the deadtime logic.
+        value: 1
+      SM1OUT45:
+        description: SWCOUT[SM1OUT45] is used by the deadtime logic.
+        value: 2
+      PWM1_EXTB:
+        description: PWM1_EXTB signal is used by the deadtime logic.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_DTSRCSEL_SM0SEL23:
+    enum:
+      SM0PWM23:
+        description: Generated SM0PWM23 signal is used by the deadtime logic.
+        value: 0
+      INVERTED_SM0PWM23:
+        description: Inverted generated SM0PWM23 signal is used by the deadtime logic.
+        value: 1
+      SM0OUT23:
+        description: SWCOUT[SM0OUT23] is used by the deadtime logic.
+        value: 2
+      PWM0_EXTA:
+        description: PWM0_EXTA signal is used by the deadtime logic.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_DTSRCSEL_SM0SEL45:
+    enum:
+      SM0PWM45:
+        description: Generated SM0PWM45 signal is used by the deadtime logic.
+        value: 0
+      INVERTED_SM0PWM45:
+        description: Inverted generated SM0PWM45 signal is used by the deadtime logic.
+        value: 1
+      SM0OUT45:
+        description: SWCOUT[SM0OUT45] is used by the deadtime logic.
+        value: 2
+      PWM0_EXTB:
+        description: PWM0_EXTB signal is used by the deadtime logic.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_MCTRL_IPOL:
+    enum:
+      _23:
+        description: PWM23 is used to generate complementary PWM pair in the corresponding
+          submodule.
+        value: 0
+      _45:
+        description: PWM45 is used to generate complementary PWM pair in the corresponding
+          submodule.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_MCTRL_RUN:
+    enum:
+      DISABLED:
+        description: PWM counter is stopped, but PWM outputs will hold the current
+          state.
+        value: 0
+      ENABLED:
+        description: PWM counter is started in the corresponding submodule.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_MCTRL_LDOK:
+    enum:
+      DISABLED:
+        description: Do not load new values.
+        value: 0
+      ENABLED:
+        description: Load prescaler, modulus, and PWM values of the corresponding
+          submodule.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_MCTRL2_MONPLL:
+    enum:
+      NOTLOCKED_DO_NOT_MON_PLL:
+        description: Not locked. Do not monitor PLL operation. Resetting of the fractional
+          delay block in case of PLL losing lock will be controlled by software.
+        value: 0
+      NOTLOCKED_MON_PLL:
+        description: Not locked. Monitor PLL operation to automatically disable the
+          fractional delay block when the PLL encounters problems.
+        value: 1
+      LOCKED_DO_NOT_MON_PLL:
+        description: Locked. Do not monitor PLL operation. Resetting of the fractional
+          delay block in case of PLL losing lock will be controlled by software. These
+          bits are write protected until the next reset.
+        value: 2
+      LOCKED_MON_PLL:
+        description: Locked. Monitor PLL operation to automatically disable the fractional
+          delay block when the PLL encounters problems. These bits are write protected
+          until the next reset.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_FCTRL0_FLVL:
+    enum:
+      _0:
+        description: A logic 0 on the fault input indicates a fault condition.
+        value: 0
+      _1:
+        description: A logic 1 on the fault input indicates a fault condition.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_FCTRL0_FAUTO:
+    enum:
+      MANUAL:
+        description: Manual fault clearing. PWM outputs disabled by this fault are
+          not enabled until FSTS[FFLAGx] is clear at the start of a half cycle or
+          full cycle depending the states of FSTS[FHALF] and FSTS[FFULL]. If neither
+          FFULL nor FHALF is set, then the fault condition cannot be cleared. This
+          is further controlled by FCTRL[FSAFE].
+        value: 0
+      AUTOMATIC:
+        description: Automatic fault clearing. PWM outputs disabled by this fault
+          are enabled when FSTS[FFPINx] is clear at the start of a half cycle or full
+          cycle depending on the states of FSTS[FHALF] and FSTS[FFULL] without regard
+          to the state of FSTS[FFLAGx]. If neither FFULL nor FHALF is set, then the
+          fault condition cannot be cleared.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_FCTRL0_FSAFE:
+    enum:
+      NORMAL:
+        description: Normal mode. PWM outputs disabled by this fault are not enabled
+          until FSTS[FFLAGx] is clear at the start of a half cycle or full cycle depending
+          on the states of FSTS[FHALF] and FSTS[FFULL] without regard to the state
+          of FSTS[FFPINx]. If neither FHALF nor FFULL is set then the fault condition
+          cannot be cleared. The PWM outputs disabled by this fault input will not
+          be re-enabled until the actual FAULTx input signal de-asserts since the
+          fault input will combinationally disable the PWM outputs (as programmed
+          in DISMAPn).
+        value: 0
+      SAFE:
+        description: Safe mode. PWM outputs disabled by this fault are not enabled
+          until FSTS[FFLAGx] is clear and FSTS[FFPINx] is clear at the start of a
+          half cycle or full cycle depending on the states of FSTS[FHALF] and FSTS[FFULL].
+          If neither FHLAF nor FFULL is set, then the fault condition cannot be cleared.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_FCTRL0_FIE:
+    enum:
+      DISABLED:
+        description: FAULTx CPU interrupt requests disabled.
+        value: 0
+      ENABLED:
+        description: FAULTx CPU interrupt requests enabled.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_FSTS0_FHALF:
+    enum:
+      NOT_REENABLED:
+        description: PWM outputs are not re-enabled at the start of a half cycle.
+        value: 0
+      REENABLED:
+        description: PWM outputs are re-enabled at the start of a half cycle (as defined
+          by VAL0).
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_FSTS0_FFULL:
+    enum:
+      NOT_REENABLED:
+        description: PWM outputs are not re-enabled at the start of a full cycle
+        value: 0
+      REENABLED:
+        description: PWM outputs are re-enabled at the start of a full cycle
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_FSTS0_FFLAG:
+    enum:
+      NO_FLAG:
+        description: No fault on the FAULTx pin.
+        value: 0
+      FLAG:
+        description: Fault on the FAULTx pin.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PWM1_FCTRL20_NOCOMB:
+    enum:
+      ENABLED:
+        description: There is a combinational link from the fault inputs to the PWM
+          outputs. The fault inputs are combined with the filtered and latched fault
+          signals to disable the PWM outputs.
+        value: 0
+      DISABLED:
+        description: The direct combinational path from the fault inputs to the PWM
+          outputs is disabled and the filtered and latched fault signals are used
+          to disable the PWM outputs.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

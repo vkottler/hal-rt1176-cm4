@@ -1,0 +1,2375 @@
+---
+structs:
+  pxp:
+    description: PXP v2.0 Register Reference Index
+    instances:
+      - name: PXP
+        address: '0x40814000'
+    fields:
+      - name: CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Control Register 0
+        fields:
+          - name: SFTRST
+            description: This bit can be turned on and then off to reset the PXP block
+              to its default state.
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CLKGATE
+            description: This bit must be set to zero for normal operation
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: EN_REPEAT
+            description: Enable the PXP to run continuously
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: BLOCK_SIZE
+            description: Select the block size to process.
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: ROT_POS
+            description: This bit controls where rotation will occur in the PXP datapath
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: VFLIP
+            description: Indicates that the output buffer should be flipped vertically
+              (effect applied before rotation).
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: HFLIP
+            description: Indicates that the output buffer should be flipped horizontally
+              (effect applied before rotation).
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: ROTATE
+            description: Indicates the clockwise rotation to be applied at the output
+              buffer
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: PXP_CTRL_ROTATE
+          - name: ENABLE_LCD_HANDSHAKE
+            description: Enable handshake with LCD controller
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: NEXT_IRQ_ENABLE
+            description: Next command interrupt enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: IRQ_ENABLE
+            description: Interrupt enable When using the PXP_NEXT functionality to
+              reprogram the PXP, the new value of this bit will be used and may therefore
+              enable or disable an interrupt unintentionally
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE
+            description: Enables PXP operation with specified parameters
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Control Register 0
+        fields:
+          - name: SFTRST
+            description: This bit can be turned on and then off to reset the PXP block
+              to its default state.
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CLKGATE
+            description: This bit must be set to zero for normal operation
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: EN_REPEAT
+            description: Enable the PXP to run continuously
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: BLOCK_SIZE
+            description: Select the block size to process.
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: ROT_POS
+            description: This bit controls where rotation will occur in the PXP datapath
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: VFLIP
+            description: Indicates that the output buffer should be flipped vertically
+              (effect applied before rotation).
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: HFLIP
+            description: Indicates that the output buffer should be flipped horizontally
+              (effect applied before rotation).
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: ROTATE
+            description: Indicates the clockwise rotation to be applied at the output
+              buffer
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: PXP_CTRL_SET_ROTATE
+          - name: ENABLE_LCD_HANDSHAKE
+            description: Enable handshake with LCD controller
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: NEXT_IRQ_ENABLE
+            description: Next command interrupt enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: IRQ_ENABLE
+            description: Interrupt enable When using the PXP_NEXT functionality to
+              reprogram the PXP, the new value of this bit will be used and may therefore
+              enable or disable an interrupt unintentionally
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE
+            description: Enables PXP operation with specified parameters
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) Control Register 0
+        fields:
+          - name: SFTRST
+            description: This bit can be turned on and then off to reset the PXP block
+              to its default state.
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CLKGATE
+            description: This bit must be set to zero for normal operation
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: EN_REPEAT
+            description: Enable the PXP to run continuously
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: BLOCK_SIZE
+            description: Select the block size to process.
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: ROT_POS
+            description: This bit controls where rotation will occur in the PXP datapath
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: VFLIP
+            description: Indicates that the output buffer should be flipped vertically
+              (effect applied before rotation).
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: HFLIP
+            description: Indicates that the output buffer should be flipped horizontally
+              (effect applied before rotation).
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: ROTATE
+            description: Indicates the clockwise rotation to be applied at the output
+              buffer
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: PXP_CTRL_CLR_ROTATE
+          - name: ENABLE_LCD_HANDSHAKE
+            description: Enable handshake with LCD controller
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: NEXT_IRQ_ENABLE
+            description: Next command interrupt enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: IRQ_ENABLE
+            description: Interrupt enable When using the PXP_NEXT functionality to
+              reprogram the PXP, the new value of this bit will be used and may therefore
+              enable or disable an interrupt unintentionally
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE
+            description: Enables PXP operation with specified parameters
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) Control Register 0
+        fields:
+          - name: SFTRST
+            description: This bit can be turned on and then off to reset the PXP block
+              to its default state.
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CLKGATE
+            description: This bit must be set to zero for normal operation
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: EN_REPEAT
+            description: Enable the PXP to run continuously
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: BLOCK_SIZE
+            description: Select the block size to process.
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: ROT_POS
+            description: This bit controls where rotation will occur in the PXP datapath
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: VFLIP
+            description: Indicates that the output buffer should be flipped vertically
+              (effect applied before rotation).
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: HFLIP
+            description: Indicates that the output buffer should be flipped horizontally
+              (effect applied before rotation).
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: ROTATE
+            description: Indicates the clockwise rotation to be applied at the output
+              buffer
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: PXP_CTRL_TOG_ROTATE
+          - name: ENABLE_LCD_HANDSHAKE
+            description: Enable handshake with LCD controller
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: NEXT_IRQ_ENABLE
+            description: Next command interrupt enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: IRQ_ENABLE
+            description: Interrupt enable When using the PXP_NEXT functionality to
+              reprogram the PXP, the new value of this bit will be used and may therefore
+              enable or disable an interrupt unintentionally
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE
+            description: Enables PXP operation with specified parameters
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: STAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) Status Register
+        fields:
+          - name: BLOCKX
+            description: Indicates the X coordinate of the block currently being rendered.
+            index: 24
+            width: 8
+            read: true
+            write: false
+          - name: BLOCKY
+            description: Indicates the X coordinate of the block currently being rendered.
+            index: 16
+            width: 8
+            read: true
+            write: false
+          - name: LUT_DMA_LOAD_DONE_IRQ
+            description: Indicates that the LUT DMA transfer has completed.
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: AXI_ERROR_ID
+            description: Indicates the AXI ID of the failing bus operation.
+            index: 4
+            width: 4
+            read: true
+            write: false
+          - name: NEXT_IRQ
+            description: Indicates that a command issued with the "Next Command" functionality
+              has been issued and that a new command may be initiated with a write
+              to the PXP_NEXT register
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: AXI_READ_ERROR
+            description: Indicates PXP encountered an AXI read error and processing
+              has been terminated.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: AXI_WRITE_ERROR
+            description: Indicates PXP encountered an AXI write error and processing
+              has been terminated.
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: IRQ
+            description: Indicates current PXP interrupt status
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: STAT_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) Status Register
+        fields:
+          - name: BLOCKX
+            description: Indicates the X coordinate of the block currently being rendered.
+            index: 24
+            width: 8
+            read: true
+            write: false
+          - name: BLOCKY
+            description: Indicates the X coordinate of the block currently being rendered.
+            index: 16
+            width: 8
+            read: true
+            write: false
+          - name: LUT_DMA_LOAD_DONE_IRQ
+            description: Indicates that the LUT DMA transfer has completed.
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: AXI_ERROR_ID
+            description: Indicates the AXI ID of the failing bus operation.
+            index: 4
+            width: 4
+            read: true
+            write: false
+          - name: NEXT_IRQ
+            description: Indicates that a command issued with the "Next Command" functionality
+              has been issued and that a new command may be initiated with a write
+              to the PXP_NEXT register
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: AXI_READ_ERROR
+            description: Indicates PXP encountered an AXI read error and processing
+              has been terminated.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: AXI_WRITE_ERROR
+            description: Indicates PXP encountered an AXI write error and processing
+              has been terminated.
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: IRQ
+            description: Indicates current PXP interrupt status
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: STAT_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) Status Register
+        fields:
+          - name: BLOCKX
+            description: Indicates the X coordinate of the block currently being rendered.
+            index: 24
+            width: 8
+            read: true
+            write: false
+          - name: BLOCKY
+            description: Indicates the X coordinate of the block currently being rendered.
+            index: 16
+            width: 8
+            read: true
+            write: false
+          - name: LUT_DMA_LOAD_DONE_IRQ
+            description: Indicates that the LUT DMA transfer has completed.
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: AXI_ERROR_ID
+            description: Indicates the AXI ID of the failing bus operation.
+            index: 4
+            width: 4
+            read: true
+            write: false
+          - name: NEXT_IRQ
+            description: Indicates that a command issued with the "Next Command" functionality
+              has been issued and that a new command may be initiated with a write
+              to the PXP_NEXT register
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: AXI_READ_ERROR
+            description: Indicates PXP encountered an AXI read error and processing
+              has been terminated.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: AXI_WRITE_ERROR
+            description: Indicates PXP encountered an AXI write error and processing
+              has been terminated.
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: IRQ
+            description: Indicates current PXP interrupt status
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: STAT_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) Status Register
+        fields:
+          - name: BLOCKX
+            description: Indicates the X coordinate of the block currently being rendered.
+            index: 24
+            width: 8
+            read: true
+            write: false
+          - name: BLOCKY
+            description: Indicates the X coordinate of the block currently being rendered.
+            index: 16
+            width: 8
+            read: true
+            write: false
+          - name: LUT_DMA_LOAD_DONE_IRQ
+            description: Indicates that the LUT DMA transfer has completed.
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: AXI_ERROR_ID
+            description: Indicates the AXI ID of the failing bus operation.
+            index: 4
+            width: 4
+            read: true
+            write: false
+          - name: NEXT_IRQ
+            description: Indicates that a command issued with the "Next Command" functionality
+              has been issued and that a new command may be initiated with a write
+              to the PXP_NEXT register
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: AXI_READ_ERROR
+            description: Indicates PXP encountered an AXI read error and processing
+              has been terminated.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: AXI_WRITE_ERROR
+            description: Indicates PXP encountered an AXI write error and processing
+              has been terminated.
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: IRQ
+            description: Indicates current PXP interrupt status
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: OUT_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) Output Buffer Control Register
+        fields:
+          - name: ALPHA
+            description: When generating an output buffer with an alpha component,
+              the value in this field will be used when enabled to override the alpha
+              passed through the pixel data pipeline
+            index: 24
+            width: 8
+            read: true
+            write: true
+          - name: ALPHA_OUTPUT
+            description: Indicates that alpha component in output buffer pixels should
+              be overwritten by PXP_OUT_CTRL[ALPHA]
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: INTERLACED_OUTPUT
+            description: Determines how the PXP writes it's output data
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: PXP_OUT_CTRL_INTERLACED_OUTPUT
+          - name: FORMAT
+            description: Output framebuffer format
+            index: 0
+            width: 5
+            read: true
+            write: true
+            type: PXP_OUT_CTRL_FORMAT
+      - name: OUT_CTRL_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) Output Buffer Control Register
+        fields:
+          - name: ALPHA
+            description: When generating an output buffer with an alpha component,
+              the value in this field will be used when enabled to override the alpha
+              passed through the pixel data pipeline
+            index: 24
+            width: 8
+            read: true
+            write: true
+          - name: ALPHA_OUTPUT
+            description: Indicates that alpha component in output buffer pixels should
+              be overwritten by PXP_OUT_CTRL[ALPHA]
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: INTERLACED_OUTPUT
+            description: Determines how the PXP writes it's output data
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: PXP_OUT_CTRL_SET_INTERLACED_OUTPUT
+          - name: FORMAT
+            description: Output framebuffer format
+            index: 0
+            width: 5
+            read: true
+            write: true
+            type: PXP_OUT_CTRL_SET_FORMAT
+      - name: OUT_CTRL_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) Output Buffer Control Register
+        fields:
+          - name: ALPHA
+            description: When generating an output buffer with an alpha component,
+              the value in this field will be used when enabled to override the alpha
+              passed through the pixel data pipeline
+            index: 24
+            width: 8
+            read: true
+            write: true
+          - name: ALPHA_OUTPUT
+            description: Indicates that alpha component in output buffer pixels should
+              be overwritten by PXP_OUT_CTRL[ALPHA]
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: INTERLACED_OUTPUT
+            description: Determines how the PXP writes it's output data
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: PXP_OUT_CTRL_CLR_INTERLACED_OUTPUT
+          - name: FORMAT
+            description: Output framebuffer format
+            index: 0
+            width: 5
+            read: true
+            write: true
+            type: PXP_OUT_CTRL_CLR_FORMAT
+      - name: OUT_CTRL_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) Output Buffer Control Register
+        fields:
+          - name: ALPHA
+            description: When generating an output buffer with an alpha component,
+              the value in this field will be used when enabled to override the alpha
+              passed through the pixel data pipeline
+            index: 24
+            width: 8
+            read: true
+            write: true
+          - name: ALPHA_OUTPUT
+            description: Indicates that alpha component in output buffer pixels should
+              be overwritten by PXP_OUT_CTRL[ALPHA]
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: INTERLACED_OUTPUT
+            description: Determines how the PXP writes it's output data
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: PXP_OUT_CTRL_TOG_INTERLACED_OUTPUT
+          - name: FORMAT
+            description: Output framebuffer format
+            index: 0
+            width: 5
+            read: true
+            write: true
+            type: PXP_OUT_CTRL_TOG_FORMAT
+      - name: OUT_BUF
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) Output Frame Buffer Pointer
+        fields:
+          - name: ADDR
+            description: Current address pointer for the output frame buffer
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: OUT_BUF2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 64
+        description: '(read-write) Output Frame Buffer Pointer #2'
+        fields:
+          - name: ADDR
+            description: Current address pointer for the output frame buffer
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: OUT_PITCH
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 80
+        description: (read-write) Output Buffer Pitch
+        fields:
+          - name: PITCH
+            description: Indicates the number of bytes in memory between two vertically
+              adjacent pixels.
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: OUT_LRC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 96
+        description: (read-write) Output Surface Lower Right Coordinate
+        fields:
+          - name: X
+            description: Indicates number of horizontal PIXELS in the output surface
+              (non-rotated)
+            index: 16
+            width: 14
+            read: true
+            write: true
+          - name: Y
+            description: Indicates the number of vertical PIXELS in the output surface
+              (non-rotated)
+            index: 0
+            width: 14
+            read: true
+            write: true
+      - name: OUT_PS_ULC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 112
+        description: (read-write) Processed Surface Upper Left Coordinate
+        fields:
+          - name: X
+            description: This field indicates the upper left X-coordinate (in pixels)
+              of the processed surface (PS) in the output buffer
+            index: 16
+            width: 14
+            read: true
+            write: true
+          - name: Y
+            description: This field indicates the upper left Y-coordinate (in pixels)
+              of the processed surface in the output buffer
+            index: 0
+            width: 14
+            read: true
+            write: true
+      - name: OUT_PS_LRC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 128
+        description: (read-write) Processed Surface Lower Right Coordinate
+        fields:
+          - name: X
+            description: This field indicates the lower right X-coordinate (in pixels)
+              of the processed surface (PS) in the output frame buffer
+            index: 16
+            width: 14
+            read: true
+            write: true
+          - name: Y
+            description: This field indicates the lower right Y-coordinate (in pixels)
+              of the processed surface in the output frame buffer
+            index: 0
+            width: 14
+            read: true
+            write: true
+      - name: OUT_AS_ULC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 144
+        description: (read-write) Alpha Surface Upper Left Coordinate
+        fields:
+          - name: X
+            description: This field indicates the upper left X-coordinate (in pixels)
+              of the alpha surface (AS) in the output frame buffer
+            index: 16
+            width: 14
+            read: true
+            write: true
+          - name: Y
+            description: This field indicates the upper left Y-coordinate (in pixels)
+              of the alpha surface in the output frame buffer
+            index: 0
+            width: 14
+            read: true
+            write: true
+      - name: OUT_AS_LRC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 160
+        description: (read-write) Alpha Surface Lower Right Coordinate
+        fields:
+          - name: X
+            description: This field indicates the lower right X-coordinate (in pixels)
+              of the alpha surface (AS) in the output frame buffer
+            index: 16
+            width: 14
+            read: true
+            write: true
+          - name: Y
+            description: This field indicates the lower right Y-coordinate (in pixels)
+              of the alpha surface in the output frame buffer
+            index: 0
+            width: 14
+            read: true
+            write: true
+      - name: PS_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 176
+        description: (read-write) Processed Surface (PS) Control Register
+        fields:
+          - name: DECX
+            description: Horizontal pre decimation filter control.
+            index: 10
+            width: 2
+            read: true
+            write: true
+            type: PXP_PS_CTRL_DECX
+          - name: DECY
+            description: Verticle pre decimation filter control.
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: PXP_PS_CTRL_DECY
+          - name: WB_SWAP
+            description: Swap bytes in words. For each 16 bit word, the two bytes
+              will be swapped.
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: FORMAT
+            description: PS buffer format. To select between YUV and YCbCr formats,
+              see bit 31 of the CSC1_COEF0 register.
+            index: 0
+            width: 6
+            read: true
+            write: true
+            type: PXP_PS_CTRL_FORMAT
+      - name: PS_CTRL_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 180
+        description: (read-write) Processed Surface (PS) Control Register
+        fields:
+          - name: DECX
+            description: Horizontal pre decimation filter control.
+            index: 10
+            width: 2
+            read: true
+            write: true
+            type: PXP_PS_CTRL_SET_DECX
+          - name: DECY
+            description: Verticle pre decimation filter control.
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: PXP_PS_CTRL_SET_DECY
+          - name: WB_SWAP
+            description: Swap bytes in words. For each 16 bit word, the two bytes
+              will be swapped.
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: FORMAT
+            description: PS buffer format. To select between YUV and YCbCr formats,
+              see bit 31 of the CSC1_COEF0 register.
+            index: 0
+            width: 6
+            read: true
+            write: true
+            type: PXP_PS_CTRL_SET_FORMAT
+      - name: PS_CTRL_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 184
+        description: (read-write) Processed Surface (PS) Control Register
+        fields:
+          - name: DECX
+            description: Horizontal pre decimation filter control.
+            index: 10
+            width: 2
+            read: true
+            write: true
+            type: PXP_PS_CTRL_CLR_DECX
+          - name: DECY
+            description: Verticle pre decimation filter control.
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: PXP_PS_CTRL_CLR_DECY
+          - name: WB_SWAP
+            description: Swap bytes in words. For each 16 bit word, the two bytes
+              will be swapped.
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: FORMAT
+            description: PS buffer format. To select between YUV and YCbCr formats,
+              see bit 31 of the CSC1_COEF0 register.
+            index: 0
+            width: 6
+            read: true
+            write: true
+            type: PXP_PS_CTRL_CLR_FORMAT
+      - name: PS_CTRL_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 188
+        description: (read-write) Processed Surface (PS) Control Register
+        fields:
+          - name: DECX
+            description: Horizontal pre decimation filter control.
+            index: 10
+            width: 2
+            read: true
+            write: true
+            type: PXP_PS_CTRL_TOG_DECX
+          - name: DECY
+            description: Verticle pre decimation filter control.
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: PXP_PS_CTRL_TOG_DECY
+          - name: WB_SWAP
+            description: Swap bytes in words. For each 16 bit word, the two bytes
+              will be swapped.
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: FORMAT
+            description: PS buffer format. To select between YUV and YCbCr formats,
+              see bit 31 of the CSC1_COEF0 register.
+            index: 0
+            width: 6
+            read: true
+            write: true
+            type: PXP_PS_CTRL_TOG_FORMAT
+      - name: PS_BUF
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 192
+        description: (read-write) PS Input Buffer Address
+        fields:
+          - name: ADDR
+            description: Address pointer for the PS RGB or Y (luma) input buffer.
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: PS_UBUF
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 208
+        description: (read-write) PS U/Cb or 2 Plane UV Input Buffer Address
+        fields:
+          - name: ADDR
+            description: Address pointer for the PS U/Cb or 2 plane UV Chroma input
+              buffer.
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: PS_VBUF
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 224
+        description: (read-write) PS V/Cr Input Buffer Address
+        fields:
+          - name: ADDR
+            description: Address pointer for the PS V/Cr Chroma input buffer.
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: PS_PITCH
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 240
+        description: (read-write) Processed Surface Pitch
+        fields:
+          - name: PITCH
+            description: Indicates the number of bytes in memory between two vertically
+              adjacent pixels.
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: PS_BACKGROUND
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 256
+        description: (read-write) PS Background Color
+        fields:
+          - name: COLOR
+            description: Background color (in 24bpp format) for any pixels not within
+              the buffer range specified by the PS ULC/LRC
+            index: 0
+            width: 24
+            read: true
+            write: true
+      - name: PS_SCALE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 272
+        description: (read-write) PS Scale Factor Register
+        fields:
+          - name: YSCALE
+            description: This is a two bit integer and 12 bit fractional representation
+              (##
+            index: 16
+            width: 15
+            read: true
+            write: true
+          - name: XSCALE
+            description: This is a two bit integer and 12 bit fractional representation
+              (##
+            index: 0
+            width: 15
+            read: true
+            write: true
+      - name: PS_OFFSET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 288
+        description: (read-write) PS Scale Offset Register
+        fields:
+          - name: YOFFSET
+            description: This is a 12 bit fractional representation (0
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: XOFFSET
+            description: This is a 12 bit fractional representation (0
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: PS_CLRKEYLOW
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 304
+        description: (read-write) PS Color Key Low
+        fields:
+          - name: PIXEL
+            description: Low range of color key applied to PS buffer
+            index: 0
+            width: 24
+            read: true
+            write: true
+      - name: PS_CLRKEYHIGH
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 320
+        description: (read-write) PS Color Key High
+        fields:
+          - name: PIXEL
+            description: High range of color key applied to PS buffer
+            index: 0
+            width: 24
+            read: true
+            write: true
+      - name: AS_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 336
+        description: (read-write) Alpha Surface Control
+        fields:
+          - name: ALPHA_INVERT
+            description: Setting this bit to logic 0 will not alter the alpha value
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: ROP
+            description: Indicates a raster operation to perform when enabled
+            index: 16
+            width: 4
+            read: true
+            write: true
+            type: PXP_AS_CTRL_ROP
+          - name: ALPHA
+            description: Alpha modifier used when the ALPHA_MULTIPLY or ALPHA_OVERRIDE
+              values are programmed in PXP_AS_CTRL[ALPHA_CTRL]
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: FORMAT
+            description: Indicates the input buffer format for AS.
+            index: 4
+            width: 4
+            read: true
+            write: true
+            type: PXP_AS_CTRL_FORMAT
+          - name: ENABLE_COLORKEY
+            description: Indicates that colorkey functionality is enabled for this
+              alpha surface
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ALPHA_CTRL
+            description: Determines how the alpha value is constructed for this alpha
+              surface
+            index: 1
+            width: 2
+            read: true
+            write: true
+            type: PXP_AS_CTRL_ALPHA_CTRL
+      - name: AS_BUF
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 352
+        description: (read-write) Alpha Surface Buffer Pointer
+        fields:
+          - name: ADDR
+            description: Address pointer for the alpha surface 0 buffer.
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: AS_PITCH
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 368
+        description: (read-write) Alpha Surface Pitch
+        fields:
+          - name: PITCH
+            description: Indicates the number of bytes in memory between two vertically
+              adjacent pixels.
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: AS_CLRKEYLOW
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 384
+        description: (read-write) Overlay Color Key Low
+        fields:
+          - name: PIXEL
+            description: Low range of RGB color key applied to AS buffer. Each overlay
+              has an independent colorkey enable.
+            index: 0
+            width: 24
+            read: true
+            write: true
+      - name: AS_CLRKEYHIGH
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 400
+        description: (read-write) Overlay Color Key High
+        fields:
+          - name: PIXEL
+            description: High range of RGB color key applied to AS buffer. Each overlay
+              has an independent colorkey enable.
+            index: 0
+            width: 24
+            read: true
+            write: true
+      - name: CSC1_COEF0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 416
+        description: (read-write) Color Space Conversion Coefficient Register 0
+        fields:
+          - name: YCBCR_MODE
+            description: Set to 1 when performing YCbCr conversion to RGB
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS
+            description: Bypass the CSC unit in the scaling engine
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: C0
+            description: Two's compliment Y multiplier coefficient. YUV=0x100 (1.000)
+              YCbCr=0x12A (1.164)
+            index: 18
+            width: 11
+            read: true
+            write: true
+          - name: UV_OFFSET
+            description: Two's compliment phase offset implicit for CbCr data
+            index: 9
+            width: 9
+            read: true
+            write: true
+          - name: Y_OFFSET
+            description: Two's compliment amplitude offset implicit in the Y data
+            index: 0
+            width: 9
+            read: true
+            write: true
+      - name: CSC1_COEF1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 432
+        description: (read-write) Color Space Conversion Coefficient Register 1
+        fields:
+          - name: C1
+            description: Two's compliment Red V/Cr multiplier coefficient. YUV=0x123
+              (1.140) YCbCr=0x198 (1.596)
+            index: 16
+            width: 11
+            read: true
+            write: true
+          - name: C4
+            description: Two's compliment Blue U/Cb multiplier coefficient. YUV=0x208
+              (2.032) YCbCr=0x204 (2.017)
+            index: 0
+            width: 11
+            read: true
+            write: true
+      - name: CSC1_COEF2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 448
+        description: (read-write) Color Space Conversion Coefficient Register 2
+        fields:
+          - name: C2
+            description: Two's complement Green V/Cr multiplier coefficient. YUV=0x76B
+              (-0.581) YCbCr=0x730 (-0.813)
+            index: 16
+            width: 11
+            read: true
+            write: true
+          - name: C3
+            description: Two's complement Green U/Cb multiplier coefficient. YUV=0x79C
+              (-0.394) YCbCr=0x79C (-0.392)
+            index: 0
+            width: 11
+            read: true
+            write: true
+      - name: POWER
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 800
+        description: (read-write) PXP Power Control Register
+        fields:
+          - name: ROT_MEM_LP_STATE
+            description: Select the low power state of the Rotation (ROT) memory.
+            index: 9
+            width: 3
+            read: true
+            write: true
+            type: PXP_POWER_ROT_MEM_LP_STATE
+      - name: NEXT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1024
+        description: (read-write) Next Frame Pointer
+        fields:
+          - name: POINTER
+            description: A pointer to a data structure containing register values
+              to be used when processing the next frame
+            index: 2
+            width: 30
+            read: true
+            write: true
+          - name: ENABLED
+            description: Indicates that the "next frame" functionality has been enabled
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: PORTER_DUFF_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1088
+        description: (read-write) PXP Alpha Engine A Control Register.
+        fields:
+          - name: S1_GLOBAL_ALPHA
+            description: s1 global alpha
+            index: 24
+            width: 8
+            read: true
+            write: true
+          - name: S0_GLOBAL_ALPHA
+            description: s0 global alpha
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: S1_COLOR_MODE
+            description: s1 color mode
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: S1_ALPHA_MODE
+            description: s1 alpha mode (Porter-Duff Alpha mode)
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: S1_GLOBAL_ALPHA_MODE
+            description: s1 global alpha mode (Porter-Duff Global Alpha mode)
+            index: 10
+            width: 2
+            read: true
+            write: true
+            type: PXP_PORTER_DUFF_CTRL_S1_GLOBAL_ALPHA_MODE
+          - name: S1_S0_FACTOR_MODE
+            description: s1 to s0 factor mode (Porter-Duff factor mode)
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: PXP_PORTER_DUFF_CTRL_S1_S0_FACTOR_MODE
+          - name: S0_COLOR_MODE
+            description: s0 color mode (Porter-Duff color mode)
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: S0_ALPHA_MODE
+            description: s0 alpha mode (Porter-Duff alpha mode)
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: S0_GLOBAL_ALPHA_MODE
+            description: s0 global alpha mode
+            index: 3
+            width: 2
+            read: true
+            write: true
+            type: PXP_PORTER_DUFF_CTRL_S0_GLOBAL_ALPHA_MODE
+          - name: S0_S1_FACTOR_MODE
+            description: s0 to s1 factor mode
+            index: 1
+            width: 2
+            read: true
+            write: true
+            type: PXP_PORTER_DUFF_CTRL_S0_S1_FACTOR_MODE
+          - name: PORTER_DUFF_ENABLE
+            description: Porter-Duff Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  PXP_CTRL_ROTATE:
+    enum:
+      _0:
+        description: ROT_0
+        value: 0
+      _90:
+        description: ROT_90
+        value: 1
+      _180:
+        description: ROT_180
+        value: 2
+      _270:
+        description: ROT_270
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_CTRL_SET_ROTATE:
+    enum:
+      _0:
+        description: ROT_0
+        value: 0
+      _90:
+        description: ROT_90
+        value: 1
+      _180:
+        description: ROT_180
+        value: 2
+      _270:
+        description: ROT_270
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_CTRL_CLR_ROTATE:
+    enum:
+      _0:
+        description: ROT_0
+        value: 0
+      _90:
+        description: ROT_90
+        value: 1
+      _180:
+        description: ROT_180
+        value: 2
+      _270:
+        description: ROT_270
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_CTRL_TOG_ROTATE:
+    enum:
+      _0:
+        description: ROT_0
+        value: 0
+      _90:
+        description: ROT_90
+        value: 1
+      _180:
+        description: ROT_180
+        value: 2
+      _270:
+        description: ROT_270
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_OUT_CTRL_INTERLACED_OUTPUT:
+    enum:
+      PROGRESSIVE:
+        description: All data written in progressive format to the OUTBUF Pointer.
+        value: 0
+      FIELD0:
+        description: 'Interlaced output: only data for field 0 is written to the OUTBUF
+          Pointer.'
+        value: 1
+      FIELD1:
+        description: 'Interlaced output: only data for field 1 is written to the OUTBUF2
+          Pointer.'
+        value: 2
+      INTERLACED:
+        description: 'Interlaced output: data for field 0 is written to OUTBUF and
+          data for field 1 is written to OUTBUF2.'
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_OUT_CTRL_FORMAT:
+    enum:
+      ARGB8888:
+        description: 32-bit pixels
+        value: 0
+      RGB888:
+        description: 32-bit pixels (unpacked 24-bit pixel in 32 bit DWORD.)
+        value: 4
+      RGB888P:
+        description: 24-bit pixels (packed 24-bit format)
+        value: 5
+      ARGB1555:
+        description: 16-bit pixels
+        value: 8
+      ARGB4444:
+        description: 16-bit pixels
+        value: 9
+      RGB555:
+        description: 16-bit pixels
+        value: 12
+      RGB444:
+        description: 16-bit pixels
+        value: 13
+      RGB565:
+        description: 16-bit pixels
+        value: 14
+      YUV1P444:
+        description: 32-bit pixels (1-plane XYUV unpacked)
+        value: 16
+      UYVY1P422:
+        description: 16-bit pixels (1-plane U0,Y0,V0,Y1 interleaved bytes)
+        value: 18
+      VYUY1P422:
+        description: 16-bit pixels (1-plane V0,Y0,U0,Y1 interleaved bytes)
+        value: 19
+      Y8:
+        description: 8-bit monochrome pixels (1-plane Y luma output)
+        value: 20
+      Y4:
+        description: 4-bit monochrome pixels (1-plane Y luma, 4 bit truncation)
+        value: 21
+      YUV2P422:
+        description: 16-bit pixels (2-plane UV interleaved bytes)
+        value: 24
+      YUV2P420:
+        description: 16-bit pixels (2-plane UV)
+        value: 25
+      YVU2P422:
+        description: 16-bit pixels (2-plane VU interleaved bytes)
+        value: 26
+      YVU2P420:
+        description: 16-bit pixels (2-plane VU)
+        value: 27
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_OUT_CTRL_SET_INTERLACED_OUTPUT:
+    enum:
+      PROGRESSIVE:
+        description: All data written in progressive format to the OUTBUF Pointer.
+        value: 0
+      FIELD0:
+        description: 'Interlaced output: only data for field 0 is written to the OUTBUF
+          Pointer.'
+        value: 1
+      FIELD1:
+        description: 'Interlaced output: only data for field 1 is written to the OUTBUF2
+          Pointer.'
+        value: 2
+      INTERLACED:
+        description: 'Interlaced output: data for field 0 is written to OUTBUF and
+          data for field 1 is written to OUTBUF2.'
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_OUT_CTRL_SET_FORMAT:
+    enum:
+      ARGB8888:
+        description: 32-bit pixels
+        value: 0
+      RGB888:
+        description: 32-bit pixels (unpacked 24-bit pixel in 32 bit DWORD.)
+        value: 4
+      RGB888P:
+        description: 24-bit pixels (packed 24-bit format)
+        value: 5
+      ARGB1555:
+        description: 16-bit pixels
+        value: 8
+      ARGB4444:
+        description: 16-bit pixels
+        value: 9
+      RGB555:
+        description: 16-bit pixels
+        value: 12
+      RGB444:
+        description: 16-bit pixels
+        value: 13
+      RGB565:
+        description: 16-bit pixels
+        value: 14
+      YUV1P444:
+        description: 32-bit pixels (1-plane XYUV unpacked)
+        value: 16
+      UYVY1P422:
+        description: 16-bit pixels (1-plane U0,Y0,V0,Y1 interleaved bytes)
+        value: 18
+      VYUY1P422:
+        description: 16-bit pixels (1-plane V0,Y0,U0,Y1 interleaved bytes)
+        value: 19
+      Y8:
+        description: 8-bit monochrome pixels (1-plane Y luma output)
+        value: 20
+      Y4:
+        description: 4-bit monochrome pixels (1-plane Y luma, 4 bit truncation)
+        value: 21
+      YUV2P422:
+        description: 16-bit pixels (2-plane UV interleaved bytes)
+        value: 24
+      YUV2P420:
+        description: 16-bit pixels (2-plane UV)
+        value: 25
+      YVU2P422:
+        description: 16-bit pixels (2-plane VU interleaved bytes)
+        value: 26
+      YVU2P420:
+        description: 16-bit pixels (2-plane VU)
+        value: 27
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_OUT_CTRL_CLR_INTERLACED_OUTPUT:
+    enum:
+      PROGRESSIVE:
+        description: All data written in progressive format to the OUTBUF Pointer.
+        value: 0
+      FIELD0:
+        description: 'Interlaced output: only data for field 0 is written to the OUTBUF
+          Pointer.'
+        value: 1
+      FIELD1:
+        description: 'Interlaced output: only data for field 1 is written to the OUTBUF2
+          Pointer.'
+        value: 2
+      INTERLACED:
+        description: 'Interlaced output: data for field 0 is written to OUTBUF and
+          data for field 1 is written to OUTBUF2.'
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_OUT_CTRL_CLR_FORMAT:
+    enum:
+      ARGB8888:
+        description: 32-bit pixels
+        value: 0
+      RGB888:
+        description: 32-bit pixels (unpacked 24-bit pixel in 32 bit DWORD.)
+        value: 4
+      RGB888P:
+        description: 24-bit pixels (packed 24-bit format)
+        value: 5
+      ARGB1555:
+        description: 16-bit pixels
+        value: 8
+      ARGB4444:
+        description: 16-bit pixels
+        value: 9
+      RGB555:
+        description: 16-bit pixels
+        value: 12
+      RGB444:
+        description: 16-bit pixels
+        value: 13
+      RGB565:
+        description: 16-bit pixels
+        value: 14
+      YUV1P444:
+        description: 32-bit pixels (1-plane XYUV unpacked)
+        value: 16
+      UYVY1P422:
+        description: 16-bit pixels (1-plane U0,Y0,V0,Y1 interleaved bytes)
+        value: 18
+      VYUY1P422:
+        description: 16-bit pixels (1-plane V0,Y0,U0,Y1 interleaved bytes)
+        value: 19
+      Y8:
+        description: 8-bit monochrome pixels (1-plane Y luma output)
+        value: 20
+      Y4:
+        description: 4-bit monochrome pixels (1-plane Y luma, 4 bit truncation)
+        value: 21
+      YUV2P422:
+        description: 16-bit pixels (2-plane UV interleaved bytes)
+        value: 24
+      YUV2P420:
+        description: 16-bit pixels (2-plane UV)
+        value: 25
+      YVU2P422:
+        description: 16-bit pixels (2-plane VU interleaved bytes)
+        value: 26
+      YVU2P420:
+        description: 16-bit pixels (2-plane VU)
+        value: 27
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_OUT_CTRL_TOG_INTERLACED_OUTPUT:
+    enum:
+      PROGRESSIVE:
+        description: All data written in progressive format to the OUTBUF Pointer.
+        value: 0
+      FIELD0:
+        description: 'Interlaced output: only data for field 0 is written to the OUTBUF
+          Pointer.'
+        value: 1
+      FIELD1:
+        description: 'Interlaced output: only data for field 1 is written to the OUTBUF2
+          Pointer.'
+        value: 2
+      INTERLACED:
+        description: 'Interlaced output: data for field 0 is written to OUTBUF and
+          data for field 1 is written to OUTBUF2.'
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_OUT_CTRL_TOG_FORMAT:
+    enum:
+      ARGB8888:
+        description: 32-bit pixels
+        value: 0
+      RGB888:
+        description: 32-bit pixels (unpacked 24-bit pixel in 32 bit DWORD.)
+        value: 4
+      RGB888P:
+        description: 24-bit pixels (packed 24-bit format)
+        value: 5
+      ARGB1555:
+        description: 16-bit pixels
+        value: 8
+      ARGB4444:
+        description: 16-bit pixels
+        value: 9
+      RGB555:
+        description: 16-bit pixels
+        value: 12
+      RGB444:
+        description: 16-bit pixels
+        value: 13
+      RGB565:
+        description: 16-bit pixels
+        value: 14
+      YUV1P444:
+        description: 32-bit pixels (1-plane XYUV unpacked)
+        value: 16
+      UYVY1P422:
+        description: 16-bit pixels (1-plane U0,Y0,V0,Y1 interleaved bytes)
+        value: 18
+      VYUY1P422:
+        description: 16-bit pixels (1-plane V0,Y0,U0,Y1 interleaved bytes)
+        value: 19
+      Y8:
+        description: 8-bit monochrome pixels (1-plane Y luma output)
+        value: 20
+      Y4:
+        description: 4-bit monochrome pixels (1-plane Y luma, 4 bit truncation)
+        value: 21
+      YUV2P422:
+        description: 16-bit pixels (2-plane UV interleaved bytes)
+        value: 24
+      YUV2P420:
+        description: 16-bit pixels (2-plane UV)
+        value: 25
+      YVU2P422:
+        description: 16-bit pixels (2-plane VU interleaved bytes)
+        value: 26
+      YVU2P420:
+        description: 16-bit pixels (2-plane VU)
+        value: 27
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_PS_CTRL_DECX:
+    enum:
+      DISABLE:
+        description: Disable pre-decimation filter.
+        value: 0
+      DECX2:
+        description: Decimate PS by 2.
+        value: 1
+      DECX4:
+        description: Decimate PS by 4.
+        value: 2
+      DECX8:
+        description: Decimate PS by 8.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_PS_CTRL_DECY:
+    enum:
+      DISABLE:
+        description: Disable pre-decimation filter.
+        value: 0
+      DECY2:
+        description: Decimate PS by 2.
+        value: 1
+      DECY4:
+        description: Decimate PS by 4.
+        value: 2
+      DECY8:
+        description: Decimate PS by 8.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_PS_CTRL_FORMAT:
+    enum:
+      RGB888_ARGB8888:
+        description: 32-bit pixels (unpacked 24-bit format with/without alpha at high
+          8bits)
+        value: 4
+      RGB555_ARGB1555:
+        description: 16-bit pixels with/without alpha at high 1bit
+        value: 12
+      RGB444_ARGB4444:
+        description: 16-bit pixels with/without alpha at high 4 bits
+        value: 13
+      RGB565:
+        description: 16-bit pixels
+        value: 14
+      YUV1P444:
+        description: 32-bit pixels (1-plane XYUV unpacked)
+        value: 16
+      UYVY1P422:
+        description: 16-bit pixels (1-plane U0,Y0,V0,Y1 interleaved bytes)
+        value: 18
+      VYUY1P422:
+        description: 16-bit pixels (1-plane V0,Y0,U0,Y1 interleaved bytes)
+        value: 19
+      Y8:
+        description: 8-bit monochrome pixels (1-plane Y luma output)
+        value: 20
+      Y4:
+        description: 4-bit monochrome pixels (1-plane Y luma, 4 bit truncation)
+        value: 21
+      YUV2P422:
+        description: 16-bit pixels (2-plane UV interleaved bytes)
+        value: 24
+      YUV2P420:
+        description: 16-bit pixels (2-plane UV)
+        value: 25
+      YVU2P422:
+        description: 16-bit pixels (2-plane VU interleaved bytes)
+        value: 26
+      YVU2P420:
+        description: 16-bit pixels (2-plane VU)
+        value: 27
+      YUV422:
+        description: 16-bit pixels (3-plane format)
+        value: 30
+      YUV420:
+        description: 16-bit pixels (3-plane format)
+        value: 31
+      RGBA8888:
+        description: 2-bit pixels with alpha at the low 8 bits
+        value: 36
+      RGBA5551:
+        description: 16-bit pixels with alpha at the low 1bits
+        value: 44
+      RGBA4444:
+        description: 16-bit pixels with alpha at the low 4 bits
+        value: 45
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_PS_CTRL_SET_DECX:
+    enum:
+      DISABLE:
+        description: Disable pre-decimation filter.
+        value: 0
+      DECX2:
+        description: Decimate PS by 2.
+        value: 1
+      DECX4:
+        description: Decimate PS by 4.
+        value: 2
+      DECX8:
+        description: Decimate PS by 8.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_PS_CTRL_SET_DECY:
+    enum:
+      DISABLE:
+        description: Disable pre-decimation filter.
+        value: 0
+      DECY2:
+        description: Decimate PS by 2.
+        value: 1
+      DECY4:
+        description: Decimate PS by 4.
+        value: 2
+      DECY8:
+        description: Decimate PS by 8.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_PS_CTRL_SET_FORMAT:
+    enum:
+      RGB888_ARGB8888:
+        description: 32-bit pixels (unpacked 24-bit format with/without alpha at high
+          8bits)
+        value: 4
+      RGB555_ARGB1555:
+        description: 16-bit pixels with/without alpha at high 1bit
+        value: 12
+      RGB444_ARGB4444:
+        description: 16-bit pixels with/without alpha at high 4 bits
+        value: 13
+      RGB565:
+        description: 16-bit pixels
+        value: 14
+      YUV1P444:
+        description: 32-bit pixels (1-plane XYUV unpacked)
+        value: 16
+      UYVY1P422:
+        description: 16-bit pixels (1-plane U0,Y0,V0,Y1 interleaved bytes)
+        value: 18
+      VYUY1P422:
+        description: 16-bit pixels (1-plane V0,Y0,U0,Y1 interleaved bytes)
+        value: 19
+      Y8:
+        description: 8-bit monochrome pixels (1-plane Y luma output)
+        value: 20
+      Y4:
+        description: 4-bit monochrome pixels (1-plane Y luma, 4 bit truncation)
+        value: 21
+      YUV2P422:
+        description: 16-bit pixels (2-plane UV interleaved bytes)
+        value: 24
+      YUV2P420:
+        description: 16-bit pixels (2-plane UV)
+        value: 25
+      YVU2P422:
+        description: 16-bit pixels (2-plane VU interleaved bytes)
+        value: 26
+      YVU2P420:
+        description: 16-bit pixels (2-plane VU)
+        value: 27
+      YUV422:
+        description: 16-bit pixels (3-plane format)
+        value: 30
+      YUV420:
+        description: 16-bit pixels (3-plane format)
+        value: 31
+      RGBA8888:
+        description: 2-bit pixels with alpha at the low 8 bits
+        value: 36
+      RGBA5551:
+        description: 16-bit pixels with alpha at the low 1bits
+        value: 44
+      RGBA4444:
+        description: 16-bit pixels with alpha at the low 4 bits
+        value: 45
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_PS_CTRL_CLR_DECX:
+    enum:
+      DISABLE:
+        description: Disable pre-decimation filter.
+        value: 0
+      DECX2:
+        description: Decimate PS by 2.
+        value: 1
+      DECX4:
+        description: Decimate PS by 4.
+        value: 2
+      DECX8:
+        description: Decimate PS by 8.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_PS_CTRL_CLR_DECY:
+    enum:
+      DISABLE:
+        description: Disable pre-decimation filter.
+        value: 0
+      DECY2:
+        description: Decimate PS by 2.
+        value: 1
+      DECY4:
+        description: Decimate PS by 4.
+        value: 2
+      DECY8:
+        description: Decimate PS by 8.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_PS_CTRL_CLR_FORMAT:
+    enum:
+      RGB888_ARGB8888:
+        description: 32-bit pixels (unpacked 24-bit format with/without alpha at high
+          8bits)
+        value: 4
+      RGB555_ARGB1555:
+        description: 16-bit pixels with/without alpha at high 1bit
+        value: 12
+      RGB444_ARGB4444:
+        description: 16-bit pixels with/without alpha at high 4 bits
+        value: 13
+      RGB565:
+        description: 16-bit pixels
+        value: 14
+      YUV1P444:
+        description: 32-bit pixels (1-plane XYUV unpacked)
+        value: 16
+      UYVY1P422:
+        description: 16-bit pixels (1-plane U0,Y0,V0,Y1 interleaved bytes)
+        value: 18
+      VYUY1P422:
+        description: 16-bit pixels (1-plane V0,Y0,U0,Y1 interleaved bytes)
+        value: 19
+      Y8:
+        description: 8-bit monochrome pixels (1-plane Y luma output)
+        value: 20
+      Y4:
+        description: 4-bit monochrome pixels (1-plane Y luma, 4 bit truncation)
+        value: 21
+      YUV2P422:
+        description: 16-bit pixels (2-plane UV interleaved bytes)
+        value: 24
+      YUV2P420:
+        description: 16-bit pixels (2-plane UV)
+        value: 25
+      YVU2P422:
+        description: 16-bit pixels (2-plane VU interleaved bytes)
+        value: 26
+      YVU2P420:
+        description: 16-bit pixels (2-plane VU)
+        value: 27
+      YUV422:
+        description: 16-bit pixels (3-plane format)
+        value: 30
+      YUV420:
+        description: 16-bit pixels (3-plane format)
+        value: 31
+      RGBA8888:
+        description: 2-bit pixels with alpha at the low 8 bits
+        value: 36
+      RGBA5551:
+        description: 16-bit pixels with alpha at the low 1bits
+        value: 44
+      RGBA4444:
+        description: 16-bit pixels with alpha at the low 4 bits
+        value: 45
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_PS_CTRL_TOG_DECX:
+    enum:
+      DISABLE:
+        description: Disable pre-decimation filter.
+        value: 0
+      DECX2:
+        description: Decimate PS by 2.
+        value: 1
+      DECX4:
+        description: Decimate PS by 4.
+        value: 2
+      DECX8:
+        description: Decimate PS by 8.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_PS_CTRL_TOG_DECY:
+    enum:
+      DISABLE:
+        description: Disable pre-decimation filter.
+        value: 0
+      DECY2:
+        description: Decimate PS by 2.
+        value: 1
+      DECY4:
+        description: Decimate PS by 4.
+        value: 2
+      DECY8:
+        description: Decimate PS by 8.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_PS_CTRL_TOG_FORMAT:
+    enum:
+      RGB888_ARGB8888:
+        description: 32-bit pixels (unpacked 24-bit format with/without alpha at high
+          8bits)
+        value: 4
+      RGB555_ARGB1555:
+        description: 16-bit pixels with/without alpha at high 1bit
+        value: 12
+      RGB444_ARGB4444:
+        description: 16-bit pixels with/without alpha at high 4 bits
+        value: 13
+      RGB565:
+        description: 16-bit pixels
+        value: 14
+      YUV1P444:
+        description: 32-bit pixels (1-plane XYUV unpacked)
+        value: 16
+      UYVY1P422:
+        description: 16-bit pixels (1-plane U0,Y0,V0,Y1 interleaved bytes)
+        value: 18
+      VYUY1P422:
+        description: 16-bit pixels (1-plane V0,Y0,U0,Y1 interleaved bytes)
+        value: 19
+      Y8:
+        description: 8-bit monochrome pixels (1-plane Y luma output)
+        value: 20
+      Y4:
+        description: 4-bit monochrome pixels (1-plane Y luma, 4 bit truncation)
+        value: 21
+      YUV2P422:
+        description: 16-bit pixels (2-plane UV interleaved bytes)
+        value: 24
+      YUV2P420:
+        description: 16-bit pixels (2-plane UV)
+        value: 25
+      YVU2P422:
+        description: 16-bit pixels (2-plane VU interleaved bytes)
+        value: 26
+      YVU2P420:
+        description: 16-bit pixels (2-plane VU)
+        value: 27
+      YUV422:
+        description: 16-bit pixels (3-plane format)
+        value: 30
+      YUV420:
+        description: 16-bit pixels (3-plane format)
+        value: 31
+      RGBA8888:
+        description: 2-bit pixels with alpha at the low 8 bits
+        value: 36
+      RGBA5551:
+        description: 16-bit pixels with alpha at the low 1bits
+        value: 44
+      RGBA4444:
+        description: 16-bit pixels with alpha at the low 4 bits
+        value: 45
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_AS_CTRL_ROP:
+    enum:
+      MASKAS:
+        description: AS AND PS
+        value: 0
+      MASKNOTAS:
+        description: nAS AND PS
+        value: 1
+      MASKASNOT:
+        description: AS AND nPS
+        value: 2
+      MERGEAS:
+        description: AS OR PS
+        value: 3
+      MERGENOTAS:
+        description: nAS OR PS
+        value: 4
+      MERGEASNOT:
+        description: AS OR nPS
+        value: 5
+      NOTCOPYAS:
+        description: nAS
+        value: 6
+      NOT:
+        description: nPS
+        value: 7
+      NOTMASKAS:
+        description: AS NAND PS
+        value: 8
+      NOTMERGEAS:
+        description: AS NOR PS
+        value: 9
+      XORAS:
+        description: AS XOR PS
+        value: 10
+      NOTXORAS:
+        description: AS XNOR PS
+        value: 11
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_AS_CTRL_FORMAT:
+    enum:
+      ARGB8888:
+        description: 32-bit pixels with alpha
+        value: 0
+      RGBA888:
+        description: 2-bit pixel with alpha at low 8 bits
+        value: 1
+      RGB888:
+        description: 32-bit pixels without alpha (unpacked 24-bit format)
+        value: 4
+      ARGB1555:
+        description: 16-bit pixels with alpha
+        value: 8
+      ARGB4444:
+        description: 16-bit pixels with alpha
+        value: 9
+      RGBA5551:
+        description: 16-bit pixel with alpha at low 1 bit
+        value: 10
+      RGBA4444:
+        description: 16-bit pixel with alpha at low 4 bits
+        value: 11
+      RGB555:
+        description: 16-bit pixels without alpha
+        value: 12
+      RGB444:
+        description: 16-bit pixels without alpha
+        value: 13
+      RGB565:
+        description: 16-bit pixels without alpha
+        value: 14
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_AS_CTRL_ALPHA_CTRL:
+    enum:
+      Embedded:
+        description: Indicates that the AS pixel alpha value will be used to blend
+          the AS with PS. The ALPHA field is ignored.
+        value: 0
+      Override:
+        description: Indicates that the value in the ALPHA field should be used instead
+          of the alpha values present in the input pixels.
+        value: 1
+      Multiply:
+        description: Indicates that the value in the ALPHA field should be used to
+          scale all pixel alpha values. Each pixel alpha is multiplied by the value
+          in the ALPHA field.
+        value: 2
+      ROPs:
+        description: Enable ROPs. The ROP field indicates an operation to be performed
+          on the alpha surface and PS pixels.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_POWER_ROT_MEM_LP_STATE:
+    enum:
+      NONE:
+        description: Memory is not in low power state.
+        value: 0
+      LS:
+        description: Light Sleep Mode. Low leakage mode, maintain memory contents.
+        value: 1
+      DS:
+        description: Deep Sleep Mode. Low leakage mode, maintain memory contents.
+        value: 2
+      SD:
+        description: Shut Down Mode. Shut Down periphery and core, no memory retention.
+        value: 4
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_PORTER_DUFF_CTRL_S1_GLOBAL_ALPHA_MODE:
+    enum:
+      _0:
+        description: Global alpha
+        value: 0
+      _1:
+        description: Local alpha
+        value: 1
+      _2:
+        description: Scaled alpha
+        value: 2
+      _3:
+        description: Scaled alpha
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_PORTER_DUFF_CTRL_S1_S0_FACTOR_MODE:
+    enum:
+      _0:
+        description: '1'
+        value: 0
+      _1:
+        description: '0'
+        value: 1
+      _2:
+        description: Straight alpha
+        value: 2
+      _3:
+        description: Inverse alpha
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_PORTER_DUFF_CTRL_S0_GLOBAL_ALPHA_MODE:
+    enum:
+      _0:
+        description: Global alpha
+        value: 0
+      _1:
+        description: Local alpha
+        value: 1
+      _2:
+        description: Scaled alpha
+        value: 2
+      _3:
+        description: Scaled alpha
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PXP_PORTER_DUFF_CTRL_S0_S1_FACTOR_MODE:
+    enum:
+      _0:
+        description: '1'
+        value: 0
+      _1:
+        description: '0'
+        value: 1
+      _2:
+        description: Straight alpha
+        value: 2
+      _3:
+        description: Inverse alpha
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

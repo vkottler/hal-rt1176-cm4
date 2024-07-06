@@ -1,0 +1,1958 @@
+---
+structs:
+  xbara1:
+    description: Crossbar Switch
+    instances:
+      - name: XBARA1
+        address: '0x4003C000'
+    fields:
+      - name: SEL0
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 0
+        description: (read-write) Crossbar A Select Register 0
+        fields:
+          - name: SEL1
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT1 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL0
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT0 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL1
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 2
+        description: (read-write) Crossbar A Select Register 1
+        fields:
+          - name: SEL3
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT3 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL2
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT2 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL2
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 4
+        description: (read-write) Crossbar A Select Register 2
+        fields:
+          - name: SEL5
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT5 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL4
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT4 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL3
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 6
+        description: (read-write) Crossbar A Select Register 3
+        fields:
+          - name: SEL7
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT7 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL6
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT6 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL4
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 8
+        description: (read-write) Crossbar A Select Register 4
+        fields:
+          - name: SEL9
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT9 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL8
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT8 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL5
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 10
+        description: (read-write) Crossbar A Select Register 5
+        fields:
+          - name: SEL11
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT11 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL10
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT10 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL6
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 12
+        description: (read-write) Crossbar A Select Register 6
+        fields:
+          - name: SEL13
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT13 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL12
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT12 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL7
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 14
+        description: (read-write) Crossbar A Select Register 7
+        fields:
+          - name: SEL15
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT15 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL14
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT14 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL8
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 16
+        description: (read-write) Crossbar A Select Register 8
+        fields:
+          - name: SEL17
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT17 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL16
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT16 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL9
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 18
+        description: (read-write) Crossbar A Select Register 9
+        fields:
+          - name: SEL19
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT19 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL18
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT18 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL10
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 20
+        description: (read-write) Crossbar A Select Register 10
+        fields:
+          - name: SEL21
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT21 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL20
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT20 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL11
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 22
+        description: (read-write) Crossbar A Select Register 11
+        fields:
+          - name: SEL23
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT23 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL22
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT22 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL12
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 24
+        description: (read-write) Crossbar A Select Register 12
+        fields:
+          - name: SEL25
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT25 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL24
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT24 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL13
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 26
+        description: (read-write) Crossbar A Select Register 13
+        fields:
+          - name: SEL27
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT27 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL26
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT26 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL14
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 28
+        description: (read-write) Crossbar A Select Register 14
+        fields:
+          - name: SEL29
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT29 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL28
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT28 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL15
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 30
+        description: (read-write) Crossbar A Select Register 15
+        fields:
+          - name: SEL31
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT31 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL30
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT30 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL16
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 32
+        description: (read-write) Crossbar A Select Register 16
+        fields:
+          - name: SEL33
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT33 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL32
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT32 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL17
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 34
+        description: (read-write) Crossbar A Select Register 17
+        fields:
+          - name: SEL35
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT35 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL34
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT34 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL18
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 36
+        description: (read-write) Crossbar A Select Register 18
+        fields:
+          - name: SEL37
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT37 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL36
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT36 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL19
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 38
+        description: (read-write) Crossbar A Select Register 19
+        fields:
+          - name: SEL39
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT39 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL38
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT38 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL20
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 40
+        description: (read-write) Crossbar A Select Register 20
+        fields:
+          - name: SEL41
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT41 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL40
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT40 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL21
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 42
+        description: (read-write) Crossbar A Select Register 21
+        fields:
+          - name: SEL43
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT43 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL42
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT42 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL22
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 44
+        description: (read-write) Crossbar A Select Register 22
+        fields:
+          - name: SEL45
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT45 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL44
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT44 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL23
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 46
+        description: (read-write) Crossbar A Select Register 23
+        fields:
+          - name: SEL47
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT47 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL46
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT46 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL24
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 48
+        description: (read-write) Crossbar A Select Register 24
+        fields:
+          - name: SEL49
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT49 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL48
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT48 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL25
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 50
+        description: (read-write) Crossbar A Select Register 25
+        fields:
+          - name: SEL51
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT51 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL50
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT50 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL26
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 52
+        description: (read-write) Crossbar A Select Register 26
+        fields:
+          - name: SEL53
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT53 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL52
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT52 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL27
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 54
+        description: (read-write) Crossbar A Select Register 27
+        fields:
+          - name: SEL55
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT55 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL54
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT54 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL28
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 56
+        description: (read-write) Crossbar A Select Register 28
+        fields:
+          - name: SEL57
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT57 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL56
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT56 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL29
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 58
+        description: (read-write) Crossbar A Select Register 29
+        fields:
+          - name: SEL59
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT59 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL58
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT58 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL30
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 60
+        description: (read-write) Crossbar A Select Register 30
+        fields:
+          - name: SEL61
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT61 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL60
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT60 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL31
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 62
+        description: (read-write) Crossbar A Select Register 31
+        fields:
+          - name: SEL63
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT63 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL62
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT62 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL32
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 64
+        description: (read-write) Crossbar A Select Register 32
+        fields:
+          - name: SEL65
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT65 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL64
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT64 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL33
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 66
+        description: (read-write) Crossbar A Select Register 33
+        fields:
+          - name: SEL67
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT67 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL66
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT66 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL34
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 68
+        description: (read-write) Crossbar A Select Register 34
+        fields:
+          - name: SEL69
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT69 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL68
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT68 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL35
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 70
+        description: (read-write) Crossbar A Select Register 35
+        fields:
+          - name: SEL71
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT71 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL70
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT70 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL36
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 72
+        description: (read-write) Crossbar A Select Register 36
+        fields:
+          - name: SEL73
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT73 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL72
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT72 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL37
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 74
+        description: (read-write) Crossbar A Select Register 37
+        fields:
+          - name: SEL75
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT75 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL74
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT74 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL38
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 76
+        description: (read-write) Crossbar A Select Register 38
+        fields:
+          - name: SEL77
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT77 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL76
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT76 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL39
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 78
+        description: (read-write) Crossbar A Select Register 39
+        fields:
+          - name: SEL79
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT79 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL78
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT78 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL40
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 80
+        description: (read-write) Crossbar A Select Register 40
+        fields:
+          - name: SEL81
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT81 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL80
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT80 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL41
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 82
+        description: (read-write) Crossbar A Select Register 41
+        fields:
+          - name: SEL83
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT83 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL82
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT82 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL42
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 84
+        description: (read-write) Crossbar A Select Register 42
+        fields:
+          - name: SEL85
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT85 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL84
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT84 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL43
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 86
+        description: (read-write) Crossbar A Select Register 43
+        fields:
+          - name: SEL87
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT87 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL86
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT86 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL44
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 88
+        description: (read-write) Crossbar A Select Register 44
+        fields:
+          - name: SEL89
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT89 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL88
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT88 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL45
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 90
+        description: (read-write) Crossbar A Select Register 45
+        fields:
+          - name: SEL91
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT91 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL90
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT90 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL46
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 92
+        description: (read-write) Crossbar A Select Register 46
+        fields:
+          - name: SEL93
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT93 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL92
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT92 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL47
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 94
+        description: (read-write) Crossbar A Select Register 47
+        fields:
+          - name: SEL95
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT95 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL94
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT94 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL48
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 96
+        description: (read-write) Crossbar A Select Register 48
+        fields:
+          - name: SEL97
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT97 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL96
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT96 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL49
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 98
+        description: (read-write) Crossbar A Select Register 49
+        fields:
+          - name: SEL99
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT99 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL98
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT98 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL50
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 100
+        description: (read-write) Crossbar A Select Register 50
+        fields:
+          - name: SEL101
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT101 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL100
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT100 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL51
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 102
+        description: (read-write) Crossbar A Select Register 51
+        fields:
+          - name: SEL103
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT103 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL102
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT102 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL52
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 104
+        description: (read-write) Crossbar A Select Register 52
+        fields:
+          - name: SEL105
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT105 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL104
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT104 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL53
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 106
+        description: (read-write) Crossbar A Select Register 53
+        fields:
+          - name: SEL107
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT107 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL106
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT106 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL54
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 108
+        description: (read-write) Crossbar A Select Register 54
+        fields:
+          - name: SEL109
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT109 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL108
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT108 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL55
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 110
+        description: (read-write) Crossbar A Select Register 55
+        fields:
+          - name: SEL111
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT111 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL110
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT110 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL56
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 112
+        description: (read-write) Crossbar A Select Register 56
+        fields:
+          - name: SEL113
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT113 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL112
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT112 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL57
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 114
+        description: (read-write) Crossbar A Select Register 57
+        fields:
+          - name: SEL115
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT115 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL114
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT114 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL58
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 116
+        description: (read-write) Crossbar A Select Register 58
+        fields:
+          - name: SEL117
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT117 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL116
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT116 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL59
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 118
+        description: (read-write) Crossbar A Select Register 59
+        fields:
+          - name: SEL119
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT119 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL118
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT118 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL60
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 120
+        description: (read-write) Crossbar A Select Register 60
+        fields:
+          - name: SEL121
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT121 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL120
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT120 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL61
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 122
+        description: (read-write) Crossbar A Select Register 61
+        fields:
+          - name: SEL123
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT123 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL122
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT122 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL62
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 124
+        description: (read-write) Crossbar A Select Register 62
+        fields:
+          - name: SEL125
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT125 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL124
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT124 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL63
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 126
+        description: (read-write) Crossbar A Select Register 63
+        fields:
+          - name: SEL127
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT127 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL126
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT126 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL64
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 128
+        description: (read-write) Crossbar A Select Register 64
+        fields:
+          - name: SEL129
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT129 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL128
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT128 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL65
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 130
+        description: (read-write) Crossbar A Select Register 65
+        fields:
+          - name: SEL131
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT131 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL130
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT130 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL66
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 132
+        description: (read-write) Crossbar A Select Register 66
+        fields:
+          - name: SEL133
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT133 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL132
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT132 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL67
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 134
+        description: (read-write) Crossbar A Select Register 67
+        fields:
+          - name: SEL135
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT135 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL134
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT134 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL68
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 136
+        description: (read-write) Crossbar A Select Register 68
+        fields:
+          - name: SEL137
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT137 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL136
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT136 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL69
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 138
+        description: (read-write) Crossbar A Select Register 69
+        fields:
+          - name: SEL139
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT139 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL138
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT138 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL70
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 140
+        description: (read-write) Crossbar A Select Register 70
+        fields:
+          - name: SEL141
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT141 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL140
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT140 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL71
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 142
+        description: (read-write) Crossbar A Select Register 71
+        fields:
+          - name: SEL143
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT143 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL142
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT142 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL72
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 144
+        description: (read-write) Crossbar A Select Register 72
+        fields:
+          - name: SEL145
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT145 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL144
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT144 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL73
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 146
+        description: (read-write) Crossbar A Select Register 73
+        fields:
+          - name: SEL147
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT147 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL146
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT146 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL74
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 148
+        description: (read-write) Crossbar A Select Register 74
+        fields:
+          - name: SEL149
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT149 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL148
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT148 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL75
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 150
+        description: (read-write) Crossbar A Select Register 75
+        fields:
+          - name: SEL151
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT151 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL150
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT150 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL76
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 152
+        description: (read-write) Crossbar A Select Register 76
+        fields:
+          - name: SEL153
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT153 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL152
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT152 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL77
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 154
+        description: (read-write) Crossbar A Select Register 77
+        fields:
+          - name: SEL155
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT155 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL154
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT154 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL78
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 156
+        description: (read-write) Crossbar A Select Register 78
+        fields:
+          - name: SEL157
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT157 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL156
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT156 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL79
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 158
+        description: (read-write) Crossbar A Select Register 79
+        fields:
+          - name: SEL159
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT159 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL158
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT158 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL80
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 160
+        description: (read-write) Crossbar A Select Register 80
+        fields:
+          - name: SEL161
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT161 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL160
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT160 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL81
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 162
+        description: (read-write) Crossbar A Select Register 81
+        fields:
+          - name: SEL163
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT163 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL162
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT162 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL82
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 164
+        description: (read-write) Crossbar A Select Register 82
+        fields:
+          - name: SEL165
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT165 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL164
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT164 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL83
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 166
+        description: (read-write) Crossbar A Select Register 83
+        fields:
+          - name: SEL167
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT167 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL166
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT166 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL84
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 168
+        description: (read-write) Crossbar A Select Register 84
+        fields:
+          - name: SEL169
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT169 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL168
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT168 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL85
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 170
+        description: (read-write) Crossbar A Select Register 85
+        fields:
+          - name: SEL171
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT171 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL170
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT170 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL86
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 172
+        description: (read-write) Crossbar A Select Register 86
+        fields:
+          - name: SEL173
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT173 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL172
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT172 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SEL87
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 174
+        description: (read-write) Crossbar A Select Register 87
+        fields:
+          - name: SEL175
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT175 (refer to Functional
+              Description section for input/output assignment)
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SEL174
+            description: Input (XBARA_INn) to be muxed to XBARA_OUT174 (refer to Functional
+              Description section for input/output assignment)
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: CTRL0
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 176
+        description: (read-write) Crossbar A Control Register 0
+        fields:
+          - name: STS1
+            description: Edge detection status for XBAR_OUT1
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: EDGE1
+            description: Active edge for edge detection on XBAR_OUT1
+            index: 10
+            width: 2
+            read: true
+            write: true
+            type: XBARA1_CTRL0_EDGE1
+          - name: IEN1
+            description: Interrupt Enable for XBAR_OUT1
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: DEN1
+            description: DMA Enable for XBAR_OUT1
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: STS0
+            description: Edge detection status for XBAR_OUT0
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: EDGE0
+            description: Active edge for edge detection on XBAR_OUT0
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: XBARA1_CTRL0_EDGE0
+          - name: IEN0
+            description: Interrupt Enable for XBAR_OUT0
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: DEN0
+            description: DMA Enable for XBAR_OUT0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL1
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 178
+        description: (read-write) Crossbar A Control Register 1
+        fields:
+          - name: STS3
+            description: Edge detection status for XBAR_OUT3
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: EDGE3
+            description: Active edge for edge detection on XBAR_OUT3
+            index: 10
+            width: 2
+            read: true
+            write: true
+            type: XBARA1_CTRL1_EDGE3
+          - name: IEN3
+            description: Interrupt Enable for XBAR_OUT3
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: DEN3
+            description: DMA Enable for XBAR_OUT3
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: STS2
+            description: Edge detection status for XBAR_OUT2
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: EDGE2
+            description: Active edge for edge detection on XBAR_OUT2
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: XBARA1_CTRL1_EDGE2
+          - name: IEN2
+            description: Interrupt Enable for XBAR_OUT2
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: DEN2
+            description: DMA Enable for XBAR_OUT2
+            index: 0
+            width: 1
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  XBARA1_CTRL0_EDGE1:
+    enum:
+      _0:
+        description: STS1 never asserts
+        value: 0
+      _1:
+        description: STS1 asserts on rising edges of XBAR_OUT1
+        value: 1
+      _2:
+        description: STS1 asserts on falling edges of XBAR_OUT1
+        value: 2
+      _3:
+        description: STS1 asserts on rising and falling edges of XBAR_OUT1
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  XBARA1_CTRL0_EDGE0:
+    enum:
+      _0:
+        description: STS0 never asserts
+        value: 0
+      _1:
+        description: STS0 asserts on rising edges of XBAR_OUT0
+        value: 1
+      _2:
+        description: STS0 asserts on falling edges of XBAR_OUT0
+        value: 2
+      _3:
+        description: STS0 asserts on rising and falling edges of XBAR_OUT0
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  XBARA1_CTRL1_EDGE3:
+    enum:
+      _0:
+        description: STS3 never asserts
+        value: 0
+      _1:
+        description: STS3 asserts on rising edges of XBAR_OUT3
+        value: 1
+      _2:
+        description: STS3 asserts on falling edges of XBAR_OUT3
+        value: 2
+      _3:
+        description: STS3 asserts on rising and falling edges of XBAR_OUT3
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  XBARA1_CTRL1_EDGE2:
+    enum:
+      _0:
+        description: STS2 never asserts
+        value: 0
+      _1:
+        description: STS2 asserts on rising edges of XBAR_OUT2
+        value: 1
+      _2:
+        description: STS2 asserts on falling edges of XBAR_OUT2
+        value: 2
+      _3:
+        description: STS2 asserts on rising and falling edges of XBAR_OUT2
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

@@ -1,0 +1,564 @@
+---
+structs:
+  tmpsns:
+    description: Temperature Sensor Memory Map
+    instances:
+      - name: TMPSNS
+        address: '0'
+    fields:
+      - name: CTRL0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Temperature Sensor Control Register 0
+        fields:
+          - name: IBIAS_TRIM
+            description: Current bias trim value
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: V_SEL
+            description: Voltage Select
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: TMPSNS_CTRL0_V_SEL
+          - name: SLOPE_CAL
+            description: Ramp slope calibration control
+            index: 0
+            width: 6
+            read: true
+            write: true
+      - name: CTRL0_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Temperature Sensor Control Register 0
+        fields:
+          - name: IBIAS_TRIM
+            description: Current bias trim value
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: V_SEL
+            description: Voltage Select
+            index: 8
+            width: 2
+            read: true
+            write: true
+          - name: SLOPE_CAL
+            description: Ramp slope calibration control
+            index: 0
+            width: 6
+            read: true
+            write: true
+      - name: CTRL0_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) Temperature Sensor Control Register 0
+        fields:
+          - name: IBIAS_TRIM
+            description: Current bias trim value
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: V_SEL
+            description: Voltage Select
+            index: 8
+            width: 2
+            read: true
+            write: true
+          - name: SLOPE_CAL
+            description: Ramp slope calibration control
+            index: 0
+            width: 6
+            read: true
+            write: true
+      - name: CTRL0_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) Temperature Sensor Control Register 0
+        fields:
+          - name: IBIAS_TRIM
+            description: Current bias trim value
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: V_SEL
+            description: Voltage Select
+            index: 8
+            width: 2
+            read: true
+            write: true
+          - name: SLOPE_CAL
+            description: Ramp slope calibration control
+            index: 0
+            width: 6
+            read: true
+            write: true
+      - name: CTRL1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) Temperature Sensor Control Register 1
+        fields:
+          - name: PWD_FULL
+            description: Temperature Sensor Full Power Down
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: RFU
+            description: Read/Writeable field. Reserved for future use
+            index: 24
+            width: 7
+            read: true
+            write: true
+          - name: PWD
+            description: Temperature Sensor Power Down
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: START
+            description: Start Temperature Measurement
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: PANIC_TEMP_IE
+            description: Panic temperature interrupt enable
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: HIGH_TEMP_IE
+            description: High temperature interrupt enable
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: LOW_TEMP_IE
+            description: Low temperature interrupt enable
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: FINISH_IE
+            description: Measurement finished interrupt enable
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: FREQ
+            description: Temperature Measurement Frequency
+            index: 0
+            width: 16
+            read: true
+            write: true
+            type: TMPSNS_CTRL1_FREQ
+      - name: CTRL1_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) Temperature Sensor Control Register 1
+        fields:
+          - name: PWD_FULL
+            description: Temperature Sensor Full Power Down
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: RFU
+            description: Read/Writeable field. Reserved for future use
+            index: 24
+            width: 7
+            read: true
+            write: true
+          - name: PWD
+            description: Temperature Sensor Power Down
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: START
+            description: Start Temperature Measurement
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: PANIC_TEMP_IE
+            description: Panic temperature interrupt enable
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: HIGH_TEMP_IE
+            description: High temperature interrupt enable
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: LOW_TEMP_IE
+            description: Low temperature interrupt enable
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: FINISH_IE
+            description: Measurement finished interrupt enable
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: FREQ
+            description: Temperature Measurement Frequency
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CTRL1_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) Temperature Sensor Control Register 1
+        fields:
+          - name: PWD_FULL
+            description: Temperature Sensor Full Power Down
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: RFU
+            description: Read/Writeable field. Reserved for future use
+            index: 24
+            width: 7
+            read: true
+            write: true
+          - name: PWD
+            description: Temperature Sensor Power Down
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: START
+            description: Start Temperature Measurement
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: PANIC_TEMP_IE
+            description: Panic temperature interrupt enable
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: HIGH_TEMP_IE
+            description: High temperature interrupt enable
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: LOW_TEMP_IE
+            description: Low temperature interrupt enable
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: FINISH_IE
+            description: Measurement finished interrupt enable
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: FREQ
+            description: Temperature Measurement Frequency
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CTRL1_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) Temperature Sensor Control Register 1
+        fields:
+          - name: PWD_FULL
+            description: Temperature Sensor Full Power Down
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: RFU
+            description: Read/Writeable field. Reserved for future use
+            index: 24
+            width: 7
+            read: true
+            write: true
+          - name: PWD
+            description: Temperature Sensor Power Down
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: START
+            description: Start Temperature Measurement
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: PANIC_TEMP_IE
+            description: Panic temperature interrupt enable
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: HIGH_TEMP_IE
+            description: High temperature interrupt enable
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: LOW_TEMP_IE
+            description: Low temperature interrupt enable
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: FINISH_IE
+            description: Measurement finished interrupt enable
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: FREQ
+            description: Temperature Measurement Frequency
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: RANGE0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) Temperature Sensor Range Register 0
+        fields:
+          - name: HIGH_TEMP_VAL
+            description: High temperature threshold value
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: LOW_TEMP_VAL
+            description: Low temperature threshold value
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: RANGE0_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) Temperature Sensor Range Register 0
+        fields:
+          - name: HIGH_TEMP_VAL
+            description: High temperature threshold value
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: LOW_TEMP_VAL
+            description: Low temperature threshold value
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: RANGE0_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) Temperature Sensor Range Register 0
+        fields:
+          - name: HIGH_TEMP_VAL
+            description: High temperature threshold value
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: LOW_TEMP_VAL
+            description: Low temperature threshold value
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: RANGE0_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) Temperature Sensor Range Register 0
+        fields:
+          - name: HIGH_TEMP_VAL
+            description: High temperature threshold value
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: LOW_TEMP_VAL
+            description: Low temperature threshold value
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: RANGE1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) Temperature Sensor Range Register 1
+        fields:
+          - name: PANIC_TEMP_VAL
+            description: Panic temperature threshold value
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: RANGE1_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 52
+        description: (read-write) Temperature Sensor Range Register 1
+        fields:
+          - name: PANIC_TEMP_VAL
+            description: Panic temperature threshold value
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: RANGE1_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 56
+        description: (read-write) Temperature Sensor Range Register 1
+        fields:
+          - name: PANIC_TEMP_VAL
+            description: Panic temperature threshold value
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: RANGE1_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 60
+        description: (read-write) Temperature Sensor Range Register 1
+        fields:
+          - name: PANIC_TEMP_VAL
+            description: Panic temperature threshold value
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: STATUS0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 80
+        description: (read-write) Temperature Sensor Status Register 0
+        fields:
+          - name: PANIC_TEMP
+            description: Panic temperature alarm bit
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: HIGH_TEMP
+            description: High temperature alarm bit
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: LOW_TEMP
+            description: Low temperature alarm bit
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: FINISH
+            description: Temperature measurement complete
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: TEMP_VAL
+            description: Measured temperature value
+            index: 0
+            width: 12
+            read: true
+            write: false
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  TMPSNS_CTRL0_V_SEL:
+    enum:
+      V_SEL_0:
+        description: Normal temperature measuring mode
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMPSNS_CTRL1_FREQ:
+    enum:
+      _0:
+        description: Single Reading Mode. New reading available every time CTRL1[START]
+          bit is set to 1 from 0.
+        value: 0
+      _1:
+        description: Continuous Reading Mode. Next temperature reading taken after
+          programmed number of cycles after current reading is complete.
+        value: 1
+      _2:
+        description: Continuous Reading Mode. Next temperature reading taken after
+          programmed number of cycles after current reading is complete.
+        value: 2
+      _3:
+        description: Continuous Reading Mode. Next temperature reading taken after
+          programmed number of cycles after current reading is complete.
+        value: 3
+      _4:
+        description: Continuous Reading Mode. Next temperature reading taken after
+          programmed number of cycles after current reading is complete.
+        value: 4
+      _5:
+        description: Continuous Reading Mode. Next temperature reading taken after
+          programmed number of cycles after current reading is complete.
+        value: 5
+      _6:
+        description: Continuous Reading Mode. Next temperature reading taken after
+          programmed number of cycles after current reading is complete.
+        value: 6
+      _7:
+        description: Continuous Reading Mode. Next temperature reading taken after
+          programmed number of cycles after current reading is complete.
+        value: 7
+      _8:
+        description: Continuous Reading Mode. Next temperature reading taken after
+          programmed number of cycles after current reading is complete.
+        value: 8
+      _9:
+        description: Continuous Reading Mode. Next temperature reading taken after
+          programmed number of cycles after current reading is complete.
+        value: 9
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t

@@ -1,0 +1,574 @@
+---
+structs:
+  enc1:
+    description: QDC
+    instances:
+      - name: ENC1
+        address: '0x40174000'
+      - name: ENC2
+        address: '0x40178000'
+      - name: ENC3
+        address: '0x4017C000'
+      - name: ENC4
+        address: '0x40180000'
+    fields:
+      - name: CTRL
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 0
+        description: (read-write) Control Register
+        fields:
+          - name: HIRQ
+            description: HOME Signal Transition Interrupt Request
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: HIE
+            description: HOME Interrupt Enable
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: HIP
+            description: Enable HOME to Initialize Position Counters UPOS and LPOS
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: HNE
+            description: Use Negative Edge of HOME Input
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: SWIP
+            description: Software-Triggered Initialization of Position Counters UPOS
+              and LPOS
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: REV
+            description: Enable Reverse Direction Counting
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: PH1
+            description: Enable Signal Phase Count Mode
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: XIRQ
+            description: INDEX Pulse Interrupt Request
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: XIE
+            description: INDEX Pulse Interrupt Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: XIP
+            description: INDEX Triggered Initialization of Position Counters UPOS
+              and LPOS
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: XNE
+            description: Use Negative Edge of INDEX Pulse
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: DIRQ
+            description: Watchdog Timeout Interrupt Request
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: DIE
+            description: Watchdog Timeout Interrupt Enable
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: WDE
+            description: Watchdog Enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: CMPIRQ
+            description: Compare Interrupt Request
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CMPIE
+            description: Compare Interrupt Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: FILT
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 2
+        description: (read-write) Input Filter Register
+        fields:
+          - name: FILT_PRSC
+            description: prescaler divide IPbus clock to FILT clk
+            index: 13
+            width: 3
+            read: true
+            write: true
+          - name: FILT_CNT
+            description: Input Filter Sample Count
+            index: 8
+            width: 3
+            read: true
+            write: true
+          - name: FILT_PER
+            description: Input Filter Sample Period
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: WTR
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 4
+        description: (read-write) Watchdog Timeout Register
+        fields:
+          - name: WDOG
+            description: WDOG
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: POSD
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 6
+        description: (read-write) Position Difference Counter Register
+        fields:
+          - name: POSD
+            description: POSD
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: POSDH
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 8
+        description: (read-write) Position Difference Hold Register
+        fields:
+          - name: POSDH
+            description: POSDH
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: REV
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 10
+        description: (read-write) Revolution Counter Register
+        fields:
+          - name: REV
+            description: REV
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: REVH
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 12
+        description: (read-write) Revolution Hold Register
+        fields:
+          - name: REVH
+            description: REVH
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: UPOS
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 14
+        description: (read-write) Upper Position Counter Register
+        fields:
+          - name: POS
+            description: POS
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: LPOS
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 16
+        description: (read-write) Lower Position Counter Register
+        fields:
+          - name: POS
+            description: POS
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: UPOSH
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 18
+        description: (read-write) Upper Position Hold Register
+        fields:
+          - name: POSH
+            description: POSH
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: LPOSH
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 20
+        description: (read-write) Lower Position Hold Register
+        fields:
+          - name: POSH
+            description: POSH
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: UINIT
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 22
+        description: (read-write) Upper Initialization Register
+        fields:
+          - name: INIT
+            description: INIT
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: LINIT
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 24
+        description: (read-write) Lower Initialization Register
+        fields:
+          - name: INIT
+            description: INIT
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: IMR
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 26
+        description: (read-write) Input Monitor Register
+        fields:
+          - name: FPHA
+            description: FPHA
+            index: 7
+            width: 1
+            read: true
+            write: false
+          - name: FPHB
+            description: FPHB
+            index: 6
+            width: 1
+            read: true
+            write: false
+          - name: FIND
+            description: FIND
+            index: 5
+            width: 1
+            read: true
+            write: false
+          - name: FHOM
+            description: FHOM
+            index: 4
+            width: 1
+            read: true
+            write: false
+          - name: PHA
+            description: PHA
+            index: 3
+            width: 1
+            read: true
+            write: false
+          - name: PHB
+            description: PHB
+            index: 2
+            width: 1
+            read: true
+            write: false
+          - name: INDEX
+            description: INDEX
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: HOME
+            description: HOME
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: TST
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 28
+        description: (read-write) Test Register
+        fields:
+          - name: TEN
+            description: Test Mode Enable
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: TCE
+            description: Test Counter Enable
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: QDN
+            description: Quadrature Decoder Negative Signal
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: TEST_PERIOD
+            description: TEST_PERIOD
+            index: 8
+            width: 5
+            read: true
+            write: true
+          - name: TEST_COUNT
+            description: TEST_COUNT
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: CTRL2
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 30
+        description: (read-write) Control 2 Register
+        fields:
+          - name: SABIRQ
+            description: Simultaneous PHASEA and PHASEB Change Interrupt Request
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: SABIE
+            description: Simultaneous PHASEA and PHASEB Change Interrupt Enable
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: OUTCTL
+            description: Output Control
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: REVMOD
+            description: Revolution Counter Modulus Enable
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: ROIRQ
+            description: Roll-over Interrupt Request
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: ROIE
+            description: Roll-over Interrupt Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: RUIRQ
+            description: Roll-under Interrupt Request
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: RUIE
+            description: Roll-under Interrupt Enable
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: DIR
+            description: Count Direction Flag
+            index: 3
+            width: 1
+            read: true
+            write: false
+          - name: MOD
+            description: Enable Modulo Counting
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: UPDPOS
+            description: Update Position Registers
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: UPDHLD
+            description: Update Hold Registers
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: UMOD
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 32
+        description: (read-write) Upper Modulus Register
+        fields:
+          - name: MOD
+            description: MOD
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: LMOD
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 34
+        description: (read-write) Lower Modulus Register
+        fields:
+          - name: MOD
+            description: MOD
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: UCOMP
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 36
+        description: (read-write) Upper Position Compare Register
+        fields:
+          - name: COMP
+            description: COMP
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: LCOMP
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 38
+        description: (read-write) Lower Position Compare Register
+        fields:
+          - name: COMP
+            description: COMP
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: LASTEDGE
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 40
+        description: (read-write) Last Edge Time Register
+        fields:
+          - name: LASTEDGE
+            description: Last Edge Time Counter
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: LASTEDGEH
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 42
+        description: (read-write) Last Edge Time Hold Register
+        fields:
+          - name: LASTEDGEH
+            description: Last Edge Time Hold
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: POSDPER
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 44
+        description: (read-write) Position Difference Period Counter Register
+        fields:
+          - name: POSDPER
+            description: Position difference period
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: POSDPERBFR
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 46
+        description: (read-write) Position Difference Period Buffer Register
+        fields:
+          - name: POSDPERBFR
+            description: Position difference period buffer
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: POSDPERH
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 48
+        description: (read-write) Position Difference Period Hold Register
+        fields:
+          - name: POSDPERH
+            description: Position difference period hold
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: CTRL3
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 50
+        description: (read-write) Control 3 Register
+        fields:
+          - name: PRSC
+            description: Prescaler
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: PMEN
+            description: Period measurement function enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums: {}

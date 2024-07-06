@@ -1,0 +1,531 @@
+---
+structs:
+  pgmc_cpc0:
+    description: PGMC_CPC
+    instances:
+      - name: PGMC_CPC0
+        address: '0x40C89000'
+      - name: PGMC_CPC1
+        address: '0x40C89400'
+    fields:
+      - name: CPC_AUTHEN_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) CPC Authentication Control
+        fields:
+          - name: LOCK_CFG
+            description: Configuration lock
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: LOCK_LIST
+            description: White list lock
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: WHITE_LIST
+            description: Domain ID white list
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: LOCK_SETTING
+            description: Lock NONSECURE and USER
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: NONSECURE
+            description: Allow non-secure mode access
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: USER
+            description: Allow user mode access
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CPC_CORE_MODE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) CPC Core Mode
+        fields:
+          - name: CTRL_MODE
+            description: Control mode. This field is locked by AUTHEN_CTRL[LOCK_CFG]
+              field.
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: PGMC_CPC0_CPC_CORE_MODE_CTRL_MODE
+      - name: CPC_CORE_POWER_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) CPC core power control
+        fields:
+          - name: ISO_OFF_SOFT
+            description: Software isolation off trigger
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: PSW_ON_SOFT
+            description: Software power on trigger
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: PSW_OFF_SOFT
+            description: Software power off trigger
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: ISO_ON_SOFT
+            description: Software isolation on trigger
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: PWR_OFF_AT_SUSPEND
+            description: Power off when domain enters SUSPEND mode
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: PWR_OFF_AT_STOP
+            description: Power off when domain enters STOP mode
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: PWR_OFF_AT_WAIT
+            description: Power off when domain enters WAIT mode
+            index: 1
+            width: 1
+            read: true
+            write: true
+      - name: CPC_FLAG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) CPC flag
+        fields:
+          - name: CORE_PDN_FLAG
+            description: set to 1 after core power switch off, cleared by writing
+              1
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CPC_CACHE_MODE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 64
+        description: (read-write) CPC Cache Mode
+        fields:
+          - name: CTRL_MODE
+            description: Control mode. This field is locked by AUTHEN_CTRL[LOCK_CFG]
+              field.
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: PGMC_CPC0_CPC_CACHE_MODE_CTRL_MODE
+      - name: CPC_CACHE_CM_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 68
+        description: (read-write) CPC cache CPU mode control
+        fields:
+          - name: MLPL_SOFT
+            description: Memory Low Power Level (MLPL) software change request, keep
+              1 until MLPL transition complete
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: MLPL_AT_SUSPEND
+            description: Memory Low Power Level (MLPL) at SUSPEND mode. This field
+              is locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_STOP
+            description: Memory Low Power Level (MLPL) at STOP mode. This field is
+              locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_WAIT
+            description: Memory Low Power Level (MLPL) at WAIT mode. This field is
+              locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_RUN
+            description: Memory Low Power Level (MLPL) at RUN mode
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: CPC_CACHE_SP_CTRL_0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 72
+        description: (read-write) CPC cache Setpoint control 0
+        fields:
+          - name: MLPL_AT_SP7
+            description: Memory Low Power Level (MLPL) at Setpoint 7. This field is
+              locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 28
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP6
+            description: Memory Low Power Level (MLPL) at Setpoint 6. This field is
+              locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 24
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP5
+            description: Memory Low Power Level (MLPL) at Setpoint 5. This field is
+              locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 20
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP4
+            description: Memory Low Power Level (MLPL) at Setpoint 4. This field is
+              locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP3
+            description: Memory Low Power Level (MLPL) at Setpoint 3. This field is
+              locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP2
+            description: Memory Low Power Level (MLPL) at Setpoint 2. This field is
+              locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP1
+            description: Memory Low Power Level (MLPL) at Setpoint 1. This field is
+              locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP0
+            description: Memory Low Power Level (MLPL) at Setpoint 0. This field is
+              locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: CPC_CACHE_SP_CTRL_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 76
+        description: (read-write) CPC cache Setpoint control 1
+        fields:
+          - name: MLPL_AT_SP15
+            description: Memory Low Power Level (MLPL) at Setpoint 15. This field
+              is locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 28
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP14
+            description: Memory Low Power Level (MLPL) at Setpoint 14. This field
+              is locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 24
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP13
+            description: Memory Low Power Level (MLPL) at Setpoint 13. This field
+              is locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 20
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP12
+            description: Memory Low Power Level (MLPL) at Setpoint 12. This field
+              is locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP11
+            description: Memory Low Power Level (MLPL) at Setpoint 11. This field
+              is locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP10
+            description: Memory Low Power Level (MLPL) at Setpoint 10. This field
+              is locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP9
+            description: Memory Low Power Level (MLPL) at Setpoint 9. This field is
+              locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP8
+            description: Memory Low Power Level (MLPL) at Setpoint 8. This field is
+              locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: CPC_LMEM_MODE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 192
+        description: (read-write) CPC local memory Mode
+        fields:
+          - name: CTRL_MODE
+            description: Control mode. This field is locked by AUTHEN_CTRL[LOCK_CFG]
+              field.
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: PGMC_CPC0_CPC_LMEM_MODE_CTRL_MODE
+      - name: CPC_LMEM_CM_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 196
+        description: (read-write) CPC local memory CPU mode control
+        fields:
+          - name: MLPL_SOFT
+            description: Memory Low Power Level (MLPL) software change request, keep
+              1 until MLPL transition complete
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: MLPL_AT_SUSPEND
+            description: Memory Low Power Level (MLPL) at SUSPEND mode. This field
+              is locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_STOP
+            description: Memory Low Power Level (MLPL) at STOP mode. This field is
+              locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_WAIT
+            description: Memory Low Power Level (MLPL) at WAIT mode. This field is
+              locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_RUN
+            description: Memory Low Power Level (MLPL) at RUN mode
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: CPC_LMEM_SP_CTRL_0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 200
+        description: (read-write) CPC local memory Setpoint control 0
+        fields:
+          - name: MLPL_AT_SP7
+            description: Memory Low Power Level (MLPL) at Setpoint 7. This field is
+              locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 28
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP6
+            description: Memory Low Power Level (MLPL) at Setpoint 6. This field is
+              locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 24
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP5
+            description: Memory Low Power Level (MLPL) at Setpoint 5. This field is
+              locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 20
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP4
+            description: Memory Low Power Level (MLPL) at Setpoint 4. This field is
+              locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP3
+            description: Memory Low Power Level (MLPL) at Setpoint 3. This field is
+              locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP2
+            description: Memory Low Power Level (MLPL) at Setpoint 2. This field is
+              locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP1
+            description: Memory Low Power Level (MLPL) at Setpoint 1. This field is
+              locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP0
+            description: Memory Low Power Level (MLPL) at Setpoint 0. This field is
+              locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: CPC_LMEM_SP_CTRL_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 204
+        description: (read-write) CPC local memory Setpoint control 1
+        fields:
+          - name: MLPL_AT_SP15
+            description: Memory Low Power Level (MLPL) at Setpoint 15. This field
+              is locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 28
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP14
+            description: Memory Low Power Level (MLPL) at Setpoint 14. This field
+              is locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 24
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP13
+            description: Memory Low Power Level (MLPL) at Setpoint 13. This field
+              is locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 20
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP12
+            description: Memory Low Power Level (MLPL) at Setpoint 12. This field
+              is locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP11
+            description: Memory Low Power Level (MLPL) at Setpoint 11. This field
+              is locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP10
+            description: Memory Low Power Level (MLPL) at Setpoint 10. This field
+              is locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP9
+            description: Memory Low Power Level (MLPL) at Setpoint 9. This field is
+              locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: MLPL_AT_SP8
+            description: Memory Low Power Level (MLPL) at Setpoint 8. This field is
+              locked by AUTHEN_CTRL[LOCK_CFG] field.
+            index: 0
+            width: 4
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  PGMC_CPC0_CPC_CORE_MODE_CTRL_MODE:
+    enum:
+      _0:
+        description: Not affected by any low power mode
+        value: 0
+      _1:
+        description: Controlled by CPU power mode of the domain
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PGMC_CPC0_CPC_CACHE_MODE_CTRL_MODE:
+    enum:
+      _0:
+        description: Not affected by any low power mode
+        value: 0
+      _1:
+        description: Controlled by CPU power mode of the domain
+        value: 1
+      _2:
+        description: Controlled by Setpoint
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PGMC_CPC0_CPC_LMEM_MODE_CTRL_MODE:
+    enum:
+      _0:
+        description: Not affected by any low power mode
+        value: 0
+      _1:
+        description: Controlled by CPU power mode of the domain
+        value: 1
+      _2:
+        description: Controlled by Setpoint
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

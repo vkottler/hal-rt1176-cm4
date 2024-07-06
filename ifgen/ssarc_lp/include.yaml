@@ -1,0 +1,2564 @@
+---
+structs:
+  ssarc_lp:
+    description: SSARC Registers
+    instances:
+      - name: SSARC_LP
+        address: '0x40CB8000'
+    fields:
+      - name: DESC_CTRL0_0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Descriptor Control0 0 Register
+        fields:
+          - name: RT_ORDER
+            description: Restore order
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: SV_ORDER
+            description: Save Order
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: END
+            description: End index
+            index: 10
+            width: 10
+            read: true
+            write: true
+          - name: START
+            description: Start index
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: DESC_CTRL1_0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Descriptor Control1 0 Register
+        fields:
+          - name: DL
+            description: Domain lock
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: WL
+            description: Write Lock
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RL
+            description: Read Lock
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: CPUD
+            description: CPU Domain
+            index: 16
+            width: 2
+            read: true
+            write: true
+          - name: RT_PRIORITY
+            description: Restore Priority
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: SV_PRIORITY
+            description: Save Priority
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: GP_EN
+            description: Group Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: POWER_DOMAIN
+            description: This field describes the mapping (0-7) to external request
+              signals from different domains
+            index: 4
+            width: 3
+            read: true
+            write: true
+            type: SSARC_LP_DESC_CTRL1_0_POWER_DOMAIN
+          - name: SW_TRIG_RT
+            description: Software trigger restore
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SW_TRIG_SV
+            description: Software trigger save
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DESC_ADDR_UP_0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) Descriptor Address Up 0 Register
+        fields:
+          - name: ADDR_UP
+            description: Address field (High)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_ADDR_DOWN_0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) Descriptor Address Down 0 Register
+        fields:
+          - name: ADDR_DOWN
+            description: Address field (Low)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_CTRL0_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) Descriptor Control0 1 Register
+        fields:
+          - name: RT_ORDER
+            description: Restore order
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: SV_ORDER
+            description: Save Order
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: END
+            description: End index
+            index: 10
+            width: 10
+            read: true
+            write: true
+          - name: START
+            description: Start index
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: DESC_CTRL1_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) Descriptor Control1 1 Register
+        fields:
+          - name: DL
+            description: Domain lock
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: WL
+            description: Write Lock
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RL
+            description: Read Lock
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: CPUD
+            description: CPU Domain
+            index: 16
+            width: 2
+            read: true
+            write: true
+          - name: RT_PRIORITY
+            description: Restore Priority
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: SV_PRIORITY
+            description: Save Priority
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: GP_EN
+            description: Group Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: POWER_DOMAIN
+            description: This field describes the mapping (0-7) to external request
+              signals from different domains
+            index: 4
+            width: 3
+            read: true
+            write: true
+            type: SSARC_LP_DESC_CTRL1_1_POWER_DOMAIN
+          - name: SW_TRIG_RT
+            description: Software trigger restore
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SW_TRIG_SV
+            description: Software trigger save
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DESC_ADDR_UP_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) Descriptor Address Up 1 Register
+        fields:
+          - name: ADDR_UP
+            description: Address field (High)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_ADDR_DOWN_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) Descriptor Address Down 1 Register
+        fields:
+          - name: ADDR_DOWN
+            description: Address field (Low)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_CTRL0_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 64
+        description: (read-write) Descriptor Control0 2 Register
+        fields:
+          - name: RT_ORDER
+            description: Restore order
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: SV_ORDER
+            description: Save Order
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: END
+            description: End index
+            index: 10
+            width: 10
+            read: true
+            write: true
+          - name: START
+            description: Start index
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: DESC_CTRL1_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 68
+        description: (read-write) Descriptor Control1 2 Register
+        fields:
+          - name: DL
+            description: Domain lock
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: WL
+            description: Write Lock
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RL
+            description: Read Lock
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: CPUD
+            description: CPU Domain
+            index: 16
+            width: 2
+            read: true
+            write: true
+          - name: RT_PRIORITY
+            description: Restore Priority
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: SV_PRIORITY
+            description: Save Priority
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: GP_EN
+            description: Group Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: POWER_DOMAIN
+            description: This field describes the mapping (0-7) to external request
+              signals from different domains
+            index: 4
+            width: 3
+            read: true
+            write: true
+            type: SSARC_LP_DESC_CTRL1_2_POWER_DOMAIN
+          - name: SW_TRIG_RT
+            description: Software trigger restore
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SW_TRIG_SV
+            description: Software trigger save
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DESC_ADDR_UP_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 72
+        description: (read-write) Descriptor Address Up 2 Register
+        fields:
+          - name: ADDR_UP
+            description: Address field (High)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_ADDR_DOWN_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 76
+        description: (read-write) Descriptor Address Down 2 Register
+        fields:
+          - name: ADDR_DOWN
+            description: Address field (Low)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_CTRL0_3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 96
+        description: (read-write) Descriptor Control0 3 Register
+        fields:
+          - name: RT_ORDER
+            description: Restore order
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: SV_ORDER
+            description: Save Order
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: END
+            description: End index
+            index: 10
+            width: 10
+            read: true
+            write: true
+          - name: START
+            description: Start index
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: DESC_CTRL1_3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 100
+        description: (read-write) Descriptor Control1 3 Register
+        fields:
+          - name: DL
+            description: Domain lock
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: WL
+            description: Write Lock
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RL
+            description: Read Lock
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: CPUD
+            description: CPU Domain
+            index: 16
+            width: 2
+            read: true
+            write: true
+          - name: RT_PRIORITY
+            description: Restore Priority
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: SV_PRIORITY
+            description: Save Priority
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: GP_EN
+            description: Group Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: POWER_DOMAIN
+            description: This field describes the mapping (0-7) to external request
+              signals from different domains
+            index: 4
+            width: 3
+            read: true
+            write: true
+            type: SSARC_LP_DESC_CTRL1_3_POWER_DOMAIN
+          - name: SW_TRIG_RT
+            description: Software trigger restore
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SW_TRIG_SV
+            description: Software trigger save
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DESC_ADDR_UP_3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 104
+        description: (read-write) Descriptor Address Up 3 Register
+        fields:
+          - name: ADDR_UP
+            description: Address field (High)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_ADDR_DOWN_3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 108
+        description: (read-write) Descriptor Address Down 3 Register
+        fields:
+          - name: ADDR_DOWN
+            description: Address field (Low)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_CTRL0_4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 128
+        description: (read-write) Descriptor Control0 4 Register
+        fields:
+          - name: RT_ORDER
+            description: Restore order
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: SV_ORDER
+            description: Save Order
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: END
+            description: End index
+            index: 10
+            width: 10
+            read: true
+            write: true
+          - name: START
+            description: Start index
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: DESC_CTRL1_4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 132
+        description: (read-write) Descriptor Control1 4 Register
+        fields:
+          - name: DL
+            description: Domain lock
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: WL
+            description: Write Lock
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RL
+            description: Read Lock
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: CPUD
+            description: CPU Domain
+            index: 16
+            width: 2
+            read: true
+            write: true
+          - name: RT_PRIORITY
+            description: Restore Priority
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: SV_PRIORITY
+            description: Save Priority
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: GP_EN
+            description: Group Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: POWER_DOMAIN
+            description: This field describes the mapping (0-7) to external request
+              signals from different domains
+            index: 4
+            width: 3
+            read: true
+            write: true
+            type: SSARC_LP_DESC_CTRL1_4_POWER_DOMAIN
+          - name: SW_TRIG_RT
+            description: Software trigger restore
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SW_TRIG_SV
+            description: Software trigger save
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DESC_ADDR_UP_4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 136
+        description: (read-write) Descriptor Address Up 4 Register
+        fields:
+          - name: ADDR_UP
+            description: Address field (High)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_ADDR_DOWN_4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 140
+        description: (read-write) Descriptor Address Down 4 Register
+        fields:
+          - name: ADDR_DOWN
+            description: Address field (Low)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_CTRL0_5
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 160
+        description: (read-write) Descriptor Control0 5 Register
+        fields:
+          - name: RT_ORDER
+            description: Restore order
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: SV_ORDER
+            description: Save Order
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: END
+            description: End index
+            index: 10
+            width: 10
+            read: true
+            write: true
+          - name: START
+            description: Start index
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: DESC_CTRL1_5
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 164
+        description: (read-write) Descriptor Control1 5 Register
+        fields:
+          - name: DL
+            description: Domain lock
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: WL
+            description: Write Lock
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RL
+            description: Read Lock
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: CPUD
+            description: CPU Domain
+            index: 16
+            width: 2
+            read: true
+            write: true
+          - name: RT_PRIORITY
+            description: Restore Priority
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: SV_PRIORITY
+            description: Save Priority
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: GP_EN
+            description: Group Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: POWER_DOMAIN
+            description: This field describes the mapping (0-7) to external request
+              signals from different domains
+            index: 4
+            width: 3
+            read: true
+            write: true
+            type: SSARC_LP_DESC_CTRL1_5_POWER_DOMAIN
+          - name: SW_TRIG_RT
+            description: Software trigger restore
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SW_TRIG_SV
+            description: Software trigger save
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DESC_ADDR_UP_5
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 168
+        description: (read-write) Descriptor Address Up 5 Register
+        fields:
+          - name: ADDR_UP
+            description: Address field (High)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_ADDR_DOWN_5
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 172
+        description: (read-write) Descriptor Address Down 5 Register
+        fields:
+          - name: ADDR_DOWN
+            description: Address field (Low)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_CTRL0_6
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 192
+        description: (read-write) Descriptor Control0 6 Register
+        fields:
+          - name: RT_ORDER
+            description: Restore order
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: SV_ORDER
+            description: Save Order
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: END
+            description: End index
+            index: 10
+            width: 10
+            read: true
+            write: true
+          - name: START
+            description: Start index
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: DESC_CTRL1_6
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 196
+        description: (read-write) Descriptor Control1 6 Register
+        fields:
+          - name: DL
+            description: Domain lock
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: WL
+            description: Write Lock
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RL
+            description: Read Lock
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: CPUD
+            description: CPU Domain
+            index: 16
+            width: 2
+            read: true
+            write: true
+          - name: RT_PRIORITY
+            description: Restore Priority
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: SV_PRIORITY
+            description: Save Priority
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: GP_EN
+            description: Group Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: POWER_DOMAIN
+            description: This field describes the mapping (0-7) to external request
+              signals from different domains
+            index: 4
+            width: 3
+            read: true
+            write: true
+            type: SSARC_LP_DESC_CTRL1_6_POWER_DOMAIN
+          - name: SW_TRIG_RT
+            description: Software trigger restore
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SW_TRIG_SV
+            description: Software trigger save
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DESC_ADDR_UP_6
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 200
+        description: (read-write) Descriptor Address Up 6 Register
+        fields:
+          - name: ADDR_UP
+            description: Address field (High)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_ADDR_DOWN_6
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 204
+        description: (read-write) Descriptor Address Down 6 Register
+        fields:
+          - name: ADDR_DOWN
+            description: Address field (Low)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_CTRL0_7
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 224
+        description: (read-write) Descriptor Control0 7 Register
+        fields:
+          - name: RT_ORDER
+            description: Restore order
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: SV_ORDER
+            description: Save Order
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: END
+            description: End index
+            index: 10
+            width: 10
+            read: true
+            write: true
+          - name: START
+            description: Start index
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: DESC_CTRL1_7
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 228
+        description: (read-write) Descriptor Control1 7 Register
+        fields:
+          - name: DL
+            description: Domain lock
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: WL
+            description: Write Lock
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RL
+            description: Read Lock
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: CPUD
+            description: CPU Domain
+            index: 16
+            width: 2
+            read: true
+            write: true
+          - name: RT_PRIORITY
+            description: Restore Priority
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: SV_PRIORITY
+            description: Save Priority
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: GP_EN
+            description: Group Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: POWER_DOMAIN
+            description: This field describes the mapping (0-7) to external request
+              signals from different domains
+            index: 4
+            width: 3
+            read: true
+            write: true
+            type: SSARC_LP_DESC_CTRL1_7_POWER_DOMAIN
+          - name: SW_TRIG_RT
+            description: Software trigger restore
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SW_TRIG_SV
+            description: Software trigger save
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DESC_ADDR_UP_7
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 232
+        description: (read-write) Descriptor Address Up 7 Register
+        fields:
+          - name: ADDR_UP
+            description: Address field (High)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_ADDR_DOWN_7
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 236
+        description: (read-write) Descriptor Address Down 7 Register
+        fields:
+          - name: ADDR_DOWN
+            description: Address field (Low)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_CTRL0_8
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 256
+        description: (read-write) Descriptor Control0 8 Register
+        fields:
+          - name: RT_ORDER
+            description: Restore order
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: SV_ORDER
+            description: Save Order
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: END
+            description: End index
+            index: 10
+            width: 10
+            read: true
+            write: true
+          - name: START
+            description: Start index
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: DESC_CTRL1_8
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 260
+        description: (read-write) Descriptor Control1 8 Register
+        fields:
+          - name: DL
+            description: Domain lock
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: WL
+            description: Write Lock
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RL
+            description: Read Lock
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: CPUD
+            description: CPU Domain
+            index: 16
+            width: 2
+            read: true
+            write: true
+          - name: RT_PRIORITY
+            description: Restore Priority
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: SV_PRIORITY
+            description: Save Priority
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: GP_EN
+            description: Group Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: POWER_DOMAIN
+            description: This field describes the mapping (0-7) to external request
+              signals from different domains
+            index: 4
+            width: 3
+            read: true
+            write: true
+            type: SSARC_LP_DESC_CTRL1_8_POWER_DOMAIN
+          - name: SW_TRIG_RT
+            description: Software trigger restore
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SW_TRIG_SV
+            description: Software trigger save
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DESC_ADDR_UP_8
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 264
+        description: (read-write) Descriptor Address Up 8 Register
+        fields:
+          - name: ADDR_UP
+            description: Address field (High)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_ADDR_DOWN_8
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 268
+        description: (read-write) Descriptor Address Down 8 Register
+        fields:
+          - name: ADDR_DOWN
+            description: Address field (Low)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_CTRL0_9
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 288
+        description: (read-write) Descriptor Control0 9 Register
+        fields:
+          - name: RT_ORDER
+            description: Restore order
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: SV_ORDER
+            description: Save Order
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: END
+            description: End index
+            index: 10
+            width: 10
+            read: true
+            write: true
+          - name: START
+            description: Start index
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: DESC_CTRL1_9
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 292
+        description: (read-write) Descriptor Control1 9 Register
+        fields:
+          - name: DL
+            description: Domain lock
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: WL
+            description: Write Lock
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RL
+            description: Read Lock
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: CPUD
+            description: CPU Domain
+            index: 16
+            width: 2
+            read: true
+            write: true
+          - name: RT_PRIORITY
+            description: Restore Priority
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: SV_PRIORITY
+            description: Save Priority
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: GP_EN
+            description: Group Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: POWER_DOMAIN
+            description: This field describes the mapping (0-7) to external request
+              signals from different domains
+            index: 4
+            width: 3
+            read: true
+            write: true
+            type: SSARC_LP_DESC_CTRL1_9_POWER_DOMAIN
+          - name: SW_TRIG_RT
+            description: Software trigger restore
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SW_TRIG_SV
+            description: Software trigger save
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DESC_ADDR_UP_9
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 296
+        description: (read-write) Descriptor Address Up 9 Register
+        fields:
+          - name: ADDR_UP
+            description: Address field (High)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_ADDR_DOWN_9
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 300
+        description: (read-write) Descriptor Address Down 9 Register
+        fields:
+          - name: ADDR_DOWN
+            description: Address field (Low)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_CTRL0_10
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 320
+        description: (read-write) Descriptor Control0 10 Register
+        fields:
+          - name: RT_ORDER
+            description: Restore order
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: SV_ORDER
+            description: Save Order
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: END
+            description: End index
+            index: 10
+            width: 10
+            read: true
+            write: true
+          - name: START
+            description: Start index
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: DESC_CTRL1_10
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 324
+        description: (read-write) Descriptor Control1 10 Register
+        fields:
+          - name: DL
+            description: Domain lock
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: WL
+            description: Write Lock
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RL
+            description: Read Lock
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: CPUD
+            description: CPU Domain
+            index: 16
+            width: 2
+            read: true
+            write: true
+          - name: RT_PRIORITY
+            description: Restore Priority
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: SV_PRIORITY
+            description: Save Priority
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: GP_EN
+            description: Group Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: POWER_DOMAIN
+            description: This field describes the mapping (0-7) to external request
+              signals from different domains
+            index: 4
+            width: 3
+            read: true
+            write: true
+            type: SSARC_LP_DESC_CTRL1_10_POWER_DOMAIN
+          - name: SW_TRIG_RT
+            description: Software trigger restore
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SW_TRIG_SV
+            description: Software trigger save
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DESC_ADDR_UP_10
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 328
+        description: (read-write) Descriptor Address Up 10 Register
+        fields:
+          - name: ADDR_UP
+            description: Address field (High)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_ADDR_DOWN_10
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 332
+        description: (read-write) Descriptor Address Down 10 Register
+        fields:
+          - name: ADDR_DOWN
+            description: Address field (Low)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_CTRL0_11
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 352
+        description: (read-write) Descriptor Control0 11 Register
+        fields:
+          - name: RT_ORDER
+            description: Restore order
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: SV_ORDER
+            description: Save Order
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: END
+            description: End index
+            index: 10
+            width: 10
+            read: true
+            write: true
+          - name: START
+            description: Start index
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: DESC_CTRL1_11
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 356
+        description: (read-write) Descriptor Control1 11 Register
+        fields:
+          - name: DL
+            description: Domain lock
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: WL
+            description: Write Lock
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RL
+            description: Read Lock
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: CPUD
+            description: CPU Domain
+            index: 16
+            width: 2
+            read: true
+            write: true
+          - name: RT_PRIORITY
+            description: Restore Priority
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: SV_PRIORITY
+            description: Save Priority
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: GP_EN
+            description: Group Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: POWER_DOMAIN
+            description: This field describes the mapping (0-7) to external request
+              signals from different domains
+            index: 4
+            width: 3
+            read: true
+            write: true
+            type: SSARC_LP_DESC_CTRL1_11_POWER_DOMAIN
+          - name: SW_TRIG_RT
+            description: Software trigger restore
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SW_TRIG_SV
+            description: Software trigger save
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DESC_ADDR_UP_11
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 360
+        description: (read-write) Descriptor Address Up 11 Register
+        fields:
+          - name: ADDR_UP
+            description: Address field (High)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_ADDR_DOWN_11
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 364
+        description: (read-write) Descriptor Address Down 11 Register
+        fields:
+          - name: ADDR_DOWN
+            description: Address field (Low)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_CTRL0_12
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 384
+        description: (read-write) Descriptor Control0 12 Register
+        fields:
+          - name: RT_ORDER
+            description: Restore order
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: SV_ORDER
+            description: Save Order
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: END
+            description: End index
+            index: 10
+            width: 10
+            read: true
+            write: true
+          - name: START
+            description: Start index
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: DESC_CTRL1_12
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 388
+        description: (read-write) Descriptor Control1 12 Register
+        fields:
+          - name: DL
+            description: Domain lock
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: WL
+            description: Write Lock
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RL
+            description: Read Lock
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: CPUD
+            description: CPU Domain
+            index: 16
+            width: 2
+            read: true
+            write: true
+          - name: RT_PRIORITY
+            description: Restore Priority
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: SV_PRIORITY
+            description: Save Priority
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: GP_EN
+            description: Group Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: POWER_DOMAIN
+            description: This field describes the mapping (0-7) to external request
+              signals from different domains
+            index: 4
+            width: 3
+            read: true
+            write: true
+            type: SSARC_LP_DESC_CTRL1_12_POWER_DOMAIN
+          - name: SW_TRIG_RT
+            description: Software trigger restore
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SW_TRIG_SV
+            description: Software trigger save
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DESC_ADDR_UP_12
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 392
+        description: (read-write) Descriptor Address Up 12 Register
+        fields:
+          - name: ADDR_UP
+            description: Address field (High)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_ADDR_DOWN_12
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 396
+        description: (read-write) Descriptor Address Down 12 Register
+        fields:
+          - name: ADDR_DOWN
+            description: Address field (Low)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_CTRL0_13
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 416
+        description: (read-write) Descriptor Control0 13 Register
+        fields:
+          - name: RT_ORDER
+            description: Restore order
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: SV_ORDER
+            description: Save Order
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: END
+            description: End index
+            index: 10
+            width: 10
+            read: true
+            write: true
+          - name: START
+            description: Start index
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: DESC_CTRL1_13
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 420
+        description: (read-write) Descriptor Control1 13 Register
+        fields:
+          - name: DL
+            description: Domain lock
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: WL
+            description: Write Lock
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RL
+            description: Read Lock
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: CPUD
+            description: CPU Domain
+            index: 16
+            width: 2
+            read: true
+            write: true
+          - name: RT_PRIORITY
+            description: Restore Priority
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: SV_PRIORITY
+            description: Save Priority
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: GP_EN
+            description: Group Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: POWER_DOMAIN
+            description: This field describes the mapping (0-7) to external request
+              signals from different domains
+            index: 4
+            width: 3
+            read: true
+            write: true
+            type: SSARC_LP_DESC_CTRL1_13_POWER_DOMAIN
+          - name: SW_TRIG_RT
+            description: Software trigger restore
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SW_TRIG_SV
+            description: Software trigger save
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DESC_ADDR_UP_13
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 424
+        description: (read-write) Descriptor Address Up 13 Register
+        fields:
+          - name: ADDR_UP
+            description: Address field (High)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_ADDR_DOWN_13
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 428
+        description: (read-write) Descriptor Address Down 13 Register
+        fields:
+          - name: ADDR_DOWN
+            description: Address field (Low)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_CTRL0_14
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 448
+        description: (read-write) Descriptor Control0 14 Register
+        fields:
+          - name: RT_ORDER
+            description: Restore order
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: SV_ORDER
+            description: Save Order
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: END
+            description: End index
+            index: 10
+            width: 10
+            read: true
+            write: true
+          - name: START
+            description: Start index
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: DESC_CTRL1_14
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 452
+        description: (read-write) Descriptor Control1 14 Register
+        fields:
+          - name: DL
+            description: Domain lock
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: WL
+            description: Write Lock
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RL
+            description: Read Lock
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: CPUD
+            description: CPU Domain
+            index: 16
+            width: 2
+            read: true
+            write: true
+          - name: RT_PRIORITY
+            description: Restore Priority
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: SV_PRIORITY
+            description: Save Priority
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: GP_EN
+            description: Group Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: POWER_DOMAIN
+            description: This field describes the mapping (0-7) to external request
+              signals from different domains
+            index: 4
+            width: 3
+            read: true
+            write: true
+            type: SSARC_LP_DESC_CTRL1_14_POWER_DOMAIN
+          - name: SW_TRIG_RT
+            description: Software trigger restore
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SW_TRIG_SV
+            description: Software trigger save
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DESC_ADDR_UP_14
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 456
+        description: (read-write) Descriptor Address Up 14 Register
+        fields:
+          - name: ADDR_UP
+            description: Address field (High)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_ADDR_DOWN_14
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 460
+        description: (read-write) Descriptor Address Down 14 Register
+        fields:
+          - name: ADDR_DOWN
+            description: Address field (Low)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_CTRL0_15
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 480
+        description: (read-write) Descriptor Control0 15 Register
+        fields:
+          - name: RT_ORDER
+            description: Restore order
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: SV_ORDER
+            description: Save Order
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: END
+            description: End index
+            index: 10
+            width: 10
+            read: true
+            write: true
+          - name: START
+            description: Start index
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: DESC_CTRL1_15
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 484
+        description: (read-write) Descriptor Control1 15 Register
+        fields:
+          - name: DL
+            description: Domain lock
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: WL
+            description: Write Lock
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RL
+            description: Read Lock
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: CPUD
+            description: CPU Domain
+            index: 16
+            width: 2
+            read: true
+            write: true
+          - name: RT_PRIORITY
+            description: Restore Priority
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: SV_PRIORITY
+            description: Save Priority
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: GP_EN
+            description: Group Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: POWER_DOMAIN
+            description: This field describes the mapping (0-7) to external request
+              signals from different domains
+            index: 4
+            width: 3
+            read: true
+            write: true
+            type: SSARC_LP_DESC_CTRL1_15_POWER_DOMAIN
+          - name: SW_TRIG_RT
+            description: Software trigger restore
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SW_TRIG_SV
+            description: Software trigger save
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DESC_ADDR_UP_15
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 488
+        description: (read-write) Descriptor Address Up 15 Register
+        fields:
+          - name: ADDR_UP
+            description: Address field (High)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DESC_ADDR_DOWN_15
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 492
+        description: (read-write) Descriptor Address Down 15 Register
+        fields:
+          - name: ADDR_DOWN
+            description: Address field (Low)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 512
+        description: (read-write) Control Register
+        fields:
+          - name: SW_RESET
+            description: Software reset
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: DIS_HW_REQ
+            description: Save/Restore request disable
+            index: 27
+            width: 1
+            read: true
+            write: true
+      - name: INT_STATUS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 516
+        description: (read-write) Interrupt Status Register
+        fields:
+          - name: ADDR_ERR
+            description: Address Error field
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: AHB_ERR
+            description: AHB Error field
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: SW_REQ_DONE
+            description: Software Request Done
+            index: 29
+            width: 1
+            read: true
+            write: false
+          - name: TIMEOUT
+            description: Timeout field
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: GROUP_CONFLICT
+            description: Group Conflict field
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: AHB_RESP
+            description: AHB Bus response field
+            index: 10
+            width: 2
+            read: true
+            write: false
+          - name: ERR_INDEX
+            description: Error Index
+            index: 0
+            width: 10
+            read: true
+            write: false
+      - name: HP_TIMEOUT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 524
+        description: (read-write) HP Timeout Register
+        fields:
+          - name: TIMEOUT_VALUE
+            description: Time out value
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: HW_GROUP_PENDING
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 540
+        description: (read-write) Hardware Request Pending Register
+        fields:
+          - name: HW_RESTORE_PENDING
+            description: This field indicates which groups are pending for restore
+              from hardware request
+            index: 16
+            width: 16
+            read: true
+            write: false
+          - name: HW_SAVE_PENDING
+            description: This field indicates which groups are pending for save from
+              hardware request
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: SW_GROUP_PENDING
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 544
+        description: (read-write) Software Request Pending Register
+        fields:
+          - name: SW_RESTORE_PENDING
+            description: This field indicates which groups are pending for restore
+              from software request
+            index: 16
+            width: 16
+            read: true
+            write: false
+          - name: SW_SAVE_PENDING
+            description: This field indicates which groups are pending for save from
+              software request
+            index: 0
+            width: 16
+            read: true
+            write: false
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  SSARC_LP_DESC_CTRL1_0_POWER_DOMAIN:
+    enum:
+      _0:
+        description: PGMC_BPC0
+        value: 0
+      _1:
+        description: PGMC_BPC1
+        value: 1
+      _2:
+        description: PGMC_BPC2
+        value: 2
+      _3:
+        description: PGMC_BPC3
+        value: 3
+      _4:
+        description: PGMC_BPC4
+        value: 4
+      _5:
+        description: PGMC_BPC5
+        value: 5
+      _6:
+        description: PGMC_BPC6
+        value: 6
+      _7:
+        description: PGMC_BPC7
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SSARC_LP_DESC_CTRL1_1_POWER_DOMAIN:
+    enum:
+      _0:
+        description: PGMC_BPC0
+        value: 0
+      _1:
+        description: PGMC_BPC1
+        value: 1
+      _2:
+        description: PGMC_BPC2
+        value: 2
+      _3:
+        description: PGMC_BPC3
+        value: 3
+      _4:
+        description: PGMC_BPC4
+        value: 4
+      _5:
+        description: PGMC_BPC5
+        value: 5
+      _6:
+        description: PGMC_BPC6
+        value: 6
+      _7:
+        description: PGMC_BPC7
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SSARC_LP_DESC_CTRL1_2_POWER_DOMAIN:
+    enum:
+      _0:
+        description: PGMC_BPC0
+        value: 0
+      _1:
+        description: PGMC_BPC1
+        value: 1
+      _2:
+        description: PGMC_BPC2
+        value: 2
+      _3:
+        description: PGMC_BPC3
+        value: 3
+      _4:
+        description: PGMC_BPC4
+        value: 4
+      _5:
+        description: PGMC_BPC5
+        value: 5
+      _6:
+        description: PGMC_BPC6
+        value: 6
+      _7:
+        description: PGMC_BPC7
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SSARC_LP_DESC_CTRL1_3_POWER_DOMAIN:
+    enum:
+      _0:
+        description: PGMC_BPC0
+        value: 0
+      _1:
+        description: PGMC_BPC1
+        value: 1
+      _2:
+        description: PGMC_BPC2
+        value: 2
+      _3:
+        description: PGMC_BPC3
+        value: 3
+      _4:
+        description: PGMC_BPC4
+        value: 4
+      _5:
+        description: PGMC_BPC5
+        value: 5
+      _6:
+        description: PGMC_BPC6
+        value: 6
+      _7:
+        description: PGMC_BPC7
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SSARC_LP_DESC_CTRL1_4_POWER_DOMAIN:
+    enum:
+      _0:
+        description: PGMC_BPC0
+        value: 0
+      _1:
+        description: PGMC_BPC1
+        value: 1
+      _2:
+        description: PGMC_BPC2
+        value: 2
+      _3:
+        description: PGMC_BPC3
+        value: 3
+      _4:
+        description: PGMC_BPC4
+        value: 4
+      _5:
+        description: PGMC_BPC5
+        value: 5
+      _6:
+        description: PGMC_BPC6
+        value: 6
+      _7:
+        description: PGMC_BPC7
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SSARC_LP_DESC_CTRL1_5_POWER_DOMAIN:
+    enum:
+      _0:
+        description: PGMC_BPC0
+        value: 0
+      _1:
+        description: PGMC_BPC1
+        value: 1
+      _2:
+        description: PGMC_BPC2
+        value: 2
+      _3:
+        description: PGMC_BPC3
+        value: 3
+      _4:
+        description: PGMC_BPC4
+        value: 4
+      _5:
+        description: PGMC_BPC5
+        value: 5
+      _6:
+        description: PGMC_BPC6
+        value: 6
+      _7:
+        description: PGMC_BPC7
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SSARC_LP_DESC_CTRL1_6_POWER_DOMAIN:
+    enum:
+      _0:
+        description: PGMC_BPC0
+        value: 0
+      _1:
+        description: PGMC_BPC1
+        value: 1
+      _2:
+        description: PGMC_BPC2
+        value: 2
+      _3:
+        description: PGMC_BPC3
+        value: 3
+      _4:
+        description: PGMC_BPC4
+        value: 4
+      _5:
+        description: PGMC_BPC5
+        value: 5
+      _6:
+        description: PGMC_BPC6
+        value: 6
+      _7:
+        description: PGMC_BPC7
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SSARC_LP_DESC_CTRL1_7_POWER_DOMAIN:
+    enum:
+      _0:
+        description: PGMC_BPC0
+        value: 0
+      _1:
+        description: PGMC_BPC1
+        value: 1
+      _2:
+        description: PGMC_BPC2
+        value: 2
+      _3:
+        description: PGMC_BPC3
+        value: 3
+      _4:
+        description: PGMC_BPC4
+        value: 4
+      _5:
+        description: PGMC_BPC5
+        value: 5
+      _6:
+        description: PGMC_BPC6
+        value: 6
+      _7:
+        description: PGMC_BPC7
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SSARC_LP_DESC_CTRL1_8_POWER_DOMAIN:
+    enum:
+      _0:
+        description: PGMC_BPC0
+        value: 0
+      _1:
+        description: PGMC_BPC1
+        value: 1
+      _2:
+        description: PGMC_BPC2
+        value: 2
+      _3:
+        description: PGMC_BPC3
+        value: 3
+      _4:
+        description: PGMC_BPC4
+        value: 4
+      _5:
+        description: PGMC_BPC5
+        value: 5
+      _6:
+        description: PGMC_BPC6
+        value: 6
+      _7:
+        description: PGMC_BPC7
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SSARC_LP_DESC_CTRL1_9_POWER_DOMAIN:
+    enum:
+      _0:
+        description: PGMC_BPC0
+        value: 0
+      _1:
+        description: PGMC_BPC1
+        value: 1
+      _2:
+        description: PGMC_BPC2
+        value: 2
+      _3:
+        description: PGMC_BPC3
+        value: 3
+      _4:
+        description: PGMC_BPC4
+        value: 4
+      _5:
+        description: PGMC_BPC5
+        value: 5
+      _6:
+        description: PGMC_BPC6
+        value: 6
+      _7:
+        description: PGMC_BPC7
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SSARC_LP_DESC_CTRL1_10_POWER_DOMAIN:
+    enum:
+      _0:
+        description: PGMC_BPC0
+        value: 0
+      _1:
+        description: PGMC_BPC1
+        value: 1
+      _2:
+        description: PGMC_BPC2
+        value: 2
+      _3:
+        description: PGMC_BPC3
+        value: 3
+      _4:
+        description: PGMC_BPC4
+        value: 4
+      _5:
+        description: PGMC_BPC5
+        value: 5
+      _6:
+        description: PGMC_BPC6
+        value: 6
+      _7:
+        description: PGMC_BPC7
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SSARC_LP_DESC_CTRL1_11_POWER_DOMAIN:
+    enum:
+      _0:
+        description: PGMC_BPC0
+        value: 0
+      _1:
+        description: PGMC_BPC1
+        value: 1
+      _2:
+        description: PGMC_BPC2
+        value: 2
+      _3:
+        description: PGMC_BPC3
+        value: 3
+      _4:
+        description: PGMC_BPC4
+        value: 4
+      _5:
+        description: PGMC_BPC5
+        value: 5
+      _6:
+        description: PGMC_BPC6
+        value: 6
+      _7:
+        description: PGMC_BPC7
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SSARC_LP_DESC_CTRL1_12_POWER_DOMAIN:
+    enum:
+      _0:
+        description: PGMC_BPC0
+        value: 0
+      _1:
+        description: PGMC_BPC1
+        value: 1
+      _2:
+        description: PGMC_BPC2
+        value: 2
+      _3:
+        description: PGMC_BPC3
+        value: 3
+      _4:
+        description: PGMC_BPC4
+        value: 4
+      _5:
+        description: PGMC_BPC5
+        value: 5
+      _6:
+        description: PGMC_BPC6
+        value: 6
+      _7:
+        description: PGMC_BPC7
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SSARC_LP_DESC_CTRL1_13_POWER_DOMAIN:
+    enum:
+      _0:
+        description: PGMC_BPC0
+        value: 0
+      _1:
+        description: PGMC_BPC1
+        value: 1
+      _2:
+        description: PGMC_BPC2
+        value: 2
+      _3:
+        description: PGMC_BPC3
+        value: 3
+      _4:
+        description: PGMC_BPC4
+        value: 4
+      _5:
+        description: PGMC_BPC5
+        value: 5
+      _6:
+        description: PGMC_BPC6
+        value: 6
+      _7:
+        description: PGMC_BPC7
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SSARC_LP_DESC_CTRL1_14_POWER_DOMAIN:
+    enum:
+      _0:
+        description: PGMC_BPC0
+        value: 0
+      _1:
+        description: PGMC_BPC1
+        value: 1
+      _2:
+        description: PGMC_BPC2
+        value: 2
+      _3:
+        description: PGMC_BPC3
+        value: 3
+      _4:
+        description: PGMC_BPC4
+        value: 4
+      _5:
+        description: PGMC_BPC5
+        value: 5
+      _6:
+        description: PGMC_BPC6
+        value: 6
+      _7:
+        description: PGMC_BPC7
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SSARC_LP_DESC_CTRL1_15_POWER_DOMAIN:
+    enum:
+      _0:
+        description: PGMC_BPC0
+        value: 0
+      _1:
+        description: PGMC_BPC1
+        value: 1
+      _2:
+        description: PGMC_BPC2
+        value: 2
+      _3:
+        description: PGMC_BPC3
+        value: 3
+      _4:
+        description: PGMC_BPC4
+        value: 4
+      _5:
+        description: PGMC_BPC5
+        value: 5
+      _6:
+        description: PGMC_BPC6
+        value: 6
+      _7:
+        description: PGMC_BPC7
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

@@ -1,0 +1,962 @@
+---
+structs:
+  cm7_gpio2:
+    description: GPIO
+    instances:
+      - name: CM7_GPIO2
+        address: '0x42008000'
+      - name: CM7_GPIO3
+        address: '0x4200C000'
+      - name: GPIO1
+        address: '0x4012C000'
+      - name: GPIO10
+        address: '0x40C68000'
+      - name: GPIO11
+        address: '0x40C6C000'
+      - name: GPIO12
+        address: '0x40C70000'
+      - name: GPIO13
+        address: '0x40CA0000'
+      - name: GPIO2
+        address: '0x40130000'
+      - name: GPIO3
+        address: '0x40134000'
+      - name: GPIO4
+        address: '0x40138000'
+      - name: GPIO5
+        address: '0x4013C000'
+      - name: GPIO6
+        address: '0x40140000'
+      - name: GPIO7
+        address: '0x40C5C000'
+      - name: GPIO8
+        address: '0x40C60000'
+      - name: GPIO9
+        address: '0x40C64000'
+    fields:
+      - name: DR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) GPIO data register
+        fields:
+          - name: DR
+            description: DR data bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: GDIR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) GPIO direction register
+        fields:
+          - name: GDIR
+            description: GPIO direction bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: PSR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) GPIO pad status register
+        fields:
+          - name: PSR
+            description: GPIO pad status bits
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: ICR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) GPIO interrupt configuration register1
+        fields:
+          - name: ICR15
+            description: Interrupt configuration field for GPIO interrupt 15
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR1_ICR15
+          - name: ICR14
+            description: Interrupt configuration field for GPIO interrupt 14
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR1_ICR14
+          - name: ICR13
+            description: Interrupt configuration field for GPIO interrupt 13
+            index: 26
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR1_ICR13
+          - name: ICR12
+            description: Interrupt configuration field for GPIO interrupt 12
+            index: 24
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR1_ICR12
+          - name: ICR11
+            description: Interrupt configuration field for GPIO interrupt 11
+            index: 22
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR1_ICR11
+          - name: ICR10
+            description: Interrupt configuration field for GPIO interrupt 10
+            index: 20
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR1_ICR10
+          - name: ICR9
+            description: Interrupt configuration field for GPIO interrupt 9
+            index: 18
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR1_ICR9
+          - name: ICR8
+            description: Interrupt configuration field for GPIO interrupt 8
+            index: 16
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR1_ICR8
+          - name: ICR7
+            description: Interrupt configuration field for GPIO interrupt 7
+            index: 14
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR1_ICR7
+          - name: ICR6
+            description: Interrupt configuration field for GPIO interrupt 6
+            index: 12
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR1_ICR6
+          - name: ICR5
+            description: Interrupt configuration field for GPIO interrupt 5
+            index: 10
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR1_ICR5
+          - name: ICR4
+            description: Interrupt configuration field for GPIO interrupt 4
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR1_ICR4
+          - name: ICR3
+            description: Interrupt configuration field for GPIO interrupt 3
+            index: 6
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR1_ICR3
+          - name: ICR2
+            description: Interrupt configuration field for GPIO interrupt 2
+            index: 4
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR1_ICR2
+          - name: ICR1
+            description: Interrupt configuration field for GPIO interrupt 1
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR1_ICR1
+          - name: ICR0
+            description: Interrupt configuration field for GPIO interrupt 0
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR1_ICR0
+      - name: ICR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) GPIO interrupt configuration register2
+        fields:
+          - name: ICR31
+            description: Interrupt configuration field for GPIO interrupt 31
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR2_ICR31
+          - name: ICR30
+            description: Interrupt configuration field for GPIO interrupt 30
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR2_ICR30
+          - name: ICR29
+            description: Interrupt configuration field for GPIO interrupt 29
+            index: 26
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR2_ICR29
+          - name: ICR28
+            description: Interrupt configuration field for GPIO interrupt 28
+            index: 24
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR2_ICR28
+          - name: ICR27
+            description: Interrupt configuration field for GPIO interrupt 27
+            index: 22
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR2_ICR27
+          - name: ICR26
+            description: Interrupt configuration field for GPIO interrupt 26
+            index: 20
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR2_ICR26
+          - name: ICR25
+            description: Interrupt configuration field for GPIO interrupt 25
+            index: 18
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR2_ICR25
+          - name: ICR24
+            description: Interrupt configuration field for GPIO interrupt 24
+            index: 16
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR2_ICR24
+          - name: ICR23
+            description: Interrupt configuration field for GPIO interrupt 23
+            index: 14
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR2_ICR23
+          - name: ICR22
+            description: Interrupt configuration field for GPIO interrupt 22
+            index: 12
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR2_ICR22
+          - name: ICR21
+            description: Interrupt configuration field for GPIO interrupt 21
+            index: 10
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR2_ICR21
+          - name: ICR20
+            description: Interrupt configuration field for GPIO interrupt 20
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR2_ICR20
+          - name: ICR19
+            description: Interrupt configuration field for GPIO interrupt 19
+            index: 6
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR2_ICR19
+          - name: ICR18
+            description: Interrupt configuration field for GPIO interrupt 18
+            index: 4
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR2_ICR18
+          - name: ICR17
+            description: Interrupt configuration field for GPIO interrupt 17
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR2_ICR17
+          - name: ICR16
+            description: Interrupt configuration field for GPIO interrupt 16
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: CM7_GPIO2_ICR2_ICR16
+      - name: IMR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) GPIO interrupt mask register
+        fields:
+          - name: IMR
+            description: Interrupt Mask bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: ISR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) GPIO interrupt status register
+        fields:
+          - name: ISR
+            description: Interrupt status bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: EDGE_SEL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) GPIO edge select register
+        fields:
+          - name: GPIO_EDGE_SEL
+            description: Edge select
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DR_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 132
+        description: (read-write) GPIO data register SET
+        fields:
+          - name: DR_SET
+            description: Set
+            index: 0
+            width: 32
+            read: false
+            write: true
+      - name: DR_CLEAR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 136
+        description: (read-write) GPIO data register CLEAR
+        fields:
+          - name: DR_CLEAR
+            description: Clear
+            index: 0
+            width: 32
+            read: false
+            write: true
+      - name: DR_TOGGLE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 140
+        description: (read-write) GPIO data register TOGGLE
+        fields:
+          - name: DR_TOGGLE
+            description: Toggle
+            index: 0
+            width: 32
+            read: false
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  CM7_GPIO2_ICR1_ICR15:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 15 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 15 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 15 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 15 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR1_ICR14:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 14 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 14 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 14 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 14 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR1_ICR13:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 13 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 13 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 13 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 13 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR1_ICR12:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 12 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 12 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 12 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 12 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR1_ICR11:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 11 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 11 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 11 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 11 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR1_ICR10:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 10 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 10 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 10 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 10 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR1_ICR9:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 9 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 9 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 9 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 9 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR1_ICR8:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 8 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 8 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 8 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 8 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR1_ICR7:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 7 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 7 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 7 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 7 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR1_ICR6:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 6 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 6 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 6 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 6 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR1_ICR5:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 5 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 5 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 5 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 5 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR1_ICR4:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 4 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 4 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 4 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 4 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR1_ICR3:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 3 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 3 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 3 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 3 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR1_ICR2:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 2 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 2 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 2 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 2 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR1_ICR1:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 1 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 1 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 1 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 1 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR1_ICR0:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 0 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 0 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 0 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 0 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR2_ICR31:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 31 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 31 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 31 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 31 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR2_ICR30:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 30 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 30 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 30 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 30 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR2_ICR29:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 29 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 29 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 29 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 29 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR2_ICR28:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 28 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 28 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 28 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 28 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR2_ICR27:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 27 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 27 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 27 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 27 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR2_ICR26:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 26 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 26 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 26 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 26 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR2_ICR25:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 25 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 25 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 25 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 25 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR2_ICR24:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 24 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 24 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 24 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 24 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR2_ICR23:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 23 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 23 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 23 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 23 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR2_ICR22:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 22 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 22 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 22 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 22 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR2_ICR21:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 21 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 21 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 21 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 21 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR2_ICR20:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 20 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 20 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 20 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 20 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR2_ICR19:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 19 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 19 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 19 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 19 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR2_ICR18:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 18 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 18 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 18 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 18 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR2_ICR17:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 17 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 17 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 17 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 17 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CM7_GPIO2_ICR2_ICR16:
+    enum:
+      LOW_LEVEL:
+        description: Interrupt 16 is low-level sensitive.
+        value: 0
+      HIGH_LEVEL:
+        description: Interrupt 16 is high-level sensitive.
+        value: 1
+      RISING_EDGE:
+        description: Interrupt 16 is rising-edge sensitive.
+        value: 2
+      FALLING_EDGE:
+        description: Interrupt 16 is falling-edge sensitive.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

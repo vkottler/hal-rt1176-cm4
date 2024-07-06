@@ -1,0 +1,245 @@
+---
+structs:
+  pgmc_bpc0:
+    description: PGMC_BPC
+    instances:
+      - name: PGMC_BPC0
+        address: '0x40C88000'
+      - name: PGMC_BPC1
+        address: '0x40C88200'
+      - name: PGMC_BPC2
+        address: '0x40C88400'
+      - name: PGMC_BPC3
+        address: '0x40C88600'
+      - name: PGMC_BPC4
+        address: '0x40C88800'
+      - name: PGMC_BPC5
+        address: '0x40C88A00'
+      - name: PGMC_BPC6
+        address: '0x40C88C00'
+      - name: PGMC_BPC7
+        address: '0x40C88E00'
+    fields:
+      - name: BPC_AUTHEN_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) BPC Authentication Control
+        fields:
+          - name: LOCK_CFG
+            description: Configuration lock
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: LOCK_LIST
+            description: White list lock
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: WHITE_LIST
+            description: Domain ID white list
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: LOCK_SETTING
+            description: Lock NONSECURE and USER
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: NONSECURE
+            description: Allow non-secure mode access
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: USER
+            description: Allow user mode access
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: BPC_MODE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) BPC Mode
+        fields:
+          - name: DOMAIN_ASSIGN
+            description: Domain assignment of the BPC
+            index: 4
+            width: 2
+            read: true
+            write: true
+            type: PGMC_BPC0_BPC_MODE_DOMAIN_ASSIGN
+          - name: CTRL_MODE
+            description: Control mode. This field is locked by AUTHEN_CTRL[LOCK_CFG]
+              field.
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: PGMC_BPC0_BPC_MODE_CTRL_MODE
+      - name: BPC_POWER_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) BPC power control
+        fields:
+          - name: PWR_OFF_AT_SP
+            description: Power off when system enters Setpoint number
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: ISO_OFF_SOFT
+            description: Software isolation off trigger
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: PSW_ON_SOFT
+            description: Software power on trigger
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: PSW_OFF_SOFT
+            description: Software power off trigger
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: ISO_ON_SOFT
+            description: Software isolation on trigger
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: PWR_OFF_AT_SUSPEND
+            description: '0x1: Power off when domain enters SUSPEND mode'
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: PWR_OFF_AT_STOP
+            description: '0x1: Power off when domain enters STOP mode'
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: PWR_OFF_AT_WAIT
+            description: '0x1: Power off when domain enters WAIT mode'
+            index: 1
+            width: 1
+            read: true
+            write: true
+      - name: BPC_FLAG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) BPC flag
+        fields:
+          - name: PDN_FLAG
+            description: set to 1 after power switch off, cleared by writing 1
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: BPC_SSAR_SAVE_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 64
+        description: (read-write) BPC SSAR save control
+        fields:
+          - name: SAVE_AT_SP
+            description: Save data when system enters a Setpoint.
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: SAVE_AT_SUSPEND
+            description: Save data when domain enters SUSPEND mode
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: SAVE_AT_STOP
+            description: Save data when domain enters STOP mode
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: SAVE_AT_WAIT
+            description: Save data when domain enters WAIT mode
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SAVE_AT_RUN
+            description: Save data at RUN mode, software writting 0x1 to trigger SSARC
+              to execute save process
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: BPC_SSAR_RESTORE_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 68
+        description: (read-write) BPC SSAR restore control
+        fields:
+          - name: RESTORE_AT_SP
+            description: Restore data when system enters a Setpoint.
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: RESTORE_AT_RUN
+            description: Restore data at RUN mode
+            index: 0
+            width: 1
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  PGMC_BPC0_BPC_MODE_DOMAIN_ASSIGN:
+    enum:
+      d0:
+        description: Domain 0
+        value: 0
+      d1:
+        description: Domain 1
+        value: 1
+      d2:
+        description: Domain 2
+        value: 2
+      d3:
+        description: Domain 3
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  PGMC_BPC0_BPC_MODE_CTRL_MODE:
+    enum:
+      _0:
+        description: Not affected by any low power mode
+        value: 0
+      _1:
+        description: Controlled by CPU power mode of the domain
+        value: 1
+      _2:
+        description: Controlled by Setpoint
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

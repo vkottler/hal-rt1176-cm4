@@ -1,0 +1,271 @@
+---
+structs:
+  CTX_instance:
+    description: no description available
+    fields:
+      - name: CTX_KEY
+        type: uint32_t
+        expected_size: 16
+        expected_offset: 0
+        array_length: 4
+        description: (read-write) AES Key Word
+        fields:
+          - name: KEY
+            description: AES Key
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: CTX_CTR
+        type: uint32_t
+        expected_size: 8
+        expected_offset: 16
+        array_length: 2
+        description: (read-write) AES Counter Word
+        fields:
+          - name: CTR
+            description: AES Counter
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: CTX_RGD_W0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) AES Region Descriptor Word0
+        fields:
+          - name: SRTADDR
+            description: Start Address
+            index: 10
+            width: 22
+            read: true
+            write: true
+      - name: CTX_RGD_W1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) AES Region Descriptor Word1
+        fields:
+          - name: ENDADDR
+            description: End Address
+            index: 10
+            width: 22
+            read: true
+            write: true
+          - name: RO
+            description: Read-Only
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ADE
+            description: AES Decryption Enable.
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: VLD
+            description: Valid
+            index: 0
+            width: 1
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+  otfad1:
+    description: OTFAD
+    instances:
+      - name: OTFAD1
+        address: '0x400CC000'
+      - name: OTFAD2
+        address: '0x400D0000'
+    fields:
+      - name: CR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 3072
+        description: (read-write) Control Register
+        fields:
+          - name: GE
+            description: Global OTFAD Enable
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: SKBP
+            description: Start key blob processing
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: RRAE
+            description: Restricted Register Access Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: KBPE
+            description: Key Blob Processing Enable
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: KBSE
+            description: Key Blob Scramble Enable
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: FLDM
+            description: Force Logically Disabled Mode
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: FERR
+            description: Force Error
+            index: 1
+            width: 1
+            read: true
+            write: true
+      - name: SR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 3076
+        description: (read-write) Status Register
+        fields:
+          - name: KBD
+            description: Key Blob Processing Done
+            index: 31
+            width: 1
+            read: true
+            write: false
+          - name: KBPE
+            description: Key Blob Processing Enable
+            index: 30
+            width: 1
+            read: true
+            write: false
+          - name: GEM
+            description: Global Enable Mode
+            index: 29
+            width: 1
+            read: true
+            write: false
+          - name: RRAM
+            description: Restricted Register Access Mode
+            index: 28
+            width: 1
+            read: true
+            write: false
+          - name: HRL
+            description: Hardware Revision Level
+            index: 24
+            width: 4
+            read: true
+            write: false
+          - name: CTXIE3
+            description: Context Integrity Error
+            index: 19
+            width: 1
+            read: true
+            write: false
+          - name: CTXIE2
+            description: Context Integrity Error
+            index: 18
+            width: 1
+            read: true
+            write: false
+          - name: CTXIE1
+            description: Context Integrity Error
+            index: 17
+            width: 1
+            read: true
+            write: false
+          - name: CTXIE0
+            description: Context Integrity Error
+            index: 16
+            width: 1
+            read: true
+            write: false
+          - name: CTXER3
+            description: Context Error
+            index: 11
+            width: 1
+            read: true
+            write: false
+          - name: CTXER2
+            description: Context Error
+            index: 10
+            width: 1
+            read: true
+            write: false
+          - name: CTXER1
+            description: Context Error
+            index: 9
+            width: 1
+            read: true
+            write: false
+          - name: CTXER0
+            description: Context Error
+            index: 8
+            width: 1
+            read: true
+            write: false
+          - name: NCTX
+            description: Number of Contexts
+            index: 4
+            width: 4
+            read: true
+            write: false
+          - name: MODE
+            description: Operating Mode
+            index: 2
+            width: 2
+            read: true
+            write: false
+            type: OTFAD1_SR_MODE
+          - name: MDPCP
+            description: MDPC Present
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: KBERR
+            description: Key Blob Error
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTX
+        type: CTX_instance
+        array_length: 4
+        description: no description available
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  OTFAD1_SR_MODE:
+    enum:
+      _0:
+        description: Operating in Normal mode (NRM)
+        value: 0
+      _1:
+        description: Unused (reserved)
+        value: 1
+      _2:
+        description: Unused (reserved)
+        value: 2
+      _3:
+        description: Operating in Logically Disabled Mode (LDM)
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

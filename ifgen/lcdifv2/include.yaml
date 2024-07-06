@@ -1,0 +1,3011 @@
+---
+structs:
+  lcdifv2:
+    description: LCDIF_V2
+    instances:
+      - name: LCDIFV2
+        address: '0x40808000'
+    fields:
+      - name: CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) LCDIFv2 display control Register
+        fields:
+          - name: SW_RESET
+            description: Software Reset
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: NEG
+            description: Indicates if value at the output (pixel data output) needs
+              to be negated
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: INV_PXCK
+            description: Polarity change of Pixel Clock
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: INV_DE
+            description: Invert Data Enable polarity
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: INV_VS
+            description: Invert Vertical synchronization signal
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: INV_HS
+            description: Invert Horizontal synchronization signal
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) LCDIFv2 display control Register
+        fields:
+          - name: SW_RESET
+            description: Software Reset
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: NEG
+            description: Indicates if value at the output (pixel data output) needs
+              to be negated
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: INV_PXCK
+            description: Polarity change of Pixel Clock
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: INV_DE
+            description: Invert Data Enable polarity
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: INV_VS
+            description: Invert Vertical synchronization signal
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: INV_HS
+            description: Invert Horizontal synchronization signal
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) LCDIFv2 display control Register
+        fields:
+          - name: SW_RESET
+            description: Software Reset
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: NEG
+            description: Indicates if value at the output (pixel data output) needs
+              to be negated
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: INV_PXCK
+            description: Polarity change of Pixel Clock
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: INV_DE
+            description: Invert Data Enable polarity
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: INV_VS
+            description: Invert Vertical synchronization signal
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: INV_HS
+            description: Invert Horizontal synchronization signal
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) LCDIFv2 display control Register
+        fields:
+          - name: SW_RESET
+            description: Software Reset
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: NEG
+            description: Indicates if value at the output (pixel data output) needs
+              to be negated
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: INV_PXCK
+            description: Polarity change of Pixel Clock
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: INV_DE
+            description: Invert Data Enable polarity
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: INV_VS
+            description: Invert Vertical synchronization signal
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: INV_HS
+            description: Invert Horizontal synchronization signal
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DISP_PARA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) Display Parameter Register
+        fields:
+          - name: DISP_ON
+            description: Display panel On/Off mode
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: LINE_PATTERN
+            description: LCDIFv2 line output order
+            index: 26
+            width: 3
+            read: true
+            write: true
+            type: LCDIFV2_DISP_PARA_LINE_PATTERN
+          - name: DISP_MODE
+            description: LCDIFv2 operating mode
+            index: 24
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_DISP_PARA_DISP_MODE
+          - name: BGND_R
+            description: Red component of the default color displayed in the sectors
+              where no layer is active
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: BGND_G
+            description: Green component of the default color displayed in the sectors
+              where no layer is active
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: BGND_B
+            description: Blue component of the default color displayed in the sectors
+              where no layer is active
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: DISP_SIZE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) Display Size Register
+        fields:
+          - name: DELTA_Y
+            description: Sets the display size vertical resolution in pixels
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: DELTA_X
+            description: Sets the display size horizontal resolution in pixels
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: HSYN_PARA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) Horizontal Sync Parameter Register
+        fields:
+          - name: BP_H
+            description: HSYNC back-porch pulse width (in pixel clock cycles). Pulse
+              width has a minimum value of 1
+            index: 22
+            width: 9
+            read: true
+            write: true
+          - name: PW_H
+            description: HSYNC active pulse width (in pixel clock cycles). Pulse width
+              has a minimum value of 1
+            index: 11
+            width: 9
+            read: true
+            write: true
+          - name: FP_H
+            description: HSYNC front-porch pulse width (in pixel clock cycles). Pulse
+              width has a minimum value of 1
+            index: 0
+            width: 9
+            read: true
+            write: true
+      - name: VSYN_PARA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) Vertical Sync Parameter Register
+        fields:
+          - name: BP_V
+            description: VSYNC back-porch pulse width (in horizontal line cycles).
+              Pulse width has a minimum value of 1
+            index: 22
+            width: 9
+            read: true
+            write: true
+          - name: PW_V
+            description: VSYNC active pulse width (in horizontal line cycles). Pulse
+              width has a minimum value of 1
+            index: 11
+            width: 9
+            read: true
+            write: true
+          - name: FP_V
+            description: VSYNC front-porch pulse width (in horizontal line cycles).
+              Pulse width has a minimum value of 1
+            index: 0
+            width: 9
+            read: true
+            write: true
+      - name: INT_STATUS_D0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) Interrupt Status Register for domain 0
+        fields:
+          - name: FIFO_EMPTY
+            description: Interrupt flag to indicate that which FIFO in the pixel blending
+              underflowed
+            index: 24
+            width: 8
+            read: true
+            write: true
+          - name: DMA_DONE
+            description: Interrupt flag to indicate that which PLANE has fetched the
+              last pixel from memory
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: DMA_ERR
+            description: Interrupt flag to indicate that which PLANE has Read Error
+              on the AXI interface
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: VS_BLANK
+            description: Interrupt flag to indicate vertical blanking period
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: UNDERRUN
+            description: Interrupt flag to indicate the output buffer underrun condition
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC
+            description: Interrupt flag to indicate that the vertical synchronization
+              phase(The beginning of a frame)
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: INT_ENABLE_D0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) Interrupt Enable Register for domain 0
+        fields:
+          - name: FIFO_EMPTY_EN
+            description: Enable Interrupt flag to indicate that which FIFO in the
+              pixel blending underflowed
+            index: 24
+            width: 8
+            read: true
+            write: true
+          - name: DMA_DONE_EN
+            description: Enable Interrupt flag to indicate that which PLANE has fetched
+              the last pixel from memory
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: DMA_ERR_EN
+            description: Enable Interrupt flag to indicate that which PLANE has Read
+              Error on the AXI interface
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: VS_BLANK_EN
+            description: Enable Interrupt flag to indicate vertical blanking period
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: UNDERRUN_EN
+            description: Enable Interrupt flag to indicate the output buffer underrun
+              condition
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_EN
+            description: Enable Interrupt flag to indicate that the vertical synchronization
+              phase(The beginning of a frame)
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: INT_STATUS_D1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) Interrupt Status Register for domain 1
+        fields:
+          - name: FIFO_EMPTY
+            description: Interrupt flag to indicate that which FIFO in the pixel blending
+              underflowed
+            index: 24
+            width: 8
+            read: true
+            write: true
+          - name: DMA_DONE
+            description: Interrupt flag to indicate that which PLANE has fetched the
+              last pixel from memory
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: DMA_ERR
+            description: Interrupt flag to indicate that which PLANE has Read Error
+              on the AXI interface
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: VS_BLANK
+            description: Interrupt flag to indicate vertical blanking period
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: UNDERRUN
+            description: Interrupt flag to indicate the output buffer underrun condition
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC
+            description: Interrupt flag to indicate that the vertical synchronization
+              phase(The beginning of a frame)
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: INT_ENABLE_D1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 52
+        description: (read-write) Interrupt Enable Register for domain 1
+        fields:
+          - name: FIFO_EMPTY_EN
+            description: Enable Interrupt flag to indicate that which FIFO in the
+              pixel blending underflowed
+            index: 24
+            width: 8
+            read: true
+            write: true
+          - name: DMA_DONE_EN
+            description: Enable Interrupt flag to indicate that which PLANE has fetched
+              the last pixel from memory
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: DMA_ERR_EN
+            description: Enable Interrupt flag to indicate that which PLANE has Read
+              Error on the AXI interface
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: VS_BLANK_EN
+            description: Enable Interrupt flag to indicate vertical blanking period
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: UNDERRUN_EN
+            description: Enable Interrupt flag to indicate the output buffer underrun
+              condition
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_EN
+            description: Enable Interrupt flag to indicate that the vertical synchronization
+              phase(The beginning of a frame)
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PDI_PARA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 64
+        description: (read-write) Parallel Data Interface Parameter Register
+        fields:
+          - name: PDI_EN
+            description: Enable PDI input data to LCDIFv2 display
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: PDI_SEL
+            description: PDI selected on LCDIFv2 plane number
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: MODE
+            description: The PDI mode for input data format
+            index: 4
+            width: 4
+            read: true
+            write: true
+            type: LCDIFV2_PDI_PARA_MODE
+          - name: INV_PDI_PXCK
+            description: Polarity of PDI input Pixel Clock
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: INV_PDI_DE
+            description: Polarity of PDI input Data Enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: INV_PDI_VS
+            description: Polarity of PDI input VSYNC
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: INV_PDI_HS
+            description: Polarity of PDI input HSYNC
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRLDESCL0_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 512
+        description: (read-write) Control Descriptor Layer 1 Register
+        fields:
+          - name: HEIGHT
+            description: Height of the layer in pixels
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: WIDTH
+            description: Width of the layer in pixels
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: CTRLDESCL0_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 516
+        description: (read-write) Control Descriptor Layer 2 Register
+        fields:
+          - name: POSY
+            description: The vertical position of top row of the layer, where 0 is
+              the top row of the panel, only positive values are below the top row
+              of the panel
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: POSX
+            description: The horizontal position of left-hand column of the layer,
+              where 0 is the left-hand column of the panel, only positive values are
+              to the right the left-hand column of the panel
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: CTRLDESCL0_3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 520
+        description: (read-write) Control Descriptor Layer 3 Register
+        fields:
+          - name: PITCH
+            description: Number of bytes between 2 vertically adjacent pixels in system
+              memory. Byte granularity is supported, but SW should align to 64B boundry
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CTRLDESCL0_4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 524
+        description: (read-write) Control Descriptor Layer 4 Register
+        fields:
+          - name: ADDR
+            description: Address of layer data in the memory. The address programmed
+              should be 64-bit aligned
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: CTRLDESCL0_5
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 528
+        description: (read-write) Control Descriptor Layer 5 Register
+        fields:
+          - name: EN
+            description: Enable the layer for DMA
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: SHADOW_LOAD_EN
+            description: Shadow Load Enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: SAFETY_EN
+            description: Safety Mode Enable Bit
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: BPP
+            description: Layer encoding format (bit per pixel)
+            index: 24
+            width: 4
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL0_5_BPP
+          - name: GLOBAL_ALPHA
+            description: Global Alpha
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: YUV_FORMAT
+            description: The YUV422 input format selection
+            index: 14
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL0_5_YUV_FORMAT
+          - name: PD_COLOR_MODE
+            description: PoterDuff alpha mode
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: PD_ALPHA_MODE
+            description: PoterDuff alpha mode
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: PD_GLOBAL_ALPHA_MODE
+            description: PoterDuff global alpha mode
+            index: 6
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL0_5_PD_GLOBAL_ALPHA_MODE
+          - name: PD_FACTOR_MODE
+            description: PoterDuff factor mode
+            index: 4
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL0_5_PD_FACTOR_MODE
+          - name: AB_MODE
+            description: Alpha Blending Mode
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL0_5_AB_MODE
+      - name: CTRLDESCL0_6
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 532
+        description: (read-write) Control Descriptor Layer 6 Register
+        fields:
+          - name: BCLR_R
+            description: Background R component value
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: BCLR_G
+            description: Background G component value
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: BCLR_B
+            description: Background B component value
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: CSC0_COEF0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 536
+        description: (read-write) Color Space Conversion Coefficient Register 0
+        fields:
+          - name: YCBCR_MODE
+            description: This bit changes the behavior when performing U/V converting
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE
+            description: Enable the CSC unit in the LCDIFv2 plane data path
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: C0
+            description: Two's compliment Y multiplier coefficient. YUV=0x100 (1.000)
+              YCbCr=0x12A (1.164)
+            index: 18
+            width: 11
+            read: true
+            write: true
+          - name: UV_OFFSET
+            description: Two's compliment phase offset implicit for CbCr data. Generally
+              used for YCbCr to RGB conversion. YCbCr=0x180, YUV=0x000 (typically
+              -128 or 0x180 to indicate normalized -0.5 to 0.5 range)
+            index: 9
+            width: 9
+            read: true
+            write: true
+          - name: Y_OFFSET
+            description: Two's compliment amplitude offset implicit in the Y data.
+              For YUV, this is typically 0 and for YCbCr, this is typically -16 (0x1F0)
+            index: 0
+            width: 9
+            read: true
+            write: true
+      - name: CSC0_COEF1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 540
+        description: (read-write) Color Space Conversion Coefficient Register 1
+        fields:
+          - name: C1
+            description: Two's compliment Red V/Cr multiplier coefficient. YUV=0x123
+              (1.140) YCbCr=0x198 (1.596)
+            index: 16
+            width: 11
+            read: true
+            write: true
+          - name: C4
+            description: Two's compliment Blue U/Cb multiplier coefficient. YUV=0x208
+              (2.032) YCbCr=0x204 (2.017)
+            index: 0
+            width: 11
+            read: true
+            write: true
+      - name: CSC0_COEF2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 544
+        description: (read-write) Color Space Conversion Coefficient Register 2
+        fields:
+          - name: C2
+            description: Two's compliment Green V/Cr multiplier coefficient. YUV=0x76B
+              (-0.581) YCbCr=0x730 (-0.813)
+            index: 16
+            width: 11
+            read: true
+            write: true
+          - name: C3
+            description: Two's compliment Green U/Cb multiplier coefficient. YUV=0x79C
+              (-0.394) YCbCr=0x79C (-0.392)
+            index: 0
+            width: 11
+            read: true
+            write: true
+      - name: CTRLDESCL1_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 576
+        description: (read-write) Control Descriptor Layer 1 Register
+        fields:
+          - name: HEIGHT
+            description: Height of the layer in pixels
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: WIDTH
+            description: Width of the layer in pixels
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: CTRLDESCL1_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 580
+        description: (read-write) Control Descriptor Layer 2 Register
+        fields:
+          - name: POSY
+            description: The vertical position of top row of the layer, where 0 is
+              the top row of the panel, only positive values are below the top row
+              of the panel
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: POSX
+            description: The horizontal position of left-hand column of the layer,
+              where 0 is the left-hand column of the panel, only positive values are
+              to the right the left-hand column of the panel
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: CTRLDESCL1_3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 584
+        description: (read-write) Control Descriptor Layer 3 Register
+        fields:
+          - name: PITCH
+            description: Number of bytes between 2 vertically adjacent pixels in system
+              memory. Byte granularity is supported, but SW should align to 64B boundry
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CTRLDESCL1_4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 588
+        description: (read-write) Control Descriptor Layer 4 Register
+        fields:
+          - name: ADDR
+            description: Address of layer data in the memory. The address programmed
+              should be 64-bit aligned
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: CTRLDESCL1_5
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 592
+        description: (read-write) Control Descriptor Layer 5 Register
+        fields:
+          - name: EN
+            description: Enable the layer for DMA
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: SHADOW_LOAD_EN
+            description: Shadow Load Enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: SAFETY_EN
+            description: Safety Mode Enable Bit
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: BPP
+            description: Layer encoding format (bit per pixel)
+            index: 24
+            width: 4
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL1_5_BPP
+          - name: GLOBAL_ALPHA
+            description: Global Alpha
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: YUV_FORMAT
+            description: The YUV422 input format selection
+            index: 14
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL1_5_YUV_FORMAT
+          - name: PD_COLOR_MODE
+            description: PoterDuff alpha mode
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: PD_ALPHA_MODE
+            description: PoterDuff alpha mode
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: PD_GLOBAL_ALPHA_MODE
+            description: PoterDuff global alpha mode
+            index: 6
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL1_5_PD_GLOBAL_ALPHA_MODE
+          - name: PD_FACTOR_MODE
+            description: PoterDuff factor mode
+            index: 4
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL1_5_PD_FACTOR_MODE
+          - name: AB_MODE
+            description: Alpha Blending Mode
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL1_5_AB_MODE
+      - name: CTRLDESCL1_6
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 596
+        description: (read-write) Control Descriptor Layer 6 Register
+        fields:
+          - name: BCLR_R
+            description: Background R component value
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: BCLR_G
+            description: Background G component value
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: BCLR_B
+            description: Background B component value
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: CSC1_COEF0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 600
+        description: (read-write) Color Space Conversion Coefficient Register 0
+        fields:
+          - name: YCBCR_MODE
+            description: This bit changes the behavior when performing U/V converting
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE
+            description: Enable the CSC unit in the LCDIFv2 plane data path
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: C0
+            description: Two's compliment Y multiplier coefficient. YUV=0x100 (1.000)
+              YCbCr=0x12A (1.164)
+            index: 18
+            width: 11
+            read: true
+            write: true
+          - name: UV_OFFSET
+            description: Two's compliment phase offset implicit for CbCr data. Generally
+              used for YCbCr to RGB conversion. YCbCr=0x180, YUV=0x000 (typically
+              -128 or 0x180 to indicate normalized -0.5 to 0.5 range)
+            index: 9
+            width: 9
+            read: true
+            write: true
+          - name: Y_OFFSET
+            description: Two's compliment amplitude offset implicit in the Y data.
+              For YUV, this is typically 0 and for YCbCr, this is typically -16 (0x1F0)
+            index: 0
+            width: 9
+            read: true
+            write: true
+      - name: CSC1_COEF1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 604
+        description: (read-write) Color Space Conversion Coefficient Register 1
+        fields:
+          - name: C1
+            description: Two's compliment Red V/Cr multiplier coefficient. YUV=0x123
+              (1.140) YCbCr=0x198 (1.596)
+            index: 16
+            width: 11
+            read: true
+            write: true
+          - name: C4
+            description: Two's compliment Blue U/Cb multiplier coefficient. YUV=0x208
+              (2.032) YCbCr=0x204 (2.017)
+            index: 0
+            width: 11
+            read: true
+            write: true
+      - name: CSC1_COEF2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 608
+        description: (read-write) Color Space Conversion Coefficient Register 2
+        fields:
+          - name: C2
+            description: Two's compliment Green V/Cr multiplier coefficient. YUV=0x76B
+              (-0.581) YCbCr=0x730 (-0.813)
+            index: 16
+            width: 11
+            read: true
+            write: true
+          - name: C3
+            description: Two's compliment Green U/Cb multiplier coefficient. YUV=0x79C
+              (-0.394) YCbCr=0x79C (-0.392)
+            index: 0
+            width: 11
+            read: true
+            write: true
+      - name: CTRLDESCL2_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 640
+        description: (read-write) Control Descriptor Layer 1 Register
+        fields:
+          - name: HEIGHT
+            description: Height of the layer in pixels
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: WIDTH
+            description: Width of the layer in pixels
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: CTRLDESCL2_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 644
+        description: (read-write) Control Descriptor Layer 2 Register
+        fields:
+          - name: POSY
+            description: The vertical position of top row of the layer, where 0 is
+              the top row of the panel, only positive values are below the top row
+              of the panel
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: POSX
+            description: The horizontal position of left-hand column of the layer,
+              where 0 is the left-hand column of the panel, only positive values are
+              to the right the left-hand column of the panel
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: CTRLDESCL2_3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 648
+        description: (read-write) Control Descriptor Layer 3 Register
+        fields:
+          - name: PITCH
+            description: Number of bytes between 2 vertically adjacent pixels in system
+              memory. Byte granularity is supported, but SW should align to 64B boundry
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CTRLDESCL2_4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 652
+        description: (read-write) Control Descriptor Layer 4 Register
+        fields:
+          - name: ADDR
+            description: Address of layer data in the memory. The address programmed
+              should be 64-bit aligned
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: CTRLDESCL2_5
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 656
+        description: (read-write) Control Descriptor Layer 5 Register
+        fields:
+          - name: EN
+            description: Enable the layer for DMA
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: SHADOW_LOAD_EN
+            description: Shadow Load Enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: SAFETY_EN
+            description: Safety Mode Enable Bit
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: BPP
+            description: Layer encoding format (bit per pixel)
+            index: 24
+            width: 4
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL2_5_BPP
+          - name: GLOBAL_ALPHA
+            description: Global Alpha
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: YUV_FORMAT
+            description: The YUV422 input format selection
+            index: 14
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL2_5_YUV_FORMAT
+          - name: PD_COLOR_MODE
+            description: PoterDuff alpha mode
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: PD_ALPHA_MODE
+            description: PoterDuff alpha mode
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: PD_GLOBAL_ALPHA_MODE
+            description: PoterDuff global alpha mode
+            index: 6
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL2_5_PD_GLOBAL_ALPHA_MODE
+          - name: PD_FACTOR_MODE
+            description: PoterDuff factor mode
+            index: 4
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL2_5_PD_FACTOR_MODE
+          - name: AB_MODE
+            description: Alpha Blending Mode
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL2_5_AB_MODE
+      - name: CTRLDESCL2_6
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 660
+        description: (read-write) Control Descriptor Layer 6 Register
+        fields:
+          - name: BCLR_R
+            description: Background R component value
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: BCLR_G
+            description: Background G component value
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: BCLR_B
+            description: Background B component value
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: CTRLDESCL3_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 704
+        description: (read-write) Control Descriptor Layer 1 Register
+        fields:
+          - name: HEIGHT
+            description: Height of the layer in pixels
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: WIDTH
+            description: Width of the layer in pixels
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: CTRLDESCL3_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 708
+        description: (read-write) Control Descriptor Layer 2 Register
+        fields:
+          - name: POSY
+            description: The vertical position of top row of the layer, where 0 is
+              the top row of the panel, only positive values are below the top row
+              of the panel
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: POSX
+            description: The horizontal position of left-hand column of the layer,
+              where 0 is the left-hand column of the panel, only positive values are
+              to the right the left-hand column of the panel
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: CTRLDESCL3_3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 712
+        description: (read-write) Control Descriptor Layer 3 Register
+        fields:
+          - name: PITCH
+            description: Number of bytes between 2 vertically adjacent pixels in system
+              memory. Byte granularity is supported, but SW should align to 64B boundry
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CTRLDESCL3_4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 716
+        description: (read-write) Control Descriptor Layer 4 Register
+        fields:
+          - name: ADDR
+            description: Address of layer data in the memory. The address programmed
+              should be 64-bit aligned
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: CTRLDESCL3_5
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 720
+        description: (read-write) Control Descriptor Layer 5 Register
+        fields:
+          - name: EN
+            description: Enable the layer for DMA
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: SHADOW_LOAD_EN
+            description: Shadow Load Enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: SAFETY_EN
+            description: Safety Mode Enable Bit
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: BPP
+            description: Layer encoding format (bit per pixel)
+            index: 24
+            width: 4
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL3_5_BPP
+          - name: GLOBAL_ALPHA
+            description: Global Alpha
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: YUV_FORMAT
+            description: The YUV422 input format selection
+            index: 14
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL3_5_YUV_FORMAT
+          - name: PD_COLOR_MODE
+            description: PoterDuff alpha mode
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: PD_ALPHA_MODE
+            description: PoterDuff alpha mode
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: PD_GLOBAL_ALPHA_MODE
+            description: PoterDuff global alpha mode
+            index: 6
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL3_5_PD_GLOBAL_ALPHA_MODE
+          - name: PD_FACTOR_MODE
+            description: PoterDuff factor mode
+            index: 4
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL3_5_PD_FACTOR_MODE
+          - name: AB_MODE
+            description: Alpha Blending Mode
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL3_5_AB_MODE
+      - name: CTRLDESCL3_6
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 724
+        description: (read-write) Control Descriptor Layer 6 Register
+        fields:
+          - name: BCLR_R
+            description: Background R component value
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: BCLR_G
+            description: Background G component value
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: BCLR_B
+            description: Background B component value
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: CTRLDESCL4_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 768
+        description: (read-write) Control Descriptor Layer 1 Register
+        fields:
+          - name: HEIGHT
+            description: Height of the layer in pixels
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: WIDTH
+            description: Width of the layer in pixels
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: CTRLDESCL4_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 772
+        description: (read-write) Control Descriptor Layer 2 Register
+        fields:
+          - name: POSY
+            description: The vertical position of top row of the layer, where 0 is
+              the top row of the panel, only positive values are below the top row
+              of the panel
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: POSX
+            description: The horizontal position of left-hand column of the layer,
+              where 0 is the left-hand column of the panel, only positive values are
+              to the right the left-hand column of the panel
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: CTRLDESCL4_3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 776
+        description: (read-write) Control Descriptor Layer 3 Register
+        fields:
+          - name: PITCH
+            description: Number of bytes between 2 vertically adjacent pixels in system
+              memory. Byte granularity is supported, but SW should align to 64B boundry
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CTRLDESCL4_4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 780
+        description: (read-write) Control Descriptor Layer 4 Register
+        fields:
+          - name: ADDR
+            description: Address of layer data in the memory. The address programmed
+              should be 64-bit aligned
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: CTRLDESCL4_5
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 784
+        description: (read-write) Control Descriptor Layer 5 Register
+        fields:
+          - name: EN
+            description: Enable the layer for DMA
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: SHADOW_LOAD_EN
+            description: Shadow Load Enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: SAFETY_EN
+            description: Safety Mode Enable Bit
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: BPP
+            description: Layer encoding format (bit per pixel)
+            index: 24
+            width: 4
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL4_5_BPP
+          - name: GLOBAL_ALPHA
+            description: Global Alpha
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: YUV_FORMAT
+            description: The YUV422 input format selection
+            index: 14
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL4_5_YUV_FORMAT
+          - name: PD_COLOR_MODE
+            description: PoterDuff alpha mode
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: PD_ALPHA_MODE
+            description: PoterDuff alpha mode
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: PD_GLOBAL_ALPHA_MODE
+            description: PoterDuff global alpha mode
+            index: 6
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL4_5_PD_GLOBAL_ALPHA_MODE
+          - name: PD_FACTOR_MODE
+            description: PoterDuff factor mode
+            index: 4
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL4_5_PD_FACTOR_MODE
+          - name: AB_MODE
+            description: Alpha Blending Mode
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL4_5_AB_MODE
+      - name: CTRLDESCL4_6
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 788
+        description: (read-write) Control Descriptor Layer 6 Register
+        fields:
+          - name: BCLR_R
+            description: Background R component value
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: BCLR_G
+            description: Background G component value
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: BCLR_B
+            description: Background B component value
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: CTRLDESCL5_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 832
+        description: (read-write) Control Descriptor Layer 1 Register
+        fields:
+          - name: HEIGHT
+            description: Height of the layer in pixels
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: WIDTH
+            description: Width of the layer in pixels
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: CTRLDESCL5_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 836
+        description: (read-write) Control Descriptor Layer 2 Register
+        fields:
+          - name: POSY
+            description: The vertical position of top row of the layer, where 0 is
+              the top row of the panel, only positive values are below the top row
+              of the panel
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: POSX
+            description: The horizontal position of left-hand column of the layer,
+              where 0 is the left-hand column of the panel, only positive values are
+              to the right the left-hand column of the panel
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: CTRLDESCL5_3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 840
+        description: (read-write) Control Descriptor Layer 3 Register
+        fields:
+          - name: PITCH
+            description: Number of bytes between 2 vertically adjacent pixels in system
+              memory. Byte granularity is supported, but SW should align to 64B boundry
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CTRLDESCL5_4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 844
+        description: (read-write) Control Descriptor Layer 4 Register
+        fields:
+          - name: ADDR
+            description: Address of layer data in the memory. The address programmed
+              should be 64-bit aligned
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: CTRLDESCL5_5
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 848
+        description: (read-write) Control Descriptor Layer 5 Register
+        fields:
+          - name: EN
+            description: Enable the layer for DMA
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: SHADOW_LOAD_EN
+            description: Shadow Load Enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: SAFETY_EN
+            description: Safety Mode Enable Bit
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: BPP
+            description: Layer encoding format (bit per pixel)
+            index: 24
+            width: 4
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL5_5_BPP
+          - name: GLOBAL_ALPHA
+            description: Global Alpha
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: YUV_FORMAT
+            description: The YUV422 input format selection
+            index: 14
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL5_5_YUV_FORMAT
+          - name: PD_COLOR_MODE
+            description: PoterDuff alpha mode
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: PD_ALPHA_MODE
+            description: PoterDuff alpha mode
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: PD_GLOBAL_ALPHA_MODE
+            description: PoterDuff global alpha mode
+            index: 6
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL5_5_PD_GLOBAL_ALPHA_MODE
+          - name: PD_FACTOR_MODE
+            description: PoterDuff factor mode
+            index: 4
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL5_5_PD_FACTOR_MODE
+          - name: AB_MODE
+            description: Alpha Blending Mode
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL5_5_AB_MODE
+      - name: CTRLDESCL5_6
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 852
+        description: (read-write) Control Descriptor Layer 6 Register
+        fields:
+          - name: BCLR_R
+            description: Background R component value
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: BCLR_G
+            description: Background G component value
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: BCLR_B
+            description: Background B component value
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: CTRLDESCL6_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 896
+        description: (read-write) Control Descriptor Layer 1 Register
+        fields:
+          - name: HEIGHT
+            description: Height of the layer in pixels
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: WIDTH
+            description: Width of the layer in pixels
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: CTRLDESCL6_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 900
+        description: (read-write) Control Descriptor Layer 2 Register
+        fields:
+          - name: POSY
+            description: The vertical position of top row of the layer, where 0 is
+              the top row of the panel, only positive values are below the top row
+              of the panel
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: POSX
+            description: The horizontal position of left-hand column of the layer,
+              where 0 is the left-hand column of the panel, only positive values are
+              to the right the left-hand column of the panel
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: CTRLDESCL6_3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 904
+        description: (read-write) Control Descriptor Layer 3 Register
+        fields:
+          - name: PITCH
+            description: Number of bytes between 2 vertically adjacent pixels in system
+              memory. Byte granularity is supported, but SW should align to 64B boundry
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CTRLDESCL6_4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 908
+        description: (read-write) Control Descriptor Layer 4 Register
+        fields:
+          - name: ADDR
+            description: Address of layer data in the memory. The address programmed
+              should be 64-bit aligned
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: CTRLDESCL6_5
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 912
+        description: (read-write) Control Descriptor Layer 5 Register
+        fields:
+          - name: EN
+            description: Enable the layer for DMA
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: SHADOW_LOAD_EN
+            description: Shadow Load Enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: SAFETY_EN
+            description: Safety Mode Enable Bit
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: BPP
+            description: Layer encoding format (bit per pixel)
+            index: 24
+            width: 4
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL6_5_BPP
+          - name: GLOBAL_ALPHA
+            description: Global Alpha
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: YUV_FORMAT
+            description: The YUV422 input format selection
+            index: 14
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL6_5_YUV_FORMAT
+          - name: PD_COLOR_MODE
+            description: PoterDuff alpha mode
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: PD_ALPHA_MODE
+            description: PoterDuff alpha mode
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: PD_GLOBAL_ALPHA_MODE
+            description: PoterDuff global alpha mode
+            index: 6
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL6_5_PD_GLOBAL_ALPHA_MODE
+          - name: PD_FACTOR_MODE
+            description: PoterDuff factor mode
+            index: 4
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL6_5_PD_FACTOR_MODE
+          - name: AB_MODE
+            description: Alpha Blending Mode
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL6_5_AB_MODE
+      - name: CTRLDESCL6_6
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 916
+        description: (read-write) Control Descriptor Layer 6 Register
+        fields:
+          - name: BCLR_R
+            description: Background R component value
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: BCLR_G
+            description: Background G component value
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: BCLR_B
+            description: Background B component value
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: CTRLDESCL7_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 960
+        description: (read-write) Control Descriptor Layer 1 Register
+        fields:
+          - name: HEIGHT
+            description: Height of the layer in pixels
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: WIDTH
+            description: Width of the layer in pixels
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: CTRLDESCL7_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 964
+        description: (read-write) Control Descriptor Layer 2 Register
+        fields:
+          - name: POSY
+            description: The vertical position of top row of the layer, where 0 is
+              the top row of the panel, only positive values are below the top row
+              of the panel
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: POSX
+            description: The horizontal position of left-hand column of the layer,
+              where 0 is the left-hand column of the panel, only positive values are
+              to the right the left-hand column of the panel
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: CTRLDESCL7_3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 968
+        description: (read-write) Control Descriptor Layer 3 Register
+        fields:
+          - name: PITCH
+            description: Number of bytes between 2 vertically adjacent pixels in system
+              memory. Byte granularity is supported, but SW should align to 64B boundry
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CTRLDESCL7_4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 972
+        description: (read-write) Control Descriptor Layer 4 Register
+        fields:
+          - name: ADDR
+            description: Address of layer data in the memory. The address programmed
+              should be 64-bit aligned
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: CTRLDESCL7_5
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 976
+        description: (read-write) Control Descriptor Layer 5 Register
+        fields:
+          - name: EN
+            description: Enable the layer for DMA
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: SHADOW_LOAD_EN
+            description: Shadow Load Enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: SAFETY_EN
+            description: Safety Mode Enable Bit
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: BPP
+            description: Layer encoding format (bit per pixel)
+            index: 24
+            width: 4
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL7_5_BPP
+          - name: GLOBAL_ALPHA
+            description: Global Alpha
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: YUV_FORMAT
+            description: The YUV422 input format selection
+            index: 14
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL7_5_YUV_FORMAT
+          - name: PD_COLOR_MODE
+            description: PoterDuff alpha mode
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: PD_ALPHA_MODE
+            description: PoterDuff alpha mode
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: PD_GLOBAL_ALPHA_MODE
+            description: PoterDuff global alpha mode
+            index: 6
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL7_5_PD_GLOBAL_ALPHA_MODE
+          - name: PD_FACTOR_MODE
+            description: PoterDuff factor mode
+            index: 4
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL7_5_PD_FACTOR_MODE
+          - name: AB_MODE
+            description: Alpha Blending Mode
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: LCDIFV2_CTRLDESCL7_5_AB_MODE
+      - name: CTRLDESCL7_6
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 980
+        description: (read-write) Control Descriptor Layer 6 Register
+        fields:
+          - name: BCLR_R
+            description: Background R component value
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: BCLR_G
+            description: Background G component value
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: BCLR_B
+            description: Background B component value
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: CLUT_LOAD
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1024
+        description: (read-write) LCDIFv2 CLUT load Register
+        fields:
+          - name: SEL_CLUT_NUM
+            description: Selected CLUT Number
+            index: 4
+            width: 3
+            read: true
+            write: true
+          - name: CLUT_UPDATE_EN
+            description: CLUT Update Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  LCDIFV2_DISP_PARA_LINE_PATTERN:
+    enum:
+      _0:
+        description: RGB
+        value: 0
+      _1:
+        description: RBG
+        value: 1
+      _2:
+        description: GBR
+        value: 2
+      _3:
+        description: GRB
+        value: 3
+      _4:
+        description: BRG
+        value: 4
+      _5:
+        description: BGR
+        value: 5
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_DISP_PARA_DISP_MODE:
+    enum:
+      _0:
+        description: Normal mode. Panel content controlled by layer configuration
+        value: 0
+      _1:
+        description: Test Mode1(BGND Color Display)
+        value: 1
+      _2:
+        description: Test Mode2(Column Color Bar)
+        value: 2
+      _3:
+        description: Test Mode3(Row Color Bar)
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_PDI_PARA_MODE:
+    enum:
+      _0:
+        description: 32 bpp (ARGB8888)
+        value: 0
+      _1:
+        description: 24 bpp (RGB888)
+        value: 1
+      _2:
+        description: 24 bpp (RGB666)
+        value: 2
+      _3:
+        description: 16 bpp (RGB565)
+        value: 3
+      _4:
+        description: 16 bpp (RGB444)
+        value: 4
+      _5:
+        description: 16 bpp (RGB555)
+        value: 5
+      _6:
+        description: 16 bpp (YCbCr422)
+        value: 6
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL0_5_BPP:
+    enum:
+      _0:
+        description: 1 bpp
+        value: 0
+      _1:
+        description: 2 bpp
+        value: 1
+      _2:
+        description: 4 bpp
+        value: 2
+      _3:
+        description: 8 bpp
+        value: 3
+      _4:
+        description: 16 bpp (RGB565)
+        value: 4
+      _5:
+        description: 16 bpp (ARGB1555)
+        value: 5
+      _6:
+        description: 16 bpp (ARGB4444)
+        value: 6
+      _7:
+        description: YCbCr422 (Only layer 0/1 can support this format)
+        value: 7
+      _8:
+        description: 24 bpp (RGB888)
+        value: 8
+      _9:
+        description: 32 bpp (ARGB8888)
+        value: 9
+      _10:
+        description: 32 bpp (ABGR8888)
+        value: 10
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL0_5_YUV_FORMAT:
+    enum:
+      _0:
+        description: The YVYU422 8bit sequence is U1,Y1,V1,Y2
+        value: 0
+      _1:
+        description: The YVYU422 8bit sequence is V1,Y1,U1,Y2
+        value: 1
+      _2:
+        description: The YVYU422 8bit sequence is Y1,U1,Y2,V1
+        value: 2
+      _3:
+        description: The YVYU422 8bit sequence is Y1,V1,Y2,U1
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL0_5_PD_GLOBAL_ALPHA_MODE:
+    enum:
+      _0:
+        description: Using global alpha
+        value: 0
+      _1:
+        description: Using local alpha
+        value: 1
+      _2:
+        description: Using scaled alpha
+        value: 2
+      _3:
+        description: Using scaled alpha
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL0_5_PD_FACTOR_MODE:
+    enum:
+      _0:
+        description: Using 1
+        value: 0
+      _1:
+        description: Using 0
+        value: 1
+      _2:
+        description: Using straight alpha
+        value: 2
+      _3:
+        description: Using inverse alpha
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL0_5_AB_MODE:
+    enum:
+      _0:
+        description: No alpha Blending (The SAFETY_EN bit need set to 1)
+        value: 0
+      _1:
+        description: Blend with global ALPHA
+        value: 1
+      _2:
+        description: Blend with embedded ALPHA
+        value: 2
+      _3:
+        description: Blend with PoterDuff enable
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL1_5_BPP:
+    enum:
+      _0:
+        description: 1 bpp
+        value: 0
+      _1:
+        description: 2 bpp
+        value: 1
+      _2:
+        description: 4 bpp
+        value: 2
+      _3:
+        description: 8 bpp
+        value: 3
+      _4:
+        description: 16 bpp (RGB565)
+        value: 4
+      _5:
+        description: 16 bpp (ARGB1555)
+        value: 5
+      _6:
+        description: 16 bpp (ARGB4444)
+        value: 6
+      _7:
+        description: YCbCr422 (Only layer 0/1 can support this format)
+        value: 7
+      _8:
+        description: 24 bpp (RGB888)
+        value: 8
+      _9:
+        description: 32 bpp (ARGB8888)
+        value: 9
+      _10:
+        description: 32 bpp (ABGR8888)
+        value: 10
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL1_5_YUV_FORMAT:
+    enum:
+      _0:
+        description: The YVYU422 8bit sequence is U1,Y1,V1,Y2
+        value: 0
+      _1:
+        description: The YVYU422 8bit sequence is V1,Y1,U1,Y2
+        value: 1
+      _2:
+        description: The YVYU422 8bit sequence is Y1,U1,Y2,V1
+        value: 2
+      _3:
+        description: The YVYU422 8bit sequence is Y1,V1,Y2,U1
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL1_5_PD_GLOBAL_ALPHA_MODE:
+    enum:
+      _0:
+        description: Using global alpha
+        value: 0
+      _1:
+        description: Using local alpha
+        value: 1
+      _2:
+        description: Using scaled alpha
+        value: 2
+      _3:
+        description: Using scaled alpha
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL1_5_PD_FACTOR_MODE:
+    enum:
+      _0:
+        description: Using 1
+        value: 0
+      _1:
+        description: Using 0
+        value: 1
+      _2:
+        description: Using straight alpha
+        value: 2
+      _3:
+        description: Using inverse alpha
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL1_5_AB_MODE:
+    enum:
+      _0:
+        description: No alpha Blending (The SAFETY_EN bit need set to 1)
+        value: 0
+      _1:
+        description: Blend with global ALPHA
+        value: 1
+      _2:
+        description: Blend with embedded ALPHA
+        value: 2
+      _3:
+        description: Blend with PoterDuff enable
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL2_5_BPP:
+    enum:
+      _0:
+        description: 1 bpp
+        value: 0
+      _1:
+        description: 2 bpp
+        value: 1
+      _2:
+        description: 4 bpp
+        value: 2
+      _3:
+        description: 8 bpp
+        value: 3
+      _4:
+        description: 16 bpp (RGB565)
+        value: 4
+      _5:
+        description: 16 bpp (ARGB1555)
+        value: 5
+      _6:
+        description: 16 bpp (ARGB4444)
+        value: 6
+      _7:
+        description: YCbCr422 (Only layer 0/1 can support this format)
+        value: 7
+      _8:
+        description: 24 bpp (RGB888)
+        value: 8
+      _9:
+        description: 32 bpp (ARGB8888)
+        value: 9
+      _10:
+        description: 32 bpp (ABGR8888)
+        value: 10
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL2_5_YUV_FORMAT:
+    enum:
+      _0:
+        description: The YVYU422 8bit sequence is U1,Y1,V1,Y2
+        value: 0
+      _1:
+        description: The YVYU422 8bit sequence is V1,Y1,U1,Y2
+        value: 1
+      _2:
+        description: The YVYU422 8bit sequence is Y1,U1,Y2,V1
+        value: 2
+      _3:
+        description: The YVYU422 8bit sequence is Y1,V1,Y2,U1
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL2_5_PD_GLOBAL_ALPHA_MODE:
+    enum:
+      _0:
+        description: Using global alpha
+        value: 0
+      _1:
+        description: Using local alpha
+        value: 1
+      _2:
+        description: Using scaled alpha
+        value: 2
+      _3:
+        description: Using scaled alpha
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL2_5_PD_FACTOR_MODE:
+    enum:
+      _0:
+        description: Using 1
+        value: 0
+      _1:
+        description: Using 0
+        value: 1
+      _2:
+        description: Using straight alpha
+        value: 2
+      _3:
+        description: Using inverse alpha
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL2_5_AB_MODE:
+    enum:
+      _0:
+        description: No alpha Blending (The SAFETY_EN bit need set to 1)
+        value: 0
+      _1:
+        description: Blend with global ALPHA
+        value: 1
+      _2:
+        description: Blend with embedded ALPHA
+        value: 2
+      _3:
+        description: Blend with PoterDuff enable
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL3_5_BPP:
+    enum:
+      _0:
+        description: 1 bpp
+        value: 0
+      _1:
+        description: 2 bpp
+        value: 1
+      _2:
+        description: 4 bpp
+        value: 2
+      _3:
+        description: 8 bpp
+        value: 3
+      _4:
+        description: 16 bpp (RGB565)
+        value: 4
+      _5:
+        description: 16 bpp (ARGB1555)
+        value: 5
+      _6:
+        description: 16 bpp (ARGB4444)
+        value: 6
+      _7:
+        description: YCbCr422 (Only layer 0/1 can support this format)
+        value: 7
+      _8:
+        description: 24 bpp (RGB888)
+        value: 8
+      _9:
+        description: 32 bpp (ARGB8888)
+        value: 9
+      _10:
+        description: 32 bpp (ABGR8888)
+        value: 10
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL3_5_YUV_FORMAT:
+    enum:
+      _0:
+        description: The YVYU422 8bit sequence is U1,Y1,V1,Y2
+        value: 0
+      _1:
+        description: The YVYU422 8bit sequence is V1,Y1,U1,Y2
+        value: 1
+      _2:
+        description: The YVYU422 8bit sequence is Y1,U1,Y2,V1
+        value: 2
+      _3:
+        description: The YVYU422 8bit sequence is Y1,V1,Y2,U1
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL3_5_PD_GLOBAL_ALPHA_MODE:
+    enum:
+      _0:
+        description: Using global alpha
+        value: 0
+      _1:
+        description: Using local alpha
+        value: 1
+      _2:
+        description: Using scaled alpha
+        value: 2
+      _3:
+        description: Using scaled alpha
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL3_5_PD_FACTOR_MODE:
+    enum:
+      _0:
+        description: Using 1
+        value: 0
+      _1:
+        description: Using 0
+        value: 1
+      _2:
+        description: Using straight alpha
+        value: 2
+      _3:
+        description: Using inverse alpha
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL3_5_AB_MODE:
+    enum:
+      _0:
+        description: No alpha Blending (The SAFETY_EN bit need set to 1)
+        value: 0
+      _1:
+        description: Blend with global ALPHA
+        value: 1
+      _2:
+        description: Blend with embedded ALPHA
+        value: 2
+      _3:
+        description: Blend with PoterDuff enable
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL4_5_BPP:
+    enum:
+      _0:
+        description: 1 bpp
+        value: 0
+      _1:
+        description: 2 bpp
+        value: 1
+      _2:
+        description: 4 bpp
+        value: 2
+      _3:
+        description: 8 bpp
+        value: 3
+      _4:
+        description: 16 bpp (RGB565)
+        value: 4
+      _5:
+        description: 16 bpp (ARGB1555)
+        value: 5
+      _6:
+        description: 16 bpp (ARGB4444)
+        value: 6
+      _7:
+        description: YCbCr422 (Only layer 0/1 can support this format)
+        value: 7
+      _8:
+        description: 24 bpp (RGB888)
+        value: 8
+      _9:
+        description: 32 bpp (ARGB8888)
+        value: 9
+      _10:
+        description: 32 bpp (ABGR8888)
+        value: 10
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL4_5_YUV_FORMAT:
+    enum:
+      _0:
+        description: The YVYU422 8bit sequence is U1,Y1,V1,Y2
+        value: 0
+      _1:
+        description: The YVYU422 8bit sequence is V1,Y1,U1,Y2
+        value: 1
+      _2:
+        description: The YVYU422 8bit sequence is Y1,U1,Y2,V1
+        value: 2
+      _3:
+        description: The YVYU422 8bit sequence is Y1,V1,Y2,U1
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL4_5_PD_GLOBAL_ALPHA_MODE:
+    enum:
+      _0:
+        description: Using global alpha
+        value: 0
+      _1:
+        description: Using local alpha
+        value: 1
+      _2:
+        description: Using scaled alpha
+        value: 2
+      _3:
+        description: Using scaled alpha
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL4_5_PD_FACTOR_MODE:
+    enum:
+      _0:
+        description: Using 1
+        value: 0
+      _1:
+        description: Using 0
+        value: 1
+      _2:
+        description: Using straight alpha
+        value: 2
+      _3:
+        description: Using inverse alpha
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL4_5_AB_MODE:
+    enum:
+      _0:
+        description: No alpha Blending (The SAFETY_EN bit need set to 1)
+        value: 0
+      _1:
+        description: Blend with global ALPHA
+        value: 1
+      _2:
+        description: Blend with embedded ALPHA
+        value: 2
+      _3:
+        description: Blend with PoterDuff enable
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL5_5_BPP:
+    enum:
+      _0:
+        description: 1 bpp
+        value: 0
+      _1:
+        description: 2 bpp
+        value: 1
+      _2:
+        description: 4 bpp
+        value: 2
+      _3:
+        description: 8 bpp
+        value: 3
+      _4:
+        description: 16 bpp (RGB565)
+        value: 4
+      _5:
+        description: 16 bpp (ARGB1555)
+        value: 5
+      _6:
+        description: 16 bpp (ARGB4444)
+        value: 6
+      _7:
+        description: YCbCr422 (Only layer 0/1 can support this format)
+        value: 7
+      _8:
+        description: 24 bpp (RGB888)
+        value: 8
+      _9:
+        description: 32 bpp (ARGB8888)
+        value: 9
+      _10:
+        description: 32 bpp (ABGR8888)
+        value: 10
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL5_5_YUV_FORMAT:
+    enum:
+      _0:
+        description: The YVYU422 8bit sequence is U1,Y1,V1,Y2
+        value: 0
+      _1:
+        description: The YVYU422 8bit sequence is V1,Y1,U1,Y2
+        value: 1
+      _2:
+        description: The YVYU422 8bit sequence is Y1,U1,Y2,V1
+        value: 2
+      _3:
+        description: The YVYU422 8bit sequence is Y1,V1,Y2,U1
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL5_5_PD_GLOBAL_ALPHA_MODE:
+    enum:
+      _0:
+        description: Using global alpha
+        value: 0
+      _1:
+        description: Using local alpha
+        value: 1
+      _2:
+        description: Using scaled alpha
+        value: 2
+      _3:
+        description: Using scaled alpha
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL5_5_PD_FACTOR_MODE:
+    enum:
+      _0:
+        description: Using 1
+        value: 0
+      _1:
+        description: Using 0
+        value: 1
+      _2:
+        description: Using straight alpha
+        value: 2
+      _3:
+        description: Using inverse alpha
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL5_5_AB_MODE:
+    enum:
+      _0:
+        description: No alpha Blending (The SAFETY_EN bit need set to 1)
+        value: 0
+      _1:
+        description: Blend with global ALPHA
+        value: 1
+      _2:
+        description: Blend with embedded ALPHA
+        value: 2
+      _3:
+        description: Blend with PoterDuff enable
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL6_5_BPP:
+    enum:
+      _0:
+        description: 1 bpp
+        value: 0
+      _1:
+        description: 2 bpp
+        value: 1
+      _2:
+        description: 4 bpp
+        value: 2
+      _3:
+        description: 8 bpp
+        value: 3
+      _4:
+        description: 16 bpp (RGB565)
+        value: 4
+      _5:
+        description: 16 bpp (ARGB1555)
+        value: 5
+      _6:
+        description: 16 bpp (ARGB4444)
+        value: 6
+      _7:
+        description: YCbCr422 (Only layer 0/1 can support this format)
+        value: 7
+      _8:
+        description: 24 bpp (RGB888)
+        value: 8
+      _9:
+        description: 32 bpp (ARGB8888)
+        value: 9
+      _10:
+        description: 32 bpp (ABGR8888)
+        value: 10
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL6_5_YUV_FORMAT:
+    enum:
+      _0:
+        description: The YVYU422 8bit sequence is U1,Y1,V1,Y2
+        value: 0
+      _1:
+        description: The YVYU422 8bit sequence is V1,Y1,U1,Y2
+        value: 1
+      _2:
+        description: The YVYU422 8bit sequence is Y1,U1,Y2,V1
+        value: 2
+      _3:
+        description: The YVYU422 8bit sequence is Y1,V1,Y2,U1
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL6_5_PD_GLOBAL_ALPHA_MODE:
+    enum:
+      _0:
+        description: Using global alpha
+        value: 0
+      _1:
+        description: Using local alpha
+        value: 1
+      _2:
+        description: Using scaled alpha
+        value: 2
+      _3:
+        description: Using scaled alpha
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL6_5_PD_FACTOR_MODE:
+    enum:
+      _0:
+        description: Using 1
+        value: 0
+      _1:
+        description: Using 0
+        value: 1
+      _2:
+        description: Using straight alpha
+        value: 2
+      _3:
+        description: Using inverse alpha
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL6_5_AB_MODE:
+    enum:
+      _0:
+        description: No alpha Blending (The SAFETY_EN bit need set to 1)
+        value: 0
+      _1:
+        description: Blend with global ALPHA
+        value: 1
+      _2:
+        description: Blend with embedded ALPHA
+        value: 2
+      _3:
+        description: Blend with PoterDuff enable
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL7_5_BPP:
+    enum:
+      _0:
+        description: 1 bpp
+        value: 0
+      _1:
+        description: 2 bpp
+        value: 1
+      _2:
+        description: 4 bpp
+        value: 2
+      _3:
+        description: 8 bpp
+        value: 3
+      _4:
+        description: 16 bpp (RGB565)
+        value: 4
+      _5:
+        description: 16 bpp (ARGB1555)
+        value: 5
+      _6:
+        description: 16 bpp (ARGB4444)
+        value: 6
+      _7:
+        description: YCbCr422 (Only layer 0/1 can support this format)
+        value: 7
+      _8:
+        description: 24 bpp (RGB888)
+        value: 8
+      _9:
+        description: 32 bpp (ARGB8888)
+        value: 9
+      _10:
+        description: 32 bpp (ABGR8888)
+        value: 10
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL7_5_YUV_FORMAT:
+    enum:
+      _0:
+        description: The YVYU422 8bit sequence is U1,Y1,V1,Y2
+        value: 0
+      _1:
+        description: The YVYU422 8bit sequence is V1,Y1,U1,Y2
+        value: 1
+      _2:
+        description: The YVYU422 8bit sequence is Y1,U1,Y2,V1
+        value: 2
+      _3:
+        description: The YVYU422 8bit sequence is Y1,V1,Y2,U1
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL7_5_PD_GLOBAL_ALPHA_MODE:
+    enum:
+      _0:
+        description: Using global alpha
+        value: 0
+      _1:
+        description: Using local alpha
+        value: 1
+      _2:
+        description: Using scaled alpha
+        value: 2
+      _3:
+        description: Using scaled alpha
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL7_5_PD_FACTOR_MODE:
+    enum:
+      _0:
+        description: Using 1
+        value: 0
+      _1:
+        description: Using 0
+        value: 1
+      _2:
+        description: Using straight alpha
+        value: 2
+      _3:
+        description: Using inverse alpha
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LCDIFV2_CTRLDESCL7_5_AB_MODE:
+    enum:
+      _0:
+        description: No alpha Blending (The SAFETY_EN bit need set to 1)
+        value: 0
+      _1:
+        description: Blend with global ALPHA
+        value: 1
+      _2:
+        description: Blend with embedded ALPHA
+        value: 2
+      _3:
+        description: Blend with PoterDuff enable
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

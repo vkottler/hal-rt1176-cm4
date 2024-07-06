@@ -1,0 +1,700 @@
+---
+structs:
+  mcm:
+    description: Core Platform Miscellaneous Control Module
+    instances:
+      - name: MCM
+        address: '0xE0080000'
+    fields:
+      - name: PLREV
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 0
+        description: (read-write) SoC-defined platform revision
+        fields:
+          - name: PLREV
+            description: The PLREV[15:0] field is specified by an platform input signal
+              to define a software-visible revision number.
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: PCT
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 2
+        description: (read-write) Processor core type
+        fields:
+          - name: PCT
+            description: This MCM design supports the ARM Cortex M4 core. The following
+              value identifies this core complex.
+            index: 0
+            width: 16
+            read: true
+            write: false
+            type: MCM_PCT_PCT
+      - name: MEMCFG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Memory configuration
+        fields:
+          - name: TCRAMLSZ
+            description: TCRAML size
+            index: 8
+            width: 4
+            read: true
+            write: false
+          - name: TCRAMUSZ
+            description: TCRAMU size
+            index: 2
+            width: 4
+            read: true
+            write: false
+      - name: PLASC
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 8
+        description: (read-write) Crossbar Switch (AXBS) Slave Configuration
+        fields:
+          - name: ASC
+            description: Each bit in the ASC field indicates whether there is a corresponding
+              connection to the crossbar switch's slave input port.
+            index: 0
+            width: 8
+            read: true
+            write: false
+            type: MCM_PLASC_ASC
+      - name: PLAMC
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 10
+        description: (read-write) Crossbar Switch (AXBS) Master Configuration
+        fields:
+          - name: AMC
+            description: Each bit in the AMC field indicates whether there is a corresponding
+              connection to the AXBS master input port.
+            index: 0
+            width: 8
+            read: true
+            write: false
+            type: MCM_PLAMC_AMC
+      - name: CR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) Control Register
+        fields:
+          - name: CTCMWP
+            description: Code TCM Write Protect
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: CTCMAP
+            description: Code TCM arbitration priority
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: MCM_CR_CTCMAP
+          - name: STCMWP
+            description: System TCM write protect
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: STCMAP
+            description: System TCM arbitration priority
+            index: 24
+            width: 2
+            read: true
+            write: true
+            type: MCM_CR_STCMAP
+          - name: CBRR
+            description: Crossbar round-robin arbitration enable
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: STATUS
+            description: Status bits
+            index: 0
+            width: 9
+            read: true
+            write: false
+      - name: ISCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) Interrupt Status and Control Register
+        fields:
+          - name: FIDCE
+            description: FPU input denormal interrupt enable
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: FIXCE
+            description: FPU inexact interrupt enable
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: FUFCE
+            description: FPU underflow interrupt enable
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: FOFCE
+            description: FPU overflow interrupt enable
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: FDZCE
+            description: FPU divide-by-zero interrupt enable
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: FIOCE
+            description: FPU invalid operation interrupt enable
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: CWBEE
+            description: Cache write buffer error enable
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: FIDC
+            description: FPU input denormal interrupt status
+            index: 15
+            width: 1
+            read: true
+            write: false
+          - name: FIXC
+            description: FPU inexact interrupt status
+            index: 12
+            width: 1
+            read: true
+            write: false
+          - name: FUFC
+            description: FPU underflow interrupt status
+            index: 11
+            width: 1
+            read: true
+            write: false
+          - name: FOFC
+            description: FPU overflow interrupt status
+            index: 10
+            width: 1
+            read: true
+            write: false
+          - name: FDZC
+            description: FPU divide-by-zero interrupt status
+            index: 9
+            width: 1
+            read: true
+            write: false
+          - name: FIOC
+            description: FPU invalid operation interrupt status
+            index: 8
+            width: 1
+            read: true
+            write: false
+          - name: CWBER
+            description: Cache write buffer error status
+            index: 4
+            width: 1
+            read: true
+            write: true
+      - name: FADR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) Fault address register
+        fields:
+          - name: ADDRESS
+            description: Fault address
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: FATR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) Fault attributes register
+        fields:
+          - name: BEOVR
+            description: Bus error overrun
+            index: 31
+            width: 1
+            read: true
+            write: false
+          - name: BEMN
+            description: Bus error master number
+            index: 8
+            width: 4
+            read: true
+            write: false
+          - name: BEWT
+            description: Bus error write
+            index: 7
+            width: 1
+            read: true
+            write: false
+          - name: BESZ
+            description: Bus error size
+            index: 4
+            width: 2
+            read: true
+            write: false
+            type: MCM_FATR_BESZ
+          - name: BEMD
+            description: Bus error privilege level
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: BEDA
+            description: Bus error access type
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: FDR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) Fault data register
+        fields:
+          - name: DATA
+            description: Fault data
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: LMDR
+        type: uint32_t
+        expected_size: 16
+        expected_offset: 1024
+        array_length: 4
+        description: (read-write) Local Memory Descriptor Register
+        fields:
+          - name: V
+            description: Local memory Valid bit. This read-only field defines the
+              validity (presence) of the local memory.
+            index: 31
+            width: 1
+            read: true
+            write: false
+          - name: LMSZH
+            description: LMEM Size "Hole"
+            index: 28
+            width: 1
+            read: true
+            write: false
+          - name: LMSZ
+            description: LMEM Size
+            index: 24
+            width: 4
+            read: true
+            write: false
+            type: MCM_LMDR_LMSZ
+          - name: WY
+            description: Level 1 Cache Ways
+            index: 20
+            width: 4
+            read: true
+            write: false
+            type: MCM_LMDR_WY
+          - name: DPW
+            description: LMEM Data Path Width. This read-only field defines the width
+              of the local memory.
+            index: 17
+            width: 3
+            read: true
+            write: false
+            type: MCM_LMDR_DPW
+          - name: RO
+            description: Read-Only
+            index: 16
+            width: 1
+            read: true
+            write: false
+          - name: MT
+            description: Memory Type
+            index: 13
+            width: 3
+            read: true
+            write: false
+            type: MCM_LMDR_MT
+          - name: CF1
+            description: Control Field 1 - for Cache Parity control functions
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: CF0
+            description: Control Field 0
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: LMPECR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1152
+        description: (read-write) LMEM Parity & ECC Control Register
+        fields:
+          - name: ECPI
+            description: Enable Cache Parity IRQ
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: ECPR
+            description: Enable Cache Parity Reporting
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: ER1BI
+            description: Enable RAM ECC 1-bit Interrupt
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: ER1BR
+            description: Enable RAM ECC 1-bit Reporting
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: ERNCI
+            description: Enable RAM Non-correctable ECC Interrupt
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ERNCR
+            description: Enable RAM ECC Non-correctable Reporting
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LMPEIR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1160
+        description: (read-write) LMEM Parity & ECC Interrupt Register
+        fields:
+          - name: V
+            description: Valid bit
+            index: 31
+            width: 1
+            read: true
+            write: false
+          - name: PEELOC
+            description: Parity or ECC Error Location
+            index: 24
+            width: 5
+            read: true
+            write: true
+          - name: PE
+            description: Parity Error
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: E1B
+            description: E1Bn = ECC 1-bit Error n
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: ENC
+            description: ENCn = ECC Non-correctable Error n
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: LMFAR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1168
+        description: (read-write) LMEM Fault Address Register
+        fields:
+          - name: EFADD
+            description: ECC Fault Address
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: LMFATR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1172
+        description: (read-write) LMEM Fault Attribute Register
+        fields:
+          - name: OVR
+            description: Overrun
+            index: 31
+            width: 1
+            read: true
+            write: false
+          - name: WORDID
+            description: ID of the word which has ECC error
+            index: 24
+            width: 1
+            read: true
+            write: false
+          - name: PEFMST
+            description: Parity/ECC Fault Master Number
+            index: 8
+            width: 8
+            read: true
+            write: false
+          - name: PEFW
+            description: Parity/ECC Fault Write
+            index: 7
+            width: 1
+            read: true
+            write: false
+          - name: PEFSIZE
+            description: Parity/ECC Fault Master Size 3'b000 = 8-bit access 3'b001
+              = 16-bit access 3'b010 = 32-bit access 3'b011 = 64-bit access 3'b1xx
+              = Reserved
+            index: 4
+            width: 3
+            read: true
+            write: true
+          - name: PEFPRT
+            description: 'Parity/ECC Fault Protection FATR[3] is Cacheable: 0=Non-cacheable,
+              1=Cacheable FATR[2] is Bufferable: 0=Non-bufferable, 1=Bufferable FATR[1]
+              is Mode: 0=User mode, 1=Supervisor mode FATR[0] is Type: 0=I-Fetch,
+              1=Data'
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: LMFDHR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1184
+        description: (read-write) LMEM Fault Data High Register
+        fields:
+          - name: PEFDH
+            description: Parity or ECC Fault Data High
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: LMFDLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1188
+        description: (read-write) LMEM Fault Data Low Register
+        fields:
+          - name: PEFDL
+            description: Parity or ECC Fault Data Low
+            index: 0
+            width: 32
+            read: true
+            write: false
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  MCM_PCT_PCT:
+    enum:
+      PCT_44096:
+        description: ARM Cortex M4
+        value: 44096
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  MCM_PLASC_ASC:
+    enum:
+      _0:
+        description: A bus slave connection to AXBS input port n is absent
+        value: 0
+      _1:
+        description: A bus slave connection to AXBS input port n is present
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  MCM_PLAMC_AMC:
+    enum:
+      _0:
+        description: A bus master connection to AXBS input port n is absent
+        value: 0
+      _1:
+        description: A bus master connection to AXBS input port n is present
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  MCM_CR_CTCMAP:
+    enum:
+      _0:
+        description: Round robin
+        value: 0
+      _1:
+        description: Special round robin (favors TCM backoor accesses over the processor)
+        value: 1
+      _2:
+        description: Fixed priority. Processor has highest, backdoor has lowest
+        value: 2
+      _3:
+        description: Fixed priority. Backdoor has highest, processor has lowest
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  MCM_CR_STCMAP:
+    enum:
+      _0:
+        description: Round robin
+        value: 0
+      _1:
+        description: Special round robin (favors TCM backoor accesses over the processor)
+        value: 1
+      _2:
+        description: Fixed priority. Processor has highest, backdoor has lowest
+        value: 2
+      _3:
+        description: Fixed priority. Backdoor has highest, processor has lowest
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  MCM_FATR_BESZ:
+    enum:
+      _0:
+        description: 8-bit access
+        value: 0
+      _1:
+        description: 16-bit access
+        value: 1
+      _2:
+        description: 32-bit access
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  MCM_LMDR_LMSZ:
+    enum:
+      _0:
+        description: no LMEMn (0 KB)
+        value: 0
+      _1:
+        description: 1 KB LMEMn
+        value: 1
+      _2:
+        description: 2 KB LMEMn
+        value: 2
+      _3:
+        description: 4 KB LMEMn
+        value: 3
+      _4:
+        description: 8 KB LMEMn
+        value: 4
+      _5:
+        description: 16 KB LMEMn
+        value: 5
+      _6:
+        description: 32 KB LMEMn
+        value: 6
+      _7:
+        description: 64 KB LMEMn
+        value: 7
+      _8:
+        description: 128 KB LMEMn
+        value: 8
+      _9:
+        description: 256 KB LMEMn
+        value: 9
+      _10:
+        description: 512 KB LMEMn
+        value: 10
+      _11:
+        description: 1024 KB LMEMn
+        value: 11
+      _12:
+        description: 2048 KB LMEMn
+        value: 12
+      _13:
+        description: 4096 KB LMEMn
+        value: 13
+      _14:
+        description: 8192 KB LMEMn
+        value: 14
+      _15:
+        description: 16384 KB LMEMn
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  MCM_LMDR_WY:
+    enum:
+      _0:
+        description: No Cache
+        value: 0
+      _2:
+        description: 2-Way Set Associative
+        value: 2
+      _4:
+        description: 4-Way Set Associative
+        value: 4
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  MCM_LMDR_DPW:
+    enum:
+      _2:
+        description: LMEMn 32-bits wide
+        value: 2
+      _3:
+        description: LMEMn 64-bits wide
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  MCM_LMDR_MT:
+    enum:
+      _0:
+        description: code TCM
+        value: 0
+      _1:
+        description: system TCM
+        value: 1
+      _2:
+        description: PC Cache
+        value: 2
+      _3:
+        description: PS Cache
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

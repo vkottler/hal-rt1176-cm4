@@ -1,0 +1,2175 @@
+---
+structs:
+  iomuxc_lpsr_gpr:
+    description: IOMUXC LPSR GPR
+    instances:
+      - name: IOMUXC_LPSR_GPR
+        address: '0x40C0C000'
+    fields:
+      - name: GPR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) GPR0 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_GPR_GPR0_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_GPR_GPR0_DWP
+          - name: CM4_INIT_VTOR_LOW
+            description: CM4 Vector table offset value lower bits out of reset
+            index: 3
+            width: 13
+            read: true
+            write: true
+      - name: GPR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) GPR1 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_GPR_GPR1_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_GPR_GPR1_DWP
+          - name: CM4_INIT_VTOR_HIGH
+            description: CM4 Vector table offset value higher bits out of reset
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: GPR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) GPR2 General Purpose Register
+        fields:
+          - name: APC_AC_R0_BOT
+            description: APC start address of memory region-0
+            index: 3
+            width: 29
+            read: true
+            write: true
+          - name: LOCK
+            description: Lock the write to bit 31:1
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) GPR3 General Purpose Register
+        fields:
+          - name: APC_AC_R0_TOP
+            description: APC end address of memory region-0
+            index: 3
+            width: 29
+            read: true
+            write: true
+          - name: LOCK
+            description: Lock the write to bit 31:1
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) GPR4 General Purpose Register
+        fields:
+          - name: APC_AC_R1_BOT
+            description: APC start address of memory region-1
+            index: 3
+            width: 29
+            read: true
+            write: true
+          - name: LOCK
+            description: Lock the write to bit 31:1
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR5
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) GPR5 General Purpose Register
+        fields:
+          - name: APC_AC_R1_TOP
+            description: APC end address of memory region-1
+            index: 3
+            width: 29
+            read: true
+            write: true
+          - name: LOCK
+            description: Lock the write to bit 31:1
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR6
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) GPR6 General Purpose Register
+        fields:
+          - name: APC_AC_R2_BOT
+            description: APC start address of memory region-2
+            index: 3
+            width: 29
+            read: true
+            write: true
+          - name: LOCK
+            description: Lock the write to bit 31:1
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR7
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) GPR7 General Purpose Register
+        fields:
+          - name: APC_AC_R2_TOP
+            description: APC end address of memory region-2
+            index: 3
+            width: 29
+            read: true
+            write: true
+          - name: LOCK
+            description: Lock the write to bit 31:1
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR8
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) GPR8 General Purpose Register
+        fields:
+          - name: APC_AC_R3_BOT
+            description: APC start address of memory region-3
+            index: 3
+            width: 29
+            read: true
+            write: true
+          - name: LOCK
+            description: Lock the write to bit 31:1
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR9
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) GPR9 General Purpose Register
+        fields:
+          - name: APC_AC_R3_TOP
+            description: APC end address of memory region-3
+            index: 3
+            width: 29
+            read: true
+            write: true
+          - name: LOCK
+            description: Lock the write to bit 31:1
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR10
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) GPR10 General Purpose Register
+        fields:
+          - name: APC_AC_R4_BOT
+            description: APC start address of memory region-4
+            index: 3
+            width: 29
+            read: true
+            write: true
+          - name: LOCK
+            description: Lock the write to bit 31:1
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR11
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) GPR11 General Purpose Register
+        fields:
+          - name: APC_AC_R4_TOP
+            description: APC end address of memory region-4
+            index: 3
+            width: 29
+            read: true
+            write: true
+          - name: LOCK
+            description: Lock the write to bit 31:1
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR12
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) GPR12 General Purpose Register
+        fields:
+          - name: APC_AC_R5_BOT
+            description: APC start address of memory region-5
+            index: 3
+            width: 29
+            read: true
+            write: true
+          - name: LOCK
+            description: Lock the write to bit 31:1
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR13
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 52
+        description: (read-write) GPR13 General Purpose Register
+        fields:
+          - name: APC_AC_R5_TOP
+            description: APC end address of memory region-5
+            index: 3
+            width: 29
+            read: true
+            write: true
+          - name: LOCK
+            description: Lock the write to bit 31:1
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR14
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 56
+        description: (read-write) GPR14 General Purpose Register
+        fields:
+          - name: APC_AC_R6_BOT
+            description: APC start address of memory region-6
+            index: 3
+            width: 29
+            read: true
+            write: true
+          - name: LOCK
+            description: Lock the write to bit 31:1
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR15
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 60
+        description: (read-write) GPR15 General Purpose Register
+        fields:
+          - name: APC_AC_R6_TOP
+            description: APC end address of memory region-6
+            index: 3
+            width: 29
+            read: true
+            write: true
+          - name: LOCK
+            description: Lock the write to bit 31:1
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR16
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 64
+        description: (read-write) GPR16 General Purpose Register
+        fields:
+          - name: APC_AC_R7_BOT
+            description: APC start address of memory region-7
+            index: 3
+            width: 29
+            read: true
+            write: true
+          - name: LOCK
+            description: Lock the write to bit 31:1
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR17
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 68
+        description: (read-write) GPR17 General Purpose Register
+        fields:
+          - name: APC_AC_R7_TOP
+            description: APC end address of memory region-7
+            index: 3
+            width: 29
+            read: true
+            write: true
+          - name: LOCK
+            description: Lock the write to bit 31:1
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR18
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 72
+        description: (read-write) GPR18 General Purpose Register
+        fields:
+          - name: LOCK
+            description: Lock the write to bit 15:0
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: APC_R0_ENCRYPT_ENABLE
+            description: APC memory region-0 encryption enable
+            index: 4
+            width: 1
+            read: true
+            write: true
+      - name: GPR19
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 76
+        description: (read-write) GPR19 General Purpose Register
+        fields:
+          - name: LOCK
+            description: Lock the write to bit 15:0
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: APC_R1_ENCRYPT_ENABLE
+            description: APC memory region-1 encryption enable
+            index: 4
+            width: 1
+            read: true
+            write: true
+      - name: GPR20
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 80
+        description: (read-write) GPR20 General Purpose Register
+        fields:
+          - name: LOCK
+            description: Lock the write to bit 15:0
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: APC_R2_ENCRYPT_ENABLE
+            description: APC memory region-2 encryption enable
+            index: 4
+            width: 1
+            read: true
+            write: true
+      - name: GPR21
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 84
+        description: (read-write) GPR21 General Purpose Register
+        fields:
+          - name: LOCK
+            description: Lock the write to bit 15:0
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: APC_R3_ENCRYPT_ENABLE
+            description: APC memory region-3 encryption enable
+            index: 4
+            width: 1
+            read: true
+            write: true
+      - name: GPR22
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 88
+        description: (read-write) GPR22 General Purpose Register
+        fields:
+          - name: LOCK
+            description: Lock the write to bit 15:0
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: APC_R4_ENCRYPT_ENABLE
+            description: APC memory region-4 encryption enable
+            index: 4
+            width: 1
+            read: true
+            write: true
+      - name: GPR23
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 92
+        description: (read-write) GPR23 General Purpose Register
+        fields:
+          - name: LOCK
+            description: Lock the write to bit 15:0
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: APC_R5_ENCRYPT_ENABLE
+            description: APC memory region-5 encryption enable
+            index: 4
+            width: 1
+            read: true
+            write: true
+      - name: GPR24
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 96
+        description: (read-write) GPR24 General Purpose Register
+        fields:
+          - name: LOCK
+            description: Lock the write to bit 15:0
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: APC_R6_ENCRYPT_ENABLE
+            description: APC memory region-6 encryption enable
+            index: 4
+            width: 1
+            read: true
+            write: true
+      - name: GPR25
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 100
+        description: (read-write) GPR25 General Purpose Register
+        fields:
+          - name: LOCK
+            description: Lock the write to bit 15:0
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: APC_VALID
+            description: APC global enable bit
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: APC_R7_ENCRYPT_ENABLE
+            description: APC memory region-7 encryption enable
+            index: 4
+            width: 1
+            read: true
+            write: true
+      - name: GPR26
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 104
+        description: (read-write) GPR26 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_GPR_GPR26_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_GPR_GPR26_DWP
+          - name: FIELD_0
+            description: General purpose bits
+            index: 25
+            width: 3
+            read: true
+            write: true
+          - name: CM7_INIT_VTOR
+            description: Vector table offset register out of reset. See the ARM v7-M
+              Architecture Reference Manual for more information about the vector
+              table offset register (VTOR).
+            index: 0
+            width: 25
+            read: true
+            write: true
+      - name: GPR33
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 132
+        description: (read-write) GPR33 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_GPR_GPR33_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_GPR_GPR33_DWP
+          - name: USBPHY2_WAKEUP_IRQ_CLEAR
+            description: Clear USBPHY1 wakeup interrupt holding register
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: USBPHY1_WAKEUP_IRQ_CLEAR
+            description: Clear USBPHY1 wakeup interrupt holding register
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: M4_NMI_CLEAR
+            description: Clear CM4 NMI holding register
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR34
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 136
+        description: (read-write) GPR34 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_GPR_GPR34_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_GPR_GPR34_DWP
+          - name: SEC_ERR_RESP
+            description: Security error response enable
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: M4_GPC_SLEEP_SEL
+            description: CM4 sleep request selection
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: M4_NMI_MASK
+            description: Mask CM4 NMI pin input
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: M7_NMI_MASK
+            description: Mask CM7 NMI pin input
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_LPSR_LOW_RANGE
+            description: GPIO_LPSR IO bank supply voltage range selection
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_LPSR_HIGH_RANGE
+            description: GPIO_LPSR IO bank supply voltage range selection
+            index: 1
+            width: 1
+            read: true
+            write: true
+      - name: GPR35
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 140
+        description: (read-write) GPR35 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_GPR_GPR35_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_GPR_GPR35_DWP
+          - name: FLEXSPI2_STOP_REQ
+            description: FLEXSPI2 stop request
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: FLEXSPI2_IPG_DOZE
+            description: FLEXSPI2 doze mode
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: FLEXSPI1_STOP_REQ
+            description: FLEXSPI1 stop request
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: FLEXSPI1_IPG_DOZE
+            description: FLEXSPI1 doze mode
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: FLEXIO2_IPG_DOZE
+            description: FLEXIO2 doze mode
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: FLEXIO1_IPG_DOZE
+            description: FLEXIO2 doze mode
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: ENET1G_STOP_REQ
+            description: ENET1G stop request
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: ENET1G_IPG_DOZE
+            description: ENET1G doze mode
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: ENET_STOP_REQ
+            description: ENET stop request
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: ENET_IPG_DOZE
+            description: ENET doze mode
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: EDMA_LPSR_STOP_REQ
+            description: EDMA_LPSR stop request
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: EDMA_STOP_REQ
+            description: EDMA stop request
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: CAN3_STOP_REQ
+            description: CAN3 stop request
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: CAN3_IPG_DOZE
+            description: CAN3 doze mode
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: CAN2_STOP_REQ
+            description: CAN2 stop request
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: CAN2_IPG_DOZE
+            description: CAN2 doze mode
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: CAN1_STOP_REQ
+            description: CAN1 stop request
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: CAN1_IPG_DOZE
+            description: CAN1 doze mode
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: CAAM_STOP_REQ
+            description: CAAM stop request
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: CAAM_IPG_DOZE
+            description: CAN3 doze mode
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ADC2_IPG_STOP_MODE
+            description: ADC2 stop mode selection. This bitfield cannot change when
+              ADC2_STOP_REQ is asserted.
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ADC2_STOP_REQ
+            description: ADC2 stop request
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: ADC2_IPG_DOZE
+            description: ADC2 doze mode
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ADC1_IPG_STOP_MODE
+            description: ADC1 stop mode selection. This bitfield cannot change when
+              ADC1_STOP_REQ is asserted.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ADC1_STOP_REQ
+            description: ADC1 stop request
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ADC1_IPG_DOZE
+            description: ADC1 doze mode
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR36
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 144
+        description: (read-write) GPR36 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_GPR_GPR36_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_GPR_GPR36_DWP
+          - name: LPSPI1_IPG_STOP_MODE
+            description: LPSPI1 stop mode selection. This bitfield cannot change when
+              LPSPI1_STOP_REQ is asserted.
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI1_STOP_REQ
+            description: LPSPI1 stop request
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI1_IPG_DOZE
+            description: LPSPI1 doze mode
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C6_IPG_STOP_MODE
+            description: LPI2C6 stop mode selection. This bitfield cannot change when
+              LPI2C6_STOP_REQ is asserted.
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C6_STOP_REQ
+            description: LPI2C6 stop request
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C6_IPG_DOZE
+            description: LPI2C6 doze mode
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C5_IPG_STOP_MODE
+            description: LPI2C5 stop mode selection. This bitfield cannot change when
+              LPI2C5_STOP_REQ is asserted.
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C5_STOP_REQ
+            description: LPI2C5 stop request
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C5_IPG_DOZE
+            description: LPI2C5 doze mode
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C4_IPG_STOP_MODE
+            description: LPI2C4 stop mode selection. This bitfield cannot change when
+              LPI2C4_STOP_REQ is asserted.
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C4_STOP_REQ
+            description: LPI2C4 stop request
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C4_IPG_DOZE
+            description: LPI2C4 doze mode
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C3_IPG_STOP_MODE
+            description: LPI2C3 stop mode selection. This bitfield cannot change when
+              LPI2C3_STOP_REQ is asserted.
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C3_STOP_REQ
+            description: LPI2C3 stop request
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C3_IPG_DOZE
+            description: LPI2C3 doze mode
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C2_IPG_STOP_MODE
+            description: LPI2C2 stop mode selection. This bitfield cannot change when
+              LPI2C2_STOP_REQ is asserted.
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C2_STOP_REQ
+            description: LPI2C2 stop request
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C2_IPG_DOZE
+            description: LPI2C2 doze mode
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C1_IPG_STOP_MODE
+            description: LPI2C1 stop mode selection. This bitfield cannot change when
+              LPI2C1_STOP_REQ is asserted.
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C1_STOP_REQ
+            description: LPI2C1 stop request
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C1_IPG_DOZE
+            description: LPI2C1 doze mode
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: GPT6_IPG_DOZE
+            description: GPT6 doze mode
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: GPT5_IPG_DOZE
+            description: GPT5 doze mode
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: GPT4_IPG_DOZE
+            description: GPT4 doze mode
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: GPT3_IPG_DOZE
+            description: GPT3 doze mode
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: GPT2_IPG_DOZE
+            description: GPT2 doze mode
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: GPT1_IPG_DOZE
+            description: GPT1 doze mode
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR37
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 148
+        description: (read-write) GPR37 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_GPR_GPR37_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_GPR_GPR37_DWP
+          - name: LPUART4_IPG_STOP_MODE
+            description: LPUART4 stop mode selection. This bitfield cannot change
+              when LPUART4_STOP_REQ is asserted.
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: LPUART4_STOP_REQ
+            description: LPUART4 stop request
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: LPUART4_IPG_DOZE
+            description: LPUART4 doze mode
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: LPUART3_IPG_STOP_MODE
+            description: LPUART3 stop mode selection. This bitfield cannot change
+              when LPUART3_STOP_REQ is asserted.
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: LPUART3_STOP_REQ
+            description: LPUART3 stop request
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: LPUART3_IPG_DOZE
+            description: LPUART3 doze mode
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: LPUART2_IPG_STOP_MODE
+            description: LPUART2 stop mode selection. This bitfield cannot change
+              when LPUART2_STOP_REQ is asserted.
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: LPUART2_STOP_REQ
+            description: LPUART2 stop request
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: LPUART2_IPG_DOZE
+            description: LPUART2 doze mode
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: LPUART1_IPG_STOP_MODE
+            description: LPUART1 stop mode selection. This bitfield cannot change
+              when LPUART1_STOP_REQ is asserted.
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: LPUART1_STOP_REQ
+            description: LPUART1 stop request
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: LPUART1_IPG_DOZE
+            description: LPUART1 doze mode
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI6_IPG_STOP_MODE
+            description: LPSPI6 stop mode selection. This bitfield cannot change when
+              LPSPI6_STOP_REQ is asserted.
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI6_STOP_REQ
+            description: LPSPI6 stop request
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI6_IPG_DOZE
+            description: LPSPI6 doze mode
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI5_IPG_STOP_MODE
+            description: LPSPI5 stop mode selection. This bitfield cannot change when
+              LPSPI5_STOP_REQ is asserted.
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI5_STOP_REQ
+            description: LPSPI5 stop request
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI5_IPG_DOZE
+            description: LPSPI5 doze mode
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI4_IPG_STOP_MODE
+            description: LPSPI4 stop mode selection. This bitfield cannot change when
+              LPSPI4_STOP_REQ is asserted.
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI4_STOP_REQ
+            description: LPSPI4 stop request
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI4_IPG_DOZE
+            description: LPSPI4 doze mode
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI3_IPG_STOP_MODE
+            description: LPSPI3 stop mode selection. This bitfield cannot change when
+              LPSPI3_STOP_REQ is asserted.
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI3_STOP_REQ
+            description: LPSPI3 stop request
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI3_IPG_DOZE
+            description: LPSPI3 doze mode
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI2_IPG_STOP_MODE
+            description: LPSPI2 stop mode selection. This bitfield cannot change when
+              LPSPI2_STOP_REQ is asserted.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI2_STOP_REQ
+            description: LPSPI2 stop request
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI2_IPG_DOZE
+            description: LPSPI2 doze mode
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR38
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 152
+        description: (read-write) GPR38 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_GPR_GPR38_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_GPR_GPR38_DWP
+          - name: MIC_IPG_STOP_MODE
+            description: MIC stop mode selection. This bitfield cannot change when
+              MIC_STOP_REQ is asserted.
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: MIC_STOP_REQ
+            description: MIC stop request
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: MIC_IPG_DOZE
+            description: MIC doze mode
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: LPUART12_IPG_STOP_MODE
+            description: LPUART12 stop mode selection. This bitfield cannot change
+              when LPUART12_STOP_REQ is asserted.
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: LPUART12_STOP_REQ
+            description: LPUART12 stop request
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: LPUART12_IPG_DOZE
+            description: LPUART12 doze mode
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: LPUART11_IPG_STOP_MODE
+            description: LPUART11 stop mode selection. This bitfield cannot change
+              when LPUART11_STOP_REQ is asserted.
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: LPUART11_STOP_REQ
+            description: LPUART11 stop request
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: LPUART11_IPG_DOZE
+            description: LPUART11 doze mode
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: LPUART10_IPG_STOP_MODE
+            description: LPUART10 stop mode selection. This bitfield cannot change
+              when LPUART10_STOP_REQ is asserted.
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: LPUART10_STOP_REQ
+            description: LPUART10 stop request
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: LPUART10_IPG_DOZE
+            description: LPUART10 doze mode
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: LPUART9_IPG_STOP_MODE
+            description: LPUART9 stop mode selection. This bitfield cannot change
+              when LPUART9_STOP_REQ is asserted.
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: LPUART9_STOP_REQ
+            description: LPUART9 stop request
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: LPUART9_IPG_DOZE
+            description: LPUART9 doze mode
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: LPUART8_IPG_STOP_MODE
+            description: LPUART8 stop mode selection. This bitfield cannot change
+              when LPUART8_STOP_REQ is asserted.
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: LPUART8_STOP_REQ
+            description: LPUART8 stop request
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: LPUART8_IPG_DOZE
+            description: LPUART8 doze mode
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: LPUART7_IPG_STOP_MODE
+            description: LPUART7 stop mode selection. This bitfield cannot change
+              when LPUART7_STOP_REQ is asserted.
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: LPUART7_STOP_REQ
+            description: LPUART7 stop request
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: LPUART7_IPG_DOZE
+            description: LPUART7 doze mode
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: LPUART6_IPG_STOP_MODE
+            description: LPUART6 stop mode selection. This bitfield cannot change
+              when LPUART6_STOP_REQ is asserted.
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: LPUART6_STOP_REQ
+            description: LPUART6 stop request
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: LPUART6_IPG_DOZE
+            description: LPUART6 doze mode
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: LPUART5_IPG_STOP_MODE
+            description: LPUART5 stop mode selection. This bitfield cannot change
+              when LPUART5_STOP_REQ is asserted.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: LPUART5_STOP_REQ
+            description: LPUART5 stop request
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: LPUART5_IPG_DOZE
+            description: LPUART5 doze mode
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR39
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 156
+        description: (read-write) GPR39 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_GPR_GPR39_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_GPR_GPR39_DWP
+          - name: FLEXIO2_STOP_REQ_PER
+            description: FLEXIO2 peripheral clock domain stop request
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: FLEXIO2_STOP_REQ_BUS
+            description: FLEXIO2 bus clock domain stop request
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: FLEXIO1_STOP_REQ_PER
+            description: FLEXIO1 peripheral clock domain stop request
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: FLEXIO1_STOP_REQ_BUS
+            description: FLEXIO1 bus clock domain stop request
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: SAI4_STOP_REQ
+            description: SAI4 stop request
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: SAI3_STOP_REQ
+            description: SAI3 stop request
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: SAI2_STOP_REQ
+            description: SAI2 stop request
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: SAI1_STOP_REQ
+            description: SAI1 stop request
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: WDOG2_IPG_DOZE
+            description: WDOG2 doze mode
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: WDOG1_IPG_DOZE
+            description: WDOG1 doze mode
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: SNVS_HP_STOP_REQ
+            description: SNVS_HP stop request
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: SNVS_HP_IPG_DOZE
+            description: SNVS_HP doze mode
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: SIM2_IPG_DOZE
+            description: SIM2 doze mode
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: SIM1_IPG_DOZE
+            description: SIM1 doze mode
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: SEMC_STOP_REQ
+            description: SEMC stop request
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: PIT2_STOP_REQ
+            description: PIT2 stop request
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: PIT1_STOP_REQ
+            description: PIT1 stop request
+            index: 1
+            width: 1
+            read: true
+            write: true
+      - name: GPR40
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 160
+        description: (read-write) GPR40 General Purpose Register
+        fields:
+          - name: LPUART8_STOP_ACK
+            description: LPUART8 stop acknowledge
+            index: 31
+            width: 1
+            read: true
+            write: false
+          - name: LPUART7_STOP_ACK
+            description: LPUART7 stop acknowledge
+            index: 30
+            width: 1
+            read: true
+            write: false
+          - name: LPUART6_STOP_ACK
+            description: LPUART6 stop acknowledge
+            index: 29
+            width: 1
+            read: true
+            write: false
+          - name: LPUART5_STOP_ACK
+            description: LPUART5 stop acknowledge
+            index: 28
+            width: 1
+            read: true
+            write: false
+          - name: LPUART4_STOP_ACK
+            description: LPUART4 stop acknowledge
+            index: 27
+            width: 1
+            read: true
+            write: false
+          - name: LPUART3_STOP_ACK
+            description: LPUART3 stop acknowledge
+            index: 26
+            width: 1
+            read: true
+            write: false
+          - name: LPUART2_STOP_ACK
+            description: LPUART2 stop acknowledge
+            index: 25
+            width: 1
+            read: true
+            write: false
+          - name: LPUART1_STOP_ACK
+            description: LPUART1 stop acknowledge
+            index: 24
+            width: 1
+            read: true
+            write: false
+          - name: LPSPI6_STOP_ACK
+            description: LPSPI6 stop acknowledge
+            index: 23
+            width: 1
+            read: true
+            write: false
+          - name: LPSPI5_STOP_ACK
+            description: LPSPI5 stop acknowledge
+            index: 22
+            width: 1
+            read: true
+            write: false
+          - name: LPSPI4_STOP_ACK
+            description: LPSPI4 stop acknowledge
+            index: 21
+            width: 1
+            read: true
+            write: false
+          - name: LPSPI3_STOP_ACK
+            description: LPSPI3 stop acknowledge
+            index: 20
+            width: 1
+            read: true
+            write: false
+          - name: LPSPI2_STOP_ACK
+            description: LPSPI2 stop acknowledge
+            index: 19
+            width: 1
+            read: true
+            write: false
+          - name: LPSPI1_STOP_ACK
+            description: LPSPI1 stop acknowledge
+            index: 18
+            width: 1
+            read: true
+            write: false
+          - name: LPI2C6_STOP_ACK
+            description: LPI2C6 stop acknowledge
+            index: 17
+            width: 1
+            read: true
+            write: false
+          - name: LPI2C5_STOP_ACK
+            description: LPI2C5 stop acknowledge
+            index: 16
+            width: 1
+            read: true
+            write: false
+          - name: LPI2C4_STOP_ACK
+            description: LPI2C4 stop acknowledge
+            index: 15
+            width: 1
+            read: true
+            write: false
+          - name: LPI2C3_STOP_ACK
+            description: LPI2C3 stop acknowledge
+            index: 14
+            width: 1
+            read: true
+            write: false
+          - name: LPI2C2_STOP_ACK
+            description: LPI2C2 stop acknowledge
+            index: 13
+            width: 1
+            read: true
+            write: false
+          - name: LPI2C1_STOP_ACK
+            description: LPI2C1 stop acknowledge
+            index: 12
+            width: 1
+            read: true
+            write: false
+          - name: FLEXSPI2_STOP_ACK
+            description: FLEXSPI2 stop acknowledge
+            index: 11
+            width: 1
+            read: true
+            write: false
+          - name: FLEXSPI1_STOP_ACK
+            description: FLEXSPI1 stop acknowledge
+            index: 10
+            width: 1
+            read: true
+            write: false
+          - name: ENET1G_STOP_ACK
+            description: ENET1G stop acknowledge
+            index: 9
+            width: 1
+            read: true
+            write: false
+          - name: ENET_STOP_ACK
+            description: ENET stop acknowledge
+            index: 8
+            width: 1
+            read: true
+            write: false
+          - name: EDMA_LPSR_STOP_ACK
+            description: EDMA_LPSR stop acknowledge
+            index: 7
+            width: 1
+            read: true
+            write: false
+          - name: EDMA_STOP_ACK
+            description: EDMA stop acknowledge
+            index: 6
+            width: 1
+            read: true
+            write: false
+          - name: CAN3_STOP_ACK
+            description: CAN3 stop acknowledge
+            index: 5
+            width: 1
+            read: true
+            write: false
+          - name: CAN2_STOP_ACK
+            description: CAN2 stop acknowledge
+            index: 4
+            width: 1
+            read: true
+            write: false
+          - name: CAN1_STOP_ACK
+            description: CAN1 stop acknowledge
+            index: 3
+            width: 1
+            read: true
+            write: false
+          - name: CAAM_STOP_ACK
+            description: CAAM stop acknowledge
+            index: 2
+            width: 1
+            read: true
+            write: false
+          - name: ADC2_STOP_ACK
+            description: ADC2 stop acknowledge
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: ADC1_STOP_ACK
+            description: ADC1 stop acknowledge
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: GPR41
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 164
+        description: (read-write) GPR41 General Purpose Register
+        fields:
+          - name: ROM_READ_LOCKED
+            description: ROM read lock status bit
+            index: 24
+            width: 1
+            read: true
+            write: false
+          - name: FLEXIO2_STOP_ACK_PER
+            description: FLEXIO2 stop acknowledge of peripheral clock domain
+            index: 16
+            width: 1
+            read: true
+            write: false
+          - name: FLEXIO2_STOP_ACK_BUS
+            description: FLEXIO2 stop acknowledge of bus clock domain
+            index: 15
+            width: 1
+            read: true
+            write: false
+          - name: FLEXIO1_STOP_ACK_PER
+            description: FLEXIO1 stop acknowledge of peripheral clock domain
+            index: 14
+            width: 1
+            read: true
+            write: false
+          - name: FLEXIO1_STOP_ACK_BUS
+            description: FLEXIO1 stop acknowledge of bus clock domain
+            index: 13
+            width: 1
+            read: true
+            write: false
+          - name: SAI4_STOP_ACK
+            description: SAI4 stop acknowledge
+            index: 12
+            width: 1
+            read: true
+            write: false
+          - name: SAI3_STOP_ACK
+            description: SAI3 stop acknowledge
+            index: 11
+            width: 1
+            read: true
+            write: false
+          - name: SAI2_STOP_ACK
+            description: SAI2 stop acknowledge
+            index: 10
+            width: 1
+            read: true
+            write: false
+          - name: SAI1_STOP_ACK
+            description: SAI1 stop acknowledge
+            index: 9
+            width: 1
+            read: true
+            write: false
+          - name: SNVS_HP_STOP_ACK
+            description: SNVS_HP stop acknowledge
+            index: 8
+            width: 1
+            read: true
+            write: false
+          - name: SEMC_STOP_ACK
+            description: SEMC stop acknowledge
+            index: 7
+            width: 1
+            read: true
+            write: false
+          - name: PIT2_STOP_ACK
+            description: PIT2 stop acknowledge
+            index: 6
+            width: 1
+            read: true
+            write: false
+          - name: PIT1_STOP_ACK
+            description: PIT1 stop acknowledge
+            index: 5
+            width: 1
+            read: true
+            write: false
+          - name: MIC_STOP_ACK
+            description: MIC stop acknowledge
+            index: 4
+            width: 1
+            read: true
+            write: false
+          - name: LPUART12_STOP_ACK
+            description: LPUART12 stop acknowledge
+            index: 3
+            width: 1
+            read: true
+            write: false
+          - name: LPUART11_STOP_ACK
+            description: LPUART11 stop acknowledge
+            index: 2
+            width: 1
+            read: true
+            write: false
+          - name: LPUART10_STOP_ACK
+            description: LPUART10 stop acknowledge
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: LPUART9_STOP_ACK
+            description: LPUART9 stop acknowledge
+            index: 0
+            width: 1
+            read: true
+            write: false
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  IOMUXC_LPSR_GPR_GPR0_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_GPR_GPR0_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_GPR_GPR1_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_GPR_GPR1_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_GPR_GPR26_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_GPR_GPR26_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_GPR_GPR33_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_GPR_GPR33_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_GPR_GPR34_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_GPR_GPR34_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_GPR_GPR35_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_GPR_GPR35_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_GPR_GPR36_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_GPR_GPR36_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_GPR_GPR37_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_GPR_GPR37_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_GPR_GPR38_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_GPR_GPR38_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_GPR_GPR39_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_GPR_GPR39_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

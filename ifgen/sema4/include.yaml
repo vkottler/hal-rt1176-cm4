@@ -1,0 +1,316 @@
+---
+structs:
+  sema4:
+    description: IPS_Semaphores
+    instances:
+      - name: SEMA4
+        address: '0x40CC8000'
+    fields:
+      - name: Gate
+        type: uint8_t
+        expected_size: 16
+        expected_offset: 0
+        array_length: 16
+        description: (read-write) Semaphores Gate n Register
+        fields:
+          - name: GTFSM
+            description: Gate Finite State Machine.
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: SEMA4_Gate_GTFSM
+      - name: CPINE
+        type: uint16_t
+        expected_size: 4
+        expected_offset: 64
+        array_length: 2
+        description: (read-write) Semaphores Processor n IRQ Notification Enable
+        fields:
+          - name: INE8
+            description: Interrupt Request Notification Enable 8. This field is a
+              bitmap to enable the generation of an interrupt notification from a
+              failed attempt to lock gate 8.
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: INE9
+            description: Interrupt Request Notification Enable 9. This field is a
+              bitmap to enable the generation of an interrupt notification from a
+              failed attempt to lock gate 9.
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: INE10
+            description: Interrupt Request Notification Enable 10. This field is a
+              bitmap to enable the generation of an interrupt notification from a
+              failed attempt to lock gate 10.
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: INE11
+            description: Interrupt Request Notification Enable 11. This field is a
+              bitmap to enable the generation of an interrupt notification from a
+              failed attempt to lock gate 11.
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: INE12
+            description: Interrupt Request Notification Enable 12. This field is a
+              bitmap to enable the generation of an interrupt notification from a
+              failed attempt to lock gate 12.
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: INE13
+            description: Interrupt Request Notification Enable 13. This field is a
+              bitmap to enable the generation of an interrupt notification from a
+              failed attempt to lock gate 13.
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: INE14
+            description: Interrupt Request Notification Enable 14. This field is a
+              bitmap to enable the generation of an interrupt notification from a
+              failed attempt to lock gate 14.
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: INE15
+            description: Interrupt Request Notification Enable 15. This field is a
+              bitmap to enable the generation of an interrupt notification from a
+              failed attempt to lock gate 15.
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: INE0
+            description: Interrupt Request Notification Enable 0
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: INE1
+            description: Interrupt Request Notification Enable 1
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: INE2
+            description: Interrupt Request Notification Enable 2
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: INE3
+            description: Interrupt Request Notification Enable 3
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: INE4
+            description: Interrupt Request Notification Enable 4. This field is a
+              bitmap to enable the generation of an interrupt notification from a
+              failed attempt to lock gate 4.
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: INE5
+            description: Interrupt Request Notification Enable 5. This field is a
+              bitmap to enable the generation of an interrupt notification from a
+              failed attempt to lock gate 5.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: INE6
+            description: Interrupt Request Notification Enable 6. This field is a
+              bitmap to enable the generation of an interrupt notification from a
+              failed attempt to lock gate 6.
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: INE7
+            description: Interrupt Request Notification Enable 7. This field is a
+              bitmap to enable the generation of an interrupt notification from a
+              failed attempt to lock gate 7.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CPNTF
+        type: uint16_t
+        expected_size: 4
+        expected_offset: 128
+        array_length: 2
+        description: (read-write) Semaphores Processor n IRQ Notification
+        fields:
+          - name: GN8
+            description: Gate 8 Notification
+            index: 15
+            width: 1
+            read: true
+            write: false
+          - name: GN9
+            description: Gate 9 Notification
+            index: 14
+            width: 1
+            read: true
+            write: false
+          - name: GN10
+            description: Gate 10 Notification
+            index: 13
+            width: 1
+            read: true
+            write: false
+          - name: GN11
+            description: Gate 11 Notification
+            index: 12
+            width: 1
+            read: true
+            write: false
+          - name: GN12
+            description: Gate 12 Notification
+            index: 11
+            width: 1
+            read: true
+            write: false
+          - name: GN13
+            description: Gate 13 Notification
+            index: 10
+            width: 1
+            read: true
+            write: false
+          - name: GN14
+            description: Gate 14 Notification
+            index: 9
+            width: 1
+            read: true
+            write: false
+          - name: GN15
+            description: Gate 15 Notification
+            index: 8
+            width: 1
+            read: true
+            write: false
+          - name: GN0
+            description: Gate 0 Notification
+            index: 7
+            width: 1
+            read: true
+            write: false
+          - name: GN1
+            description: Gate 1 Notification
+            index: 6
+            width: 1
+            read: true
+            write: false
+          - name: GN2
+            description: Gate 2 Notification
+            index: 5
+            width: 1
+            read: true
+            write: false
+          - name: GN3
+            description: Gate 3 Notification
+            index: 4
+            width: 1
+            read: true
+            write: false
+          - name: GN4
+            description: Gate 4 Notification
+            index: 3
+            width: 1
+            read: true
+            write: false
+          - name: GN5
+            description: Gate 5 Notification
+            index: 2
+            width: 1
+            read: true
+            write: false
+          - name: GN6
+            description: Gate 6 Notification
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: GN7
+            description: Gate 7 Notification
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: RSTGT
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 256
+        description: (read-write) Semaphores (Secure) Reset Gate n
+        fields:
+          - name: RSTGTN
+            description: Reset Gate Number
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: RSTGSM_RSTGMS_RSTGDP
+            description: This field contains sub-fields that vary depending on whether
+              it is being read or written
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: RSTNTF
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 260
+        description: (read-write) Semaphores (Secure) Reset IRQ Notification
+        fields:
+          - name: RSTNTN
+            description: Reset Notification Number
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: RSTNSM_RSTNMS_RSTNDP
+            description: This field contains sub-fields that vary depending on whether
+              it is being read or written
+            index: 0
+            width: 8
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  SEMA4_Gate_GTFSM:
+    enum:
+      _0:
+        description: The gate is unlocked (free).
+        value: 0
+      _1:
+        description: The gate has been locked by processor 0.
+        value: 1
+      _2:
+        description: The gate has been locked by processor 1.
+        value: 2
+      _3:
+        description: This state encoding is never used and therefore reserved. Attempted
+          writes of 0x03 are treated as "no operation" and do not affect the gate
+          state machine.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

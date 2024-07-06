@@ -1,0 +1,162 @@
+---
+structs:
+  kpp:
+    description: KPP
+    instances:
+      - name: KPP
+        address: '0x400E0000'
+    fields:
+      - name: KPCR
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 0
+        description: (read-write) Keypad Control Register
+        fields:
+          - name: KCO
+            description: KCO
+            index: 8
+            width: 8
+            read: true
+            write: true
+            type: KPP_KPCR_KCO
+          - name: KRE
+            description: KRE
+            index: 0
+            width: 8
+            read: true
+            write: true
+            type: KPP_KPCR_KRE
+      - name: KPSR
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 2
+        description: (read-write) Keypad Status Register
+        fields:
+          - name: KRIE
+            description: KRIE
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: KDIE
+            description: KDIE
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: KRSS
+            description: KRSS
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: KDSC
+            description: KDSC
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: KPKR
+            description: KPKR
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: KPKD
+            description: KPKD
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: KDDR
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 4
+        description: (read-write) Keypad Data Direction Register
+        fields:
+          - name: KCDD
+            description: KCDD
+            index: 8
+            width: 8
+            read: true
+            write: true
+            type: KPP_KDDR_KCDD
+          - name: KRDD
+            description: KRDD
+            index: 0
+            width: 8
+            read: true
+            write: true
+            type: KPP_KDDR_KRDD
+      - name: KPDR
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 6
+        description: (read-write) Keypad Data Register
+        fields:
+          - name: KCD
+            description: KCD
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: KRD
+            description: KRD
+            index: 0
+            width: 8
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  KPP_KPCR_KCO:
+    enum:
+      TOTEM_POLE:
+        description: Column strobe output is totem pole drive.
+        value: 0
+      OPEN_DRAIN:
+        description: Column strobe output is open drain.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  KPP_KPCR_KRE:
+    enum:
+      _0:
+        description: Row is not included in the keypad key press detect.
+        value: 0
+      _1:
+        description: Row is included in the keypad key press detect.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  KPP_KDDR_KCDD:
+    enum:
+      INPUT:
+        description: COLn pin is configured as an input.
+        value: 0
+      OUTPUT:
+        description: COLn pin is configured as an output.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  KPP_KDDR_KRDD:
+    enum:
+      INPUT:
+        description: ROWn pin configured as an input.
+        value: 0
+      OUTPUT:
+        description: ROWn pin configured as an output.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

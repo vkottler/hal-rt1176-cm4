@@ -1,0 +1,231 @@
+---
+structs:
+  anadig_ldo_snvs:
+    description: MX6RT_ANADIG_REGISTER
+    instances:
+      - name: ANADIG_LDO_SNVS
+        address: '0x40C84000'
+    fields:
+      - name: PMU_LDO_LPSR_ANA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1296
+        description: (read-write) PMU_LDO_LPSR_ANA_REGISTER
+        fields:
+          - name: PULL_DOWN_20UA_EN
+            description: pull_down_20ua_en
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: TRACK_MODE_EN
+            description: Track Mode Enable
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: ALWAYS_4MA_PULLDOWN_EN
+            description: always_4ma_pulldown_en
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: STANDBY_EN
+            description: standby_en
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_MODE_EN
+            description: bypass_mode_en
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: LPSR_ANA_CONTROL_MODE
+            description: LPSR_ANA_CONTROL_MODE
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: PULL_DOWN_2MA_EN
+            description: pull_down_2ma_en
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: REG_DISABLE
+            description: reg_disable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: REG_LP_EN
+            description: reg_lp_en
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PMU_LDO_LPSR_DIG_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1312
+        description: (read-write) PMU_LDO_LPSR_DIG_2_REGISTER
+        fields:
+          - name: VOLTAGE_STEP_INC
+            description: voltage_step_inc
+            index: 0
+            width: 2
+            read: true
+            write: true
+      - name: PMU_LDO_LPSR_DIG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1328
+        description: (read-write) PMU_LDO_LPSR_DIG_REGISTER
+        fields:
+          - name: VOLTAGE_SELECT
+            description: VOLTAGE_SELECT
+            index: 20
+            width: 5
+            read: true
+            write: true
+            type: ANADIG_LDO_SNVS_PMU_LDO_LPSR_DIG_VOLTAGE_SELECT
+          - name: BYPASS_MODE
+            description: bypass_mode
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_MODE
+            description: tracking_mode
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: STANDBY_EN
+            description: standby_en
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: LPSR_DIG_CONTROL_MODE
+            description: LPSR_DIG_CONTROL_MODE
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: REG_EN
+            description: ENABLE_ILIMIT
+            index: 2
+            width: 1
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  ANADIG_LDO_SNVS_PMU_LDO_LPSR_DIG_VOLTAGE_SELECT:
+    enum:
+      _0:
+        description: Stable Voltage (range)
+        value: 0
+      _1:
+        description: Stable Voltage (range)
+        value: 1
+      _2:
+        description: Stable Voltage (range)
+        value: 2
+      _3:
+        description: Stable Voltage (range)
+        value: 3
+      _4:
+        description: Stable Voltage (range)
+        value: 4
+      _5:
+        description: Stable Voltage (range)
+        value: 5
+      _6:
+        description: Stable Voltage (range)
+        value: 6
+      _7:
+        description: Stable Voltage (range)
+        value: 7
+      _8:
+        description: Stable Voltage (range)
+        value: 8
+      _9:
+        description: Stable Voltage (range)
+        value: 9
+      _10:
+        description: Stable Voltage (range)
+        value: 10
+      _11:
+        description: Stable Voltage (range)
+        value: 11
+      _12:
+        description: Stable Voltage (range)
+        value: 12
+      _13:
+        description: Stable Voltage (range)
+        value: 13
+      _14:
+        description: Stable Voltage (range)
+        value: 14
+      _15:
+        description: Stable Voltage (range)
+        value: 15
+      _16:
+        description: Stable Voltage (range)
+        value: 16
+      _17:
+        description: Stable Voltage (range)
+        value: 17
+      _18:
+        description: Stable Voltage (range)
+        value: 18
+      _19:
+        description: Stable Voltage (range)
+        value: 19
+      _20:
+        description: Stable Voltage (range)
+        value: 20
+      _21:
+        description: Stable Voltage (range)
+        value: 21
+      _22:
+        description: Stable Voltage (range)
+        value: 22
+      _23:
+        description: Stable Voltage (range)
+        value: 23
+      _24:
+        description: Stable Voltage (range)
+        value: 24
+      _25:
+        description: Stable Voltage (range)
+        value: 25
+      _26:
+        description: Stable Voltage (range)
+        value: 26
+      _27:
+        description: Stable Voltage (range)
+        value: 27
+      _28:
+        description: Stable Voltage (range)
+        value: 28
+      _29:
+        description: Stable Voltage (range)
+        value: 29
+      _30:
+        description: Stable Voltage (range)
+        value: 30
+      _31:
+        description: Stable Voltage (range)
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

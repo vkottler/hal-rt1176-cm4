@@ -1,0 +1,446 @@
+---
+structs:
+  video_mux:
+    description: VIDEO_MUX
+    instances:
+      - name: VIDEO_MUX
+        address: '0x40818000'
+    fields:
+      - name: VID_MUX_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Video mux Control Register
+        fields:
+          - name: PARA_LCD_SEL
+            description: Parallel LCDIF video data input mux selector
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: MIPI_DSI_SEL
+            description: MIPI DSI video data input mux selector
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: LCDIF2_SEL
+            description: LCDIF2 sensor data input mux selector
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CSI_SEL
+            description: CSI sensor data input mux selector
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: VID_MUX_CTRL_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Video mux Control Register
+        fields:
+          - name: PARA_LCD_SEL
+            description: Parallel LCDIF video data input mux selector
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: MIPI_DSI_SEL
+            description: MIPI DSI video data input mux selector
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: LCDIF2_SEL
+            description: LCDIF2 sensor data input mux selector
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CSI_SEL
+            description: CSI sensor data input mux selector
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: VID_MUX_CTRL_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) Video mux Control Register
+        fields:
+          - name: PARA_LCD_SEL
+            description: Parallel LCDIF video data input mux selector
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: MIPI_DSI_SEL
+            description: MIPI DSI video data input mux selector
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: LCDIF2_SEL
+            description: LCDIF2 sensor data input mux selector
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CSI_SEL
+            description: CSI sensor data input mux selector
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: VID_MUX_CTRL_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) Video mux Control Register
+        fields:
+          - name: PARA_LCD_SEL
+            description: Parallel LCDIF video data input mux selector
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: MIPI_DSI_SEL
+            description: MIPI DSI video data input mux selector
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: LCDIF2_SEL
+            description: LCDIF2 sensor data input mux selector
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CSI_SEL
+            description: CSI sensor data input mux selector
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PLM_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) Pixel Link Master(PLM) Control Register
+        fields:
+          - name: POLARITY
+            description: Polarity of HYSNC/VSYNC
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: VALID_OVERRIDE
+            description: Valid override
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: HSYNC_OVERRIDE
+            description: HSYNC override
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_OVERRIDE
+            description: VSYNC override
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE
+            description: Enable the output of HYSNC and VSYNC
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PLM_CTRL_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) Pixel Link Master(PLM) Control Register
+        fields:
+          - name: POLARITY
+            description: Polarity of HYSNC/VSYNC
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: VALID_OVERRIDE
+            description: Valid override
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: HSYNC_OVERRIDE
+            description: HSYNC override
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_OVERRIDE
+            description: VSYNC override
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE
+            description: Enable the output of HYSNC and VSYNC
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PLM_CTRL_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) Pixel Link Master(PLM) Control Register
+        fields:
+          - name: POLARITY
+            description: Polarity of HYSNC/VSYNC
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: VALID_OVERRIDE
+            description: Valid override
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: HSYNC_OVERRIDE
+            description: HSYNC override
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_OVERRIDE
+            description: VSYNC override
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE
+            description: Enable the output of HYSNC and VSYNC
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PLM_CTRL_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) Pixel Link Master(PLM) Control Register
+        fields:
+          - name: POLARITY
+            description: Polarity of HYSNC/VSYNC
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: VALID_OVERRIDE
+            description: Valid override
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: HSYNC_OVERRIDE
+            description: HSYNC override
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: VSYNC_OVERRIDE
+            description: VSYNC override
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE
+            description: Enable the output of HYSNC and VSYNC
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: YUV420_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) YUV420 Control Register
+        fields:
+          - name: FST_LN_DATA_TYPE
+            description: Data type of First Line
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: YUV420_CTRL_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 52
+        description: (read-write) YUV420 Control Register
+        fields:
+          - name: FST_LN_DATA_TYPE
+            description: Data type of First Line
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: YUV420_CTRL_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 56
+        description: (read-write) YUV420 Control Register
+        fields:
+          - name: FST_LN_DATA_TYPE
+            description: Data type of First Line
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: YUV420_CTRL_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 60
+        description: (read-write) YUV420 Control Register
+        fields:
+          - name: FST_LN_DATA_TYPE
+            description: Data type of First Line
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CFG_DT_DISABLE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 80
+        description: (read-write) Data Disable Register
+        fields:
+          - name: CFG_DT_DISABLE
+            description: Data Type Disable
+            index: 0
+            width: 24
+            read: true
+            write: true
+      - name: CFG_DT_DISABLE_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 84
+        description: (read-write) Data Disable Register
+        fields:
+          - name: CFG_DT_DISABLE
+            description: Data Type Disable
+            index: 0
+            width: 24
+            read: true
+            write: true
+      - name: CFG_DT_DISABLE_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 88
+        description: (read-write) Data Disable Register
+        fields:
+          - name: CFG_DT_DISABLE
+            description: Data Type Disable
+            index: 0
+            width: 24
+            read: true
+            write: true
+      - name: CFG_DT_DISABLE_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 92
+        description: (read-write) Data Disable Register
+        fields:
+          - name: CFG_DT_DISABLE
+            description: Data Type Disable
+            index: 0
+            width: 24
+            read: true
+            write: true
+      - name: MIPI_DSI_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 112
+        description: (read-write) MIPI DSI Control Register
+        fields:
+          - name: DPI_CM
+            description: Color Mode control
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: DPI_SD
+            description: Shut Down - Control to shutdown display (type 4 only)
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: MIPI_DSI_CTRL_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 116
+        description: (read-write) MIPI DSI Control Register
+        fields:
+          - name: DPI_CM
+            description: Color Mode control
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: DPI_SD
+            description: Shut Down - Control to shutdown display (type 4 only)
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: MIPI_DSI_CTRL_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 120
+        description: (read-write) MIPI DSI Control Register
+        fields:
+          - name: DPI_CM
+            description: Color Mode control
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: DPI_SD
+            description: Shut Down - Control to shutdown display (type 4 only)
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: MIPI_DSI_CTRL_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 124
+        description: (read-write) MIPI DSI Control Register
+        fields:
+          - name: DPI_CM
+            description: Color Mode control
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: DPI_SD
+            description: Shut Down - Control to shutdown display (type 4 only)
+            index: 0
+            width: 1
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums: {}

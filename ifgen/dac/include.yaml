@@ -1,0 +1,301 @@
+---
+structs:
+  dac:
+    description: DAC
+    instances:
+      - name: DAC
+        address: '0x40064000'
+    fields:
+      - name: VERID
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Version Identifier Register
+        fields:
+          - name: MAJOR
+            description: Major version number
+            index: 24
+            width: 8
+            read: true
+            write: false
+          - name: MINOR
+            description: Minor version number
+            index: 16
+            width: 8
+            read: true
+            write: false
+          - name: FEATURE
+            description: Feature Identification Number
+            index: 0
+            width: 16
+            read: true
+            write: false
+            type: DAC_VERID_FEATURE
+      - name: PARAM
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Parameter Register
+        fields:
+          - name: FIFOSZ
+            description: FIFO size
+            index: 0
+            width: 3
+            read: true
+            write: false
+            type: DAC_PARAM_FIFOSZ
+      - name: DATA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) DAC Data Register
+        fields:
+          - name: DATA0
+            description: FIFO DATA0
+            index: 0
+            width: 12
+            read: false
+            write: true
+      - name: CR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) DAC Status and Control Register
+        fields:
+          - name: WML
+            description: Watermark Level Select
+            index: 24
+            width: 8
+            read: true
+            write: true
+          - name: DMAEN
+            description: DMA Enable Select
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: SWRST
+            description: Software reset
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: FIFORST
+            description: FIFO Reset
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: UVIE
+            description: Underflow and overflow interrupt enable
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: SWMD
+            description: DAC FIFO Mode Select
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: FIFOEN
+            description: FIFO Enable
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: DACEN
+            description: DAC Enable
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: DACRFS
+            description: DAC Reference Select
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: TRGSEL
+            description: DAC Trigger Select
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: SWTRG
+            description: DAC Software Trigger
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: WTMIE
+            description: Watermark Interrupt Enable
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: EMPTIE
+            description: Nearly Empty Interrupt Enable
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: FULLIE
+            description: Full Interrupt Enable
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: OVFF
+            description: Overflow Flag
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: UDFF
+            description: Underflow Flag
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: WMF
+            description: FIFO Watermark Status Flag
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: NEMPTF
+            description: Nearly Empty Flag
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: FULLF
+            description: Full Flag
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PTR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) DAC FIFO Pointer Register
+        fields:
+          - name: DACRFP
+            description: DACRFP
+            index: 16
+            width: 8
+            read: true
+            write: false
+          - name: DACWFP
+            description: DACWFP
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: CR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) DAC Status and Control Register 2
+        fields:
+          - name: IREF
+            description: Internal Current Reference Select
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: IREF1
+            description: Internal ZTC (Zero Temperature Coefficient) Current Reference
+              Select
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: IREF2
+            description: Internal PTAT (Proportional To Absolute Temperature) Current
+              Reference Select
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: BFHS
+            description: Buffer High Speed Select
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: BFMS
+            description: Buffer Middle Speed Select
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: OEN
+            description: Optional Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: BFEN
+            description: Buffer Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  DAC_VERID_FEATURE:
+    enum:
+      _0:
+        description: Standard feature set
+        value: 0
+      _1:
+        description: C40 feature set
+        value: 1
+      _2:
+        description: 5V DAC feature set
+        value: 2
+      _4:
+        description: ADC BIST feature set
+        value: 4
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  DAC_PARAM_FIFOSZ:
+    enum:
+      _0:
+        description: FIFO depth is 2
+        value: 0
+      _1:
+        description: FIFO depth is 4
+        value: 1
+      _2:
+        description: FIFO depth is 8
+        value: 2
+      _3:
+        description: FIFO depth is 16
+        value: 3
+      _4:
+        description: FIFO depth is 32
+        value: 4
+      _5:
+        description: FIFO depth is 64
+        value: 5
+      _6:
+        description: FIFO depth is 128
+        value: 6
+      _7:
+        description: FIFO depth is 256
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

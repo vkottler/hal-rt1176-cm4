@@ -1,0 +1,2550 @@
+---
+structs:
+  iomuxc_lpsr:
+    description: IOMUXC LPSR
+    instances:
+      - name: IOMUXC_LPSR
+        address: '0x40C08000'
+    fields:
+      - name: SW_MUX_CTL_PAD_GPIO_LPSR_00
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) SW_MUX_CTL_PAD_GPIO_LPSR_00 SW MUX Control Register
+        fields:
+          - name: SION
+            description: Software Input On Field.
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: MUX_MODE
+            description: MUX Mode Select Field.
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_00_MUX_MODE
+      - name: SW_MUX_CTL_PAD_GPIO_LPSR_01
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) SW_MUX_CTL_PAD_GPIO_LPSR_01 SW MUX Control Register
+        fields:
+          - name: SION
+            description: Software Input On Field.
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: MUX_MODE
+            description: MUX Mode Select Field.
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_01_MUX_MODE
+      - name: SW_MUX_CTL_PAD_GPIO_LPSR_02
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) SW_MUX_CTL_PAD_GPIO_LPSR_02 SW MUX Control Register
+        fields:
+          - name: SION
+            description: Software Input On Field.
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: MUX_MODE
+            description: MUX Mode Select Field.
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_02_MUX_MODE
+      - name: SW_MUX_CTL_PAD_GPIO_LPSR_03
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) SW_MUX_CTL_PAD_GPIO_LPSR_03 SW MUX Control Register
+        fields:
+          - name: SION
+            description: Software Input On Field.
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: MUX_MODE
+            description: MUX Mode Select Field.
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_03_MUX_MODE
+      - name: SW_MUX_CTL_PAD_GPIO_LPSR_04
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) SW_MUX_CTL_PAD_GPIO_LPSR_04 SW MUX Control Register
+        fields:
+          - name: SION
+            description: Software Input On Field.
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: MUX_MODE
+            description: MUX Mode Select Field.
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_04_MUX_MODE
+      - name: SW_MUX_CTL_PAD_GPIO_LPSR_05
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) SW_MUX_CTL_PAD_GPIO_LPSR_05 SW MUX Control Register
+        fields:
+          - name: SION
+            description: Software Input On Field.
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: MUX_MODE
+            description: MUX Mode Select Field.
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_05_MUX_MODE
+      - name: SW_MUX_CTL_PAD_GPIO_LPSR_06
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) SW_MUX_CTL_PAD_GPIO_LPSR_06 SW MUX Control Register
+        fields:
+          - name: SION
+            description: Software Input On Field.
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: MUX_MODE
+            description: MUX Mode Select Field.
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_06_MUX_MODE
+      - name: SW_MUX_CTL_PAD_GPIO_LPSR_07
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) SW_MUX_CTL_PAD_GPIO_LPSR_07 SW MUX Control Register
+        fields:
+          - name: SION
+            description: Software Input On Field.
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: MUX_MODE
+            description: MUX Mode Select Field.
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_07_MUX_MODE
+      - name: SW_MUX_CTL_PAD_GPIO_LPSR_08
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) SW_MUX_CTL_PAD_GPIO_LPSR_08 SW MUX Control Register
+        fields:
+          - name: SION
+            description: Software Input On Field.
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: MUX_MODE
+            description: MUX Mode Select Field.
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_08_MUX_MODE
+      - name: SW_MUX_CTL_PAD_GPIO_LPSR_09
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) SW_MUX_CTL_PAD_GPIO_LPSR_09 SW MUX Control Register
+        fields:
+          - name: SION
+            description: Software Input On Field.
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: MUX_MODE
+            description: MUX Mode Select Field.
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_09_MUX_MODE
+      - name: SW_MUX_CTL_PAD_GPIO_LPSR_10
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) SW_MUX_CTL_PAD_GPIO_LPSR_10 SW MUX Control Register
+        fields:
+          - name: SION
+            description: Software Input On Field.
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: MUX_MODE
+            description: MUX Mode Select Field.
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_10_MUX_MODE
+      - name: SW_MUX_CTL_PAD_GPIO_LPSR_11
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) SW_MUX_CTL_PAD_GPIO_LPSR_11 SW MUX Control Register
+        fields:
+          - name: SION
+            description: Software Input On Field.
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: MUX_MODE
+            description: MUX Mode Select Field.
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_11_MUX_MODE
+      - name: SW_MUX_CTL_PAD_GPIO_LPSR_12
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) SW_MUX_CTL_PAD_GPIO_LPSR_12 SW MUX Control Register
+        fields:
+          - name: SION
+            description: Software Input On Field.
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: MUX_MODE
+            description: MUX Mode Select Field.
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_12_MUX_MODE
+      - name: SW_MUX_CTL_PAD_GPIO_LPSR_13
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 52
+        description: (read-write) SW_MUX_CTL_PAD_GPIO_LPSR_13 SW MUX Control Register
+        fields:
+          - name: SION
+            description: Software Input On Field.
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: MUX_MODE
+            description: MUX Mode Select Field.
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_13_MUX_MODE
+      - name: SW_MUX_CTL_PAD_GPIO_LPSR_14
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 56
+        description: (read-write) SW_MUX_CTL_PAD_GPIO_LPSR_14 SW MUX Control Register
+        fields:
+          - name: SION
+            description: Software Input On Field.
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: MUX_MODE
+            description: MUX Mode Select Field.
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_14_MUX_MODE
+      - name: SW_MUX_CTL_PAD_GPIO_LPSR_15
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 60
+        description: (read-write) SW_MUX_CTL_PAD_GPIO_LPSR_15 SW MUX Control Register
+        fields:
+          - name: SION
+            description: Software Input On Field.
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: MUX_MODE
+            description: MUX Mode Select Field.
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_15_MUX_MODE
+      - name: SW_PAD_CTL_PAD_GPIO_LPSR_00
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 64
+        description: (read-write) SW_PAD_CTL_PAD_GPIO_LPSR_00 SW PAD Control Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_00_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_00_DWP
+          - name: ODE_LPSR
+            description: Open Drain LPSR Field
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: PUS
+            description: Pull Up / Down Config. Field
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: PUE
+            description: Pull / Keep Select Field
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: DSE
+            description: Drive Strength Field
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SRE
+            description: Slew Rate Field
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SW_PAD_CTL_PAD_GPIO_LPSR_01
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 68
+        description: (read-write) SW_PAD_CTL_PAD_GPIO_LPSR_01 SW PAD Control Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_01_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_01_DWP
+          - name: ODE_LPSR
+            description: Open Drain LPSR Field
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: PUS
+            description: Pull Up / Down Config. Field
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: PUE
+            description: Pull / Keep Select Field
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: DSE
+            description: Drive Strength Field
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SRE
+            description: Slew Rate Field
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SW_PAD_CTL_PAD_GPIO_LPSR_02
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 72
+        description: (read-write) SW_PAD_CTL_PAD_GPIO_LPSR_02 SW PAD Control Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_02_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_02_DWP
+          - name: ODE_LPSR
+            description: Open Drain LPSR Field
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: PUS
+            description: Pull Up / Down Config. Field
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: PUE
+            description: Pull / Keep Select Field
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: DSE
+            description: Drive Strength Field
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SRE
+            description: Slew Rate Field
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SW_PAD_CTL_PAD_GPIO_LPSR_03
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 76
+        description: (read-write) SW_PAD_CTL_PAD_GPIO_LPSR_03 SW PAD Control Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_03_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_03_DWP
+          - name: ODE_LPSR
+            description: Open Drain LPSR Field
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: PUS
+            description: Pull Up / Down Config. Field
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: PUE
+            description: Pull / Keep Select Field
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: DSE
+            description: Drive Strength Field
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SRE
+            description: Slew Rate Field
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SW_PAD_CTL_PAD_GPIO_LPSR_04
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 80
+        description: (read-write) SW_PAD_CTL_PAD_GPIO_LPSR_04 SW PAD Control Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_04_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_04_DWP
+          - name: ODE_LPSR
+            description: Open Drain LPSR Field
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: PUS
+            description: Pull Up / Down Config. Field
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: PUE
+            description: Pull / Keep Select Field
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: DSE
+            description: Drive Strength Field
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SRE
+            description: Slew Rate Field
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SW_PAD_CTL_PAD_GPIO_LPSR_05
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 84
+        description: (read-write) SW_PAD_CTL_PAD_GPIO_LPSR_05 SW PAD Control Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_05_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_05_DWP
+          - name: ODE_LPSR
+            description: Open Drain LPSR Field
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: PUS
+            description: Pull Up / Down Config. Field
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: PUE
+            description: Pull / Keep Select Field
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: DSE
+            description: Drive Strength Field
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SRE
+            description: Slew Rate Field
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SW_PAD_CTL_PAD_GPIO_LPSR_06
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 88
+        description: (read-write) SW_PAD_CTL_PAD_GPIO_LPSR_06 SW PAD Control Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_06_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_06_DWP
+          - name: ODE_LPSR
+            description: Open Drain LPSR Field
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: PUS
+            description: Pull Up / Down Config. Field
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: PUE
+            description: Pull / Keep Select Field
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: DSE
+            description: Drive Strength Field
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SRE
+            description: Slew Rate Field
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SW_PAD_CTL_PAD_GPIO_LPSR_07
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 92
+        description: (read-write) SW_PAD_CTL_PAD_GPIO_LPSR_07 SW PAD Control Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_07_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_07_DWP
+          - name: ODE_LPSR
+            description: Open Drain LPSR Field
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: PUS
+            description: Pull Up / Down Config. Field
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: PUE
+            description: Pull / Keep Select Field
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: DSE
+            description: Drive Strength Field
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SRE
+            description: Slew Rate Field
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SW_PAD_CTL_PAD_GPIO_LPSR_08
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 96
+        description: (read-write) SW_PAD_CTL_PAD_GPIO_LPSR_08 SW PAD Control Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_08_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_08_DWP
+          - name: ODE_LPSR
+            description: Open Drain LPSR Field
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: PUS
+            description: Pull Up / Down Config. Field
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: PUE
+            description: Pull / Keep Select Field
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: DSE
+            description: Drive Strength Field
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SRE
+            description: Slew Rate Field
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SW_PAD_CTL_PAD_GPIO_LPSR_09
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 100
+        description: (read-write) SW_PAD_CTL_PAD_GPIO_LPSR_09 SW PAD Control Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_09_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_09_DWP
+          - name: ODE_LPSR
+            description: Open Drain LPSR Field
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: PUS
+            description: Pull Up / Down Config. Field
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: PUE
+            description: Pull / Keep Select Field
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: DSE
+            description: Drive Strength Field
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SRE
+            description: Slew Rate Field
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SW_PAD_CTL_PAD_GPIO_LPSR_10
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 104
+        description: (read-write) SW_PAD_CTL_PAD_GPIO_LPSR_10 SW PAD Control Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_10_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_10_DWP
+          - name: ODE_LPSR
+            description: Open Drain LPSR Field
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: PUS
+            description: Pull Up / Down Config. Field
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: PUE
+            description: Pull / Keep Select Field
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: DSE
+            description: Drive Strength Field
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SRE
+            description: Slew Rate Field
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SW_PAD_CTL_PAD_GPIO_LPSR_11
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 108
+        description: (read-write) SW_PAD_CTL_PAD_GPIO_LPSR_11 SW PAD Control Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_11_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_11_DWP
+          - name: ODE_LPSR
+            description: Open Drain LPSR Field
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: PUS
+            description: Pull Up / Down Config. Field
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: PUE
+            description: Pull / Keep Select Field
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: DSE
+            description: Drive Strength Field
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SRE
+            description: Slew Rate Field
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SW_PAD_CTL_PAD_GPIO_LPSR_12
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 112
+        description: (read-write) SW_PAD_CTL_PAD_GPIO_LPSR_12 SW PAD Control Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_12_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_12_DWP
+          - name: ODE_LPSR
+            description: Open Drain LPSR Field
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: PUS
+            description: Pull Up / Down Config. Field
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: PUE
+            description: Pull / Keep Select Field
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: DSE
+            description: Drive Strength Field
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SRE
+            description: Slew Rate Field
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SW_PAD_CTL_PAD_GPIO_LPSR_13
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 116
+        description: (read-write) SW_PAD_CTL_PAD_GPIO_LPSR_13 SW PAD Control Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_13_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_13_DWP
+          - name: ODE_LPSR
+            description: Open Drain LPSR Field
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: PUS
+            description: Pull Up / Down Config. Field
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: PUE
+            description: Pull / Keep Select Field
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: DSE
+            description: Drive Strength Field
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SRE
+            description: Slew Rate Field
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SW_PAD_CTL_PAD_GPIO_LPSR_14
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 120
+        description: (read-write) SW_PAD_CTL_PAD_GPIO_LPSR_14 SW PAD Control Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_14_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_14_DWP
+          - name: ODE_LPSR
+            description: Open Drain LPSR Field
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: PUS
+            description: Pull Up / Down Config. Field
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: PUE
+            description: Pull / Keep Select Field
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: DSE
+            description: Drive Strength Field
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SRE
+            description: Slew Rate Field
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SW_PAD_CTL_PAD_GPIO_LPSR_15
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 124
+        description: (read-write) SW_PAD_CTL_PAD_GPIO_LPSR_15 SW PAD Control Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_15_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_15_DWP
+          - name: ODE_LPSR
+            description: Open Drain LPSR Field
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: PUS
+            description: Pull Up / Down Config. Field
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: PUE
+            description: Pull / Keep Select Field
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: DSE
+            description: Drive Strength Field
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SRE
+            description: Slew Rate Field
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CAN3_IPP_IND_CANRX_SELECT_INPUT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 128
+        description: (read-write) CAN3_IPP_IND_CANRX_SELECT_INPUT DAISY Register
+        fields:
+          - name: DAISY
+            description: Selecting Pads Involved in Daisy Chain.
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_CAN3_IPP_IND_CANRX_SELECT_INPUT_DAISY
+      - name: LPI2C5_IPP_IND_LPI2C_SCL_SELECT_INPUT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 132
+        description: (read-write) LPI2C5_IPP_IND_LPI2C_SCL_SELECT_INPUT DAISY Register
+        fields:
+          - name: DAISY
+            description: Selecting Pads Involved in Daisy Chain.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LPI2C5_IPP_IND_LPI2C_SDA_SELECT_INPUT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 136
+        description: (read-write) LPI2C5_IPP_IND_LPI2C_SDA_SELECT_INPUT DAISY Register
+        fields:
+          - name: DAISY
+            description: Selecting Pads Involved in Daisy Chain.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LPI2C6_IPP_IND_LPI2C_SCL_SELECT_INPUT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 140
+        description: (read-write) LPI2C6_IPP_IND_LPI2C_SCL_SELECT_INPUT DAISY Register
+        fields:
+          - name: DAISY
+            description: Selecting Pads Involved in Daisy Chain.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LPI2C6_IPP_IND_LPI2C_SDA_SELECT_INPUT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 144
+        description: (read-write) LPI2C6_IPP_IND_LPI2C_SDA_SELECT_INPUT DAISY Register
+        fields:
+          - name: DAISY
+            description: Selecting Pads Involved in Daisy Chain.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LPSPI5_IPP_IND_LPSPI_PCS_SELECT_INPUT_0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 148
+        description: (read-write) LPSPI5_IPP_IND_LPSPI_PCS_SELECT_INPUT_0 DAISY Register
+        fields:
+          - name: DAISY
+            description: Selecting Pads Involved in Daisy Chain.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LPSPI5_IPP_IND_LPSPI_SCK_SELECT_INPUT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 152
+        description: (read-write) LPSPI5_IPP_IND_LPSPI_SCK_SELECT_INPUT DAISY Register
+        fields:
+          - name: DAISY
+            description: Selecting Pads Involved in Daisy Chain.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LPSPI5_IPP_IND_LPSPI_SDI_SELECT_INPUT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 156
+        description: (read-write) LPSPI5_IPP_IND_LPSPI_SDI_SELECT_INPUT DAISY Register
+        fields:
+          - name: DAISY
+            description: Selecting Pads Involved in Daisy Chain.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LPSPI5_IPP_IND_LPSPI_SDO_SELECT_INPUT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 160
+        description: (read-write) LPSPI5_IPP_IND_LPSPI_SDO_SELECT_INPUT DAISY Register
+        fields:
+          - name: DAISY
+            description: Selecting Pads Involved in Daisy Chain.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LPUART11_IPP_IND_LPUART_RXD_SELECT_INPUT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 164
+        description: (read-write) LPUART11_IPP_IND_LPUART_RXD_SELECT_INPUT DAISY Register
+        fields:
+          - name: DAISY
+            description: Selecting Pads Involved in Daisy Chain.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LPUART11_IPP_IND_LPUART_TXD_SELECT_INPUT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 168
+        description: (read-write) LPUART11_IPP_IND_LPUART_TXD_SELECT_INPUT DAISY Register
+        fields:
+          - name: DAISY
+            description: Selecting Pads Involved in Daisy Chain.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LPUART12_IPP_IND_LPUART_RXD_SELECT_INPUT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 172
+        description: (read-write) LPUART12_IPP_IND_LPUART_RXD_SELECT_INPUT DAISY Register
+        fields:
+          - name: DAISY
+            description: Selecting Pads Involved in Daisy Chain.
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_LPUART12_IPP_IND_LPUART_RXD_SELECT_INPUT_DAISY
+      - name: LPUART12_IPP_IND_LPUART_TXD_SELECT_INPUT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 176
+        description: (read-write) LPUART12_IPP_IND_LPUART_TXD_SELECT_INPUT DAISY Register
+        fields:
+          - name: DAISY
+            description: Selecting Pads Involved in Daisy Chain.
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_LPSR_LPUART12_IPP_IND_LPUART_TXD_SELECT_INPUT_DAISY
+      - name: MIC_IPP_IND_MIC_PDM_BITSTREAM_SELECT_INPUT_0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 180
+        description: (read-write) MIC_IPP_IND_MIC_PDM_BITSTREAM_SELECT_INPUT_0 DAISY
+          Register
+        fields:
+          - name: DAISY
+            description: Selecting Pads Involved in Daisy Chain.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: MIC_IPP_IND_MIC_PDM_BITSTREAM_SELECT_INPUT_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 184
+        description: (read-write) MIC_IPP_IND_MIC_PDM_BITSTREAM_SELECT_INPUT_1 DAISY
+          Register
+        fields:
+          - name: DAISY
+            description: Selecting Pads Involved in Daisy Chain.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: MIC_IPP_IND_MIC_PDM_BITSTREAM_SELECT_INPUT_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 188
+        description: (read-write) MIC_IPP_IND_MIC_PDM_BITSTREAM_SELECT_INPUT_2 DAISY
+          Register
+        fields:
+          - name: DAISY
+            description: Selecting Pads Involved in Daisy Chain.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: MIC_IPP_IND_MIC_PDM_BITSTREAM_SELECT_INPUT_3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 192
+        description: (read-write) MIC_IPP_IND_MIC_PDM_BITSTREAM_SELECT_INPUT_3 DAISY
+          Register
+        fields:
+          - name: DAISY
+            description: Selecting Pads Involved in Daisy Chain.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: NMI_GLUE_IPP_IND_NMI_SELECT_INPUT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 196
+        description: (read-write) NMI_GLUE_IPP_IND_NMI_SELECT_INPUT DAISY Register
+        fields:
+          - name: DAISY
+            description: Selecting Pads Involved in Daisy Chain.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SAI4_IPG_CLK_SAI_MCLK_SELECT_INPUT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 200
+        description: (read-write) SAI4_IPG_CLK_SAI_MCLK_SELECT_INPUT DAISY Register
+        fields:
+          - name: DAISY
+            description: Selecting Pads Involved in Daisy Chain.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SAI4_IPP_IND_SAI_RXBCLK_SELECT_INPUT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 204
+        description: (read-write) SAI4_IPP_IND_SAI_RXBCLK_SELECT_INPUT DAISY Register
+        fields:
+          - name: DAISY
+            description: Selecting Pads Involved in Daisy Chain.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SAI4_IPP_IND_SAI_RXDATA_SELECT_INPUT_0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 208
+        description: (read-write) SAI4_IPP_IND_SAI_RXDATA_SELECT_INPUT_0 DAISY Register
+        fields:
+          - name: DAISY
+            description: Selecting Pads Involved in Daisy Chain.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SAI4_IPP_IND_SAI_RXSYNC_SELECT_INPUT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 212
+        description: (read-write) SAI4_IPP_IND_SAI_RXSYNC_SELECT_INPUT DAISY Register
+        fields:
+          - name: DAISY
+            description: Selecting Pads Involved in Daisy Chain.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SAI4_IPP_IND_SAI_TXBCLK_SELECT_INPUT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 216
+        description: (read-write) SAI4_IPP_IND_SAI_TXBCLK_SELECT_INPUT DAISY Register
+        fields:
+          - name: DAISY
+            description: Selecting Pads Involved in Daisy Chain.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SAI4_IPP_IND_SAI_TXSYNC_SELECT_INPUT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 220
+        description: (read-write) SAI4_IPP_IND_SAI_TXSYNC_SELECT_INPUT DAISY Register
+        fields:
+          - name: DAISY
+            description: Selecting Pads Involved in Daisy Chain.
+            index: 0
+            width: 1
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_00_MUX_MODE:
+    enum:
+      _0_can3_TX:
+        description: 'Select mux mode: ALT0 mux port: FLEXCAN3_TX of instance: FLEXCAN3'
+        value: 0
+      _1_mic_CLK:
+        description: 'Select mux mode: ALT1 mux port: MIC_CLK of instance: MIC'
+        value: 1
+      _2_mqs_RIGHT:
+        description: 'Select mux mode: ALT2 mux port: MQS_RIGHT of instance: MQS'
+        value: 2
+      _3_ARM_CM4_EVENTO:
+        description: 'Select mux mode: ALT3 mux port: ARM_CM4_EVENTO of instance:
+          CM4'
+        value: 3
+      _5_gpio_mux6_IO0:
+        description: 'Select mux mode: ALT5 mux port: GPIO_MUX6_IO00 of instance:
+          GPIO_MUX6'
+        value: 5
+      _6_lpuart12_TX:
+        description: 'Select mux mode: ALT6 mux port: LPUART12_TXD of instance: LPUART12'
+        value: 6
+      _7_sai4_MCLK:
+        description: 'Select mux mode: ALT7 mux port: SAI4_MCLK of instance: SAI4'
+        value: 7
+      _10_gpio12_IO0:
+        description: 'Select mux mode: ALT10 mux port: GPIO12_IO00 of instance: GPIO12'
+        value: 10
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_01_MUX_MODE:
+    enum:
+      _0_can3_RX:
+        description: 'Select mux mode: ALT0 mux port: FLEXCAN3_RX of instance: FLEXCAN3'
+        value: 0
+      _1_mic_BITSTREAM0:
+        description: 'Select mux mode: ALT1 mux port: MIC_BITSTREAM0 of instance:
+          MIC'
+        value: 1
+      _2_mqs_LEFT:
+        description: 'Select mux mode: ALT2 mux port: MQS_LEFT of instance: MQS'
+        value: 2
+      _3_ARM_CM4_EVENTI:
+        description: 'Select mux mode: ALT3 mux port: ARM_CM4_EVENTI of instance:
+          CM4'
+        value: 3
+      _5_gpio_mux6_IO1:
+        description: 'Select mux mode: ALT5 mux port: GPIO_MUX6_IO01 of instance:
+          GPIO_MUX6'
+        value: 5
+      _6_lpuart12_RX:
+        description: 'Select mux mode: ALT6 mux port: LPUART12_RXD of instance: LPUART12'
+        value: 6
+      _10_gpio12_IO1:
+        description: 'Select mux mode: ALT10 mux port: GPIO12_IO01 of instance: GPIO12'
+        value: 10
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_02_MUX_MODE:
+    enum:
+      _0_src_BOOT_MODE0:
+        description: 'Select mux mode: ALT0 mux port: SRC_BOOT_MODE00 of instance:
+          SRC'
+        value: 0
+      _1_lpspi5_SCK:
+        description: 'Select mux mode: ALT1 mux port: LPSPI5_SCK of instance: LPSPI5'
+        value: 1
+      _2_sai4_TX_DATA:
+        description: 'Select mux mode: ALT2 mux port: SAI4_TX_DATA of instance: SAI4'
+        value: 2
+      _3_mqs_RIGHT:
+        description: 'Select mux mode: ALT3 mux port: MQS_RIGHT of instance: MQS'
+        value: 3
+      _5_gpio_mux6_IO2:
+        description: 'Select mux mode: ALT5 mux port: GPIO_MUX6_IO02 of instance:
+          GPIO_MUX6'
+        value: 5
+      _10_gpio12_IO2:
+        description: 'Select mux mode: ALT10 mux port: GPIO12_IO02 of instance: GPIO12'
+        value: 10
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_03_MUX_MODE:
+    enum:
+      _0_src_BOOT_MODE1:
+        description: 'Select mux mode: ALT0 mux port: SRC_BOOT_MODE01 of instance:
+          SRC'
+        value: 0
+      _1_lpspi5_PCS0:
+        description: 'Select mux mode: ALT1 mux port: LPSPI5_PCS0 of instance: LPSPI5'
+        value: 1
+      _2_sai4_TX_SYNC:
+        description: 'Select mux mode: ALT2 mux port: SAI4_TX_SYNC of instance: SAI4'
+        value: 2
+      _3_mqs_LEFT:
+        description: 'Select mux mode: ALT3 mux port: MQS_LEFT of instance: MQS'
+        value: 3
+      _5_gpio_mux6_IO3:
+        description: 'Select mux mode: ALT5 mux port: GPIO_MUX6_IO03 of instance:
+          GPIO_MUX6'
+        value: 5
+      _10_gpio12_IO3:
+        description: 'Select mux mode: ALT10 mux port: GPIO12_IO03 of instance: GPIO12'
+        value: 10
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_04_MUX_MODE:
+    enum:
+      _0_lpi2c5_SDA:
+        description: 'Select mux mode: ALT0 mux port: LPI2C5_SDA of instance: LPI2C5'
+        value: 0
+      _1_lpspi5_SDO:
+        description: 'Select mux mode: ALT1 mux port: LPSPI5_SOUT of instance: LPSPI5'
+        value: 1
+      _2_sai4_TX_BCLK:
+        description: 'Select mux mode: ALT2 mux port: SAI4_TX_BCLK of instance: SAI4'
+        value: 2
+      _3_lpuart12_RTS_B:
+        description: 'Select mux mode: ALT3 mux port: LPUART12_RTS_B of instance:
+          LPUART12'
+        value: 3
+      _5_gpio_mux6_IO4:
+        description: 'Select mux mode: ALT5 mux port: GPIO_MUX6_IO04 of instance:
+          GPIO_MUX6'
+        value: 5
+      _6_lpuart11_TX:
+        description: 'Select mux mode: ALT6 mux port: LPUART11_TXD of instance: LPUART11'
+        value: 6
+      _10_gpio12_IO4:
+        description: 'Select mux mode: ALT10 mux port: GPIO12_IO04 of instance: GPIO12'
+        value: 10
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_05_MUX_MODE:
+    enum:
+      _0_lpi2c5_SCL:
+        description: 'Select mux mode: ALT0 mux port: LPI2C5_SCL of instance: LPI2C5'
+        value: 0
+      _1_lpspi5_SDI:
+        description: 'Select mux mode: ALT1 mux port: LPSPI5_SIN of instance: LPSPI5'
+        value: 1
+      _2_sai4_MCLK:
+        description: 'Select mux mode: ALT2 mux port: SAI4_MCLK of instance: SAI4'
+        value: 2
+      _3_lpuart12_CTS_B:
+        description: 'Select mux mode: ALT3 mux port: LPUART12_CTS_B of instance:
+          LPUART12'
+        value: 3
+      _5_gpio_mux6_IO5:
+        description: 'Select mux mode: ALT5 mux port: GPIO_MUX6_IO05 of instance:
+          GPIO_MUX6'
+        value: 5
+      _6_lpuart11_RX:
+        description: 'Select mux mode: ALT6 mux port: LPUART11_RXD of instance: LPUART11'
+        value: 6
+      _7_nmi_glue_NMI:
+        description: 'Select mux mode: ALT7 mux port: NMI_GLUE_NMI of instance: nmi_glue'
+        value: 7
+      _10_gpio12_IO5:
+        description: 'Select mux mode: ALT10 mux port: GPIO12_IO05 of instance: GPIO12'
+        value: 10
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_06_MUX_MODE:
+    enum:
+      _0_lpi2c6_SDA:
+        description: 'Select mux mode: ALT0 mux port: LPI2C6_SDA of instance: LPI2C6'
+        value: 0
+      _2_sai4_RX_DATA:
+        description: 'Select mux mode: ALT2 mux port: SAI4_RX_DATA of instance: SAI4'
+        value: 2
+      _3_lpuart12_TX:
+        description: 'Select mux mode: ALT3 mux port: LPUART12_TXD of instance: LPUART12'
+        value: 3
+      _4_lpspi6_PCS3:
+        description: 'Select mux mode: ALT4 mux port: LPSPI6_PCS3 of instance: LPSPI6'
+        value: 4
+      _5_gpio_mux6_IO6:
+        description: 'Select mux mode: ALT5 mux port: GPIO_MUX6_IO06 of instance:
+          GPIO_MUX6'
+        value: 5
+      _6_can3_TX:
+        description: 'Select mux mode: ALT6 mux port: FLEXCAN3_TX of instance: FLEXCAN3'
+        value: 6
+      _7_pit2_TRIGGER3:
+        description: 'Select mux mode: ALT7 mux port: PIT2_TRIGGER3 of instance: PIT2'
+        value: 7
+      _8_lpspi5_PCS1:
+        description: 'Select mux mode: ALT8 mux port: LPSPI5_PCS1 of instance: LPSPI5'
+        value: 8
+      _10_gpio12_IO6:
+        description: 'Select mux mode: ALT10 mux port: GPIO12_IO06 of instance: GPIO12'
+        value: 10
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_07_MUX_MODE:
+    enum:
+      _0_lpi2c6_SCL:
+        description: 'Select mux mode: ALT0 mux port: LPI2C6_SCL of instance: LPI2C6'
+        value: 0
+      _2_sai4_RX_BCLK:
+        description: 'Select mux mode: ALT2 mux port: SAI4_RX_BCLK of instance: SAI4'
+        value: 2
+      _3_lpuart12_RX:
+        description: 'Select mux mode: ALT3 mux port: LPUART12_RXD of instance: LPUART12'
+        value: 3
+      _4_lpspi6_PCS2:
+        description: 'Select mux mode: ALT4 mux port: LPSPI6_PCS2 of instance: LPSPI6'
+        value: 4
+      _5_gpio_mux6_IO7:
+        description: 'Select mux mode: ALT5 mux port: GPIO_MUX6_IO07 of instance:
+          GPIO_MUX6'
+        value: 5
+      _6_can3_RX:
+        description: 'Select mux mode: ALT6 mux port: FLEXCAN3_RX of instance: FLEXCAN3'
+        value: 6
+      _7_pit2_TRIGGER2:
+        description: 'Select mux mode: ALT7 mux port: PIT2_TRIGGER2 of instance: PIT2'
+        value: 7
+      _8_lpspi5_PCS2:
+        description: 'Select mux mode: ALT8 mux port: LPSPI5_PCS2 of instance: LPSPI5'
+        value: 8
+      _10_gpio12_IO7:
+        description: 'Select mux mode: ALT10 mux port: GPIO12_IO07 of instance: GPIO12'
+        value: 10
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_08_MUX_MODE:
+    enum:
+      _0_lpuart11_TX:
+        description: 'Select mux mode: ALT0 mux port: LPUART11_TXD of instance: LPUART11'
+        value: 0
+      _1_can3_TX:
+        description: 'Select mux mode: ALT1 mux port: FLEXCAN3_TX of instance: FLEXCAN3'
+        value: 1
+      _2_sai4_RX_SYNC:
+        description: 'Select mux mode: ALT2 mux port: SAI4_RX_SYNC of instance: SAI4'
+        value: 2
+      _3_mic_CLK:
+        description: 'Select mux mode: ALT3 mux port: MIC_CLK of instance: MIC'
+        value: 3
+      _4_lpspi6_PCS1:
+        description: 'Select mux mode: ALT4 mux port: LPSPI6_PCS1 of instance: LPSPI6'
+        value: 4
+      _5_gpio_mux6_IO8:
+        description: 'Select mux mode: ALT5 mux port: GPIO_MUX6_IO08 of instance:
+          GPIO_MUX6'
+        value: 5
+      _6_lpi2c5_SDA:
+        description: 'Select mux mode: ALT6 mux port: LPI2C5_SDA of instance: LPI2C5'
+        value: 6
+      _7_pit2_TRIGGER1:
+        description: 'Select mux mode: ALT7 mux port: PIT2_TRIGGER1 of instance: PIT2'
+        value: 7
+      _8_lpspi5_PCS3:
+        description: 'Select mux mode: ALT8 mux port: LPSPI5_PCS3 of instance: LPSPI5'
+        value: 8
+      _10_gpio12_IO8:
+        description: 'Select mux mode: ALT10 mux port: GPIO12_IO08 of instance: GPIO12'
+        value: 10
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_09_MUX_MODE:
+    enum:
+      _0_lpuart11_RX:
+        description: 'Select mux mode: ALT0 mux port: LPUART11_RXD of instance: LPUART11'
+        value: 0
+      _1_can3_RX:
+        description: 'Select mux mode: ALT1 mux port: FLEXCAN3_RX of instance: FLEXCAN3'
+        value: 1
+      _2_pit2_TRIGGER0:
+        description: 'Select mux mode: ALT2 mux port: PIT2_TRIGGER0 of instance: PIT2'
+        value: 2
+      _3_mic_BITSTREAM0:
+        description: 'Select mux mode: ALT3 mux port: MIC_BITSTREAM0 of instance:
+          MIC'
+        value: 3
+      _4_lpspi6_PCS0:
+        description: 'Select mux mode: ALT4 mux port: LPSPI6_PCS0 of instance: LPSPI6'
+        value: 4
+      _5_gpio_mux6_IO9:
+        description: 'Select mux mode: ALT5 mux port: GPIO_MUX6_IO09 of instance:
+          GPIO_MUX6'
+        value: 5
+      _6_lpi2c5_SCL:
+        description: 'Select mux mode: ALT6 mux port: LPI2C5_SCL of instance: LPI2C5'
+        value: 6
+      _7_sai4_TX_DATA:
+        description: 'Select mux mode: ALT7 mux port: SAI4_TX_DATA of instance: SAI4'
+        value: 7
+      _10_gpio12_IO9:
+        description: 'Select mux mode: ALT10 mux port: GPIO12_IO09 of instance: GPIO12'
+        value: 10
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_10_MUX_MODE:
+    enum:
+      _0_jtag_mux_TRSTB:
+        description: 'Select mux mode: ALT0 mux port: JTAG_MUX_TRSTB of instance:
+          JTAG_MUX'
+        value: 0
+      _1_lpuart11_CTS_B:
+        description: 'Select mux mode: ALT1 mux port: LPUART11_CTS_B of instance:
+          LPUART11'
+        value: 1
+      _2_lpi2c6_SDA:
+        description: 'Select mux mode: ALT2 mux port: LPI2C6_SDA of instance: LPI2C6'
+        value: 2
+      _3_mic_BITSTREAM1:
+        description: 'Select mux mode: ALT3 mux port: MIC_BITSTREAM1 of instance:
+          MIC'
+        value: 3
+      _4_lpspi6_SCK:
+        description: 'Select mux mode: ALT4 mux port: LPSPI6_SCK of instance: LPSPI6'
+        value: 4
+      _5_gpio_mux6_IO10:
+        description: 'Select mux mode: ALT5 mux port: GPIO_MUX6_IO10 of instance:
+          GPIO_MUX6'
+        value: 5
+      _6_lpi2c5_SCLS:
+        description: 'Select mux mode: ALT6 mux port: LPI2C5_SCLS of instance: LPI2C5'
+        value: 6
+      _7_sai4_TX_SYNC:
+        description: 'Select mux mode: ALT7 mux port: SAI4_TX_SYNC of instance: SAI4'
+        value: 7
+      _8_lpuart12_TX:
+        description: 'Select mux mode: ALT8 mux port: LPUART12_TXD of instance: LPUART12'
+        value: 8
+      _10_gpio12_IO10:
+        description: 'Select mux mode: ALT10 mux port: GPIO12_IO10 of instance: GPIO12'
+        value: 10
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_11_MUX_MODE:
+    enum:
+      _0_jtag_mux_TDO:
+        description: 'Select mux mode: ALT0 mux port: JTAG_MUX_TDO of instance: JTAG_MUX'
+        value: 0
+      _1_lpuart11_RTS_B:
+        description: 'Select mux mode: ALT1 mux port: LPUART11_RTS_B of instance:
+          LPUART11'
+        value: 1
+      _2_lpi2c6_SCL:
+        description: 'Select mux mode: ALT2 mux port: LPI2C6_SCL of instance: LPI2C6'
+        value: 2
+      _3_mic_BITSTREAM2:
+        description: 'Select mux mode: ALT3 mux port: MIC_BITSTREAM2 of instance:
+          MIC'
+        value: 3
+      _4_lpspi6_SDO:
+        description: 'Select mux mode: ALT4 mux port: LPSPI6_SOUT of instance: LPSPI6'
+        value: 4
+      _5_gpio_mux6_IO11:
+        description: 'Select mux mode: ALT5 mux port: GPIO_MUX6_IO11 of instance:
+          GPIO_MUX6'
+        value: 5
+      _6_lpi2c5_SDAS:
+        description: 'Select mux mode: ALT6 mux port: LPI2C5_SDAS of instance: LPI2C5'
+        value: 6
+      _7_ARM_TRACE_SWO:
+        description: 'Select mux mode: ALT7 mux port: ARM_TRACE_SWO of instance: ARM'
+        value: 7
+      _8_lpuart12_RX:
+        description: 'Select mux mode: ALT8 mux port: LPUART12_RXD of instance: LPUART12'
+        value: 8
+      _10_gpio12_IO11:
+        description: 'Select mux mode: ALT10 mux port: GPIO12_IO11 of instance: GPIO12'
+        value: 10
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_12_MUX_MODE:
+    enum:
+      _0_jtag_mux_TDI:
+        description: 'Select mux mode: ALT0 mux port: JTAG_MUX_TDI of instance: JTAG_MUX'
+        value: 0
+      _1_pit2_TRIGGER0:
+        description: 'Select mux mode: ALT1 mux port: PIT2_TRIGGER0 of instance: PIT2'
+        value: 1
+      _3_mic_BITSTREAM3:
+        description: 'Select mux mode: ALT3 mux port: MIC_BITSTREAM3 of instance:
+          MIC'
+        value: 3
+      _4_lpspi6_SDI:
+        description: 'Select mux mode: ALT4 mux port: LPSPI6_SIN of instance: LPSPI6'
+        value: 4
+      _5_gpio_mux6_IO12:
+        description: 'Select mux mode: ALT5 mux port: GPIO_MUX6_IO12 of instance:
+          GPIO_MUX6'
+        value: 5
+      _6_lpi2c5_HREQ:
+        description: 'Select mux mode: ALT6 mux port: LPI2C5_HREQ of instance: LPI2C5'
+        value: 6
+      _7_sai4_TX_BCLK:
+        description: 'Select mux mode: ALT7 mux port: SAI4_TX_BCLK of instance: SAI4'
+        value: 7
+      _8_lpspi5_SCK:
+        description: 'Select mux mode: ALT8 mux port: LPSPI5_SCK of instance: LPSPI5'
+        value: 8
+      _10_gpio12_IO12:
+        description: 'Select mux mode: ALT10 mux port: GPIO12_IO12 of instance: GPIO12'
+        value: 10
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_13_MUX_MODE:
+    enum:
+      _0_jtag_mux_MOD:
+        description: 'Select mux mode: ALT0 mux port: JTAG_MUX_MOD of instance: JTAG_MUX'
+        value: 0
+      _1_mic_BITSTREAM1:
+        description: 'Select mux mode: ALT1 mux port: MIC_BITSTREAM1 of instance:
+          MIC'
+        value: 1
+      _2_pit2_TRIGGER1:
+        description: 'Select mux mode: ALT2 mux port: PIT2_TRIGGER1 of instance: PIT2'
+        value: 2
+      _5_gpio_mux6_IO13:
+        description: 'Select mux mode: ALT5 mux port: GPIO_MUX6_IO13 of instance:
+          GPIO_MUX6'
+        value: 5
+      _7_sai4_RX_DATA:
+        description: 'Select mux mode: ALT7 mux port: SAI4_RX_DATA of instance: SAI4'
+        value: 7
+      _8_lpspi5_PCS0:
+        description: 'Select mux mode: ALT8 mux port: LPSPI5_PCS0 of instance: LPSPI5'
+        value: 8
+      _10_gpio12_IO13:
+        description: 'Select mux mode: ALT10 mux port: GPIO12_IO13 of instance: GPIO12'
+        value: 10
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_14_MUX_MODE:
+    enum:
+      _0_jtag_mux_TCK:
+        description: 'Select mux mode: ALT0 mux port: JTAG_MUX_TCK of instance: JTAG_MUX/SWD_CLK'
+        value: 0
+      _1_mic_BITSTREAM2:
+        description: 'Select mux mode: ALT1 mux port: MIC_BITSTREAM2 of instance:
+          MIC'
+        value: 1
+      _2_pit2_TRIGGER2:
+        description: 'Select mux mode: ALT2 mux port: PIT2_TRIGGER2 of instance: PIT2'
+        value: 2
+      _5_gpio_mux6_IO14:
+        description: 'Select mux mode: ALT5 mux port: GPIO_MUX6_IO14 of instance:
+          GPIO_MUX6'
+        value: 5
+      _7_sai4_RX_BCLK:
+        description: 'Select mux mode: ALT7 mux port: SAI4_RX_BCLK of instance: SAI4'
+        value: 7
+      _8_lpspi5_SDO:
+        description: 'Select mux mode: ALT8 mux port: LPSPI5_SOUT of instance: LPSPI5'
+        value: 8
+      _10_gpio12_IO14:
+        description: 'Select mux mode: ALT10 mux port: GPIO12_IO14 of instance: GPIO12'
+        value: 10
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_MUX_CTL_PAD_GPIO_LPSR_15_MUX_MODE:
+    enum:
+      _0_jtag_mux_TMS:
+        description: 'Select mux mode: ALT0 mux port: JTAG_MUX_TMS of instance: JTAG_MUX/SWD_DIO'
+        value: 0
+      _1_mic_BITSTREAM3:
+        description: 'Select mux mode: ALT1 mux port: MIC_BITSTREAM3 of instance:
+          MIC'
+        value: 1
+      _2_pit2_TRIGGER3:
+        description: 'Select mux mode: ALT2 mux port: PIT2_TRIGGER3 of instance: PIT2'
+        value: 2
+      _5_gpio_mux6_IO15:
+        description: 'Select mux mode: ALT5 mux port: GPIO_MUX6_IO15 of instance:
+          GPIO_MUX6'
+        value: 5
+      _7_sai4_RX_SYNC:
+        description: 'Select mux mode: ALT7 mux port: SAI4_RX_SYNC of instance: SAI4'
+        value: 7
+      _8_lpspi5_SDI:
+        description: 'Select mux mode: ALT8 mux port: LPSPI5_SIN of instance: LPSPI5'
+        value: 8
+      _10_gpio12_IO15:
+        description: 'Select mux mode: ALT10 mux port: GPIO12_IO15 of instance: GPIO12'
+        value: 10
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_00_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_00_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_01_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_01_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_02_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_02_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_03_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_03_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_04_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_04_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_05_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_05_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_06_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_06_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_07_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_07_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_08_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_08_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_09_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_09_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_10_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_10_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_11_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_11_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_12_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_12_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_13_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_13_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_14_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_14_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_15_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_SW_PAD_CTL_PAD_GPIO_LPSR_15_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_CAN3_IPP_IND_CANRX_SELECT_INPUT_DAISY:
+    enum:
+      _1_ALT0:
+        description: 'Selecting Pad: GPIO_LPSR_01 for Mode: ALT0'
+        value: 0
+      _7_ALT6:
+        description: 'Selecting Pad: GPIO_LPSR_07 for Mode: ALT6'
+        value: 1
+      _9_ALT1:
+        description: 'Selecting Pad: GPIO_LPSR_09 for Mode: ALT1'
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_LPUART12_IPP_IND_LPUART_RXD_SELECT_INPUT_DAISY:
+    enum:
+      _01_ALT6:
+        description: 'Selecting Pad: GPIO_LPSR_01 for Mode: ALT6'
+        value: 0
+      _07_ALT3:
+        description: 'Selecting Pad: GPIO_LPSR_07 for Mode: ALT3'
+        value: 1
+      _11_ALT8:
+        description: 'Selecting Pad: GPIO_LPSR_11 for Mode: ALT8'
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_LPSR_LPUART12_IPP_IND_LPUART_TXD_SELECT_INPUT_DAISY:
+    enum:
+      _00_ALT6:
+        description: 'Selecting Pad: GPIO_LPSR_00 for Mode: ALT6'
+        value: 0
+      _06_ALT3:
+        description: 'Selecting Pad: GPIO_LPSR_06 for Mode: ALT3'
+        value: 1
+      _10_ALT8:
+        description: 'Selecting Pad: GPIO_LPSR_10 for Mode: ALT8'
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

@@ -1,0 +1,2373 @@
+---
+structs:
+  tmr1:
+    description: TMR
+    instances:
+      - name: TMR1
+        address: '0x4015C000'
+      - name: TMR2
+        address: '0x40160000'
+      - name: TMR3
+        address: '0x40164000'
+      - name: TMR4
+        address: '0x40168000'
+    fields:
+      - name: COMP10
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 0
+        description: (read-write) Timer Channel Compare Register 1
+        fields:
+          - name: COMPARISON_1
+            description: Comparison Value 1
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: COMP20
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 2
+        description: (read-write) Timer Channel Compare Register 2
+        fields:
+          - name: COMPARISON_2
+            description: Comparison Value 2
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CAPT0
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 4
+        description: (read-write) Timer Channel Capture Register
+        fields:
+          - name: CAPTURE
+            description: Capture Value
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: LOAD0
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 6
+        description: (read-write) Timer Channel Load Register
+        fields:
+          - name: LOAD
+            description: Timer Load Register
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: HOLD0
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 8
+        description: (read-write) Timer Channel Hold Register
+        fields:
+          - name: HOLD
+            description: HOLD
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CNTR0
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 10
+        description: (read-write) Timer Channel Counter Register
+        fields:
+          - name: COUNTER
+            description: COUNTER
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CTRL0
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 12
+        description: (read-write) Timer Channel Control Register
+        fields:
+          - name: CM
+            description: Count Mode
+            index: 13
+            width: 3
+            read: true
+            write: true
+            type: TMR1_CTRL0_CM
+          - name: PCS
+            description: Primary Count Source
+            index: 9
+            width: 4
+            read: true
+            write: true
+            type: TMR1_CTRL0_PCS
+          - name: SCS
+            description: Secondary Count Source
+            index: 7
+            width: 2
+            read: true
+            write: true
+            type: TMR1_CTRL0_SCS
+          - name: ONCE
+            description: Count Once
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: LENGTH
+            description: Count Length
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: DIR
+            description: Count Direction
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: COINIT
+            description: Co-Channel Initialization
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: OUTMODE
+            description: Output Mode
+            index: 0
+            width: 3
+            read: true
+            write: true
+            type: TMR1_CTRL0_OUTMODE
+      - name: SCTRL0
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 14
+        description: (read-write) Timer Channel Status and Control Register
+        fields:
+          - name: TCF
+            description: Timer Compare Flag
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: TCFIE
+            description: Timer Compare Flag Interrupt Enable
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: TOF
+            description: Timer Overflow Flag
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: TOFIE
+            description: Timer Overflow Flag Interrupt Enable
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: IEF
+            description: Input Edge Flag
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: IEFIE
+            description: Input Edge Flag Interrupt Enable
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: IPS
+            description: Input Polarity Select
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: INPUT
+            description: External Input Signal
+            index: 8
+            width: 1
+            read: true
+            write: false
+          - name: CAPTURE_MODE
+            description: Input Capture Mode
+            index: 6
+            width: 2
+            read: true
+            write: true
+            type: TMR1_SCTRL0_CAPTURE_MODE
+          - name: MSTR
+            description: Master Mode
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: EEOF
+            description: Enable External OFLAG Force
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: VAL
+            description: Forced OFLAG Value
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: FORCE
+            description: Force OFLAG Output
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: OPS
+            description: Output Polarity Select
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: OEN
+            description: Output Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CMPLD10
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 16
+        description: (read-write) Timer Channel Comparator Load Register 1
+        fields:
+          - name: COMPARATOR_LOAD_1
+            description: COMPARATOR_LOAD_1
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CMPLD20
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 18
+        description: (read-write) Timer Channel Comparator Load Register 2
+        fields:
+          - name: COMPARATOR_LOAD_2
+            description: COMPARATOR_LOAD_2
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CSCTRL0
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 20
+        description: (read-write) Timer Channel Comparator Status and Control Register
+        fields:
+          - name: DBG_EN
+            description: Debug Actions Enable
+            index: 14
+            width: 2
+            read: true
+            write: true
+            type: TMR1_CSCTRL0_DBG_EN
+          - name: FAULT
+            description: Fault Enable
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: ALT_LOAD
+            description: Alternative Load Enable
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ROC
+            description: Reload on Capture
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: TCI
+            description: Triggered Count Initialization Control
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: UP
+            description: Counting Direction Indicator
+            index: 9
+            width: 1
+            read: true
+            write: false
+          - name: TCF2EN
+            description: Timer Compare 2 Interrupt Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: TCF1EN
+            description: Timer Compare 1 Interrupt Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: TCF2
+            description: Timer Compare 2 Interrupt Flag
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: TCF1
+            description: Timer Compare 1 Interrupt Flag
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: CL2
+            description: Compare Load Control 2
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: TMR1_CSCTRL0_CL2
+          - name: CL1
+            description: Compare Load Control 1
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: TMR1_CSCTRL0_CL1
+      - name: FILT0
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 22
+        description: (read-write) Timer Channel Input Filter Register
+        fields:
+          - name: FILT_CNT
+            description: Input Filter Sample Count
+            index: 8
+            width: 3
+            read: true
+            write: true
+          - name: FILT_PER
+            description: Input Filter Sample Period
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: DMA0
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 24
+        description: (read-write) Timer Channel DMA Enable Register
+        fields:
+          - name: CMPLD2DE
+            description: Comparator Preload Register 2 DMA Enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: CMPLD1DE
+            description: Comparator Preload Register 1 DMA Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: IEFDE
+            description: Input Edge Flag DMA Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: ENBL
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 30
+        description: (read-write) Timer Channel Enable Register
+        fields:
+          - name: ENBL
+            description: Timer Channel Enable
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: TMR1_ENBL_ENBL
+      - name: COMP11
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 32
+        description: (read-write) Timer Channel Compare Register 1
+        fields:
+          - name: COMPARISON_1
+            description: Comparison Value 1
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: COMP21
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 34
+        description: (read-write) Timer Channel Compare Register 2
+        fields:
+          - name: COMPARISON_2
+            description: Comparison Value 2
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CAPT1
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 36
+        description: (read-write) Timer Channel Capture Register
+        fields:
+          - name: CAPTURE
+            description: Capture Value
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: LOAD1
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 38
+        description: (read-write) Timer Channel Load Register
+        fields:
+          - name: LOAD
+            description: Timer Load Register
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: HOLD1
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 40
+        description: (read-write) Timer Channel Hold Register
+        fields:
+          - name: HOLD
+            description: HOLD
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CNTR1
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 42
+        description: (read-write) Timer Channel Counter Register
+        fields:
+          - name: COUNTER
+            description: COUNTER
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CTRL1
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 44
+        description: (read-write) Timer Channel Control Register
+        fields:
+          - name: CM
+            description: Count Mode
+            index: 13
+            width: 3
+            read: true
+            write: true
+            type: TMR1_CTRL1_CM
+          - name: PCS
+            description: Primary Count Source
+            index: 9
+            width: 4
+            read: true
+            write: true
+            type: TMR1_CTRL1_PCS
+          - name: SCS
+            description: Secondary Count Source
+            index: 7
+            width: 2
+            read: true
+            write: true
+            type: TMR1_CTRL1_SCS
+          - name: ONCE
+            description: Count Once
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: LENGTH
+            description: Count Length
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: DIR
+            description: Count Direction
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: COINIT
+            description: Co-Channel Initialization
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: OUTMODE
+            description: Output Mode
+            index: 0
+            width: 3
+            read: true
+            write: true
+            type: TMR1_CTRL1_OUTMODE
+      - name: SCTRL1
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 46
+        description: (read-write) Timer Channel Status and Control Register
+        fields:
+          - name: TCF
+            description: Timer Compare Flag
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: TCFIE
+            description: Timer Compare Flag Interrupt Enable
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: TOF
+            description: Timer Overflow Flag
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: TOFIE
+            description: Timer Overflow Flag Interrupt Enable
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: IEF
+            description: Input Edge Flag
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: IEFIE
+            description: Input Edge Flag Interrupt Enable
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: IPS
+            description: Input Polarity Select
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: INPUT
+            description: External Input Signal
+            index: 8
+            width: 1
+            read: true
+            write: false
+          - name: CAPTURE_MODE
+            description: Input Capture Mode
+            index: 6
+            width: 2
+            read: true
+            write: true
+            type: TMR1_SCTRL1_CAPTURE_MODE
+          - name: MSTR
+            description: Master Mode
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: EEOF
+            description: Enable External OFLAG Force
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: VAL
+            description: Forced OFLAG Value
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: FORCE
+            description: Force OFLAG Output
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: OPS
+            description: Output Polarity Select
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: OEN
+            description: Output Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CMPLD11
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 48
+        description: (read-write) Timer Channel Comparator Load Register 1
+        fields:
+          - name: COMPARATOR_LOAD_1
+            description: COMPARATOR_LOAD_1
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CMPLD21
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 50
+        description: (read-write) Timer Channel Comparator Load Register 2
+        fields:
+          - name: COMPARATOR_LOAD_2
+            description: COMPARATOR_LOAD_2
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CSCTRL1
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 52
+        description: (read-write) Timer Channel Comparator Status and Control Register
+        fields:
+          - name: DBG_EN
+            description: Debug Actions Enable
+            index: 14
+            width: 2
+            read: true
+            write: true
+            type: TMR1_CSCTRL1_DBG_EN
+          - name: FAULT
+            description: Fault Enable
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: ALT_LOAD
+            description: Alternative Load Enable
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ROC
+            description: Reload on Capture
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: TCI
+            description: Triggered Count Initialization Control
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: UP
+            description: Counting Direction Indicator
+            index: 9
+            width: 1
+            read: true
+            write: false
+          - name: TCF2EN
+            description: Timer Compare 2 Interrupt Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: TCF1EN
+            description: Timer Compare 1 Interrupt Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: TCF2
+            description: Timer Compare 2 Interrupt Flag
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: TCF1
+            description: Timer Compare 1 Interrupt Flag
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: CL2
+            description: Compare Load Control 2
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: TMR1_CSCTRL1_CL2
+          - name: CL1
+            description: Compare Load Control 1
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: TMR1_CSCTRL1_CL1
+      - name: FILT1
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 54
+        description: (read-write) Timer Channel Input Filter Register
+        fields:
+          - name: FILT_CNT
+            description: Input Filter Sample Count
+            index: 8
+            width: 3
+            read: true
+            write: true
+          - name: FILT_PER
+            description: Input Filter Sample Period
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: DMA1
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 56
+        description: (read-write) Timer Channel DMA Enable Register
+        fields:
+          - name: CMPLD2DE
+            description: Comparator Preload Register 2 DMA Enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: CMPLD1DE
+            description: Comparator Preload Register 1 DMA Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: IEFDE
+            description: Input Edge Flag DMA Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: COMP12
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 64
+        description: (read-write) Timer Channel Compare Register 1
+        fields:
+          - name: COMPARISON_1
+            description: Comparison Value 1
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: COMP22
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 66
+        description: (read-write) Timer Channel Compare Register 2
+        fields:
+          - name: COMPARISON_2
+            description: Comparison Value 2
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CAPT2
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 68
+        description: (read-write) Timer Channel Capture Register
+        fields:
+          - name: CAPTURE
+            description: Capture Value
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: LOAD2
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 70
+        description: (read-write) Timer Channel Load Register
+        fields:
+          - name: LOAD
+            description: Timer Load Register
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: HOLD2
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 72
+        description: (read-write) Timer Channel Hold Register
+        fields:
+          - name: HOLD
+            description: HOLD
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CNTR2
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 74
+        description: (read-write) Timer Channel Counter Register
+        fields:
+          - name: COUNTER
+            description: COUNTER
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CTRL2
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 76
+        description: (read-write) Timer Channel Control Register
+        fields:
+          - name: CM
+            description: Count Mode
+            index: 13
+            width: 3
+            read: true
+            write: true
+            type: TMR1_CTRL2_CM
+          - name: PCS
+            description: Primary Count Source
+            index: 9
+            width: 4
+            read: true
+            write: true
+            type: TMR1_CTRL2_PCS
+          - name: SCS
+            description: Secondary Count Source
+            index: 7
+            width: 2
+            read: true
+            write: true
+            type: TMR1_CTRL2_SCS
+          - name: ONCE
+            description: Count Once
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: LENGTH
+            description: Count Length
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: DIR
+            description: Count Direction
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: COINIT
+            description: Co-Channel Initialization
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: OUTMODE
+            description: Output Mode
+            index: 0
+            width: 3
+            read: true
+            write: true
+            type: TMR1_CTRL2_OUTMODE
+      - name: SCTRL2
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 78
+        description: (read-write) Timer Channel Status and Control Register
+        fields:
+          - name: TCF
+            description: Timer Compare Flag
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: TCFIE
+            description: Timer Compare Flag Interrupt Enable
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: TOF
+            description: Timer Overflow Flag
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: TOFIE
+            description: Timer Overflow Flag Interrupt Enable
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: IEF
+            description: Input Edge Flag
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: IEFIE
+            description: Input Edge Flag Interrupt Enable
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: IPS
+            description: Input Polarity Select
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: INPUT
+            description: External Input Signal
+            index: 8
+            width: 1
+            read: true
+            write: false
+          - name: CAPTURE_MODE
+            description: Input Capture Mode
+            index: 6
+            width: 2
+            read: true
+            write: true
+            type: TMR1_SCTRL2_CAPTURE_MODE
+          - name: MSTR
+            description: Master Mode
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: EEOF
+            description: Enable External OFLAG Force
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: VAL
+            description: Forced OFLAG Value
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: FORCE
+            description: Force OFLAG Output
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: OPS
+            description: Output Polarity Select
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: OEN
+            description: Output Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CMPLD12
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 80
+        description: (read-write) Timer Channel Comparator Load Register 1
+        fields:
+          - name: COMPARATOR_LOAD_1
+            description: COMPARATOR_LOAD_1
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CMPLD22
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 82
+        description: (read-write) Timer Channel Comparator Load Register 2
+        fields:
+          - name: COMPARATOR_LOAD_2
+            description: COMPARATOR_LOAD_2
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CSCTRL2
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 84
+        description: (read-write) Timer Channel Comparator Status and Control Register
+        fields:
+          - name: DBG_EN
+            description: Debug Actions Enable
+            index: 14
+            width: 2
+            read: true
+            write: true
+            type: TMR1_CSCTRL2_DBG_EN
+          - name: FAULT
+            description: Fault Enable
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: ALT_LOAD
+            description: Alternative Load Enable
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ROC
+            description: Reload on Capture
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: TCI
+            description: Triggered Count Initialization Control
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: UP
+            description: Counting Direction Indicator
+            index: 9
+            width: 1
+            read: true
+            write: false
+          - name: TCF2EN
+            description: Timer Compare 2 Interrupt Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: TCF1EN
+            description: Timer Compare 1 Interrupt Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: TCF2
+            description: Timer Compare 2 Interrupt Flag
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: TCF1
+            description: Timer Compare 1 Interrupt Flag
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: CL2
+            description: Compare Load Control 2
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: TMR1_CSCTRL2_CL2
+          - name: CL1
+            description: Compare Load Control 1
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: TMR1_CSCTRL2_CL1
+      - name: FILT2
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 86
+        description: (read-write) Timer Channel Input Filter Register
+        fields:
+          - name: FILT_CNT
+            description: Input Filter Sample Count
+            index: 8
+            width: 3
+            read: true
+            write: true
+          - name: FILT_PER
+            description: Input Filter Sample Period
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: DMA2
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 88
+        description: (read-write) Timer Channel DMA Enable Register
+        fields:
+          - name: CMPLD2DE
+            description: Comparator Preload Register 2 DMA Enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: CMPLD1DE
+            description: Comparator Preload Register 1 DMA Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: IEFDE
+            description: Input Edge Flag DMA Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: COMP13
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 96
+        description: (read-write) Timer Channel Compare Register 1
+        fields:
+          - name: COMPARISON_1
+            description: Comparison Value 1
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: COMP23
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 98
+        description: (read-write) Timer Channel Compare Register 2
+        fields:
+          - name: COMPARISON_2
+            description: Comparison Value 2
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CAPT3
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 100
+        description: (read-write) Timer Channel Capture Register
+        fields:
+          - name: CAPTURE
+            description: Capture Value
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: LOAD3
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 102
+        description: (read-write) Timer Channel Load Register
+        fields:
+          - name: LOAD
+            description: Timer Load Register
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: HOLD3
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 104
+        description: (read-write) Timer Channel Hold Register
+        fields:
+          - name: HOLD
+            description: HOLD
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CNTR3
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 106
+        description: (read-write) Timer Channel Counter Register
+        fields:
+          - name: COUNTER
+            description: COUNTER
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CTRL3
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 108
+        description: (read-write) Timer Channel Control Register
+        fields:
+          - name: CM
+            description: Count Mode
+            index: 13
+            width: 3
+            read: true
+            write: true
+            type: TMR1_CTRL3_CM
+          - name: PCS
+            description: Primary Count Source
+            index: 9
+            width: 4
+            read: true
+            write: true
+            type: TMR1_CTRL3_PCS
+          - name: SCS
+            description: Secondary Count Source
+            index: 7
+            width: 2
+            read: true
+            write: true
+            type: TMR1_CTRL3_SCS
+          - name: ONCE
+            description: Count Once
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: LENGTH
+            description: Count Length
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: DIR
+            description: Count Direction
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: COINIT
+            description: Co-Channel Initialization
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: OUTMODE
+            description: Output Mode
+            index: 0
+            width: 3
+            read: true
+            write: true
+            type: TMR1_CTRL3_OUTMODE
+      - name: SCTRL3
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 110
+        description: (read-write) Timer Channel Status and Control Register
+        fields:
+          - name: TCF
+            description: Timer Compare Flag
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: TCFIE
+            description: Timer Compare Flag Interrupt Enable
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: TOF
+            description: Timer Overflow Flag
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: TOFIE
+            description: Timer Overflow Flag Interrupt Enable
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: IEF
+            description: Input Edge Flag
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: IEFIE
+            description: Input Edge Flag Interrupt Enable
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: IPS
+            description: Input Polarity Select
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: INPUT
+            description: External Input Signal
+            index: 8
+            width: 1
+            read: true
+            write: false
+          - name: CAPTURE_MODE
+            description: Input Capture Mode
+            index: 6
+            width: 2
+            read: true
+            write: true
+            type: TMR1_SCTRL3_CAPTURE_MODE
+          - name: MSTR
+            description: Master Mode
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: EEOF
+            description: Enable External OFLAG Force
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: VAL
+            description: Forced OFLAG Value
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: FORCE
+            description: Force OFLAG Output
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: OPS
+            description: Output Polarity Select
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: OEN
+            description: Output Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CMPLD13
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 112
+        description: (read-write) Timer Channel Comparator Load Register 1
+        fields:
+          - name: COMPARATOR_LOAD_1
+            description: COMPARATOR_LOAD_1
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CMPLD23
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 114
+        description: (read-write) Timer Channel Comparator Load Register 2
+        fields:
+          - name: COMPARATOR_LOAD_2
+            description: COMPARATOR_LOAD_2
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CSCTRL3
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 116
+        description: (read-write) Timer Channel Comparator Status and Control Register
+        fields:
+          - name: DBG_EN
+            description: Debug Actions Enable
+            index: 14
+            width: 2
+            read: true
+            write: true
+            type: TMR1_CSCTRL3_DBG_EN
+          - name: FAULT
+            description: Fault Enable
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: ALT_LOAD
+            description: Alternative Load Enable
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ROC
+            description: Reload on Capture
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: TCI
+            description: Triggered Count Initialization Control
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: UP
+            description: Counting Direction Indicator
+            index: 9
+            width: 1
+            read: true
+            write: false
+          - name: TCF2EN
+            description: Timer Compare 2 Interrupt Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: TCF1EN
+            description: Timer Compare 1 Interrupt Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: TCF2
+            description: Timer Compare 2 Interrupt Flag
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: TCF1
+            description: Timer Compare 1 Interrupt Flag
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: CL2
+            description: Compare Load Control 2
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: TMR1_CSCTRL3_CL2
+          - name: CL1
+            description: Compare Load Control 1
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: TMR1_CSCTRL3_CL1
+      - name: FILT3
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 118
+        description: (read-write) Timer Channel Input Filter Register
+        fields:
+          - name: FILT_CNT
+            description: Input Filter Sample Count
+            index: 8
+            width: 3
+            read: true
+            write: true
+          - name: FILT_PER
+            description: Input Filter Sample Period
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: DMA3
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 120
+        description: (read-write) Timer Channel DMA Enable Register
+        fields:
+          - name: CMPLD2DE
+            description: Comparator Preload Register 2 DMA Enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: CMPLD1DE
+            description: Comparator Preload Register 1 DMA Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: IEFDE
+            description: Input Edge Flag DMA Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  TMR1_CTRL0_CM:
+    enum:
+      NOOP:
+        description: No operation
+        value: 0
+      RISING_ONLY:
+        description: Count rising edges of primary sourceRising edges are counted
+          only when SCTRL[IPS] = 0. Falling edges are counted when SCTRL[IPS] = 1.
+          If the primary count source is IP bus clock divide by 1, only rising edges
+          are counted regardless of the value of SCTRL[IPS].
+        value: 1
+      RISING_AND_FALLING:
+        description: Count rising and falling edges of primary sourceIP bus clock
+          divide by 1 cannot be used as a primary count source in edge count mode.
+        value: 2
+      RISING_WHILE_SEC_HIGH:
+        description: Count rising edges of primary source while secondary input high
+          active
+        value: 3
+      QUADRATURE:
+        description: Quadrature count mode, uses primary and secondary sources
+        value: 4
+      RISING_SEC_DIR:
+        description: Count rising edges of primary source; secondary source specifies
+          directionRising edges are counted only when SCTRL[IPS] = 0. Falling edges
+          are counted when SCTRL[IPS] = 1.
+        value: 5
+      SECONDARY:
+        description: Edge of secondary source triggers primary count until compare
+        value: 6
+      CASCADE:
+        description: Cascaded counter mode (up/down)The primary count source must
+          be set to one of the counter outputs.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CTRL0_PCS:
+    enum:
+      COUNTER0_IN:
+        description: Counter 0 input pin
+        value: 0
+      COUNTER1_IN:
+        description: Counter 1 input pin
+        value: 1
+      COUNTER2_IN:
+        description: Counter 2 input pin
+        value: 2
+      COUNTER3_IN:
+        description: Counter 3 input pin
+        value: 3
+      COUNTER0_OUT:
+        description: Counter 0 output
+        value: 4
+      COUNTER1_OUT:
+        description: Counter 1 output
+        value: 5
+      COUNTER2_OUT:
+        description: Counter 2 output
+        value: 6
+      COUNTER3_OUT:
+        description: Counter 3 output
+        value: 7
+      BUS_DIVBY1:
+        description: IP bus clock divide by 1 prescaler
+        value: 8
+      BUS_DIVBY2:
+        description: IP bus clock divide by 2 prescaler
+        value: 9
+      BUS_DIVBY4:
+        description: IP bus clock divide by 4 prescaler
+        value: 10
+      BUS_DIVBY8:
+        description: IP bus clock divide by 8 prescaler
+        value: 11
+      BUS_DIVBY16:
+        description: IP bus clock divide by 16 prescaler
+        value: 12
+      BUS_DIVBY32:
+        description: IP bus clock divide by 32 prescaler
+        value: 13
+      BUS_DIVBY64:
+        description: IP bus clock divide by 64 prescaler
+        value: 14
+      BUS_DIVBY128:
+        description: IP bus clock divide by 128 prescaler
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CTRL0_SCS:
+    enum:
+      _0_IN:
+        description: Counter 0 input pin
+        value: 0
+      _1_IN:
+        description: Counter 1 input pin
+        value: 1
+      _2_IN:
+        description: Counter 2 input pin
+        value: 2
+      _3_IN:
+        description: Counter 3 input pin
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CTRL0_OUTMODE:
+    enum:
+      COUNTER_ACTIVE:
+        description: Asserted while counter is active
+        value: 0
+      CLEAR_OFLAG:
+        description: Clear OFLAG output on successful compare
+        value: 1
+      SET_OFLAG:
+        description: Set OFLAG output on successful compare
+        value: 2
+      TOGGLE_OFLAG_SUCCESS:
+        description: Toggle OFLAG output on successful compare
+        value: 3
+      TOGGLE_OFLAG_ALT:
+        description: Toggle OFLAG output using alternating compare registers
+        value: 4
+      CLEAR_ON_SECONDARY:
+        description: Set on compare, cleared on secondary source input edge
+        value: 5
+      CLEAR_ON_ROLLOVER:
+        description: Set on compare, cleared on counter rollover
+        value: 6
+      ENABLE_GATED_OUT:
+        description: Enable gated clock output while counter is active
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_SCTRL0_CAPTURE_MODE:
+    enum:
+      DISABLED:
+        description: Capture function is disabled
+        value: 0
+      ENABLE_RISING:
+        description: Load capture register on rising edge (when IPS=0) or falling
+          edge (when IPS=1) of input
+        value: 1
+      ENABLE_FALLING:
+        description: Load capture register on falling edge (when IPS=0) or rising
+          edge (when IPS=1) of input
+        value: 2
+      ENABLE_BOTH:
+        description: Load capture register on both edges of input
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CSCTRL0_DBG_EN:
+    enum:
+      NORMAL:
+        description: Continue with normal operation during debug mode. (default)
+        value: 0
+      HALT_TMR:
+        description: Halt TMR counter during debug mode.
+        value: 1
+      FORCE_0:
+        description: Force TMR output to logic 0 (prior to consideration of SCTRL[OPS]).
+        value: 2
+      HALT_AND_FORCE_0:
+        description: Both halt counter and force output to 0 during debug mode.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CSCTRL0_CL2:
+    enum:
+      NEVER:
+        description: Never preload
+        value: 0
+      COMP1:
+        description: Load upon successful compare with the value in COMP1
+        value: 1
+      COMP2:
+        description: Load upon successful compare with the value in COMP2
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CSCTRL0_CL1:
+    enum:
+      NEVER:
+        description: Never preload
+        value: 0
+      COMP1:
+        description: Load upon successful compare with the value in COMP1
+        value: 1
+      COMP2:
+        description: Load upon successful compare with the value in COMP2
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_ENBL_ENBL:
+    enum:
+      DISABLE:
+        description: Timer channel is disabled.
+        value: 0
+      ENABLE:
+        description: Timer channel is enabled. (default)
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CTRL1_CM:
+    enum:
+      NOOP:
+        description: No operation
+        value: 0
+      RISING_ONLY:
+        description: Count rising edges of primary sourceRising edges are counted
+          only when SCTRL[IPS] = 0. Falling edges are counted when SCTRL[IPS] = 1.
+          If the primary count source is IP bus clock divide by 1, only rising edges
+          are counted regardless of the value of SCTRL[IPS].
+        value: 1
+      RISING_AND_FALLING:
+        description: Count rising and falling edges of primary sourceIP bus clock
+          divide by 1 cannot be used as a primary count source in edge count mode.
+        value: 2
+      RISING_WHILE_SEC_HIGH:
+        description: Count rising edges of primary source while secondary input high
+          active
+        value: 3
+      QUADRATURE:
+        description: Quadrature count mode, uses primary and secondary sources
+        value: 4
+      RISING_SEC_DIR:
+        description: Count rising edges of primary source; secondary source specifies
+          directionRising edges are counted only when SCTRL[IPS] = 0. Falling edges
+          are counted when SCTRL[IPS] = 1.
+        value: 5
+      SECONDARY:
+        description: Edge of secondary source triggers primary count until compare
+        value: 6
+      CASCADE:
+        description: Cascaded counter mode (up/down)The primary count source must
+          be set to one of the counter outputs.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CTRL1_PCS:
+    enum:
+      COUNTER0_IN:
+        description: Counter 0 input pin
+        value: 0
+      COUNTER1_IN:
+        description: Counter 1 input pin
+        value: 1
+      COUNTER2_IN:
+        description: Counter 2 input pin
+        value: 2
+      COUNTER3_IN:
+        description: Counter 3 input pin
+        value: 3
+      COUNTER0_OUT:
+        description: Counter 0 output
+        value: 4
+      COUNTER1_OUT:
+        description: Counter 1 output
+        value: 5
+      COUNTER2_OUT:
+        description: Counter 2 output
+        value: 6
+      COUNTER3_OUT:
+        description: Counter 3 output
+        value: 7
+      BUS_DIVBY1:
+        description: IP bus clock divide by 1 prescaler
+        value: 8
+      BUS_DIVBY2:
+        description: IP bus clock divide by 2 prescaler
+        value: 9
+      BUS_DIVBY4:
+        description: IP bus clock divide by 4 prescaler
+        value: 10
+      BUS_DIVBY8:
+        description: IP bus clock divide by 8 prescaler
+        value: 11
+      BUS_DIVBY16:
+        description: IP bus clock divide by 16 prescaler
+        value: 12
+      BUS_DIVBY32:
+        description: IP bus clock divide by 32 prescaler
+        value: 13
+      BUS_DIVBY64:
+        description: IP bus clock divide by 64 prescaler
+        value: 14
+      BUS_DIVBY128:
+        description: IP bus clock divide by 128 prescaler
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CTRL1_SCS:
+    enum:
+      _0_IN:
+        description: Counter 0 input pin
+        value: 0
+      _1_IN:
+        description: Counter 1 input pin
+        value: 1
+      _2_IN:
+        description: Counter 2 input pin
+        value: 2
+      _3_IN:
+        description: Counter 3 input pin
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CTRL1_OUTMODE:
+    enum:
+      COUNTER_ACTIVE:
+        description: Asserted while counter is active
+        value: 0
+      CLEAR_OFLAG:
+        description: Clear OFLAG output on successful compare
+        value: 1
+      SET_OFLAG:
+        description: Set OFLAG output on successful compare
+        value: 2
+      TOGGLE_OFLAG_SUCCESS:
+        description: Toggle OFLAG output on successful compare
+        value: 3
+      TOGGLE_OFLAG_ALT:
+        description: Toggle OFLAG output using alternating compare registers
+        value: 4
+      CLEAR_ON_SECONDARY:
+        description: Set on compare, cleared on secondary source input edge
+        value: 5
+      CLEAR_ON_ROLLOVER:
+        description: Set on compare, cleared on counter rollover
+        value: 6
+      ENABLE_GATED_OUT:
+        description: Enable gated clock output while counter is active
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_SCTRL1_CAPTURE_MODE:
+    enum:
+      DISABLED:
+        description: Capture function is disabled
+        value: 0
+      ENABLE_RISING:
+        description: Load capture register on rising edge (when IPS=0) or falling
+          edge (when IPS=1) of input
+        value: 1
+      ENABLE_FALLING:
+        description: Load capture register on falling edge (when IPS=0) or rising
+          edge (when IPS=1) of input
+        value: 2
+      ENABLE_BOTH:
+        description: Load capture register on both edges of input
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CSCTRL1_DBG_EN:
+    enum:
+      NORMAL:
+        description: Continue with normal operation during debug mode. (default)
+        value: 0
+      HALT_TMR:
+        description: Halt TMR counter during debug mode.
+        value: 1
+      FORCE_0:
+        description: Force TMR output to logic 0 (prior to consideration of SCTRL[OPS]).
+        value: 2
+      HALT_AND_FORCE_0:
+        description: Both halt counter and force output to 0 during debug mode.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CSCTRL1_CL2:
+    enum:
+      NEVER:
+        description: Never preload
+        value: 0
+      COMP1:
+        description: Load upon successful compare with the value in COMP1
+        value: 1
+      COMP2:
+        description: Load upon successful compare with the value in COMP2
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CSCTRL1_CL1:
+    enum:
+      NEVER:
+        description: Never preload
+        value: 0
+      COMP1:
+        description: Load upon successful compare with the value in COMP1
+        value: 1
+      COMP2:
+        description: Load upon successful compare with the value in COMP2
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CTRL2_CM:
+    enum:
+      NOOP:
+        description: No operation
+        value: 0
+      RISING_ONLY:
+        description: Count rising edges of primary sourceRising edges are counted
+          only when SCTRL[IPS] = 0. Falling edges are counted when SCTRL[IPS] = 1.
+          If the primary count source is IP bus clock divide by 1, only rising edges
+          are counted regardless of the value of SCTRL[IPS].
+        value: 1
+      RISING_AND_FALLING:
+        description: Count rising and falling edges of primary sourceIP bus clock
+          divide by 1 cannot be used as a primary count source in edge count mode.
+        value: 2
+      RISING_WHILE_SEC_HIGH:
+        description: Count rising edges of primary source while secondary input high
+          active
+        value: 3
+      QUADRATURE:
+        description: Quadrature count mode, uses primary and secondary sources
+        value: 4
+      RISING_SEC_DIR:
+        description: Count rising edges of primary source; secondary source specifies
+          directionRising edges are counted only when SCTRL[IPS] = 0. Falling edges
+          are counted when SCTRL[IPS] = 1.
+        value: 5
+      SECONDARY:
+        description: Edge of secondary source triggers primary count until compare
+        value: 6
+      CASCADE:
+        description: Cascaded counter mode (up/down)The primary count source must
+          be set to one of the counter outputs.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CTRL2_PCS:
+    enum:
+      COUNTER0_IN:
+        description: Counter 0 input pin
+        value: 0
+      COUNTER1_IN:
+        description: Counter 1 input pin
+        value: 1
+      COUNTER2_IN:
+        description: Counter 2 input pin
+        value: 2
+      COUNTER3_IN:
+        description: Counter 3 input pin
+        value: 3
+      COUNTER0_OUT:
+        description: Counter 0 output
+        value: 4
+      COUNTER1_OUT:
+        description: Counter 1 output
+        value: 5
+      COUNTER2_OUT:
+        description: Counter 2 output
+        value: 6
+      COUNTER3_OUT:
+        description: Counter 3 output
+        value: 7
+      BUS_DIVBY1:
+        description: IP bus clock divide by 1 prescaler
+        value: 8
+      BUS_DIVBY2:
+        description: IP bus clock divide by 2 prescaler
+        value: 9
+      BUS_DIVBY4:
+        description: IP bus clock divide by 4 prescaler
+        value: 10
+      BUS_DIVBY8:
+        description: IP bus clock divide by 8 prescaler
+        value: 11
+      BUS_DIVBY16:
+        description: IP bus clock divide by 16 prescaler
+        value: 12
+      BUS_DIVBY32:
+        description: IP bus clock divide by 32 prescaler
+        value: 13
+      BUS_DIVBY64:
+        description: IP bus clock divide by 64 prescaler
+        value: 14
+      BUS_DIVBY128:
+        description: IP bus clock divide by 128 prescaler
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CTRL2_SCS:
+    enum:
+      _0_IN:
+        description: Counter 0 input pin
+        value: 0
+      _1_IN:
+        description: Counter 1 input pin
+        value: 1
+      _2_IN:
+        description: Counter 2 input pin
+        value: 2
+      _3_IN:
+        description: Counter 3 input pin
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CTRL2_OUTMODE:
+    enum:
+      COUNTER_ACTIVE:
+        description: Asserted while counter is active
+        value: 0
+      CLEAR_OFLAG:
+        description: Clear OFLAG output on successful compare
+        value: 1
+      SET_OFLAG:
+        description: Set OFLAG output on successful compare
+        value: 2
+      TOGGLE_OFLAG_SUCCESS:
+        description: Toggle OFLAG output on successful compare
+        value: 3
+      TOGGLE_OFLAG_ALT:
+        description: Toggle OFLAG output using alternating compare registers
+        value: 4
+      CLEAR_ON_SECONDARY:
+        description: Set on compare, cleared on secondary source input edge
+        value: 5
+      CLEAR_ON_ROLLOVER:
+        description: Set on compare, cleared on counter rollover
+        value: 6
+      ENABLE_GATED_OUT:
+        description: Enable gated clock output while counter is active
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_SCTRL2_CAPTURE_MODE:
+    enum:
+      DISABLED:
+        description: Capture function is disabled
+        value: 0
+      ENABLE_RISING:
+        description: Load capture register on rising edge (when IPS=0) or falling
+          edge (when IPS=1) of input
+        value: 1
+      ENABLE_FALLING:
+        description: Load capture register on falling edge (when IPS=0) or rising
+          edge (when IPS=1) of input
+        value: 2
+      ENABLE_BOTH:
+        description: Load capture register on both edges of input
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CSCTRL2_DBG_EN:
+    enum:
+      NORMAL:
+        description: Continue with normal operation during debug mode. (default)
+        value: 0
+      HALT_TMR:
+        description: Halt TMR counter during debug mode.
+        value: 1
+      FORCE_0:
+        description: Force TMR output to logic 0 (prior to consideration of SCTRL[OPS]).
+        value: 2
+      HALT_AND_FORCE_0:
+        description: Both halt counter and force output to 0 during debug mode.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CSCTRL2_CL2:
+    enum:
+      NEVER:
+        description: Never preload
+        value: 0
+      COMP1:
+        description: Load upon successful compare with the value in COMP1
+        value: 1
+      COMP2:
+        description: Load upon successful compare with the value in COMP2
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CSCTRL2_CL1:
+    enum:
+      NEVER:
+        description: Never preload
+        value: 0
+      COMP1:
+        description: Load upon successful compare with the value in COMP1
+        value: 1
+      COMP2:
+        description: Load upon successful compare with the value in COMP2
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CTRL3_CM:
+    enum:
+      NOOP:
+        description: No operation
+        value: 0
+      RISING_ONLY:
+        description: Count rising edges of primary sourceRising edges are counted
+          only when SCTRL[IPS] = 0. Falling edges are counted when SCTRL[IPS] = 1.
+          If the primary count source is IP bus clock divide by 1, only rising edges
+          are counted regardless of the value of SCTRL[IPS].
+        value: 1
+      RISING_AND_FALLING:
+        description: Count rising and falling edges of primary sourceIP bus clock
+          divide by 1 cannot be used as a primary count source in edge count mode.
+        value: 2
+      RISING_WHILE_SEC_HIGH:
+        description: Count rising edges of primary source while secondary input high
+          active
+        value: 3
+      QUADRATURE:
+        description: Quadrature count mode, uses primary and secondary sources
+        value: 4
+      RISING_SEC_DIR:
+        description: Count rising edges of primary source; secondary source specifies
+          directionRising edges are counted only when SCTRL[IPS] = 0. Falling edges
+          are counted when SCTRL[IPS] = 1.
+        value: 5
+      SECONDARY:
+        description: Edge of secondary source triggers primary count until compare
+        value: 6
+      CASCADE:
+        description: Cascaded counter mode (up/down)The primary count source must
+          be set to one of the counter outputs.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CTRL3_PCS:
+    enum:
+      COUNTER0_IN:
+        description: Counter 0 input pin
+        value: 0
+      COUNTER1_IN:
+        description: Counter 1 input pin
+        value: 1
+      COUNTER2_IN:
+        description: Counter 2 input pin
+        value: 2
+      COUNTER3_IN:
+        description: Counter 3 input pin
+        value: 3
+      COUNTER0_OUT:
+        description: Counter 0 output
+        value: 4
+      COUNTER1_OUT:
+        description: Counter 1 output
+        value: 5
+      COUNTER2_OUT:
+        description: Counter 2 output
+        value: 6
+      COUNTER3_OUT:
+        description: Counter 3 output
+        value: 7
+      BUS_DIVBY1:
+        description: IP bus clock divide by 1 prescaler
+        value: 8
+      BUS_DIVBY2:
+        description: IP bus clock divide by 2 prescaler
+        value: 9
+      BUS_DIVBY4:
+        description: IP bus clock divide by 4 prescaler
+        value: 10
+      BUS_DIVBY8:
+        description: IP bus clock divide by 8 prescaler
+        value: 11
+      BUS_DIVBY16:
+        description: IP bus clock divide by 16 prescaler
+        value: 12
+      BUS_DIVBY32:
+        description: IP bus clock divide by 32 prescaler
+        value: 13
+      BUS_DIVBY64:
+        description: IP bus clock divide by 64 prescaler
+        value: 14
+      BUS_DIVBY128:
+        description: IP bus clock divide by 128 prescaler
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CTRL3_SCS:
+    enum:
+      _0_IN:
+        description: Counter 0 input pin
+        value: 0
+      _1_IN:
+        description: Counter 1 input pin
+        value: 1
+      _2_IN:
+        description: Counter 2 input pin
+        value: 2
+      _3_IN:
+        description: Counter 3 input pin
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CTRL3_OUTMODE:
+    enum:
+      COUNTER_ACTIVE:
+        description: Asserted while counter is active
+        value: 0
+      CLEAR_OFLAG:
+        description: Clear OFLAG output on successful compare
+        value: 1
+      SET_OFLAG:
+        description: Set OFLAG output on successful compare
+        value: 2
+      TOGGLE_OFLAG_SUCCESS:
+        description: Toggle OFLAG output on successful compare
+        value: 3
+      TOGGLE_OFLAG_ALT:
+        description: Toggle OFLAG output using alternating compare registers
+        value: 4
+      CLEAR_ON_SECONDARY:
+        description: Set on compare, cleared on secondary source input edge
+        value: 5
+      CLEAR_ON_ROLLOVER:
+        description: Set on compare, cleared on counter rollover
+        value: 6
+      ENABLE_GATED_OUT:
+        description: Enable gated clock output while counter is active
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_SCTRL3_CAPTURE_MODE:
+    enum:
+      DISABLED:
+        description: Capture function is disabled
+        value: 0
+      ENABLE_RISING:
+        description: Load capture register on rising edge (when IPS=0) or falling
+          edge (when IPS=1) of input
+        value: 1
+      ENABLE_FALLING:
+        description: Load capture register on falling edge (when IPS=0) or rising
+          edge (when IPS=1) of input
+        value: 2
+      ENABLE_BOTH:
+        description: Load capture register on both edges of input
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CSCTRL3_DBG_EN:
+    enum:
+      NORMAL:
+        description: Continue with normal operation during debug mode. (default)
+        value: 0
+      HALT_TMR:
+        description: Halt TMR counter during debug mode.
+        value: 1
+      FORCE_0:
+        description: Force TMR output to logic 0 (prior to consideration of SCTRL[OPS]).
+        value: 2
+      HALT_AND_FORCE_0:
+        description: Both halt counter and force output to 0 during debug mode.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CSCTRL3_CL2:
+    enum:
+      NEVER:
+        description: Never preload
+        value: 0
+      COMP1:
+        description: Load upon successful compare with the value in COMP1
+        value: 1
+      COMP2:
+        description: Load upon successful compare with the value in COMP2
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  TMR1_CSCTRL3_CL1:
+    enum:
+      NEVER:
+        description: Never preload
+        value: 0
+      COMP1:
+        description: Load upon successful compare with the value in COMP1
+        value: 1
+      COMP2:
+        description: Load upon successful compare with the value in COMP2
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

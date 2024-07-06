@@ -1,0 +1,314 @@
+---
+structs:
+  mub:
+    description: MUB
+    instances:
+      - name: MUB
+        address: '0x40C4C000'
+    fields:
+      - name: TR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Processor B Transmit Register 0
+        fields:
+          - name: DATA
+            description: TR0
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: TR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Processor B Transmit Register 1
+        fields:
+          - name: DATA
+            description: TR1
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: TR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) Processor B Transmit Register 2
+        fields:
+          - name: DATA
+            description: TR2
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: TR3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) Processor B Transmit Register 3
+        fields:
+          - name: DATA
+            description: TR3
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: RR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) Processor B Receive Register 0
+        fields:
+          - name: DATA
+            description: RR0
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: RR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) Processor B Receive Register 1
+        fields:
+          - name: DATA
+            description: RR1
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: RR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) Processor B Receive Register 2
+        fields:
+          - name: DATA
+            description: RR2
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: RR3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) Processor B Receive Register 3
+        fields:
+          - name: DATA
+            description: RR3
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: SR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) Processor B Status Register
+        fields:
+          - name: GIPn
+            description: GIPn
+            index: 28
+            width: 4
+            read: true
+            write: true
+            type: MUB_SR_GIPn
+          - name: RFn
+            description: RFn
+            index: 24
+            width: 4
+            read: true
+            write: false
+            type: MUB_SR_RFn
+          - name: TEn
+            description: TEn
+            index: 20
+            width: 4
+            read: true
+            write: false
+            type: MUB_SR_TEn
+          - name: FUP
+            description: FUP
+            index: 8
+            width: 1
+            read: true
+            write: false
+          - name: RS
+            description: RS
+            index: 7
+            width: 1
+            read: true
+            write: false
+          - name: EP
+            description: EP
+            index: 4
+            width: 1
+            read: true
+            write: false
+          - name: Fn
+            description: Fn
+            index: 0
+            width: 3
+            read: true
+            write: false
+            type: MUB_SR_Fn
+      - name: CR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) Processor B Control Register
+        fields:
+          - name: GIEn
+            description: GIEn
+            index: 28
+            width: 4
+            read: true
+            write: true
+            type: MUB_CR_GIEn
+          - name: RIEn
+            description: RIEn
+            index: 24
+            width: 4
+            read: true
+            write: true
+            type: MUB_CR_RIEn
+          - name: TIEn
+            description: TIEn
+            index: 20
+            width: 4
+            read: true
+            write: true
+            type: MUB_CR_TIEn
+          - name: GIRn
+            description: GIRn
+            index: 16
+            width: 4
+            read: true
+            write: true
+            type: MUB_CR_GIRn
+          - name: Fn
+            description: Fn
+            index: 0
+            width: 3
+            read: true
+            write: true
+            type: MUB_CR_Fn
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  MUB_SR_GIPn:
+    enum:
+      not_pending:
+        description: Processor B general purpose interrupt n is not pending. (default)
+        value: 0
+      pending:
+        description: Processor B general purpose interrupt n is pending.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  MUB_SR_RFn:
+    enum:
+      not_full:
+        description: MUB.RRn register is not full (default).
+        value: 0
+      full:
+        description: MUB.RRn register has received data from MUA.TRn register and
+          is ready to be read by the Processor B.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  MUB_SR_TEn:
+    enum:
+      not_empty:
+        description: MUB.TRn register is not empty.
+        value: 0
+      empty:
+        description: MUB.TRn register is empty (default).
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  MUB_SR_Fn:
+    enum:
+      zero:
+        description: ABFn bit in MUA.CR register is written 0 (default).
+        value: 0
+      one:
+        description: ABFn bit in MUA.CR register is written 1.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  MUB_CR_GIEn:
+    enum:
+      disable:
+        description: Disables Processor B General Interrupt n. (default)
+        value: 0
+      enable:
+        description: Enables Processor B General Interrupt n.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  MUB_CR_RIEn:
+    enum:
+      disable:
+        description: Disables Processor B Receive Interrupt n. (default)
+        value: 0
+      enable:
+        description: Enables Processor B Receive Interrupt n.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  MUB_CR_TIEn:
+    enum:
+      disable:
+        description: Disables Processor B Transmit Interrupt n. (default)
+        value: 0
+      enable:
+        description: Enables Processor B Transmit Interrupt n.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  MUB_CR_GIRn:
+    enum:
+      not_requested:
+        description: Processor B General Interrupt n is not requested to the Processor
+          A (default).
+        value: 0
+      requested:
+        description: Processor B General Interrupt n is requested to the Processor
+          A.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  MUB_CR_Fn:
+    enum:
+      clear:
+        description: Clears the Fn bit in the MUA.SR register.
+        value: 0
+      set:
+        description: Sets the Fn bit in the MUA.SR register.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

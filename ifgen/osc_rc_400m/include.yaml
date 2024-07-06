@@ -1,0 +1,546 @@
+---
+structs:
+  osc_rc_400m:
+    description: no description available
+    instances:
+      - name: OSC_RC_400M
+        address: '0'
+    fields:
+      - name: CTRL0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Control Register 0
+        fields:
+          - name: REF_CLK_DIV
+            description: Divide value for ref_clk to generate slow_clk (used inside
+              this IP)
+            index: 24
+            width: 6
+            read: true
+            write: true
+      - name: CTRL0_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Control Register 0
+        fields:
+          - name: REF_CLK_DIV
+            description: Divide value for ref_clk to generate slow_clk (used inside
+              this IP)
+            index: 24
+            width: 6
+            read: true
+            write: true
+      - name: CTRL0_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) Control Register 0
+        fields:
+          - name: REF_CLK_DIV
+            description: Divide value for ref_clk to generate slow_clk (used inside
+              this IP)
+            index: 24
+            width: 6
+            read: true
+            write: true
+      - name: CTRL0_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) Control Register 0
+        fields:
+          - name: REF_CLK_DIV
+            description: Divide value for ref_clk to generate slow_clk (used inside
+              this IP)
+            index: 24
+            width: 6
+            read: true
+            write: true
+      - name: CTRL1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) Control Register 1
+        fields:
+          - name: TARGET_COUNT
+            description: Target count for the fast clock
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: HYST_PLUS
+            description: Positive hysteresis value for the tuned clock
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: HYST_MINUS
+            description: Negative hysteresis value for the tuned clock
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: CTRL1_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) Control Register 1
+        fields:
+          - name: TARGET_COUNT
+            description: Target count for the fast clock
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: HYST_PLUS
+            description: Positive hysteresis value for the tuned clock
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: HYST_MINUS
+            description: Negative hysteresis value for the tuned clock
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: CTRL1_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) Control Register 1
+        fields:
+          - name: TARGET_COUNT
+            description: Target count for the fast clock
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: HYST_PLUS
+            description: Positive hysteresis value for the tuned clock
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: HYST_MINUS
+            description: Negative hysteresis value for the tuned clock
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: CTRL1_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) Control Register 1
+        fields:
+          - name: TARGET_COUNT
+            description: Target count for the fast clock
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: HYST_PLUS
+            description: Positive hysteresis value for the tuned clock
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: HYST_MINUS
+            description: Negative hysteresis value for the tuned clock
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: CTRL2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) Control Register 2
+        fields:
+          - name: OSC_TUNE_VAL
+            description: Program the oscillator frequency
+            index: 24
+            width: 8
+            read: true
+            write: true
+          - name: TUNE_START
+            description: Start/Stop tuning
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: TUNE_EN
+            description: Freeze/Unfreeze the tuning value
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: TUNE_BYP
+            description: Bypass the tuning logic
+            index: 10
+            width: 1
+            read: true
+            write: true
+      - name: CTRL2_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) Control Register 2
+        fields:
+          - name: OSC_TUNE_VAL
+            description: Program the oscillator frequency
+            index: 24
+            width: 8
+            read: true
+            write: true
+          - name: TUNE_START
+            description: Start/Stop tuning
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: TUNE_EN
+            description: Freeze/Unfreeze the tuning value
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: TUNE_BYP
+            description: Bypass the tuning logic
+            index: 10
+            width: 1
+            read: true
+            write: true
+      - name: CTRL2_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) Control Register 2
+        fields:
+          - name: OSC_TUNE_VAL
+            description: Program the oscillator frequency
+            index: 24
+            width: 8
+            read: true
+            write: true
+          - name: TUNE_START
+            description: Start/Stop tuning
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: TUNE_EN
+            description: Freeze/Unfreeze the tuning value
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: TUNE_BYP
+            description: Bypass the tuning logic
+            index: 10
+            width: 1
+            read: true
+            write: true
+      - name: CTRL2_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) Control Register 2
+        fields:
+          - name: OSC_TUNE_VAL
+            description: Program the oscillator frequency
+            index: 24
+            width: 8
+            read: true
+            write: true
+          - name: TUNE_START
+            description: Start/Stop tuning
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: TUNE_EN
+            description: Freeze/Unfreeze the tuning value
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: TUNE_BYP
+            description: Bypass the tuning logic
+            index: 10
+            width: 1
+            read: true
+            write: true
+      - name: CTRL3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) Control Register 3
+        fields:
+          - name: COUNT_1M_CLK
+            description: Count for the locked clk_1m_out
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: MUX_1M_CLK
+            description: Select free/locked 1MHz output
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: EN_1M_CLK
+            description: Enable 1MHz output Clock
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: CLR_ERR
+            description: Clear the error flag CLK1M_ERR
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL3_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 52
+        description: (read-write) Control Register 3
+        fields:
+          - name: COUNT_1M_CLK
+            description: Count for the locked clk_1m_out
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: MUX_1M_CLK
+            description: Select free/locked 1MHz output
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: EN_1M_CLK
+            description: Enable 1MHz output Clock
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: CLR_ERR
+            description: Clear the error flag CLK1M_ERR
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL3_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 56
+        description: (read-write) Control Register 3
+        fields:
+          - name: COUNT_1M_CLK
+            description: Count for the locked clk_1m_out
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: MUX_1M_CLK
+            description: Select free/locked 1MHz output
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: EN_1M_CLK
+            description: Enable 1MHz output Clock
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: CLR_ERR
+            description: Clear the error flag CLK1M_ERR
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL3_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 60
+        description: (read-write) Control Register 3
+        fields:
+          - name: COUNT_1M_CLK
+            description: Count for the locked clk_1m_out
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: MUX_1M_CLK
+            description: Select free/locked 1MHz output
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: EN_1M_CLK
+            description: Enable 1MHz output Clock
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: CLR_ERR
+            description: Clear the error flag CLK1M_ERR
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: STAT0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 80
+        description: (read-write) Status Register 0
+        fields:
+          - name: CLK1M_ERR
+            description: Error flag for clk_1m_locked
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: STAT0_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 84
+        description: (read-write) Status Register 0
+        fields:
+          - name: CLK1M_ERR
+            description: Error flag for clk_1m_locked
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: STAT0_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 88
+        description: (read-write) Status Register 0
+        fields:
+          - name: CLK1M_ERR
+            description: Error flag for clk_1m_locked
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: STAT0_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 92
+        description: (read-write) Status Register 0
+        fields:
+          - name: CLK1M_ERR
+            description: Error flag for clk_1m_locked
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: STAT1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 96
+        description: (read-write) Status Register 1
+        fields:
+          - name: CURR_COUNT_VAL
+            description: Current count for the fast clock
+            index: 16
+            width: 16
+            read: true
+            write: false
+      - name: STAT1_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 100
+        description: (read-write) Status Register 1
+        fields:
+          - name: CURR_COUNT_VAL
+            description: Current count for the fast clock
+            index: 16
+            width: 16
+            read: true
+            write: false
+      - name: STAT1_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 104
+        description: (read-write) Status Register 1
+        fields:
+          - name: CURR_COUNT_VAL
+            description: Current count for the fast clock
+            index: 16
+            width: 16
+            read: true
+            write: false
+      - name: STAT1_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 108
+        description: (read-write) Status Register 1
+        fields:
+          - name: CURR_COUNT_VAL
+            description: Current count for the fast clock
+            index: 16
+            width: 16
+            read: true
+            write: false
+      - name: STAT2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 112
+        description: (read-write) Status Register 2
+        fields:
+          - name: CURR_OSC_TUNE_VAL
+            description: Current tuning value used by oscillator
+            index: 24
+            width: 8
+            read: true
+            write: false
+      - name: STAT2_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 116
+        description: (read-write) Status Register 2
+        fields:
+          - name: CURR_OSC_TUNE_VAL
+            description: Current tuning value used by oscillator
+            index: 24
+            width: 8
+            read: true
+            write: false
+      - name: STAT2_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 120
+        description: (read-write) Status Register 2
+        fields:
+          - name: CURR_OSC_TUNE_VAL
+            description: Current tuning value used by oscillator
+            index: 24
+            width: 8
+            read: true
+            write: false
+      - name: STAT2_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 124
+        description: (read-write) Status Register 2
+        fields:
+          - name: CURR_OSC_TUNE_VAL
+            description: Current tuning value used by oscillator
+            index: 24
+            width: 8
+            read: true
+            write: false
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums: {}

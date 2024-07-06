@@ -1,0 +1,2213 @@
+---
+structs:
+  flexspi1:
+    description: FlexSPI
+    instances:
+      - name: FLEXSPI1
+        address: '0x400CC000'
+      - name: FLEXSPI2
+        address: '0x400D0000'
+    fields:
+      - name: MCR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Module Control Register 0
+        fields:
+          - name: AHBGRANTWAIT
+            description: Timeout wait cycle for AHB command grant.
+            index: 24
+            width: 8
+            read: true
+            write: true
+          - name: IPGRANTWAIT
+            description: Time out wait cycle for IP command grant.
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: SCKFREERUNEN
+            description: This bit is used to force SCLK output free-running. For FPGA
+              applications, external device may use SCLK as reference clock to its
+              internal PLL. If SCLK free-running is enabled, data sampling with loopback
+              clock from SCLK pad is not supported (MCR0[RXCLKSRC]=2).
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: COMBINATIONEN
+            description: This bit is to support Flash Octal mode access by combining
+              Port A and B Data pins (A_DATA[3:0] and B_DATA[3:0]), when Port A and
+              Port B are of 4 bit data width.
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: DOZEEN
+            description: Doze mode enable bit
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: HSEN
+            description: Half Speed Serial Flash access Enable.
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: SERCLKDIV
+            description: The serial root clock could be divided inside FlexSPI . Refer
+              Clocks chapter for more details on clocking.
+            index: 8
+            width: 3
+            read: true
+            write: true
+            type: FLEXSPI1_MCR0_SERCLKDIV
+          - name: ATDFEN
+            description: Enable AHB bus Write Access to IP TX FIFO.
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: ARDFEN
+            description: Enable AHB bus Read Access to IP RX FIFO.
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: RXCLKSRC
+            description: Sample Clock source selection for Flash Reading
+            index: 4
+            width: 2
+            read: true
+            write: true
+            type: FLEXSPI1_MCR0_RXCLKSRC
+          - name: MDIS
+            description: Module Disable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SWRESET
+            description: Software Reset
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: MCR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Module Control Register 1
+        fields:
+          - name: SEQWAIT
+            description: Command Sequence Execution will timeout and abort after SEQWAIT
+              * 1024 Serial Root Clock cycles
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: AHBBUSWAIT
+            description: AHB Read/Write access to Serial Flash Memory space will timeout
+              if not data received from Flash or data not transmitted after AHBBUSWAIT
+              * 1024 ahb clock cycles, AHB Bus will get an error response
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: MCR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) Module Control Register 2
+        fields:
+          - name: RESUMEWAIT
+            description: Wait cycle (in AHB clock cycle) for idle state before suspended
+              command sequence resumed.
+            index: 24
+            width: 8
+            read: true
+            write: true
+          - name: SCKBDIFFOPT
+            description: B_SCLK pad can be used as A_SCLK differential clock output
+              (inverted clock to A_SCLK). In this case, port B flash access is not
+              available. After changing the value of this field, MCR0[SWRESET] should
+              be set.
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: SAMEDEVICEEN
+            description: All external devices are same devices (both in types and
+              size) for A1/A2/B1/B2.
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: CLRAHBBUFOPT
+            description: This bit determines whether AHB RX Buffer and AHB TX Buffer
+              will be cleaned automatically when FlexSPI returns STOP mode ACK. Software
+              should set this bit if AHB RX Buffer or AHB TX Buffer will be powered
+              off in STOP mode. Otherwise AHB read access after exiting STOP mode
+              may hit AHB RX Buffer or AHB TX Buffer but their data entries are invalid.
+            index: 11
+            width: 1
+            read: true
+            write: true
+      - name: AHBCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) AHB Bus Control Register
+        fields:
+          - name: ALIGNMENT
+            description: Decides all AHB read/write boundary. All access cross the
+              boundary will be divided into smaller sub accesses.
+            index: 20
+            width: 2
+            read: true
+            write: true
+            type: FLEXSPI1_AHBCR_ALIGNMENT
+          - name: ECCSWAPEN
+            description: ECC Read data swap function
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: HMSTRIDREMAP
+            description: AHB Master ID Remapping enable
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: ECCMULTIERRCLR
+            description: AHB ECC Multi bits ERR CLR
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: ECCSINGLEERRCLR
+            description: AHB ECC Single bit ERR CLR
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: KEYECCEN
+            description: OTFAD KEY BLOC ECC Enable
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: SPLIT_LIMIT
+            description: AHB SPLIT SIZE
+            index: 13
+            width: 2
+            read: true
+            write: true
+            type: FLEXSPI1_AHBCR_SPLIT_LIMIT
+          - name: SPLITEN
+            description: AHB transaction SPLIT
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ECCEN
+            description: AHB Read ECC Enable
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: READSZALIGN
+            description: AHB Read Size Alignment
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: READADDROPT
+            description: AHB Read Address option bit. This option bit is intend to
+              remove AHB burst start address alignment limitation.
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: PREFETCHEN
+            description: AHB Read Prefetch Enable.
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: BUFFERABLEEN
+            description: Enable AHB bus bufferable write access support. This field
+              affects the last beat of AHB write access, refer for more details about
+              AHB bufferable write.
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: CACHABLEEN
+            description: Enable AHB bus cachable read access support.
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: CLRAHBRXBUF
+            description: Clear the status/pointers of AHB RX Buffer. Auto-cleared.
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: APAREN
+            description: Parallel mode enabled for AHB triggered Command (both read
+              and write) .
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: INTEN
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) Interrupt Enable Register
+        fields:
+          - name: IPCMDSECUREVIOEN
+            description: IP command security violation interrupt enable.
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: ECCSINGLEERREN
+            description: ECC single bit error interrupt enable.Refer Interrupts chapter
+              for more details.
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ECCMULTIERREN
+            description: ECC multi bits error interrupt enable.Refer Interrupts chapter
+              for more details.
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: KEYERROREN
+            description: OTFAD key blob processing error interrupt enable.Refer Interrupts
+              chapter for more details.
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: KEYDONEEN
+            description: OTFAD key blob processing done interrupt enable.Refer Interrupts
+              chapter for more details.
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: SEQTIMEOUTEN
+            description: Sequence execution timeout interrupt enable.Refer Interrupts
+              chapter for more details.
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: AHBBUSERROREN
+            description: AHB Bus error interrupt enable.Refer Interrupts chapter for
+              more details.
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: SCKSTOPBYWREN
+            description: SCLK is stopped during command sequence because Async TX
+              FIFO empty interrupt enable.
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: SCKSTOPBYRDEN
+            description: SCLK is stopped during command sequence because Async RX
+              FIFO full interrupt enable.
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: IPTXWEEN
+            description: IP TX FIFO WaterMark empty interrupt enable.
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: IPRXWAEN
+            description: IP RX FIFO WaterMark available interrupt enable.
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: AHBCMDERREN
+            description: AHB triggered Command Sequences Error Detected interrupt
+              enable.
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: IPCMDERREN
+            description: IP triggered Command Sequences Error Detected interrupt enable.
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: AHBCMDGEEN
+            description: AHB triggered Command Sequences Grant Timeout interrupt enable.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: IPCMDGEEN
+            description: IP triggered Command Sequences Grant Timeout interrupt enable.
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: IPCMDDONEEN
+            description: IP triggered Command Sequences Execution finished interrupt
+              enable.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: INTR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) Interrupt Register
+        fields:
+          - name: IPCMDSECUREVIO
+            description: IP command security violation interrupt.
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: ECCSINGLEERR
+            description: ECC single bit error interrupt.
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ECCMULTIERR
+            description: ECC multi bits error interrupt.
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: KEYERROR
+            description: OTFAD key blob processing error interrupt.
+            index: 13
+            width: 1
+            read: true
+            write: false
+          - name: KEYDONE
+            description: OTFAD key blob processing done interrupt.
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: SEQTIMEOUT
+            description: Sequence execution timeout interrupt.
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: AHBBUSERROR
+            description: AHB Bus timeout or AHB bus illegal access Flash during OTFAD
+              key blob processing interrupt.
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: SCKSTOPBYWR
+            description: SCLK is stopped during command sequence because Async TX
+              FIFO empty interrupt.
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: SCKSTOPBYRD
+            description: SCLK is stopped during command sequence because Async RX
+              FIFO full interrupt.
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: IPTXWE
+            description: IP TX FIFO watermark empty interrupt.
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: IPRXWA
+            description: IP RX FIFO watermark available interrupt.
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: AHBCMDERR
+            description: AHB triggered Command Sequences Error Detected interrupt.
+              When an error detected for AHB command, this command will be ignored
+              and not executed at all.
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: IPCMDERR
+            description: IP triggered Command Sequences Error Detected interrupt.
+              When an error detected for IP command, this command will be ignored
+              and not executed at all.
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: AHBCMDGE
+            description: AHB triggered Command Sequences Grant Timeout interrupt.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: IPCMDGE
+            description: IP triggered Command Sequences Grant Timeout interrupt.
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: IPCMDDONE
+            description: IP triggered Command Sequences Execution finished interrupt.
+              This interrupt is also generated when there is IPCMDGE or IPCMDERR interrupt
+              generated.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LUTKEY
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) LUT Key Register
+        fields:
+          - name: KEY
+            description: The Key to lock or unlock LUT.
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: LUTCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) LUT Control Register
+        fields:
+          - name: PROTECT
+            description: LUT protection
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: UNLOCK
+            description: Unlock LUT
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: LOCK
+            description: Lock LUT
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: AHBRXBUF0CR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) AHB RX Buffer 0 Control Register 0
+        fields:
+          - name: PREFETCHEN
+            description: AHB Read Prefetch Enable for current AHB RX Buffer corresponding
+              Master.
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: REGIONEN
+            description: AHB RX Buffer address region funciton enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: PRIORITY
+            description: This priority for AHB Master Read which this AHB RX Buffer
+              is assigned. 7 is the highest priority, 0 the lowest.
+            index: 24
+            width: 3
+            read: true
+            write: true
+          - name: MSTRID
+            description: This AHB RX Buffer is assigned according to AHB Master with
+              ID (MSTR_ID).
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: BUFSZ
+            description: AHB RX Buffer Size in 64 bits.
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: AHBRXBUF1CR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) AHB RX Buffer 1 Control Register 0
+        fields:
+          - name: PREFETCHEN
+            description: AHB Read Prefetch Enable for current AHB RX Buffer corresponding
+              Master.
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: REGIONEN
+            description: AHB RX Buffer address region funciton enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: PRIORITY
+            description: This priority for AHB Master Read which this AHB RX Buffer
+              is assigned. 7 is the highest priority, 0 the lowest.
+            index: 24
+            width: 3
+            read: true
+            write: true
+          - name: MSTRID
+            description: This AHB RX Buffer is assigned according to AHB Master with
+              ID (MSTR_ID).
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: BUFSZ
+            description: AHB RX Buffer Size in 64 bits.
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: AHBRXBUF2CR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) AHB RX Buffer 2 Control Register 0
+        fields:
+          - name: PREFETCHEN
+            description: AHB Read Prefetch Enable for current AHB RX Buffer corresponding
+              Master.
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: REGIONEN
+            description: AHB RX Buffer address region funciton enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: PRIORITY
+            description: This priority for AHB Master Read which this AHB RX Buffer
+              is assigned. 7 is the highest priority, 0 the lowest.
+            index: 24
+            width: 3
+            read: true
+            write: true
+          - name: MSTRID
+            description: This AHB RX Buffer is assigned according to AHB Master with
+              ID (MSTR_ID).
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: BUFSZ
+            description: AHB RX Buffer Size in 64 bits.
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: AHBRXBUF3CR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) AHB RX Buffer 3 Control Register 0
+        fields:
+          - name: PREFETCHEN
+            description: AHB Read Prefetch Enable for current AHB RX Buffer corresponding
+              Master.
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: REGIONEN
+            description: AHB RX Buffer address region funciton enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: PRIORITY
+            description: This priority for AHB Master Read which this AHB RX Buffer
+              is assigned. 7 is the highest priority, 0 the lowest.
+            index: 24
+            width: 3
+            read: true
+            write: true
+          - name: MSTRID
+            description: This AHB RX Buffer is assigned according to AHB Master with
+              ID (MSTR_ID).
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: BUFSZ
+            description: AHB RX Buffer Size in 64 bits.
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: AHBRXBUF4CR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) AHB RX Buffer 4 Control Register 0
+        fields:
+          - name: PREFETCHEN
+            description: AHB Read Prefetch Enable for current AHB RX Buffer corresponding
+              Master.
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: REGIONEN
+            description: AHB RX Buffer address region funciton enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: PRIORITY
+            description: This priority for AHB Master Read which this AHB RX Buffer
+              is assigned. 7 is the highest priority, 0 the lowest.
+            index: 24
+            width: 3
+            read: true
+            write: true
+          - name: MSTRID
+            description: This AHB RX Buffer is assigned according to AHB Master with
+              ID (MSTR_ID).
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: BUFSZ
+            description: AHB RX Buffer Size in 64 bits.
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: AHBRXBUF5CR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 52
+        description: (read-write) AHB RX Buffer 5 Control Register 0
+        fields:
+          - name: PREFETCHEN
+            description: AHB Read Prefetch Enable for current AHB RX Buffer corresponding
+              Master.
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: REGIONEN
+            description: AHB RX Buffer address region funciton enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: PRIORITY
+            description: This priority for AHB Master Read which this AHB RX Buffer
+              is assigned. 7 is the highest priority, 0 the lowest.
+            index: 24
+            width: 3
+            read: true
+            write: true
+          - name: MSTRID
+            description: This AHB RX Buffer is assigned according to AHB Master with
+              ID (MSTR_ID).
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: BUFSZ
+            description: AHB RX Buffer Size in 64 bits.
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: AHBRXBUF6CR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 56
+        description: (read-write) AHB RX Buffer 6 Control Register 0
+        fields:
+          - name: PREFETCHEN
+            description: AHB Read Prefetch Enable for current AHB RX Buffer corresponding
+              Master.
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: REGIONEN
+            description: AHB RX Buffer address region funciton enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: PRIORITY
+            description: This priority for AHB Master Read which this AHB RX Buffer
+              is assigned. 7 is the highest priority, 0 the lowest.
+            index: 24
+            width: 3
+            read: true
+            write: true
+          - name: MSTRID
+            description: This AHB RX Buffer is assigned according to AHB Master with
+              ID (MSTR_ID).
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: BUFSZ
+            description: AHB RX Buffer Size in 64 bits.
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: AHBRXBUF7CR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 60
+        description: (read-write) AHB RX Buffer 7 Control Register 0
+        fields:
+          - name: PREFETCHEN
+            description: AHB Read Prefetch Enable for current AHB RX Buffer corresponding
+              Master.
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: REGIONEN
+            description: AHB RX Buffer address region funciton enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: PRIORITY
+            description: This priority for AHB Master Read which this AHB RX Buffer
+              is assigned. 7 is the highest priority, 0 the lowest.
+            index: 24
+            width: 3
+            read: true
+            write: true
+          - name: MSTRID
+            description: This AHB RX Buffer is assigned according to AHB Master with
+              ID (MSTR_ID).
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: BUFSZ
+            description: AHB RX Buffer Size in 64 bits.
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: FLSHA1CR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 96
+        description: (read-write) Flash Control Register 0
+        fields:
+          - name: SPLITRDEN
+            description: AHB read access split function control.
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: SPLITWREN
+            description: AHB write access split function control.
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: FLSHSZ
+            description: Flash Size in KByte.
+            index: 0
+            width: 23
+            read: true
+            write: true
+      - name: FLSHA2CR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 100
+        description: (read-write) Flash Control Register 0
+        fields:
+          - name: SPLITRDEN
+            description: AHB read access split function control.
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: SPLITWREN
+            description: AHB write access split function control.
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: FLSHSZ
+            description: Flash Size in KByte.
+            index: 0
+            width: 23
+            read: true
+            write: true
+      - name: FLSHB1CR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 104
+        description: (read-write) Flash Control Register 0
+        fields:
+          - name: SPLITRDEN
+            description: AHB read access split function control.
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: SPLITWREN
+            description: AHB write access split function control.
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: FLSHSZ
+            description: Flash Size in KByte.
+            index: 0
+            width: 23
+            read: true
+            write: true
+      - name: FLSHB2CR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 108
+        description: (read-write) Flash Control Register 0
+        fields:
+          - name: SPLITRDEN
+            description: AHB read access split function control.
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: SPLITWREN
+            description: AHB write access split function control.
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: FLSHSZ
+            description: Flash Size in KByte.
+            index: 0
+            width: 23
+            read: true
+            write: true
+      - name: FLSHCR1
+        type: uint32_t
+        expected_size: 16
+        expected_offset: 112
+        array_length: 4
+        description: (read-write) Flash Control Register 1
+        fields:
+          - name: CSINTERVAL
+            description: This field is used to set the minimum interval between flash
+              device Chip selection deassertion and flash device Chip selection assertion.
+              If external flash has a limitation on the interval between command sequences,
+              this field should be set accordingly. If there is no limitation, set
+              this field with value 0x0.
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: CSINTERVALUNIT
+            description: CS interval unit
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: CAS
+            description: Column Address Size.
+            index: 11
+            width: 4
+            read: true
+            write: true
+          - name: WA
+            description: Word Addressable.
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: TCSH
+            description: Serial Flash CS Hold time.
+            index: 5
+            width: 5
+            read: true
+            write: true
+          - name: TCSS
+            description: Serial Flash CS setup time.
+            index: 0
+            width: 5
+            read: true
+            write: true
+      - name: FLSHCR2
+        type: uint32_t
+        expected_size: 16
+        expected_offset: 128
+        array_length: 4
+        description: (read-write) Flash Control Register 2
+        fields:
+          - name: CLRINSTRPTR
+            description: Clear the instruction pointer which is internally saved pointer
+              by JMP_ON_CS. Refer Programmable Sequence Engine for details.
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: AWRWAITUNIT
+            description: AWRWAIT unit
+            index: 28
+            width: 3
+            read: true
+            write: true
+            type: FLEXSPI1_FLSHCR2_AWRWAITUNIT
+          - name: AWRWAIT
+            description: For certain devices (such as FPGA), it need some time to
+              write data into internal memory after the command sequences finished
+              on FlexSPI interface
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: AWRSEQNUM
+            description: Sequence Number for AHB Write triggered Command.
+            index: 13
+            width: 3
+            read: true
+            write: true
+          - name: AWRSEQID
+            description: Sequence Index for AHB Write triggered Command.
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: ARDSEQNUM
+            description: Sequence Number for AHB Read triggered Command in LUT.
+            index: 5
+            width: 3
+            read: true
+            write: true
+          - name: ARDSEQID
+            description: Sequence Index for AHB Read triggered Command in LUT.
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: FLSHCR4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 148
+        description: (read-write) Flash Control Register 4
+        fields:
+          - name: PAR_ADDR_ADJ_DIS
+            description: Disable the address shift logic for lower density of 16 bit
+              PSRAM.
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: PAR_WM
+            description: Enable APMEM 16 bit write mask function, bit 9 for A1-B1
+              pair, bit 10 for A2-B2 pair.
+            index: 9
+            width: 2
+            read: true
+            write: true
+          - name: WMENB
+            description: Write mask enable bit for flash device on port B. When write
+              mask function is needed for memory device on port B, this bit must be
+              set.
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: WMENA
+            description: Write mask enable bit for flash device on port A. When write
+              mask function is needed for memory device on port A, this bit must be
+              set.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: WMOPT2
+            description: Write mask option bit 2. When using AP memory, This option
+              bit could be used to remove AHB write burst minimal length limitation.
+              When using this bit, WMOPT1 should also be set.
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: WMOPT1
+            description: Write mask option bit 1. This option bit could be used to
+              remove AHB write burst start address alignment limitation.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: IPCR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 160
+        description: (read-write) IP Control Register 0
+        fields:
+          - name: SFAR
+            description: Serial Flash Address for IP command.
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: IPCR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 164
+        description: (read-write) IP Control Register 1
+        fields:
+          - name: IPAREN
+            description: Parallel mode Enabled for IP command.
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: ISEQNUM
+            description: 'Sequence Number for IP command: ISEQNUM+1.'
+            index: 24
+            width: 3
+            read: true
+            write: true
+          - name: ISEQID
+            description: Sequence Index in LUT for IP command.
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: IDATSZ
+            description: Flash Read/Program Data Size (in Bytes) for IP command.
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: IPCMD
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 176
+        description: (read-write) IP Command Register
+        fields:
+          - name: TRG
+            description: Setting this bit will trigger an IP Command.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: IPRXFCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 184
+        description: (read-write) IP RX FIFO Control Register
+        fields:
+          - name: RXWMRK
+            description: Watermark level is (RXWMRK+1)*64 Bits.
+            index: 2
+            width: 5
+            read: true
+            write: true
+          - name: RXDMAEN
+            description: IP RX FIFO reading by DMA enabled.
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CLRIPRXF
+            description: Clear all valid data entries in IP RX FIFO.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: IPTXFCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 188
+        description: (read-write) IP TX FIFO Control Register
+        fields:
+          - name: TXWMRK
+            description: Watermark level is (TXWMRK+1)*64 Bits.
+            index: 2
+            width: 5
+            read: true
+            write: true
+          - name: TXDMAEN
+            description: IP TX FIFO filling by DMA enabled.
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CLRIPTXF
+            description: Clear all valid data entries in IP TX FIFO.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DLLCR
+        type: uint32_t
+        expected_size: 8
+        expected_offset: 192
+        array_length: 2
+        description: (read-write) DLL Control Register 0
+        fields:
+          - name: OVRDVAL
+            description: Slave clock delay line delay cell number selection override
+              value.
+            index: 9
+            width: 6
+            read: true
+            write: true
+          - name: OVRDEN
+            description: Slave clock delay line delay cell number selection override
+              enable.
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: SLVDLYTARGET
+            description: 'The delay target for slave delay line is: ((SLVDLYTARGET+1)
+              * 1/32 * clock cycle of reference clock (serial root clock). If serial
+              root clock is >= 100 MHz, DLLEN set to 0x1, OVRDEN set to =0x0, then
+              SLVDLYTARGET setting of 0xF is recommended.'
+            index: 3
+            width: 4
+            read: true
+            write: true
+          - name: DLLRESET
+            description: Software could force a reset on DLL by setting this field
+              to 0x1. This will cause the DLL to lose lock and re-calibrate to detect
+              an ref_clock half period phase shift. The reset action is edge triggered,
+              so software need to clear this bit after set this bit (no delay limitation).
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: DLLEN
+            description: DLL calibration enable.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: MISCCR4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 208
+        description: (read-write) Misc Control Register 4
+        fields:
+          - name: AHBADDRESS
+            description: AHB bus address that trigger the current ECC multi bits error
+              interrupt.
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: MISCCR5
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 212
+        description: (read-write) Misc Control Register 5
+        fields:
+          - name: ECCSINGLEERRORCORR
+            description: ECC single bit error correction indication.
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: MISCCR6
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 216
+        description: (read-write) Misc Control Register 6
+        fields:
+          - name: ADDRESS
+            description: ECC single error address
+            index: 2
+            width: 30
+            read: true
+            write: false
+          - name: HIT
+            description: ECC single error information Hit
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: VALID
+            description: ECC single error information Valid
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: MISCCR7
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 220
+        description: (read-write) Misc Control Register 7
+        fields:
+          - name: ADDRESS
+            description: ECC multi error address
+            index: 2
+            width: 30
+            read: true
+            write: false
+          - name: HIT
+            description: ECC multi error information Hit
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: VALID
+            description: ECC multi error information Valid
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: STS0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 224
+        description: (read-write) Status Register 0
+        fields:
+          - name: ARBCMDSRC
+            description: This status field indicates the trigger source of current
+              command sequence granted by arbitrator. This field value is meaningless
+              when ARB_CTL is not busy (STS0[ARBIDLE]=0x1).
+            index: 2
+            width: 2
+            read: true
+            write: false
+            type: FLEXSPI1_STS0_ARBCMDSRC
+          - name: ARBIDLE
+            description: This status bit indicates the state machine in ARB_CTL is
+              busy and there is command sequence granted by arbitrator and not finished
+              yet on FlexSPI interface. When ARB_CTL state (ARBIDLE=0x1) is idle,
+              there will be no transaction on FlexSPI interface also (SEQIDLE=0x1).
+              So this bit should be polled to wait for FlexSPI controller become idle
+              instead of SEQIDLE.
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: SEQIDLE
+            description: This status bit indicates the state machine in SEQ_CTL is
+              idle and there is command sequence executing on FlexSPI interface.
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: STS1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 228
+        description: (read-write) Status Register 1
+        fields:
+          - name: IPCMDERRCODE
+            description: Indicates the Error Code when IP command Error detected.
+              This field will be cleared when INTR[IPCMDERR] is write-1-clear(w1c).
+            index: 24
+            width: 4
+            read: true
+            write: false
+            type: FLEXSPI1_STS1_IPCMDERRCODE
+          - name: IPCMDERRID
+            description: Indicates the sequence Index when IP command error detected.
+              This field will be cleared when INTR[IPCMDERR] is write-1-clear(w1c).
+            index: 16
+            width: 4
+            read: true
+            write: false
+          - name: AHBCMDERRCODE
+            description: Indicates the Error Code when AHB command Error detected.
+              This field will be cleared when INTR[AHBCMDERR] is write-1-clear(w1c).
+            index: 8
+            width: 4
+            read: true
+            write: false
+            type: FLEXSPI1_STS1_AHBCMDERRCODE
+          - name: AHBCMDERRID
+            description: Indicates the sequence index when an AHB command error is
+              detected. This field will be cleared when INTR[AHBCMDERR] is write-1-clear(w1c).
+            index: 0
+            width: 4
+            read: true
+            write: false
+      - name: STS2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 232
+        description: (read-write) Status Register 2
+        fields:
+          - name: BREFSEL
+            description: Flash B sample clock reference delay line delay cell number
+              selection.
+            index: 24
+            width: 6
+            read: true
+            write: false
+          - name: BSLVSEL
+            description: Flash B sample clock slave delay line delay cell number selection.
+            index: 18
+            width: 6
+            read: true
+            write: false
+          - name: BREFLOCK
+            description: Flash B sample clock reference delay line locked.
+            index: 17
+            width: 1
+            read: true
+            write: false
+          - name: BSLVLOCK
+            description: Flash B sample clock slave delay line locked.
+            index: 16
+            width: 1
+            read: true
+            write: false
+          - name: AREFSEL
+            description: Flash A sample clock reference delay line delay cell number
+              selection.
+            index: 8
+            width: 6
+            read: true
+            write: false
+          - name: ASLVSEL
+            description: Flash A sample clock slave delay line delay cell number selection
+              .
+            index: 2
+            width: 6
+            read: true
+            write: false
+          - name: AREFLOCK
+            description: Flash A sample clock reference delay line locked.
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: ASLVLOCK
+            description: Flash A sample clock slave delay line locked.
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: AHBSPNDSTS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 236
+        description: (read-write) AHB Suspend Status Register
+        fields:
+          - name: DATLFT
+            description: Left Data size for suspended command sequence (in byte).
+            index: 16
+            width: 16
+            read: true
+            write: false
+          - name: BUFID
+            description: AHB RX BUF ID for suspended command sequence.
+            index: 1
+            width: 3
+            read: true
+            write: false
+          - name: ACTIVE
+            description: Indicates if an AHB read prefetch command sequence has been
+              suspended.
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: IPRXFSTS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 240
+        description: (read-write) IP RX FIFO Status Register
+        fields:
+          - name: RDCNTR
+            description: 'Total Read Data Counter: RDCNTR * 64 Bits.'
+            index: 16
+            width: 16
+            read: true
+            write: false
+          - name: FILL
+            description: Fill level of IP RX FIFO.
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: IPTXFSTS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 244
+        description: (read-write) IP TX FIFO Status Register
+        fields:
+          - name: WRCNTR
+            description: 'Total Write Data Counter: WRCNTR * 64 Bits.'
+            index: 16
+            width: 16
+            read: true
+            write: false
+          - name: FILL
+            description: Fill level of IP TX FIFO.
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: RFDR
+        type: uint32_t
+        expected_size: 128
+        expected_offset: 256
+        array_length: 32
+        description: (read-write) IP RX FIFO Data Register x
+        fields:
+          - name: RXDATA
+            description: RX Data
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: TFDR
+        type: uint32_t
+        expected_size: 128
+        expected_offset: 384
+        array_length: 32
+        description: (read-write) IP TX FIFO Data Register x
+        fields:
+          - name: TXDATA
+            description: TX Data
+            index: 0
+            width: 32
+            read: false
+            write: true
+      - name: LUT
+        type: uint32_t
+        expected_size: 256
+        expected_offset: 512
+        array_length: 64
+        description: (read-write) LUT x
+        fields:
+          - name: OPCODE1
+            description: OPCODE1
+            index: 26
+            width: 6
+            read: true
+            write: true
+          - name: NUM_PADS1
+            description: NUM_PADS1
+            index: 24
+            width: 2
+            read: true
+            write: true
+          - name: OPERAND1
+            description: OPERAND1
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: OPCODE0
+            description: OPCODE
+            index: 10
+            width: 6
+            read: true
+            write: true
+          - name: NUM_PADS0
+            description: NUM_PADS0
+            index: 8
+            width: 2
+            read: true
+            write: true
+          - name: OPERAND0
+            description: OPERAND0
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: HMSTR0CR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1024
+        description: (read-write) AHB Master ID 0 Control Register
+        fields:
+          - name: MSTRID
+            description: This is expected Master ID.
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: MASK
+            description: Mask bits for AHB master ID.
+            index: 0
+            width: 16
+            read: true
+            write: true
+            type: FLEXSPI1_HMSTR0CR_MASK
+      - name: HMSTR1CR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1028
+        description: (read-write) AHB Master ID 1 Control Register
+        fields:
+          - name: MSTRID
+            description: This is expected Master ID.
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: MASK
+            description: Mask bits for AHB master ID.
+            index: 0
+            width: 16
+            read: true
+            write: true
+            type: FLEXSPI1_HMSTR1CR_MASK
+      - name: HMSTR2CR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1032
+        description: (read-write) AHB Master ID 2 Control Register
+        fields:
+          - name: MSTRID
+            description: This is expected Master ID.
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: MASK
+            description: Mask bits for AHB master ID.
+            index: 0
+            width: 16
+            read: true
+            write: true
+            type: FLEXSPI1_HMSTR2CR_MASK
+      - name: HMSTR3CR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1036
+        description: (read-write) AHB Master ID 3 Control Register
+        fields:
+          - name: MSTRID
+            description: This is expected Master ID.
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: MASK
+            description: Mask bits for AHB master ID.
+            index: 0
+            width: 16
+            read: true
+            write: true
+            type: FLEXSPI1_HMSTR3CR_MASK
+      - name: HMSTR4CR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1040
+        description: (read-write) AHB Master ID 4 Control Register
+        fields:
+          - name: MSTRID
+            description: This is expected Master ID.
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: MASK
+            description: Mask bits for AHB master ID.
+            index: 0
+            width: 16
+            read: true
+            write: true
+            type: FLEXSPI1_HMSTR4CR_MASK
+      - name: HMSTR5CR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1044
+        description: (read-write) AHB Master ID 5 Control Register
+        fields:
+          - name: MSTRID
+            description: This is expected Master ID.
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: MASK
+            description: Mask bits for AHB master ID.
+            index: 0
+            width: 16
+            read: true
+            write: true
+            type: FLEXSPI1_HMSTR5CR_MASK
+      - name: HMSTR6CR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1048
+        description: (read-write) AHB Master ID 6 Control Register
+        fields:
+          - name: MSTRID
+            description: This is expected Master ID.
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: MASK
+            description: Mask bits for AHB master ID.
+            index: 0
+            width: 16
+            read: true
+            write: true
+            type: FLEXSPI1_HMSTR6CR_MASK
+      - name: HMSTR7CR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1052
+        description: (read-write) AHB Master ID 7 Control Register
+        fields:
+          - name: MSTRID
+            description: This is expected Master ID.
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: MASK
+            description: Mask bits for AHB master ID.
+            index: 0
+            width: 16
+            read: true
+            write: true
+            type: FLEXSPI1_HMSTR7CR_MASK
+      - name: HADDRSTART
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1056
+        description: (read-write) HADDR REMAP START ADDR
+        fields:
+          - name: ADDRSTART
+            description: HADDR remap range's start addr, 4K aligned When ADDRSTART
+              setting is same as ASFM_BASE, and OTFAD keyblob function is enabled,
+              keyblob will also be remapped
+            index: 12
+            width: 20
+            read: true
+            write: true
+          - name: KBINECC
+            description: OTFAD Keyblob is in ECC region and need to be remapped
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: REMAPEN
+            description: AHB Bus address remap function enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: HADDREND
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1060
+        description: (read-write) HADDR REMAP END ADDR
+        fields:
+          - name: ENDSTART
+            description: HADDR remap range's end addr, 4K aligned
+            index: 12
+            width: 20
+            read: true
+            write: true
+      - name: HADDROFFSET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1064
+        description: (read-write) HADDR REMAP OFFSET
+        fields:
+          - name: ADDROFFSET
+            description: HADDR offset field, remapped address will be ADDR[31:12]=ADDR_original[31:12]+ADDROFFSET
+            index: 12
+            width: 20
+            read: true
+            write: true
+      - name: IPSNSZSTART0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1072
+        description: (read-write) IPS nonsecure region Start address of region 0
+        fields:
+          - name: start_address
+            description: Start address of region 0. Minimal 4K Bytes aligned. It is
+              flash address.
+            index: 12
+            width: 20
+            read: true
+            write: true
+      - name: IPSNSZEND0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1076
+        description: (read-write) IPS nonsecure region End address of region 0
+        fields:
+          - name: end_address
+            description: End address of region 0. Minimal 4K Bytes aligned. It is
+              flash address.
+            index: 12
+            width: 20
+            read: true
+            write: true
+      - name: IPSNSZSTART1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1080
+        description: (read-write) IPS nonsecure region Start address of region 1
+        fields:
+          - name: start_address
+            description: Start address of region 1. Minimal 4K Bytes aligned. It is
+              flash address.
+            index: 12
+            width: 20
+            read: true
+            write: true
+      - name: IPSNSZEND1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1084
+        description: (read-write) IPS nonsecure region End address of region 1
+        fields:
+          - name: end_address
+            description: End address of region 1. Minimal 4K Bytes aligned. It is
+              flash address.
+            index: 12
+            width: 20
+            read: true
+            write: true
+      - name: AHBBUFREGIONSTART0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1088
+        description: (read-write) RX BUF Start address of region 0
+        fields:
+          - name: start_address
+            description: Start address of region 0. Minimal 4K Bytes aligned. It is
+              system address.
+            index: 12
+            width: 20
+            read: true
+            write: true
+      - name: AHBBUFREGIONEND0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1092
+        description: (read-write) RX BUF region End address of region 0
+        fields:
+          - name: end_address
+            description: End address of region 0. Minimal 4K Bytes aligned. It is
+              system address.
+            index: 12
+            width: 20
+            read: true
+            write: true
+      - name: AHBBUFREGIONSTART1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1096
+        description: (read-write) RX BUF Start address of region 1
+        fields:
+          - name: start_address
+            description: Start address of region 1. Minimal 4K Bytes aligned. It is
+              system address.
+            index: 12
+            width: 20
+            read: true
+            write: true
+      - name: AHBBUFREGIONEND1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1100
+        description: (read-write) RX BUF region End address of region 1
+        fields:
+          - name: end_address
+            description: End address of region 1. Minimal 4K Bytes aligned. It is
+              system address.
+            index: 12
+            width: 20
+            read: true
+            write: true
+      - name: AHBBUFREGIONSTART2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1104
+        description: (read-write) RX BUF Start address of region 2
+        fields:
+          - name: start_address
+            description: Start address of region 2. Minimal 4K Bytes aligned. It is
+              system address.
+            index: 12
+            width: 20
+            read: true
+            write: true
+      - name: AHBBUFREGIONEND2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1108
+        description: (read-write) RX BUF region End address of region 2
+        fields:
+          - name: end_address
+            description: End address of region 2. Minimal 4K Bytes aligned. It is
+              system address.
+            index: 12
+            width: 20
+            read: true
+            write: true
+      - name: AHBBUFREGIONSTART3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1112
+        description: (read-write) RX BUF Start address of region 3
+        fields:
+          - name: start_address
+            description: Start address of region 3. Minimal 4K Bytes aligned. It is
+              system address.
+            index: 12
+            width: 20
+            read: true
+            write: true
+      - name: AHBBUFREGIONEND3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1116
+        description: (read-write) RX BUF region End address of region 3
+        fields:
+          - name: end_address
+            description: End address of region 3. Minimal 4K Bytes aligned. It is
+              system address.
+            index: 12
+            width: 20
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  FLEXSPI1_MCR0_SERCLKDIV:
+    enum:
+      _0:
+        description: Divided by 1
+        value: 0
+      _1:
+        description: Divided by 2
+        value: 1
+      _2:
+        description: Divided by 3
+        value: 2
+      _3:
+        description: Divided by 4
+        value: 3
+      _4:
+        description: Divided by 5
+        value: 4
+      _5:
+        description: Divided by 6
+        value: 5
+      _6:
+        description: Divided by 7
+        value: 6
+      _7:
+        description: Divided by 8
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  FLEXSPI1_MCR0_RXCLKSRC:
+    enum:
+      _0:
+        description: Dummy Read strobe generated by FlexSPI Controller and loopback
+          internally.
+        value: 0
+      _1:
+        description: Dummy Read strobe generated by FlexSPI Controller and loopback
+          from DQS pad.
+        value: 1
+      _3:
+        description: Flash provided Read strobe and input from DQS pad
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  FLEXSPI1_AHBCR_ALIGNMENT:
+    enum:
+      _0:
+        description: No limit
+        value: 0
+      _1:
+        description: 1 KBytes
+        value: 1
+      _2:
+        description: 512 Bytes
+        value: 2
+      _3:
+        description: 256 Bytes
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  FLEXSPI1_AHBCR_SPLIT_LIMIT:
+    enum:
+      _0:
+        description: AHB Split Size=8bytes
+        value: 0
+      _1:
+        description: AHB Split Size=16bytes
+        value: 1
+      _2:
+        description: AHB Split Size=32bytes
+        value: 2
+      _3:
+        description: AHB Split Size=64bytes
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  FLEXSPI1_FLSHCR2_AWRWAITUNIT:
+    enum:
+      _0:
+        description: The AWRWAIT unit is 2 ahb clock cycle
+        value: 0
+      _1:
+        description: The AWRWAIT unit is 8 ahb clock cycle
+        value: 1
+      _2:
+        description: The AWRWAIT unit is 32 ahb clock cycle
+        value: 2
+      _3:
+        description: The AWRWAIT unit is 128 ahb clock cycle
+        value: 3
+      _4:
+        description: The AWRWAIT unit is 512 ahb clock cycle
+        value: 4
+      _5:
+        description: The AWRWAIT unit is 2048 ahb clock cycle
+        value: 5
+      _6:
+        description: The AWRWAIT unit is 8192 ahb clock cycle
+        value: 6
+      _7:
+        description: The AWRWAIT unit is 32768 ahb clock cycle
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  FLEXSPI1_STS0_ARBCMDSRC:
+    enum:
+      _0:
+        description: Triggered by AHB read command (triggered by AHB read).
+        value: 0
+      _1:
+        description: Triggered by AHB write command (triggered by AHB Write).
+        value: 1
+      _2:
+        description: Triggered by IP command (triggered by setting register bit IPCMD.TRG).
+        value: 2
+      _3:
+        description: Triggered by suspended command (resumed).
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  FLEXSPI1_STS1_IPCMDERRCODE:
+    enum:
+      _0:
+        description: No error.
+        value: 0
+      _2:
+        description: IP command with JMP_ON_CS instruction used in the sequence.
+        value: 2
+      _3:
+        description: There is unknown instruction opcode in the sequence.
+        value: 3
+      _4:
+        description: Instruction DUMMY_SDR/DUMMY_RWDS_SDR used in DDR sequence.
+        value: 4
+      _5:
+        description: Instruction DUMMY_DDR/DUMMY_RWDS_DDR used in SDR sequence.
+        value: 5
+      _6:
+        description: Flash access start address exceed the whole flash address range
+          (A1/A2/B1/B2).
+        value: 6
+      _14:
+        description: Sequence execution timeout.
+        value: 14
+      _15:
+        description: Flash boundary crossed.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  FLEXSPI1_STS1_AHBCMDERRCODE:
+    enum:
+      _0:
+        description: No error.
+        value: 0
+      _2:
+        description: AHB Write command with JMP_ON_CS instruction used in the sequence.
+        value: 2
+      _3:
+        description: There is unknown instruction opcode in the sequence.
+        value: 3
+      _4:
+        description: Instruction DUMMY_SDR/DUMMY_RWDS_SDR used in DDR sequence.
+        value: 4
+      _5:
+        description: Instruction DUMMY_DDR/DUMMY_RWDS_DDR used in SDR sequence.
+        value: 5
+      _14:
+        description: Sequence execution timeout.
+        value: 14
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  FLEXSPI1_HMSTR0CR_MASK:
+    enum:
+      DISABLE:
+        description: Mask
+        value: 0
+      ENABLE:
+        description: Unmask
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  FLEXSPI1_HMSTR1CR_MASK:
+    enum:
+      DISABLE:
+        description: Mask
+        value: 0
+      ENABLE:
+        description: Unmask
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  FLEXSPI1_HMSTR2CR_MASK:
+    enum:
+      DISABLE:
+        description: Mask
+        value: 0
+      ENABLE:
+        description: Unmask
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  FLEXSPI1_HMSTR3CR_MASK:
+    enum:
+      DISABLE:
+        description: Mask
+        value: 0
+      ENABLE:
+        description: Unmask
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  FLEXSPI1_HMSTR4CR_MASK:
+    enum:
+      DISABLE:
+        description: Mask
+        value: 0
+      ENABLE:
+        description: Unmask
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  FLEXSPI1_HMSTR5CR_MASK:
+    enum:
+      DISABLE:
+        description: Mask
+        value: 0
+      ENABLE:
+        description: Unmask
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  FLEXSPI1_HMSTR6CR_MASK:
+    enum:
+      DISABLE:
+        description: Mask
+        value: 0
+      ENABLE:
+        description: Unmask
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  FLEXSPI1_HMSTR7CR_MASK:
+    enum:
+      DISABLE:
+        description: Mask
+        value: 0
+      ENABLE:
+        description: Unmask
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t

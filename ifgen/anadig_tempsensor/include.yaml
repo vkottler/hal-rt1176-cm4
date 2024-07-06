@@ -1,0 +1,44 @@
+---
+structs:
+  anadig_tempsensor:
+    description: MX6RT_ANADIG_REGISTER
+    instances:
+      - name: ANADIG_TEMPSENSOR
+        address: '0x40C84000'
+    fields:
+      - name: TEMPSENSOR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1024
+        description: (read-write) Tempsensor Register
+        fields:
+          - name: TEMPSNS_AI_BUSY
+            description: AI Busy monitor
+            index: 16
+            width: 1
+            read: true
+            write: false
+          - name: TEMPSNS_AI_TOGGLE
+            description: AI toggle
+            index: 15
+            width: 1
+            read: true
+            write: true
+      - name: TEMPSNS_OTP_TRIM_VALUE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1072
+        description: (read-write) TEMPSNS_OTP_TRIM_VALUE_REGISTER
+        fields:
+          - name: TEMPSNS_TEMP_VAL
+            description: Temperature Value at 25C
+            index: 10
+            width: 12
+            read: true
+            write: false
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums: {}

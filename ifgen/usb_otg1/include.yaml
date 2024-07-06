@@ -1,0 +1,2080 @@
+---
+structs:
+  usb_otg1:
+    description: USB
+    instances:
+      - name: USB_OTG1
+        address: '0x40430000'
+      - name: USB_OTG2
+        address: '0x4042C000'
+    fields:
+      - name: ID
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Identification register
+        fields:
+          - name: REVISION
+            description: REVISION
+            index: 16
+            width: 8
+            read: true
+            write: false
+          - name: NID
+            description: NID
+            index: 8
+            width: 6
+            read: true
+            write: false
+          - name: ID
+            description: ID
+            index: 0
+            width: 6
+            read: true
+            write: false
+      - name: HWGENERAL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Hardware General
+        fields:
+          - name: SM
+            description: SM
+            index: 9
+            width: 2
+            read: true
+            write: false
+            type: USB_OTG1_HWGENERAL_SM
+          - name: PHYM
+            description: PHYM
+            index: 6
+            width: 3
+            read: true
+            write: false
+            type: USB_OTG1_HWGENERAL_PHYM
+          - name: PHYW
+            description: PHYW
+            index: 4
+            width: 2
+            read: true
+            write: false
+            type: USB_OTG1_HWGENERAL_PHYW
+      - name: HWHOST
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) Host Hardware Parameters
+        fields:
+          - name: NPORT
+            description: NPORT
+            index: 1
+            width: 3
+            read: true
+            write: false
+          - name: HC
+            description: HC
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: HWDEVICE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) Device Hardware Parameters
+        fields:
+          - name: DEVEP
+            description: DEVEP
+            index: 1
+            width: 5
+            read: true
+            write: false
+          - name: DC
+            description: DC
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: HWTXBUF
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) TX Buffer Hardware Parameters
+        fields:
+          - name: TXCHANADD
+            description: TXCHANADD
+            index: 16
+            width: 8
+            read: true
+            write: false
+          - name: TXBURST
+            description: TXBURST
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: HWRXBUF
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) RX Buffer Hardware Parameters
+        fields:
+          - name: RXADD
+            description: RXADD
+            index: 8
+            width: 8
+            read: true
+            write: false
+          - name: RXBURST
+            description: RXBURST
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: GPTIMER0LD
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 128
+        description: '(read-write) General Purpose Timer #0 Load'
+        fields:
+          - name: GPTLD
+            description: GPTLD
+            index: 0
+            width: 24
+            read: true
+            write: true
+      - name: GPTIMER0CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 132
+        description: '(read-write) General Purpose Timer #0 Controller'
+        fields:
+          - name: GPTRUN
+            description: GPTRUN
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: GPTRST
+            description: GPTRST
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: GPTMODE
+            description: GPTMODE
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: GPTCNT
+            description: GPTCNT
+            index: 0
+            width: 24
+            read: true
+            write: true
+      - name: GPTIMER1LD
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 136
+        description: '(read-write) General Purpose Timer #1 Load'
+        fields:
+          - name: GPTLD
+            description: GPTLD
+            index: 0
+            width: 24
+            read: true
+            write: true
+      - name: GPTIMER1CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 140
+        description: '(read-write) General Purpose Timer #1 Controller'
+        fields:
+          - name: GPTRUN
+            description: GPTRUN
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: GPTRST
+            description: GPTRST
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: GPTMODE
+            description: GPTMODE
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: GPTCNT
+            description: GPTCNT
+            index: 0
+            width: 24
+            read: true
+            write: true
+      - name: SBUSCFG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 144
+        description: (read-write) System Bus Config
+        fields:
+          - name: AHBBRST
+            description: AHBBRST
+            index: 0
+            width: 3
+            read: true
+            write: true
+            type: USB_OTG1_SBUSCFG_AHBBRST
+      - name: CAPLENGTH
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 256
+        description: (read-write) Capability Registers Length
+        fields:
+          - name: CAPLENGTH
+            description: CAPLENGTH
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: HCIVERSION
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 258
+        description: (read-write) Host Controller Interface Version
+        fields:
+          - name: HCIVERSION
+            description: HCIVERSION
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: HCSPARAMS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 260
+        description: (read-write) Host Controller Structural Parameters
+        fields:
+          - name: N_TT
+            description: N_TT
+            index: 24
+            width: 4
+            read: true
+            write: false
+          - name: N_PTT
+            description: N_PTT
+            index: 20
+            width: 4
+            read: true
+            write: false
+          - name: PI
+            description: PI
+            index: 16
+            width: 1
+            read: true
+            write: false
+          - name: N_CC
+            description: N_CC
+            index: 12
+            width: 4
+            read: true
+            write: false
+            type: USB_OTG1_HCSPARAMS_N_CC
+          - name: N_PCC
+            description: N_PCC
+            index: 8
+            width: 4
+            read: true
+            write: false
+          - name: PPC
+            description: PPC
+            index: 4
+            width: 1
+            read: true
+            write: false
+          - name: N_PORTS
+            description: N_PORTS
+            index: 0
+            width: 4
+            read: true
+            write: false
+      - name: HCCPARAMS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 264
+        description: (read-write) Host Controller Capability Parameters
+        fields:
+          - name: EECP
+            description: EECP
+            index: 8
+            width: 8
+            read: true
+            write: false
+          - name: IST
+            description: IST
+            index: 4
+            width: 4
+            read: true
+            write: false
+          - name: ASP
+            description: ASP
+            index: 2
+            width: 1
+            read: true
+            write: false
+          - name: PFL
+            description: PFL
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: ADC
+            description: ADC
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: DCIVERSION
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 288
+        description: (read-write) Device Controller Interface Version
+        fields:
+          - name: DCIVERSION
+            description: DCIVERSION
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: DCCPARAMS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 292
+        description: (read-write) Device Controller Capability Parameters
+        fields:
+          - name: HC
+            description: HC
+            index: 8
+            width: 1
+            read: true
+            write: false
+          - name: DC
+            description: DC
+            index: 7
+            width: 1
+            read: true
+            write: false
+          - name: DEN
+            description: DEN
+            index: 0
+            width: 5
+            read: true
+            write: false
+      - name: USBCMD
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 320
+        description: (read-write) USB Command Register
+        fields:
+          - name: ITC
+            description: ITC
+            index: 16
+            width: 8
+            read: true
+            write: true
+            type: USB_OTG1_USBCMD_ITC
+          - name: FS_2
+            description: FS_2
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ATDTW
+            description: ATDTW
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: SUTW
+            description: SUTW
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: ASPE
+            description: ASPE
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: ASP
+            description: ASP
+            index: 8
+            width: 2
+            read: true
+            write: true
+          - name: IAA
+            description: IAA
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ASE
+            description: ASE
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: PSE
+            description: PSE
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: FS_1
+            description: FS_1
+            index: 2
+            width: 2
+            read: true
+            write: true
+          - name: RST
+            description: RST
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: RS
+            description: RS
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: USBSTS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 324
+        description: (read-write) USB Status Register
+        fields:
+          - name: TI1
+            description: TI1
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: TI0
+            description: TI0
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: NAKI
+            description: NAKI
+            index: 16
+            width: 1
+            read: true
+            write: false
+          - name: AS
+            description: AS
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: PS
+            description: PS
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: RCL
+            description: RCL
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: HCH
+            description: HCH
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ULPII
+            description: ULPII
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: SLI
+            description: SLI
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: SRI
+            description: SRI
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: URI
+            description: URI
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: AAI
+            description: AAI
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: SEI
+            description: SEI
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: FRI
+            description: FRI
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: PCI
+            description: PCI
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: UEI
+            description: UEI
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: UI
+            description: UI
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: USBINTR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 328
+        description: (read-write) Interrupt Enable Register
+        fields:
+          - name: TIE1
+            description: TIE1
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: TIE0
+            description: TIE0
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: UPIE
+            description: UPIE
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: UAIE
+            description: UAIE
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: NAKE
+            description: NAKE
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: ULPIE
+            description: ULPIE
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: SLE
+            description: SLE
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: SRE
+            description: SRE
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: URE
+            description: URE
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: AAE
+            description: AAE
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: SEE
+            description: SEE
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: FRE
+            description: FRE
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: PCE
+            description: PCE
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: UEE
+            description: UEE
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: UE
+            description: UE
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: FRINDEX
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 332
+        description: (read-write) USB Frame Index
+        fields:
+          - name: FRINDEX
+            description: FRINDEX
+            index: 0
+            width: 14
+            read: true
+            write: true
+            type: USB_OTG1_FRINDEX_FRINDEX
+      - name: DEVICEADDR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 340
+        description: (read-write) Device Address
+        fields:
+          - name: USBADR
+            description: USBADR
+            index: 25
+            width: 7
+            read: true
+            write: true
+          - name: USBADRA
+            description: USBADRA
+            index: 24
+            width: 1
+            read: true
+            write: true
+      - name: BURSTSIZE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 352
+        description: (read-write) Programmable Burst Size
+        fields:
+          - name: TXPBURST
+            description: TXPBURST
+            index: 8
+            width: 9
+            read: true
+            write: true
+          - name: RXPBURST
+            description: RXPBURST
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: TXFILLTUNING
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 356
+        description: (read-write) TX FIFO Fill Tuning
+        fields:
+          - name: TXFIFOTHRES
+            description: TXFIFOTHRES
+            index: 16
+            width: 6
+            read: true
+            write: true
+          - name: TXSCHHEALTH
+            description: TXSCHHEALTH
+            index: 8
+            width: 5
+            read: true
+            write: true
+          - name: TXSCHOH
+            description: TXSCHOH
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: ENDPTNAK
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 376
+        description: (read-write) Endpoint NAK
+        fields:
+          - name: EPTN
+            description: EPTN
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: EPRN
+            description: EPRN
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: ENDPTNAKEN
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 380
+        description: (read-write) Endpoint NAK Enable
+        fields:
+          - name: EPTNE
+            description: EPTNE
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: EPRNE
+            description: EPRNE
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: CONFIGFLAG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 384
+        description: (read-write) Configure Flag Register
+        fields:
+          - name: CF
+            description: CF
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: PORTSC1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 388
+        description: (read-write) Port Status & Control
+        fields:
+          - name: PTS_1
+            description: PTS_1
+            index: 30
+            width: 2
+            read: true
+            write: true
+          - name: STS
+            description: STS
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: PTW
+            description: PTW
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: PSPD
+            description: PSPD
+            index: 26
+            width: 2
+            read: true
+            write: true
+            type: USB_OTG1_PORTSC1_PSPD
+          - name: PTS_2
+            description: PTS_2
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: PFSC
+            description: PFSC
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: PHCD
+            description: PHCD
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: WKOC
+            description: WKOC
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: WKDC
+            description: WKDC
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: WKCN
+            description: WKCN
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: PTC
+            description: PTC
+            index: 16
+            width: 4
+            read: true
+            write: true
+            type: USB_OTG1_PORTSC1_PTC
+          - name: PIC
+            description: PIC
+            index: 14
+            width: 2
+            read: true
+            write: true
+            type: USB_OTG1_PORTSC1_PIC
+          - name: PO
+            description: PO
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: PP
+            description: PP
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: LS
+            description: LS
+            index: 10
+            width: 2
+            read: true
+            write: true
+            type: USB_OTG1_PORTSC1_LS
+          - name: HSP
+            description: HSP
+            index: 9
+            width: 1
+            read: true
+            write: false
+          - name: PR
+            description: PR
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: SUSP
+            description: SUSP
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: FPR
+            description: FPR
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: OCC
+            description: OCC
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: OCA
+            description: OCA
+            index: 4
+            width: 1
+            read: true
+            write: false
+          - name: PEC
+            description: PEC
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: PE
+            description: PE
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: CSC
+            description: CSC
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CCS
+            description: CCS
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: OTGSC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 420
+        description: (read-write) On-The-Go Status & control
+        fields:
+          - name: DPIE
+            description: DPIE
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: EN_1MS
+            description: EN_1MS
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: BSEIE
+            description: BSEIE
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: BSVIE
+            description: BSVIE
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: ASVIE
+            description: ASVIE
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: AVVIE
+            description: AVVIE
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: IDIE
+            description: IDIE
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: DPIS
+            description: DPIS
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: STATUS_1MS
+            description: STATUS_1MS
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: BSEIS
+            description: BSEIS
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: BSVIS
+            description: BSVIS
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: ASVIS
+            description: ASVIS
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: AVVIS
+            description: AVVIS
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: IDIS
+            description: IDIS
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: DPS
+            description: DPS
+            index: 14
+            width: 1
+            read: true
+            write: false
+          - name: TOG_1MS
+            description: TOG_1MS
+            index: 13
+            width: 1
+            read: true
+            write: false
+          - name: BSE
+            description: BSE
+            index: 12
+            width: 1
+            read: true
+            write: false
+          - name: BSV
+            description: BSV
+            index: 11
+            width: 1
+            read: true
+            write: false
+          - name: ASV
+            description: ASV
+            index: 10
+            width: 1
+            read: true
+            write: false
+          - name: AVV
+            description: AVV
+            index: 9
+            width: 1
+            read: true
+            write: false
+          - name: ID
+            description: ID
+            index: 8
+            width: 1
+            read: true
+            write: false
+          - name: IDPU
+            description: IDPU
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: DP
+            description: DP
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: OT
+            description: OT
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: VC
+            description: VC
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: VD
+            description: VD
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: USBMODE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 424
+        description: (read-write) USB Device Mode
+        fields:
+          - name: SDIS
+            description: SDIS
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: SLOM
+            description: SLOM
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ES
+            description: ES
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: CM
+            description: CM
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: USB_OTG1_USBMODE_CM
+      - name: ENDPTSETUPSTAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 428
+        description: (read-write) Endpoint Setup Status
+        fields:
+          - name: ENDPTSETUPSTAT
+            description: ENDPTSETUPSTAT
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: ENDPTPRIME
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 432
+        description: (read-write) Endpoint Prime
+        fields:
+          - name: PETB
+            description: PETB
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: PERB
+            description: PERB
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: ENDPTFLUSH
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 436
+        description: (read-write) Endpoint Flush
+        fields:
+          - name: FETB
+            description: FETB
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: FERB
+            description: FERB
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: ENDPTSTAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 440
+        description: (read-write) Endpoint Status
+        fields:
+          - name: ETBR
+            description: ETBR
+            index: 16
+            width: 8
+            read: true
+            write: false
+          - name: ERBR
+            description: ERBR
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: ENDPTCOMPLETE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 444
+        description: (read-write) Endpoint Complete
+        fields:
+          - name: ETCE
+            description: ETCE
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: ERCE
+            description: ERCE
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: ENDPTCTRL0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 448
+        description: (read-write) Endpoint Control0
+        fields:
+          - name: TXE
+            description: TXE
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: TXT
+            description: TXT
+            index: 18
+            width: 2
+            read: true
+            write: true
+          - name: TXS
+            description: TXS
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: RXE
+            description: RXE
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: RXT
+            description: RXT
+            index: 2
+            width: 2
+            read: true
+            write: true
+          - name: RXS
+            description: RXS
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: ENDPTCTRL1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 452
+        description: (read-write) Endpoint Control 1
+        fields:
+          - name: TXE
+            description: TXE
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: TXR
+            description: TXR
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: TXI
+            description: TXI
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: TXT
+            description: TXT
+            index: 18
+            width: 2
+            read: true
+            write: true
+          - name: TXD
+            description: TXD
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: TXS
+            description: TXS
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: RXE
+            description: RXE
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: RXR
+            description: RXR
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: RXI
+            description: RXI
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: RXT
+            description: RXT
+            index: 2
+            width: 2
+            read: true
+            write: true
+          - name: RXD
+            description: RXD
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: RXS
+            description: RXS
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: ENDPTCTRL2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 456
+        description: (read-write) Endpoint Control 2
+        fields:
+          - name: TXE
+            description: TXE
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: TXR
+            description: TXR
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: TXI
+            description: TXI
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: TXT
+            description: TXT
+            index: 18
+            width: 2
+            read: true
+            write: true
+          - name: TXD
+            description: TXD
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: TXS
+            description: TXS
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: RXE
+            description: RXE
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: RXR
+            description: RXR
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: RXI
+            description: RXI
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: RXT
+            description: RXT
+            index: 2
+            width: 2
+            read: true
+            write: true
+          - name: RXD
+            description: RXD
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: RXS
+            description: RXS
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: ENDPTCTRL3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 460
+        description: (read-write) Endpoint Control 3
+        fields:
+          - name: TXE
+            description: TXE
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: TXR
+            description: TXR
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: TXI
+            description: TXI
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: TXT
+            description: TXT
+            index: 18
+            width: 2
+            read: true
+            write: true
+          - name: TXD
+            description: TXD
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: TXS
+            description: TXS
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: RXE
+            description: RXE
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: RXR
+            description: RXR
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: RXI
+            description: RXI
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: RXT
+            description: RXT
+            index: 2
+            width: 2
+            read: true
+            write: true
+          - name: RXD
+            description: RXD
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: RXS
+            description: RXS
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: ENDPTCTRL4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 464
+        description: (read-write) Endpoint Control 4
+        fields:
+          - name: TXE
+            description: TXE
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: TXR
+            description: TXR
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: TXI
+            description: TXI
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: TXT
+            description: TXT
+            index: 18
+            width: 2
+            read: true
+            write: true
+          - name: TXD
+            description: TXD
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: TXS
+            description: TXS
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: RXE
+            description: RXE
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: RXR
+            description: RXR
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: RXI
+            description: RXI
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: RXT
+            description: RXT
+            index: 2
+            width: 2
+            read: true
+            write: true
+          - name: RXD
+            description: RXD
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: RXS
+            description: RXS
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: ENDPTCTRL5
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 468
+        description: (read-write) Endpoint Control 5
+        fields:
+          - name: TXE
+            description: TXE
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: TXR
+            description: TXR
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: TXI
+            description: TXI
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: TXT
+            description: TXT
+            index: 18
+            width: 2
+            read: true
+            write: true
+          - name: TXD
+            description: TXD
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: TXS
+            description: TXS
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: RXE
+            description: RXE
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: RXR
+            description: RXR
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: RXI
+            description: RXI
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: RXT
+            description: RXT
+            index: 2
+            width: 2
+            read: true
+            write: true
+          - name: RXD
+            description: RXD
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: RXS
+            description: RXS
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: ENDPTCTRL6
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 472
+        description: (read-write) Endpoint Control 6
+        fields:
+          - name: TXE
+            description: TXE
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: TXR
+            description: TXR
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: TXI
+            description: TXI
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: TXT
+            description: TXT
+            index: 18
+            width: 2
+            read: true
+            write: true
+          - name: TXD
+            description: TXD
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: TXS
+            description: TXS
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: RXE
+            description: RXE
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: RXR
+            description: RXR
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: RXI
+            description: RXI
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: RXT
+            description: RXT
+            index: 2
+            width: 2
+            read: true
+            write: true
+          - name: RXD
+            description: RXD
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: RXS
+            description: RXS
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: ENDPTCTRL7
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 476
+        description: (read-write) Endpoint Control 7
+        fields:
+          - name: TXE
+            description: TXE
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: TXR
+            description: TXR
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: TXI
+            description: TXI
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: TXT
+            description: TXT
+            index: 18
+            width: 2
+            read: true
+            write: true
+          - name: TXD
+            description: TXD
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: TXS
+            description: TXS
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: RXE
+            description: RXE
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: RXR
+            description: RXR
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: RXI
+            description: RXI
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: RXT
+            description: RXT
+            index: 2
+            width: 2
+            read: true
+            write: true
+          - name: RXD
+            description: RXD
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: RXS
+            description: RXS
+            index: 0
+            width: 1
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  USB_OTG1_HWGENERAL_SM:
+    enum:
+      SERIAL_ENGINE_NO:
+        description: No Serial Engine, always use parallel signalling.
+        value: 0
+      SERIAL_ENGINE_EN:
+        description: Serial Engine present, always use serial signalling for FS/LS.
+        value: 1
+      SW_RST_PARALLEL:
+        description: Software programmable - Reset to use parallel signalling for
+          FS/LS
+        value: 2
+      SW_RST_SERIAL_ENG:
+        description: Software programmable - Reset to use serial signalling for FS/LS
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  USB_OTG1_HWGENERAL_PHYM:
+    enum:
+      UTMI:
+        description: UTMI/UMTI+
+        value: 0
+      ULPI_DDR:
+        description: ULPI DDR
+        value: 1
+      ULPI:
+        description: ULPI
+        value: 2
+      SERIAL:
+        description: Serial Only
+        value: 3
+      SW_RST_UTMI:
+        description: Software programmable - reset to UTMI/UTMI+
+        value: 4
+      SW_RST_ULPI_DDR:
+        description: Software programmable - reset to ULPI DDR
+        value: 5
+      SW_RST_ULPI:
+        description: Software programmable - reset to ULPI
+        value: 6
+      SW_RST_SERIAL:
+        description: Software programmable - reset to Serial
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  USB_OTG1_HWGENERAL_PHYW:
+    enum:
+      DATA_BUS_8:
+        description: 8 bit wide data bus (Software non-programmable)
+        value: 0
+      DATA_BUS_16:
+        description: 16 bit wide data bus (Software non-programmable)
+        value: 1
+      SW_RST_8:
+        description: Reset to 8 bit wide data bus (Software programmable)
+        value: 2
+      SW_RST_16:
+        description: Reset to 16 bit wide data bus (Software programmable)
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  USB_OTG1_SBUSCFG_AHBBRST:
+    enum:
+      _BURST:
+        description: Incremental burst of unspecified length only
+        value: 0
+      _4_BURST:
+        description: INCR4 burst, then single transfer
+        value: 1
+      _8_BURST:
+        description: INCR8 burst, INCR4 burst, then single transfer
+        value: 2
+      _16_BURST:
+        description: INCR16 burst, INCR8 burst, INCR4 burst, then single transfer
+        value: 3
+      _4_UNSPEC:
+        description: INCR4 burst, then incremental burst of unspecified length
+        value: 5
+      _8_4_UNSPEC:
+        description: INCR8 burst, INCR4 burst, then incremental burst of unspecified
+          length
+        value: 6
+      _16_8_4_UNSPEC:
+        description: INCR16 burst, INCR8 burst, INCR4 burst, then incremental burst
+          of unspecified length
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  USB_OTG1_HCSPARAMS_N_CC:
+    enum:
+      NO_COMP_CONTROLLER:
+        description: There is no internal Companion Controller and port-ownership
+          hand-off is not supported.
+        value: 0
+      COMP_CONTROLLER:
+        description: There are internal companion controller(s) and port-ownership
+          hand-offs is supported.
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  USB_OTG1_USBCMD_ITC:
+    enum:
+      IMMEDIATE:
+        description: Immediate (no threshold)
+        value: 0
+      MICROFRAME_1:
+        description: 1 micro-frame
+        value: 1
+      MICROFRAME_2:
+        description: 2 micro-frames
+        value: 2
+      MICROFRAME_4:
+        description: 4 micro-frames
+        value: 4
+      MICROFRAME_8:
+        description: 8 micro-frames
+        value: 8
+      MICROFRAME_16:
+        description: 16 micro-frames
+        value: 16
+      MICROFRAME_32:
+        description: 32 micro-frames
+        value: 32
+      MICROFRAME_64:
+        description: 64 micro-frames
+        value: 64
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  USB_OTG1_FRINDEX_FRINDEX:
+    enum:
+      _1024:
+        description: (1024) 12
+        value: 0
+      _512:
+        description: (512) 11
+        value: 1
+      _256:
+        description: (256) 10
+        value: 2
+      _128:
+        description: (128) 9
+        value: 3
+      _64:
+        description: (64) 8
+        value: 4
+      _32:
+        description: (32) 7
+        value: 5
+      _16:
+        description: (16) 6
+        value: 6
+      _8:
+        description: (8) 5
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  USB_OTG1_PORTSC1_PSPD:
+    enum:
+      FS:
+        description: Full Speed
+        value: 0
+      LS:
+        description: Low Speed
+        value: 1
+      HS:
+        description: High Speed
+        value: 2
+      UNDEFINED:
+        description: Undefined
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  USB_OTG1_PORTSC1_PTC:
+    enum:
+      TST_MODE_DIS:
+        description: TEST_MODE_DISABLE
+        value: 0
+      J_STATE:
+        description: J_STATE
+        value: 1
+      K_STATE:
+        description: K_STATE
+        value: 2
+      SE0:
+        description: SE0 (host) / NAK (device)
+        value: 3
+      PCKT:
+        description: Packet
+        value: 4
+      HS:
+        description: FORCE_ENABLE_HS
+        value: 5
+      FS:
+        description: FORCE_ENABLE_FS
+        value: 6
+      LS:
+        description: FORCE_ENABLE_LS
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  USB_OTG1_PORTSC1_PIC:
+    enum:
+      PORT_INDICATOR_OFF:
+        description: Port indicators are off
+        value: 0
+      PORT_IND_AMBER:
+        description: Amber
+        value: 1
+      PORT_IND_GREEN:
+        description: Green
+        value: 2
+      UNDEFINED:
+        description: Undefined
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  USB_OTG1_PORTSC1_LS:
+    enum:
+      SE0:
+        description: SE0
+        value: 0
+      K_STATE:
+        description: K-state
+        value: 1
+      J_STATE:
+        description: J-state
+        value: 2
+      UNDEFINED:
+        description: Undefined
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  USB_OTG1_USBMODE_CM:
+    enum:
+      IDL:
+        description: Idle [Default for combination host/device]
+        value: 0
+      DEVICE_CONTR:
+        description: Device Controller [Default for device only controller]
+        value: 2
+      HOST_CONTR:
+        description: Host Controller [Default for host only controller]
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

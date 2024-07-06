@@ -1,0 +1,45 @@
+---
+structs:
+  dmamux1:
+    description: DMAMUX
+    instances:
+      - name: DMAMUX1
+        address: '0x40C18000'
+    fields:
+      - name: CHCFG
+        type: uint32_t
+        expected_size: 128
+        expected_offset: 0
+        array_length: 32
+        description: (read-write) Channel index Configuration Register
+        fields:
+          - name: ENBL
+            description: DMA Mux Channel Enable
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: TRIG
+            description: DMA Channel Trigger Enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: A_ON
+            description: DMA Channel Always Enable
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: SOURCE
+            description: DMA Channel Source (Slot Number)
+            index: 0
+            width: 8
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums: {}

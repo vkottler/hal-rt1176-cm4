@@ -1,0 +1,660 @@
+---
+structs:
+  lpspi1:
+    description: LPSPI
+    instances:
+      - name: LPSPI1
+        address: '0x40114000'
+      - name: LPSPI2
+        address: '0x40118000'
+      - name: LPSPI3
+        address: '0x4011C000'
+      - name: LPSPI4
+        address: '0x40120000'
+      - name: LPSPI5
+        address: '0x40C2C000'
+      - name: LPSPI6
+        address: '0x40C30000'
+    fields:
+      - name: VERID
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Version ID
+        fields:
+          - name: MAJOR
+            description: Major Version Number
+            index: 24
+            width: 8
+            read: true
+            write: false
+          - name: MINOR
+            description: Minor Version Number
+            index: 16
+            width: 8
+            read: true
+            write: false
+          - name: FEATURE
+            description: Module Identification Number
+            index: 0
+            width: 16
+            read: true
+            write: false
+            type: LPSPI1_VERID_FEATURE
+      - name: PARAM
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Parameter
+        fields:
+          - name: PCSNUM
+            description: PCS Number
+            index: 16
+            width: 8
+            read: true
+            write: false
+          - name: RXFIFO
+            description: Receive FIFO Size
+            index: 8
+            width: 8
+            read: true
+            write: false
+          - name: TXFIFO
+            description: Transmit FIFO Size
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: CR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) Control
+        fields:
+          - name: RRF
+            description: Reset Receive FIFO
+            index: 9
+            width: 1
+            read: false
+            write: true
+          - name: RTF
+            description: Reset Transmit FIFO
+            index: 8
+            width: 1
+            read: false
+            write: true
+          - name: DBGEN
+            description: Debug Enable
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: DOZEN
+            description: Doze Mode Enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: RST
+            description: Software Reset
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: MEN
+            description: Module Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) Status
+        fields:
+          - name: MBF
+            description: Module Busy Flag
+            index: 24
+            width: 1
+            read: true
+            write: false
+          - name: DMF
+            description: Data Match Flag
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: REF
+            description: Receive Error Flag
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: TEF
+            description: Transmit Error Flag
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: TCF
+            description: Transfer Complete Flag
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: FCF
+            description: Frame Complete Flag
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: WCF
+            description: Word Complete Flag
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: RDF
+            description: Receive Data Flag
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: TDF
+            description: Transmit Data Flag
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: IER
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) Interrupt Enable
+        fields:
+          - name: DMIE
+            description: Data Match Interrupt Enable
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: REIE
+            description: Receive Error Interrupt Enable
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: TEIE
+            description: Transmit Error Interrupt Enable
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: TCIE
+            description: Transfer Complete Interrupt Enable
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: FCIE
+            description: Frame Complete Interrupt Enable
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: WCIE
+            description: Word Complete Interrupt Enable
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: RDIE
+            description: Receive Data Interrupt Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: TDIE
+            description: Transmit Data Interrupt Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DER
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) DMA Enable
+        fields:
+          - name: RDDE
+            description: Receive Data DMA Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: TDDE
+            description: Transmit Data DMA Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CFGR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) Configuration 0
+        fields:
+          - name: RDMO
+            description: Receive Data Match Only
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: CIRFIFO
+            description: Circular FIFO Enable
+            index: 8
+            width: 1
+            read: true
+            write: true
+      - name: CFGR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) Configuration 1
+        fields:
+          - name: PCSCFG
+            description: Peripheral Chip Select Configuration
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: OUTCFG
+            description: Output Configuration
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: PINCFG
+            description: Pin Configuration
+            index: 24
+            width: 2
+            read: true
+            write: true
+            type: LPSPI1_CFGR1_PINCFG
+          - name: MATCFG
+            description: Match Configuration
+            index: 16
+            width: 3
+            read: true
+            write: true
+            type: LPSPI1_CFGR1_MATCFG
+          - name: PCSPOL
+            description: Peripheral Chip Select Polarity
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: NOSTALL
+            description: No Stall
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: AUTOPCS
+            description: Automatic PCS
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: SAMPLE
+            description: Sample Point
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: MASTER
+            description: Master Mode
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DMR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) Data Match 0
+        fields:
+          - name: MATCH0
+            description: Match 0 Value
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DMR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 52
+        description: (read-write) Data Match 1
+        fields:
+          - name: MATCH1
+            description: Match 1 Value
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: CCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 64
+        description: (read-write) Clock Configuration
+        fields:
+          - name: SCKPCS
+            description: SCK-to-PCS Delay
+            index: 24
+            width: 8
+            read: true
+            write: true
+          - name: PCSSCK
+            description: PCS-to-SCK Delay
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: DBT
+            description: Delay Between Transfers
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: SCKDIV
+            description: SCK Divider
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: FCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 88
+        description: (read-write) FIFO Control
+        fields:
+          - name: RXWATER
+            description: Receive FIFO Watermark
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: TXWATER
+            description: Transmit FIFO Watermark
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: FSR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 92
+        description: (read-write) FIFO Status
+        fields:
+          - name: RXCOUNT
+            description: Receive FIFO Count
+            index: 16
+            width: 5
+            read: true
+            write: false
+          - name: TXCOUNT
+            description: Transmit FIFO Count
+            index: 0
+            width: 5
+            read: true
+            write: false
+      - name: TCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 96
+        description: (read-write) Transmit Command
+        fields:
+          - name: CPOL
+            description: Clock Polarity
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CPHA
+            description: Clock Phase
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: PRESCALE
+            description: Prescaler Value
+            index: 27
+            width: 3
+            read: true
+            write: true
+            type: LPSPI1_TCR_PRESCALE
+          - name: PCS
+            description: Peripheral Chip Select
+            index: 24
+            width: 2
+            read: true
+            write: true
+            type: LPSPI1_TCR_PCS
+          - name: LSBF
+            description: LSB First
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: BYSW
+            description: Byte Swap
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: CONT
+            description: Continuous Transfer
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: CONTC
+            description: Continuing Command
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: RXMSK
+            description: Receive Data Mask
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: TXMSK
+            description: Transmit Data Mask
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: WIDTH
+            description: Transfer Width
+            index: 16
+            width: 2
+            read: true
+            write: true
+            type: LPSPI1_TCR_WIDTH
+          - name: FRAMESZ
+            description: Frame Size
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: TDR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 100
+        description: (read-write) Transmit Data
+        fields:
+          - name: DATA
+            description: Transmit Data
+            index: 0
+            width: 32
+            read: false
+            write: true
+      - name: RSR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 112
+        description: (read-write) Receive Status
+        fields:
+          - name: RXEMPTY
+            description: RX FIFO Empty
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: SOF
+            description: Start Of Frame
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: RDR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 116
+        description: (read-write) Receive Data
+        fields:
+          - name: DATA
+            description: Receive Data
+            index: 0
+            width: 32
+            read: true
+            write: false
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  LPSPI1_VERID_FEATURE:
+    enum:
+      STANDARD:
+        description: Standard feature set supporting a 32-bit shift register.
+        value: 4
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LPSPI1_CFGR1_PINCFG:
+    enum:
+      SIN_IN_SOUT_OUT:
+        description: SIN is used for input data and SOUT is used for output data
+        value: 0
+      SIN_BOTH_IN_OUT:
+        description: SIN is used for both input and output data, only half-duplex
+          serial transfers are supported
+        value: 1
+      SOUT_BOTH_IN_OUT:
+        description: SOUT is used for both input and output data, only half-duplex
+          serial transfers are supported
+        value: 2
+      SOUT_IN_SIN_OUT:
+        description: SOUT is used for input data and SIN is used for output data
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPSPI1_CFGR1_MATCFG:
+    enum:
+      DISABLED:
+        description: Match is disabled
+        value: 0
+      ENABLED_FIRSTDATAMATCH:
+        description: Match is enabled is 1st data word is MATCH0 or MATCH1
+        value: 2
+      ENABLED_ANYDATAMATCH:
+        description: Match is enabled on any data word equal MATCH0 or MATCH1
+        value: 3
+      ENABLED_DATAMATCH_100:
+        description: Match is enabled on data match sequence
+        value: 4
+      ENABLED_DATAMATCH_101:
+        description: Match is enabled on data match sequence
+        value: 5
+      ENABLED_DATAMATCH_110:
+        description: Match is enabled
+        value: 6
+      ENABLED_DATAMATCH_111:
+        description: Match is enabled
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPSPI1_TCR_PRESCALE:
+    enum:
+      _1:
+        description: Divide by 1
+        value: 0
+      _2:
+        description: Divide by 2
+        value: 1
+      _4:
+        description: Divide by 4
+        value: 2
+      _8:
+        description: Divide by 8
+        value: 3
+      _16:
+        description: Divide by 16
+        value: 4
+      _32:
+        description: Divide by 32
+        value: 5
+      _64:
+        description: Divide by 64
+        value: 6
+      _128:
+        description: Divide by 128
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPSPI1_TCR_PCS:
+    enum:
+      _0:
+        description: Transfer using PCS[0]
+        value: 0
+      _1:
+        description: Transfer using PCS[1]
+        value: 1
+      _2:
+        description: Transfer using PCS[2]
+        value: 2
+      _3:
+        description: Transfer using PCS[3]
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPSPI1_TCR_WIDTH:
+    enum:
+      ONEBIT:
+        description: 1 bit transfer
+        value: 0
+      TWOBIT:
+        description: 2 bit transfer
+        value: 1
+      FOURBIT:
+        description: 4 bit transfer
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

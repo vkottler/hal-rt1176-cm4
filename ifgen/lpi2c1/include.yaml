@@ -1,0 +1,1116 @@
+---
+structs:
+  lpi2c1:
+    description: LPI2C
+    instances:
+      - name: LPI2C1
+        address: '0x40104000'
+      - name: LPI2C2
+        address: '0x40108000'
+      - name: LPI2C3
+        address: '0x4010C000'
+      - name: LPI2C4
+        address: '0x40110000'
+      - name: LPI2C5
+        address: '0x40C34000'
+      - name: LPI2C6
+        address: '0x40C38000'
+    fields:
+      - name: VERID
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Version ID
+        fields:
+          - name: MAJOR
+            description: Major Version Number
+            index: 24
+            width: 8
+            read: true
+            write: false
+          - name: MINOR
+            description: Minor Version Number
+            index: 16
+            width: 8
+            read: true
+            write: false
+          - name: FEATURE
+            description: Feature Specification Number
+            index: 0
+            width: 16
+            read: true
+            write: false
+            type: LPI2C1_VERID_FEATURE
+      - name: PARAM
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Parameter
+        fields:
+          - name: MRXFIFO
+            description: Master Receive FIFO Size
+            index: 8
+            width: 4
+            read: true
+            write: false
+          - name: MTXFIFO
+            description: Master Transmit FIFO Size
+            index: 0
+            width: 4
+            read: true
+            write: false
+      - name: MCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) Master Control
+        fields:
+          - name: RRF
+            description: Reset Receive FIFO
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: RTF
+            description: Reset Transmit FIFO
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: DBGEN
+            description: Debug Enable
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: DOZEN
+            description: Doze mode enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: RST
+            description: Software Reset
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: MEN
+            description: Master Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: MSR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) Master Status
+        fields:
+          - name: BBF
+            description: Bus Busy Flag
+            index: 25
+            width: 1
+            read: true
+            write: false
+          - name: MBF
+            description: Master Busy Flag
+            index: 24
+            width: 1
+            read: true
+            write: false
+          - name: DMF
+            description: Data Match Flag
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: PLTF
+            description: Pin Low Timeout Flag
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: FEF
+            description: FIFO Error Flag
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ALF
+            description: Arbitration Lost Flag
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: NDF
+            description: NACK Detect Flag
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: SDF
+            description: STOP Detect Flag
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: EPF
+            description: End Packet Flag
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: RDF
+            description: Receive Data Flag
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: TDF
+            description: Transmit Data Flag
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: MIER
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) Master Interrupt Enable
+        fields:
+          - name: DMIE
+            description: Data Match Interrupt Enable
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: PLTIE
+            description: Pin Low Timeout Interrupt Enable
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: FEIE
+            description: FIFO Error Interrupt Enable
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ALIE
+            description: Arbitration Lost Interrupt Enable
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: NDIE
+            description: NACK Detect Interrupt Enable
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: SDIE
+            description: STOP Detect Interrupt Enable
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: EPIE
+            description: End Packet Interrupt Enable
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: RDIE
+            description: Receive Data Interrupt Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: TDIE
+            description: Transmit Data Interrupt Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: MDER
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) Master DMA Enable
+        fields:
+          - name: RDDE
+            description: Receive Data DMA Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: TDDE
+            description: Transmit Data DMA Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: MCFGR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) Master Configuration 0
+        fields:
+          - name: RDMO
+            description: Receive Data Match Only
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: CIRFIFO
+            description: Circular FIFO Enable
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: HRSEL
+            description: Host Request Select
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: HRPOL
+            description: Host Request Polarity
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: HREN
+            description: Host Request Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: MCFGR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) Master Configuration 1
+        fields:
+          - name: PINCFG
+            description: Pin Configuration
+            index: 24
+            width: 3
+            read: true
+            write: true
+            type: LPI2C1_MCFGR1_PINCFG
+          - name: MATCFG
+            description: Match Configuration
+            index: 16
+            width: 3
+            read: true
+            write: true
+            type: LPI2C1_MCFGR1_MATCFG
+          - name: TIMECFG
+            description: Timeout Configuration
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: IGNACK
+            description: IGNACK
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: AUTOSTOP
+            description: Automatic STOP Generation
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: PRESCALE
+            description: Prescaler
+            index: 0
+            width: 3
+            read: true
+            write: true
+            type: LPI2C1_MCFGR1_PRESCALE
+      - name: MCFGR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) Master Configuration 2
+        fields:
+          - name: FILTSDA
+            description: Glitch Filter SDA
+            index: 24
+            width: 4
+            read: true
+            write: true
+          - name: FILTSCL
+            description: Glitch Filter SCL
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: BUSIDLE
+            description: Bus Idle Timeout
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: MCFGR3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) Master Configuration 3
+        fields:
+          - name: PINLOW
+            description: Pin Low Timeout
+            index: 8
+            width: 12
+            read: true
+            write: true
+      - name: MDMR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 64
+        description: (read-write) Master Data Match
+        fields:
+          - name: MATCH1
+            description: Match 1 Value
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: MATCH0
+            description: Match 0 Value
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: MCCR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 72
+        description: (read-write) Master Clock Configuration 0
+        fields:
+          - name: DATAVD
+            description: Data Valid Delay
+            index: 24
+            width: 6
+            read: true
+            write: true
+          - name: SETHOLD
+            description: Setup Hold Delay
+            index: 16
+            width: 6
+            read: true
+            write: true
+          - name: CLKHI
+            description: Clock High Period
+            index: 8
+            width: 6
+            read: true
+            write: true
+          - name: CLKLO
+            description: Clock Low Period
+            index: 0
+            width: 6
+            read: true
+            write: true
+      - name: MCCR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 80
+        description: (read-write) Master Clock Configuration 1
+        fields:
+          - name: DATAVD
+            description: Data Valid Delay
+            index: 24
+            width: 6
+            read: true
+            write: true
+          - name: SETHOLD
+            description: Setup Hold Delay
+            index: 16
+            width: 6
+            read: true
+            write: true
+          - name: CLKHI
+            description: Clock High Period
+            index: 8
+            width: 6
+            read: true
+            write: true
+          - name: CLKLO
+            description: Clock Low Period
+            index: 0
+            width: 6
+            read: true
+            write: true
+      - name: MFCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 88
+        description: (read-write) Master FIFO Control
+        fields:
+          - name: RXWATER
+            description: Receive FIFO Watermark
+            index: 16
+            width: 2
+            read: true
+            write: true
+          - name: TXWATER
+            description: Transmit FIFO Watermark
+            index: 0
+            width: 2
+            read: true
+            write: true
+      - name: MFSR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 92
+        description: (read-write) Master FIFO Status
+        fields:
+          - name: RXCOUNT
+            description: Receive FIFO Count
+            index: 16
+            width: 3
+            read: true
+            write: false
+          - name: TXCOUNT
+            description: Transmit FIFO Count
+            index: 0
+            width: 3
+            read: true
+            write: false
+      - name: MTDR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 96
+        description: (read-write) Master Transmit Data
+        fields:
+          - name: CMD
+            description: Command Data
+            index: 8
+            width: 3
+            read: false
+            write: true
+            type: LPI2C1_MTDR_CMD
+          - name: DATA
+            description: Transmit Data
+            index: 0
+            width: 8
+            read: false
+            write: true
+      - name: MRDR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 112
+        description: (read-write) Master Receive Data
+        fields:
+          - name: RXEMPTY
+            description: RX Empty
+            index: 14
+            width: 1
+            read: true
+            write: false
+          - name: DATA
+            description: Receive Data
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: SCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 272
+        description: (read-write) Slave Control
+        fields:
+          - name: RRF
+            description: Reset Receive FIFO
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: RTF
+            description: Reset Transmit FIFO
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: FILTDZ
+            description: Filter Doze Enable
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: FILTEN
+            description: Filter Enable
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: RST
+            description: Software Reset
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SEN
+            description: Slave Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SSR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 276
+        description: (read-write) Slave Status
+        fields:
+          - name: BBF
+            description: Bus Busy Flag
+            index: 25
+            width: 1
+            read: true
+            write: false
+          - name: SBF
+            description: Slave Busy Flag
+            index: 24
+            width: 1
+            read: true
+            write: false
+          - name: SARF
+            description: SMBus Alert Response Flag
+            index: 15
+            width: 1
+            read: true
+            write: false
+          - name: GCF
+            description: General Call Flag
+            index: 14
+            width: 1
+            read: true
+            write: false
+          - name: AM1F
+            description: Address Match 1 Flag
+            index: 13
+            width: 1
+            read: true
+            write: false
+          - name: AM0F
+            description: Address Match 0 Flag
+            index: 12
+            width: 1
+            read: true
+            write: false
+          - name: FEF
+            description: FIFO Error Flag
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: BEF
+            description: Bit Error Flag
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: SDF
+            description: STOP Detect Flag
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: RSF
+            description: Repeated Start Flag
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: TAF
+            description: Transmit ACK Flag
+            index: 3
+            width: 1
+            read: true
+            write: false
+          - name: AVF
+            description: Address Valid Flag
+            index: 2
+            width: 1
+            read: true
+            write: false
+          - name: RDF
+            description: Receive Data Flag
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: TDF
+            description: Transmit Data Flag
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: SIER
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 280
+        description: (read-write) Slave Interrupt Enable
+        fields:
+          - name: SARIE
+            description: SMBus Alert Response Interrupt Enable
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: GCIE
+            description: General Call Interrupt Enable
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: AM1IE
+            description: Address Match 1 Interrupt Enable
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: AM0IE
+            description: Address Match 0 Interrupt Enable
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: FEIE
+            description: FIFO Error Interrupt Enable
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: BEIE
+            description: Bit Error Interrupt Enable
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: SDIE
+            description: STOP Detect Interrupt Enable
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: RSIE
+            description: Repeated Start Interrupt Enable
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: TAIE
+            description: Transmit ACK Interrupt Enable
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: AVIE
+            description: Address Valid Interrupt Enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: RDIE
+            description: Receive Data Interrupt Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: TDIE
+            description: Transmit Data Interrupt Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SDER
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 284
+        description: (read-write) Slave DMA Enable
+        fields:
+          - name: AVDE
+            description: Address Valid DMA Enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: RDDE
+            description: Receive Data DMA Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: TDDE
+            description: Transmit Data DMA Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SCFGR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 292
+        description: (read-write) Slave Configuration 1
+        fields:
+          - name: ADDRCFG
+            description: Address Configuration
+            index: 16
+            width: 3
+            read: true
+            write: true
+            type: LPI2C1_SCFGR1_ADDRCFG
+          - name: HSMEN
+            description: High Speed Mode Enable
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: IGNACK
+            description: Ignore NACK
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: RXCFG
+            description: Receive Data Configuration
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: TXCFG
+            description: Transmit Flag Configuration
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: SAEN
+            description: SMBus Alert Enable
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: GCEN
+            description: General Call Enable
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: ACKSTALL
+            description: ACK SCL Stall
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: TXDSTALL
+            description: TX Data SCL Stall
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: RXSTALL
+            description: RX SCL Stall
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ADRSTALL
+            description: Address SCL Stall
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SCFGR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 296
+        description: (read-write) Slave Configuration 2
+        fields:
+          - name: FILTSDA
+            description: Glitch Filter SDA
+            index: 24
+            width: 4
+            read: true
+            write: true
+          - name: FILTSCL
+            description: Glitch Filter SCL
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: DATAVD
+            description: Data Valid Delay
+            index: 8
+            width: 6
+            read: true
+            write: true
+          - name: CLKHOLD
+            description: Clock Hold Time
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: SAMR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 320
+        description: (read-write) Slave Address Match
+        fields:
+          - name: ADDR1
+            description: Address 1 Value
+            index: 17
+            width: 10
+            read: true
+            write: true
+          - name: ADDR0
+            description: Address 0 Value
+            index: 1
+            width: 10
+            read: true
+            write: true
+      - name: SASR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 336
+        description: (read-write) Slave Address Status
+        fields:
+          - name: ANV
+            description: Address Not Valid
+            index: 14
+            width: 1
+            read: true
+            write: false
+          - name: RADDR
+            description: Received Address
+            index: 0
+            width: 11
+            read: true
+            write: false
+      - name: STAR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 340
+        description: (read-write) Slave Transmit ACK
+        fields:
+          - name: TXNACK
+            description: Transmit NACK
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: STDR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 352
+        description: (read-write) Slave Transmit Data
+        fields:
+          - name: DATA
+            description: Transmit Data
+            index: 0
+            width: 8
+            read: false
+            write: true
+      - name: SRDR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 368
+        description: (read-write) Slave Receive Data
+        fields:
+          - name: SOF
+            description: Start Of Frame
+            index: 15
+            width: 1
+            read: true
+            write: false
+          - name: RXEMPTY
+            description: RX Empty
+            index: 14
+            width: 1
+            read: true
+            write: false
+          - name: DATA
+            description: Receive Data
+            index: 0
+            width: 8
+            read: true
+            write: false
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  LPI2C1_VERID_FEATURE:
+    enum:
+      ONLY:
+        description: Master only, with standard feature set
+        value: 2
+      AND_SLAVE:
+        description: Master and slave, with standard feature set
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LPI2C1_MCFGR1_PINCFG:
+    enum:
+      OPEN_DRAIN_2_PIN:
+        description: 2-pin open drain mode
+        value: 0
+      OUTPUT_2_PIN_ONLY:
+        description: 2-pin output only mode (ultra-fast mode)
+        value: 1
+      PUSH_PULL_2_PIN:
+        description: 2-pin push-pull mode
+        value: 2
+      PUSH_PULL_4_PIN:
+        description: 4-pin push-pull mode
+        value: 3
+      OPEN_DRAIN_2_PIN_W_LPI2C_SLAVE:
+        description: 2-pin open drain mode with separate LPI2C slave
+        value: 4
+      OUTPUT_2_PIN_ONLY_W_LPI2C_SLAVE:
+        description: 2-pin output only mode (ultra-fast mode) with separate LPI2C
+          slave
+        value: 5
+      PUSH_PULL_2_PIN_W_LPI2C_SLAVE:
+        description: 2-pin push-pull mode with separate LPI2C slave
+        value: 6
+      PUSH_PULL_4_PIN_W_LPI2C_SLAVE:
+        description: 4-pin push-pull mode (inverted outputs)
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPI2C1_MCFGR1_MATCFG:
+    enum:
+      DISABLED:
+        description: Match is disabled
+        value: 0
+      FIRST_DATA_WORD_EQUALS_MATCH0_OR_MATCH1:
+        description: Match is enabled (1st data word equals MDMR[MATCH0] OR MDMR[MATCH1])
+        value: 2
+      ANY_DATA_WORD_EQUALS_MATCH0_OR_MATCH1:
+        description: Match is enabled (any data word equals MDMR[MATCH0] OR MDMR[MATCH1])
+        value: 3
+      FIRST_DATA_WORD_MATCH0_AND_SECOND_DATA_WORD_MATCH1:
+        description: Match is enabled (1st data word equals MDMR[MATCH0] AND 2nd data
+          word equals MDMR[MATCH1)
+        value: 4
+      ANY_DATA_WORD_MATCH0_NEXT_DATA_WORD_MATCH1:
+        description: Match is enabled (any data word equals MDMR[MATCH0] AND next
+          data word equals MDMR[MATCH1)
+        value: 5
+      FIRST_DATA_WORD_AND_MATCH1_EQUALS_MATCH0_AND__cont:
+        description: Match is enabled (1st data word AND MDMR[MATCH1] equals MDMR[MATCH0]
+          AND MDMR[MATCH1])
+        value: 6
+      ANY_DATA_WORD_AND_MATCH1_EQUALS_MATCH0_AND_MATCH1:
+        description: Match is enabled (any data word AND MDMR[MATCH1] equals MDMR[MATCH0]
+          AND MDMR[MATCH1])
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPI2C1_MCFGR1_PRESCALE:
+    enum:
+      _1:
+        description: Divide by 1
+        value: 0
+      _2:
+        description: Divide by 2
+        value: 1
+      _4:
+        description: Divide by 4
+        value: 2
+      _8:
+        description: Divide by 8
+        value: 3
+      _16:
+        description: Divide by 16
+        value: 4
+      _32:
+        description: Divide by 32
+        value: 5
+      _64:
+        description: Divide by 64
+        value: 6
+      _128:
+        description: Divide by 128
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPI2C1_MTDR_CMD:
+    enum:
+      TRANSMIT_DATA_7_THROUGH_0:
+        description: Transmit DATA[7:0]
+        value: 0
+      RECEIVE_DATA_7_THROUGH_0_PLUS_ONE:
+        description: Receive (DATA[7:0] + 1) bytes
+        value: 1
+      GENERATE_STOP_CONDITION:
+        description: Generate STOP condition
+        value: 2
+      RECEIVE_AND_DISCARD_DATA_7_THROUGH_0_PLUS_ONE:
+        description: Receive and discard (DATA[7:0] + 1) bytes
+        value: 3
+      GENERATE_START_AND_TRANSMIT_ADDRESS_IN_DATA_7_cont:
+        description: Generate (repeated) START and transmit address in DATA[7:0]
+        value: 4
+      GENERATE_START_AND_TRANSMIT_ADDRESS_IN_DATA_7_cont_x:
+        description: Generate (repeated) START and transmit address in DATA[7:0].
+          This transfer expects a NACK to be returned.
+        value: 5
+      GENERATE_START_AND_TRANSMIT_ADDRESS_IN_DATA_7_cont_x_x:
+        description: Generate (repeated) START and transmit address in DATA[7:0] using
+          high speed mode
+        value: 6
+      GENERATE_START_AND_TRANSMIT_ADDRESS_IN_DATA_7_cont_x_x_x:
+        description: Generate (repeated) START and transmit address in DATA[7:0] using
+          high speed mode. This transfer expects a NACK to be returned.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPI2C1_SCFGR1_ADDRCFG:
+    enum:
+      ADDRESS_MATCH0_7_BIT:
+        description: Address match 0 (7-bit)
+        value: 0
+      ADDRESS_MATCH0_10_BIT:
+        description: Address match 0 (10-bit)
+        value: 1
+      ADDRESS_MATCH0_7_BIT_OR_ADDRESS_MATCH1_7_BIT:
+        description: Address match 0 (7-bit) or Address match 1 (7-bit)
+        value: 2
+      ADDRESS_MATCH0_10_BIT_OR_ADDRESS_MATCH1_10_BIT:
+        description: Address match 0 (10-bit) or Address match 1 (10-bit)
+        value: 3
+      ADDRESS_MATCH0_7_BIT_OR_ADDRESS_MATCH1_10_BIT:
+        description: Address match 0 (7-bit) or Address match 1 (10-bit)
+        value: 4
+      ADDRESS_MATCH0_10_BIT_OR_ADDRESS_MATCH1_7_BIT:
+        description: Address match 0 (10-bit) or Address match 1 (7-bit)
+        value: 5
+      FROM_ADDRESS_MATCH0_7_BIT_TO_ADDRESS_MATCH1_7_BIT:
+        description: From Address match 0 (7-bit) to Address match 1 (7-bit)
+        value: 6
+      FROM_ADDRESS_MATCH0_10_BIT_TO_ADDRESS_MATCH1__cont:
+        description: From Address match 0 (10-bit) to Address match 1 (10-bit)
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

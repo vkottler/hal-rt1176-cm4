@@ -1,0 +1,77 @@
+---
+structs:
+  mmcau:
+    description: CAU
+    instances:
+      - name: MMCAU
+        address: '0xE0081000'
+    fields:
+      - name: CASR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Status Register
+        fields:
+          - name: VER
+            description: CAU Version
+            index: 28
+            width: 4
+            read: true
+            write: false
+            type: MMCAU_CASR_VER
+          - name: DPE
+            description: DES Parity Error
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: IC
+            description: Illegal Command
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CAA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Accumulator
+        fields:
+          - name: ACC
+            description: Accumulator
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: CA
+        type: uint32_t
+        expected_size: 36
+        expected_offset: 8
+        array_length: 9
+        description: (read-write) General Purpose Register
+        fields:
+          - name: CAn
+            description: General Purpose Registers
+            index: 0
+            width: 32
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  MMCAU_CASR_VER:
+    enum:
+      _1:
+        description: Initial CAU version.
+        value: 1
+      _2:
+        description: Second version, added support for SHA-256 algorithm (This is
+          the value on this device).
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

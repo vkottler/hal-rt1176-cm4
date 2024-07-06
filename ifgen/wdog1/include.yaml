@@ -1,0 +1,208 @@
+---
+structs:
+  wdog1:
+    description: WDOG
+    instances:
+      - name: WDOG1
+        address: '0x40030000'
+      - name: WDOG2
+        address: '0x40034000'
+    fields:
+      - name: WCR
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 0
+        description: (read-write) Watchdog Control Register
+        fields:
+          - name: WT
+            description: WT
+            index: 8
+            width: 8
+            read: true
+            write: true
+            type: WDOG1_WCR_WT
+          - name: WDW
+            description: WDW
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: SRE
+            description: Software Reset Extension, an optional way to generate software
+              reset
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: WDA
+            description: WDA
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: SRS
+            description: SRS
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: WDT
+            description: WDT
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: WDE
+            description: WDE
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: WDBG
+            description: WDBG
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: WDZST
+            description: WDZST
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: WSR
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 2
+        description: (read-write) Watchdog Service Register
+        fields:
+          - name: WSR
+            description: WSR
+            index: 0
+            width: 16
+            read: true
+            write: true
+            type: WDOG1_WSR_WSR
+      - name: WRSR
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 4
+        description: (read-write) Watchdog Reset Status Register
+        fields:
+          - name: POR
+            description: POR
+            index: 4
+            width: 1
+            read: true
+            write: false
+          - name: TOUT
+            description: TOUT
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: SFTW
+            description: SFTW
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: WICR
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 6
+        description: (read-write) Watchdog Interrupt Control Register
+        fields:
+          - name: WIE
+            description: WIE
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: WTIS
+            description: WTIS
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: WICT
+            description: WICT
+            index: 0
+            width: 8
+            read: true
+            write: true
+            type: WDOG1_WICR_WICT
+      - name: WMCR
+        type: uint16_t
+        expected_size: 2
+        expected_offset: 8
+        description: (read-write) Watchdog Miscellaneous Control Register
+        fields:
+          - name: PDE
+            description: PDE
+            index: 0
+            width: 1
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  WDOG1_WCR_WT:
+    enum:
+      _0:
+        description: '- 0.5 Seconds (Default).'
+        value: 0
+      _1:
+        description: '- 1.0 Seconds.'
+        value: 1
+      _2:
+        description: '- 1.5 Seconds.'
+        value: 2
+      _3:
+        description: '- 2.0 Seconds.'
+        value: 3
+      _255:
+        description: '- 128 Seconds.'
+        value: 255
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  WDOG1_WSR_WSR:
+    enum:
+      _21845:
+        description: Write to the Watchdog Service Register (WDOG_WSR).
+        value: 21845
+      _43690:
+        description: Write to the Watchdog Service Register (WDOG_WSR).
+        value: 43690
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  WDOG1_WICR_WICT:
+    enum:
+      _0:
+        description: WICT[7:0] = Time duration between interrupt and time-out is 0
+          seconds.
+        value: 0
+      _1:
+        description: WICT[7:0] = Time duration between interrupt and time-out is 0.5
+          seconds.
+        value: 1
+      _4:
+        description: WICT[7:0] = Time duration between interrupt and time-out is 2
+          seconds (Default).
+        value: 4
+      _255:
+        description: WICT[7:0] = Time duration between interrupt and time-out is 127.5
+          seconds.
+        value: 255
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

@@ -1,0 +1,268 @@
+---
+structs:
+  rdc:
+    description: RDC
+    instances:
+      - name: RDC
+        address: '0x40C78000'
+    fields:
+      - name: VIR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Version Information
+        fields:
+          - name: NRGN
+            description: Number of Memory Regions
+            index: 20
+            width: 8
+            read: true
+            write: false
+          - name: NPER
+            description: Number of Peripherals
+            index: 12
+            width: 8
+            read: true
+            write: false
+          - name: NMSTR
+            description: Number of Masters
+            index: 4
+            width: 8
+            read: true
+            write: false
+          - name: NDID
+            description: Number of Domains
+            index: 0
+            width: 4
+            read: true
+            write: false
+      - name: STAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) Status
+        fields:
+          - name: PDS
+            description: Power Domain Status
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: DID
+            description: Domain ID
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: INTCTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) Interrupt and Control
+        fields:
+          - name: RCI_EN
+            description: Restoration Complete Interrupt
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: INTSTAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) Interrupt Status
+        fields:
+          - name: INT
+            description: Interrupt Status
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: MDA
+        type: uint32_t
+        expected_size: 48
+        expected_offset: 512
+        array_length: 12
+        description: (read-write) Master Domain Assignment
+        fields:
+          - name: LCK
+            description: Assignment Lock
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: DID
+            description: Domain ID
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: RDC_MDA_DID
+      - name: PDAP
+        type: uint32_t
+        expected_size: 512
+        expected_offset: 1024
+        array_length: 128
+        description: (read-write) Peripheral Domain Access Permissions
+        fields:
+          - name: LCK
+            description: Peripheral Permissions Lock
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: SREQ
+            description: Semaphore Required
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: D1R
+            description: Domain 1 Read Access
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: D1W
+            description: Domain 1 Write Access
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: D0R
+            description: Domain 0 Read Access
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: D0W
+            description: Domain 0 Write Access
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: MRSA
+        type: uint32_t
+        expected_size: 236
+        expected_offset: 2048
+        array_length: 59
+        description: (read-write) Memory Region Start Address
+        fields:
+          - name: SADR
+            description: Start address for memory region
+            index: 7
+            width: 25
+            read: true
+            write: true
+      - name: MREA
+        type: uint32_t
+        expected_size: 236
+        expected_offset: 2052
+        array_length: 59
+        description: (read-write) Memory Region End Address
+        fields:
+          - name: EADR
+            description: Upper bound for memory region
+            index: 7
+            width: 25
+            read: true
+            write: true
+      - name: MRC
+        type: uint32_t
+        expected_size: 236
+        expected_offset: 2056
+        array_length: 59
+        description: (read-write) Memory Region Control
+        fields:
+          - name: LCK
+            description: Region Lock
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: ENA
+            description: Region Enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: D1R
+            description: Domain 1 Read Access to Region
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: D1W
+            description: Domain 1 Write Access to Region
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: D0R
+            description: Domain 0 Read Access to Region
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: D0W
+            description: Domain 0 Write Access to Region
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: MRVS
+        type: uint32_t
+        expected_size: 236
+        expected_offset: 2060
+        array_length: 59
+        description: (read-write) Memory Region Violation Status
+        fields:
+          - name: VADR
+            description: Violating Address
+            index: 5
+            width: 27
+            read: true
+            write: false
+          - name: AD
+            description: Access Denied
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: VDID
+            description: Violating Domain ID
+            index: 0
+            width: 2
+            read: true
+            write: false
+            type: RDC_MRVS_VDID
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  RDC_MDA_DID:
+    enum:
+      _0:
+        description: Master assigned to Processing Domain 0
+        value: 0
+      _1:
+        description: Master assigned to Processing Domain 1
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  RDC_MRVS_VDID:
+    enum:
+      _0:
+        description: Processing Domain 0
+        value: 0
+      _1:
+        description: Processing Domain 1
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

@@ -1,0 +1,874 @@
+---
+structs:
+  FUSEn_instance:
+    description: no description available
+    fields:
+      - name: FUSE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Value of fuse word index
+        fields:
+          - name: BITS
+            description: Reflects value of the fuse word
+            index: 0
+            width: 32
+            read: true
+            write: false
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+  ocotp:
+    description: no description available
+    instances:
+      - name: OCOTP
+        address: '0x40CAC000'
+    fields:
+      - name: CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) OTP Controller Control and Status Register
+        fields:
+          - name: WR_UNLOCK
+            description: Write unlock
+            index: 16
+            width: 16
+            read: true
+            write: true
+            type: OCOTP_CTRL_WR_UNLOCK
+          - name: WORDLOCK
+            description: Lock fuse word
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: RELOAD_SHADOWS
+            description: Reload Shadow Registers
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ERROR
+            description: Locked Region Access Error
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: BUSY
+            description: OTP controller status bit
+            index: 10
+            width: 1
+            read: true
+            write: false
+          - name: ADDR
+            description: OTP write and read access address register
+            index: 0
+            width: 10
+            read: true
+            write: true
+            type: OCOTP_CTRL_ADDR
+      - name: CTRL_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) OTP Controller Control and Status Register
+        fields:
+          - name: WR_UNLOCK
+            description: Write unlock
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: WORDLOCK
+            description: Lock fuse word
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: RELOAD_SHADOWS
+            description: Reload Shadow Registers
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ERROR
+            description: Locked Region Access Error
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: BUSY
+            description: OTP controller status bit
+            index: 10
+            width: 1
+            read: true
+            write: false
+          - name: ADDR
+            description: OTP write and read access address register
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: CTRL_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) OTP Controller Control and Status Register
+        fields:
+          - name: WR_UNLOCK
+            description: Write unlock
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: WORDLOCK
+            description: Lock fuse word
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: RELOAD_SHADOWS
+            description: Reload Shadow Registers
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ERROR
+            description: Locked Region Access Error
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: BUSY
+            description: OTP controller status bit
+            index: 10
+            width: 1
+            read: true
+            write: false
+          - name: ADDR
+            description: OTP write and read access address register
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: CTRL_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) OTP Controller Control and Status Register
+        fields:
+          - name: WR_UNLOCK
+            description: Write unlock
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: WORDLOCK
+            description: Lock fuse word
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: RELOAD_SHADOWS
+            description: Reload Shadow Registers
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ERROR
+            description: Locked Region Access Error
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: BUSY
+            description: OTP controller status bit
+            index: 10
+            width: 1
+            read: true
+            write: false
+          - name: ADDR
+            description: OTP write and read access address register
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: PDN
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) OTP Controller PDN Register
+        fields:
+          - name: PDN
+            description: PDN value
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DATA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) OTP Controller Write Data Register
+        fields:
+          - name: DATA
+            description: Data
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: READ_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) OTP Controller Read Control Register
+        fields:
+          - name: READ_FUSE_ERROR_INTR_ENA
+            description: Enable read-error interrupt
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: READ_FUSE_DONE_INTR_ENA
+            description: Enable read-done interrupt
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: READ_FUSE_CNTR
+            description: Number of words to read.
+            index: 1
+            width: 2
+            read: true
+            write: true
+            type: OCOTP_READ_CTRL_READ_FUSE_CNTR
+          - name: READ_FUSE
+            description: Read Fuse
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: OUT_STATUS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 144
+        description: (read-write) 8K OTP Memory STATUS Register
+        fields:
+          - name: DED3
+            description: Double error detect
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: DED2
+            description: Double error detect
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: DED1
+            description: Double error detect
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: DED0
+            description: Double error detect
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: READ_ERROR_INTR
+            description: Fuse read error
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: READ_DONE_INTR
+            description: Read fuse done
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: CALIBRATED
+            description: Calibrated status
+            index: 21
+            width: 1
+            read: true
+            write: false
+          - name: DED_RELOAD
+            description: Indicates double error detection occured on reload
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: SEC_RELOAD
+            description: Indicates single error correction occured on reload
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: FLAGSTATE
+            description: Flag state
+            index: 15
+            width: 4
+            read: true
+            write: false
+          - name: PWOK
+            description: Power OK
+            index: 14
+            width: 1
+            read: true
+            write: false
+          - name: ACK
+            description: Acknowledge
+            index: 13
+            width: 1
+            read: true
+            write: false
+          - name: PROGFAIL
+            description: Programming failed
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: LOCKED
+            description: Word Locked
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: DED
+            description: Double error detect
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: SEC
+            description: Single Error Correct
+            index: 9
+            width: 1
+            read: true
+            write: true
+      - name: OUT_STATUS_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 148
+        description: (read-write) 8K OTP Memory STATUS Register
+        fields:
+          - name: DED3
+            description: Double error detect
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: DED2
+            description: Double error detect
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: DED1
+            description: Double error detect
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: DED0
+            description: Double error detect
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: READ_ERROR_INTR
+            description: Fuse read error
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: READ_DONE_INTR
+            description: Read fuse done
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: CALIBRATED
+            description: Calibrated status
+            index: 21
+            width: 1
+            read: true
+            write: false
+          - name: DED_RELOAD
+            description: Indicates double error detection occured on reload
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: SEC_RELOAD
+            description: Indicates single error correction occured on reload
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: FLAGSTATE
+            description: Flag state
+            index: 15
+            width: 4
+            read: true
+            write: false
+          - name: PWOK
+            description: Power OK
+            index: 14
+            width: 1
+            read: true
+            write: false
+          - name: ACK
+            description: Acknowledge
+            index: 13
+            width: 1
+            read: true
+            write: false
+          - name: PROGFAIL
+            description: Programming failed
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: LOCKED
+            description: Word Locked
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: DED
+            description: Double error detect
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: SEC
+            description: Single Error Correct
+            index: 9
+            width: 1
+            read: true
+            write: true
+      - name: OUT_STATUS_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 152
+        description: (read-write) 8K OTP Memory STATUS Register
+        fields:
+          - name: DED3
+            description: Double error detect
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: DED2
+            description: Double error detect
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: DED1
+            description: Double error detect
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: DED0
+            description: Double error detect
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: READ_ERROR_INTR
+            description: Fuse read error
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: READ_DONE_INTR
+            description: Read fuse done
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: CALIBRATED
+            description: Calibrated status
+            index: 21
+            width: 1
+            read: true
+            write: false
+          - name: DED_RELOAD
+            description: Indicates double error detection occured on reload
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: SEC_RELOAD
+            description: Indicates single error correction occured on reload
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: FLAGSTATE
+            description: Flag state
+            index: 15
+            width: 4
+            read: true
+            write: false
+          - name: PWOK
+            description: Power OK
+            index: 14
+            width: 1
+            read: true
+            write: false
+          - name: ACK
+            description: Acknowledge
+            index: 13
+            width: 1
+            read: true
+            write: false
+          - name: PROGFAIL
+            description: Programming failed
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: LOCKED
+            description: Word Locked
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: DED
+            description: Double error detect
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: SEC
+            description: Single Error Correct
+            index: 9
+            width: 1
+            read: true
+            write: true
+      - name: OUT_STATUS_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 156
+        description: (read-write) 8K OTP Memory STATUS Register
+        fields:
+          - name: DED3
+            description: Double error detect
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: DED2
+            description: Double error detect
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: DED1
+            description: Double error detect
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: DED0
+            description: Double error detect
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: READ_ERROR_INTR
+            description: Fuse read error
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: READ_DONE_INTR
+            description: Read fuse done
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: CALIBRATED
+            description: Calibrated status
+            index: 21
+            width: 1
+            read: true
+            write: false
+          - name: DED_RELOAD
+            description: Indicates double error detection occured on reload
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: SEC_RELOAD
+            description: Indicates single error correction occured on reload
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: FLAGSTATE
+            description: Flag state
+            index: 15
+            width: 4
+            read: true
+            write: false
+          - name: PWOK
+            description: Power OK
+            index: 14
+            width: 1
+            read: true
+            write: false
+          - name: ACK
+            description: Acknowledge
+            index: 13
+            width: 1
+            read: true
+            write: false
+          - name: PROGFAIL
+            description: Programming failed
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: LOCKED
+            description: Word Locked
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: DED
+            description: Double error detect
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: SEC
+            description: Single Error Correct
+            index: 9
+            width: 1
+            read: true
+            write: true
+      - name: VERSION
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 176
+        description: (read-write) OTP Controller Version Register
+        fields:
+          - name: MAJOR
+            description: Major RTL Version
+            index: 24
+            width: 8
+            read: true
+            write: false
+          - name: MINOR
+            description: Minor RTL Version
+            index: 16
+            width: 8
+            read: true
+            write: false
+          - name: STEP
+            description: RTL Version Stepping
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: READ_FUSE_DATA0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 256
+        description: (read-write) OTP Controller Read Data 0 Register
+        fields:
+          - name: DATA
+            description: Data
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: READ_FUSE_DATA1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 272
+        description: (read-write) OTP Controller Read Data 1 Register
+        fields:
+          - name: DATA
+            description: Data
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: READ_FUSE_DATA2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 288
+        description: (read-write) OTP Controller Read Data 2 Register
+        fields:
+          - name: DATA
+            description: Data
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: READ_FUSE_DATA3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 304
+        description: (read-write) OTP Controller Read Data 3 Register
+        fields:
+          - name: DATA
+            description: Data
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: SW_LOCK
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 320
+        description: (read-write) SW_LOCK Register
+        fields:
+          - name: SW_LOCK
+            description: This register contains lock information, which has the same
+              function as the RLOCK fuse words (supplementary fuse words 8 (0x880)
+              and 9 (0x890)) in fuse memory
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: BIT_LOCK
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 336
+        description: (read-write) BIT_LOCK Register
+        fields:
+          - name: BIT_LOCK
+            description: Each bit controls the corresponding bit in supplementary
+              fuse word 13 and its shadow register
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: LOCKED0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1536
+        description: (read-write) OTP Controller Program Locked Status 0 Register
+        fields:
+          - name: LOCKED
+            description: Stores program locked status for fuse words 0-15.
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: LOCKED1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1552
+        description: (read-write) OTP Controller Program Locked Status 1 Register
+        fields:
+          - name: LOCKED
+            description: Stores program locked status for fuse words 16-47
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: LOCKED2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1568
+        description: (read-write) OTP Controller Program Locked Status 2 Register
+        fields:
+          - name: LOCKED
+            description: Stores program locked status for fuse words 48-79
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: LOCKED3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1584
+        description: (read-write) OTP Controller Program Locked Status 3 Register
+        fields:
+          - name: LOCKED
+            description: Stores program locked status for fuse words 80-111
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: LOCKED4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1600
+        description: (read-write) OTP Controller Program Locked Status 4 Register
+        fields:
+          - name: LOCKED
+            description: Stores program locked status for fuse words 112-143
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: FUSEn
+        type: FUSEn_instance
+        array_length: 144
+        description: no description available
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  OCOTP_CTRL_WR_UNLOCK:
+    enum:
+      locked:
+        description: OTP write access is locked.
+        value: 0
+      unlocked:
+        description: OTP write access is unlocked.
+        value: 15991
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  OCOTP_CTRL_ADDR:
+    enum:
+      supp_word:
+        description: Address of one of the 16 supplementary fuse words in OTP memory.
+        value: 9
+      user_fuse_word:
+        description: Address of one of the 256 user fuse words in OTP memory.
+        value: 271
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  OCOTP_READ_CTRL_READ_FUSE_CNTR:
+    enum:
+      ONE_WORD:
+        description: 1 word
+        value: 0
+      TWO_WORDS:
+        description: 2 words
+        value: 1
+      THREE_WORDS:
+        description: 3 words
+        value: 2
+      FOUR_WORDS:
+        description: 4 words
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

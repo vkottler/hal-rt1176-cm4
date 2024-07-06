@@ -1,0 +1,1156 @@
+---
+structs:
+  key_manager__puf:
+    description: PUF
+    instances:
+      - name: KEY_MANAGER__PUF
+        address: '0x40C82000'
+    fields:
+      - name: CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) PUF Control Register
+        fields:
+          - name: GETKEY
+            description: Begin Get Key operation
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: SETKEY
+            description: Begin Set User Key operation
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: GENERATEKEY
+            description: Begin Set Intrinsic Key operation
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: START
+            description: Begin Start operation
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ENROLL
+            description: Begin Enroll operation
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ZEROIZE
+            description: Begin Zeroize operation for PUF and go to Error state
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: KEYINDEX
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) PUF Key Index Register
+        fields:
+          - name: KEYIDX
+            description: PUF Key Index
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: KEY_MANAGER__PUF_KEYINDEX_KEYIDX
+      - name: KEYSIZE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) PUF Key Size Register
+        fields:
+          - name: KEYSIZE
+            description: PUF Key Size
+            index: 0
+            width: 6
+            read: true
+            write: true
+            type: KEY_MANAGER__PUF_KEYSIZE_KEYSIZE
+      - name: STAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) PUF Status Register
+        fields:
+          - name: CODEOUTAVAIL
+            description: CO_or
+            index: 7
+            width: 1
+            read: true
+            write: false
+          - name: CODEINREQ
+            description: CI_ir
+            index: 6
+            width: 1
+            read: true
+            write: false
+          - name: KEYOUTAVAIL
+            description: KO_or
+            index: 5
+            width: 1
+            read: true
+            write: false
+          - name: KEYINREQ
+            description: KI_ir
+            index: 4
+            width: 1
+            read: true
+            write: false
+          - name: ERROR
+            description: puf_error
+            index: 2
+            width: 1
+            read: true
+            write: false
+          - name: SUCCESS
+            description: puf_ok
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: BUSY
+            description: puf_busy
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: ALLOW
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) PUF Allow Register
+        fields:
+          - name: ALLOWGETKEY
+            description: Allow Get Key operation
+            index: 3
+            width: 1
+            read: true
+            write: false
+          - name: ALLOWSETKEY
+            description: Allow Set Key operations
+            index: 2
+            width: 1
+            read: true
+            write: false
+          - name: ALLOWSTART
+            description: Allow Start operation
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: ALLOWENROLL
+            description: Allow Enroll operation
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: KEYINPUT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 64
+        description: (read-write) PUF Key Input Register
+        fields:
+          - name: KEYIN
+            description: Key input data
+            index: 0
+            width: 32
+            read: false
+            write: true
+      - name: CODEINPUT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 68
+        description: (read-write) PUF Code Input Register
+        fields:
+          - name: CODEIN
+            description: AC/KC input data
+            index: 0
+            width: 32
+            read: false
+            write: true
+      - name: CODEOUTPUT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 72
+        description: (read-write) PUF Code Output Register
+        fields:
+          - name: CODEOUT
+            description: AC/KC output data
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: KEYOUTINDEX
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 96
+        description: (read-write) PUF Key Output Index Register
+        fields:
+          - name: KEYOUTIDX
+            description: Output Key index
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: KEYOUTPUT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 100
+        description: (read-write) PUF Key Output Register
+        fields:
+          - name: KEYOUT
+            description: Key output data from a Get Key operation
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: IFSTAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 220
+        description: (read-write) PUF Interface Status Register
+        fields:
+          - name: ERROR
+            description: APB error has occurred
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: VERSION
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 252
+        description: (read-write) PUF Version Register
+        fields:
+          - name: VERSION
+            description: Version of PUF
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: INTEN
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 256
+        description: (read-write) PUF Interrupt Enable
+        fields:
+          - name: CODEOUTAVAILEN
+            description: PUF Code Output Register Interrupt Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: CODEINREQEN
+            description: PUF Code Input Register Interrupt Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: KEYOUTAVAILEN
+            description: PUF Key Output Register Interrupt Enable
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: KEYINREQEN
+            description: PUF Key Input Register Interrupt Enable
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: ERROREN
+            description: PUF Error Interrupt Enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: SUCCESSEN
+            description: PUF_OK Interrupt Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: READYEN
+            description: PUF Ready Interrupt Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: INTSTAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 260
+        description: (read-write) PUF Interrupt Status
+        fields:
+          - name: CODEOUTAVAIL
+            description: PUF Code Output Register Interrupt Status
+            index: 7
+            width: 1
+            read: true
+            write: false
+          - name: CODEINREQ
+            description: PUF Code Input Register Interrupt Status
+            index: 6
+            width: 1
+            read: true
+            write: false
+          - name: KEYOUTAVAIL
+            description: PUF Key Output Register Interrupt Status
+            index: 5
+            width: 1
+            read: true
+            write: false
+          - name: KEYINREQ
+            description: PUF Key Input Register Interrupt Status
+            index: 4
+            width: 1
+            read: true
+            write: false
+          - name: ERROR
+            description: PUF_ERROR Interrupt Status
+            index: 2
+            width: 1
+            read: true
+            write: false
+          - name: SUCCESS
+            description: PUF_OK Interrupt Status
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: READY
+            description: PUF_FINISH Interrupt Status
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PWRCTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 264
+        description: (read-write) PUF Power Control Of RAM
+        fields:
+          - name: RAM_PSW
+            description: PUF RAM power switches
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: RAM_INITN
+            description: RAM initialization
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: CK_DIS
+            description: Clock disable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: RAM_ON
+            description: PUF RAM on
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CFG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 268
+        description: (read-write) PUF Configuration Register
+        fields:
+          - name: PUF_BLOCK_ENROLL
+            description: PUF Block Enroll Disable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: PUF_BLOCK_SET_KEY
+            description: PUF Block Set Key Disable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: KEYLOCK
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 512
+        description: (read-write) PUF Key Manager Lock
+        fields:
+          - name: LOCK1
+            description: Lock Block 1
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: KEY_MANAGER__PUF_KEYLOCK_LOCK1
+          - name: LOCK0
+            description: Lock Block 0
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: KEY_MANAGER__PUF_KEYLOCK_LOCK0
+      - name: KEYENABLE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 516
+        description: (read-write) PUF Key Manager Enable
+        fields:
+          - name: ENABLE1
+            description: Enable Block 1
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: KEY_MANAGER__PUF_KEYENABLE_ENABLE1
+          - name: ENABLE0
+            description: Enable Block 0
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: KEY_MANAGER__PUF_KEYENABLE_ENABLE0
+      - name: KEYRESET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 520
+        description: (read-write) PUF Key Manager Reset
+        fields:
+          - name: RESET1
+            description: Reset Block 1
+            index: 2
+            width: 2
+            read: true
+            write: true
+            type: KEY_MANAGER__PUF_KEYRESET_RESET1
+          - name: RESET0
+            description: Reset Block 0
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: KEY_MANAGER__PUF_KEYRESET_RESET0
+      - name: IDXBLK
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 524
+        description: (read-write) PUF Index Block Key Output
+        fields:
+          - name: IDXBLK15
+            description: idxblk15
+            index: 30
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK14
+            description: idxblk14
+            index: 28
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK13
+            description: idxblk13
+            index: 26
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK12
+            description: idxblk12
+            index: 24
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK11
+            description: idxblk11
+            index: 22
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK10
+            description: idxblk10
+            index: 20
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK9
+            description: idxblk9
+            index: 18
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK8
+            description: idxblk8
+            index: 16
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK7
+            description: idxblk7
+            index: 14
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK6
+            description: idxblk6
+            index: 12
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK5
+            description: idxblk5
+            index: 10
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK4
+            description: idxblk4
+            index: 8
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK3
+            description: idxblk3
+            index: 6
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK2
+            description: idxblk2
+            index: 4
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK1
+            description: idxblk1
+            index: 2
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK0
+            description: idxblk0
+            index: 0
+            width: 2
+            read: true
+            write: true
+      - name: IDXBLK_DP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 528
+        description: (read-write) PUF Index Block Key Output
+        fields:
+          - name: IDXBLK_DP15
+            description: idxblk_dp15
+            index: 30
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK_DP14
+            description: idxblk_dp14
+            index: 28
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK_DP13
+            description: idxblk_dp13
+            index: 26
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK_DP12
+            description: idxblk_dp12
+            index: 24
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK_DP11
+            description: idxblk_dp11
+            index: 22
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK_DP10
+            description: idxblk_dp10
+            index: 20
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK_DP9
+            description: idxblk_dp9
+            index: 18
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK_DP8
+            description: idxblk_dp8
+            index: 16
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK_DP7
+            description: idxblk_dp7
+            index: 14
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK_DP6
+            description: idxblk_dp6
+            index: 12
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK_DP5
+            description: idxblk_dp5
+            index: 10
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK_DP4
+            description: idxblk_dp4
+            index: 8
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK_DP3
+            description: idxblk_dp3
+            index: 6
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK_DP2
+            description: idxblk_dp2
+            index: 4
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK_DP1
+            description: idxblk_dp1
+            index: 2
+            width: 2
+            read: true
+            write: true
+          - name: IDXBLK_DP0
+            description: idxblk_dp0
+            index: 0
+            width: 2
+            read: true
+            write: true
+      - name: KEYMASK0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 532
+        description: (read-write) PUF Key Block 0 Mask Enable
+        fields:
+          - name: KEYMASK
+            description: KEYMASK0
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: KEYMASK1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 536
+        description: (read-write) PUF Key Block 1 Mask Enable
+        fields:
+          - name: KEYMASK
+            description: KEYMASK1
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: IDXBLK_STATUS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 596
+        description: (read-write) PUF Index Block Setting Status Register
+        fields:
+          - name: IDXBLK_STATUS15
+            description: idxblk_status15
+            index: 30
+            width: 2
+            read: true
+            write: false
+          - name: IDXBLK_STATUS14
+            description: idxblk_status14
+            index: 28
+            width: 2
+            read: true
+            write: false
+          - name: IDXBLK_STATUS13
+            description: idxblk_status13
+            index: 26
+            width: 2
+            read: true
+            write: false
+          - name: IDXBLK_STATUS12
+            description: idxblk_status12
+            index: 24
+            width: 2
+            read: true
+            write: false
+          - name: IDXBLK_STATUS11
+            description: idxblk_status11
+            index: 22
+            width: 2
+            read: true
+            write: false
+          - name: IDXBLK_STATUS10
+            description: idxblk_status10
+            index: 20
+            width: 2
+            read: true
+            write: false
+          - name: IDXBLK_STATUS9
+            description: idxblk_status9
+            index: 18
+            width: 2
+            read: true
+            write: false
+          - name: IDXBLK_STATUS8
+            description: idxblk_status8
+            index: 16
+            width: 2
+            read: true
+            write: false
+          - name: IDXBLK_STATUS7
+            description: idxblk_status7
+            index: 14
+            width: 2
+            read: true
+            write: false
+          - name: IDXBLK_STATUS6
+            description: idxblk_status6
+            index: 12
+            width: 2
+            read: true
+            write: false
+          - name: IDXBLK_STATUS5
+            description: idxblk_status5
+            index: 10
+            width: 2
+            read: true
+            write: false
+          - name: IDXBLK_STATUS4
+            description: idxblk_status4
+            index: 8
+            width: 2
+            read: true
+            write: false
+          - name: IDXBLK_STATUS3
+            description: idxblk_status3
+            index: 6
+            width: 2
+            read: true
+            write: false
+          - name: IDXBLK_STATUS2
+            description: idxblk_status2
+            index: 4
+            width: 2
+            read: true
+            write: false
+          - name: IDXBLK_STATUS1
+            description: idxblk_status1
+            index: 2
+            width: 2
+            read: true
+            write: false
+          - name: IDXBLK_STATUS0
+            description: idxblk_status0
+            index: 0
+            width: 2
+            read: true
+            write: false
+      - name: IDXBLK_SHIFT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 600
+        description: (read-write) PUF Key Manager Shift Status
+        fields:
+          - name: IND_KEY1
+            description: Index of key space in block 1
+            index: 4
+            width: 4
+            read: true
+            write: false
+          - name: IND_KEY0
+            description: Index of key space in block 0
+            index: 0
+            width: 4
+            read: true
+            write: false
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  KEY_MANAGER__PUF_KEYINDEX_KEYIDX:
+    enum:
+      _0:
+        description: USE INDEX0
+        value: 0
+      _1:
+        description: USE INDEX1
+        value: 1
+      _2:
+        description: USE INDEX2
+        value: 2
+      _3:
+        description: USE INDEX3
+        value: 3
+      _4:
+        description: USE INDEX4
+        value: 4
+      _5:
+        description: USE INDEX5
+        value: 5
+      _6:
+        description: USE INDEX6
+        value: 6
+      _7:
+        description: USE INDEX7
+        value: 7
+      _8:
+        description: USE INDEX8
+        value: 8
+      _9:
+        description: USE INDEX9
+        value: 9
+      _10:
+        description: USE INDEX10
+        value: 10
+      _11:
+        description: USE INDEX11
+        value: 11
+      _12:
+        description: USE INDEX12
+        value: 12
+      _13:
+        description: USE INDEX13
+        value: 13
+      _14:
+        description: USE INDEX14
+        value: 14
+      _15:
+        description: USE INDEX15
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  KEY_MANAGER__PUF_KEYSIZE_KEYSIZE:
+    enum:
+      _64:
+        description: Key Size is 512 Bytes and KC Size is 532 Bytes
+        value: 0
+      _1:
+        description: Key Size is 8 Bytes and KC Size is 52 Bytes
+        value: 1
+      _2:
+        description: Key Size is 16 Bytes and KC Size is 52 Bytes
+        value: 2
+      _3:
+        description: Key Size is 24 Bytes and KC Size is 52 Bytes
+        value: 3
+      _4:
+        description: Key Size is 32 Bytes and KC Size is 52 Bytes
+        value: 4
+      _5:
+        description: Key Size is 40 Bytes and KC Size is 84 Bytes
+        value: 5
+      _6:
+        description: Key Size is 48 Bytes and KC Size is 84 Bytes
+        value: 6
+      _7:
+        description: Key Size is 56 Bytes and KC Size is 84 Bytes
+        value: 7
+      _8:
+        description: Key Size is 64 Bytes and KC Size is 84 Bytes
+        value: 8
+      _9:
+        description: Key Size is 72 Bytes and KC Size is 116 Bytes
+        value: 9
+      _10:
+        description: Key Size is 80 Bytes and KC Size is 116 Bytes
+        value: 10
+      _11:
+        description: Key Size is 88 Bytes and KC Size is 116 Bytes
+        value: 11
+      _12:
+        description: Key Size is 96 Bytes and KC Size is 116 Bytes
+        value: 12
+      _13:
+        description: Key Size is 104 Bytes and KC Size is 148 Bytes
+        value: 13
+      _14:
+        description: Key Size is 112 Bytes and KC Size is 148 Bytes
+        value: 14
+      _15:
+        description: Key Size is 120 Bytes and KC Size is 148 Bytes
+        value: 15
+      _16:
+        description: Key Size is 128 Bytes and KC Size is 148 Bytes
+        value: 16
+      _17:
+        description: Key Size is 136 Bytes and KC Size is 180 Bytes
+        value: 17
+      _18:
+        description: Key Size is 144 Bytes and KC Size is 180 Bytes
+        value: 18
+      _19:
+        description: Key Size is 152 Bytes and KC Size is 180 Bytes
+        value: 19
+      _20:
+        description: Key Size is 160 Bytes and KC Size is 180 Bytes
+        value: 20
+      _21:
+        description: Key Size is 168 Bytes and KC Size is 212 Bytes
+        value: 21
+      _22:
+        description: Key Size is 176 Bytes and KC Size is 212 Bytes
+        value: 22
+      _23:
+        description: Key Size is 184 Bytes and KC Size is 212 Bytes
+        value: 23
+      _24:
+        description: Key Size is 192 Bytes and KC Size is 212 Bytes
+        value: 24
+      _25:
+        description: Key Size is 200 Bytes and KC Size is 244 Bytes
+        value: 25
+      _26:
+        description: Key Size is 208 Bytes and KC Size is 244 Bytes
+        value: 26
+      _27:
+        description: Key Size is 216 Bytes and KC Size is 244 Bytes
+        value: 27
+      _28:
+        description: Key Size is 224 Bytes and KC Size is 244 Bytes
+        value: 28
+      _29:
+        description: Key Size is 232 Bytes and KC Size is 276 Bytes
+        value: 29
+      _30:
+        description: Key Size is 240 Bytes and KC Size is 276 Bytes
+        value: 30
+      _31:
+        description: Key Size is 248 Bytes and KC Size is 276 Bytes
+        value: 31
+      _32:
+        description: Key Size is 256 Bytes and KC Size is 276 Bytes
+        value: 32
+      _33:
+        description: Key Size is 264 Bytes and KC Size is 308 Bytes
+        value: 33
+      _34:
+        description: Key Size is 272 Bytes and KC Size is 308 Bytes
+        value: 34
+      _35:
+        description: Key Size is 280 Bytes and KC Size is 308 Bytes
+        value: 35
+      _36:
+        description: Key Size is 288 Bytes and KC Size is 308 Bytes
+        value: 36
+      _37:
+        description: Key Size is 296 Bytes and KC Size is 340 Bytes
+        value: 37
+      _38:
+        description: Key Size is 304 Bytes and KC Size is 340 Bytes
+        value: 38
+      _39:
+        description: Key Size is 312 Bytes and KC Size is 340 Bytes
+        value: 39
+      _40:
+        description: Key Size is 320 Bytes and KC Size is 340 Bytes
+        value: 40
+      _41:
+        description: Key Size is 328 Bytes and KC Size is 372 Bytes
+        value: 41
+      _42:
+        description: Key Size is 336 Bytes and KC Size is 372 Bytes
+        value: 42
+      _43:
+        description: Key Size is 344 Bytes and KC Size is 372 Bytes
+        value: 43
+      _44:
+        description: Key Size is 352 Bytes and KC Size is 372 Bytes
+        value: 44
+      _45:
+        description: Key Size is 360 Bytes and KC Size is 404 Bytes
+        value: 45
+      _46:
+        description: Key Size is 368 Bytes and KC Size is 404 Bytes
+        value: 46
+      _47:
+        description: Key Size is 376 Bytes and KC Size is 404 Bytes
+        value: 47
+      _48:
+        description: Key Size is 384 Bytes and KC Size is 404 Bytes
+        value: 48
+      _49:
+        description: Key Size is 392 Bytes and KC Size is 436 Bytes
+        value: 49
+      _50:
+        description: Key Size is 400 Bytes and KC Size is 436 Bytes
+        value: 50
+      _51:
+        description: Key Size is 408 Bytes and KC Size is 436 Bytes
+        value: 51
+      _52:
+        description: Key Size is 416 Bytes and KC Size is 436 Bytes
+        value: 52
+      _53:
+        description: Key Size is 424 Bytes and KC Size is 468 Bytes
+        value: 53
+      _54:
+        description: Key Size is 432 Bytes and KC Size is 468 Bytes
+        value: 54
+      _55:
+        description: Key Size is 440 Bytes and KC Size is 468 Bytes
+        value: 55
+      _56:
+        description: Key Size is 448 Bytes and KC Size is 468 Bytes
+        value: 56
+      _57:
+        description: Key Size is 456 Bytes and KC Size is 500 Bytes
+        value: 57
+      _58:
+        description: Key Size is 464 Bytes and KC Size is 500 Bytes
+        value: 58
+      _59:
+        description: Key Size is 472 Bytes and KC Size is 500 Bytes
+        value: 59
+      _60:
+        description: Key Size is 480 Bytes and KC Size is 500 Bytes
+        value: 60
+      _61:
+        description: Key Size is 488 Bytes and KC Size is 532 Bytes
+        value: 61
+      _62:
+        description: Key Size is 496 Bytes and KC Size is 532 Bytes
+        value: 62
+      _63:
+        description: Key Size is 504 Bytes and KC Size is 532 Bytes
+        value: 63
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  KEY_MANAGER__PUF_KEYLOCK_LOCK1:
+    enum:
+      LOCKED_00:
+        description: OTFAD Key block locked
+        value: 0
+      LOCKED_01:
+        description: OTFAD Key block locked
+        value: 1
+      UNLOCKED:
+        description: OTFAD Key block unlocked
+        value: 2
+      LOCKED_11:
+        description: OTFAD Key block locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  KEY_MANAGER__PUF_KEYLOCK_LOCK0:
+    enum:
+      LOCKED_00:
+        description: SNVS Key block locked
+        value: 0
+      LOCKED_01:
+        description: SNVS Key block locked
+        value: 1
+      UNLOCKED:
+        description: SNVS Key block unlocked
+        value: 2
+      LOCKED_11:
+        description: SNVS Key block locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  KEY_MANAGER__PUF_KEYENABLE_ENABLE1:
+    enum:
+      DISABLED_00:
+        description: Key block 1 disabled
+        value: 0
+      DISABLED_01:
+        description: Key block 1 disabled
+        value: 1
+      ENABLED:
+        description: Key block 1 enabled
+        value: 2
+      DISABLED_11:
+        description: Key block 1 disabled
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  KEY_MANAGER__PUF_KEYENABLE_ENABLE0:
+    enum:
+      DISABLED_00:
+        description: Key block 0 disabled
+        value: 0
+      DISABLED_01:
+        description: Key block 0 disabled
+        value: 1
+      ENABLED:
+        description: Key block 0 enabled
+        value: 2
+      DISABLED_11:
+        description: Key block 0 disabled
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  KEY_MANAGER__PUF_KEYRESET_RESET1:
+    enum:
+      NORESET_00:
+        description: Do not reset key block 1
+        value: 0
+      NORESET_01:
+        description: Do not reset key block 1
+        value: 1
+      RESET:
+        description: Reset key block 1
+        value: 2
+      NORESET_11:
+        description: Do not reset key block 1
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  KEY_MANAGER__PUF_KEYRESET_RESET0:
+    enum:
+      NORESET_00:
+        description: Do not reset key block 0
+        value: 0
+      NORESET_01:
+        description: Do not reset key block 0
+        value: 1
+      RESET:
+        description: Reset key block 0
+        value: 2
+      NORESET_11:
+        description: Do not reset key block 0
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

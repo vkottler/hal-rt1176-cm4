@@ -1,0 +1,1519 @@
+---
+structs:
+  gpc_cpu_mode_ctrl_0:
+    description: GPC_CPU
+    instances:
+      - name: GPC_CPU_MODE_CTRL_0
+        address: '0x40C00000'
+      - name: GPC_CPU_MODE_CTRL_1
+        address: '0x40C00800'
+    fields:
+      - name: CM_AUTHEN_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) CM Authentication Control
+        fields:
+          - name: LOCK_CFG
+            description: Configuration lock
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: LOCK_LIST
+            description: White list lock
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: WHITE_LIST
+            description: Domain ID white list
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: LOCK_SETTING
+            description: Lock NONSECURE and USER
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: NONSECURE
+            description: Allow non-secure mode access
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: USER
+            description: Allow user mode access
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CM_INT_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) CM Interrupt Control
+        fields:
+          - name: SP_REQ_NOT_ALLOWED_SOFT_INT
+            description: sp_req_not_allowed_for_soft interrupt status and clear register
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: SP_REQ_NOT_ALLOWED_WAKEUP_INT
+            description: sp_req_not_allowed_for_wakeup interrupt status and clear
+              register
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: SP_REQ_NOT_ALLOWED_SLEEP_INT
+            description: sp_req_not_allowed_for_sleep interrupt status and clear register
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: SP_REQ_NOT_ALLOWED_SOFT_INT_EN
+            description: sp_req_not_allowed_for_soft interrupt enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: SP_REQ_NOT_ALLOWED_WAKEUP_INT_EN
+            description: sp_req_not_allowed_for_wakeup interrupt enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SP_REQ_NOT_ALLOWED_SLEEP_INT_EN
+            description: sp_req_not_allowed_for_sleep interrupt enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CM_MISC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) Miscellaneous
+        fields:
+          - name: MASTER_CPU
+            description: Master CPU
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: SLEEP_HOLD_STAT
+            description: Status of cpu_sleep_hold_ack_b
+            index: 2
+            width: 1
+            read: true
+            write: false
+          - name: SLEEP_HOLD_EN
+            description: Allow cpu_sleep_hold_req assert during CPU low power status
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: NMI_STAT
+            description: Non-masked interrupt status
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: CM_MODE_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) CPU mode control
+        fields:
+          - name: WFE_EN
+            description: WFE assertion can be sleep event
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: CPU_MODE_TARGET
+            description: The CPU mode the CPU platform should transit to on next sleep
+              event
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: GPC_CPU_MODE_CTRL_0_CM_MODE_CTRL_CPU_MODE_TARGET
+      - name: CM_MODE_STAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) CM CPU mode Status
+        fields:
+          - name: CPU_MODE_PREVIOUS
+            description: Previous CPU mode
+            index: 2
+            width: 2
+            read: true
+            write: false
+            type: GPC_CPU_MODE_CTRL_0_CM_MODE_STAT_CPU_MODE_PREVIOUS
+          - name: CPU_MODE_CURRENT
+            description: Current CPU mode
+            index: 0
+            width: 2
+            read: true
+            write: false
+            type: GPC_CPU_MODE_CTRL_0_CM_MODE_STAT_CPU_MODE_CURRENT
+      - name: CM_IRQ_WAKEUP_MASK_0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 256
+        description: (read-write) CM IRQ0~31 wakeup mask
+        fields:
+          - name: IRQ_WAKEUP_MASK_0_31
+            description: '"1" means the IRQ cannot wakeup CPU platform'
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: CM_IRQ_WAKEUP_MASK_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 260
+        description: (read-write) CM IRQ32~63 wakeup mask
+        fields:
+          - name: IRQ_WAKEUP_MASK_32_63
+            description: '"1" means the IRQ cannot wakeup CPU platform'
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: CM_IRQ_WAKEUP_MASK_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 264
+        description: (read-write) CM IRQ64~95 wakeup mask
+        fields:
+          - name: IRQ_WAKEUP_MASK_64_95
+            description: '"1" means the IRQ cannot wakeup CPU platform'
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: CM_IRQ_WAKEUP_MASK_3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 268
+        description: (read-write) CM IRQ96~127 wakeup mask
+        fields:
+          - name: IRQ_WAKEUP_MASK_96_127
+            description: '"1" means the IRQ cannot wakeup CPU platform'
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: CM_IRQ_WAKEUP_MASK_4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 272
+        description: (read-write) CM IRQ128~159 wakeup mask
+        fields:
+          - name: IRQ_WAKEUP_MASK_128_159
+            description: '"1" means the IRQ cannot wakeup CPU platform'
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: CM_IRQ_WAKEUP_MASK_5
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 276
+        description: (read-write) CM IRQ160~191 wakeup mask
+        fields:
+          - name: IRQ_WAKEUP_MASK_160_191
+            description: '"1" means the IRQ cannot wakeup CPU platform'
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: CM_IRQ_WAKEUP_MASK_6
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 280
+        description: (read-write) CM IRQ192~223 wakeup mask
+        fields:
+          - name: IRQ_WAKEUP_MASK_192_223
+            description: '"1" means the IRQ cannot wakeup CPU platform'
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: CM_IRQ_WAKEUP_MASK_7
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 284
+        description: (read-write) CM IRQ224~255 wakeup mask
+        fields:
+          - name: IRQ_WAKEUP_MASK_224_255
+            description: '"1" means the IRQ cannot wakeup CPU platform'
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: CM_NON_IRQ_WAKEUP_MASK
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 320
+        description: (read-write) CM non-irq wakeup mask
+        fields:
+          - name: DEBUG_WAKEUP_MASK
+            description: '"1" means the debug_wakeup_request cannot wakeup CPU platform'
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: EVENT_WAKEUP_MASK
+            description: There are 256 interrupts and 1 event as a wakeup source for
+              GPC. This field masks the 1 event wakeup source.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CM_IRQ_WAKEUP_STAT_0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 336
+        description: (read-write) CM IRQ0~31 wakeup status
+        fields:
+          - name: IRQ_WAKEUP_STAT_0_31
+            description: IRQ status
+            index: 0
+            width: 32
+            read: true
+            write: false
+            type: GPC_CPU_MODE_CTRL_0_CM_IRQ_WAKEUP_STAT_0_IRQ_WAKEUP_STAT_0_31
+      - name: CM_IRQ_WAKEUP_STAT_1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 340
+        description: (read-write) CM IRQ32~63 wakeup status
+        fields:
+          - name: IRQ_WAKEUP_STAT_32_63
+            description: IRQ status
+            index: 0
+            width: 32
+            read: true
+            write: false
+            type: GPC_CPU_MODE_CTRL_0_CM_IRQ_WAKEUP_STAT_1_IRQ_WAKEUP_STAT_32_63
+      - name: CM_IRQ_WAKEUP_STAT_2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 344
+        description: (read-write) CM IRQ64~95 wakeup status
+        fields:
+          - name: IRQ_WAKEUP_STAT_64_95
+            description: IRQ status
+            index: 0
+            width: 32
+            read: true
+            write: false
+            type: GPC_CPU_MODE_CTRL_0_CM_IRQ_WAKEUP_STAT_2_IRQ_WAKEUP_STAT_64_95
+      - name: CM_IRQ_WAKEUP_STAT_3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 348
+        description: (read-write) CM IRQ96~127 wakeup status
+        fields:
+          - name: IRQ_WAKEUP_STAT_96_127
+            description: IRQ status
+            index: 0
+            width: 32
+            read: true
+            write: false
+            type: GPC_CPU_MODE_CTRL_0_CM_IRQ_WAKEUP_STAT_3_IRQ_WAKEUP_STAT_96_127
+      - name: CM_IRQ_WAKEUP_STAT_4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 352
+        description: (read-write) CM IRQ128~159 wakeup status
+        fields:
+          - name: IRQ_WAKEUP_STAT_128_159
+            description: IRQ status
+            index: 0
+            width: 32
+            read: true
+            write: false
+            type: GPC_CPU_MODE_CTRL_0_CM_IRQ_WAKEUP_STAT_4_IRQ_WAKEUP_STAT_128_159
+      - name: CM_IRQ_WAKEUP_STAT_5
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 356
+        description: (read-write) CM IRQ160~191 wakeup status
+        fields:
+          - name: IRQ_WAKEUP_STAT_160_191
+            description: IRQ status
+            index: 0
+            width: 32
+            read: true
+            write: false
+            type: GPC_CPU_MODE_CTRL_0_CM_IRQ_WAKEUP_STAT_5_IRQ_WAKEUP_STAT_160_191
+      - name: CM_IRQ_WAKEUP_STAT_6
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 360
+        description: (read-write) CM IRQ192~223 wakeup status
+        fields:
+          - name: IRQ_WAKEUP_STAT_192_223
+            description: IRQ status
+            index: 0
+            width: 32
+            read: true
+            write: false
+            type: GPC_CPU_MODE_CTRL_0_CM_IRQ_WAKEUP_STAT_6_IRQ_WAKEUP_STAT_192_223
+      - name: CM_IRQ_WAKEUP_STAT_7
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 364
+        description: (read-write) CM IRQ224~255 wakeup status
+        fields:
+          - name: IRQ_WAKEUP_MASK_224_255
+            description: IRQ status
+            index: 0
+            width: 32
+            read: true
+            write: false
+            type: GPC_CPU_MODE_CTRL_0_CM_IRQ_WAKEUP_STAT_7_IRQ_WAKEUP_MASK_224_255
+      - name: CM_NON_IRQ_WAKEUP_STAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 400
+        description: (read-write) CM non-irq wakeup status
+        fields:
+          - name: DEBUG_WAKEUP_STAT
+            description: Debug wakeup status
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: EVENT_WAKEUP_STAT
+            description: Event wakeup status
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: CM_SLEEP_SSAR_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 512
+        description: (read-write) CM sleep SSAR control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_CPU_MODE_CTRL_0_CM_SLEEP_SSAR_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE.
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_SLEEP_LPCG_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 520
+        description: (read-write) CM sleep LPCG control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_CPU_MODE_CTRL_0_CM_SLEEP_LPCG_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_SLEEP_PLL_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 528
+        description: (read-write) CM sleep PLL control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_CPU_MODE_CTRL_0_CM_SLEEP_PLL_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_SLEEP_ISO_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 536
+        description: (read-write) CM sleep isolation control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_CPU_MODE_CTRL_0_CM_SLEEP_ISO_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_SLEEP_RESET_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 544
+        description: (read-write) CM sleep reset control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_CPU_MODE_CTRL_0_CM_SLEEP_RESET_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_SLEEP_POWER_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 552
+        description: (read-write) CM sleep power control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_CPU_MODE_CTRL_0_CM_SLEEP_POWER_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_WAKEUP_POWER_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 656
+        description: (read-write) CM wakeup power control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_CPU_MODE_CTRL_0_CM_WAKEUP_POWER_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_WAKEUP_RESET_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 664
+        description: (read-write) CM wakeup reset control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_CPU_MODE_CTRL_0_CM_WAKEUP_RESET_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_WAKEUP_ISO_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 672
+        description: (read-write) CM wakeup isolation control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_CPU_MODE_CTRL_0_CM_WAKEUP_ISO_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_WAKEUP_PLL_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 680
+        description: (read-write) CM wakeup PLL control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_CPU_MODE_CTRL_0_CM_WAKEUP_PLL_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_WAKEUP_LPCG_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 688
+        description: (read-write) CM wakeup LPCG control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_CPU_MODE_CTRL_0_CM_WAKEUP_LPCG_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_WAKEUP_SSAR_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 696
+        description: (read-write) CM wakeup SSAR control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_CPU_MODE_CTRL_0_CM_WAKEUP_SSAR_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_SP_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 768
+        description: (read-write) CM Setpoint Control
+        fields:
+          - name: CPU_SP_WAKEUP_SEL
+            description: Select the Setpoint transiton on the next CPU platform wakeup
+              sequence
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: CPU_SP_WAKEUP
+            description: The Setpoint that CPU want the system to transit to on next
+              CPU platform wakeup sequence
+            index: 11
+            width: 4
+            read: true
+            write: true
+          - name: CPU_SP_WAKEUP_EN
+            description: 1 means enable Setpoint transition on next CPU platform wakeup
+              sequence
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: CPU_SP_SLEEP
+            description: The Setpoint that CPU want the system to transit to on next
+              CPU platform sleep sequence
+            index: 6
+            width: 4
+            read: true
+            write: true
+          - name: CPU_SP_SLEEP_EN
+            description: 1 means enable Setpoint transition on next CPU platform sleep
+              sequence
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: CPU_SP_RUN
+            description: The Setpoint that CPU want the system to transit to when
+              CPU_SP_RUN_EN is set
+            index: 1
+            width: 4
+            read: true
+            write: true
+          - name: CPU_SP_RUN_EN
+            description: Request a Setpoint transition when this bit is set
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CM_SP_STAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 772
+        description: (read-write) CM Setpoint Status
+        fields:
+          - name: CPU_SP_TARGET
+            description: The requested Setpoint from the CPU platform
+            index: 8
+            width: 4
+            read: true
+            write: false
+          - name: CPU_SP_PREVIOUS
+            description: The previous Setpoint of the system
+            index: 4
+            width: 4
+            read: true
+            write: false
+          - name: CPU_SP_CURRENT
+            description: The current Setpoint of the system
+            index: 0
+            width: 4
+            read: true
+            write: false
+      - name: CM_RUN_MODE_MAPPING
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 784
+        description: (read-write) CM Run Mode Setpoint Allowed
+        fields:
+          - name: CPU_RUN_MODE_MAPPING
+            description: Defines which Setpoint is allowed when CPU enters RUN mode.
+              Each bit stands for 1 Setpoint, locked by LOCK_CFG field
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_WAIT_MODE_MAPPING
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 788
+        description: (read-write) CM Wait Mode Setpoint Allowed
+        fields:
+          - name: CPU_WAIT_MODE_MAPPING
+            description: Defines which Setpoint is allowed when CPU enters WAIT mode.
+              Each bit stands for 1 Setpoint, locked by LOCK_CFG
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_STOP_MODE_MAPPING
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 792
+        description: (read-write) CM Stop Mode Setpoint Allowed
+        fields:
+          - name: CPU_STOP_MODE_MAPPING
+            description: Defines which Setpoint is allowed when CPU enters STOP mode.
+              Each bit stands for 1 Setpoint, locked by LOCK_CFG
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_SUSPEND_MODE_MAPPING
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 796
+        description: (read-write) CM Suspend Mode Setpoint Allowed
+        fields:
+          - name: CPU_SUSPEND_MODE_MAPPING
+            description: Defines which Setpoint is allowed when CPU enters SUSPEND
+              mode. Each bit stands for 1 Setpoint, locked by LOCK_CFG
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_SP0_MAPPING
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 800
+        description: (read-write) CM Setpoint 0 Mapping
+        fields:
+          - name: CPU_SP0_MAPPING
+            description: Defines when SP0 is set as the CPU_SP_TARGET, which SP is
+              allowed, locked by LOCK_CFG field
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_SP1_MAPPING
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 804
+        description: (read-write) CM Setpoint 1 Mapping
+        fields:
+          - name: CPU_SP1_MAPPING
+            description: Defines when SP1 is set as the CPU_SP_TARGET, which SP is
+              allowed, locked by LOCK_CFG field
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_SP2_MAPPING
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 808
+        description: (read-write) CM Setpoint 2 Mapping
+        fields:
+          - name: CPU_SP2_MAPPING
+            description: Defines when SP2 is set as the CPU_SP_TARGET, which SP is
+              allowed, locked by LOCK_CFG field
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_SP3_MAPPING
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 812
+        description: (read-write) CM Setpoint 3 Mapping
+        fields:
+          - name: CPU_SP3_MAPPING
+            description: Defines when SP3 is set as the CPU_SP_TARGET, which SP is
+              allowed, locked by LOCK_CFG field
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_SP4_MAPPING
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 816
+        description: (read-write) CM Setpoint 4 Mapping
+        fields:
+          - name: CPU_SP4_MAPPING
+            description: Defines when SP4 is set as the CPU_SP_TARGET, which SP is
+              allowed, locked by LOCK_CFG field
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_SP5_MAPPING
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 820
+        description: (read-write) CM Setpoint 5 Mapping
+        fields:
+          - name: CPU_SP5_MAPPING
+            description: Defines when SP5 is set as the CPU_SP_TARGET, which SP is
+              allowed, locked by LOCK_CFG field
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_SP6_MAPPING
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 824
+        description: (read-write) CM Setpoint 6 Mapping
+        fields:
+          - name: CPU_SP6_MAPPING
+            description: Defines when SP6 is set as the CPU_SP_TARGET, which SP is
+              allowed, locked by LOCK_CFG field
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_SP7_MAPPING
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 828
+        description: (read-write) CM Setpoint 7 Mapping
+        fields:
+          - name: CPU_SP7_MAPPING
+            description: Defines when SP7 is set as the CPU_SP_TARGET, which SP is
+              allowed, locked by LOCK_CFG field
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_SP8_MAPPING
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 832
+        description: (read-write) CM Setpoint 8 Mapping
+        fields:
+          - name: CPU_SP8_MAPPING
+            description: Defines when SP8 is set as the CPU_SP_TARGET, which SP is
+              allowed, locked by LOCK_CFG field
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_SP9_MAPPING
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 836
+        description: (read-write) CM Setpoint 9 Mapping
+        fields:
+          - name: CPU_SP9_MAPPING
+            description: Defines when SP9 is set as the CPU_SP_TARGET, which SP is
+              allowed, locked by LOCK_CFG field
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_SP10_MAPPING
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 840
+        description: (read-write) CM Setpoint 10 Mapping
+        fields:
+          - name: CPU_SP10_MAPPING
+            description: Defines when SP10 is set as the CPU_SP_TARGET, which SP is
+              allowed, locked by LOCK_CFG field
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_SP11_MAPPING
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 844
+        description: (read-write) CM Setpoint 11 Mapping
+        fields:
+          - name: CPU_SP11_MAPPING
+            description: Defines when SP11 is set as the CPU_SP_TARGET, which SP is
+              allowed, locked by LOCK_CFG field
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_SP12_MAPPING
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 848
+        description: (read-write) CM Setpoint 12 Mapping
+        fields:
+          - name: CPU_SP12_MAPPING
+            description: Defines when SP12 is set as the CPU_SP_TARGET, which SP is
+              allowed, locked by LOCK_CFG field
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_SP13_MAPPING
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 852
+        description: (read-write) CM Setpoint 13 Mapping
+        fields:
+          - name: CPU_SP13_MAPPING
+            description: Defines when SP13 is set as the CPU_SP_TARGET, which SP is
+              allowed, locked by LOCK_CFG field
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_SP14_MAPPING
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 856
+        description: (read-write) CM Setpoint 14 Mapping
+        fields:
+          - name: CPU_SP14_MAPPING
+            description: Defines when SP14 is set as the CPU_SP_TARGET, which SP is
+              allowed, locked by LOCK_CFG field
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_SP15_MAPPING
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 860
+        description: (read-write) CM Setpoint 15 Mapping
+        fields:
+          - name: CPU_SP15_MAPPING
+            description: Defines when SP15 is set as the CPU_SP_TARGET, which SP is
+              allowed, locked by LOCK_CFG field
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CM_STBY_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 896
+        description: (read-write) CM standby control
+        fields:
+          - name: STBY_WAKEUP_BUSY
+            description: Indicate the CPU is busy exiting standby mode.
+            index: 17
+            width: 1
+            read: true
+            write: false
+          - name: STBY_SLEEP_BUSY
+            description: Indicate the CPU is busy entering standby mode.
+            index: 16
+            width: 1
+            read: true
+            write: false
+          - name: STBY_SUSPEND
+            description: '0x1: Request the chip into standby mode when CPU entering
+              SUSPEND mode, locked by LOCK_CFG field.'
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: STBY_STOP
+            description: '0x1: Request the chip into standby mode when CPU entering
+              STOP mode, locked by LOCK_CFG field.'
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: STBY_WAIT
+            description: '0x1: Request the chip into standby mode when CPU entering
+              WAIT mode, locked by LOCK_CFG field.'
+            index: 0
+            width: 1
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  GPC_CPU_MODE_CTRL_0_CM_MODE_CTRL_CPU_MODE_TARGET:
+    enum:
+      b0:
+        description: Stay in RUN mode
+        value: 0
+      b1:
+        description: Transit to WAIT mode
+        value: 1
+      b2:
+        description: Transit to STOP mode
+        value: 2
+      b3:
+        description: Transit to SUSPEND mode
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_CPU_MODE_CTRL_0_CM_MODE_STAT_CPU_MODE_PREVIOUS:
+    enum:
+      RUN:
+        description: CPU was previously in RUN mode
+        value: 0
+      WAIT:
+        description: CPU was previously in WAIT mode
+        value: 1
+      STOP:
+        description: CPU was previously in STOP mode
+        value: 2
+      SUSPEND:
+        description: CPU was previously in SUSPEND mode
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_CPU_MODE_CTRL_0_CM_MODE_STAT_CPU_MODE_CURRENT:
+    enum:
+      RUN:
+        description: CPU is currently in RUN mode
+        value: 0
+      WAIT:
+        description: CPU is currently in WAIT mode
+        value: 1
+      STOP:
+        description: CPU is currently in STOP mode
+        value: 2
+      SUSPEND:
+        description: CPU is currently in SUSPEND mode
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_CPU_MODE_CTRL_0_CM_IRQ_WAKEUP_STAT_0_IRQ_WAKEUP_STAT_0_31:
+    enum:
+      b0:
+        description: None
+        value: 0
+      b1:
+        description: Valid
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  GPC_CPU_MODE_CTRL_0_CM_IRQ_WAKEUP_STAT_1_IRQ_WAKEUP_STAT_32_63:
+    enum:
+      b0:
+        description: None
+        value: 0
+      b1:
+        description: Valid
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  GPC_CPU_MODE_CTRL_0_CM_IRQ_WAKEUP_STAT_2_IRQ_WAKEUP_STAT_64_95:
+    enum:
+      b0:
+        description: None
+        value: 0
+      b1:
+        description: Valid
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  GPC_CPU_MODE_CTRL_0_CM_IRQ_WAKEUP_STAT_3_IRQ_WAKEUP_STAT_96_127:
+    enum:
+      b0:
+        description: None
+        value: 0
+      b1:
+        description: Valid
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  GPC_CPU_MODE_CTRL_0_CM_IRQ_WAKEUP_STAT_4_IRQ_WAKEUP_STAT_128_159:
+    enum:
+      b0:
+        description: None
+        value: 0
+      b1:
+        description: Valid
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  GPC_CPU_MODE_CTRL_0_CM_IRQ_WAKEUP_STAT_5_IRQ_WAKEUP_STAT_160_191:
+    enum:
+      b0:
+        description: None
+        value: 0
+      b1:
+        description: Valid
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  GPC_CPU_MODE_CTRL_0_CM_IRQ_WAKEUP_STAT_6_IRQ_WAKEUP_STAT_192_223:
+    enum:
+      b0:
+        description: None
+        value: 0
+      b1:
+        description: Valid
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  GPC_CPU_MODE_CTRL_0_CM_IRQ_WAKEUP_STAT_7_IRQ_WAKEUP_MASK_224_255:
+    enum:
+      b0:
+        description: None
+        value: 0
+      b1:
+        description: Valid
+        value: 1
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  GPC_CPU_MODE_CTRL_0_CM_SLEEP_SSAR_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_CPU_MODE_CTRL_0_CM_SLEEP_LPCG_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_CPU_MODE_CTRL_0_CM_SLEEP_PLL_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_CPU_MODE_CTRL_0_CM_SLEEP_ISO_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_CPU_MODE_CTRL_0_CM_SLEEP_RESET_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_CPU_MODE_CTRL_0_CM_SLEEP_POWER_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_CPU_MODE_CTRL_0_CM_WAKEUP_POWER_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_CPU_MODE_CTRL_0_CM_WAKEUP_RESET_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_CPU_MODE_CTRL_0_CM_WAKEUP_ISO_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_CPU_MODE_CTRL_0_CM_WAKEUP_PLL_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_CPU_MODE_CTRL_0_CM_WAKEUP_LPCG_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_CPU_MODE_CTRL_0_CM_WAKEUP_SSAR_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

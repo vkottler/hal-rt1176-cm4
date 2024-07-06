@@ -1,0 +1,64 @@
+---
+structs:
+  SLOT_CTRL_instance:
+    description: 'The slot assignments are given below:'
+    fields:
+      - name: SLOT_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Slot Control Register
+        fields:
+          - name: LOCK_CONTROL
+            description: Lock control of this slot
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: ALLOW_USER
+            description: Allow user write access to this domain control register or
+              domain register
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: ALLOW_NONSECURE
+            description: Allow non-secure write access to this domain control register
+              or domain register
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: DOMAIN_LOCK
+            description: Lock domain ID of this slot
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: LOCKED_DOMAIN_ID
+            description: Domain ID of the slot to be locked
+            index: 0
+            width: 4
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+  ips_domain:
+    description: IPS Domain
+    instances:
+      - name: IPS_DOMAIN
+        address: '0x40C87C00'
+    fields:
+      - name: SLOT_CTRL
+        type: SLOT_CTRL_instance
+        array_length: 38
+        description: 'The slot assignments are given below:'
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums: {}

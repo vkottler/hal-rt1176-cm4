@@ -1,0 +1,2533 @@
+---
+structs:
+  anadig_pmu:
+    description: MX6RT_ANADIG_REGISTER
+    instances:
+      - name: ANADIG_PMU
+        address: '0x40C84000'
+    fields:
+      - name: PMU_LDO_PLL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1280
+        description: (read-write) PMU_LDO_PLL_REGISTER
+        fields:
+          - name: LDO_PLL_AI_BUSY
+            description: ldo_pll_busy
+            index: 30
+            width: 1
+            read: true
+            write: false
+          - name: LDO_PLL_AI_TOGGLE
+            description: ldo_pll_ai_toggle
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: LDO_PLL_CONTROL_MODE
+            description: LDO_PLL_CONTROL_MODE
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: LDO_PLL_ENABLE
+            description: LDO_PLL_ENABLE
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PMU_BIAS_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1360
+        description: (read-write) PMU_BIAS_CTRL_REGISTER
+        fields:
+          - name: WB_VDD_SEL_1P8
+            description: wb_vdd_sel_1p8
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: WB_CFG_1P8
+            description: wb_cfg_1p8
+            index: 0
+            width: 13
+            read: true
+            write: true
+      - name: PMU_BIAS_CTRL2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1376
+        description: (read-write) PMU_BIAS_CTRL2_REGISTER
+        fields:
+          - name: WB_OK
+            description: Digital Output pin.
+            index: 26
+            width: 1
+            read: true
+            write: false
+          - name: WB_TST_DIG_OUT
+            description: Digital output
+            index: 25
+            width: 1
+            read: true
+            write: false
+          - name: WB_EN
+            description: wb_en
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: RBB_LPSR_CONTROL_MODE
+            description: RBB_LPSR_CONTROL_MODE
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: RBB_SOC_CONTROL_MODE
+            description: RBB_SOC_CONTROL_MODE
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: FBB_M7_CONTROL_MODE
+            description: FBB_M7_CONTROL_MODE
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: WB_ADJ_1P8
+            description: wb_adj_1p8
+            index: 13
+            width: 8
+            read: true
+            write: true
+            type: ANADIG_PMU_PMU_BIAS_CTRL2_WB_ADJ_1P8
+          - name: WB_PWR_SW_EN_1P8
+            description: MODSEL_wb_tst_md_1p8
+            index: 10
+            width: 3
+            read: true
+            write: true
+            type: ANADIG_PMU_PMU_BIAS_CTRL2_WB_PWR_SW_EN_1P8
+          - name: WB_TST_MD
+            description: TMOD_wb_tst_md_1p8
+            index: 1
+            width: 9
+            read: true
+            write: true
+      - name: PMU_REF_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1392
+        description: (read-write) PMU_REF_CTRL_REGISTER
+        fields:
+          - name: EN_PLL_VOL_REF_BUFFER
+            description: en_pll_vol_ref_buffer
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: REF_CONTROL_MODE
+            description: REF_CONTROL_MODE
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: REF_ENABLE
+            description: REF_ENABLE
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: REF_AI_BUSY
+            description: ref_ai_busy
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: REF_AI_TOGGLE
+            description: ref_ai_toggle
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PMU_POWER_DETECT_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1408
+        description: (read-write) PMU_POWER_DETECT_CTRL_REGISTER
+        fields:
+          - name: CKGB_LPSR1P0
+            description: ckgb_lpsr1p0
+            index: 8
+            width: 1
+            read: true
+            write: true
+      - name: LDO_PLL_ENABLE_SP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1536
+        description: (read-write) LDO_PLL_ENABLE_SP_REGISTER
+        fields:
+          - name: ON_OFF_SETPOINT15
+            description: ON_OFF_SETPOINT15
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT14
+            description: ON_OFF_SETPOINT14
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT13
+            description: ON_OFF_SETPOINT13
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT12
+            description: ON_OFF_SETPOINT12
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT11
+            description: ON_OFF_SETPOINT11
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT10
+            description: ON_OFF_SETPOINT10
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT9
+            description: ON_OFF_SETPOINT9
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT8
+            description: ON_OFF_SETPOINT8
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT7
+            description: ON_OFF_SETPOINT7
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT6
+            description: ON_OFF_SETPOINT6
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT5
+            description: ON_OFF_SETPOINT5
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT4
+            description: ON_OFF_SETPOINT4
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT3
+            description: ON_OFF_SETPOINT3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT2
+            description: ON_OFF_SETPOINT2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT1
+            description: ON_OFF_SETPOINT1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT0
+            description: ON_OFF_SETPOINT0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LDO_LPSR_ANA_ENABLE_SP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1552
+        description: (read-write) LDO_LPSR_ANA_ENABLE_SP_REGISTER
+        fields:
+          - name: ON_OFF_SETPOINT15
+            description: ON_OFF_SETPOINT15
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT14
+            description: ON_OFF_SETPOINT14
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT13
+            description: ON_OFF_SETPOINT13
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT12
+            description: ON_OFF_SETPOINT12
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT11
+            description: ON_OFF_SETPOINT11
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT10
+            description: ON_OFF_SETPOINT10
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT9
+            description: ON_OFF_SETPOINT9
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT8
+            description: ON_OFF_SETPOINT8
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT7
+            description: ON_OFF_SETPOINT7
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT6
+            description: ON_OFF_SETPOINT6
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT5
+            description: ON_OFF_SETPOINT5
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT4
+            description: ON_OFF_SETPOINT4
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT3
+            description: ON_OFF_SETPOINT3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT2
+            description: ON_OFF_SETPOINT2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT1
+            description: ON_OFF_SETPOINT1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT0
+            description: ON_OFF_SETPOINT0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LDO_LPSR_ANA_LP_MODE_SP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1568
+        description: (read-write) LDO_LPSR_ANA_LP_MODE_SP_REGISTER
+        fields:
+          - name: LP_MODE_SETPONIT15
+            description: LP_MODE_SETPOINT15
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPONIT14
+            description: LP_MODE_SETPOINT14
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPONIT13
+            description: LP_MODE_SETPOINT13
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPONIT12
+            description: LP_MODE_SETPOINT12
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPONIT11
+            description: LP_MODE_SETPOINT11
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPONIT10
+            description: LP_MODE_SETPOINT10
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPONIT9
+            description: LP_MODE_SETPOINT9
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPONIT8
+            description: LP_MODE_SETPOINT8
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPONIT7
+            description: LP_MODE_SETPOINT7
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPONIT6
+            description: LP_MODE_SETPOINT6
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPONIT5
+            description: LP_MODE_SETPOINT5
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPONIT4
+            description: LP_MODE_SETPOINT4
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPONIT3
+            description: LP_MODE_SETPOINT3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPONIT2
+            description: LP_MODE_SETPOINT2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPOINT1
+            description: LP_MODE_SETPOINT1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPOINT0
+            description: LP_MODE_SETPOINT0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LDO_LPSR_ANA_TRACKING_EN_SP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1584
+        description: (read-write) LDO_LPSR_ANA_TRACKING_EN_SP_REGISTER
+        fields:
+          - name: TRACKING_EN_SETPOINT15
+            description: TRACKING_EN_SETPOINT15
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT14
+            description: TRACKING_EN_SETPOINT14
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT13
+            description: TRACKING_EN_SETPOINT13
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT12
+            description: TRACKING_EN_SETPOINT12
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT11
+            description: TRACKING_EN_SETPOINT11
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT10
+            description: TRACKING_EN_SETPOINT10
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT9
+            description: TRACKING_EN_SETPOINT9
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT8
+            description: TRACKING_EN_SETPOINT8
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT7
+            description: TRACKING_EN_SETPOINT7
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT6
+            description: TRACKING_EN_SETPOINT6
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT5
+            description: TRACKING_EN_SETPOINT5
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT4
+            description: TRACKING_EN_SETPOINT4
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT3
+            description: TRACKING_EN_SETPOINT3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT2
+            description: TRACKING_EN_SETPOINT2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT1
+            description: TRACKING_EN_SETPOINT1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT0
+            description: TRACKING_EN_SETPOINT0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LDO_LPSR_ANA_BYPASS_EN_SP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1600
+        description: (read-write) LDO_LPSR_ANA_BYPASS_EN_SP_REGISTER
+        fields:
+          - name: BYPASS_EN_SETPOINT15
+            description: BYPASS_EN_SETPOINT15
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT14
+            description: BYPASS_EN_SETPOINT14
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT13
+            description: BYPASS_EN_SETPOINT13
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT12
+            description: BYPASS_EN_SETPOINT12
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT11
+            description: BYPASS_EN_SETPOINT11
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT10
+            description: BYPASS_EN_SETPOINT10
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT9
+            description: BYPASS_EN_SETPOINT9
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT8
+            description: BYPASS_EN_SETPOINT
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT7
+            description: BYPASS_EN_SETPOINT7
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT6
+            description: BYPASS_EN_SETPOINT6
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT5
+            description: BYPASS_EN_SETPOINT5
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT4
+            description: BYPASS_EN_SETPOINT4
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT3
+            description: BYPASS_EN_SETPOINT3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT2
+            description: BYPASS_EN_SETPOINT2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT1
+            description: BYPASS_EN_SETPOINT1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT0
+            description: BYPASS_EN_SETPOINT0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LDO_LPSR_ANA_STBY_EN_SP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1616
+        description: (read-write) LDO_LPSR_ANA_STBY_EN_SP_REGISTER
+        fields:
+          - name: STBY_EN_SETPOINT15
+            description: STBY_EN_SETPOINT15
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT14
+            description: STBY_EN_SETPOINT14
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT13
+            description: STBY_EN_SETPOINT13
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT12
+            description: STBY_EN_SETPOINT12
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT11
+            description: STBY_EN_SETPOINT11
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT10
+            description: STBY_EN_SETPOINT10
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT9
+            description: STBY_EN_SETPOINT9
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT8
+            description: STBY_EN_SETPOINT8
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT7
+            description: STBY_EN_SETPOINT7
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT6
+            description: STBY_EN_SETPOINT6
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT5
+            description: STBY_EN_SETPOINT5
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT4
+            description: STBY_EN_SETPOINT4
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT3
+            description: STBY_EN_SETPOINT3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT2
+            description: STBY_EN_SETPOINT2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT1
+            description: STBY_EN_SETPOINT1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT0
+            description: STBY_EN_SETPOINT0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LDO_LPSR_DIG_ENABLE_SP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1632
+        description: (read-write) LDO_LPSR_DIG_ENABLE_SP_REGISTER
+        fields:
+          - name: ON_OFF_SETPOINT15
+            description: ON_OFF_SETPOINT15
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT14
+            description: ON_OFF_SETPOINT14
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT13
+            description: ON_OFF_SETPOINT13
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT12
+            description: ON_OFF_SETPOINT12
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT11
+            description: ON_OFF_SETPOINT11
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT10
+            description: ON_OFF_SETPOINT10
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT9
+            description: ON_OFF_SETPOINT9
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT8
+            description: ON_OFF_SETPOINT8
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT7
+            description: ON_OFF_SETPOINT7
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT6
+            description: ON_OFF_SETPOINT6
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT5
+            description: ON_OFF_SETPOINT5
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT4
+            description: ON_OFF_SETPOINT4
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT3
+            description: ON_OFF_SETPOINT3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT2
+            description: ON_OFF_SETPOINT2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT1
+            description: ON_OFF_SETPOINT1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT0
+            description: ON_OFF_SETPOINT0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LDO_LPSR_DIG_TRG_SP0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1648
+        description: (read-write) LDO_LPSR_DIG_TRG_SP0_REGISTER
+        fields:
+          - name: VOLTAGE_SETPOINT3
+            description: VOLTAGE_SETPOINT3
+            index: 24
+            width: 8
+            read: true
+            write: true
+          - name: VOLTAGE_SETPOINT2
+            description: VOLTAGE_SETPOINT2
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: VOLTAGE_SETPOINT1
+            description: VOLTAGE_SETPOINT1
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: VOLTAGE_SETPOINT0
+            description: VOLTAGE_SETPOINT0
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: LDO_LPSR_DIG_TRG_SP1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1664
+        description: (read-write) LDO_LPSR_DIG_TRG_SP1_REGISTER
+        fields:
+          - name: VOLTAGE_SETPOINT7
+            description: VOLTAGE_SETPOINT7
+            index: 24
+            width: 8
+            read: true
+            write: true
+          - name: VOLTAGE_SETPOINT6
+            description: VOLTAGE_SETPOINT6
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: VOLTAGE_SETPOINT5
+            description: VOLTAGE_SETPOINT5
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: VOLTAGE_SETPOINT4
+            description: VOLTAGE_SETPOINT4
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: LDO_LPSR_DIG_TRG_SP2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1680
+        description: (read-write) LDO_LPSR_DIG_TRG_SP2_REGISTER
+        fields:
+          - name: VOLTAGE_SETPOINT11
+            description: VOLTAGE_SETPOINT11
+            index: 24
+            width: 8
+            read: true
+            write: true
+          - name: VOLTAGE_SETPOINT10
+            description: VOLTAGE_SETPOINT10
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: VOLTAGE_SETPOINT9
+            description: VOLTAGE_SETPOINT9
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: VOLTAGE_SETPOINT8
+            description: VOLTAGE_SETPOINT8
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: LDO_LPSR_DIG_TRG_SP3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1696
+        description: (read-write) LDO_LPSR_DIG_TRG_SP3_REGISTER
+        fields:
+          - name: VOLTAGE_SETPOINT15
+            description: VOLTAGE_SETPOINT15
+            index: 24
+            width: 8
+            read: true
+            write: true
+          - name: VOLTAGE_SETPOINT14
+            description: VOLTAGE_SETPOINT14
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: VOLTAGE_SETPOINT13
+            description: VOLTAGE_SETPOINT13
+            index: 8
+            width: 8
+            read: true
+            write: true
+          - name: VOLTAGE_SETPOINT12
+            description: VOLTAGE_SETPOINT12
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: LDO_LPSR_DIG_LP_MODE_SP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1712
+        description: (read-write) LDO_LPSR_DIG_LP_MODE_SP_REGISTER
+        fields:
+          - name: LP_MODE_SETPOINT15
+            description: LP_MODE_SETPOINT15
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPOINT14
+            description: LP_MODE_SETPOINT14
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPOINT13
+            description: LP_MODE_SETPOINT13
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPOINT12
+            description: LP_MODE_SETPOINT12
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPOINT11
+            description: LP_MODE_SETPOINT11
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPOINT10
+            description: LP_MODE_SETPOINT10
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPOINT9
+            description: LP_MODE_SETPOINT9
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPOINT8
+            description: LP_MODE_SETPOINT8
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPOINT7
+            description: LP_MODE_SETPOINT7
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPOINT6
+            description: LP_MODE_SETPOINT6
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPOINT5
+            description: LP_MODE_SETPOINT5
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPOINT4
+            description: LP_MODE_SETPOINT4
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPOINT3
+            description: LP_MODE_SETPOINT3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPOINT2
+            description: LP_MODE_SETPOINT2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPOINT1
+            description: LP_MODE_SETPOINT1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: LP_MODE_SETPOINT0
+            description: LP_MODE_SETPOINT0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LDO_LPSR_DIG_TRACKING_EN_SP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1728
+        description: (read-write) LDO_LPSR_DIG_TRACKING_EN_SP_REGISTER
+        fields:
+          - name: TRACKING_EN_SETPOINT15
+            description: TRACKING_EN_SETPOINT15
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT14
+            description: TRACKING_EN_SETPOINT14
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT13
+            description: TRACKING_EN_SETPOINT13
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT12
+            description: TRACKING_EN_SETPOINT12
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT11
+            description: TRACKING_EN_SETPOINT11
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT10
+            description: TRACKING_EN_SETPOINT10
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT9
+            description: TRACKING_EN_SETPOINT9
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT8
+            description: TRACKING_EN_SETPOINT8
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT7
+            description: TRACKING_EN_SETPOINT7
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT6
+            description: TRACKING_EN_SETPOINT6
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT5
+            description: TRACKING_EN_SETPOINT5
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT4
+            description: TRACKING_EN_SETPOINT4
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT3
+            description: TRACKING_EN_SETPOINT3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT2
+            description: TRACKING_EN_SETPOINT2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT1
+            description: TRACKING_EN_SETPOINT1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: TRACKING_EN_SETPOINT0
+            description: TRACKING_EN_SETPOINT0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LDO_LPSR_DIG_BYPASS_EN_SP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1744
+        description: (read-write) LDO_LPSR_DIG_BYPASS_EN_SP_REGISTER
+        fields:
+          - name: BYPASS_EN_SETPOINT15
+            description: BYPASS_EN_SETPOINT15
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT14
+            description: BYPASS_EN_SETPOINT14
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT13
+            description: BYPASS_EN_SETPOINT13
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT12
+            description: BYPASS_EN_SETPOINT12
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT11
+            description: BYPASS_EN_SETPOINT11
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT10
+            description: BYPASS_EN_SETPOINT10
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT9
+            description: BYPASS_EN_SETPOINT9
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT8
+            description: BYPASS_EN_SETPOINT8
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT7
+            description: BYPASS_EN_SETPOINT7
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT6
+            description: BYPASS_EN_SETPOINT6
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT5
+            description: BYPASS_EN_SETPOINT5
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT4
+            description: BYPASS_EN_SETPOINT4
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT3
+            description: BYPASS_EN_SETPOINT3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT2
+            description: BYPASS_EN_SETPOINT2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT1
+            description: BYPASS_EN_SETPOINT1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS_EN_SETPOINT0
+            description: BYPASS_EN_SETPOINT0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LDO_LPSR_DIG_STBY_EN_SP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1760
+        description: (read-write) LDO_LPSR_DIG_STBY_EN_SP_REGISTER
+        fields:
+          - name: STBY_EN_SETPOINT15
+            description: STBY_EN_SETPOINT15
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT14
+            description: STBY_EN_SETPOINT14
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT13
+            description: STBY_EN_SETPOINT13
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT12
+            description: STBY_EN_SETPOINT12
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT11
+            description: STBY_EN_SETPOINT11
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT10
+            description: STBY_EN_SETPOINT10
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT9
+            description: STBY_EN_SETPOINT9
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT8
+            description: STBY_EN_SETPOINT8
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT7
+            description: STBY_EN_SETPOINT7
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT6
+            description: STBY_EN_SETPOINT6
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT5
+            description: STBY_EN_SETPOINT5
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT4
+            description: STBY_EN_SETPOINT4
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT3
+            description: STBY_EN_SETPOINT3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT2
+            description: STBY_EN_SETPOINT2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT1
+            description: STBY_EN_SETPOINT1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT0
+            description: STBY_EN_SETPOINT0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: BANDGAP_ENABLE_SP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1776
+        description: (read-write) BANDGAP_ENABLE_SP_REGISTER
+        fields:
+          - name: ON_OFF_SETPOINT15
+            description: ON_OFF_SETPOINT15
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT14
+            description: ON_OFF_SETPOINT14
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT13
+            description: ON_OFF_SETPOINT13
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT12
+            description: ON_OFF_SETPOINT12
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT11
+            description: ON_OFF_SETPOINT11
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT10
+            description: ON_OFF_SETPOINT10
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT9
+            description: ON_OFF_SETPOINT9
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT8
+            description: ON_OFF_SETPOINT8
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT7
+            description: ON_OFF_SETPOINT7
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT6
+            description: ON_OFF_SETPOINT5
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT5
+            description: ON_OFF_SETPOINT5
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT4
+            description: ON_OFF_SETPOINT4
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT3
+            description: ON_OFF_SETPOINT3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT2
+            description: ON_OFF_SETPOINT2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT1
+            description: ON_OFF_SETPOINT1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT0
+            description: ON_OFF_SETPOINT0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: FBB_M7_ENABLE_SP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1792
+        description: (read-write) FBB_M7_ENABLE_SP_REGISTER
+        fields:
+          - name: ON_OFF_SETPOINT15
+            description: ON_OFF_SETPOINT15
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT14
+            description: ON_OFF_SETPOINT14
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT13
+            description: ON_OFF_SETPOINT13
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT12
+            description: ON_OFF_SETPOINT12
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT11
+            description: ON_OFF_SETPOINT11
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT10
+            description: ON_OFF_SETPOINT10
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT9
+            description: ON_OFF_SETPOINT9
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT8
+            description: ON_OFF_SETPOINT8
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT7
+            description: ON_OFF_SETPOINT7
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT6
+            description: ON_OFF_SETPOINT6
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT5
+            description: ON_OFF_SETPOINT5
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT4
+            description: ON_OFF_SETPOINT4
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT3
+            description: ON_OFF_SETPOINT3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT2
+            description: ON_OFF_SETPOINT2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT1
+            description: ON_OFF_SETPOINT1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT0
+            description: ON_OFF_SETPOINT0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: RBB_SOC_ENABLE_SP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1808
+        description: (read-write) RBB_SOC_ENABLE_SP_REGISTER
+        fields:
+          - name: ON_OFF_SETPOINT15
+            description: ON_OFF_SETPOINT15
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT14
+            description: ON_OFF_SETPOINT14
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT13
+            description: ON_OFF_SETPOINT13
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT12
+            description: ON_OFF_SETPOINT12
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT11
+            description: ON_OFF_SETPOINT11
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT10
+            description: ON_OFF_SETPOINT10
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT9
+            description: ON_OFF_SETPOINT9
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT8
+            description: ON_OFF_SETPOINT8
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT7
+            description: ON_OFF_SETPOINT7
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT6
+            description: ON_OFF_SETPOINT6
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT5
+            description: ON_OFF_SETPOINT5
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT4
+            description: ON_OFF_SETPOINT4
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT3
+            description: ON_OFF_SETPOINT3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT2
+            description: ON_OFF_SETPOINT2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT1
+            description: ON_OFF_SETPOINT1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT0
+            description: ON_OFF_SETPOINT0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: RBB_LPSR_ENABLE_SP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1824
+        description: (read-write) RBB_LPSR_ENABLE_SP_REGISTER
+        fields:
+          - name: ON_OFF_SETPOINT15
+            description: ON_OFF_SETPOINT15
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT14
+            description: ON_OFF_SETPOINT14
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT13
+            description: ON_OFF_SETPOINT13
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT12
+            description: ON_OFF_SETPOINT12
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT11
+            description: ON_OFF_SETPOINT11
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT10
+            description: ON_OFF_SETPOINT10
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT9
+            description: ON_OFF_SETPOINT9
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT8
+            description: ON_OFF_SETPOINT8
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT7
+            description: ON_OFF_SETPOINT7
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT6
+            description: ON_OFF_SETPOINT6
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT5
+            description: ON_OFF_SETPOINT5
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT4
+            description: ON_OFF_SETPOINT4
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT3
+            description: ON_OFF_SETPOINT3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT2
+            description: ON_OFF_SETPOINT2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT1
+            description: ON_OFF_SETPOINT1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ON_OFF_SETPOINT0
+            description: ON_OFF_SETPOINT0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: BANDGAP_STBY_EN_SP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1840
+        description: (read-write) BANDGAP_STBY_EN_SP_REGISTER
+        fields:
+          - name: STBY_EN_SETPOINT15
+            description: STBY_EN_SETPOINT
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT14
+            description: STBY_EN_SETPOINT
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT13
+            description: STBY_EN_SETPOINT
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT12
+            description: STBY_EN_SETPOINT
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT11
+            description: STBY_EN_SETPOINT
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT10
+            description: STBY_EN_SETPOINT
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT9
+            description: STBY_EN_SETPOINT
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT8
+            description: STBY_EN_SETPOINT
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT7
+            description: STBY_EN_SETPOINT
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT6
+            description: STBY_EN_SETPOINT
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT5
+            description: STBY_EN_SETPOINT
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT4
+            description: STBY_EN_SETPOINT
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT3
+            description: STBY_EN_SETPOINT
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT2
+            description: STBY_EN_SETPOINT
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT1
+            description: STBY_EN_SETPOINT
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT0
+            description: STBY_EN_SETPOINT
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PLL_LDO_STBY_EN_SP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1856
+        description: (read-write) PLL_LDO_STBY_EN_SP_REGISTER
+        fields:
+          - name: STBY_EN_SETPOINT15
+            description: Standby mode
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT14
+            description: Standby mode
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT13
+            description: Standby mode
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT12
+            description: Standby mode
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT11
+            description: Standby mode
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT10
+            description: Standby mode
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT9
+            description: Standby mode
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT8
+            description: Standby mode
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT7
+            description: Standby mode
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT6
+            description: Standby mode
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT5
+            description: Standby mode
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT4
+            description: Standby mode
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT3
+            description: Standby mode
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT2
+            description: Standby mode
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT1
+            description: Standby mode
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT0
+            description: Standby mode
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: FBB_M7_STBY_EN_SP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1872
+        description: (read-write) FBB_M7_STBY_EN_SP_REGISTER
+        fields:
+          - name: STBY_EN_SETPOINT15
+            description: Standby mode
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT14
+            description: Standby mode
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT13
+            description: Standby mode
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT12
+            description: Standby mode
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT11
+            description: Standby mode
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT10
+            description: Standby mode
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT9
+            description: Standby mode
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT8
+            description: Standby mode
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT7
+            description: Standby mode
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT6
+            description: Standby mode
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT5
+            description: Standby mode
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT4
+            description: Standby mode
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT3
+            description: Standby mode
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT2
+            description: Standby mode
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT1
+            description: Standby mode
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT0
+            description: Standby mode
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: RBB_SOC_STBY_EN_SP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1888
+        description: (read-write) RBB_SOC_STBY_EN_SP_REGISTER
+        fields:
+          - name: STBY_EN_SETPOINT15
+            description: Standby mode
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT14
+            description: Standby mode
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT13
+            description: Standby mode
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT12
+            description: Standby mode
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT11
+            description: Standby mode
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT10
+            description: Standby mode
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT9
+            description: Standby mode
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT8
+            description: Standby mode
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT7
+            description: Standby mode
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT6
+            description: Standby mode
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT5
+            description: Standby mode
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT4
+            description: Standby mode
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT3
+            description: Standby mode
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT2
+            description: Standby mode
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT1
+            description: Standby mode
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT0
+            description: Standby mode
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: RBB_LPSR_STBY_EN_SP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1904
+        description: (read-write) RBB_LPSR_STBY_EN_SP_REGISTER
+        fields:
+          - name: STBY_EN_SETPOINT15
+            description: Standby mode
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT14
+            description: Standby mode
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT13
+            description: Standby mode
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT12
+            description: Standby mode
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT11
+            description: Standby mode
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT10
+            description: Standby mode
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT9
+            description: Standby mode
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT8
+            description: Standby mode
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT7
+            description: Standby mode
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT6
+            description: Standby mode
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT5
+            description: Standby mode
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT4
+            description: Standby mode
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT3
+            description: Standby mode
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT2
+            description: Standby mode
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT1
+            description: Standby mode
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: STBY_EN_SETPOINT0
+            description: Standby mode
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: FBB_M7_CONFIGURE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1920
+        description: (read-write) FBB_M7_CONFIGURE_REGISTER
+        fields:
+          - name: REGULATOR_STRENGTH
+            description: regulator_strength
+            index: 11
+            width: 3
+            read: true
+            write: true
+          - name: OSCILLATOR_BITS
+            description: oscillator_bits
+            index: 8
+            width: 3
+            read: true
+            write: true
+          - name: WB_CFG_NW
+            description: wb_cfg_nw
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: WB_CFG_PW
+            description: wb_cfg_pw
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: RBB_LPSR_CONFIGURE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1936
+        description: (read-write) RBB_LPSR_CONFIGURE_REGISTER
+        fields:
+          - name: REGULATOR_STRENGTH
+            description: regulator_strength
+            index: 11
+            width: 3
+            read: true
+            write: true
+          - name: OSCILLATOR_BITS
+            description: oscillator_bits
+            index: 8
+            width: 3
+            read: true
+            write: true
+          - name: WB_CFG_NW
+            description: wb_cfg_nw
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: WB_CFG_PW
+            description: wb_cfg_pw
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: RBB_SOC_CONFIGURE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1952
+        description: (read-write) RBB_SOC_CONFIGURE_REGISTER
+        fields:
+          - name: REGULATOR_STRENGTH
+            description: regulator_strength
+            index: 11
+            width: 3
+            read: true
+            write: true
+          - name: OSCILLATOR_BITS
+            description: oscillator_bits
+            index: 8
+            width: 3
+            read: true
+            write: true
+          - name: WB_CFG_NW
+            description: wb_cfg_nw
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: WB_CFG_PW
+            description: wb_cfg_pw
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: REFTOP_OTP_TRIM_VALUE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1968
+        description: (read-write) REFTOP_OTP_TRIM_VALUE_REGISTER
+        fields:
+          - name: REFTOP_TRIM_EN
+            description: REFTOP_TRIM_EN
+            index: 6
+            width: 1
+            read: true
+            write: false
+          - name: REFTOP_VBGADJ
+            description: REFTOP_VBGADJ
+            index: 3
+            width: 3
+            read: true
+            write: false
+          - name: REFTOP_IBZTCADJ
+            description: REFTOP_IBZTCADJ
+            index: 0
+            width: 3
+            read: true
+            write: false
+      - name: LPSR_1P8_LDO_OTP_TRIM_VALUE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2000
+        description: (read-write) LPSR_1P8_LDO_OTP_TRIM_VALUE_REGISTER
+        fields:
+          - name: LPSR_LDO_1P8_TRIM_EN
+            description: LPSR_LDO_1P8_TRIM_EN
+            index: 2
+            width: 1
+            read: true
+            write: false
+          - name: LPSR_LDO_1P8_TRIM
+            description: LPSR_LDO_1P8_TRIM
+            index: 0
+            width: 2
+            read: true
+            write: false
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  ANADIG_PMU_PMU_BIAS_CTRL2_WB_ADJ_1P8:
+    enum:
+      _0000:
+        description: Cref= 0fF Cspl= 0fF DeltaC= 0fF
+        value: 0
+      _0001:
+        description: Cref= 0fF Cspl= 30fF DeltaC= -30fF
+        value: 1
+      _0010:
+        description: Cref= 0fF Cspl= 43fF DeltaC= -43fF
+        value: 2
+      _0011:
+        description: Cref= 0fF Cspl= 62fF DeltaC=-62fF
+        value: 3
+      _0100:
+        description: Cref= 0fF Cspl=105fF DeltaC=-105fF
+        value: 4
+      _0101:
+        description: Cref= 30fF Cspl= 0fF DeltaC= 30fF
+        value: 5
+      _0110:
+        description: Cref= 30fF Cspl= 43fF DeltaC= -12fF
+        value: 6
+      _0111:
+        description: Cref= 30fF Cspl=105fF DeltaC= -75fF
+        value: 7
+      _1000:
+        description: Cref= 43fF Cspl= 0fF DeltaC= 43fF
+        value: 8
+      _1001:
+        description: Cref= 43fF Cspl= 30fF DeltaC= 13fF
+        value: 9
+      _1010:
+        description: Cref= 43fF Cspl= 62fF DeltaC= -19fF
+        value: 10
+      _1011:
+        description: Cref= 62fF Cspl= 0fF DeltaC= 62fF
+        value: 11
+      _1100:
+        description: Cref= 62fF Cspl= 43fF DeltaC= 19fF
+        value: 12
+      _1101:
+        description: Cref=105fF Cspl= 0fF DeltaC= 105fF
+        value: 13
+      _1110:
+        description: Cref=105fF Cspl=30fF DeltaC= 75fF
+        value: 14
+      _1111:
+        description: Cref=0fF Cspl=0fF DeltaC= 0fF
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  ANADIG_PMU_PMU_BIAS_CTRL2_WB_PWR_SW_EN_1P8:
+    enum:
+      _0:
+        description: No BB
+        value: 1
+      _1:
+        description: BB
+        value: 2
+      _2:
+        description: BB
+        value: 4
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

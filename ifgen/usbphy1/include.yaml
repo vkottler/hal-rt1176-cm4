@@ -1,0 +1,3380 @@
+---
+structs:
+  usbphy1:
+    description: USBPHY
+    instances:
+      - name: USBPHY1
+        address: '0x40434000'
+      - name: USBPHY2
+        address: '0x40438000'
+    fields:
+      - name: PWD
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) USB PHY Power-Down Register
+        fields:
+          - name: RXPWDRX
+            description: RXPWDRX
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: RXPWDDIFF
+            description: RXPWDDIFF
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RXPWD1PT1
+            description: RXPWD1PT1
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: RXPWDENV
+            description: RXPWDENV
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: TXPWDV2I
+            description: TXPWDV2I
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: TXPWDIBIAS
+            description: TXPWDIBIAS
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: TXPWDFS
+            description: TXPWDFS
+            index: 10
+            width: 1
+            read: true
+            write: true
+      - name: PWD_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) USB PHY Power-Down Register
+        fields:
+          - name: RXPWDRX
+            description: RXPWDRX
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: RXPWDDIFF
+            description: RXPWDDIFF
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RXPWD1PT1
+            description: RXPWD1PT1
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: RXPWDENV
+            description: RXPWDENV
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: TXPWDV2I
+            description: TXPWDV2I
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: TXPWDIBIAS
+            description: TXPWDIBIAS
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: TXPWDFS
+            description: TXPWDFS
+            index: 10
+            width: 1
+            read: true
+            write: true
+      - name: PWD_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) USB PHY Power-Down Register
+        fields:
+          - name: RXPWDRX
+            description: RXPWDRX
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: RXPWDDIFF
+            description: RXPWDDIFF
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RXPWD1PT1
+            description: RXPWD1PT1
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: RXPWDENV
+            description: RXPWDENV
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: TXPWDV2I
+            description: TXPWDV2I
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: TXPWDIBIAS
+            description: TXPWDIBIAS
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: TXPWDFS
+            description: TXPWDFS
+            index: 10
+            width: 1
+            read: true
+            write: true
+      - name: PWD_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) USB PHY Power-Down Register
+        fields:
+          - name: RXPWDRX
+            description: RXPWDRX
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: RXPWDDIFF
+            description: RXPWDDIFF
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RXPWD1PT1
+            description: RXPWD1PT1
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: RXPWDENV
+            description: RXPWDENV
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: TXPWDV2I
+            description: TXPWDV2I
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: TXPWDIBIAS
+            description: TXPWDIBIAS
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: TXPWDFS
+            description: TXPWDFS
+            index: 10
+            width: 1
+            read: true
+            write: true
+      - name: TX
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) USB PHY Transmitter Control Register
+        fields:
+          - name: TXCAL45DP
+            description: TXCAL45DP
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: TXCAL45DN
+            description: TXCAL45DN
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: D_CAL
+            description: D_CAL
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: USBPHY1_TX_D_CAL
+      - name: TX_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) USB PHY Transmitter Control Register
+        fields:
+          - name: TXCAL45DP
+            description: TXCAL45DP
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: TXCAL45DN
+            description: TXCAL45DN
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: D_CAL
+            description: D_CAL
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: TX_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) USB PHY Transmitter Control Register
+        fields:
+          - name: TXCAL45DP
+            description: TXCAL45DP
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: TXCAL45DN
+            description: TXCAL45DN
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: D_CAL
+            description: D_CAL
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: TX_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) USB PHY Transmitter Control Register
+        fields:
+          - name: TXCAL45DP
+            description: TXCAL45DP
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: TXCAL45DN
+            description: TXCAL45DN
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: D_CAL
+            description: D_CAL
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: RX
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) USB PHY Receiver Control Register
+        fields:
+          - name: RXDBYPASS
+            description: RXDBYPASS
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: DISCONADJ
+            description: DISCONADJ
+            index: 4
+            width: 3
+            read: true
+            write: true
+            type: USBPHY1_RX_DISCONADJ
+          - name: ENVADJ
+            description: ENVADJ
+            index: 0
+            width: 3
+            read: true
+            write: true
+            type: USBPHY1_RX_ENVADJ
+      - name: RX_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) USB PHY Receiver Control Register
+        fields:
+          - name: RXDBYPASS
+            description: RXDBYPASS
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: DISCONADJ
+            description: DISCONADJ
+            index: 4
+            width: 3
+            read: true
+            write: true
+          - name: ENVADJ
+            description: ENVADJ
+            index: 0
+            width: 3
+            read: true
+            write: true
+      - name: RX_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) USB PHY Receiver Control Register
+        fields:
+          - name: RXDBYPASS
+            description: RXDBYPASS
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: DISCONADJ
+            description: DISCONADJ
+            index: 4
+            width: 3
+            read: true
+            write: true
+          - name: ENVADJ
+            description: ENVADJ
+            index: 0
+            width: 3
+            read: true
+            write: true
+      - name: RX_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) USB PHY Receiver Control Register
+        fields:
+          - name: RXDBYPASS
+            description: RXDBYPASS
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: DISCONADJ
+            description: DISCONADJ
+            index: 4
+            width: 3
+            read: true
+            write: true
+          - name: ENVADJ
+            description: ENVADJ
+            index: 0
+            width: 3
+            read: true
+            write: true
+      - name: CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) USB PHY General Control Register
+        fields:
+          - name: SFTRST
+            description: SFTRST
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CLKGATE
+            description: CLKGATE
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: UTMI_SUSPENDM
+            description: UTMI_SUSPENDM
+            index: 29
+            width: 1
+            read: true
+            write: false
+          - name: HOST_FORCE_LS_SE0
+            description: HOST_FORCE_LS_SE0
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: OTG_ID_VALUE
+            description: OTG_ID_VALUE
+            index: 27
+            width: 1
+            read: true
+            write: false
+          - name: FSDLL_RST_EN
+            description: FSDLL_RST_EN
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: ENVBUSCHG_WKUP
+            description: ENVBUSCHG_WKUP
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: ENIDCHG_WKUP
+            description: ENIDCHG_WKUP
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: ENDPDMCHG_WKUP
+            description: ENDPDMCHG_WKUP
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: ENAUTOCLR_PHY_PWD
+            description: ENAUTOCLR_PHY_PWD
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: ENAUTOCLR_CLKGATE
+            description: ENAUTOCLR_CLKGATE
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: AUTORESUME_EN
+            description: AUTORESUME_EN
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: WAKEUP_IRQ
+            description: WAKEUP_IRQ
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: ENIRQWAKEUP
+            description: ENIRQWAKEUP
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: ENUTMILEVEL3
+            description: ENUTMILEVEL3
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ENUTMILEVEL2
+            description: ENUTMILEVEL2
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: DEVPLUGIN_IRQ
+            description: DEVPLUGIN_IRQ
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ENIRQDEVPLUGIN
+            description: ENIRQDEVPLUGIN
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: RESUME_IRQ
+            description: RESUME_IRQ
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: ENIRQRESUMEDETECT
+            description: ENIRQRESUMEDETECT
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: RESUMEIRQSTICKY
+            description: RESUMEIRQSTICKY
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: ENOTGIDDETECT
+            description: ENOTGIDDETECT
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: OTG_ID_CHG_IRQ
+            description: OTG_ID_CHG_IRQ
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: DEVPLUGIN_POLARITY
+            description: DEVPLUGIN_POLARITY
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ENDEVPLUGINDETECT
+            description: Enables non-standard resistive plugged-in detection
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: HOSTDISCONDETECT_IRQ
+            description: HOSTDISCONDETECT_IRQ
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ENIRQHOSTDISCON
+            description: ENIRQHOSTDISCON
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ENHOSTDISCONDETECT
+            description: ENHOSTDISCONDETECT
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ENOTG_ID_CHG_IRQ
+            description: ENOTG_ID_CHG_IRQ
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 52
+        description: (read-write) USB PHY General Control Register
+        fields:
+          - name: SFTRST
+            description: SFTRST
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CLKGATE
+            description: CLKGATE
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: UTMI_SUSPENDM
+            description: UTMI_SUSPENDM
+            index: 29
+            width: 1
+            read: true
+            write: false
+          - name: HOST_FORCE_LS_SE0
+            description: HOST_FORCE_LS_SE0
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: OTG_ID_VALUE
+            description: OTG_ID_VALUE
+            index: 27
+            width: 1
+            read: true
+            write: false
+          - name: FSDLL_RST_EN
+            description: FSDLL_RST_EN
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: ENVBUSCHG_WKUP
+            description: ENVBUSCHG_WKUP
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: ENIDCHG_WKUP
+            description: ENIDCHG_WKUP
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: ENDPDMCHG_WKUP
+            description: ENDPDMCHG_WKUP
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: ENAUTOCLR_PHY_PWD
+            description: ENAUTOCLR_PHY_PWD
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: ENAUTOCLR_CLKGATE
+            description: ENAUTOCLR_CLKGATE
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: AUTORESUME_EN
+            description: AUTORESUME_EN
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: WAKEUP_IRQ
+            description: WAKEUP_IRQ
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: ENIRQWAKEUP
+            description: ENIRQWAKEUP
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: ENUTMILEVEL3
+            description: ENUTMILEVEL3
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ENUTMILEVEL2
+            description: ENUTMILEVEL2
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: DEVPLUGIN_IRQ
+            description: DEVPLUGIN_IRQ
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ENIRQDEVPLUGIN
+            description: ENIRQDEVPLUGIN
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: RESUME_IRQ
+            description: RESUME_IRQ
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: ENIRQRESUMEDETECT
+            description: ENIRQRESUMEDETECT
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: RESUMEIRQSTICKY
+            description: RESUMEIRQSTICKY
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: ENOTGIDDETECT
+            description: ENOTGIDDETECT
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: OTG_ID_CHG_IRQ
+            description: OTG_ID_CHG_IRQ
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: DEVPLUGIN_POLARITY
+            description: DEVPLUGIN_POLARITY
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ENDEVPLUGINDETECT
+            description: Enables non-standard resistive plugged-in detection
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: HOSTDISCONDETECT_IRQ
+            description: HOSTDISCONDETECT_IRQ
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ENIRQHOSTDISCON
+            description: ENIRQHOSTDISCON
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ENHOSTDISCONDETECT
+            description: ENHOSTDISCONDETECT
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ENOTG_ID_CHG_IRQ
+            description: ENOTG_ID_CHG_IRQ
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 56
+        description: (read-write) USB PHY General Control Register
+        fields:
+          - name: SFTRST
+            description: SFTRST
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CLKGATE
+            description: CLKGATE
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: UTMI_SUSPENDM
+            description: UTMI_SUSPENDM
+            index: 29
+            width: 1
+            read: true
+            write: false
+          - name: HOST_FORCE_LS_SE0
+            description: HOST_FORCE_LS_SE0
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: OTG_ID_VALUE
+            description: OTG_ID_VALUE
+            index: 27
+            width: 1
+            read: true
+            write: false
+          - name: FSDLL_RST_EN
+            description: FSDLL_RST_EN
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: ENVBUSCHG_WKUP
+            description: ENVBUSCHG_WKUP
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: ENIDCHG_WKUP
+            description: ENIDCHG_WKUP
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: ENDPDMCHG_WKUP
+            description: ENDPDMCHG_WKUP
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: ENAUTOCLR_PHY_PWD
+            description: ENAUTOCLR_PHY_PWD
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: ENAUTOCLR_CLKGATE
+            description: ENAUTOCLR_CLKGATE
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: AUTORESUME_EN
+            description: AUTORESUME_EN
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: WAKEUP_IRQ
+            description: WAKEUP_IRQ
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: ENIRQWAKEUP
+            description: ENIRQWAKEUP
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: ENUTMILEVEL3
+            description: ENUTMILEVEL3
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ENUTMILEVEL2
+            description: ENUTMILEVEL2
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: DEVPLUGIN_IRQ
+            description: DEVPLUGIN_IRQ
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ENIRQDEVPLUGIN
+            description: ENIRQDEVPLUGIN
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: RESUME_IRQ
+            description: RESUME_IRQ
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: ENIRQRESUMEDETECT
+            description: ENIRQRESUMEDETECT
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: RESUMEIRQSTICKY
+            description: RESUMEIRQSTICKY
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: ENOTGIDDETECT
+            description: ENOTGIDDETECT
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: OTG_ID_CHG_IRQ
+            description: OTG_ID_CHG_IRQ
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: DEVPLUGIN_POLARITY
+            description: DEVPLUGIN_POLARITY
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ENDEVPLUGINDETECT
+            description: Enables non-standard resistive plugged-in detection
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: HOSTDISCONDETECT_IRQ
+            description: HOSTDISCONDETECT_IRQ
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ENIRQHOSTDISCON
+            description: ENIRQHOSTDISCON
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ENHOSTDISCONDETECT
+            description: ENHOSTDISCONDETECT
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ENOTG_ID_CHG_IRQ
+            description: ENOTG_ID_CHG_IRQ
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 60
+        description: (read-write) USB PHY General Control Register
+        fields:
+          - name: SFTRST
+            description: SFTRST
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CLKGATE
+            description: CLKGATE
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: UTMI_SUSPENDM
+            description: UTMI_SUSPENDM
+            index: 29
+            width: 1
+            read: true
+            write: false
+          - name: HOST_FORCE_LS_SE0
+            description: HOST_FORCE_LS_SE0
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: OTG_ID_VALUE
+            description: OTG_ID_VALUE
+            index: 27
+            width: 1
+            read: true
+            write: false
+          - name: FSDLL_RST_EN
+            description: FSDLL_RST_EN
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: ENVBUSCHG_WKUP
+            description: ENVBUSCHG_WKUP
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: ENIDCHG_WKUP
+            description: ENIDCHG_WKUP
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: ENDPDMCHG_WKUP
+            description: ENDPDMCHG_WKUP
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: ENAUTOCLR_PHY_PWD
+            description: ENAUTOCLR_PHY_PWD
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: ENAUTOCLR_CLKGATE
+            description: ENAUTOCLR_CLKGATE
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: AUTORESUME_EN
+            description: AUTORESUME_EN
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: WAKEUP_IRQ
+            description: WAKEUP_IRQ
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: ENIRQWAKEUP
+            description: ENIRQWAKEUP
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: ENUTMILEVEL3
+            description: ENUTMILEVEL3
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ENUTMILEVEL2
+            description: ENUTMILEVEL2
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: DEVPLUGIN_IRQ
+            description: DEVPLUGIN_IRQ
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ENIRQDEVPLUGIN
+            description: ENIRQDEVPLUGIN
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: RESUME_IRQ
+            description: RESUME_IRQ
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: ENIRQRESUMEDETECT
+            description: ENIRQRESUMEDETECT
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: RESUMEIRQSTICKY
+            description: RESUMEIRQSTICKY
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: ENOTGIDDETECT
+            description: ENOTGIDDETECT
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: OTG_ID_CHG_IRQ
+            description: OTG_ID_CHG_IRQ
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: DEVPLUGIN_POLARITY
+            description: DEVPLUGIN_POLARITY
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ENDEVPLUGINDETECT
+            description: Enables non-standard resistive plugged-in detection
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: HOSTDISCONDETECT_IRQ
+            description: HOSTDISCONDETECT_IRQ
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ENIRQHOSTDISCON
+            description: ENIRQHOSTDISCON
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ENHOSTDISCONDETECT
+            description: ENHOSTDISCONDETECT
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ENOTG_ID_CHG_IRQ
+            description: ENOTG_ID_CHG_IRQ
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: STATUS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 64
+        description: (read-write) USB PHY Status Register
+        fields:
+          - name: RESUME_STATUS
+            description: RESUME_STATUS
+            index: 10
+            width: 1
+            read: true
+            write: false
+          - name: OTGID_STATUS
+            description: OTGID_STATUS
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: DEVPLUGIN_STATUS
+            description: Status indicator for non-standard resistive plugged-in detection
+            index: 6
+            width: 1
+            read: true
+            write: false
+          - name: HOSTDISCONDETECT_STATUS
+            description: HOSTDISCONDETECT_STATUS
+            index: 3
+            width: 1
+            read: true
+            write: false
+      - name: DEBUG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 80
+        description: (read-write) USB PHY Debug Register
+        fields:
+          - name: CLKGATE
+            description: CLKGATE
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: HOST_RESUME_DEBUG
+            description: HOST_RESUME_DEBUG
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: SQUELCHRESETLENGTH
+            description: SQUELCHRESETLENGTH
+            index: 25
+            width: 4
+            read: true
+            write: true
+          - name: ENSQUELCHRESET
+            description: ENSQUELCHRESET
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: SQUELCHRESETCOUNT
+            description: SQUELCHRESETCOUNT
+            index: 16
+            width: 5
+            read: true
+            write: true
+          - name: ENTX2RXCOUNT
+            description: ENTX2RXCOUNT
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: TX2RXCOUNT
+            description: TX2RXCOUNT
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: ENHSTPULLDOWN
+            description: ENHSTPULLDOWN
+            index: 4
+            width: 2
+            read: true
+            write: true
+          - name: HSTPULLDOWN
+            description: HSTPULLDOWN
+            index: 2
+            width: 2
+            read: true
+            write: true
+          - name: DEBUG_INTERFACE_HOLD
+            description: DEBUG_INTERFACE_HOLD
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: OTGIDPIOLOCK
+            description: OTGIDPIOLOCK
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DEBUG_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 84
+        description: (read-write) USB PHY Debug Register
+        fields:
+          - name: CLKGATE
+            description: CLKGATE
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: HOST_RESUME_DEBUG
+            description: HOST_RESUME_DEBUG
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: SQUELCHRESETLENGTH
+            description: SQUELCHRESETLENGTH
+            index: 25
+            width: 4
+            read: true
+            write: true
+          - name: ENSQUELCHRESET
+            description: ENSQUELCHRESET
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: SQUELCHRESETCOUNT
+            description: SQUELCHRESETCOUNT
+            index: 16
+            width: 5
+            read: true
+            write: true
+          - name: ENTX2RXCOUNT
+            description: ENTX2RXCOUNT
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: TX2RXCOUNT
+            description: TX2RXCOUNT
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: ENHSTPULLDOWN
+            description: ENHSTPULLDOWN
+            index: 4
+            width: 2
+            read: true
+            write: true
+          - name: HSTPULLDOWN
+            description: HSTPULLDOWN
+            index: 2
+            width: 2
+            read: true
+            write: true
+          - name: DEBUG_INTERFACE_HOLD
+            description: DEBUG_INTERFACE_HOLD
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: OTGIDPIOLOCK
+            description: OTGIDPIOLOCK
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DEBUG_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 88
+        description: (read-write) USB PHY Debug Register
+        fields:
+          - name: CLKGATE
+            description: CLKGATE
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: HOST_RESUME_DEBUG
+            description: HOST_RESUME_DEBUG
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: SQUELCHRESETLENGTH
+            description: SQUELCHRESETLENGTH
+            index: 25
+            width: 4
+            read: true
+            write: true
+          - name: ENSQUELCHRESET
+            description: ENSQUELCHRESET
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: SQUELCHRESETCOUNT
+            description: SQUELCHRESETCOUNT
+            index: 16
+            width: 5
+            read: true
+            write: true
+          - name: ENTX2RXCOUNT
+            description: ENTX2RXCOUNT
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: TX2RXCOUNT
+            description: TX2RXCOUNT
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: ENHSTPULLDOWN
+            description: ENHSTPULLDOWN
+            index: 4
+            width: 2
+            read: true
+            write: true
+          - name: HSTPULLDOWN
+            description: HSTPULLDOWN
+            index: 2
+            width: 2
+            read: true
+            write: true
+          - name: DEBUG_INTERFACE_HOLD
+            description: DEBUG_INTERFACE_HOLD
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: OTGIDPIOLOCK
+            description: OTGIDPIOLOCK
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DEBUG_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 92
+        description: (read-write) USB PHY Debug Register
+        fields:
+          - name: CLKGATE
+            description: CLKGATE
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: HOST_RESUME_DEBUG
+            description: HOST_RESUME_DEBUG
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: SQUELCHRESETLENGTH
+            description: SQUELCHRESETLENGTH
+            index: 25
+            width: 4
+            read: true
+            write: true
+          - name: ENSQUELCHRESET
+            description: ENSQUELCHRESET
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: SQUELCHRESETCOUNT
+            description: SQUELCHRESETCOUNT
+            index: 16
+            width: 5
+            read: true
+            write: true
+          - name: ENTX2RXCOUNT
+            description: ENTX2RXCOUNT
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: TX2RXCOUNT
+            description: TX2RXCOUNT
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: ENHSTPULLDOWN
+            description: ENHSTPULLDOWN
+            index: 4
+            width: 2
+            read: true
+            write: true
+          - name: HSTPULLDOWN
+            description: HSTPULLDOWN
+            index: 2
+            width: 2
+            read: true
+            write: true
+          - name: DEBUG_INTERFACE_HOLD
+            description: DEBUG_INTERFACE_HOLD
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: OTGIDPIOLOCK
+            description: OTGIDPIOLOCK
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DEBUG0_STATUS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 96
+        description: (read-write) UTMI Debug Status Register 0
+        fields:
+          - name: SQUELCH_COUNT
+            description: SQUELCH_COUNT
+            index: 26
+            width: 6
+            read: true
+            write: false
+          - name: UTMI_RXERROR_FAIL_COUNT
+            description: UTMI_RXERROR_FAIL_COUNT
+            index: 16
+            width: 10
+            read: true
+            write: false
+          - name: LOOP_BACK_FAIL_COUNT
+            description: LOOP_BACK_FAIL_COUNT
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: DEBUG1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 112
+        description: (read-write) UTMI Debug Status Register 1
+        fields:
+          - name: USB2_REFBIAS_TST
+            description: Bias current control for usb2_phy
+            index: 21
+            width: 2
+            read: true
+            write: true
+          - name: USB2_REFBIAS_VBGADJ
+            description: Adjustment bits on bandgap
+            index: 18
+            width: 3
+            read: true
+            write: true
+          - name: USB2_REFBIAS_LOWPWR
+            description: to be added
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: USB2_REFBIAS_PWDVBGUP
+            description: Powers down the bandgap detect logic, will affect vbgup on
+              misc1 register.
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: USB2_REFBIAS_SELFBIASOFF
+            description: Set to 1 to disable self bias, 100 us after power up refbias(usb2_refbias_pwd).This
+              can reduce noise on power.
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ENTAILADJVD
+            description: ENTAILADJVD
+            index: 13
+            width: 2
+            read: true
+            write: true
+            type: USBPHY1_DEBUG1_ENTAILADJVD
+      - name: DEBUG1_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 116
+        description: (read-write) UTMI Debug Status Register 1
+        fields:
+          - name: USB2_REFBIAS_TST
+            description: Bias current control for usb2_phy
+            index: 21
+            width: 2
+            read: true
+            write: true
+          - name: USB2_REFBIAS_VBGADJ
+            description: Adjustment bits on bandgap
+            index: 18
+            width: 3
+            read: true
+            write: true
+          - name: USB2_REFBIAS_LOWPWR
+            description: to be added
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: USB2_REFBIAS_PWDVBGUP
+            description: Powers down the bandgap detect logic, will affect vbgup on
+              misc1 register.
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: USB2_REFBIAS_SELFBIASOFF
+            description: Set to 1 to disable self bias, 100 us after power up refbias(usb2_refbias_pwd).This
+              can reduce noise on power.
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ENTAILADJVD
+            description: ENTAILADJVD
+            index: 13
+            width: 2
+            read: true
+            write: true
+      - name: DEBUG1_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 120
+        description: (read-write) UTMI Debug Status Register 1
+        fields:
+          - name: USB2_REFBIAS_TST
+            description: Bias current control for usb2_phy
+            index: 21
+            width: 2
+            read: true
+            write: true
+          - name: USB2_REFBIAS_VBGADJ
+            description: Adjustment bits on bandgap
+            index: 18
+            width: 3
+            read: true
+            write: true
+          - name: USB2_REFBIAS_LOWPWR
+            description: to be added
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: USB2_REFBIAS_PWDVBGUP
+            description: Powers down the bandgap detect logic, will affect vbgup on
+              misc1 register.
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: USB2_REFBIAS_SELFBIASOFF
+            description: Set to 1 to disable self bias, 100 us after power up refbias(usb2_refbias_pwd).This
+              can reduce noise on power.
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ENTAILADJVD
+            description: ENTAILADJVD
+            index: 13
+            width: 2
+            read: true
+            write: true
+      - name: DEBUG1_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 124
+        description: (read-write) UTMI Debug Status Register 1
+        fields:
+          - name: USB2_REFBIAS_TST
+            description: Bias current control for usb2_phy
+            index: 21
+            width: 2
+            read: true
+            write: true
+          - name: USB2_REFBIAS_VBGADJ
+            description: Adjustment bits on bandgap
+            index: 18
+            width: 3
+            read: true
+            write: true
+          - name: USB2_REFBIAS_LOWPWR
+            description: to be added
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: USB2_REFBIAS_PWDVBGUP
+            description: Powers down the bandgap detect logic, will affect vbgup on
+              misc1 register.
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: USB2_REFBIAS_SELFBIASOFF
+            description: Set to 1 to disable self bias, 100 us after power up refbias(usb2_refbias_pwd).This
+              can reduce noise on power.
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ENTAILADJVD
+            description: ENTAILADJVD
+            index: 13
+            width: 2
+            read: true
+            write: true
+      - name: VERSION
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 128
+        description: (read-write) UTMI RTL Version
+        fields:
+          - name: MAJOR
+            description: MAJOR
+            index: 24
+            width: 8
+            read: true
+            write: false
+          - name: MINOR
+            description: MINOR
+            index: 16
+            width: 8
+            read: true
+            write: false
+          - name: STEP
+            description: STEP
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: PLL_SIC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 160
+        description: (read-write) USB PHY PLL Control/Status Register
+        fields:
+          - name: PLL_LOCK
+            description: PLL_LOCK
+            index: 31
+            width: 1
+            read: true
+            write: false
+          - name: PLL_DIV_SEL
+            description: PLL_DIV_SEL
+            index: 22
+            width: 3
+            read: true
+            write: true
+            type: USBPHY1_PLL_SIC_PLL_DIV_SEL
+          - name: PLL_REG_ENABLE
+            description: PLL_REG_ENABLE
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: REFBIAS_PWD
+            description: Power down the reference bias
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: REFBIAS_PWD_SEL
+            description: REFBIAS_PWD_SEL
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: PLL_BYPASS
+            description: PLL_BYPASS
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: PLL_ENABLE
+            description: PLL_ENABLE
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: PLL_POWER
+            description: PLL_POWER
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: PLL_EN_USB_CLKS
+            description: PLL_EN_USB_CLKS
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: PLL_POSTDIV
+            description: PLL_POSTDIV
+            index: 2
+            width: 3
+            read: true
+            write: true
+      - name: PLL_SIC_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 164
+        description: (read-write) USB PHY PLL Control/Status Register
+        fields:
+          - name: PLL_LOCK
+            description: PLL_LOCK
+            index: 31
+            width: 1
+            read: true
+            write: false
+          - name: PLL_DIV_SEL
+            description: PLL_DIV_SEL
+            index: 22
+            width: 3
+            read: true
+            write: true
+          - name: PLL_REG_ENABLE
+            description: PLL_REG_ENABLE
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: REFBIAS_PWD
+            description: Power down the reference bias
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: REFBIAS_PWD_SEL
+            description: REFBIAS_PWD_SEL
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: PLL_BYPASS
+            description: PLL_BYPASS
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: PLL_ENABLE
+            description: PLL_ENABLE
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: PLL_POWER
+            description: PLL_POWER
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: PLL_EN_USB_CLKS
+            description: PLL_EN_USB_CLKS
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: PLL_POSTDIV
+            description: PLL_POSTDIV
+            index: 2
+            width: 3
+            read: true
+            write: true
+      - name: PLL_SIC_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 168
+        description: (read-write) USB PHY PLL Control/Status Register
+        fields:
+          - name: PLL_LOCK
+            description: PLL_LOCK
+            index: 31
+            width: 1
+            read: true
+            write: false
+          - name: PLL_DIV_SEL
+            description: PLL_DIV_SEL
+            index: 22
+            width: 3
+            read: true
+            write: true
+          - name: PLL_REG_ENABLE
+            description: PLL_REG_ENABLE
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: REFBIAS_PWD
+            description: Power down the reference bias
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: REFBIAS_PWD_SEL
+            description: REFBIAS_PWD_SEL
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: PLL_BYPASS
+            description: PLL_BYPASS
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: PLL_ENABLE
+            description: PLL_ENABLE
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: PLL_POWER
+            description: PLL_POWER
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: PLL_EN_USB_CLKS
+            description: PLL_EN_USB_CLKS
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: PLL_POSTDIV
+            description: PLL_POSTDIV
+            index: 2
+            width: 3
+            read: true
+            write: true
+      - name: PLL_SIC_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 172
+        description: (read-write) USB PHY PLL Control/Status Register
+        fields:
+          - name: PLL_LOCK
+            description: PLL_LOCK
+            index: 31
+            width: 1
+            read: true
+            write: false
+          - name: PLL_DIV_SEL
+            description: PLL_DIV_SEL
+            index: 22
+            width: 3
+            read: true
+            write: true
+          - name: PLL_REG_ENABLE
+            description: PLL_REG_ENABLE
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: REFBIAS_PWD
+            description: Power down the reference bias
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: REFBIAS_PWD_SEL
+            description: REFBIAS_PWD_SEL
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: PLL_BYPASS
+            description: PLL_BYPASS
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: PLL_ENABLE
+            description: PLL_ENABLE
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: PLL_POWER
+            description: PLL_POWER
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: PLL_EN_USB_CLKS
+            description: PLL_EN_USB_CLKS
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: PLL_POSTDIV
+            description: PLL_POSTDIV
+            index: 2
+            width: 3
+            read: true
+            write: true
+      - name: USB1_VBUS_DETECT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 192
+        description: (read-write) USB PHY VBUS Detect Control Register
+        fields:
+          - name: EN_CHARGER_RESISTOR
+            description: Enables resistors used for an older method of resistive battery
+              charger detection
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: DISCHARGE_VBUS
+            description: Controls VBUS discharge resistor
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: PWRUP_CMPS
+            description: Enables the VBUS_VALID comparator
+            index: 20
+            width: 3
+            read: true
+            write: true
+            type: USBPHY1_USB1_VBUS_DETECT_PWRUP_CMPS
+          - name: VBUSVALID_TO_SESSVALID
+            description: Selects the comparator used for VBUS_VALID
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: ID_OVERRIDE
+            description: TBA
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ID_OVERRIDE_EN
+            description: TBA
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: VBUS_SOURCE_SEL
+            description: Selects the source of the VBUS_VALID signal reported to the
+              USB controller
+            index: 9
+            width: 2
+            read: true
+            write: true
+            type: USBPHY1_USB1_VBUS_DETECT_VBUS_SOURCE_SEL
+          - name: VBUSVALID_SEL
+            description: Selects the source of the VBUS_VALID signal reported to the
+              USB controller
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: VBUSVALID_OVERRIDE
+            description: Override value for VBUS_VALID signal sent to USB controller
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: AVALID_OVERRIDE
+            description: Override value for A-Device Session Valid
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: BVALID_OVERRIDE
+            description: Override value for B-Device Session Valid
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: SESSEND_OVERRIDE
+            description: Override value for SESSEND
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: VBUS_OVERRIDE_EN
+            description: VBUS detect signal override enable
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: VBUSVALID_THRESH
+            description: VBUSVALID_THRESH
+            index: 0
+            width: 3
+            read: true
+            write: true
+            type: USBPHY1_USB1_VBUS_DETECT_VBUSVALID_THRESH
+      - name: USB1_VBUS_DETECT_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 196
+        description: (read-write) USB PHY VBUS Detect Control Register
+        fields:
+          - name: EN_CHARGER_RESISTOR
+            description: Enables resistors used for an older method of resistive battery
+              charger detection
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: DISCHARGE_VBUS
+            description: Controls VBUS discharge resistor
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: PWRUP_CMPS
+            description: Enables the VBUS_VALID comparator
+            index: 20
+            width: 3
+            read: true
+            write: true
+          - name: VBUSVALID_TO_SESSVALID
+            description: Selects the comparator used for VBUS_VALID
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: ID_OVERRIDE
+            description: TBA
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ID_OVERRIDE_EN
+            description: TBA
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: VBUS_SOURCE_SEL
+            description: Selects the source of the VBUS_VALID signal reported to the
+              USB controller
+            index: 9
+            width: 2
+            read: true
+            write: true
+          - name: VBUSVALID_SEL
+            description: Selects the source of the VBUS_VALID signal reported to the
+              USB controller
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: VBUSVALID_OVERRIDE
+            description: Override value for VBUS_VALID signal sent to USB controller
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: AVALID_OVERRIDE
+            description: Override value for A-Device Session Valid
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: BVALID_OVERRIDE
+            description: Override value for B-Device Session Valid
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: SESSEND_OVERRIDE
+            description: Override value for SESSEND
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: VBUS_OVERRIDE_EN
+            description: VBUS detect signal override enable
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: VBUSVALID_THRESH
+            description: VBUSVALID_THRESH
+            index: 0
+            width: 3
+            read: true
+            write: true
+      - name: USB1_VBUS_DETECT_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 200
+        description: (read-write) USB PHY VBUS Detect Control Register
+        fields:
+          - name: EN_CHARGER_RESISTOR
+            description: Enables resistors used for an older method of resistive battery
+              charger detection
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: DISCHARGE_VBUS
+            description: Controls VBUS discharge resistor
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: PWRUP_CMPS
+            description: Enables the VBUS_VALID comparator
+            index: 20
+            width: 3
+            read: true
+            write: true
+          - name: VBUSVALID_TO_SESSVALID
+            description: Selects the comparator used for VBUS_VALID
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: ID_OVERRIDE
+            description: TBA
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ID_OVERRIDE_EN
+            description: TBA
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: VBUS_SOURCE_SEL
+            description: Selects the source of the VBUS_VALID signal reported to the
+              USB controller
+            index: 9
+            width: 2
+            read: true
+            write: true
+          - name: VBUSVALID_SEL
+            description: Selects the source of the VBUS_VALID signal reported to the
+              USB controller
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: VBUSVALID_OVERRIDE
+            description: Override value for VBUS_VALID signal sent to USB controller
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: AVALID_OVERRIDE
+            description: Override value for A-Device Session Valid
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: BVALID_OVERRIDE
+            description: Override value for B-Device Session Valid
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: SESSEND_OVERRIDE
+            description: Override value for SESSEND
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: VBUS_OVERRIDE_EN
+            description: VBUS detect signal override enable
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: VBUSVALID_THRESH
+            description: VBUSVALID_THRESH
+            index: 0
+            width: 3
+            read: true
+            write: true
+      - name: USB1_VBUS_DETECT_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 204
+        description: (read-write) USB PHY VBUS Detect Control Register
+        fields:
+          - name: EN_CHARGER_RESISTOR
+            description: Enables resistors used for an older method of resistive battery
+              charger detection
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: DISCHARGE_VBUS
+            description: Controls VBUS discharge resistor
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: PWRUP_CMPS
+            description: Enables the VBUS_VALID comparator
+            index: 20
+            width: 3
+            read: true
+            write: true
+          - name: VBUSVALID_TO_SESSVALID
+            description: Selects the comparator used for VBUS_VALID
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: ID_OVERRIDE
+            description: TBA
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ID_OVERRIDE_EN
+            description: TBA
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: VBUS_SOURCE_SEL
+            description: Selects the source of the VBUS_VALID signal reported to the
+              USB controller
+            index: 9
+            width: 2
+            read: true
+            write: true
+          - name: VBUSVALID_SEL
+            description: Selects the source of the VBUS_VALID signal reported to the
+              USB controller
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: VBUSVALID_OVERRIDE
+            description: Override value for VBUS_VALID signal sent to USB controller
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: AVALID_OVERRIDE
+            description: Override value for A-Device Session Valid
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: BVALID_OVERRIDE
+            description: Override value for B-Device Session Valid
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: SESSEND_OVERRIDE
+            description: Override value for SESSEND
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: VBUS_OVERRIDE_EN
+            description: VBUS detect signal override enable
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: VBUSVALID_THRESH
+            description: VBUSVALID_THRESH
+            index: 0
+            width: 3
+            read: true
+            write: true
+      - name: USB1_VBUS_DET_STAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 208
+        description: (read-write) USB PHY VBUS Detector Status Register
+        fields:
+          - name: VBUS_VALID_3V
+            description: VBUS_VALID_3V detector status
+            index: 4
+            width: 1
+            read: true
+            write: false
+          - name: VBUS_VALID
+            description: VBUS voltage status
+            index: 3
+            width: 1
+            read: true
+            write: false
+          - name: AVALID
+            description: A-Device Session Valid status
+            index: 2
+            width: 1
+            read: true
+            write: false
+          - name: BVALID
+            description: B-Device Session Valid status
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: SESSEND
+            description: Session End indicator
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: USB1_CHRG_DETECT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 224
+        description: (read-write) USB PHY Charger Detect Control Register
+        fields:
+          - name: BGR_BIAS
+            description: BGR_BIAS
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: PULLUP_DP
+            description: PULLUP_DP
+            index: 2
+            width: 1
+            read: true
+            write: true
+      - name: USB1_CHRG_DETECT_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 228
+        description: (read-write) USB PHY Charger Detect Control Register
+        fields:
+          - name: BGR_BIAS
+            description: BGR_BIAS
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: PULLUP_DP
+            description: PULLUP_DP
+            index: 2
+            width: 1
+            read: true
+            write: true
+      - name: USB1_CHRG_DETECT_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 232
+        description: (read-write) USB PHY Charger Detect Control Register
+        fields:
+          - name: BGR_BIAS
+            description: BGR_BIAS
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: PULLUP_DP
+            description: PULLUP_DP
+            index: 2
+            width: 1
+            read: true
+            write: true
+      - name: USB1_CHRG_DETECT_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 236
+        description: (read-write) USB PHY Charger Detect Control Register
+        fields:
+          - name: BGR_BIAS
+            description: BGR_BIAS
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: PULLUP_DP
+            description: PULLUP_DP
+            index: 2
+            width: 1
+            read: true
+            write: true
+      - name: USB1_CHRG_DET_STAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 240
+        description: (read-write) USB PHY Charger Detect Status Register
+        fields:
+          - name: SECDET_DCP
+            description: Battery Charging Secondary Detection phase output
+            index: 4
+            width: 1
+            read: true
+            write: false
+          - name: DP_STATE
+            description: DP_STATE
+            index: 3
+            width: 1
+            read: true
+            write: false
+          - name: DN_STATE
+            description: DN_STATE
+            index: 2
+            width: 1
+            read: true
+            write: false
+          - name: CHRG_DETECTED
+            description: Battery Charging Primary Detection phase output
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: PLUG_CONTACT
+            description: Battery Charging Data Contact Detection phase output
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: ANACTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 256
+        description: (read-write) USB PHY Analog Control Register
+        fields:
+          - name: DEV_PULLDOWN
+            description: DEV_PULLDOWN
+            index: 10
+            width: 1
+            read: true
+            write: true
+      - name: ANACTRL_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 260
+        description: (read-write) USB PHY Analog Control Register
+        fields:
+          - name: DEV_PULLDOWN
+            description: DEV_PULLDOWN
+            index: 10
+            width: 1
+            read: true
+            write: true
+      - name: ANACTRL_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 264
+        description: (read-write) USB PHY Analog Control Register
+        fields:
+          - name: DEV_PULLDOWN
+            description: DEV_PULLDOWN
+            index: 10
+            width: 1
+            read: true
+            write: true
+      - name: ANACTRL_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 268
+        description: (read-write) USB PHY Analog Control Register
+        fields:
+          - name: DEV_PULLDOWN
+            description: DEV_PULLDOWN
+            index: 10
+            width: 1
+            read: true
+            write: true
+      - name: USB1_LOOPBACK
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 272
+        description: (read-write) USB PHY Loopback Control/Status Register
+        fields:
+          - name: TSTPKT
+            description: TSTPKT
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: TSTI_HSFS_MODE_EN
+            description: TSTI_HSFS_MODE_EN
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: UTMO_DIG_TST1
+            description: UTMO_DIG_TST1
+            index: 8
+            width: 1
+            read: true
+            write: false
+          - name: UTMO_DIG_TST0
+            description: UTMO_DIG_TST0
+            index: 7
+            width: 1
+            read: true
+            write: false
+          - name: TSTI_TX_HIZ
+            description: TSTI_TX_HIZ
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: TSTI_TX_EN
+            description: TSTI_TX_EN
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: TSTI_TX_LS_MODE
+            description: TSTI_TX_LS_MODE
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: TSTI_TX_HS_MODE
+            description: TSTI_TX_HS_MODE
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: UTMI_DIG_TST1
+            description: UTMI_DIG_TST1
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: UTMI_DIG_TST0
+            description: UTMI_DIG_TST0
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: UTMI_TESTSTART
+            description: UTMI_TESTSTART
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: USB1_LOOPBACK_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 276
+        description: (read-write) USB PHY Loopback Control/Status Register
+        fields:
+          - name: TSTPKT
+            description: TSTPKT
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: TSTI_HSFS_MODE_EN
+            description: TSTI_HSFS_MODE_EN
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: UTMO_DIG_TST1
+            description: UTMO_DIG_TST1
+            index: 8
+            width: 1
+            read: true
+            write: false
+          - name: UTMO_DIG_TST0
+            description: UTMO_DIG_TST0
+            index: 7
+            width: 1
+            read: true
+            write: false
+          - name: TSTI_TX_HIZ
+            description: TSTI_TX_HIZ
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: TSTI_TX_EN
+            description: TSTI_TX_EN
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: TSTI_TX_LS_MODE
+            description: TSTI_TX_LS_MODE
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: TSTI_TX_HS_MODE
+            description: TSTI_TX_HS_MODE
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: UTMI_DIG_TST1
+            description: UTMI_DIG_TST1
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: UTMI_DIG_TST0
+            description: UTMI_DIG_TST0
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: UTMI_TESTSTART
+            description: UTMI_TESTSTART
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: USB1_LOOPBACK_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 280
+        description: (read-write) USB PHY Loopback Control/Status Register
+        fields:
+          - name: TSTPKT
+            description: TSTPKT
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: TSTI_HSFS_MODE_EN
+            description: TSTI_HSFS_MODE_EN
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: UTMO_DIG_TST1
+            description: UTMO_DIG_TST1
+            index: 8
+            width: 1
+            read: true
+            write: false
+          - name: UTMO_DIG_TST0
+            description: UTMO_DIG_TST0
+            index: 7
+            width: 1
+            read: true
+            write: false
+          - name: TSTI_TX_HIZ
+            description: TSTI_TX_HIZ
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: TSTI_TX_EN
+            description: TSTI_TX_EN
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: TSTI_TX_LS_MODE
+            description: TSTI_TX_LS_MODE
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: TSTI_TX_HS_MODE
+            description: TSTI_TX_HS_MODE
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: UTMI_DIG_TST1
+            description: UTMI_DIG_TST1
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: UTMI_DIG_TST0
+            description: UTMI_DIG_TST0
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: UTMI_TESTSTART
+            description: UTMI_TESTSTART
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: USB1_LOOPBACK_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 284
+        description: (read-write) USB PHY Loopback Control/Status Register
+        fields:
+          - name: TSTPKT
+            description: TSTPKT
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: TSTI_HSFS_MODE_EN
+            description: TSTI_HSFS_MODE_EN
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: UTMO_DIG_TST1
+            description: UTMO_DIG_TST1
+            index: 8
+            width: 1
+            read: true
+            write: false
+          - name: UTMO_DIG_TST0
+            description: UTMO_DIG_TST0
+            index: 7
+            width: 1
+            read: true
+            write: false
+          - name: TSTI_TX_HIZ
+            description: TSTI_TX_HIZ
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: TSTI_TX_EN
+            description: TSTI_TX_EN
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: TSTI_TX_LS_MODE
+            description: TSTI_TX_LS_MODE
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: TSTI_TX_HS_MODE
+            description: TSTI_TX_HS_MODE
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: UTMI_DIG_TST1
+            description: UTMI_DIG_TST1
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: UTMI_DIG_TST0
+            description: UTMI_DIG_TST0
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: UTMI_TESTSTART
+            description: UTMI_TESTSTART
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: USB1_LOOPBACK_HSFSCNT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 288
+        description: (read-write) USB PHY Loopback Packet Number Select Register
+        fields:
+          - name: TSTI_FS_NUMBER
+            description: TSTI_FS_NUMBER
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: TSTI_HS_NUMBER
+            description: TSTI_HS_NUMBER
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: USB1_LOOPBACK_HSFSCNT_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 292
+        description: (read-write) USB PHY Loopback Packet Number Select Register
+        fields:
+          - name: TSTI_FS_NUMBER
+            description: TSTI_FS_NUMBER
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: TSTI_HS_NUMBER
+            description: TSTI_HS_NUMBER
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: USB1_LOOPBACK_HSFSCNT_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 296
+        description: (read-write) USB PHY Loopback Packet Number Select Register
+        fields:
+          - name: TSTI_FS_NUMBER
+            description: TSTI_FS_NUMBER
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: TSTI_HS_NUMBER
+            description: TSTI_HS_NUMBER
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: USB1_LOOPBACK_HSFSCNT_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 300
+        description: (read-write) USB PHY Loopback Packet Number Select Register
+        fields:
+          - name: TSTI_FS_NUMBER
+            description: TSTI_FS_NUMBER
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: TSTI_HS_NUMBER
+            description: TSTI_HS_NUMBER
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: TRIM_OVERRIDE_EN
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 304
+        description: (read-write) USB PHY Trim Override Enable Register
+        fields:
+          - name: TRIM_USBPHY_TX_CAL45DN
+            description: TRIM_USBPHY_TX_CAL45DN
+            index: 28
+            width: 4
+            read: true
+            write: false
+          - name: TRIM_USBPHY_TX_CAL45DP
+            description: TRIM_USBPHY_TX_CAL45DP
+            index: 24
+            width: 4
+            read: true
+            write: false
+          - name: TRIM_USBPHY_TX_D_CAL
+            description: TRIM_USBPHY_TX_D_CAL
+            index: 20
+            width: 4
+            read: true
+            write: false
+          - name: TRIM_USB_REG_ENV_TAIL_ADJ_VD
+            description: TRIM_USB_REG_ENV_TAIL_ADJ_VD
+            index: 18
+            width: 2
+            read: true
+            write: false
+          - name: TRIM_PLL_CTRL0_DIV_SEL
+            description: TRIM_PLL_CTRL0_DIV_SEL
+            index: 15
+            width: 3
+            read: true
+            write: false
+          - name: TRIM_USB2_REFBIAS_TST
+            description: TRIM_USB2_REFBIAS_TST
+            index: 13
+            width: 2
+            read: true
+            write: false
+          - name: TRIM_USB2_REFBIAS_VBGADJ
+            description: TRIM_USB2_REFBIAS_VBGADJ
+            index: 10
+            width: 3
+            read: true
+            write: false
+          - name: TRIM_REFBIAS_TST_OVERRIDE
+            description: Override enable for bias current control
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: TRIM_REFBIAS_VBGADJ_OVERRIDE
+            description: Override enable for bandgap adjustment.
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: TRIM_TX_CAL45DN_OVERRIDE
+            description: TRIM_TX_CAL45DN_OVERRIDE
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: TRIM_TX_CAL45DP_OVERRIDE
+            description: TRIM_TX_CAL45DP_OVERRIDE
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: TRIM_TX_D_CAL_OVERRIDE
+            description: TRIM_TX_D_CAL_OVERRIDE
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: TRIM_ENV_TAIL_ADJ_VD_OVERRIDE
+            description: TRIM_ENV_TAIL_ADJ_VD_OVERRIDE
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: TRIM_DIV_SEL_OVERRIDE
+            description: TRIM_DIV_SEL_OVERRIDE
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: TRIM_OVERRIDE_EN_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 308
+        description: (read-write) USB PHY Trim Override Enable Register
+        fields:
+          - name: TRIM_USBPHY_TX_CAL45DN
+            description: TRIM_USBPHY_TX_CAL45DN
+            index: 28
+            width: 4
+            read: true
+            write: false
+          - name: TRIM_USBPHY_TX_CAL45DP
+            description: TRIM_USBPHY_TX_CAL45DP
+            index: 24
+            width: 4
+            read: true
+            write: false
+          - name: TRIM_USBPHY_TX_D_CAL
+            description: TRIM_USBPHY_TX_D_CAL
+            index: 20
+            width: 4
+            read: true
+            write: false
+          - name: TRIM_USB_REG_ENV_TAIL_ADJ_VD
+            description: TRIM_USB_REG_ENV_TAIL_ADJ_VD
+            index: 18
+            width: 2
+            read: true
+            write: false
+          - name: TRIM_PLL_CTRL0_DIV_SEL
+            description: TRIM_PLL_CTRL0_DIV_SEL
+            index: 15
+            width: 3
+            read: true
+            write: false
+          - name: TRIM_USB2_REFBIAS_TST
+            description: TRIM_USB2_REFBIAS_TST
+            index: 13
+            width: 2
+            read: true
+            write: false
+          - name: TRIM_USB2_REFBIAS_VBGADJ
+            description: TRIM_USB2_REFBIAS_VBGADJ
+            index: 10
+            width: 3
+            read: true
+            write: false
+          - name: TRIM_REFBIAS_TST_OVERRIDE
+            description: Override enable for bias current control
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: TRIM_REFBIAS_VBGADJ_OVERRIDE
+            description: Override enable for bandgap adjustment.
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: TRIM_TX_CAL45DN_OVERRIDE
+            description: TRIM_TX_CAL45DN_OVERRIDE
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: TRIM_TX_CAL45DP_OVERRIDE
+            description: TRIM_TX_CAL45DP_OVERRIDE
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: TRIM_TX_D_CAL_OVERRIDE
+            description: TRIM_TX_D_CAL_OVERRIDE
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: TRIM_ENV_TAIL_ADJ_VD_OVERRIDE
+            description: TRIM_ENV_TAIL_ADJ_VD_OVERRIDE
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: TRIM_DIV_SEL_OVERRIDE
+            description: TRIM_DIV_SEL_OVERRIDE
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: TRIM_OVERRIDE_EN_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 312
+        description: (read-write) USB PHY Trim Override Enable Register
+        fields:
+          - name: TRIM_USBPHY_TX_CAL45DN
+            description: TRIM_USBPHY_TX_CAL45DN
+            index: 28
+            width: 4
+            read: true
+            write: false
+          - name: TRIM_USBPHY_TX_CAL45DP
+            description: TRIM_USBPHY_TX_CAL45DP
+            index: 24
+            width: 4
+            read: true
+            write: false
+          - name: TRIM_USBPHY_TX_D_CAL
+            description: TRIM_USBPHY_TX_D_CAL
+            index: 20
+            width: 4
+            read: true
+            write: false
+          - name: TRIM_USB_REG_ENV_TAIL_ADJ_VD
+            description: TRIM_USB_REG_ENV_TAIL_ADJ_VD
+            index: 18
+            width: 2
+            read: true
+            write: false
+          - name: TRIM_PLL_CTRL0_DIV_SEL
+            description: TRIM_PLL_CTRL0_DIV_SEL
+            index: 15
+            width: 3
+            read: true
+            write: false
+          - name: TRIM_USB2_REFBIAS_TST
+            description: TRIM_USB2_REFBIAS_TST
+            index: 13
+            width: 2
+            read: true
+            write: false
+          - name: TRIM_USB2_REFBIAS_VBGADJ
+            description: TRIM_USB2_REFBIAS_VBGADJ
+            index: 10
+            width: 3
+            read: true
+            write: false
+          - name: TRIM_REFBIAS_TST_OVERRIDE
+            description: Override enable for bias current control
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: TRIM_REFBIAS_VBGADJ_OVERRIDE
+            description: Override enable for bandgap adjustment.
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: TRIM_TX_CAL45DN_OVERRIDE
+            description: TRIM_TX_CAL45DN_OVERRIDE
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: TRIM_TX_CAL45DP_OVERRIDE
+            description: TRIM_TX_CAL45DP_OVERRIDE
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: TRIM_TX_D_CAL_OVERRIDE
+            description: TRIM_TX_D_CAL_OVERRIDE
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: TRIM_ENV_TAIL_ADJ_VD_OVERRIDE
+            description: TRIM_ENV_TAIL_ADJ_VD_OVERRIDE
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: TRIM_DIV_SEL_OVERRIDE
+            description: TRIM_DIV_SEL_OVERRIDE
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: TRIM_OVERRIDE_EN_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 316
+        description: (read-write) USB PHY Trim Override Enable Register
+        fields:
+          - name: TRIM_USBPHY_TX_CAL45DN
+            description: TRIM_USBPHY_TX_CAL45DN
+            index: 28
+            width: 4
+            read: true
+            write: false
+          - name: TRIM_USBPHY_TX_CAL45DP
+            description: TRIM_USBPHY_TX_CAL45DP
+            index: 24
+            width: 4
+            read: true
+            write: false
+          - name: TRIM_USBPHY_TX_D_CAL
+            description: TRIM_USBPHY_TX_D_CAL
+            index: 20
+            width: 4
+            read: true
+            write: false
+          - name: TRIM_USB_REG_ENV_TAIL_ADJ_VD
+            description: TRIM_USB_REG_ENV_TAIL_ADJ_VD
+            index: 18
+            width: 2
+            read: true
+            write: false
+          - name: TRIM_PLL_CTRL0_DIV_SEL
+            description: TRIM_PLL_CTRL0_DIV_SEL
+            index: 15
+            width: 3
+            read: true
+            write: false
+          - name: TRIM_USB2_REFBIAS_TST
+            description: TRIM_USB2_REFBIAS_TST
+            index: 13
+            width: 2
+            read: true
+            write: false
+          - name: TRIM_USB2_REFBIAS_VBGADJ
+            description: TRIM_USB2_REFBIAS_VBGADJ
+            index: 10
+            width: 3
+            read: true
+            write: false
+          - name: TRIM_REFBIAS_TST_OVERRIDE
+            description: Override enable for bias current control
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: TRIM_REFBIAS_VBGADJ_OVERRIDE
+            description: Override enable for bandgap adjustment.
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: TRIM_TX_CAL45DN_OVERRIDE
+            description: TRIM_TX_CAL45DN_OVERRIDE
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: TRIM_TX_CAL45DP_OVERRIDE
+            description: TRIM_TX_CAL45DP_OVERRIDE
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: TRIM_TX_D_CAL_OVERRIDE
+            description: TRIM_TX_D_CAL_OVERRIDE
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: TRIM_ENV_TAIL_ADJ_VD_OVERRIDE
+            description: TRIM_ENV_TAIL_ADJ_VD_OVERRIDE
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: TRIM_DIV_SEL_OVERRIDE
+            description: TRIM_DIV_SEL_OVERRIDE
+            index: 0
+            width: 1
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  USBPHY1_TX_D_CAL:
+    enum:
+      MAX:
+        description: Maximum current, approximately 19% above nominal.
+        value: 0
+      NOMINAL:
+        description: Nominal
+        value: 7
+      MIN:
+        description: Minimum current, approximately 19% below nominal.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  USBPHY1_RX_DISCONADJ:
+    enum:
+      _56875:
+        description: Trip-Level Voltage is 0.56875 V
+        value: 0
+      _55:
+        description: Trip-Level Voltage is 0.55000 V
+        value: 1
+      _58125:
+        description: Trip-Level Voltage is 0.58125 V
+        value: 2
+      _6:
+        description: Trip-Level Voltage is 0.60000 V
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  USBPHY1_RX_ENVADJ:
+    enum:
+      _1:
+        description: Trip-Level Voltage is 0.1000 V
+        value: 0
+      _1125:
+        description: Trip-Level Voltage is 0.1125 V
+        value: 1
+      _1250:
+        description: Trip-Level Voltage is 0.1250 V
+        value: 2
+      _0875:
+        description: Trip-Level Voltage is 0.0875 V
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  USBPHY1_DEBUG1_ENTAILADJVD:
+    enum:
+      NOM_DELAY:
+        description: Delay is nominal
+        value: 0
+      DELAY_20_P:
+        description: Delay is +20%
+        value: 1
+      DELAY_20_N:
+        description: Delay is -20%
+        value: 2
+      DELAY_40_N:
+        description: Delay is -40%
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  USBPHY1_PLL_SIC_PLL_DIV_SEL:
+    enum:
+      _13:
+        description: Divide by 13
+        value: 0
+      _15:
+        description: Divide by 15
+        value: 1
+      _16:
+        description: Divide by 16
+        value: 2
+      _20:
+        description: Divide by 20
+        value: 3
+      _22:
+        description: Divide by 22
+        value: 4
+      _25:
+        description: Divide by 25
+        value: 5
+      _30:
+        description: Divide by 30
+        value: 6
+      _240:
+        description: Divide by 240
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  USBPHY1_USB1_VBUS_DETECT_PWRUP_CMPS:
+    enum:
+      DISABLE:
+        description: Powers down the VBUS_VALID comparator
+        value: 0
+      ENABLE:
+        description: Enables the SESS_VALID comparator (default)
+        value: 1
+      VDETECT:
+        description: Enables the 3Vdetect (default)
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  USBPHY1_USB1_VBUS_DETECT_VBUS_SOURCE_SEL:
+    enum:
+      VBUS_VALID_COMP:
+        description: Use the VBUS_VALID comparator results for signal reported to
+          the USB controller (Default)
+        value: 0
+      SESSION_VALID_COMP:
+        description: Use the Session Valid comparator results for signal reported
+          to the USB controller
+        value: 1
+      SESSION_VALID_COMP_1:
+        description: Use the Session Valid comparator results for signal reported
+          to the USB controller
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  USBPHY1_USB1_VBUS_DETECT_VBUSVALID_THRESH:
+    enum:
+      VOLT_4:
+        description: 4.0 V
+        value: 0
+      P1:
+        description: 4.1 V
+        value: 1
+      P2:
+        description: 4.2 V
+        value: 2
+      P3:
+        description: 4.3 V
+        value: 3
+      P4:
+        description: 4.4 V (Default)
+        value: 4
+      P5:
+        description: 4.5 V
+        value: 5
+      P6:
+        description: 4.6 V
+        value: 6
+      P7:
+        description: 4.7 V
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

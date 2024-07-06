@@ -1,0 +1,1063 @@
+---
+structs:
+  csi:
+    description: CSI
+    instances:
+      - name: CSI
+        address: '0x40800000'
+    fields:
+      - name: CR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) CSI Control Register 1
+        fields:
+          - name: SWAP16_EN
+            description: SWAP 16-Bit Enable
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: EXT_VSYNC
+            description: External VSYNC Enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: EOF_INT_EN
+            description: End-of-Frame Interrupt Enable. This bit enables and disables
+              the EOF interrupt.
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: VIDEO_MODE
+            description: Video mode select. This bit controls the video mode in BT.656
+              mode and TV decoder input.
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: COF_INT_EN
+            description: Change Of Image Field (COF) Interrupt Enable
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: SF_OR_INTEN
+            description: STAT FIFO Overrun Interrupt Enable. This bit enables the
+              STATFIFO overrun interrupt.
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: RF_OR_INTEN
+            description: RxFIFO Overrun Interrupt Enable. This bit enables the RX
+              FIFO overrun interrupt.
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: SFF_DMA_DONE_INTEN
+            description: STATFIFO DMA Transfer Done Interrupt Enable
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: STATFF_INTEN
+            description: STATFIFO Full Interrupt Enable. This bit enables the STAT
+              FIFO interrupt.
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: FB2_DMA_DONE_INTEN
+            description: Frame Buffer2 DMA Transfer Done Interrupt Enable
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: FB1_DMA_DONE_INTEN
+            description: Frame Buffer1 DMA Transfer Done Interrupt Enable
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RXFF_INTEN
+            description: RxFIFO Full Interrupt Enable. This bit enables the RxFIFO
+              full interrupt.
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: SOF_POL
+            description: SOF Interrupt Polarity. This bit controls the condition that
+              generates an SOF interrupt.
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: SOF_INTEN
+            description: Start Of Frame (SOF) Interrupt Enable. This bit enables the
+              SOF interrupt.
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: HISTOGRAM_CALC_DONE_IE
+            description: Histogram Interrupt Enable
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: HSYNC_POL
+            description: HSYNC Polarity Select
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: CCIR_EN
+            description: BT.656 Interface Enable. This bit selects the type of interface
+              used.
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: FCC
+            description: FIFO Clear Control
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: PACK_DIR
+            description: Data Packing Direction
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: CLR_STATFIFO
+            description: Asynchronous STATFIFO Clear
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: CLR_RXFIFO
+            description: Asynchronous RXFIFO Clear
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: GCLK_MODE
+            description: Gated Clock Mode Enable
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: INV_DATA
+            description: Invert Data Input. This bit enables or disables internal
+              inverters on the data lines.
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: INV_PCLK
+            description: Invert Pixel Clock Input
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: REDGE
+            description: Valid Pixel Clock Edge Select
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: PIXEL_BIT
+            description: Pixel Bit
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) CSI Control Register 2
+        fields:
+          - name: DMA_BURST_TYPE_RFF
+            description: Burst Type of DMA Transfer from RxFIFO. Selects the burst
+              type of DMA transfer from RxFIFO.
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: CSI_CR2_DMA_BURST_TYPE_RFF
+          - name: DMA_BURST_TYPE_SFF
+            description: Burst Type of DMA Transfer from STATFIFO. Selects the burst
+              type of DMA transfer from STATFIFO.
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: CSI_CR2_DMA_BURST_TYPE_SFF
+          - name: DRM
+            description: Double Resolution Mode. Controls size of statistics grid.
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: AFS
+            description: Auto Focus Spread. Selects which green pixels are used for
+              auto-focus.
+            index: 24
+            width: 2
+            read: true
+            write: true
+            type: CSI_CR2_AFS
+          - name: SCE
+            description: Skip Count Enable
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: BTS
+            description: Bayer Tile Start. Controls the Bayer pattern starting point.
+            index: 19
+            width: 2
+            read: true
+            write: true
+            type: CSI_CR2_BTS
+          - name: LVRM
+            description: Live View Resolution Mode. Selects the grid size used for
+              live view resolution.
+            index: 16
+            width: 3
+            read: true
+            write: true
+            type: CSI_CR2_LVRM
+          - name: VSC
+            description: Vertical Skip Count. Contains the number of rows to skip.
+              SCE must be 1, otherwise VSC is ignored.
+            index: 8
+            width: 8
+            read: true
+            write: true
+            type: CSI_CR2_VSC
+          - name: HSC
+            description: Horizontal Skip Count
+            index: 0
+            width: 8
+            read: true
+            write: true
+            type: CSI_CR2_HSC
+      - name: CR3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) CSI Control Register 3
+        fields:
+          - name: FRMCNT
+            description: Frame Counter
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: FRMCNT_RST
+            description: Frame Count Reset. Resets the Frame Counter. (Cleared automatically
+              after reset is done)
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: DMA_REFLASH_RFF
+            description: Reflash DMA Controller for RxFIFO
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: DMA_REFLASH_SFF
+            description: Reflash DMA Controller for STATFIFO
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: DMA_REQ_EN_RFF
+            description: DMA Request Enable for RxFIFO
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: DMA_REQ_EN_SFF
+            description: DMA Request Enable for STATFIFO
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: STATFF_LEVEL
+            description: STATFIFO Full Level
+            index: 8
+            width: 3
+            read: true
+            write: true
+            type: CSI_CR3_STATFF_LEVEL
+          - name: HRESP_ERR_EN
+            description: Hresponse Error Enable. This bit enables the hresponse (AHB
+              protocol standard) error interrupt.
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: RxFF_LEVEL
+            description: RxFIFO Full Level
+            index: 4
+            width: 3
+            read: true
+            write: true
+            type: CSI_CR3_RxFF_LEVEL
+          - name: SENSOR_16BITS
+            description: 16-bit Sensor Mode
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ZERO_PACK_EN
+            description: Dummy Zero Packing Enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ECC_INT_EN
+            description: Error Detection Interrupt Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ECC_AUTO_EN
+            description: Automatic Error Correction Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: STATFIFO
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) CSI Statistic FIFO Register
+        fields:
+          - name: STAT
+            description: Static data from sensor
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: RFIFO
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) CSI RX FIFO Register
+        fields:
+          - name: IMAGE
+            description: Received image data
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: RXCNT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) CSI RX Count Register
+        fields:
+          - name: RXCNT
+            description: RxFIFO Count
+            index: 0
+            width: 22
+            read: true
+            write: true
+      - name: SR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) CSI Status Register
+        fields:
+          - name: BASEADDR_CHHANGE_ERROR
+            description: When using base address switching enable, this bit will be
+              1 when switching occur before DMA complete
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: DMA_FIELD0_DONE
+            description: When DMA field 0 is complete, this bit will be set to 1(clear
+              by writing 1).
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: DMA_FIELD1_DONE
+            description: When DMA field 1 is complete, this bit will be set to 1(clear
+              by writing 1).
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: SF_OR_INT
+            description: STATFIFO Overrun Interrupt Status
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: RF_OR_INT
+            description: RxFIFO Overrun Interrupt Status
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: DMA_TSF_DONE_SFF
+            description: DMA Transfer Done from StatFIFO
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: STATFF_INT
+            description: STATFIFO Full Interrupt Status
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: DMA_TSF_DONE_FB2
+            description: DMA Transfer Done in Frame Buffer2
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: DMA_TSF_DONE_FB1
+            description: DMA Transfer Done in Frame Buffer1
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RxFF_INT
+            description: RXFIFO Full Interrupt Status
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: EOF_INT
+            description: End of Frame (EOF) Interrupt Status. Indicates when EOF is
+              detected. (Cleared by writing 1)
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: SOF_INT
+            description: Start of Frame Interrupt Status. Indicates when SOF is detected.
+              (Cleared by writing 1)
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: F2_INT
+            description: BT
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: F1_INT
+            description: BT
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: COF_INT
+            description: Change Of Field Interrupt Status
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: HRESP_ERR_INT
+            description: Hresponse Error Interrupt Status
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: HISTOGRAM_CALC_DONE_INT
+            description: no description available
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ECC_INT
+            description: BT
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: DRDY
+            description: RXFIFO Data Ready
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DMASA_STATFIFO
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) CSI DMA Start Address Register - for STATFIFO
+        fields:
+          - name: DMA_START_ADDR_SFF
+            description: DMA Start Address for STATFIFO
+            index: 2
+            width: 30
+            read: true
+            write: true
+      - name: DMATS_STATFIFO
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) CSI DMA Transfer Size Register - for STATFIFO
+        fields:
+          - name: DMA_TSF_SIZE_SFF
+            description: DMA Transfer Size for STATFIFO
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: DMASA_FB1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) CSI DMA Start Address Register - for Frame Buffer1
+        fields:
+          - name: DMA_START_ADDR_FB1
+            description: DMA Start Address in Frame Buffer1
+            index: 2
+            width: 30
+            read: true
+            write: true
+      - name: DMASA_FB2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) CSI DMA Transfer Size Register - for Frame Buffer2
+        fields:
+          - name: DMA_START_ADDR_FB2
+            description: DMA Start Address in Frame Buffer2
+            index: 2
+            width: 30
+            read: true
+            write: true
+      - name: FBUF_PARA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) CSI Frame Buffer Parameter Register
+        fields:
+          - name: DEINTERLACE_STRIDE
+            description: DEINTERLACE_STRIDE is only used in the deinterlace mode
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: FBUF_STRIDE
+            description: Frame Buffer Parameter
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: IMAG_PARA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 52
+        description: (read-write) CSI Image Parameter Register
+        fields:
+          - name: IMAGE_WIDTH
+            description: This field indicates the number of active pixel cycles per
+              line
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: IMAGE_HEIGHT
+            description: Image Height. Indicates how many pixels in a column of the
+              image from the sensor.
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: CR18
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 72
+        description: (read-write) CSI Control Register 18
+        fields:
+          - name: CSI_ENABLE
+            description: CSI global enable signal
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: MIPI_DATA_FORMAT
+            description: Image Data Format
+            index: 25
+            width: 6
+            read: true
+            write: false
+          - name: LINE_STRIDE_EN
+            description: When the line width are not the multiple of the burst length,
+              assert this bit.
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: DATA_FROM_MIPI
+            description: no description available
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: MIPI_YU_SWAP
+            description: It only works in MIPI CSI YUV422 double component mode.
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: MIPI_DOUBLE_CMPNT
+            description: Double component per clock cycle in YUV422 formats.
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: MASK_OPTION
+            description: These bits used to choose the method to mask the CSI input.
+            index: 18
+            width: 2
+            read: true
+            write: true
+            type: CSI_CR18_MASK_OPTION
+          - name: AHB_HPROT
+            description: Hprot value in AHB bus protocol.
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: RGB888A_FORMAT_SEL
+            description: Output is 32-bit format.
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: BASEADDR_CHANGE_ERROR_IE
+            description: Base address change error interrupt enable signal.
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: LAST_DMA_REQ_SEL
+            description: Choosing the last DMA request condition
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: DMA_FIELD1_DONE_IE
+            description: When in interlace mode, field 1 done interrupt enable.
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: FIELD0_DONE_IE
+            description: In interlace mode, field 0 means interrupt enabled.
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: BASEADDR_SWITCH_SEL
+            description: CSI 2 base addresses switching method. When using this bit,
+              BASEADDR_SWITCH_EN is 1.
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: BASEADDR_SWITCH_EN
+            description: When this bit is enabled, CSI DMA will switch the base address
+              according to BASEADDR_SWITCH_SEL rather than automatically by DMA completed
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: PARALLEL24_EN
+            description: Enable bit for Parallel RGB888/YUV444 24bit input
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: DEINTERLACE_EN
+            description: This bit is used to select the output method When input is
+              TVDECODER or standard BT.656 video.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: TVDECODER_IN_EN
+            description: When input is from TV decoder, this bit is enabled.
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: NTSC_EN
+            description: This bit is used to select NTSC/PAL mode When input is TVDECODER
+              or standard BT.656 video.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CR19
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 76
+        description: (read-write) CSI Control Register 19
+        fields:
+          - name: DMA_RFIFO_HIGHEST_FIFO_LEVEL
+            description: This byte stores the highest FIFO level achieved by CSI FIFO
+              timely and will be clear by writing 8'ff to it
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: CR20
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 80
+        description: (read-write) CSI Control Register 20
+        fields:
+          - name: QRCODE_EN
+            description: Gray scale mode enable
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: HISTOGRAM_EN
+            description: Histogram enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: _10BIT_NEW_EN
+            description: no description available
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: BIG_END
+            description: no description available
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: QR_DATA_FORMAT
+            description: no description available
+            index: 9
+            width: 3
+            read: true
+            write: true
+            type: CSI_CR20_QR_DATA_FORMAT
+          - name: BINARY_EN
+            description: no description available
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: THRESHOLD
+            description: THRESHOLD used for binary function. When data value > THRESHOLD,
+              output will be 1 Else will be 0.
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: CR
+        type: uint32_t
+        expected_size: 1024
+        expected_offset: 84
+        array_length: 256
+        description: (read-write) CSI Control Register
+        fields:
+          - name: PIXEL_COUNTERS
+            description: 'Number of pixels (Y component of the input pixel) equals:
+              0 (CSICR21) 1 (CSICR22)'
+            index: 0
+            width: 24
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  CSI_CR2_DMA_BURST_TYPE_RFF:
+    enum:
+      _0:
+        description: INCR8
+        value: 2
+      _1:
+        description: INCR4
+        value: 1
+      _3:
+        description: INCR16
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CSI_CR2_DMA_BURST_TYPE_SFF:
+    enum:
+      _0:
+        description: INCR8
+        value: 2
+      _1:
+        description: INCR4
+        value: 1
+      _3:
+        description: INCR16
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CSI_CR2_AFS:
+    enum:
+      _0:
+        description: Abs Diff on consecutive green pixels
+        value: 0
+      _1:
+        description: Abs Diff on every third green pixels
+        value: 1
+      _2:
+        description: Abs Diff on every four green pixels
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CSI_CR2_BTS:
+    enum:
+      _0:
+        description: GR
+        value: 0
+      _1:
+        description: RG
+        value: 1
+      _2:
+        description: BG
+        value: 2
+      _3:
+        description: GB
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CSI_CR2_LVRM:
+    enum:
+      _0:
+        description: 512 x 384
+        value: 0
+      _1:
+        description: 448 x 336
+        value: 1
+      _2:
+        description: 384 x 288
+        value: 2
+      _3:
+        description: 384 x 256
+        value: 3
+      _4:
+        description: 320 x 240
+        value: 4
+      _5:
+        description: 288 x 216
+        value: 5
+      _6:
+        description: 400 x 300
+        value: 6
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CSI_CR2_VSC:
+    enum:
+      _0:
+        description: Number of rows to skip minus 1
+        value: 0
+      _1:
+        description: Number of rows to skip minus 1
+        value: 1
+      _2:
+        description: Number of rows to skip minus 1
+        value: 2
+      _3:
+        description: Number of rows to skip minus 1
+        value: 3
+      _4:
+        description: Number of rows to skip minus 1
+        value: 4
+      _5:
+        description: Number of rows to skip minus 1
+        value: 5
+      _6:
+        description: Number of rows to skip minus 1
+        value: 6
+      _7:
+        description: Number of rows to skip minus 1
+        value: 7
+      _8:
+        description: Number of rows to skip minus 1
+        value: 8
+      _9:
+        description: Number of rows to skip minus 1
+        value: 9
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CSI_CR2_HSC:
+    enum:
+      _0:
+        description: Number of pixels to skip minus 1
+        value: 0
+      _1:
+        description: Number of pixels to skip minus 1
+        value: 1
+      _2:
+        description: Number of pixels to skip minus 1
+        value: 2
+      _3:
+        description: Number of pixels to skip minus 1
+        value: 3
+      _4:
+        description: Number of pixels to skip minus 1
+        value: 4
+      _5:
+        description: Number of pixels to skip minus 1
+        value: 5
+      _6:
+        description: Number of pixels to skip minus 1
+        value: 6
+      _7:
+        description: Number of pixels to skip minus 1
+        value: 7
+      _8:
+        description: Number of pixels to skip minus 1
+        value: 8
+      _9:
+        description: Number of pixels to skip minus 1
+        value: 9
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CSI_CR3_STATFF_LEVEL:
+    enum:
+      _0:
+        description: 4 Double words
+        value: 0
+      _1:
+        description: 8 Double words
+        value: 1
+      _2:
+        description: 12 Double words
+        value: 2
+      _3:
+        description: 16 Double words
+        value: 3
+      _4:
+        description: 24 Double words
+        value: 4
+      _5:
+        description: 32 Double words
+        value: 5
+      _6:
+        description: 48 Double words
+        value: 6
+      _7:
+        description: 64 Double words
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CSI_CR3_RxFF_LEVEL:
+    enum:
+      _0:
+        description: 4 Double words
+        value: 0
+      _1:
+        description: 8 Double words
+        value: 1
+      _2:
+        description: 16 Double words
+        value: 2
+      _3:
+        description: 24 Double words
+        value: 3
+      _4:
+        description: 32 Double words
+        value: 4
+      _5:
+        description: 48 Double words
+        value: 5
+      _6:
+        description: 64 Double words
+        value: 6
+      _7:
+        description: 96 Double words
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CSI_CR18_MASK_OPTION:
+    enum:
+      _0:
+        description: Writing to memory (OCRAM or external DDR) from first completely
+          frame, when using this option, the CSI_ENABLE should be 1.
+        value: 0
+      _1:
+        description: Writing to memory when CSI_ENABLE is 1.
+        value: 1
+      _2:
+        description: Writing to memory from second completely frame, when using this
+          option, the CSI_ENABLE should be 1.
+        value: 2
+      _3:
+        description: Writing to memory when data comes in, not matter the CSI_ENABLE
+          is 1 or 0.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CSI_CR20_QR_DATA_FORMAT:
+    enum:
+      _0:
+        description: YU YV one cycle per 1 pixel input
+        value: 0
+      _1:
+        description: UY VY one cycle per1 pixel input
+        value: 1
+      _2:
+        description: Y U Y V two cycles per 1 pixel input
+        value: 2
+      _3:
+        description: U Y V Y two cycles per 1 pixel input
+        value: 3
+      _4:
+        description: YUV one cycle per 1 pixel input
+        value: 4
+      _5:
+        description: Y U V three cycles per 1 pixel input
+        value: 5
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

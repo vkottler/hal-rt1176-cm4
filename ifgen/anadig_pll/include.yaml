@@ -1,0 +1,849 @@
+---
+structs:
+  anadig_pll:
+    description: MX6RT_ANADIG_REGISTER
+    instances:
+      - name: ANADIG_PLL
+        address: '0x40C84000'
+    fields:
+      - name: ARM_PLL_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 512
+        description: (read-write) ARM_PLL_CTRL_REGISTER
+        fields:
+          - name: ARM_PLL_CONTROL_MODE
+            description: pll_arm_control_mode
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: ARM_PLL_GATE
+            description: ARM_PLL_GATE
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: ARM_PLL_STABLE
+            description: ARM_PLL_STABLE
+            index: 29
+            width: 1
+            read: true
+            write: false
+          - name: BYPASS
+            description: Bypass the pll.
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: POST_DIV_SEL
+            description: POST_DIV_SEL
+            index: 15
+            width: 2
+            read: true
+            write: true
+            type: ANADIG_PLL_ARM_PLL_CTRL_POST_DIV_SEL
+          - name: ENABLE_CLK
+            description: Enable the clock output.
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: POWERUP
+            description: Powers up the PLL.
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: HOLD_RING_OFF
+            description: PLL Start up initialization
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: DIV_SELECT
+            description: DIV_SELECT
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SYS_PLL3_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 528
+        description: (read-write) SYS_PLL3_CTRL_REGISTER
+        fields:
+          - name: SYS_PLL3_CONTROL_MODE
+            description: SYS_PLL3_control_mode
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: SYS_PLL3_GATE
+            description: SYS_PLL3_GATE
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: SYS_PLL3_STABLE
+            description: SYS_PLL3_STABLE
+            index: 29
+            width: 1
+            read: true
+            write: false
+          - name: SYS_PLL3_DIV2_CONTROL_MODE
+            description: SYS_PLL3_DIV2_CONTROL_MODE
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: POWERUP
+            description: Powers up the PLL.
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS
+            description: BYPASS
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE_CLK
+            description: Enable the clock output.
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: HOLD_RING_OFF
+            description: PLL Start up initialization
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: PLL_REG_EN
+            description: Enable Internal PLL Regulator
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: SYS_PLL3_DIV2
+            description: SYS PLL3 DIV2 gate
+            index: 3
+            width: 1
+            read: true
+            write: true
+      - name: SYS_PLL3_UPDATE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 544
+        description: (read-write) SYS_PLL3_UPDATE_REGISTER
+        fields:
+          - name: PFD3_CONTROL_MODE
+            description: pfd3_control_mode
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: PDF2_CONTROL_MODE
+            description: pdf2_control_mode
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: PFD1_CONTROL_MODE
+            description: pfd1_control_mode
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: PFD0_CONTROL_MODE
+            description: pfd0_control_mode
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: PFD3_UPDATE
+            description: PFD3_UPDATE
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: PFD2_UPDATE
+            description: PFD2_OVERRIDE
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: PFD1_UPDATE
+            description: PFD1_OVERRIDE
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: PFD0_UPDATE
+            description: PFD0_OVERRIDE
+            index: 1
+            width: 1
+            read: true
+            write: true
+      - name: SYS_PLL3_PFD
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 560
+        description: (read-write) SYS_PLL3_PFD_REGISTER
+        fields:
+          - name: PFD3_DIV1_CLKGATE
+            description: PFD3_DIV1_CLKGATE
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: PFD3_STABLE
+            description: PFD3_STABLE
+            index: 30
+            width: 1
+            read: true
+            write: false
+          - name: PFD3_FRAC
+            description: PFD3_FRAC
+            index: 24
+            width: 6
+            read: true
+            write: true
+          - name: PFD2_DIV1_CLKGATE
+            description: PFD2_DIV1_CLKGATE
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: PFD2_STABLE
+            description: PFD2_STABLE
+            index: 22
+            width: 1
+            read: true
+            write: false
+          - name: PFD2_FRAC
+            description: PFD2_FRAC
+            index: 16
+            width: 6
+            read: true
+            write: true
+          - name: PFD1_DIV1_CLKGATE
+            description: PFD1_DIV1_CLKGATE
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: PFD1_STABLE
+            description: PFD1_STABLE
+            index: 14
+            width: 1
+            read: true
+            write: false
+          - name: PFD1_FRAC
+            description: PFD1_FRAC
+            index: 8
+            width: 6
+            read: true
+            write: true
+          - name: PFD0_DIV1_CLKGATE
+            description: PFD0_DIV1_CLKGATE
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: PFD0_STABLE
+            description: PFD0_STABLE
+            index: 6
+            width: 1
+            read: true
+            write: false
+          - name: PFD0_FRAC
+            description: PFD0_FRAC
+            index: 0
+            width: 6
+            read: true
+            write: true
+      - name: SYS_PLL2_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 576
+        description: (read-write) SYS_PLL2_CTRL_REGISTER
+        fields:
+          - name: SYS_PLL2_CONTROL_MODE
+            description: SYS_PLL2_control_mode
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: SYS_PLL2_GATE
+            description: SYS_PLL2_GATE
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: SYS_PLL2_STABLE
+            description: SYS_PLL2_STABLE
+            index: 29
+            width: 1
+            read: true
+            write: false
+          - name: POWERUP
+            description: Powers up the PLL.
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: PLL_DDR_OVERRIDE
+            description: PLL_DDR_OVERRIDE
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: PFD_OFFSET_EN
+            description: PFD_OFFSET_EN
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: DITHER_ENABLE
+            description: DITHER_ENABLE
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS
+            description: Bypass the pll.
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE_CLK
+            description: Enable the clock output.
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: HOLD_RING_OFF
+            description: PLL Start up initialization
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: PLL_REG_EN
+            description: Enable Internal PLL Regulator
+            index: 3
+            width: 1
+            read: true
+            write: true
+      - name: SYS_PLL2_UPDATE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 592
+        description: (read-write) SYS_PLL2_UPDATE_REGISTER
+        fields:
+          - name: PFD3_CONTROL_MODE
+            description: pfd3_control_mode
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: PFD2_CONTROL_MODE
+            description: pfd2_control_mode
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: PFD1_CONTROL_MODE
+            description: pfd1_control_mode
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: PFD0_CONTROL_MODE
+            description: pfd0_control_mode
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: PFD3_UPDATE
+            description: PFD3_UPDATE
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: PFD2_UPDATE
+            description: PFD2_UPDATE
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: PFD1_UPDATE
+            description: PFD1_UPDATE
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: PFD0_UPDATE
+            description: PFD0_UPDATE
+            index: 1
+            width: 1
+            read: true
+            write: true
+      - name: SYS_PLL2_SS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 608
+        description: (read-write) SYS_PLL2_SS_REGISTER
+        fields:
+          - name: STOP
+            description: STOP
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: ENABLE
+            description: ENABLE
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: STEP
+            description: STEP
+            index: 0
+            width: 15
+            read: true
+            write: true
+      - name: SYS_PLL2_PFD
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 624
+        description: (read-write) SYS_PLL2_PFD_REGISTER
+        fields:
+          - name: PFD3_DIV1_CLKGATE
+            description: PFD3_DIV1_CLKGATE
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: PFD3_STABLE
+            description: PFD3_STABLE
+            index: 30
+            width: 1
+            read: true
+            write: false
+          - name: PFD3_FRAC
+            description: PFD3_FRAC
+            index: 24
+            width: 6
+            read: true
+            write: true
+          - name: PFD2_DIV1_CLKGATE
+            description: PFD2_DIV1_CLKGATE
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: PFD2_STABLE
+            description: PFD2_STABLE
+            index: 22
+            width: 1
+            read: true
+            write: false
+          - name: PFD2_FRAC
+            description: PFD2_FRAC
+            index: 16
+            width: 6
+            read: true
+            write: true
+          - name: PFD1_DIV1_CLKGATE
+            description: PFD1_DIV1_CLKGATE
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: PFD1_STABLE
+            description: PFD1_STABLE
+            index: 14
+            width: 1
+            read: true
+            write: false
+          - name: PFD1_FRAC
+            description: PFD1_FRAC
+            index: 8
+            width: 6
+            read: true
+            write: true
+          - name: PFD0_DIV1_CLKGATE
+            description: PFD0_DIV1_CLKGATE
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: PFD0_STABLE
+            description: PFD0_STABLE
+            index: 6
+            width: 1
+            read: true
+            write: false
+          - name: PFD0_FRAC
+            description: PFD0_FRAC
+            index: 0
+            width: 6
+            read: true
+            write: true
+      - name: SYS_PLL2_MFD
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 672
+        description: (read-write) SYS_PLL2_MFD_REGISTER
+        fields:
+          - name: MFD
+            description: Denominator
+            index: 0
+            width: 30
+            read: true
+            write: true
+      - name: SYS_PLL1_SS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 688
+        description: (read-write) SYS_PLL1_SS_REGISTER
+        fields:
+          - name: STOP
+            description: STOP
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: ENABLE
+            description: ENABLE
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: STEP
+            description: STEP
+            index: 0
+            width: 15
+            read: true
+            write: true
+      - name: SYS_PLL1_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 704
+        description: (read-write) SYS_PLL1_CTRL_REGISTER
+        fields:
+          - name: SYS_PLL1_CONTROL_MODE
+            description: SYS_PLL1_CONTROL_MODE
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: SYS_PLL1_AI_BUSY
+            description: SYS_PLL1_AI_BUSY
+            index: 30
+            width: 1
+            read: true
+            write: false
+          - name: SYS_PLL1_STABLE
+            description: SYS_PLL1_STABLE
+            index: 29
+            width: 1
+            read: true
+            write: false
+          - name: SYS_PLL1_DIV2_CONTROL_MODE
+            description: SYS_PLL1_DIV2_CONTROL_MODE
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: SYS_PLL1_DIV5_CONTROL_MODE
+            description: SYS_PLL1_DIV5_CONTROL_MODE
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: SYS_PLL1_DIV5
+            description: SYS_PLL1_DIV5
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: SYS_PLL1_DIV2
+            description: SYS_PLL1_DIV2
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: SYS_PLL1_GATE
+            description: SYS_PLL1_GATE
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE_CLK
+            description: ENABLE_CLK
+            index: 13
+            width: 1
+            read: true
+            write: true
+      - name: SYS_PLL1_DENOMINATOR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 720
+        description: (read-write) SYS_PLL1_DENOMINATOR_REGISTER
+        fields:
+          - name: DENOM
+            description: DENOM
+            index: 0
+            width: 30
+            read: true
+            write: true
+      - name: SYS_PLL1_NUMERATOR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 736
+        description: (read-write) SYS_PLL1_NUMERATOR_REGISTER
+        fields:
+          - name: NUM
+            description: NUM
+            index: 0
+            width: 30
+            read: true
+            write: true
+      - name: SYS_PLL1_DIV_SELECT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 752
+        description: (read-write) SYS_PLL1_DIV_SELECT_REGISTER
+        fields:
+          - name: DIV_SELECT
+            description: DIV_SELECT
+            index: 0
+            width: 7
+            read: true
+            write: true
+      - name: PLL_AUDIO_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 768
+        description: (read-write) PLL_AUDIO_CTRL_REGISTER
+        fields:
+          - name: PLL_AUDIO_CONTROL_MODE
+            description: pll_audio_control_mode
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: PLL_AUDIO_AI_BUSY
+            description: pll_audio_ai_busy
+            index: 30
+            width: 1
+            read: true
+            write: false
+          - name: PLL_AUDIO_STABLE
+            description: PLL_AUDIO_STABLE
+            index: 29
+            width: 1
+            read: true
+            write: false
+          - name: PLL_AUDIO_GATE
+            description: PLL_AUDIO_GATE
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE_CLK
+            description: ENABLE_CLK
+            index: 13
+            width: 1
+            read: true
+            write: true
+      - name: PLL_AUDIO_SS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 784
+        description: (read-write) PLL_AUDIO_SS_REGISTER
+        fields:
+          - name: STOP
+            description: STOP
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: ENABLE
+            description: ENABLE
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: STEP
+            description: STEP
+            index: 0
+            width: 15
+            read: true
+            write: true
+      - name: PLL_AUDIO_DENOMINATOR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 800
+        description: (read-write) PLL_AUDIO_DENOMINATOR_REGISTER
+        fields:
+          - name: DENOM
+            description: DENOM
+            index: 0
+            width: 30
+            read: true
+            write: true
+      - name: PLL_AUDIO_NUMERATOR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 816
+        description: (read-write) PLL_AUDIO_NUMERATOR_REGISTER
+        fields:
+          - name: NUM
+            description: NUM
+            index: 0
+            width: 30
+            read: true
+            write: true
+      - name: PLL_AUDIO_DIV_SELECT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 832
+        description: (read-write) PLL_AUDIO_DIV_SELECT_REGISTER
+        fields:
+          - name: PLL_AUDIO_DIV_SELECT
+            description: PLL_AUDIO_DIV_SELECT
+            index: 0
+            width: 7
+            read: true
+            write: true
+      - name: PLL_VIDEO_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 848
+        description: (read-write) PLL_VIDEO_CTRL_REGISTER
+        fields:
+          - name: PLL_VIDEO_CONTROL_MODE
+            description: pll_video_control_mode
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: PLL_VIDEO_AI_BUSY
+            description: pll_video_ai_busy
+            index: 30
+            width: 1
+            read: true
+            write: false
+          - name: PLL_VIDEO_STABLE
+            description: PLL_VIDEO_STABLE
+            index: 29
+            width: 1
+            read: true
+            write: false
+          - name: PLL_VIDEO_COUNTER_CLR
+            description: pll_video_counter_clr
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: PLL_VIDEO_GATE
+            description: PLL_VIDEO_GATE
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE_CLK
+            description: ENABLE_CLK
+            index: 13
+            width: 1
+            read: true
+            write: true
+      - name: PLL_VIDEO_SS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 864
+        description: (read-write) PLL_VIDEO_SS_REGISTER
+        fields:
+          - name: STOP
+            description: STOP
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: ENABLE
+            description: ENABLE
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: STEP
+            description: STEP
+            index: 0
+            width: 15
+            read: true
+            write: true
+      - name: PLL_VIDEO_DENOMINATOR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 880
+        description: (read-write) PLL_VIDEO_DENOMINATOR_REGISTER
+        fields:
+          - name: DENOM
+            description: DENOM
+            index: 0
+            width: 30
+            read: true
+            write: true
+      - name: PLL_VIDEO_NUMERATOR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 896
+        description: (read-write) PLL_VIDEO_NUMERATOR_REGISTER
+        fields:
+          - name: NUM
+            description: NUM
+            index: 0
+            width: 30
+            read: true
+            write: true
+      - name: PLL_VIDEO_DIV_SELECT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 912
+        description: (read-write) PLL_VIDEO_DIV_SELECT_REGISTER
+        fields:
+          - name: DIV_SELECT
+            description: DIV_SELECT
+            index: 0
+            width: 7
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  ANADIG_PLL_ARM_PLL_CTRL_POST_DIV_SEL:
+    enum:
+      _2:
+        description: Divide by 2
+        value: 0
+      _4:
+        description: Divide by 4
+        value: 1
+      _8:
+        description: Divide by 8
+        value: 2
+      _1:
+        description: Divide by 1
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

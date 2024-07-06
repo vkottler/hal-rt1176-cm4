@@ -1,0 +1,278 @@
+---
+structs:
+  vmbandgap:
+    description: no description available
+    instances:
+      - name: VMBANDGAP
+        address: '0'
+    fields:
+      - name: CTRL0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Analog Control Register CTRL0
+        fields:
+          - name: REFTOP_SELFBIASOFF
+            description: bandgap self-bias control bit
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: REFTOP_LOWPOWER
+            description: Low-power control bit
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: REFTOP_PWDVBGUP
+            description: Power-down VBGUP detector in bandgap
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: REFTOP_LINREGREF_PWD
+            description: Power-down for bandgap voltage-reference buffer
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: REFTOP_PWD
+            description: Master power-down for bandgap module
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL0_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Analog Control Register CTRL0
+        fields:
+          - name: REFTOP_SELFBIASOFF
+            description: bandgap self-bias control bit
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: REFTOP_LOWPOWER
+            description: Low-power control bit
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: REFTOP_PWDVBGUP
+            description: Power-down VBGUP detector in bandgap
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: REFTOP_LINREGREF_PWD
+            description: Power-down for bandgap voltage-reference buffer
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: REFTOP_PWD
+            description: Master power-down for bandgap module
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL0_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) Analog Control Register CTRL0
+        fields:
+          - name: REFTOP_SELFBIASOFF
+            description: bandgap self-bias control bit
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: REFTOP_LOWPOWER
+            description: Low-power control bit
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: REFTOP_PWDVBGUP
+            description: Power-down VBGUP detector in bandgap
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: REFTOP_LINREGREF_PWD
+            description: Power-down for bandgap voltage-reference buffer
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: REFTOP_PWD
+            description: Master power-down for bandgap module
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL0_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) Analog Control Register CTRL0
+        fields:
+          - name: REFTOP_SELFBIASOFF
+            description: bandgap self-bias control bit
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: REFTOP_LOWPOWER
+            description: Low-power control bit
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: REFTOP_PWDVBGUP
+            description: Power-down VBGUP detector in bandgap
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: REFTOP_LINREGREF_PWD
+            description: Power-down for bandgap voltage-reference buffer
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: REFTOP_PWD
+            description: Master power-down for bandgap module
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: STAT0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 80
+        description: (read-write) Analog Status Register STAT0
+        fields:
+          - name: VDD3_PORB
+            description: Brief description here
+            index: 3
+            width: 1
+            read: true
+            write: false
+          - name: VDD2_PORB
+            description: Brief description here
+            index: 2
+            width: 1
+            read: true
+            write: false
+          - name: VDD1_PORB
+            description: Brief description here
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: REFTOP_VBGUP
+            description: Brief description here
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: STAT0_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 84
+        description: (read-write) Analog Status Register STAT0
+        fields:
+          - name: VDD3_PORB
+            description: Brief description here
+            index: 3
+            width: 1
+            read: true
+            write: false
+          - name: VDD2_PORB
+            description: Brief description here
+            index: 2
+            width: 1
+            read: true
+            write: false
+          - name: VDD1_PORB
+            description: Brief description here
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: REFTOP_VBGUP
+            description: Brief description here
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: STAT0_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 88
+        description: (read-write) Analog Status Register STAT0
+        fields:
+          - name: VDD3_PORB
+            description: Brief description here
+            index: 3
+            width: 1
+            read: true
+            write: false
+          - name: VDD2_PORB
+            description: Brief description here
+            index: 2
+            width: 1
+            read: true
+            write: false
+          - name: VDD1_PORB
+            description: Brief description here
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: REFTOP_VBGUP
+            description: Brief description here
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: STAT0_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 92
+        description: (read-write) Analog Status Register STAT0
+        fields:
+          - name: VDD3_PORB
+            description: Brief description here
+            index: 3
+            width: 1
+            read: true
+            write: false
+          - name: VDD2_PORB
+            description: Brief description here
+            index: 2
+            width: 1
+            read: true
+            write: false
+          - name: VDD1_PORB
+            description: Brief description here
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: REFTOP_VBGUP
+            description: Brief description here
+            index: 0
+            width: 1
+            read: true
+            write: false
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums: {}

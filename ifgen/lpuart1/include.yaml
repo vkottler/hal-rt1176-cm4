@@ -1,0 +1,1065 @@
+---
+structs:
+  lpuart1:
+    description: LPUART
+    instances:
+      - name: LPUART1
+        address: '0x4007C000'
+      - name: LPUART10
+        address: '0x400A0000'
+      - name: LPUART11
+        address: '0x40C24000'
+      - name: LPUART12
+        address: '0x40C28000'
+      - name: LPUART2
+        address: '0x40080000'
+      - name: LPUART3
+        address: '0x40084000'
+      - name: LPUART4
+        address: '0x40088000'
+      - name: LPUART5
+        address: '0x4008C000'
+      - name: LPUART6
+        address: '0x40090000'
+      - name: LPUART7
+        address: '0x40094000'
+      - name: LPUART8
+        address: '0x40098000'
+      - name: LPUART9
+        address: '0x4009C000'
+    fields:
+      - name: VERID
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Version ID Register
+        fields:
+          - name: MAJOR
+            description: Major Version Number
+            index: 24
+            width: 8
+            read: true
+            write: false
+          - name: MINOR
+            description: Minor Version Number
+            index: 16
+            width: 8
+            read: true
+            write: false
+          - name: FEATURE
+            description: Feature Identification Number
+            index: 0
+            width: 16
+            read: true
+            write: false
+            type: LPUART1_VERID_FEATURE
+      - name: PARAM
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Parameter Register
+        fields:
+          - name: RXFIFO
+            description: Receive FIFO Size
+            index: 8
+            width: 8
+            read: true
+            write: false
+          - name: TXFIFO
+            description: Transmit FIFO Size
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: GLOBAL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) LPUART Global Register
+        fields:
+          - name: RST
+            description: Software Reset
+            index: 1
+            width: 1
+            read: true
+            write: true
+      - name: PINCFG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) LPUART Pin Configuration Register
+        fields:
+          - name: TRGSEL
+            description: Trigger Select
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: LPUART1_PINCFG_TRGSEL
+      - name: BAUD
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) LPUART Baud Rate Register
+        fields:
+          - name: MAEN1
+            description: Match Address Mode Enable 1
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: MAEN2
+            description: Match Address Mode Enable 2
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: M10
+            description: 10-bit Mode select
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: OSR
+            description: Oversampling Ratio
+            index: 24
+            width: 5
+            read: true
+            write: true
+            type: LPUART1_BAUD_OSR
+          - name: TDMAE
+            description: Transmitter DMA Enable
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: RDMAE
+            description: Receiver Full DMA Enable
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: MATCFG
+            description: Match Configuration
+            index: 18
+            width: 2
+            read: true
+            write: true
+            type: LPUART1_BAUD_MATCFG
+          - name: BOTHEDGE
+            description: Both Edge Sampling
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: RESYNCDIS
+            description: Resynchronization Disable
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: LBKDIE
+            description: LIN Break Detect Interrupt Enable
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: RXEDGIE
+            description: RX Input Active Edge Interrupt Enable
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: SBNS
+            description: Stop Bit Number Select
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: SBR
+            description: Baud Rate Modulo Divisor.
+            index: 0
+            width: 13
+            read: true
+            write: true
+      - name: STAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) LPUART Status Register
+        fields:
+          - name: LBKDIF
+            description: LIN Break Detect Interrupt Flag
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: RXEDGIF
+            description: RXD Pin Active Edge Interrupt Flag
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: MSBF
+            description: MSB First
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: RXINV
+            description: Receive Data Inversion
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: RWUID
+            description: Receive Wake Up Idle Detect
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: BRK13
+            description: Break Character Generation Length
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: LBKDE
+            description: LIN Break Detection Enable
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: RAF
+            description: Receiver Active Flag
+            index: 24
+            width: 1
+            read: true
+            write: false
+          - name: TDRE
+            description: Transmit Data Register Empty Flag
+            index: 23
+            width: 1
+            read: true
+            write: false
+          - name: TC
+            description: Transmission Complete Flag
+            index: 22
+            width: 1
+            read: true
+            write: false
+          - name: RDRF
+            description: Receive Data Register Full Flag
+            index: 21
+            width: 1
+            read: true
+            write: false
+          - name: IDLE
+            description: Idle Line Flag
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: OR
+            description: Receiver Overrun Flag
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: NF
+            description: Noise Flag
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: FE
+            description: Framing Error Flag
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: PF
+            description: Parity Error Flag
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: MA1F
+            description: Match 1 Flag
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: MA2F
+            description: Match 2 Flag
+            index: 14
+            width: 1
+            read: true
+            write: true
+      - name: CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) LPUART Control Register
+        fields:
+          - name: R8T9
+            description: Receive Bit 8 / Transmit Bit 9
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: R9T8
+            description: Receive Bit 9 / Transmit Bit 8
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: TXDIR
+            description: TXD Pin Direction in Single-Wire Mode
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: TXINV
+            description: Transmit Data Inversion
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: ORIE
+            description: Overrun Interrupt Enable
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: NEIE
+            description: Noise Error Interrupt Enable
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: FEIE
+            description: Framing Error Interrupt Enable
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: PEIE
+            description: Parity Error Interrupt Enable
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: TIE
+            description: Transmit Interrupt Enable
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: TCIE
+            description: Transmission Complete Interrupt Enable for
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: RIE
+            description: Receiver Interrupt Enable
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: ILIE
+            description: Idle Line Interrupt Enable
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: TE
+            description: Transmitter Enable
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RE
+            description: Receiver Enable
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: RWU
+            description: Receiver Wakeup Control
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: SBK
+            description: Send Break
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: MA1IE
+            description: Match 1 Interrupt Enable
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: MA2IE
+            description: Match 2 Interrupt Enable
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: M7
+            description: 7-Bit Mode Select
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: IDLECFG
+            description: Idle Configuration
+            index: 8
+            width: 3
+            read: true
+            write: true
+            type: LPUART1_CTRL_IDLECFG
+          - name: LOOPS
+            description: Loop Mode Select
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: DOZEEN
+            description: Doze Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: RSRC
+            description: Receiver Source Select
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: M
+            description: 9-Bit or 8-Bit Mode Select
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: WAKE
+            description: Receiver Wakeup Method Select
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ILT
+            description: Idle Line Type Select
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: PE
+            description: Parity Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: PT
+            description: Parity Type
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DATA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) LPUART Data Register
+        fields:
+          - name: NOISY
+            description: Noisy Data Received
+            index: 15
+            width: 1
+            read: true
+            write: false
+          - name: PARITYE
+            description: Parity Error
+            index: 14
+            width: 1
+            read: true
+            write: false
+          - name: FRETSC
+            description: Frame Error / Transmit Special Character
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: RXEMPT
+            description: Receive Buffer Empty
+            index: 12
+            width: 1
+            read: true
+            write: false
+          - name: IDLINE
+            description: Idle Line
+            index: 11
+            width: 1
+            read: true
+            write: false
+          - name: R9T9
+            description: R9T9
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: R8T8
+            description: R8T8
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: R7T7
+            description: R7T7
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: R6T6
+            description: R6T6
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: R5T5
+            description: R5T5
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: R4T4
+            description: R4T4
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: R3T3
+            description: R3T3
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: R2T2
+            description: R2T2
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: R1T1
+            description: R1T1
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: R0T0
+            description: R0T0
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: MATCH
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) LPUART Match Address Register
+        fields:
+          - name: MA2
+            description: Match Address 2
+            index: 16
+            width: 10
+            read: true
+            write: true
+          - name: MA1
+            description: Match Address 1
+            index: 0
+            width: 10
+            read: true
+            write: true
+      - name: MODIR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) LPUART Modem IrDA Register
+        fields:
+          - name: IREN
+            description: Infrared enable
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: TNP
+            description: Transmitter narrow pulse
+            index: 16
+            width: 2
+            read: true
+            write: true
+            type: LPUART1_MODIR_TNP
+          - name: RTSWATER
+            description: Receive RTS Configuration
+            index: 8
+            width: 2
+            read: true
+            write: true
+          - name: TXCTSSRC
+            description: Transmit CTS Source
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: TXCTSC
+            description: Transmit CTS Configuration
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: RXRTSE
+            description: Receiver request-to-send enable
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: TXRTSPOL
+            description: Transmitter request-to-send polarity
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: TXRTSE
+            description: Transmitter request-to-send enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: TXCTSE
+            description: Transmitter clear-to-send enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: FIFO
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) LPUART FIFO Register
+        fields:
+          - name: TXEMPT
+            description: Transmit FIFO/Buffer Empty
+            index: 23
+            width: 1
+            read: true
+            write: false
+          - name: RXEMPT
+            description: Receive FIFO/Buffer Empty
+            index: 22
+            width: 1
+            read: true
+            write: false
+          - name: TXOF
+            description: Transmitter FIFO Overflow Flag
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: RXUF
+            description: Receiver FIFO Underflow Flag
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: TXFLUSH
+            description: Transmit FIFO Flush
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: RXFLUSH
+            description: Receive FIFO Flush
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: RXIDEN
+            description: Receiver Idle Empty Enable
+            index: 10
+            width: 3
+            read: true
+            write: true
+            type: LPUART1_FIFO_RXIDEN
+          - name: TXOFE
+            description: Transmit FIFO Overflow Interrupt Enable
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: RXUFE
+            description: Receive FIFO Underflow Interrupt Enable
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: TXFE
+            description: Transmit FIFO Enable
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: TXFIFOSIZE
+            description: Transmit FIFO Buffer Depth
+            index: 4
+            width: 3
+            read: true
+            write: false
+            type: LPUART1_FIFO_TXFIFOSIZE
+          - name: RXFE
+            description: Receive FIFO Enable
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: RXFIFOSIZE
+            description: Receive FIFO Buffer Depth
+            index: 0
+            width: 3
+            read: true
+            write: false
+            type: LPUART1_FIFO_RXFIFOSIZE
+      - name: WATER
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) LPUART Watermark Register
+        fields:
+          - name: RXCOUNT
+            description: Receive Counter
+            index: 24
+            width: 3
+            read: true
+            write: false
+          - name: RXWATER
+            description: Receive Watermark
+            index: 16
+            width: 2
+            read: true
+            write: true
+          - name: TXCOUNT
+            description: Transmit Counter
+            index: 8
+            width: 3
+            read: true
+            write: false
+          - name: TXWATER
+            description: Transmit Watermark
+            index: 0
+            width: 2
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  LPUART1_VERID_FEATURE:
+    enum:
+      STANDARD:
+        description: Standard feature set.
+        value: 1
+      MODEM:
+        description: Standard feature set with MODEM/IrDA support.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  LPUART1_PINCFG_TRGSEL:
+    enum:
+      DISABLED:
+        description: Input trigger is disabled.
+        value: 0
+      TRG_RXD:
+        description: Input trigger is used instead of RXD pin input.
+        value: 1
+      TRG_CTS:
+        description: Input trigger is used instead of CTS_B pin input.
+        value: 2
+      TRG_TXD:
+        description: Input trigger is used to modulate the TXD pin output. The TXD
+          pin output (after TXINV configuration) is internally ANDed with the input
+          trigger.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPUART1_BAUD_OSR:
+    enum:
+      DEFAULT:
+        description: Writing 0 to this field results in an oversampling ratio of 16
+        value: 0
+      OSR_4:
+        description: Oversampling ratio of 4, requires BOTHEDGE to be set.
+        value: 3
+      OSR_5:
+        description: Oversampling ratio of 5, requires BOTHEDGE to be set.
+        value: 4
+      OSR_6:
+        description: Oversampling ratio of 6, requires BOTHEDGE to be set.
+        value: 5
+      OSR_7:
+        description: Oversampling ratio of 7, requires BOTHEDGE to be set.
+        value: 6
+      OSR_8:
+        description: Oversampling ratio of 8.
+        value: 7
+      OSR_9:
+        description: Oversampling ratio of 9.
+        value: 8
+      OSR_10:
+        description: Oversampling ratio of 10.
+        value: 9
+      OSR_11:
+        description: Oversampling ratio of 11.
+        value: 10
+      OSR_12:
+        description: Oversampling ratio of 12.
+        value: 11
+      OSR_13:
+        description: Oversampling ratio of 13.
+        value: 12
+      OSR_14:
+        description: Oversampling ratio of 14.
+        value: 13
+      OSR_15:
+        description: Oversampling ratio of 15.
+        value: 14
+      OSR_16:
+        description: Oversampling ratio of 16.
+        value: 15
+      OSR_17:
+        description: Oversampling ratio of 17.
+        value: 16
+      OSR_18:
+        description: Oversampling ratio of 18.
+        value: 17
+      OSR_19:
+        description: Oversampling ratio of 19.
+        value: 18
+      OSR_20:
+        description: Oversampling ratio of 20.
+        value: 19
+      OSR_21:
+        description: Oversampling ratio of 21.
+        value: 20
+      OSR_22:
+        description: Oversampling ratio of 22.
+        value: 21
+      OSR_23:
+        description: Oversampling ratio of 23.
+        value: 22
+      OSR_24:
+        description: Oversampling ratio of 24.
+        value: 23
+      OSR_25:
+        description: Oversampling ratio of 25.
+        value: 24
+      OSR_26:
+        description: Oversampling ratio of 26.
+        value: 25
+      OSR_27:
+        description: Oversampling ratio of 27.
+        value: 26
+      OSR_28:
+        description: Oversampling ratio of 28.
+        value: 27
+      OSR_29:
+        description: Oversampling ratio of 29.
+        value: 28
+      OSR_30:
+        description: Oversampling ratio of 30.
+        value: 29
+      OSR_31:
+        description: Oversampling ratio of 31.
+        value: 30
+      OSR_32:
+        description: Oversampling ratio of 32.
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPUART1_BAUD_MATCFG:
+    enum:
+      ADDR_MATCH:
+        description: Address Match Wakeup
+        value: 0
+      IDLE_MATCH:
+        description: Idle Match Wakeup
+        value: 1
+      ONOFF_MATCH:
+        description: Match On and Match Off
+        value: 2
+      RWU_MATCH:
+        description: Enables RWU on Data Match and Match On/Off for transmitter CTS
+          input
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPUART1_CTRL_IDLECFG:
+    enum:
+      _1:
+        description: 1 idle character
+        value: 0
+      _2:
+        description: 2 idle characters
+        value: 1
+      _4:
+        description: 4 idle characters
+        value: 2
+      _8:
+        description: 8 idle characters
+        value: 3
+      _16:
+        description: 16 idle characters
+        value: 4
+      _32:
+        description: 32 idle characters
+        value: 5
+      _64:
+        description: 64 idle characters
+        value: 6
+      _128:
+        description: 128 idle characters
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPUART1_MODIR_TNP:
+    enum:
+      ONE_SAMPLE:
+        description: 1/OSR.
+        value: 0
+      TWO_SAMPLE:
+        description: 2/OSR.
+        value: 1
+      THREE_SAMPLE:
+        description: 3/OSR.
+        value: 2
+      FOUR_SAMPLE:
+        description: 4/OSR.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPUART1_FIFO_RXIDEN:
+    enum:
+      DISABLED:
+        description: Disable RDRF assertion due to partially filled FIFO when receiver
+          is idle.
+        value: 0
+      IDLE_1:
+        description: Enable RDRF assertion due to partially filled FIFO when receiver
+          is idle for 1 character.
+        value: 1
+      IDLE_2:
+        description: Enable RDRF assertion due to partially filled FIFO when receiver
+          is idle for 2 characters.
+        value: 2
+      IDLE_4:
+        description: Enable RDRF assertion due to partially filled FIFO when receiver
+          is idle for 4 characters.
+        value: 3
+      IDLE_8:
+        description: Enable RDRF assertion due to partially filled FIFO when receiver
+          is idle for 8 characters.
+        value: 4
+      IDLE_16:
+        description: Enable RDRF assertion due to partially filled FIFO when receiver
+          is idle for 16 characters.
+        value: 5
+      IDLE_32:
+        description: Enable RDRF assertion due to partially filled FIFO when receiver
+          is idle for 32 characters.
+        value: 6
+      IDLE_64:
+        description: Enable RDRF assertion due to partially filled FIFO when receiver
+          is idle for 64 characters.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPUART1_FIFO_TXFIFOSIZE:
+    enum:
+      _1:
+        description: Transmit FIFO/Buffer depth = 1 dataword.
+        value: 0
+      _4:
+        description: Transmit FIFO/Buffer depth = 4 datawords.
+        value: 1
+      _8:
+        description: Transmit FIFO/Buffer depth = 8 datawords.
+        value: 2
+      _16:
+        description: Transmit FIFO/Buffer depth = 16 datawords.
+        value: 3
+      _32:
+        description: Transmit FIFO/Buffer depth = 32 datawords.
+        value: 4
+      _64:
+        description: Transmit FIFO/Buffer depth = 64 datawords.
+        value: 5
+      _128:
+        description: Transmit FIFO/Buffer depth = 128 datawords.
+        value: 6
+      _256:
+        description: Transmit FIFO/Buffer depth = 256 datawords
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPUART1_FIFO_RXFIFOSIZE:
+    enum:
+      _1:
+        description: Receive FIFO/Buffer depth = 1 dataword.
+        value: 0
+      _4:
+        description: Receive FIFO/Buffer depth = 4 datawords.
+        value: 1
+      _8:
+        description: Receive FIFO/Buffer depth = 8 datawords.
+        value: 2
+      _16:
+        description: Receive FIFO/Buffer depth = 16 datawords.
+        value: 3
+      _32:
+        description: Receive FIFO/Buffer depth = 32 datawords.
+        value: 4
+      _64:
+        description: Receive FIFO/Buffer depth = 64 datawords.
+        value: 5
+      _128:
+        description: Receive FIFO/Buffer depth = 128 datawords.
+        value: 6
+      _256:
+        description: Receive FIFO/Buffer depth = 256 datawords.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

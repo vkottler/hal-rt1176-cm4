@@ -1,0 +1,877 @@
+---
+structs:
+  flexio1:
+    description: FLEXIO
+    instances:
+      - name: FLEXIO1
+        address: '0x400AC000'
+      - name: FLEXIO2
+        address: '0x400B0000'
+    fields:
+      - name: VERID
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Version ID Register
+        fields:
+          - name: MAJOR
+            description: Major Version Number
+            index: 24
+            width: 8
+            read: true
+            write: false
+          - name: MINOR
+            description: Minor Version Number
+            index: 16
+            width: 8
+            read: true
+            write: false
+          - name: FEATURE
+            description: Feature Specification Number
+            index: 0
+            width: 16
+            read: true
+            write: false
+            type: FLEXIO1_VERID_FEATURE
+      - name: PARAM
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Parameter Register
+        fields:
+          - name: TRIGGER
+            description: Trigger Number
+            index: 24
+            width: 8
+            read: true
+            write: false
+          - name: PIN
+            description: Pin Number
+            index: 16
+            width: 8
+            read: true
+            write: false
+          - name: TIMER
+            description: Timer Number
+            index: 8
+            width: 8
+            read: true
+            write: false
+          - name: SHIFTER
+            description: Shifter Number
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) FlexIO Control Register
+        fields:
+          - name: DOZEN
+            description: Doze Enable
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: DBGE
+            description: Debug Enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: FASTACC
+            description: Fast Access
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: SWRST
+            description: Software Reset
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: FLEXEN
+            description: FlexIO Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PIN
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) Pin State Register
+        fields:
+          - name: PDI
+            description: Pin Data Input
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: SHIFTSTAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) Shifter Status Register
+        fields:
+          - name: SSF
+            description: Shifter Status Flag
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SHIFTERR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) Shifter Error Register
+        fields:
+          - name: SEF
+            description: Shifter Error Flags
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: TIMSTAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) Timer Status Register
+        fields:
+          - name: TSF
+            description: Timer Status Flags
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SHIFTSIEN
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) Shifter Status Interrupt Enable
+        fields:
+          - name: SSIE
+            description: Shifter Status Interrupt Enable
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SHIFTEIEN
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) Shifter Error Interrupt Enable
+        fields:
+          - name: SEIE
+            description: Shifter Error Interrupt Enable
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: TIMIEN
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) Timer Interrupt Enable Register
+        fields:
+          - name: TEIE
+            description: Timer Status Interrupt Enable
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SHIFTSDEN
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) Shifter Status DMA Enable
+        fields:
+          - name: SSDE
+            description: Shifter Status DMA Enable
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: TIMERSDEN
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 56
+        description: (read-write) Timer Status DMA Enable
+        fields:
+          - name: TSDE
+            description: Timer Status DMA Enable
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: SHIFTSTATE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 64
+        description: (read-write) Shifter State Register
+        fields:
+          - name: STATE
+            description: Current State Pointer
+            index: 0
+            width: 3
+            read: true
+            write: true
+      - name: SHIFTCTL
+        type: uint32_t
+        expected_size: 32
+        expected_offset: 128
+        array_length: 8
+        description: (read-write) Shifter Control N Register
+        fields:
+          - name: TIMSEL
+            description: Timer Select
+            index: 24
+            width: 3
+            read: true
+            write: true
+          - name: TIMPOL
+            description: Timer Polarity
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: PINCFG
+            description: Shifter Pin Configuration
+            index: 16
+            width: 2
+            read: true
+            write: true
+            type: FLEXIO1_SHIFTCTL_PINCFG
+          - name: PINSEL
+            description: Shifter Pin Select
+            index: 8
+            width: 5
+            read: true
+            write: true
+          - name: PINPOL
+            description: Shifter Pin Polarity
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: SMOD
+            description: Shifter Mode
+            index: 0
+            width: 3
+            read: true
+            write: true
+            type: FLEXIO1_SHIFTCTL_SMOD
+      - name: SHIFTCFG
+        type: uint32_t
+        expected_size: 32
+        expected_offset: 256
+        array_length: 8
+        description: (read-write) Shifter Configuration N Register
+        fields:
+          - name: PWIDTH
+            description: Parallel Width
+            index: 16
+            width: 5
+            read: true
+            write: true
+          - name: LATST
+            description: Late Store
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: INSRC
+            description: Input Source
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: SSTOP
+            description: Shifter Stop bit
+            index: 4
+            width: 2
+            read: true
+            write: true
+            type: FLEXIO1_SHIFTCFG_SSTOP
+          - name: SSTART
+            description: Shifter Start bit
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: FLEXIO1_SHIFTCFG_SSTART
+      - name: SHIFTBUF
+        type: uint32_t
+        expected_size: 32
+        expected_offset: 512
+        array_length: 8
+        description: (read-write) Shifter Buffer N Register
+        fields:
+          - name: SHIFTBUF
+            description: Shift Buffer
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: SHIFTBUFBIS
+        type: uint32_t
+        expected_size: 32
+        expected_offset: 640
+        array_length: 8
+        description: (read-write) Shifter Buffer N Bit Swapped Register
+        fields:
+          - name: SHIFTBUFBIS
+            description: Shift Buffer
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: SHIFTBUFBYS
+        type: uint32_t
+        expected_size: 32
+        expected_offset: 768
+        array_length: 8
+        description: (read-write) Shifter Buffer N Byte Swapped Register
+        fields:
+          - name: SHIFTBUFBYS
+            description: Shift Buffer
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: SHIFTBUFBBS
+        type: uint32_t
+        expected_size: 32
+        expected_offset: 896
+        array_length: 8
+        description: (read-write) Shifter Buffer N Bit Byte Swapped Register
+        fields:
+          - name: SHIFTBUFBBS
+            description: Shift Buffer
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: TIMCTL
+        type: uint32_t
+        expected_size: 32
+        expected_offset: 1024
+        array_length: 8
+        description: (read-write) Timer Control N Register
+        fields:
+          - name: TRGSEL
+            description: Trigger Select
+            index: 24
+            width: 6
+            read: true
+            write: true
+          - name: TRGPOL
+            description: Trigger Polarity
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: TRGSRC
+            description: Trigger Source
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: PINCFG
+            description: Timer Pin Configuration
+            index: 16
+            width: 2
+            read: true
+            write: true
+            type: FLEXIO1_TIMCTL_PINCFG
+          - name: PINSEL
+            description: Timer Pin Select
+            index: 8
+            width: 5
+            read: true
+            write: true
+          - name: PINPOL
+            description: Timer Pin Polarity
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: PININS
+            description: Timer Pin Input Select
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ONETIM
+            description: Timer One Time Operation
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: TIMOD
+            description: Timer Mode
+            index: 0
+            width: 3
+            read: true
+            write: true
+            type: FLEXIO1_TIMCTL_TIMOD
+      - name: TIMCFG
+        type: uint32_t
+        expected_size: 32
+        expected_offset: 1152
+        array_length: 8
+        description: (read-write) Timer Configuration N Register
+        fields:
+          - name: TIMOUT
+            description: Timer Output
+            index: 24
+            width: 2
+            read: true
+            write: true
+            type: FLEXIO1_TIMCFG_TIMOUT
+          - name: TIMDEC
+            description: Timer Decrement
+            index: 20
+            width: 3
+            read: true
+            write: true
+            type: FLEXIO1_TIMCFG_TIMDEC
+          - name: TIMRST
+            description: Timer Reset
+            index: 16
+            width: 3
+            read: true
+            write: true
+            type: FLEXIO1_TIMCFG_TIMRST
+          - name: TIMDIS
+            description: Timer Disable
+            index: 12
+            width: 3
+            read: true
+            write: true
+            type: FLEXIO1_TIMCFG_TIMDIS
+          - name: TIMENA
+            description: Timer Enable
+            index: 8
+            width: 3
+            read: true
+            write: true
+            type: FLEXIO1_TIMCFG_TIMENA
+          - name: TSTOP
+            description: Timer Stop Bit
+            index: 4
+            width: 2
+            read: true
+            write: true
+            type: FLEXIO1_TIMCFG_TSTOP
+          - name: TSTART
+            description: Timer Start Bit
+            index: 1
+            width: 1
+            read: true
+            write: true
+      - name: TIMCMP
+        type: uint32_t
+        expected_size: 32
+        expected_offset: 1280
+        array_length: 8
+        description: (read-write) Timer Compare N Register
+        fields:
+          - name: CMP
+            description: Timer Compare Value
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SHIFTBUFNBS
+        type: uint32_t
+        expected_size: 32
+        expected_offset: 1664
+        array_length: 8
+        description: (read-write) Shifter Buffer N Nibble Byte Swapped Register
+        fields:
+          - name: SHIFTBUFNBS
+            description: Shift Buffer
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: SHIFTBUFHWS
+        type: uint32_t
+        expected_size: 32
+        expected_offset: 1792
+        array_length: 8
+        description: (read-write) Shifter Buffer N Half Word Swapped Register
+        fields:
+          - name: SHIFTBUFHWS
+            description: Shift Buffer
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: SHIFTBUFNIS
+        type: uint32_t
+        expected_size: 32
+        expected_offset: 1920
+        array_length: 8
+        description: (read-write) Shifter Buffer N Nibble Swapped Register
+        fields:
+          - name: SHIFTBUFNIS
+            description: Shift Buffer
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: SHIFTBUFOES
+        type: uint32_t
+        expected_size: 32
+        expected_offset: 2048
+        array_length: 8
+        description: (read-write) Shifter Buffer N Odd Even Swapped Register
+        fields:
+          - name: SHIFTBUFOES
+            description: Shift Buffer
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: SHIFTBUFEOS
+        type: uint32_t
+        expected_size: 32
+        expected_offset: 2176
+        array_length: 8
+        description: (read-write) Shifter Buffer N Even Odd Swapped Register
+        fields:
+          - name: SHIFTBUFEOS
+            description: Shift Buffer
+            index: 0
+            width: 32
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  FLEXIO1_VERID_FEATURE:
+    enum:
+      standard:
+        description: Standard features implemented.
+        value: 0
+      state_logic_parallel:
+        description: Supports state, logic and parallel modes.
+        value: 1
+      pinctrl:
+        description: Supports pin control registers.
+        value: 2
+      state_logic_parallel_pinctrl:
+        description: Supports state, logic and parallel modes; plus pin control registers.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  FLEXIO1_SHIFTCTL_PINCFG:
+    enum:
+      disable:
+        description: Shifter pin output disabled
+        value: 0
+      opend_bidirouten:
+        description: Shifter pin open drain or bidirectional output enable
+        value: 1
+      bidir_outdata:
+        description: Shifter pin bidirectional output data
+        value: 2
+      output:
+        description: Shifter pin output
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  FLEXIO1_SHIFTCTL_SMOD:
+    enum:
+      disable:
+        description: Disabled.
+        value: 0
+      receive:
+        description: Receive mode. Captures the current Shifter content into the SHIFTBUF
+          on expiration of the Timer.
+        value: 1
+      transmit:
+        description: Transmit mode. Load SHIFTBUF contents into the Shifter on expiration
+          of the Timer.
+        value: 2
+      matchstore:
+        description: Match Store mode. Shifter data is compared to SHIFTBUF content
+          on expiration of the Timer.
+        value: 4
+      matchcont:
+        description: Match Continuous mode. Shifter data is continuously compared
+          to SHIFTBUF contents.
+        value: 5
+      state:
+        description: State mode. SHIFTBUF contents are used for storing programmable
+          state attributes.
+        value: 6
+      logic:
+        description: Logic mode. SHIFTBUF contents are used for implementing programmable
+          logic look up table.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  FLEXIO1_SHIFTCFG_SSTOP:
+    enum:
+      stop_bit_disabled_transmitterreceivermatch_store:
+        description: Stop bit disabled for transmitter/receiver/match store
+        value: 0
+      transmitter_outputs_stop_bit_value_0_store_re_cont:
+        description: Transmitter outputs stop bit value 0 on store, receiver/match
+          store sets error flag if stop bit is not 0
+        value: 2
+      transmitter_outputs_stop_bit_value_1_store_re_cont:
+        description: Transmitter outputs stop bit value 1 on store, receiver/match
+          store sets error flag if stop bit is not 1
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  FLEXIO1_SHIFTCFG_SSTART:
+    enum:
+      start_bit_disabled_transmitterreceivermatch_s_cont:
+        description: Start bit disabled for transmitter/receiver/match store, transmitter
+          loads data on enable
+        value: 0
+      start_bit_disabled_transmitterreceivermatch_s_cont_x:
+        description: Start bit disabled for transmitter/receiver/match store, transmitter
+          loads data on first shift
+        value: 1
+      transmitter_outputs_start_bit_value_0_before__cont:
+        description: Transmitter outputs start bit value 0 before loading data on
+          first shift, receiver/match store sets error flag if start bit is not 0
+        value: 2
+      transmitter_outputs_start_bit_value_1_before__cont:
+        description: Transmitter outputs start bit value 1 before loading data on
+          first shift, receiver/match store sets error flag if start bit is not 1
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  FLEXIO1_TIMCTL_PINCFG:
+    enum:
+      outdisable:
+        description: Timer pin output disabled
+        value: 0
+      opend_bidirouten:
+        description: Timer pin open drain or bidirectional output enable
+        value: 1
+      bidir_outdata:
+        description: Timer pin bidirectional output data
+        value: 2
+      output:
+        description: Timer pin output
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  FLEXIO1_TIMCTL_TIMOD:
+    enum:
+      disable:
+        description: Timer Disabled.
+        value: 0
+      dual8bit_baud:
+        description: Dual 8-bit counters baud mode.
+        value: 1
+      dual8bit_pwm_h:
+        description: Dual 8-bit counters PWM high mode.
+        value: 2
+      single16bit:
+        description: Single 16-bit counter mode.
+        value: 3
+      single16bit_disable:
+        description: Single 16-bit counter disable mode.
+        value: 4
+      dual8bit_word:
+        description: Dual 8-bit counters word mode.
+        value: 5
+      dual8bit_pwm_l:
+        description: Dual 8-bit counters PWM low mode.
+        value: 6
+      single16bit_in_capture:
+        description: Single 16-bit input capture mode.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  FLEXIO1_TIMCFG_TIMOUT:
+    enum:
+      one:
+        description: Timer output is logic one when enabled and is not affected by
+          timer reset
+        value: 0
+      zero:
+        description: Timer output is logic zero when enabled and is not affected by
+          timer reset
+        value: 1
+      one_tmrreset:
+        description: Timer output is logic one when enabled and on timer reset
+        value: 2
+      zero_tmrreset:
+        description: Timer output is logic zero when enabled and on timer reset
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  FLEXIO1_TIMCFG_TIMDEC:
+    enum:
+      flexio_clk_shiftclk_tmr_out:
+        description: Decrement counter on FlexIO clock, Shift clock equals Timer output.
+        value: 0
+      trig_edge_shiftclk_tmr_out:
+        description: Decrement counter on Trigger input (both edges), Shift clock
+          equals Timer output.
+        value: 1
+      pin_edge_shiftclk_tmr_out:
+        description: Decrement counter on Pin input (both edges), Shift clock equals
+          Pin input.
+        value: 2
+      trig_edge_shiftclk_trig_in:
+        description: Decrement counter on Trigger input (both edges), Shift clock
+          equals Trigger input.
+        value: 3
+      flexio_clk_div16_shiftclk_tmr_out:
+        description: Decrement counter on FlexIO clock divided by 16, Shift clock
+          equals Timer output.
+        value: 4
+      flexio_clk_div256_shiftclk_tmr_out:
+        description: Decrement counter on FlexIO clock divided by 256, Shift clock
+          equals Timer output.
+        value: 5
+      pin_rise_shiftclk_pin_in:
+        description: Decrement counter on Pin input (rising edge), Shift clock equals
+          Pin input.
+        value: 6
+      trig_rise_shiftclk_trig_in:
+        description: Decrement counter on Trigger input (rising edge), Shift clock
+          equals Trigger input.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  FLEXIO1_TIMCFG_TIMRST:
+    enum:
+      never:
+        description: Timer never reset
+        value: 0
+      tmr_out_hi:
+        description: Timer reset on Timer Output high.
+        value: 1
+      pin_eq_tmr_out:
+        description: Timer reset on Timer Pin equal to Timer Output
+        value: 2
+      trig_eq_tmr_out:
+        description: Timer reset on Timer Trigger equal to Timer Output
+        value: 3
+      pin_rise_edge:
+        description: Timer reset on Timer Pin rising edge
+        value: 4
+      trig_rise_edge:
+        description: Timer reset on Trigger rising edge
+        value: 6
+      trig_edge:
+        description: Timer reset on Trigger rising or falling edge
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  FLEXIO1_TIMCFG_TIMDIS:
+    enum:
+      never:
+        description: Timer never disabled
+        value: 0
+      tmr_nminus1:
+        description: Timer disabled on Timer N-1 disable
+        value: 1
+      tmr_cmp:
+        description: Timer disabled on Timer compare (upper 8-bits match and decrement)
+        value: 2
+      tmr_cmp_triglow:
+        description: Timer disabled on Timer compare (upper 8-bits match and decrement)
+          and Trigger Low
+        value: 3
+      pin_edge:
+        description: Timer disabled on Pin rising or falling edge
+        value: 4
+      pin_edge_trighi:
+        description: Timer disabled on Pin rising or falling edge provided Trigger
+          is high
+        value: 5
+      trig_falledge:
+        description: Timer disabled on Trigger falling edge
+        value: 6
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  FLEXIO1_TIMCFG_TIMENA:
+    enum:
+      enable:
+        description: Timer always enabled
+        value: 0
+      tmr_nminus1_en:
+        description: Timer enabled on Timer N-1 enable
+        value: 1
+      tmr_trighi_en:
+        description: Timer enabled on Trigger high
+        value: 2
+      tmr_trig_pin_hi_en:
+        description: Timer enabled on Trigger high and Pin high
+        value: 3
+      tmr_pinrise_en:
+        description: Timer enabled on Pin rising edge
+        value: 4
+      tmr_pinrise_trighi_en:
+        description: Timer enabled on Pin rising edge and Trigger high
+        value: 5
+      tmr_trigrise_en:
+        description: Timer enabled on Trigger rising edge
+        value: 6
+      tmr_trigedge_en:
+        description: Timer enabled on Trigger rising or falling edge
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  FLEXIO1_TIMCFG_TSTOP:
+    enum:
+      stop_disable:
+        description: Stop bit disabled
+        value: 0
+      enable_tmrcmp:
+        description: Stop bit is enabled on timer compare
+        value: 1
+      enable_tmrdisable:
+        description: Stop bit is enabled on timer disable
+        value: 2
+      enable_tmr_cmp_dis:
+        description: Stop bit is enabled on timer compare and timer disable
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

@@ -1,0 +1,1430 @@
+---
+structs:
+  gpc_set_point_ctrl:
+    description: GPC_SP
+    instances:
+      - name: GPC_SET_POINT_CTRL
+        address: '0x40C02000'
+    fields:
+      - name: SP_AUTHEN_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) SP Authentication Control
+        fields:
+          - name: LOCK_CFG
+            description: Configuration lock
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: LOCK_LIST
+            description: White list lock
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: WHITE_LIST
+            description: Domain ID white list
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: LOCK_SETTING
+            description: Lock NONSECURE and USER
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: NONSECURE
+            description: Allow non-secure mode access
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: USER
+            description: Allow user mode access
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SP_INT_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) SP Interrupt Control
+        fields:
+          - name: NO_ALLOWED_SP_INT
+            description: no_allowed_set_point interrupt
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: NO_ALLOWED_SP_INT_EN
+            description: no_allowed_set_point interrupt enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SP_CPU_REQ
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) CPU SP Request
+        fields:
+          - name: SP_ACCEPTED_CPU3
+            description: CPU3 Setpoint accepted by SP controller
+            index: 28
+            width: 4
+            read: true
+            write: false
+          - name: SP_ACCEPTED_CPU2
+            description: CPU2 Setpoint accepted by SP controller
+            index: 24
+            width: 4
+            read: true
+            write: false
+          - name: SP_ACCEPTED_CPU1
+            description: CPU1 Setpoint accepted by SP controller
+            index: 20
+            width: 4
+            read: true
+            write: false
+          - name: SP_ACCEPTED_CPU0
+            description: CPU0 Setpoint accepted by SP controller
+            index: 16
+            width: 4
+            read: true
+            write: false
+          - name: SP_REQ_CPU3
+            description: Setpoint requested by CPU3
+            index: 12
+            width: 4
+            read: true
+            write: false
+          - name: SP_REQ_CPU2
+            description: Setpoint requested by CPU2
+            index: 8
+            width: 4
+            read: true
+            write: false
+          - name: SP_REQ_CPU1
+            description: Setpoint requested by CPU1
+            index: 4
+            width: 4
+            read: true
+            write: false
+          - name: SP_REQ_CPU0
+            description: Setpoint requested by CPU0
+            index: 0
+            width: 4
+            read: true
+            write: false
+      - name: SP_SYS_STAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) SP System Status
+        fields:
+          - name: SYS_SP_PREVIOUS
+            description: Previous Setpoint, only valid when not SP trans busy
+            index: 24
+            width: 4
+            read: true
+            write: false
+          - name: SYS_SP_CURRENT
+            description: Current Setpoint, only valid when not SP trans busy
+            index: 20
+            width: 4
+            read: true
+            write: false
+          - name: SYS_SP_TARGET
+            description: The Setpoint chosen as the target setpoint
+            index: 16
+            width: 4
+            read: true
+            write: false
+          - name: SYS_SP_ALLOWED
+            description: Allowed Setpoints by all current CPU Setpoint requests
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: SP_ROSC_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) SP ROSC Control
+        fields:
+          - name: SP_ALLOW_ROSC_OFF
+            description: Allow shutting off the ROSC
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SP_PRIORITY_0_7
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 64
+        description: (read-write) SP0~7 Priority
+        fields:
+          - name: SYS_SP7_PRIORITY
+            description: priority of Setpoint 7
+            index: 28
+            width: 4
+            read: true
+            write: true
+          - name: SYS_SP6_PRIORITY
+            description: priority of Setpoint 6
+            index: 24
+            width: 4
+            read: true
+            write: true
+          - name: SYS_SP5_PRIORITY
+            description: priority of Setpoint 5
+            index: 20
+            width: 4
+            read: true
+            write: true
+          - name: SYS_SP4_PRIORITY
+            description: priority of Setpoint 4
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: SYS_SP3_PRIORITY
+            description: priority of Setpoint 3
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: SYS_SP2_PRIORITY
+            description: priority of Setpoint 2
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: SYS_SP1_PRIORITY
+            description: priority of Setpoint 1
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: SYS_SP0_PRIORITY
+            description: priority of Setpoint 0
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: SP_PRIORITY_8_15
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 68
+        description: (read-write) SP8~15 Priority
+        fields:
+          - name: SYS_SP15_PRIORITY
+            description: priority of Setpoint 15
+            index: 28
+            width: 4
+            read: true
+            write: true
+          - name: SYS_SP14_PRIORITY
+            description: priority of Setpoint 14
+            index: 24
+            width: 4
+            read: true
+            write: true
+          - name: SYS_SP13_PRIORITY
+            description: priority of Setpoint 13
+            index: 20
+            width: 4
+            read: true
+            write: true
+          - name: SYS_SP12_PRIORITY
+            description: priority of Setpoint 12
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: SYS_SP11_PRIORITY
+            description: priority of Setpoint 11
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: SYS_SP10_PRIORITY
+            description: priority of Setpoint 10
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: SYS_SP9_PRIORITY
+            description: priority of Setpoint 9
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: SYS_SP8_PRIORITY
+            description: priority of Setpoint 8
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: SP_SSAR_SAVE_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 256
+        description: (read-write) SP SSAR save control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_SET_POINT_CTRL_SP_SSAR_SAVE_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SP_LPCG_OFF_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 272
+        description: (read-write) SP LPCG off control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_SET_POINT_CTRL_SP_LPCG_OFF_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SP_GROUP_DOWN_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 288
+        description: (read-write) SP group down control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_SET_POINT_CTRL_SP_GROUP_DOWN_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SP_ROOT_DOWN_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 304
+        description: (read-write) SP root down control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_SET_POINT_CTRL_SP_ROOT_DOWN_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SP_PLL_OFF_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 320
+        description: (read-write) SP PLL off control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_SET_POINT_CTRL_SP_PLL_OFF_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SP_ISO_ON_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 336
+        description: (read-write) SP ISO on control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_SET_POINT_CTRL_SP_ISO_ON_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SP_RESET_EARLY_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 352
+        description: (read-write) SP reset early control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_SET_POINT_CTRL_SP_RESET_EARLY_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SP_POWER_OFF_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 368
+        description: (read-write) SP power off control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_SET_POINT_CTRL_SP_POWER_OFF_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SP_BIAS_OFF_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 384
+        description: (read-write) SP bias off control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_SET_POINT_CTRL_SP_BIAS_OFF_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SP_BG_PLDO_OFF_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 400
+        description: (read-write) SP bandgap and PLL_LDO off control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_SET_POINT_CTRL_SP_BG_PLDO_OFF_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SP_LDO_PRE_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 416
+        description: (read-write) SP LDO pre control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_SET_POINT_CTRL_SP_LDO_PRE_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SP_DCDC_DOWN_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 432
+        description: (read-write) SP DCDC down control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_SET_POINT_CTRL_SP_DCDC_DOWN_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SP_DCDC_UP_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 512
+        description: (read-write) SP DCDC up control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_SET_POINT_CTRL_SP_DCDC_UP_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SP_LDO_POST_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 528
+        description: (read-write) SP LDO post control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_SET_POINT_CTRL_SP_LDO_POST_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SP_BG_PLDO_ON_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 544
+        description: (read-write) SP bandgap and PLL_LDO on control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_SET_POINT_CTRL_SP_BG_PLDO_ON_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SP_BIAS_ON_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 560
+        description: (read-write) SP bias on control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_SET_POINT_CTRL_SP_BIAS_ON_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SP_POWER_ON_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 576
+        description: (read-write) SP power on control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_SET_POINT_CTRL_SP_POWER_ON_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SP_RESET_LATE_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 592
+        description: (read-write) SP reset late control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_SET_POINT_CTRL_SP_RESET_LATE_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SP_ISO_OFF_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 608
+        description: (read-write) SP ISO off control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_SET_POINT_CTRL_SP_ISO_OFF_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SP_PLL_ON_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 624
+        description: (read-write) SP PLL on control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_SET_POINT_CTRL_SP_PLL_ON_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SP_ROOT_UP_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 640
+        description: (read-write) SP root up control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_SET_POINT_CTRL_SP_ROOT_UP_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SP_GROUP_UP_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 656
+        description: (read-write) SP group up control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_SET_POINT_CTRL_SP_GROUP_UP_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SP_LPCG_ON_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 672
+        description: (read-write) SP LPCG on control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_SET_POINT_CTRL_SP_LPCG_ON_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: SP_SSAR_RESTORE_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 688
+        description: (read-write) SP SSAR restore control
+        fields:
+          - name: DISABLE
+            description: Disable this step
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: CNT_MODE
+            description: Count mode
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: GPC_SET_POINT_CTRL_SP_SSAR_RESTORE_CTRL_CNT_MODE
+          - name: STEP_CNT
+            description: Step count, useage is depending on CNT_MODE
+            index: 0
+            width: 16
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  GPC_SET_POINT_CTRL_SP_SSAR_SAVE_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_SET_POINT_CTRL_SP_LPCG_OFF_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_SET_POINT_CTRL_SP_GROUP_DOWN_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_SET_POINT_CTRL_SP_ROOT_DOWN_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_SET_POINT_CTRL_SP_PLL_OFF_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_SET_POINT_CTRL_SP_ISO_ON_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_SET_POINT_CTRL_SP_RESET_EARLY_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_SET_POINT_CTRL_SP_POWER_OFF_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_SET_POINT_CTRL_SP_BIAS_OFF_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_SET_POINT_CTRL_SP_BG_PLDO_OFF_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_SET_POINT_CTRL_SP_LDO_PRE_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_SET_POINT_CTRL_SP_DCDC_DOWN_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_SET_POINT_CTRL_SP_DCDC_UP_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_SET_POINT_CTRL_SP_LDO_POST_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_SET_POINT_CTRL_SP_BG_PLDO_ON_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_SET_POINT_CTRL_SP_BIAS_ON_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_SET_POINT_CTRL_SP_POWER_ON_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_SET_POINT_CTRL_SP_RESET_LATE_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_SET_POINT_CTRL_SP_ISO_OFF_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_SET_POINT_CTRL_SP_PLL_ON_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_SET_POINT_CTRL_SP_ROOT_UP_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_SET_POINT_CTRL_SP_GROUP_UP_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_SET_POINT_CTRL_SP_LPCG_ON_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  GPC_SET_POINT_CTRL_SP_SSAR_RESTORE_CTRL_CNT_MODE:
+    enum:
+      b0:
+        description: 'Counter disable mode: not use step counter, step completes once
+          receiving step_done'
+        value: 0
+      b1:
+        description: 'Counter delay mode: delay after receiving step_done, delay cycle
+          number is STEP_CNT'
+        value: 1
+      b2:
+        description: Ignore step_done response, the counter starts to count once step
+          begins, when counter reaches STEP_CNT value, the step completes
+        value: 2
+      b3:
+        description: Time out mode, the counter starts to count once step begins,
+          the step completes when either step_done received or counting to STEP_CNT
+          value
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

@@ -1,0 +1,30 @@
+---
+structs:
+  can1_wrapper:
+    description: FlexCAN wrapper
+    instances:
+      - name: CAN1_WRAPPER
+        address: '0x400C4000'
+      - name: CAN2_WRAPPER
+        address: '0x400C8000'
+      - name: CAN3_WRAPPER
+        address: '0x40C3C000'
+    fields:
+      - name: GFWR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2528
+        description: (read-write) Glitch Filter Width Register
+        fields:
+          - name: GFWR
+            description: Glitch Filter Width
+            index: 0
+            width: 8
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums: {}

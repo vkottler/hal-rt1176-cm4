@@ -1,0 +1,360 @@
+---
+structs:
+  xecc_flexspi1:
+    description: XECC
+    instances:
+      - name: XECC_FLEXSPI1
+        address: '0x4001C000'
+      - name: XECC_FLEXSPI2
+        address: '0x40020000'
+      - name: XECC_SEMC
+        address: '0x40024000'
+    fields:
+      - name: ECC_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) ECC Control Register
+        fields:
+          - name: SWAP_EN
+            description: Swap Data Enable
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: RECC_EN
+            description: Read ECC Function Enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: WECC_EN
+            description: Write ECC Encode Function Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ECC_EN
+            description: ECC Function Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: ERR_STATUS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Error Interrupt Status Register
+        fields:
+          - name: Reserved1
+            description: Reserved
+            index: 2
+            width: 30
+            read: true
+            write: false
+          - name: MULTI_ERR
+            description: Multiple Bits Error
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SINGLE_ERR
+            description: Single Bit Error
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: ERR_STAT_EN
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) Error Interrupt Status Enable Register
+        fields:
+          - name: Reserved1
+            description: Reserved
+            index: 2
+            width: 30
+            read: true
+            write: false
+          - name: MULIT_ERR_STAT_EN
+            description: Multiple Bits Error Status Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SINGLE_ERR_STAT_EN
+            description: Single Bit Error Status Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: ERR_SIG_EN
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) Error Interrupt Enable Register
+        fields:
+          - name: Reserved1
+            description: Reserved
+            index: 2
+            width: 30
+            read: true
+            write: false
+          - name: MULTI_ERR_SIG_EN
+            description: Multiple Bits Error Interrupt Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SINGLE_ERR_SIG_EN
+            description: Single Bit Error Interrupt Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: ERR_DATA_INJ
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) Error Injection On Write Data
+        fields:
+          - name: ERR_DATA_INJ
+            description: Error Injection On Write Data
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: ERR_ECC_INJ
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) Error Injection On ECC Code of Write Data
+        fields:
+          - name: ERR_ECC_INJ
+            description: Error Injection On ECC Code of Write Data
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: SINGLE_ERR_ADDR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) Single Error Address
+        fields:
+          - name: SINGLE_ERR_ADDR
+            description: Single Error Address
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: SINGLE_ERR_DATA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) Single Error Read Data
+        fields:
+          - name: SINGLE_ERR_DATA
+            description: Single Error Read Data
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: SINGLE_ERR_ECC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) Single Error ECC Code
+        fields:
+          - name: SINGLE_ERR_ECC
+            description: Single Error ECC code
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: SINGLE_ERR_POS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) Single Error Bit Position
+        fields:
+          - name: SINGLE_ERR_POS
+            description: Single Error bit Position
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: SINGLE_ERR_BIT_FIELD
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) Single Error Bit Field
+        fields:
+          - name: Reserved1
+            description: Reserved
+            index: 8
+            width: 24
+            read: true
+            write: false
+          - name: SINGLE_ERR_BIT_FIELD
+            description: Single Error Bit Field
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: MULTI_ERR_ADDR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) Multiple Error Address
+        fields:
+          - name: MULTI_ERR_ADDR
+            description: Multiple Error Address
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: MULTI_ERR_DATA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) Multiple Error Read Data
+        fields:
+          - name: MULTI_ERR_DATA
+            description: Multiple Error Read Data
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: MULTI_ERR_ECC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 52
+        description: (read-write) Multiple Error ECC code
+        fields:
+          - name: MULTI_ERR_ECC
+            description: Multiple Error ECC code
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: MULTI_ERR_BIT_FIELD
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 56
+        description: (read-write) Multiple Error Bit Field
+        fields:
+          - name: Reserved1
+            description: Reserved
+            index: 8
+            width: 24
+            read: true
+            write: false
+          - name: MULTI_ERR_BIT_FIELD
+            description: Multiple Error Bit Field
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: ECC_BASE_ADDR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 60
+        description: (read-write) ECC Region 0 Base Address
+        fields:
+          - name: ECC_BASE_ADDR0
+            description: ECC Region 0 Base Address
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: ECC_END_ADDR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 64
+        description: (read-write) ECC Region 0 End Address
+        fields:
+          - name: ECC_END_ADDR0
+            description: ECC Region 0 End Address
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: ECC_BASE_ADDR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 68
+        description: (read-write) ECC Region 1 Base Address
+        fields:
+          - name: ECC_BASE_ADDR1
+            description: ECC Region 1 Base Address
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: ECC_END_ADDR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 72
+        description: (read-write) ECC Region 1 End Address
+        fields:
+          - name: ECC_END_ADDR1
+            description: ECC Region 1 End Address
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: ECC_BASE_ADDR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 76
+        description: (read-write) ECC Region 2 Base Address
+        fields:
+          - name: ECC_BASE_ADDR2
+            description: ECC Region 2 Base Address
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: ECC_END_ADDR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 80
+        description: (read-write) ECC Region 2 End Address
+        fields:
+          - name: ECC_END_ADDR2
+            description: ECC Region 2 End Address
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: ECC_BASE_ADDR3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 84
+        description: (read-write) ECC Region 3 Base Address
+        fields:
+          - name: ECC_BASE_ADDR3
+            description: ECC Region 3 Base Address
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: ECC_END_ADDR3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 88
+        description: (read-write) ECC Region 3 End Address
+        fields:
+          - name: ECC_END_ADDR3
+            description: ECC Region 3 End Address
+            index: 0
+            width: 32
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums: {}

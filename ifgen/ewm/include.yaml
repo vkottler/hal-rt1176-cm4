@@ -1,0 +1,104 @@
+---
+structs:
+  ewm:
+    description: EWM
+    instances:
+      - name: EWM
+        address: '0x4002C000'
+    fields:
+      - name: CTRL
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 0
+        description: (read-write) Control Register
+        fields:
+          - name: INTEN
+            description: Interrupt Enable.
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: INEN
+            description: Input Enable.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ASSIN
+            description: EWM_in's Assertion State Select.
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: EWMEN
+            description: EWM enable.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SERV
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 1
+        description: (read-write) Service Register
+        fields:
+          - name: SERVICE
+            description: SERVICE
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: CMPL
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 2
+        description: (read-write) Compare Low Register
+        fields:
+          - name: COMPAREL
+            description: COMPAREL
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: CMPH
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 3
+        description: (read-write) Compare High Register
+        fields:
+          - name: COMPAREH
+            description: COMPAREH
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: CLKCTRL
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 4
+        description: (read-write) Clock Control Register
+        fields:
+          - name: CLKSEL
+            description: CLKSEL
+            index: 0
+            width: 2
+            read: true
+            write: true
+      - name: CLKPRESCALER
+        type: uint8_t
+        expected_size: 1
+        expected_offset: 5
+        description: (read-write) Clock Prescaler Register
+        fields:
+          - name: CLK_DIV
+            description: CLK_DIV
+            index: 0
+            width: 8
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums: {}

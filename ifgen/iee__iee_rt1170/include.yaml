@@ -1,0 +1,807 @@
+---
+structs:
+  REGx_instance:
+    description: Region Registers
+    fields:
+      - name: REGATTR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) IEE Region REGION Attribute Register.
+        fields:
+          - name: BYP
+            description: AES Bypass.
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: MD
+            description: AES Mode.
+            index: 4
+            width: 3
+            read: true
+            write: true
+            type: IEE__IEE_RT1170_REGATTR_MD
+          - name: KS
+            description: AES key size.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: REGPO
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) IEE Region REGION Page Offset Register
+        fields:
+          - name: PGOFF
+            description: This field represents a 4Kb page offset
+            index: 0
+            width: 24
+            read: true
+            write: true
+      - name: REGKEY1_
+        type: uint32_t
+        expected_size: 32
+        expected_offset: 64
+        array_length: 8
+        description: (read-write) IEE Region REGION Key 1 Register
+        fields:
+          - name: KEY1
+            description: Key 1.
+            index: 0
+            width: 32
+            read: false
+            write: true
+      - name: REGKEY2_
+        type: uint32_t
+        expected_size: 32
+        expected_offset: 128
+        array_length: 8
+        description: (read-write) IEE Region REGION Key 2 Register
+        fields:
+          - name: KEY2
+            description: Key 2.
+            index: 0
+            width: 32
+            read: false
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+  iee__iee_rt1170:
+    description: IEE
+    instances:
+      - name: IEE__IEE_RT1170
+        address: '0x4006C000'
+    fields:
+      - name: GCFG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) IEE Global Configuration
+        fields:
+          - name: RST
+            description: Reset bit
+            index: 31
+            width: 1
+            read: false
+            write: true
+          - name: CLR_MON
+            description: Clear monitor bit
+            index: 29
+            width: 1
+            read: false
+            write: true
+          - name: MON_EN
+            description: Monitor enable bit
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: KEY_RD_DIS
+            description: Key read disable bit
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: TMD
+            description: Test mode disable bit
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: TME
+            description: Test mode enable bit
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: RL7
+            description: Region lock 7 bit
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: RL6
+            description: Region lock 6 bit
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: RL5
+            description: Region lock 5 bit
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: RL4
+            description: Region lock 4 bit
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: RL3
+            description: Region lock 3 bit
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: RL2
+            description: Region lock 2 bit
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: RL1
+            description: Region lock 1 bit
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: RL0
+            description: Region lock 0 bit
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: STA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) IEE Status
+        fields:
+          - name: AFD
+            description: AES fault detected bit
+            index: 4
+            width: 1
+            read: true
+            write: false
+          - name: DSR
+            description: DPA seed request bit
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: TSTMD
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) IEE Test Mode Register
+        fields:
+          - name: TMLEN
+            description: Test mode length field
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: TMDONE
+            description: Test mode done bit
+            index: 4
+            width: 1
+            read: true
+            write: false
+          - name: TMCONT
+            description: Test mode continue bit. Set to indicate that operation will
+              be followed by more data.
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: TMENCR
+            description: Test mode encrypt/decrypt bit.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: TMR
+            description: Test mode run bit
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: TMRDY
+            description: Test mode ready bit. All AXI transactions have stopped and
+              test can begin.
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: DPAMS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) AES Mask Generation Seed
+        fields:
+          - name: DPAMS
+            description: DPA mask seed
+            index: 0
+            width: 32
+            read: false
+            write: true
+      - name: PC_S_LT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) Performance Counter, AES Slave Latency Threshold
+          Value
+        fields:
+          - name: SR_LT
+            description: Slave read latency threshold in AXI clock cycles.
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: SW_LT
+            description: Slave write latency threshold in AXI clock cycles.
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: PC_M_LT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) Performance Counter, AES Master Latency Threshold
+        fields:
+          - name: MR_LT
+            description: Master read latency threshold in AXI clock cycles.
+            index: 16
+            width: 12
+            read: true
+            write: true
+          - name: MW_LT
+            description: Master write latency threshold in AXI clock cycles.
+            index: 0
+            width: 12
+            read: true
+            write: true
+      - name: PC_BLK_ENC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 64
+        description: (read-write) Performance Counter, Number of AES Block Encryptions
+        fields:
+          - name: BLK_ENC
+            description: Number of AES block encryptions. Does not roll over if value
+              maxes out.
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: PC_BLK_DEC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 68
+        description: (read-write) Performance Counter, Number of AES Block Decryptions
+        fields:
+          - name: BLK_DEC
+            description: Number of AES block decryptions. Does not roll over if value
+              maxes out.
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: PC_SR_TRANS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 80
+        description: (read-write) Performance Counter, Number of AXI Slave Read Transactions
+        fields:
+          - name: SR_TRANS
+            description: Number of slave read transactions.
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: PC_SW_TRANS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 84
+        description: (read-write) Performance Counter, Number of AXI Slave Write Transactions
+        fields:
+          - name: SW_TRANS
+            description: Number of slave write transactions.
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: PC_MR_TRANS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 88
+        description: (read-write) Performance Counter, Number of AXI Master Read Transactions
+        fields:
+          - name: MR_TRANS
+            description: Number of master read transactions.
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: PC_MW_TRANS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 92
+        description: (read-write) Performance Counter, Number of AXI Master Write
+          Transactions
+        fields:
+          - name: MW_TRANS
+            description: Number of master write transactions.
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: PC_M_MBR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 100
+        description: (read-write) Performance Counter, Number of AXI Master Merge
+          Buffer Read Transactions
+        fields:
+          - name: M_MBR
+            description: Number of master merge buffer read transactions.
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: PC_SR_TBC_U
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 112
+        description: (read-write) Performance Counter, Upper Slave Read Transactions
+          Byte Count
+        fields:
+          - name: SR_TBC
+            description: Number of bytes in slave read transactions. Upper 16 bits
+              of SR_TBC[47:0].
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: PC_SR_TBC_L
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 116
+        description: (read-write) Performance Counter, Lower Slave Read Transactions
+          Byte Count
+        fields:
+          - name: SR_TBC
+            description: Number of bytes in slave read transactions. Lower 32 bits
+              of SR_TBC[47:0].
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: PC_SW_TBC_U
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 120
+        description: (read-write) Performance Counter, Upper Slave Write Transactions
+          Byte Count
+        fields:
+          - name: SW_TBC
+            description: Number of bytes in slave write transactions. Upper 16 bits
+              of SW_TBC[47:0].
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: PC_SW_TBC_L
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 124
+        description: (read-write) Performance Counter, Lower Slave Write Transactions
+          Byte Count
+        fields:
+          - name: SW_TBC
+            description: Number of bytes in slave write transactions. Lower 32 bits
+              of SW_TBC[47:0].
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: PC_MR_TBC_U
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 128
+        description: (read-write) Performance Counter, Upper Master Read Transactions
+          Byte Count
+        fields:
+          - name: MR_TBC
+            description: Number of bytes in master read transactions. 44 MSBs. Upper
+              16 bits of MR_TBC[43:0].
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: PC_MR_TBC_L
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 132
+        description: (read-write) Performance Counter, Lower Master Read Transactions
+          Byte Count
+        fields:
+          - name: MR_TBC
+            description: Number of bytes in master read transactions. 44 MSBs. Lower
+              28 bits of MR_TBC[43:0].
+            index: 4
+            width: 28
+            read: true
+            write: true
+          - name: MR_TBC_LSB
+            description: Number of bytes in master read transactions. 4 LSBs, always
+              0.
+            index: 0
+            width: 4
+            read: true
+            write: false
+      - name: PC_MW_TBC_U
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 136
+        description: (read-write) Performance Counter, Upper Master Write Transactions
+          Byte Count
+        fields:
+          - name: MW_TBC
+            description: Number of bytes in master write transactions. 44 MSBs. Upper
+              16 bits of MW_TBC[43:0].
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: PC_MW_TBC_L
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 140
+        description: (read-write) Performance Counter, Lower Master Write Transactions
+          Byte Count
+        fields:
+          - name: MW_TBC
+            description: Number of bytes in master write transactions. 44 MSBs. Lower
+              28 bits of MR_TBC[43:0].
+            index: 4
+            width: 28
+            read: true
+            write: true
+          - name: MW_TBC_LSB
+            description: Number of bytes in master write transactions. 4 LSBs, always
+              0.
+            index: 0
+            width: 4
+            read: true
+            write: false
+      - name: PC_SR_TLGTT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 144
+        description: (read-write) Performance Counter, Number of AXI Slave Read Transactions
+          with Latency Greater than the Threshold
+        fields:
+          - name: SR_TLGTT
+            description: Number of slave read transactions with latency greater than
+              the threshold.
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: PC_SW_TLGTT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 148
+        description: (read-write) Performance Counter, Number of AXI Slave Write Transactions
+          with Latency Greater than the Threshold
+        fields:
+          - name: SW_TLGTT
+            description: Number of slave write transactions with latency greater than
+              the threshold.
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: PC_MR_TLGTT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 152
+        description: (read-write) Performance Counter, Number of AXI Master Read Transactions
+          with Latency Greater than the Threshold
+        fields:
+          - name: MR_TLGTT
+            description: Number of master read transactions with latency greater than
+              the threshold.
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: PC_MW_TLGTT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 156
+        description: (read-write) Performance Counter, Number of AXI Master Write
+          Transactions with Latency Greater than the Threshold
+        fields:
+          - name: MW_TGTT
+            description: Number of master write transactions with latency greater
+              than the threshold.
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: PC_SR_TLAT_U
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 160
+        description: (read-write) Performance Counter, Upper Slave Read Latency Count
+        fields:
+          - name: SR_TLAT
+            description: Total slave read latency in AXI clock cycles. Upper 16 bits
+              of SR_TLAT[47:0].
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: PC_SR_TLAT_L
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 164
+        description: (read-write) Performance Counter, Lower Slave Read Latency Count
+        fields:
+          - name: SR_TLAT
+            description: Total slave read latency in AXI clock cycles. Lower 32 bits
+              of SR_TLAT[47:0].
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: PC_SW_TLAT_U
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 168
+        description: (read-write) Performance Counter, Upper Slave Write Latency Count
+        fields:
+          - name: SW_TLAT
+            description: Total slave write latency in AXI clock cycles. Upper 16 bits
+              of SW_TLAT[47:0].
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: PC_SW_TLAT_L
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 172
+        description: (read-write) Performance Counter, Lower Slave Write Latency Count
+        fields:
+          - name: SW_TLAT
+            description: Total slave write latency in AXI clock cycles. Lower 32 bits
+              of SW_TLAT[47:0].
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: PC_MR_TLAT_U
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 176
+        description: (read-write) Performance Counter, Upper Master Read Latency Count
+        fields:
+          - name: MR_TLAT
+            description: Total master read latency in AXI clock cycles. Upper 16 bits
+              of MR_TLAT[47:0].
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: PC_MR_TLAT_L
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 180
+        description: (read-write) Performance Counter, Lower Master Read Latency Count
+        fields:
+          - name: MR_TLAT
+            description: Total master read latency in AXI clock cycles. Lower 32 bits
+              of MR_TLAT[47:0].
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: PC_MW_TLAT_U
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 184
+        description: (read-write) Performance Counter, Upper Master Write Latency
+          Count
+        fields:
+          - name: MW_TLAT
+            description: Total master write latency in AXI clock cycles. Upper 16
+              bits of MW_TLAT[47:0].
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: PC_MW_TLAT_L
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 188
+        description: (read-write) Performance Counter, Lower Master Write Latency
+          Count
+        fields:
+          - name: MW_TLAT
+            description: Total master write latency in AXI clock cycles. Lower 32
+              bits of MW_TLAT[47:0].
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: PC_SR_TNRT_U
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 192
+        description: (read-write) Performance Counter, Upper Slave Read Total Non-Responding
+          Time
+        fields:
+          - name: SR_TNRT
+            description: Total slave read non-responding time in AXI clock cycles.
+              Upper 16 bits of SR_TNRT[47:0].
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: PC_SR_TNRT_L
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 196
+        description: (read-write) Performance Counter, Lower Slave Read Total Non-Responding
+          Time
+        fields:
+          - name: SR_TNRT
+            description: Total slave read non-responding time in AXI clock cycles.
+              Lower 32 bits of SR_TNRT[47:0].
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: PC_SW_TNRT_U
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 200
+        description: (read-write) Performance Counter, Upper Slave Write Total Non-Responding
+          Time
+        fields:
+          - name: SW_TNRT
+            description: Total slave write non-responding time in AXI clock cycles.
+              Upper 16 bits of SW_TNRT[47:0].
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: PC_SW_TNRT_L
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 204
+        description: (read-write) Performance Counter, Lower Slave Write Total Non-Responding
+          Time
+        fields:
+          - name: SW_TNRT
+            description: Total slave write non-responding time in AXI clock cycles.
+              Lower 32 bits of SW_TNRT[47:0].
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: VIDR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 240
+        description: (read-write) IEE Version ID Register 1
+        fields:
+          - name: IP_ID
+            description: ID for IEE.
+            index: 16
+            width: 16
+            read: true
+            write: false
+          - name: MAJ_REV
+            description: Major revision number for IEE.
+            index: 8
+            width: 8
+            read: true
+            write: false
+          - name: MIN_REV
+            description: Minor revision number for IEE.
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: AESVID
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 248
+        description: (read-write) IEE AES Version ID Register
+        fields:
+          - name: AESVID
+            description: AES version ID.
+            index: 4
+            width: 4
+            read: true
+            write: false
+          - name: AESRN
+            description: AES revision number.
+            index: 0
+            width: 4
+            read: true
+            write: false
+      - name: REGx
+        type: REGx_instance
+        array_length: 8
+        description: Region Registers
+      - name: AES_TST_DB
+        type: uint32_t
+        expected_size: 128
+        expected_offset: 3840
+        array_length: 32
+        description: (read-write) IEE AES Test Mode Data Buffer
+        fields:
+          - name: AES_TST_DB0
+            description: AES test mode data buffer.
+            index: 0
+            width: 32
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  IEE__IEE_RT1170_REGATTR_MD:
+    enum:
+      _0:
+        description: None (AXI error if accessed)
+        value: 0
+      _1:
+        description: XTS
+        value: 1
+      _2:
+        description: CTR w/ address binding
+        value: 2
+      _3:
+        description: CTR w/o address binding
+        value: 3
+      _4:
+        description: CTR keystream only
+        value: 4
+      _5:
+        description: Undefined, AXI error if used
+        value: 5
+      _6:
+        description: Undefined, AXI error if used
+        value: 6
+      _7:
+        description: Undefined, AXI error if used
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

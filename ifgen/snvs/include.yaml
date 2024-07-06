@@ -1,0 +1,2277 @@
+---
+structs:
+  snvs:
+    description: SNVS
+    instances:
+      - name: SNVS
+        address: '0x40C90000'
+    fields:
+      - name: HPLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) SNVS_HP Lock Register
+        fields:
+          - name: AT5_SL
+            description: Active Tamper 5 Soft Lock When set, prevents any writes to
+              the Active Tamper 5 registers
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: AT4_SL
+            description: Active Tamper 4 Soft Lock When set, prevents any writes to
+              the Active Tamper 4 registers
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: AT3_SL
+            description: Active Tamper 3 Soft Lock When set, prevents any writes to
+              the Active Tamper 3 registers
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: AT2_SL
+            description: Active Tamper 2 Soft Lock When set, prevents any writes to
+              the Active Tamper 2 registers
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: AT1_SL
+            description: Active Tamper 1 Soft Lock When set, prevents any writes to
+              the Active Tamper 1 registers
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: HAC_L
+            description: High Assurance Counter Lock When set, prevents any writes
+              to HPHACIVR, HPHACR, and HAC_EN bit of HPCOMR
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: HPSICR_L
+            description: HP Security Interrupt Control Register Lock When set, prevents
+              any writes to the HPSICR
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: HPSVCR_L
+            description: HP Security Violation Control Register Lock When set, prevents
+              any writes to the HPSVCR
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: MKS_SL
+            description: Master Key Select Soft Lock When set, prevents any writes
+              to the MASTER_KEY_SEL field of the LPMKCR
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: LPSECR_SL
+            description: LP Security Events Configuration Register Soft Lock When
+              set, prevents any writes to the LPSECR
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: LPTGFCR_SL
+            description: LP Tamper Glitch Filter Configuration Register Soft Lock
+              When set, prevents any writes to the LPTGFCR
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: LPSVCR_SL
+            description: LP Security Violation Control Register Soft Lock When set,
+              prevents any writes to the LPSVCR
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: GPR_SL
+            description: General Purpose Register Soft Lock When set, prevents any
+              writes to the GPR
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: MC_SL
+            description: Monotonic Counter Soft Lock When set, prevents any writes
+              (increments) to the MC Registers and MC_ENV bit
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: LPCALB_SL
+            description: LP Calibration Soft Lock When set, prevents any writes to
+              the LP Calibration Value (LPCALB_VAL) and LP Calibration Enable (LPCALB_EN)
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: SRTC_SL
+            description: Secure Real Time Counter Soft Lock When set, prevents any
+              writes to the SRTC Registers, SRTC_ENV, and SRTC_INV_EN bits
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ZMK_RSL
+            description: Zeroizable Master Key Read Soft Lock When set, prevents any
+              software reads to the ZMK Registers and ZMK_ECC_VALUE field of the LPMKCR
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ZMK_WSL
+            description: Zeroizable Master Key Write Soft Lock When set, prevents
+              any writes (software and hardware) to the ZMK registers and the ZMK_HWP,
+              ZMK_VAL, and ZMK_ECC_EN fields of the LPMKCR
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: HPCOMR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) SNVS_HP Command Register
+        fields:
+          - name: NPSWA_EN
+            description: Non-Privileged Software Access Enable When set, allows non-privileged
+              software to access all SNVS registers, including those that are privileged
+              software read/write access only
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: HAC_STOP
+            description: High Assurance Counter Stop This bit can be set only when
+              SSM is in soft fail state
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: HAC_CLEAR
+            description: High Assurance Counter Clear When set, it clears the High
+              Assurance Counter Register
+            index: 18
+            width: 1
+            read: false
+            write: true
+          - name: HAC_LOAD
+            description: High Assurance Counter Load When set, it loads the High Assurance
+              Counter Register with the value of the High Assurance Counter Load Register
+            index: 17
+            width: 1
+            read: false
+            write: true
+          - name: HAC_EN
+            description: High Assurance Counter Enable This bit controls the SSM transition
+              from the soft fail to the hard fail state
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: MKS_EN
+            description: Master Key Select Enable When not set, the one time programmable
+              (OTP) master key is selected by default
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: PROG_ZMK
+            description: Program Zeroizable Master Key This bit activates ZMK hardware
+              programming mechanism
+            index: 12
+            width: 1
+            read: false
+            write: true
+          - name: SW_LPSV
+            description: LP Software Security Violation When set, SNVS_LP treats this
+              bit as a security violation
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: SW_FSV
+            description: Software Fatal Security Violation When set, the system security
+              monitor treats this bit as a fatal security violation
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: SW_SV
+            description: Software Security Violation When set, the system security
+              monitor treats this bit as a non-fatal security violation
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: LP_SWR_DIS
+            description: LP Software Reset Disable When set, disables the LP software
+              reset
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: LP_SWR
+            description: 'LP Software Reset When set to 1, most registers in the SNVS_LP
+              section are reset, but the following registers are not reset by an LP
+              software reset: Monotonic Counter Secure Real Time Counter Time Alarm
+              Register This bit cannot be set when the LP_SWR_DIS bit is set'
+            index: 4
+            width: 1
+            read: false
+            write: true
+          - name: SSM_SFNS_DIS
+            description: SSM Soft Fail to Non-Secure State Transition Disable When
+              set, it disables the SSM transition from soft fail to non-secure state
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: SSM_ST_DIS
+            description: SSM Secure to Trusted State Transition Disable When set,
+              disables the SSM transition from secure to trusted state
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SSM_ST
+            description: SSM State Transition Transition state of the system security
+              monitor
+            index: 0
+            width: 1
+            read: false
+            write: true
+      - name: HPCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) SNVS_HP Control Register
+        fields:
+          - name: BTN_MASK
+            description: Button interrupt mask
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: BTN_CONFIG
+            description: Button Configuration
+            index: 24
+            width: 3
+            read: true
+            write: true
+          - name: HP_TS
+            description: HP Time Synchronize
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: HPCALB_VAL
+            description: HP Calibration Value Defines signed calibration value for
+              the HP Real Time Counter
+            index: 10
+            width: 5
+            read: true
+            write: true
+            type: SNVS_HPCR_HPCALB_VAL
+          - name: HPCALB_EN
+            description: HP Real Time Counter Calibration Enabled Indicates that the
+              time calibration mechanism is enabled.
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: PI_FREQ
+            description: Periodic Interrupt Frequency Defines frequency of the periodic
+              interrupt
+            index: 4
+            width: 4
+            read: true
+            write: true
+            type: SNVS_HPCR_PI_FREQ
+          - name: PI_EN
+            description: HP Periodic Interrupt Enable The periodic interrupt can be
+              generated only if the HP Real Time Counter is enabled
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: DIS_PI
+            description: Disable periodic interrupt in the functional interrupt
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: HPTA_EN
+            description: HP Time Alarm Enable When set, the time alarm interrupt is
+              generated if the value in the HP Time Alarm Registers is equal to the
+              value of the HP Real Time Counter
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: RTC_EN
+            description: HP Real Time Counter Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: HPSICR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) SNVS_HP Security Interrupt Control Register
+        fields:
+          - name: LPSVI_EN
+            description: LP Security Violation Interrupt Enable This bit enables generating
+              of the security interrupt to the host processor upon security violation
+              signal from the LP section
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: OCOTP_EN
+            description: OCOTP attack error Interrupt Enable Setting this bit to 1
+              enables generation of the security interrupt to the host processor upon
+              detection of the OCOTP attack error security violation
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: SRC_EN
+            description: Internal Boot Interrupt Enable Setting this bit to 1 enables
+              generation of the security interrupt to the host processor upon detection
+              of the Internal Boot security violation
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: WDOG2_EN
+            description: Watchdog 2 Reset Interrupt Enable Setting this bit to 1 enables
+              generation of the security interrupt to the host processor upon detection
+              of the Watchdog 2 Reset security violation
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: JTAGC_EN
+            description: JTAG Active Interrupt Enable Setting this bit to 1 enables
+              generation of the security interrupt to the host processor upon detection
+              of the JTAG Active security violation
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CAAM_EN
+            description: CAAM Security Violation Interrupt Enable Setting this bit
+              to 1 enables generation of the security interrupt to the host processor
+              upon detection of the CAAM Security Violation security violation
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: HPSVCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) SNVS_HP Security Violation Control Register
+        fields:
+          - name: LPSV_CFG
+            description: LP Security Violation Configuration This field configures
+              the LP security violation source.
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: SNVS_HPSVCR_LPSV_CFG
+          - name: OCOTP_CFG
+            description: OCOTP attack error Security Violation Configuration This
+              field configures the OCOTP attack error Security Violation Input
+            index: 5
+            width: 2
+            read: true
+            write: true
+            type: SNVS_HPSVCR_OCOTP_CFG
+          - name: SRC_CFG
+            description: Internal Boot Security Violation Configuration This field
+              configures the Internal Boot Security Violation Input
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: WDOG2_CFG
+            description: Watchdog 2 Reset Security Violation Configuration This field
+              configures the Watchdog 2 Reset Security Violation Input
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: JTAGC_CFG
+            description: JTAG Active Security Violation Configuration This field configures
+              the JTAG Active Security Violation Input
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CAAM_CFG
+            description: CAAM Security Violation Security Violation Configuration
+              This field configures the CAAM Security Violation Security Violation
+              Input
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: HPSR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) SNVS_HP Status Register
+        fields:
+          - name: ZMK_ZERO
+            description: Zeroizable Master Key is Equal to Zero
+            index: 31
+            width: 1
+            read: true
+            write: false
+          - name: OTPMK_ZERO
+            description: One Time Programmable Master Key is Equal to Zero
+            index: 27
+            width: 1
+            read: true
+            write: false
+          - name: SYS_SECURE_BOOT
+            description: System Secure Boot If SYS_SECURE_BOOT is 1, the chip boots
+              from internal ROM
+            index: 15
+            width: 1
+            read: true
+            write: false
+          - name: SYS_SECURITY_CFG
+            description: System Security Configuration This field reflects the three
+              security configuration inputs to SNVS
+            index: 12
+            width: 3
+            read: true
+            write: false
+            type: SNVS_HPSR_SYS_SECURITY_CFG
+          - name: SSM_STATE
+            description: System Security Monitor State This field contains the encoded
+              state of the SSM's state machine
+            index: 8
+            width: 4
+            read: true
+            write: false
+            type: SNVS_HPSR_SSM_STATE
+          - name: BI
+            description: Button Interrupt Signal ipi_snvs_btn_int_b was asserted.
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: BTN
+            description: Button Value of the BTN input
+            index: 6
+            width: 1
+            read: true
+            write: false
+          - name: LPDIS
+            description: Low Power Disable If 1, the low power section has been disabled
+              by means of an input signal to SNVS
+            index: 4
+            width: 1
+            read: true
+            write: false
+          - name: PI
+            description: Periodic Interrupt Indicates that periodic interrupt has
+              occurred since this bit was last cleared.
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: HPTA
+            description: HP Time Alarm Indicates that the HP Time Alarm has occurred
+              since this bit was last cleared.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: HPSVSR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) SNVS_HP Security Violation Status Register
+        fields:
+          - name: LP_SEC_VIO
+            description: LP Security Violation A security volation was detected in
+              the SNVS low power section
+            index: 31
+            width: 1
+            read: true
+            write: false
+          - name: ZMK_ECC_FAIL
+            description: Zeroizable Master Key Error Correcting Code Check Failure
+              When set, this bit triggers a bad key violation to the SSM and a security
+              violation to the SNVS_LP section, which clears security sensitive data
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: ZMK_SYNDROME
+            description: Zeroizable Master Key Syndrome The ZMK syndrome indicates
+              the single-bit error location and parity for the ZMK register
+            index: 16
+            width: 9
+            read: true
+            write: false
+          - name: SW_LPSV
+            description: LP Software Security Violation This bit is a read-only copy
+              of the SW_LPSV bit in the HP Command Register
+            index: 15
+            width: 1
+            read: true
+            write: false
+          - name: SW_FSV
+            description: Software Fatal Security Violation This bit is a read-only
+              copy of the SW_FSV bit in the HP Command Register
+            index: 14
+            width: 1
+            read: true
+            write: false
+          - name: SW_SV
+            description: Software Security Violation This bit is a read-only copy
+              of the SW_SV bit in the HP Command Register
+            index: 13
+            width: 1
+            read: true
+            write: false
+          - name: OCOTP
+            description: OCOTP attack error security violation was detected.
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: SRC
+            description: Internal Boot security violation was detected.
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: WDOG2
+            description: Watchdog 2 Reset security violation was detected.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: JTAGC
+            description: JTAG Active security violation was detected.
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CAAM
+            description: CAAM Security Violation security violation was detected.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: HPHACIVR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) SNVS_HP High Assurance Counter IV Register
+        fields:
+          - name: HAC_COUNTER_IV
+            description: High Assurance Counter Initial Value This register is used
+              to set the starting count value to the high assurance counter
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: HPHACR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) SNVS_HP High Assurance Counter Register
+        fields:
+          - name: HAC_COUNTER
+            description: High Assurance Counter When the HAC_EN bit is set and the
+              SSM is in the soft fail state, this counter starts to count down with
+              the system clock
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: HPRTCMR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) SNVS_HP Real Time Counter MSB Register
+        fields:
+          - name: RTC
+            description: HP Real Time Counter The most-significant 15 bits of the
+              RTC
+            index: 0
+            width: 15
+            read: true
+            write: true
+      - name: HPRTCLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) SNVS_HP Real Time Counter LSB Register
+        fields:
+          - name: RTC
+            description: HP Real Time Counter least-significant 32 bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: HPTAMR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) SNVS_HP Time Alarm MSB Register
+        fields:
+          - name: HPTA_MS
+            description: HP Time Alarm, most-significant 15 bits
+            index: 0
+            width: 15
+            read: true
+            write: true
+      - name: HPTALR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) SNVS_HP Time Alarm LSB Register
+        fields:
+          - name: HPTA_LS
+            description: HP Time Alarm, 32 least-significant bits
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: LPLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 52
+        description: (read-write) SNVS_LP Lock Register
+        fields:
+          - name: AT5_HL
+            description: Active Tamper 5 Hard Lock When set, prevents any writes to
+              the Active Tamper 5 registers
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: AT4_HL
+            description: Active Tamper 4 Hard Lock When set, prevents any writes to
+              the Active Tamper 4 registers
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: AT3_HL
+            description: Active Tamper 3 Hard Lock When set, prevents any writes to
+              the Active Tamper 3 registers
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: AT2_HL
+            description: Active Tamper 2 Hard Lock When set, prevents any writes to
+              the Active Tamper 2 registers
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: AT1_HL
+            description: Active Tamper 1 Hard Lock When set, prevents any writes to
+              the Active Tamper 1 registers
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: MKS_HL
+            description: Master Key Select Hard Lock When set, prevents any writes
+              to the MASTER_KEY_SEL field of the LP Master Key Control Register
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: LPSECR_HL
+            description: LP Security Events Configuration Register Hard Lock When
+              set, prevents any writes to the LPSECR
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: LPTGFCR_HL
+            description: LP Tamper Glitch Filter Configuration Register Hard Lock
+              When set, prevents any writes to the LPTGFCR
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: LPSVCR_HL
+            description: LP Security Violation Control Register Hard Lock When set,
+              prevents any writes to the LPSVCR
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: GPR_HL
+            description: General Purpose Register Hard Lock When set, prevents any
+              writes to the GPR
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: MC_HL
+            description: Monotonic Counter Hard Lock When set, prevents any writes
+              (increments) to the MC Registers and MC_ENV bit
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: LPCALB_HL
+            description: LP Calibration Hard Lock When set, prevents any writes to
+              the LP Calibration Value (LPCALB_VAL) and LP Calibration Enable (LPCALB_EN)
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: SRTC_HL
+            description: Secure Real Time Counter Hard Lock When set, prevents any
+              writes to the SRTC registers, SRTC_ENV, and SRTC_INV_EN bits
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ZMK_RHL
+            description: Zeroizable Master Key Read Hard Lock When set, prevents any
+              software reads to the ZMK registers and ZMK_ECC_VALUE field of the LPMKCR
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ZMK_WHL
+            description: Zeroizable Master Key Write Hard Lock When set, prevents
+              any writes (software and hardware) to the ZMK registers and ZMK_HWP,
+              ZMK_VAL, and ZMK_ECC_EN fields of the LPMKCR
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LPCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 56
+        description: (read-write) SNVS_LP Control Register
+        fields:
+          - name: GPR_Z_DIS
+            description: General Purpose Registers Zeroization Disable
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: PK_OVERRIDE
+            description: PMIC On Request Override The value written to PK_OVERRIDE
+              will be asserted on output signal snvs_lp_pk_override
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: PK_EN
+            description: PMIC On Request Enable The value written to PK_EN will be
+              asserted on output signal snvs_lp_pk_en
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: ON_TIME
+            description: The ON_TIME field is used to configure the period of time
+              after BTN is asserted before pmic_en_b is asserted to turn on the SoC
+              power
+            index: 20
+            width: 2
+            read: true
+            write: true
+          - name: DEBOUNCE
+            description: This field configures the amount of debounce time for the
+              BTN input signal
+            index: 18
+            width: 2
+            read: true
+            write: true
+          - name: BTN_PRESS_TIME
+            description: This field configures the button press time out values for
+              the PMIC Logic
+            index: 16
+            width: 2
+            read: true
+            write: true
+          - name: LPCALB_VAL
+            description: LP Calibration Value Defines signed calibration value for
+              SRTC
+            index: 10
+            width: 5
+            read: true
+            write: true
+            type: SNVS_LPCR_LPCALB_VAL
+          - name: LPCALB_EN
+            description: LP Calibration Enable When set, enables the SRTC calibration
+              mechanism
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: LVD_EN
+            description: Digital Low-Voltage Event Enable By default the detection
+              of a low-voltage event does not cause the pmic_en_b signal to be asserted
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: TOP
+            description: Turn off System Power Asserting this bit causes a signal
+              to be sent to the Power Management IC to turn off the system power
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: DP_EN
+            description: Dumb PMIC Enabled When set, software can control the system
+              power
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: SRTC_INV_EN
+            description: If this bit is 1, in the case of a security violation the
+              SRTC stops counting and the SRTC is invalidated (SRTC_ENV bit is cleared)
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: LPWUI_EN
+            description: LP Wake-Up Interrupt Enable This interrupt line should be
+              connected to the external pin and is intended to inform the external
+              chip about an SNVS_LP event (tamper event, MC rollover, SRTC rollover,
+              or time alarm )
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: MC_ENV
+            description: Monotonic Counter Enabled and Valid When set, the MC can
+              be incremented (by write transaction to the LPSMCMR or LPSMCLR)
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: LPTA_EN
+            description: LP Time Alarm Enable When set, the SNVS functional interrupt
+              is asserted if the LP Time Alarm Register is equal to the 32 MSBs of
+              the secure real time counter
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SRTC_ENV
+            description: Secure Real Time Counter Enabled and Valid When set, the
+              SRTC becomes operational
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LPMKCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 60
+        description: (read-write) SNVS_LP Master Key Control Register
+        fields:
+          - name: ZMK_ECC_VALUE
+            description: Zeroizable Master Key Error Correcting Code Value This field
+              is automatically calculated and set when one is written into ZMK_ECC_EN
+              bit of this register
+            index: 7
+            width: 9
+            read: true
+            write: false
+          - name: ZMK_ECC_EN
+            description: Zeroizable Master Key Error Correcting Code Check Enable
+              Writing one to this field automatically calculates and sets the ZMK
+              ECC value in the ZMK_ECC_VALUE field of this register
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: ZMK_VAL
+            description: Zeroizable Master Key Valid When set, the ZMK value can be
+              selected by the master key control block for use by cryptographic modules
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ZMK_HWP
+            description: Zeroizable Master Key hardware Programming mode When set,
+              only the hardware key programming mechanism can set the ZMK and software
+              cannot read it
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: MASTER_KEY_SEL
+            description: Master Key Select These bits select the SNVS Master Key output
+              when Master Key Select bits are enabled by MKS_EN bit in the HPCOMR
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: SNVS_LPMKCR_MASTER_KEY_SEL
+      - name: LPSVCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 64
+        description: (read-write) SNVS_LP Security Violation Control Register
+        fields:
+          - name: OCOTP_EN
+            description: OCOTP attack error Enable This bit enables OCOTP attack error
+              Input
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: SRC_EN
+            description: Internal Boot Enable This bit enables Internal Boot Input
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: WDOG2_EN
+            description: Watchdog 2 Reset Enable This bit enables Watchdog 2 Reset
+              Input
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: JTAGC_EN
+            description: JTAG Active Enable This bit enables JTAG Active Input
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: CAAM_EN
+            description: CAAM Security Violation Enable This bit enables CAAM Security
+              Violation Input
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LPTGFCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 68
+        description: (read-write) SNVS_LP Tamper Glitch Filters Configuration Register
+        fields:
+          - name: ETGF2_EN
+            description: External Tamper Glitch Filter 2 Enable When set, enables
+              the external tamper glitch filter 2.
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: ETGF2
+            description: External Tamper Glitch Filter 2 Configures the length of
+              the digital glitch filter for the external tamper 2 pin between 128
+              and 32640 SRTC clock cycles
+            index: 24
+            width: 7
+            read: true
+            write: true
+          - name: ETGF1_EN
+            description: External Tamper Glitch Filter 1 Enable When set, enables
+              the external tamper glitch filter 1.
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: ETGF1
+            description: External Tamper Glitch Filter 1 Configures the length of
+              the digital glitch filter for the external tamper 1 pin between 128
+              and 32640 SRTC clock cycles
+            index: 16
+            width: 7
+            read: true
+            write: true
+          - name: WMTGF_EN
+            description: Wire-Mesh Tamper Glitch Filter Enable When set, enables the
+              wire-mesh tamper glitch filter
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: WMTGF
+            description: Wire-Mesh Tamper Glitch Filter Configures the length of the
+              digital glitch filter for the wire-mesh tamper 1 and 2 pins between
+              1 and 63 SRTC clock cycles
+            index: 0
+            width: 5
+            read: true
+            write: true
+      - name: LPTDCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 72
+        description: (read-write) SNVS_LP Tamper Detect Configuration Register
+        fields:
+          - name: OSCB
+            description: Oscillator Bypass When OSCB=1 the osc_bypass signal is asserted
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: VRC
+            description: Voltage Reference Configuration These configuration bits
+              are wired as an output of the module.
+            index: 24
+            width: 3
+            read: true
+            write: true
+          - name: HTDC
+            description: High Temperature Detect Configuration These configuration
+              bits are wired as an output of the module
+            index: 20
+            width: 3
+            read: true
+            write: true
+          - name: LTDC
+            description: Low Temp Detect Configuration These configuration bits are
+              wired as an output of the module.
+            index: 16
+            width: 3
+            read: true
+            write: true
+          - name: POR_OBSERV
+            description: Power On Reset (POR) Observability Flop The asynchronous
+              reset input of this flop is connected directly to the output of the
+              POR analog circuitry (external to the SNVS
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: PFD_OBSERV
+            description: System Power Fail Detector (PFD) Observability Flop The asynchronous
+              reset input of this flop is connected directly to the inverted output
+              of the PFD analog circuitry (external to the SNVS block)
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: ET2P
+            description: External Tampering 2 Polarity This bit is used to determine
+              the polarity of external tamper 2.
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: ET1P
+            description: External Tampering 1 Polarity This bit is used to determine
+              the polarity of external tamper 1.
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: ET2_EN
+            description: External Tampering 2 Enable When set, external tampering
+              2 detection generates an LP security violation
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: ET1_EN
+            description: External Tampering 1 Enable When set, external tampering
+              1 detection generates an LP security violation
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: WMT2_EN
+            description: Wire-Mesh Tampering 2 Enable When set, wire-mesh tampering
+              2 detection generates an LP security violation
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: WMT1_EN
+            description: Wire-Mesh Tampering 1 Enable When set, wire-mesh tampering
+              1 detection generates an LP security violation
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: VT_EN
+            description: Voltage Tamper Enable Voltage Tamper Enable should be enabled
+              500 us after setting SCSC_SOSC_CTR [VOLT_TEMP_TAMPER_EN]
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: TT_EN
+            description: Temperature Tamper Enable When set, a temperature monitor
+              tamper generates an LP security violation
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: CT_EN
+            description: Clock Tamper Enable When set, a clock monitor tamper generates
+              an LP security violation.
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: MCR_EN
+            description: MC Rollover Enable When set, an MC Rollover event generates
+              an LP security violation.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: SRTCR_EN
+            description: SRTC Rollover Enable When set, an SRTC rollover event generates
+              an LP security violation.
+            index: 1
+            width: 1
+            read: true
+            write: true
+      - name: LPSR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 76
+        description: (read-write) SNVS_LP Status Register
+        fields:
+          - name: LPS
+            description: LP Section is Secured Indicates that the LP section is provisioned/programmed
+              in the secure or trusted state
+            index: 31
+            width: 1
+            read: true
+            write: false
+          - name: LPNS
+            description: LP Section is Non-Secured Indicates that LP section was provisioned/programmed
+              in the non-secure state
+            index: 30
+            width: 1
+            read: true
+            write: false
+          - name: SPOF
+            description: Set Power Off The SPO bit is set when the power button is
+              pressed longer than the configured debounce time
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: EO
+            description: Emergency Off This bit is set when a power off is requested.
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: ESVD
+            description: External Security Violation Detected Indicates that a security
+              violation is detected on one of the HP security violation ports
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: ET2D
+            description: External Tampering 2 Detected
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: ET1D
+            description: External Tampering 1 Detected
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: WMT2D
+            description: Wire-Mesh Tampering 2 Detected
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: WMT1D
+            description: Wire-Mesh Tampering 1 Detected
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: VTD
+            description: Voltage Tampering Detected
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: TTD
+            description: Temperature Tamper Detected
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: CTD
+            description: Clock Tampering Detected
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: LVD
+            description: Digital Low Voltage Event Detected
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: MCR
+            description: Monotonic Counter Rollover
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: SRTCR
+            description: Secure Real Time Counter Rollover
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: LPTA
+            description: LP Time Alarm
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LPSRTCMR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 80
+        description: (read-write) SNVS_LP Secure Real Time Counter MSB Register
+        fields:
+          - name: SRTC
+            description: LP Secure Real Time Counter The most-significant 15 bits
+              of the SRTC
+            index: 0
+            width: 15
+            read: true
+            write: true
+      - name: LPSRTCLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 84
+        description: (read-write) SNVS_LP Secure Real Time Counter LSB Register
+        fields:
+          - name: SRTC
+            description: LP Secure Real Time Counter least-significant 32 bits This
+              register can be programmed only when SRTC is not active and not locked,
+              meaning the SRTC_ENV, SRTC_SL, and SRTC_HL bits are not set
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: LPTAR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 88
+        description: (read-write) SNVS_LP Time Alarm Register
+        fields:
+          - name: LPTA
+            description: LP Time Alarm This register can be programmed only when the
+              LP time alarm is disabled (LPTA_EN bit is not set)
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: LPSMCMR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 92
+        description: (read-write) SNVS_LP Secure Monotonic Counter MSB Register
+        fields:
+          - name: MC_ERA_BITS
+            description: Monotonic Counter Era Bits These bits are inputs to the module
+              and typically connect to fuses
+            index: 16
+            width: 16
+            read: true
+            write: false
+          - name: MON_COUNTER
+            description: Monotonic Counter most-significant 16 Bits Note that writing
+              to this register does not change the value of this field to the value
+              that was written
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: LPSMCLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 96
+        description: (read-write) SNVS_LP Secure Monotonic Counter LSB Register
+        fields:
+          - name: MON_COUNTER
+            description: Monotonic Counter bits Note that writing to this register
+              does not change the value of this field to the value that was written
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: LPLVDR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 100
+        description: (read-write) SNVS_LP Digital Low-Voltage Detector Register
+        fields:
+          - name: LVD
+            description: Low-Voltage Detector Value
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: LPGPR0_legacy_alias
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 104
+        description: (read-write) SNVS_LP General Purpose Register 0 (legacy alias)
+        fields:
+          - name: GPR
+            description: General Purpose Register When GPR_SL or GPR_HL bit is set,
+              the register cannot be programmed.
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: LPZMKR
+        type: uint32_t
+        expected_size: 32
+        expected_offset: 108
+        array_length: 8
+        description: (read-write) SNVS_LP Zeroizable Master Key Register
+        fields:
+          - name: ZMK
+            description: Zeroizable Master Key Each of these registers contains 32
+              bits of the 256-bit ZMK value
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: LPGPR_alias
+        type: uint32_t
+        expected_size: 16
+        expected_offset: 144
+        array_length: 4
+        description: (read-write) SNVS_LP General Purpose Registers 0 .. 3
+        fields:
+          - name: GPR
+            description: General Purpose Register When GPR_SL or GPR_HL bit is set,
+              the register cannot be programmed.
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: LPTDC2R
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 160
+        description: (read-write) SNVS_LP Tamper Detectors Config 2 Register
+        fields:
+          - name: ET10P
+            description: External Tampering 10 Polarity This bit is used to determine
+              the polarity of external tamper 10.
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: ET9P
+            description: External Tampering 9 Polarity This bit is used to determine
+              the polarity of external tamper 9.
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: ET8P
+            description: External Tampering 8 Polarity This bit is used to determine
+              the polarity of external tamper 8.
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: ET7P
+            description: External Tampering 7 Polarity This bit is used to determine
+              the polarity of external tamper 7.
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: ET6P
+            description: External Tampering 6 Polarity This bit is used to determine
+              the polarity of external tamper 6.
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: ET5P
+            description: External Tampering 5 Polarity This bit is used to determine
+              the polarity of external tamper 5.
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: ET4P
+            description: External Tampering 4 Polarity This bit is used to determine
+              the polarity of external tamper 4.
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: ET3P
+            description: External Tampering 3 Polarity This bit is used to determine
+              the polarity of external tamper 3.
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: ET10_EN
+            description: External Tampering 10 Enable When set, external tampering
+              10 detection generates an LP security violation
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: ET9_EN
+            description: External Tampering 9 Enable When set, external tampering
+              9 detection generates an LP security violation
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ET8_EN
+            description: External Tampering 8 Enable When set, external tampering
+              8 detection generates an LP security violation
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ET7_EN
+            description: External Tampering 7 Enable When set, external tampering
+              7 detection generates an LP security violation
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: ET6_EN
+            description: External Tampering 6 Enable When set, external tampering
+              6 detection generates an LP security violation
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ET5_EN
+            description: External Tampering 5 Enable When set, external tampering
+              5 detection generates an LP security violation
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ET4_EN
+            description: External Tampering 4 Enable When set, external tampering
+              4 detection generates an LP security violation
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ET3_EN
+            description: External Tampering 3 Enable When set, external tampering
+              3 detection generates an LP security violation
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LPTDSR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 164
+        description: (read-write) SNVS_LP Tamper Detectors Status Register
+        fields:
+          - name: ET10D
+            description: External Tampering 10 Detected
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: ET9D
+            description: External Tampering 9 Enable When set, external tampering
+              9 detection generates an LP security violation
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ET8D
+            description: External Tampering 8 Detected
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ET7D
+            description: External Tampering 7 Detected
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: ET6D
+            description: External Tampering 6 Detected
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ET5D
+            description: External Tampering 5 Detected
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ET4D
+            description: External Tampering 4 Detected
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ET3D
+            description: External Tampering 3 Detected
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LPTGF1CR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 168
+        description: (read-write) SNVS_LP Tamper Glitch Filter 1 Configuration Register
+        fields:
+          - name: ETGF6_EN
+            description: External Tamper Glitch Filter 6 Enable When set, enables
+              the external tamper glitch filter 6.
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: ETGF6
+            description: External Tamper Glitch Filter 6 Configures the length of
+              the digital glitch filter for the external tamper 6 pin between 128
+              and 32640 SRTC clock cycles
+            index: 24
+            width: 7
+            read: true
+            write: true
+          - name: ETGF5_EN
+            description: External Tamper Glitch Filter 5 Enable When set, enables
+              the external tamper glitch filter 5.
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: ETGF5
+            description: External Tamper Glitch Filter 5 Configures the length of
+              the digital glitch filter for the external tamper 5 pin between 128
+              and 32640 SRTC clock cycles
+            index: 16
+            width: 7
+            read: true
+            write: true
+          - name: ETGF4_EN
+            description: External Tamper Glitch Filter 4 Enable When set, enables
+              the external tamper glitch filter 4.
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ETGF4
+            description: External Tamper Glitch Filter 4 Configures the length of
+              the digital glitch filter for the external tamper 4 pin between 128
+              and 32640 SRTC clock cycles
+            index: 8
+            width: 7
+            read: true
+            write: true
+          - name: ETGF3_EN
+            description: External Tamper Glitch Filter 3 Enable When set, enables
+              the external tamper glitch filter 3.
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: ETGF3
+            description: External Tamper Glitch Filter 3 Configures the length of
+              the digital glitch filter for the external tamper 3 pin between 128
+              and 32640 SRTC clock cycles
+            index: 0
+            width: 7
+            read: true
+            write: true
+      - name: LPTGF2CR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 172
+        description: (read-write) SNVS_LP Tamper Glitch Filter 2 Configuration Register
+        fields:
+          - name: ETGF10_EN
+            description: External Tamper Glitch Filter 10 Enable When set, enables
+              the external tamper glitch filter 10.
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: ETGF10
+            description: External Tamper Glitch Filter 10 Configures the length of
+              the digital glitch filter for the external tamper 10 pin between 128
+              and 32640 SRTC clock cycles
+            index: 24
+            width: 7
+            read: true
+            write: true
+          - name: ETGF9_EN
+            description: External Tamper Glitch Filter 9 Enable When set, enables
+              the external tamper glitch filter 9.
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: ETGF9
+            description: External Tamper Glitch Filter 9 Configures the length of
+              the digital glitch filter for the external tamper 9 pin between 128
+              and 32640 SRTC clock cycles
+            index: 16
+            width: 7
+            read: true
+            write: true
+          - name: ETGF8_EN
+            description: External Tamper Glitch Filter 8 Enable When set, enables
+              the external tamper glitch filter 8.
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: ETGF8
+            description: External Tamper Glitch Filter 8 Configures the length of
+              the digital glitch filter for the external tamper 8 pin between 128
+              and 32640 SRTC clock cycles
+            index: 8
+            width: 7
+            read: true
+            write: true
+          - name: ETGF7_EN
+            description: External Tamper Glitch Filter 7 Enable When set, enables
+              the external tamper glitch filter 7.
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: ETGF7
+            description: External Tamper Glitch Filter 7 Configures the length of
+              the digital glitch filter for the external tamper 7 pin between 128
+              and 32640 SRTC clock cycles
+            index: 0
+            width: 7
+            read: true
+            write: true
+      - name: LPAT1CR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 192
+        description: (read-write) SNVS_LP Active Tamper 1 Configuration Register
+        fields:
+          - name: Polynomial
+            description: Active Tamper 1 Polynomial Default Polynomial is 8400h.
+            index: 16
+            width: 16
+            read: false
+            write: true
+          - name: Seed
+            description: Active Tamper 1 Initial Seed Default Seed is 1111h.
+            index: 0
+            width: 16
+            read: false
+            write: true
+      - name: LPAT2CR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 196
+        description: (read-write) SNVS_LP Active Tamper 2 Configuration Register
+        fields:
+          - name: Polynomial
+            description: Active Tamper 2 Polynomial Default Polynomial is 9C00h.
+            index: 16
+            width: 16
+            read: false
+            write: true
+          - name: Seed
+            description: Active Tamper 2 Initial Seed Default Seed is 2222h.
+            index: 0
+            width: 16
+            read: false
+            write: true
+      - name: LPAT3CR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 200
+        description: (read-write) SNVS_LP Active Tamper 3 Configuration Register
+        fields:
+          - name: Polynomial
+            description: Active Tamper 3 Polynomial Default Polynomial is CA00h.
+            index: 16
+            width: 16
+            read: false
+            write: true
+          - name: Seed
+            description: Active Tamper 3 Initial Seed Default Seed is 3333h.
+            index: 0
+            width: 16
+            read: false
+            write: true
+      - name: LPAT4CR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 204
+        description: (read-write) SNVS_LP Active Tamper 4 Configuration Register
+        fields:
+          - name: Polynomial
+            description: Active Tamper 4 Polynomial Default Polynomial is 8580h.
+            index: 16
+            width: 16
+            read: false
+            write: true
+          - name: Seed
+            description: Active Tamper 4 Initial Seed Default Seed is 4444h.
+            index: 0
+            width: 16
+            read: false
+            write: true
+      - name: LPAT5CR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 208
+        description: (read-write) SNVS_LP Active Tamper 5 Configuration Register
+        fields:
+          - name: Polynomial
+            description: Active Tamper 5 Polynomial Default Polynomial is A840h.
+            index: 16
+            width: 16
+            read: false
+            write: true
+          - name: Seed
+            description: Active Tamper 5 Initial Seed Default Seed is 5555h.
+            index: 0
+            width: 16
+            read: false
+            write: true
+      - name: LPATCTLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 224
+        description: (read-write) SNVS_LP Active Tamper Control Register
+        fields:
+          - name: AT5_PAD_EN
+            description: Active Tamper 5 Pad Out Enable When set, enables the Active
+              Tamper 5 external pad.
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: AT4_PAD_EN
+            description: Active Tamper 4 Pad Out Enable When set, enables the Active
+              Tamper 4 external pad.
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: AT3_PAD_EN
+            description: Active Tamper 3 Pad Out Enable When set, enables the Active
+              Tamper 3 external pad.
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: AT2_PAD_EN
+            description: Active Tamper 2 Pad Out Enable When set, enables the Active
+              Tamper 2 external pad.
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: AT1_PAD_EN
+            description: Active Tamper 1 Pad Out Enable When set, enables the Active
+              Tamper 1 external pad.
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: AT5_EN
+            description: Active Tamper 5 Enable When set, enables the Active Tamper
+              5 LFSR.
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: AT4_EN
+            description: Active Tamper 4 Enable When set, enables the Active Tamper
+              4 LFSR.
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: AT3_EN
+            description: Active Tamper 3 Enable When set, enables the Active Tamper
+              3 LFSR.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: AT2_EN
+            description: Active Tamper 2 Enable When set, enables the Active Tamper
+              2 LFSR.
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: AT1_EN
+            description: Active Tamper 1 Enable When set, enables the Active Tamper
+              1 LFSR.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: LPATCLKR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 228
+        description: (read-write) SNVS_LP Active Tamper Clock Control Register
+        fields:
+          - name: AT5_CLK_CTL
+            description: 'Active Tamper 5 Clock Control 00: 16hz 01: 8hz 10: 4hz 11:
+              2hz'
+            index: 16
+            width: 2
+            read: true
+            write: true
+          - name: AT4_CLK_CTL
+            description: 'Active Tamper 4 Clock Control 00: 16hz 01: 8hz 10: 4hz 11:
+              2hz'
+            index: 12
+            width: 2
+            read: true
+            write: true
+          - name: AT3_CLK_CTL
+            description: 'Active Tamper 3 Clock Control 00: 16hz 01: 8hz 10: 4hz 11:
+              2hz'
+            index: 8
+            width: 2
+            read: true
+            write: true
+          - name: AT2_CLK_CTL
+            description: 'Active Tamper 2 Clock Control 00: 16hz 01: 8hz 10: 4hz 11:
+              2hz'
+            index: 4
+            width: 2
+            read: true
+            write: true
+          - name: AT1_CLK_CTL
+            description: 'Active Tamper 1 Clock Control 00: 16hz 01: 8hz 10: 4hz 11:
+              2hz'
+            index: 0
+            width: 2
+            read: true
+            write: true
+      - name: LPATRC1R
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 232
+        description: (read-write) SNVS_LP Active Tamper Routing Control 1 Register
+        fields:
+          - name: ET8RCTL
+            description: External Tamper 8 Routing Control Any undefined selection
+              will be routed to passive
+            index: 28
+            width: 3
+            read: true
+            write: true
+          - name: ET7RCTL
+            description: External Tamper 7 Routing Control Any undefined selection
+              will be routed to passive
+            index: 24
+            width: 3
+            read: true
+            write: true
+          - name: ET6RCTL
+            description: External Tamper 6 Routing Control Any undefined selection
+              will be routed to passive
+            index: 20
+            width: 3
+            read: true
+            write: true
+          - name: ET5RCTL
+            description: External Tamper 5 Routing Control Any undefined selection
+              will be routed to passive
+            index: 16
+            width: 3
+            read: true
+            write: true
+          - name: ET4RCTL
+            description: External Tamper 4 Routing Control Any undefined selection
+              will be routed to passive
+            index: 12
+            width: 3
+            read: true
+            write: true
+          - name: ET3RCTL
+            description: External Tamper 3 Routing Control Any undefined selection
+              will be routed to passive
+            index: 8
+            width: 3
+            read: true
+            write: true
+          - name: ET2RCTL
+            description: External Tamper 2 Routing Control Any undefined selection
+              will be routed to passive
+            index: 4
+            width: 3
+            read: true
+            write: true
+          - name: ET1RCTL
+            description: External Tamper 1 Routing Control Any undefined selection
+              will be routed to passive
+            index: 0
+            width: 3
+            read: true
+            write: true
+      - name: LPATRC2R
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 236
+        description: (read-write) SNVS_LP Active Tamper Routing Control 2 Register
+        fields:
+          - name: ET10RCTL
+            description: External Tamper 10 Routing Control Any undefined selection
+              will be routed to passive
+            index: 4
+            width: 3
+            read: true
+            write: true
+          - name: ET9RCTL
+            description: External Tamper 9 Routing Control Any undefined selection
+              will be routed to passive
+            index: 0
+            width: 3
+            read: true
+            write: true
+      - name: LPGPR
+        type: uint32_t
+        expected_size: 16
+        expected_offset: 256
+        array_length: 4
+        description: (read-write) SNVS_LP General Purpose Registers 0 .. 3
+        fields:
+          - name: GPR
+            description: General Purpose Register When GPR_SL or GPR_HL bit is set,
+              the register cannot be programmed.
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: HPVIDR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 3064
+        description: (read-write) SNVS_HP Version ID Register 1
+        fields:
+          - name: IP_ID
+            description: SNVS block ID
+            index: 16
+            width: 16
+            read: true
+            write: false
+          - name: MAJOR_REV
+            description: SNVS block major version number
+            index: 8
+            width: 8
+            read: true
+            write: false
+          - name: MINOR_REV
+            description: SNVS block minor version number
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: HPVIDR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 3068
+        description: (read-write) SNVS_HP Version ID Register 2
+        fields:
+          - name: IP_ERA
+            description: IP Era 00h - Era 1 or 2 03h - Era 3 04h - Era 4 05h - Era
+              5 06h - Era 6
+            index: 24
+            width: 8
+            read: true
+            write: false
+          - name: ECO_REV
+            description: SNVS ECO Revision The engineering change order revision number
+              for this release of SNVS.
+            index: 8
+            width: 8
+            read: true
+            write: false
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  SNVS_HPCR_HPCALB_VAL:
+    enum:
+      ADD_0_PER_32768_TICKS:
+        description: +0 counts per each 32768 ticks of the counter
+        value: 0
+      ADD_1_PER_32768_TICKS:
+        description: +1 counts per each 32768 ticks of the counter
+        value: 1
+      ADD_2_PER_32768_TICKS:
+        description: +2 counts per each 32768 ticks of the counter
+        value: 2
+      ADD_15_PER_32768_TICKS:
+        description: +15 counts per each 32768 ticks of the counter
+        value: 15
+      SUB_16_PER_32768_TICKS:
+        description: -16 counts per each 32768 ticks of the counter
+        value: 16
+      SUB_15_PER_32768_TICKS:
+        description: -15 counts per each 32768 ticks of the counter
+        value: 17
+      SUB_2_PER_32768_TICKS:
+        description: -2 counts per each 32768 ticks of the counter
+        value: 30
+      SUB_1_PER_32768_TICKS:
+        description: -1 counts per each 32768 ticks of the counter
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SNVS_HPCR_PI_FREQ:
+    enum:
+      _0:
+        description: '- bit 0 of the HPRTCLR is selected as a source of the periodic
+          interrupt'
+        value: 0
+      _1:
+        description: '- bit 1 of the HPRTCLR is selected as a source of the periodic
+          interrupt'
+        value: 1
+      _2:
+        description: '- bit 2 of the HPRTCLR is selected as a source of the periodic
+          interrupt'
+        value: 2
+      _3:
+        description: '- bit 3 of the HPRTCLR is selected as a source of the periodic
+          interrupt'
+        value: 3
+      _4:
+        description: '- bit 4 of the HPRTCLR is selected as a source of the periodic
+          interrupt'
+        value: 4
+      _5:
+        description: '- bit 5 of the HPRTCLR is selected as a source of the periodic
+          interrupt'
+        value: 5
+      _6:
+        description: '- bit 6 of the HPRTCLR is selected as a source of the periodic
+          interrupt'
+        value: 6
+      _7:
+        description: '- bit 7 of the HPRTCLR is selected as a source of the periodic
+          interrupt'
+        value: 7
+      _8:
+        description: '- bit 8 of the HPRTCLR is selected as a source of the periodic
+          interrupt'
+        value: 8
+      _9:
+        description: '- bit 9 of the HPRTCLR is selected as a source of the periodic
+          interrupt'
+        value: 9
+      _10:
+        description: '- bit 10 of the HPRTCLR is selected as a source of the periodic
+          interrupt'
+        value: 10
+      _11:
+        description: '- bit 11 of the HPRTCLR is selected as a source of the periodic
+          interrupt'
+        value: 11
+      _12:
+        description: '- bit 12 of the HPRTCLR is selected as a source of the periodic
+          interrupt'
+        value: 12
+      _13:
+        description: '- bit 13 of the HPRTCLR is selected as a source of the periodic
+          interrupt'
+        value: 13
+      _14:
+        description: '- bit 14 of the HPRTCLR is selected as a source of the periodic
+          interrupt'
+        value: 14
+      _1r5:
+        description: '- bit 15 of the HPRTCLR is selected as a source of the periodic
+          interrupt'
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SNVS_HPSVCR_LPSV_CFG:
+    enum:
+      DISABLED:
+        description: LP security violation is disabled
+        value: 0
+      NON_FATAL:
+        description: LP security violation is a non-fatal violation
+        value: 1
+      FATAL:
+        description: LP security violation is a fatal violation
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SNVS_HPSVCR_OCOTP_CFG:
+    enum:
+      DISABLED:
+        description: OCOTP attack error is disabled
+        value: 0
+      NON_FATAL:
+        description: OCOTP attack error is a non-fatal violation
+        value: 1
+      FATAL:
+        description: OCOTP attack error is a fatal violation
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SNVS_HPSR_SYS_SECURITY_CFG:
+    enum:
+      FAB_CONFIG:
+        description: Fab Configuration - the default configuration of newly fabricated
+          chips
+        value: 0
+      OPEN_CONFIG:
+        description: Open Configuration - the configuration after NXP-programmable
+          fuses have been blown
+        value: 1
+      CLOSED_CONFIG:
+        description: Closed Configuration - the configuration after OEM-programmable
+          fuses have been blown
+        value: 3
+      FIELD_RETURN_CONFIG:
+        description: Field Return Configuration - the configuration of chips that
+          are returned to NXP for analysis
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SNVS_HPSR_SSM_STATE:
+    enum:
+      INIT:
+        description: Init
+        value: 0
+      HARD_FAIL:
+        description: Hard Fail
+        value: 1
+      SOFT_FAIL:
+        description: Soft Fail
+        value: 3
+      INTERMEDIATE:
+        description: Init Intermediate (transition state between Init and Check -
+          SSM stays in this state only one clock cycle)
+        value: 8
+      CHECK:
+        description: Check
+        value: 9
+      NON_SECURE:
+        description: Non-Secure
+        value: 11
+      TRUSTED:
+        description: Trusted
+        value: 13
+      SECURE:
+        description: Secure
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SNVS_LPCR_LPCALB_VAL:
+    enum:
+      ADD_0_PER_32768_TICKS:
+        description: +0 counts per each 32768 ticks of the counter clock
+        value: 0
+      ADD_1_PER_32768_TICKS:
+        description: +1 counts per each 32768 ticks of the counter clock
+        value: 1
+      ADD_2_PER_32768_TICKS:
+        description: +2 counts per each 32768 ticks of the counter clock
+        value: 2
+      ADD_15_PER_32768_TICKS:
+        description: +15 counts per each 32768 ticks of the counter clock
+        value: 15
+      SUB_16_PER_32768_TICKS:
+        description: -16 counts per each 32768 ticks of the counter clock
+        value: 16
+      SUB_15_PER_32768_TICKS:
+        description: -15 counts per each 32768 ticks of the counter clock
+        value: 17
+      SUB_2_PER_32768_TICKS:
+        description: -2 counts per each 32768 ticks of the counter clock
+        value: 30
+      SUB_1_PER_32768_TICKS:
+        description: -1 counts per each 32768 ticks of the counter clock
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SNVS_LPMKCR_MASTER_KEY_SEL:
+    enum:
+      OTPMK:
+        description: Select one time programmable master key.
+        value: 1
+      ZMK:
+        description: Select zeroizable master key when MKS_EN bit is set .
+        value: 2
+      COMBO:
+        description: Select combined master key when MKS_EN bit is set .
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

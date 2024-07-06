@@ -1,0 +1,4771 @@
+---
+structs:
+  lpadc1:
+    description: LPADC
+    instances:
+      - name: LPADC1
+        address: '0x40050000'
+      - name: LPADC2
+        address: '0x40054000'
+    fields:
+      - name: VERID
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Version ID Register
+        fields:
+          - name: MAJOR
+            description: Major Version Number
+            index: 24
+            width: 8
+            read: true
+            write: false
+          - name: MINOR
+            description: Minor Version Number
+            index: 16
+            width: 8
+            read: true
+            write: false
+          - name: CALOFSI
+            description: Calibration Offset Function Implemented
+            index: 10
+            width: 1
+            read: true
+            write: false
+          - name: IADCKI
+            description: Internal LPADC Clock implemented
+            index: 9
+            width: 1
+            read: true
+            write: false
+          - name: VR1RNGI
+            description: Voltage Reference 1 Range Control Bit Implemented
+            index: 8
+            width: 1
+            read: true
+            write: false
+          - name: CSW
+            description: Channel Scale Width
+            index: 4
+            width: 3
+            read: true
+            write: false
+            type: LPADC1_VERID_CSW
+          - name: MVI
+            description: Multi Vref Implemented
+            index: 3
+            width: 1
+            read: true
+            write: false
+          - name: DIFFEN
+            description: Differential Supported
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: RES
+            description: Resolution
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: PARAM
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Parameter Register
+        fields:
+          - name: CMD_NUM
+            description: Command Buffer Number
+            index: 24
+            width: 8
+            read: true
+            write: false
+            type: LPADC1_PARAM_CMD_NUM
+          - name: CV_NUM
+            description: Compare Value Number
+            index: 16
+            width: 8
+            read: true
+            write: false
+            type: LPADC1_PARAM_CV_NUM
+          - name: FIFOSIZE
+            description: Result FIFO Depth
+            index: 8
+            width: 8
+            read: true
+            write: false
+            type: LPADC1_PARAM_FIFOSIZE
+          - name: TRIG_NUM
+            description: Trigger Number
+            index: 0
+            width: 8
+            read: true
+            write: false
+            type: LPADC1_PARAM_TRIG_NUM
+      - name: CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) LPADC Control Register
+        fields:
+          - name: RSTFIFO
+            description: Reset FIFO
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: TRIG_SRC
+            description: Hardware trigger source selection
+            index: 3
+            width: 2
+            read: true
+            write: true
+            type: LPADC1_CTRL_TRIG_SRC
+          - name: DOZEN
+            description: Doze Enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: RST
+            description: Software Reset
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ADCEN
+            description: LPADC Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: STAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) LPADC Status Register
+        fields:
+          - name: CMDACT
+            description: Command Active
+            index: 24
+            width: 4
+            read: true
+            write: false
+            type: LPADC1_STAT_CMDACT
+          - name: TRGACT
+            description: Trigger Active
+            index: 16
+            width: 3
+            read: true
+            write: false
+            type: LPADC1_STAT_TRGACT
+          - name: ADC_ACTIVE
+            description: ADC Active
+            index: 8
+            width: 1
+            read: true
+            write: false
+          - name: FOF
+            description: Result FIFO Overflow Flag
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: RDY
+            description: Result FIFO Ready Flag
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: IE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) Interrupt Enable Register
+        fields:
+          - name: FOFIE
+            description: Result FIFO Overflow Interrupt Enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: FWMIE
+            description: FIFO Watermark Interrupt Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: DE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) DMA Enable Register
+        fields:
+          - name: FWMDE
+            description: FIFO Watermark DMA Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CFG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) LPADC Configuration Register
+        fields:
+          - name: PWREN
+            description: LPADC Analog Pre-Enable
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: PUDLY
+            description: Power Up Delay
+            index: 16
+            width: 8
+            read: true
+            write: true
+          - name: REFSEL
+            description: Voltage Reference Selection
+            index: 6
+            width: 2
+            read: true
+            write: true
+            type: LPADC1_CFG_REFSEL
+          - name: PWRSEL
+            description: Power Configuration Select
+            index: 4
+            width: 2
+            read: true
+            write: true
+            type: LPADC1_CFG_PWRSEL
+          - name: TPRICTRL
+            description: LPADC trigger priority control
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PAUSE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) LPADC Pause Register
+        fields:
+          - name: PAUSEEN
+            description: PAUSE Option Enable
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: PAUSEDLY
+            description: Pause Delay
+            index: 0
+            width: 9
+            read: true
+            write: true
+      - name: FCTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) LPADC FIFO Control Register
+        fields:
+          - name: FWMARK
+            description: Watermark level selection
+            index: 16
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_FCTRL_FWMARK
+          - name: FCOUNT
+            description: Result FIFO counter
+            index: 0
+            width: 5
+            read: true
+            write: false
+            type: LPADC1_FCTRL_FCOUNT
+      - name: SWTRIG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 52
+        description: (read-write) Software Trigger Register
+        fields:
+          - name: SWT7
+            description: Software trigger 7 event
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: SWT6
+            description: Software trigger 6 event
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: SWT5
+            description: Software trigger 5 event
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: SWT4
+            description: Software trigger 4 event
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: SWT3
+            description: Software trigger 3 event
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: SWT2
+            description: Software trigger 2 event
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: SWT1
+            description: Software trigger 1 event
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SWT0
+            description: Software trigger 0 event
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: TCTRL
+        type: uint32_t
+        expected_size: 32
+        expected_offset: 192
+        array_length: 8
+        description: (read-write) Trigger Control Register
+        fields:
+          - name: TCMD
+            description: Trigger command select
+            index: 24
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_TCTRL_TCMD
+          - name: TDLY
+            description: Trigger delay select
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: TPRI
+            description: Trigger priority setting
+            index: 8
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_TCTRL_TPRI
+          - name: CMD_SEL
+            description: The command number is selected by software TCMD or hardware
+              tcmd signal
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: HTEN
+            description: Trigger enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CMDL1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 256
+        description: (read-write) LPADC Command Low Buffer Register
+        fields:
+          - name: CSCALE
+            description: Channel Scale
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: DIFF
+            description: Differential Mode Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ABSEL
+            description: A-side vs. B-side Select
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ADCH
+            description: Input channel select
+            index: 0
+            width: 5
+            read: true
+            write: true
+            type: LPADC1_CMDL1_ADCH
+      - name: CMDH1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 260
+        description: (read-write) LPADC Command High Buffer Register
+        fields:
+          - name: NEXT
+            description: Next Command Select
+            index: 24
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH1_NEXT
+          - name: LOOP
+            description: Loop Count Select
+            index: 16
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH1_LOOP
+          - name: AVGS
+            description: Hardware Average Select
+            index: 12
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH1_AVGS
+          - name: STS
+            description: Sample Time Select
+            index: 8
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH1_STS
+          - name: LWI
+            description: Loop with Increment
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: CMPEN
+            description: Compare Function Enable
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: LPADC1_CMDH1_CMPEN
+      - name: CMDL2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 264
+        description: (read-write) LPADC Command Low Buffer Register
+        fields:
+          - name: CSCALE
+            description: Channel Scale
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: DIFF
+            description: Differential Mode Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ABSEL
+            description: A-side vs. B-side Select
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ADCH
+            description: Input channel select
+            index: 0
+            width: 5
+            read: true
+            write: true
+            type: LPADC1_CMDL2_ADCH
+      - name: CMDH2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 268
+        description: (read-write) LPADC Command High Buffer Register
+        fields:
+          - name: NEXT
+            description: Next Command Select
+            index: 24
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH2_NEXT
+          - name: LOOP
+            description: Loop Count Select
+            index: 16
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH2_LOOP
+          - name: AVGS
+            description: Hardware Average Select
+            index: 12
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH2_AVGS
+          - name: STS
+            description: Sample Time Select
+            index: 8
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH2_STS
+          - name: LWI
+            description: Loop with Increment
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: CMPEN
+            description: Compare Function Enable
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: LPADC1_CMDH2_CMPEN
+      - name: CMDL3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 272
+        description: (read-write) LPADC Command Low Buffer Register
+        fields:
+          - name: CSCALE
+            description: Channel Scale
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: DIFF
+            description: Differential Mode Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ABSEL
+            description: A-side vs. B-side Select
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ADCH
+            description: Input channel select
+            index: 0
+            width: 5
+            read: true
+            write: true
+            type: LPADC1_CMDL3_ADCH
+      - name: CMDH3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 276
+        description: (read-write) LPADC Command High Buffer Register
+        fields:
+          - name: NEXT
+            description: Next Command Select
+            index: 24
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH3_NEXT
+          - name: LOOP
+            description: Loop Count Select
+            index: 16
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH3_LOOP
+          - name: AVGS
+            description: Hardware Average Select
+            index: 12
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH3_AVGS
+          - name: STS
+            description: Sample Time Select
+            index: 8
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH3_STS
+          - name: LWI
+            description: Loop with Increment
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: CMPEN
+            description: Compare Function Enable
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: LPADC1_CMDH3_CMPEN
+      - name: CMDL4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 280
+        description: (read-write) LPADC Command Low Buffer Register
+        fields:
+          - name: CSCALE
+            description: Channel Scale
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: DIFF
+            description: Differential Mode Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ABSEL
+            description: A-side vs. B-side Select
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ADCH
+            description: Input channel select
+            index: 0
+            width: 5
+            read: true
+            write: true
+            type: LPADC1_CMDL4_ADCH
+      - name: CMDH4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 284
+        description: (read-write) LPADC Command High Buffer Register
+        fields:
+          - name: NEXT
+            description: Next Command Select
+            index: 24
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH4_NEXT
+          - name: LOOP
+            description: Loop Count Select
+            index: 16
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH4_LOOP
+          - name: AVGS
+            description: Hardware Average Select
+            index: 12
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH4_AVGS
+          - name: STS
+            description: Sample Time Select
+            index: 8
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH4_STS
+          - name: LWI
+            description: Loop with Increment
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: CMPEN
+            description: Compare Function Enable
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: LPADC1_CMDH4_CMPEN
+      - name: CMDL5
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 288
+        description: (read-write) LPADC Command Low Buffer Register
+        fields:
+          - name: CSCALE
+            description: Channel Scale
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: DIFF
+            description: Differential Mode Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ABSEL
+            description: A-side vs. B-side Select
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ADCH
+            description: Input channel select
+            index: 0
+            width: 5
+            read: true
+            write: true
+            type: LPADC1_CMDL5_ADCH
+      - name: CMDH5
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 292
+        description: (read-write) LPADC Command High Buffer Register
+        fields:
+          - name: NEXT
+            description: Next Command Select
+            index: 24
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH5_NEXT
+          - name: LOOP
+            description: Loop Count Select
+            index: 16
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH5_LOOP
+          - name: AVGS
+            description: Hardware Average Select
+            index: 12
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH5_AVGS
+          - name: STS
+            description: Sample Time Select
+            index: 8
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH5_STS
+          - name: LWI
+            description: Loop with Increment
+            index: 7
+            width: 1
+            read: true
+            write: true
+      - name: CMDL6
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 296
+        description: (read-write) LPADC Command Low Buffer Register
+        fields:
+          - name: CSCALE
+            description: Channel Scale
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: DIFF
+            description: Differential Mode Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ABSEL
+            description: A-side vs. B-side Select
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ADCH
+            description: Input channel select
+            index: 0
+            width: 5
+            read: true
+            write: true
+            type: LPADC1_CMDL6_ADCH
+      - name: CMDH6
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 300
+        description: (read-write) LPADC Command High Buffer Register
+        fields:
+          - name: NEXT
+            description: Next Command Select
+            index: 24
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH6_NEXT
+          - name: LOOP
+            description: Loop Count Select
+            index: 16
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH6_LOOP
+          - name: AVGS
+            description: Hardware Average Select
+            index: 12
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH6_AVGS
+          - name: STS
+            description: Sample Time Select
+            index: 8
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH6_STS
+          - name: LWI
+            description: Loop with Increment
+            index: 7
+            width: 1
+            read: true
+            write: true
+      - name: CMDL7
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 304
+        description: (read-write) LPADC Command Low Buffer Register
+        fields:
+          - name: CSCALE
+            description: Channel Scale
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: DIFF
+            description: Differential Mode Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ABSEL
+            description: A-side vs. B-side Select
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ADCH
+            description: Input channel select
+            index: 0
+            width: 5
+            read: true
+            write: true
+            type: LPADC1_CMDL7_ADCH
+      - name: CMDH7
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 308
+        description: (read-write) LPADC Command High Buffer Register
+        fields:
+          - name: NEXT
+            description: Next Command Select
+            index: 24
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH7_NEXT
+          - name: LOOP
+            description: Loop Count Select
+            index: 16
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH7_LOOP
+          - name: AVGS
+            description: Hardware Average Select
+            index: 12
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH7_AVGS
+          - name: STS
+            description: Sample Time Select
+            index: 8
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH7_STS
+          - name: LWI
+            description: Loop with Increment
+            index: 7
+            width: 1
+            read: true
+            write: true
+      - name: CMDL8
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 312
+        description: (read-write) LPADC Command Low Buffer Register
+        fields:
+          - name: CSCALE
+            description: Channel Scale
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: DIFF
+            description: Differential Mode Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ABSEL
+            description: A-side vs. B-side Select
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ADCH
+            description: Input channel select
+            index: 0
+            width: 5
+            read: true
+            write: true
+            type: LPADC1_CMDL8_ADCH
+      - name: CMDH8
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 316
+        description: (read-write) LPADC Command High Buffer Register
+        fields:
+          - name: NEXT
+            description: Next Command Select
+            index: 24
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH8_NEXT
+          - name: LOOP
+            description: Loop Count Select
+            index: 16
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH8_LOOP
+          - name: AVGS
+            description: Hardware Average Select
+            index: 12
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH8_AVGS
+          - name: STS
+            description: Sample Time Select
+            index: 8
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH8_STS
+          - name: LWI
+            description: Loop with Increment
+            index: 7
+            width: 1
+            read: true
+            write: true
+      - name: CMDL9
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 320
+        description: (read-write) LPADC Command Low Buffer Register
+        fields:
+          - name: CSCALE
+            description: Channel Scale
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: DIFF
+            description: Differential Mode Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ABSEL
+            description: A-side vs. B-side Select
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ADCH
+            description: Input channel select
+            index: 0
+            width: 5
+            read: true
+            write: true
+            type: LPADC1_CMDL9_ADCH
+      - name: CMDH9
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 324
+        description: (read-write) LPADC Command High Buffer Register
+        fields:
+          - name: NEXT
+            description: Next Command Select
+            index: 24
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH9_NEXT
+          - name: LOOP
+            description: Loop Count Select
+            index: 16
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH9_LOOP
+          - name: AVGS
+            description: Hardware Average Select
+            index: 12
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH9_AVGS
+          - name: STS
+            description: Sample Time Select
+            index: 8
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH9_STS
+          - name: LWI
+            description: Loop with Increment
+            index: 7
+            width: 1
+            read: true
+            write: true
+      - name: CMDL10
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 328
+        description: (read-write) LPADC Command Low Buffer Register
+        fields:
+          - name: CSCALE
+            description: Channel Scale
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: DIFF
+            description: Differential Mode Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ABSEL
+            description: A-side vs. B-side Select
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ADCH
+            description: Input channel select
+            index: 0
+            width: 5
+            read: true
+            write: true
+            type: LPADC1_CMDL10_ADCH
+      - name: CMDH10
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 332
+        description: (read-write) LPADC Command High Buffer Register
+        fields:
+          - name: NEXT
+            description: Next Command Select
+            index: 24
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH10_NEXT
+          - name: LOOP
+            description: Loop Count Select
+            index: 16
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH10_LOOP
+          - name: AVGS
+            description: Hardware Average Select
+            index: 12
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH10_AVGS
+          - name: STS
+            description: Sample Time Select
+            index: 8
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH10_STS
+          - name: LWI
+            description: Loop with Increment
+            index: 7
+            width: 1
+            read: true
+            write: true
+      - name: CMDL11
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 336
+        description: (read-write) LPADC Command Low Buffer Register
+        fields:
+          - name: CSCALE
+            description: Channel Scale
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: DIFF
+            description: Differential Mode Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ABSEL
+            description: A-side vs. B-side Select
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ADCH
+            description: Input channel select
+            index: 0
+            width: 5
+            read: true
+            write: true
+            type: LPADC1_CMDL11_ADCH
+      - name: CMDH11
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 340
+        description: (read-write) LPADC Command High Buffer Register
+        fields:
+          - name: NEXT
+            description: Next Command Select
+            index: 24
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH11_NEXT
+          - name: LOOP
+            description: Loop Count Select
+            index: 16
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH11_LOOP
+          - name: AVGS
+            description: Hardware Average Select
+            index: 12
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH11_AVGS
+          - name: STS
+            description: Sample Time Select
+            index: 8
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH11_STS
+          - name: LWI
+            description: Loop with Increment
+            index: 7
+            width: 1
+            read: true
+            write: true
+      - name: CMDL12
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 344
+        description: (read-write) LPADC Command Low Buffer Register
+        fields:
+          - name: CSCALE
+            description: Channel Scale
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: DIFF
+            description: Differential Mode Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ABSEL
+            description: A-side vs. B-side Select
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ADCH
+            description: Input channel select
+            index: 0
+            width: 5
+            read: true
+            write: true
+            type: LPADC1_CMDL12_ADCH
+      - name: CMDH12
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 348
+        description: (read-write) LPADC Command High Buffer Register
+        fields:
+          - name: NEXT
+            description: Next Command Select
+            index: 24
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH12_NEXT
+          - name: LOOP
+            description: Loop Count Select
+            index: 16
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH12_LOOP
+          - name: AVGS
+            description: Hardware Average Select
+            index: 12
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH12_AVGS
+          - name: STS
+            description: Sample Time Select
+            index: 8
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH12_STS
+          - name: LWI
+            description: Loop with Increment
+            index: 7
+            width: 1
+            read: true
+            write: true
+      - name: CMDL13
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 352
+        description: (read-write) LPADC Command Low Buffer Register
+        fields:
+          - name: CSCALE
+            description: Channel Scale
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: DIFF
+            description: Differential Mode Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ABSEL
+            description: A-side vs. B-side Select
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ADCH
+            description: Input channel select
+            index: 0
+            width: 5
+            read: true
+            write: true
+            type: LPADC1_CMDL13_ADCH
+      - name: CMDH13
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 356
+        description: (read-write) LPADC Command High Buffer Register
+        fields:
+          - name: NEXT
+            description: Next Command Select
+            index: 24
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH13_NEXT
+          - name: LOOP
+            description: Loop Count Select
+            index: 16
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH13_LOOP
+          - name: AVGS
+            description: Hardware Average Select
+            index: 12
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH13_AVGS
+          - name: STS
+            description: Sample Time Select
+            index: 8
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH13_STS
+          - name: LWI
+            description: Loop with Increment
+            index: 7
+            width: 1
+            read: true
+            write: true
+      - name: CMDL14
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 360
+        description: (read-write) LPADC Command Low Buffer Register
+        fields:
+          - name: CSCALE
+            description: Channel Scale
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: DIFF
+            description: Differential Mode Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ABSEL
+            description: A-side vs. B-side Select
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ADCH
+            description: Input channel select
+            index: 0
+            width: 5
+            read: true
+            write: true
+            type: LPADC1_CMDL14_ADCH
+      - name: CMDH14
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 364
+        description: (read-write) LPADC Command High Buffer Register
+        fields:
+          - name: NEXT
+            description: Next Command Select
+            index: 24
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH14_NEXT
+          - name: LOOP
+            description: Loop Count Select
+            index: 16
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH14_LOOP
+          - name: AVGS
+            description: Hardware Average Select
+            index: 12
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH14_AVGS
+          - name: STS
+            description: Sample Time Select
+            index: 8
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH14_STS
+          - name: LWI
+            description: Loop with Increment
+            index: 7
+            width: 1
+            read: true
+            write: true
+      - name: CMDL15
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 368
+        description: (read-write) LPADC Command Low Buffer Register
+        fields:
+          - name: CSCALE
+            description: Channel Scale
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: DIFF
+            description: Differential Mode Enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ABSEL
+            description: A-side vs. B-side Select
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ADCH
+            description: Input channel select
+            index: 0
+            width: 5
+            read: true
+            write: true
+            type: LPADC1_CMDL15_ADCH
+      - name: CMDH15
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 372
+        description: (read-write) LPADC Command High Buffer Register
+        fields:
+          - name: NEXT
+            description: Next Command Select
+            index: 24
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH15_NEXT
+          - name: LOOP
+            description: Loop Count Select
+            index: 16
+            width: 4
+            read: true
+            write: true
+            type: LPADC1_CMDH15_LOOP
+          - name: AVGS
+            description: Hardware Average Select
+            index: 12
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH15_AVGS
+          - name: STS
+            description: Sample Time Select
+            index: 8
+            width: 3
+            read: true
+            write: true
+            type: LPADC1_CMDH15_STS
+          - name: LWI
+            description: Loop with Increment
+            index: 7
+            width: 1
+            read: true
+            write: true
+      - name: CV
+        type: uint32_t
+        expected_size: 16
+        expected_offset: 512
+        array_length: 4
+        description: (read-write) Compare Value Register
+        fields:
+          - name: CVH
+            description: Compare Value High.
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: CVL
+            description: Compare Value Low
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: RESFIFO
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 768
+        description: (read-write) LPADC Data Result FIFO Register
+        fields:
+          - name: VALID
+            description: FIFO entry is valid
+            index: 31
+            width: 1
+            read: true
+            write: false
+          - name: CMDSRC
+            description: Command Buffer Source
+            index: 24
+            width: 4
+            read: true
+            write: false
+            type: LPADC1_RESFIFO_CMDSRC
+          - name: LOOPCNT
+            description: Loop count value
+            index: 20
+            width: 4
+            read: true
+            write: false
+            type: LPADC1_RESFIFO_LOOPCNT
+          - name: TSRC
+            description: Trigger Source
+            index: 16
+            width: 3
+            read: true
+            write: false
+            type: LPADC1_RESFIFO_TSRC
+          - name: D
+            description: Data result
+            index: 0
+            width: 16
+            read: true
+            write: false
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  LPADC1_VERID_CSW:
+    enum:
+      _0:
+        description: Channel scaling not supported.
+        value: 0
+      _1:
+        description: Channel scaling supported. 1-bit CSCALE control field.
+        value: 1
+      _6:
+        description: Channel scaling supported. 6-bit CSCALE control field.
+        value: 6
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_PARAM_CMD_NUM:
+    enum:
+      CMD_NUM_15:
+        description: 15 command buffers implemented
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_PARAM_CV_NUM:
+    enum:
+      CV_NUM_4:
+        description: 4 compare value registers implemented
+        value: 4
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_PARAM_FIFOSIZE:
+    enum:
+      FIFOSIZE_16:
+        description: Result FIFO depth = 16 datawords.
+        value: 16
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_PARAM_TRIG_NUM:
+    enum:
+      TRIG_NUM_8:
+        description: 8 hardware triggers implemented
+        value: 8
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CTRL_TRIG_SRC:
+    enum:
+      _0:
+        description: ADC_ETC hw trigger , and HW trigger are enabled
+        value: 0
+      _1:
+        description: ADC_ETC hw trigger is enabled
+        value: 1
+      _2:
+        description: HW trigger is enabled
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_STAT_CMDACT:
+    enum:
+      _0:
+        description: No command is currently in progress.
+        value: 0
+      _1:
+        description: Command 1 currently being executed.
+        value: 1
+      _2:
+        description: Command 2 currently being executed.
+        value: 2
+      _3:
+        description: Associated command number is currently being executed.
+        value: 3
+      _4:
+        description: Associated command number is currently being executed.
+        value: 4
+      _5:
+        description: Associated command number is currently being executed.
+        value: 5
+      _6:
+        description: Associated command number is currently being executed.
+        value: 6
+      _7:
+        description: Associated command number is currently being executed.
+        value: 7
+      _8:
+        description: Associated command number is currently being executed.
+        value: 8
+      _9:
+        description: Associated command number is currently being executed.
+        value: 9
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_STAT_TRGACT:
+    enum:
+      _0:
+        description: Command (sequence) associated with Trigger 0 currently being
+          executed.
+        value: 0
+      _1:
+        description: Command (sequence) associated with Trigger 1 currently being
+          executed.
+        value: 1
+      _2:
+        description: Command (sequence) associated with Trigger 2 currently being
+          executed.
+        value: 2
+      _3:
+        description: Command (sequence) from the associated Trigger number is currently
+          being executed.
+        value: 3
+      _4:
+        description: Command (sequence) from the associated Trigger number is currently
+          being executed.
+        value: 4
+      _5:
+        description: Command (sequence) from the associated Trigger number is currently
+          being executed.
+        value: 5
+      _6:
+        description: Command (sequence) from the associated Trigger number is currently
+          being executed.
+        value: 6
+      _7:
+        description: Command (sequence) from the associated Trigger number is currently
+          being executed.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CFG_REFSEL:
+    enum:
+      _0:
+        description: (Default) Option 1 setting.
+        value: 0
+      _1:
+        description: Option 2 setting.
+        value: 1
+      _2:
+        description: Option 3 setting.
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CFG_PWRSEL:
+    enum:
+      _0:
+        description: Level 1 (Lowest power setting)
+        value: 0
+      _1:
+        description: Level 2
+        value: 1
+      _2:
+        description: Level 3
+        value: 2
+      _3:
+        description: Level 4 (Highest power setting)
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_FCTRL_FWMARK:
+    enum:
+      _0:
+        description: Generates STAT[RDY] flag after 1st successful conversion - single
+          conversion
+        value: 0
+      _1:
+        description: Generates STAT[RDY] flag after 2nd successful conversion
+        value: 1
+      _2:
+        description: Generates STAT[RDY] flag after 3rd successful conversion
+        value: 2
+      _3:
+        description: Generates STAT[RDY] flag after 4th successful conversion
+        value: 3
+      _4:
+        description: Generates STAT[RDY] flag after 5th successful conversion
+        value: 4
+      _5:
+        description: Generates STAT[RDY] flag after 6th successful conversion
+        value: 5
+      _6:
+        description: Generates STAT[RDY] flag after 7th successful conversion
+        value: 6
+      _7:
+        description: Generates STAT[RDY] flag after 8th successful conversion
+        value: 7
+      _8:
+        description: Generates STAT[RDY] flag after 9th successful conversion
+        value: 8
+      _9:
+        description: Generates STAT[RDY] flag after 10th successful conversion
+        value: 9
+      _10:
+        description: Generates STAT[RDY] flag after 11th successful conversion
+        value: 10
+      _11:
+        description: Generates STAT[RDY] flag after 12th successful conversion
+        value: 11
+      _12:
+        description: Generates STAT[RDY] flag after 13th successful conversion
+        value: 12
+      _13:
+        description: Generates STAT[RDY] flag after 14th successful conversion
+        value: 13
+      _14:
+        description: Generates STAT[RDY] flag after 15th successful conversion
+        value: 14
+      _15:
+        description: Generates STAT[RDY] flag after 16th successful conversion
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_FCTRL_FCOUNT:
+    enum:
+      _0:
+        description: No data stored in FIFO
+        value: 0
+      _1:
+        description: 1 dataword stored in FIFO
+        value: 1
+      _2:
+        description: 2 datawords stored in FIFO
+        value: 2
+      _4:
+        description: 4 datawords stored in FIFO
+        value: 4
+      _8:
+        description: 8 datawords stored in FIFO
+        value: 8
+      _16:
+        description: 16 datawords stored in FIFO
+        value: 16
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_TCTRL_TCMD:
+    enum:
+      _0:
+        description: Not a valid selection from the command buffer. Trigger event
+          is ignored.
+        value: 0
+      _1:
+        description: CMD1 is executed
+        value: 1
+      _2:
+        description: Corresponding CMD is executed
+        value: 2
+      _3:
+        description: Corresponding CMD is executed
+        value: 3
+      _4:
+        description: Corresponding CMD is executed
+        value: 4
+      _5:
+        description: Corresponding CMD is executed
+        value: 5
+      _6:
+        description: Corresponding CMD is executed
+        value: 6
+      _7:
+        description: Corresponding CMD is executed
+        value: 7
+      _8:
+        description: Corresponding CMD is executed
+        value: 8
+      _9:
+        description: Corresponding CMD is executed
+        value: 9
+      _15:
+        description: CMD15 is executed
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_TCTRL_TPRI:
+    enum:
+      _0:
+        description: Set to highest priority, Level 1
+        value: 0
+      _1:
+        description: Set to corresponding priority level
+        value: 1
+      _2:
+        description: Set to corresponding priority level
+        value: 2
+      _3:
+        description: Set to corresponding priority level
+        value: 3
+      _4:
+        description: Set to corresponding priority level
+        value: 4
+      _5:
+        description: Set to corresponding priority level
+        value: 5
+      _6:
+        description: Set to corresponding priority level
+        value: 6
+      _7:
+        description: Set to lowest priority, Level 8
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDL1_ADCH:
+    enum:
+      _0:
+        description: Select CH0A or CH0B or CH0A/CH0B pair.
+        value: 0
+      _1:
+        description: Select CH1A or CH1B or CH1A/CH1B pair.
+        value: 1
+      _2:
+        description: Select CH2A or CH2B or CH2A/CH2B pair.
+        value: 2
+      _3:
+        description: Select CH3A or CH3B or CH3A/CH3B pair.
+        value: 3
+      _4:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 4
+      _5:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 5
+      _6:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 6
+      _7:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 7
+      _8:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 8
+      _9:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 9
+      _30:
+        description: Select CH30A or CH30B or CH30A/CH30B pair.
+        value: 30
+      _31:
+        description: Select CH31A or CH31B or CH31A/CH31B pair.
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH1_NEXT:
+    enum:
+      _0:
+        description: No next command defined. Terminate conversions at completion
+          of current command. If lower priority trigger pending, begin command associated
+          with lower priority trigger.
+        value: 0
+      _1:
+        description: Select CMD1 command buffer register as next command.
+        value: 1
+      _2:
+        description: Select corresponding CMD command buffer register as next command
+        value: 2
+      _3:
+        description: Select corresponding CMD command buffer register as next command
+        value: 3
+      _4:
+        description: Select corresponding CMD command buffer register as next command
+        value: 4
+      _5:
+        description: Select corresponding CMD command buffer register as next command
+        value: 5
+      _6:
+        description: Select corresponding CMD command buffer register as next command
+        value: 6
+      _7:
+        description: Select corresponding CMD command buffer register as next command
+        value: 7
+      _8:
+        description: Select corresponding CMD command buffer register as next command
+        value: 8
+      _9:
+        description: Select corresponding CMD command buffer register as next command
+        value: 9
+      _15:
+        description: Select CMD15 command buffer register as next command.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH1_LOOP:
+    enum:
+      _0:
+        description: Looping not enabled. Command executes 1 time.
+        value: 0
+      _1:
+        description: Loop 1 time. Command executes 2 times.
+        value: 1
+      _2:
+        description: Loop 2 times. Command executes 3 times.
+        value: 2
+      _3:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 3
+      _4:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 4
+      _5:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 5
+      _6:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 6
+      _7:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 7
+      _8:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 8
+      _9:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 9
+      _15:
+        description: Loop 15 times. Command executes 16 times.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH1_AVGS:
+    enum:
+      _0:
+        description: Single conversion.
+        value: 0
+      _1:
+        description: 2 conversions averaged.
+        value: 1
+      _2:
+        description: 4 conversions averaged.
+        value: 2
+      _3:
+        description: 8 conversions averaged.
+        value: 3
+      _4:
+        description: 16 conversions averaged.
+        value: 4
+      _5:
+        description: 32 conversions averaged.
+        value: 5
+      _6:
+        description: 64 conversions averaged.
+        value: 6
+      _7:
+        description: 128 conversions averaged.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH1_STS:
+    enum:
+      _0:
+        description: Minimum sample time of 3 ADCK cycles.
+        value: 0
+      _1:
+        description: 3 + 21 ADCK cycles; 5 ADCK cycles total sample time.
+        value: 1
+      _2:
+        description: 3 + 22 ADCK cycles; 7 ADCK cycles total sample time.
+        value: 2
+      _3:
+        description: 3 + 23 ADCK cycles; 11 ADCK cycles total sample time.
+        value: 3
+      _4:
+        description: 3 + 24 ADCK cycles; 19 ADCK cycles total sample time.
+        value: 4
+      _5:
+        description: 3 + 25 ADCK cycles; 35 ADCK cycles total sample time.
+        value: 5
+      _6:
+        description: 3 + 26 ADCK cycles; 67 ADCK cycles total sample time.
+        value: 6
+      _7:
+        description: 3 + 27 ADCK cycles; 131 ADCK cycles total sample time.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH1_CMPEN:
+    enum:
+      _0:
+        description: Compare disabled.
+        value: 0
+      _2:
+        description: Compare enabled. Store on true.
+        value: 2
+      _3:
+        description: Compare enabled. Repeat channel acquisition (sample/convert/compare)
+          until true.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDL2_ADCH:
+    enum:
+      _0:
+        description: Select CH0A or CH0B or CH0A/CH0B pair.
+        value: 0
+      _1:
+        description: Select CH1A or CH1B or CH1A/CH1B pair.
+        value: 1
+      _2:
+        description: Select CH2A or CH2B or CH2A/CH2B pair.
+        value: 2
+      _3:
+        description: Select CH3A or CH3B or CH3A/CH3B pair.
+        value: 3
+      _4:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 4
+      _5:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 5
+      _6:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 6
+      _7:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 7
+      _8:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 8
+      _9:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 9
+      _30:
+        description: Select CH30A or CH30B or CH30A/CH30B pair.
+        value: 30
+      _31:
+        description: Select CH31A or CH31B or CH31A/CH31B pair.
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH2_NEXT:
+    enum:
+      _0:
+        description: No next command defined. Terminate conversions at completion
+          of current command. If lower priority trigger pending, begin command associated
+          with lower priority trigger.
+        value: 0
+      _1:
+        description: Select CMD1 command buffer register as next command.
+        value: 1
+      _2:
+        description: Select corresponding CMD command buffer register as next command
+        value: 2
+      _3:
+        description: Select corresponding CMD command buffer register as next command
+        value: 3
+      _4:
+        description: Select corresponding CMD command buffer register as next command
+        value: 4
+      _5:
+        description: Select corresponding CMD command buffer register as next command
+        value: 5
+      _6:
+        description: Select corresponding CMD command buffer register as next command
+        value: 6
+      _7:
+        description: Select corresponding CMD command buffer register as next command
+        value: 7
+      _8:
+        description: Select corresponding CMD command buffer register as next command
+        value: 8
+      _9:
+        description: Select corresponding CMD command buffer register as next command
+        value: 9
+      _15:
+        description: Select CMD15 command buffer register as next command.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH2_LOOP:
+    enum:
+      _0:
+        description: Looping not enabled. Command executes 1 time.
+        value: 0
+      _1:
+        description: Loop 1 time. Command executes 2 times.
+        value: 1
+      _2:
+        description: Loop 2 times. Command executes 3 times.
+        value: 2
+      _3:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 3
+      _4:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 4
+      _5:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 5
+      _6:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 6
+      _7:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 7
+      _8:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 8
+      _9:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 9
+      _15:
+        description: Loop 15 times. Command executes 16 times.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH2_AVGS:
+    enum:
+      _0:
+        description: Single conversion.
+        value: 0
+      _1:
+        description: 2 conversions averaged.
+        value: 1
+      _2:
+        description: 4 conversions averaged.
+        value: 2
+      _3:
+        description: 8 conversions averaged.
+        value: 3
+      _4:
+        description: 16 conversions averaged.
+        value: 4
+      _5:
+        description: 32 conversions averaged.
+        value: 5
+      _6:
+        description: 64 conversions averaged.
+        value: 6
+      _7:
+        description: 128 conversions averaged.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH2_STS:
+    enum:
+      _0:
+        description: Minimum sample time of 3 ADCK cycles.
+        value: 0
+      _1:
+        description: 3 + 21 ADCK cycles; 5 ADCK cycles total sample time.
+        value: 1
+      _2:
+        description: 3 + 22 ADCK cycles; 7 ADCK cycles total sample time.
+        value: 2
+      _3:
+        description: 3 + 23 ADCK cycles; 11 ADCK cycles total sample time.
+        value: 3
+      _4:
+        description: 3 + 24 ADCK cycles; 19 ADCK cycles total sample time.
+        value: 4
+      _5:
+        description: 3 + 25 ADCK cycles; 35 ADCK cycles total sample time.
+        value: 5
+      _6:
+        description: 3 + 26 ADCK cycles; 67 ADCK cycles total sample time.
+        value: 6
+      _7:
+        description: 3 + 27 ADCK cycles; 131 ADCK cycles total sample time.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH2_CMPEN:
+    enum:
+      _0:
+        description: Compare disabled.
+        value: 0
+      _2:
+        description: Compare enabled. Store on true.
+        value: 2
+      _3:
+        description: Compare enabled. Repeat channel acquisition (sample/convert/compare)
+          until true.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDL3_ADCH:
+    enum:
+      _0:
+        description: Select CH0A or CH0B or CH0A/CH0B pair.
+        value: 0
+      _1:
+        description: Select CH1A or CH1B or CH1A/CH1B pair.
+        value: 1
+      _2:
+        description: Select CH2A or CH2B or CH2A/CH2B pair.
+        value: 2
+      _3:
+        description: Select CH3A or CH3B or CH3A/CH3B pair.
+        value: 3
+      _4:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 4
+      _5:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 5
+      _6:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 6
+      _7:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 7
+      _8:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 8
+      _9:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 9
+      _30:
+        description: Select CH30A or CH30B or CH30A/CH30B pair.
+        value: 30
+      _31:
+        description: Select CH31A or CH31B or CH31A/CH31B pair.
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH3_NEXT:
+    enum:
+      _0:
+        description: No next command defined. Terminate conversions at completion
+          of current command. If lower priority trigger pending, begin command associated
+          with lower priority trigger.
+        value: 0
+      _1:
+        description: Select CMD1 command buffer register as next command.
+        value: 1
+      _2:
+        description: Select corresponding CMD command buffer register as next command
+        value: 2
+      _3:
+        description: Select corresponding CMD command buffer register as next command
+        value: 3
+      _4:
+        description: Select corresponding CMD command buffer register as next command
+        value: 4
+      _5:
+        description: Select corresponding CMD command buffer register as next command
+        value: 5
+      _6:
+        description: Select corresponding CMD command buffer register as next command
+        value: 6
+      _7:
+        description: Select corresponding CMD command buffer register as next command
+        value: 7
+      _8:
+        description: Select corresponding CMD command buffer register as next command
+        value: 8
+      _9:
+        description: Select corresponding CMD command buffer register as next command
+        value: 9
+      _15:
+        description: Select CMD15 command buffer register as next command.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH3_LOOP:
+    enum:
+      _0:
+        description: Looping not enabled. Command executes 1 time.
+        value: 0
+      _1:
+        description: Loop 1 time. Command executes 2 times.
+        value: 1
+      _2:
+        description: Loop 2 times. Command executes 3 times.
+        value: 2
+      _3:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 3
+      _4:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 4
+      _5:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 5
+      _6:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 6
+      _7:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 7
+      _8:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 8
+      _9:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 9
+      _15:
+        description: Loop 15 times. Command executes 16 times.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH3_AVGS:
+    enum:
+      _0:
+        description: Single conversion.
+        value: 0
+      _1:
+        description: 2 conversions averaged.
+        value: 1
+      _2:
+        description: 4 conversions averaged.
+        value: 2
+      _3:
+        description: 8 conversions averaged.
+        value: 3
+      _4:
+        description: 16 conversions averaged.
+        value: 4
+      _5:
+        description: 32 conversions averaged.
+        value: 5
+      _6:
+        description: 64 conversions averaged.
+        value: 6
+      _7:
+        description: 128 conversions averaged.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH3_STS:
+    enum:
+      _0:
+        description: Minimum sample time of 3 ADCK cycles.
+        value: 0
+      _1:
+        description: 3 + 21 ADCK cycles; 5 ADCK cycles total sample time.
+        value: 1
+      _2:
+        description: 3 + 22 ADCK cycles; 7 ADCK cycles total sample time.
+        value: 2
+      _3:
+        description: 3 + 23 ADCK cycles; 11 ADCK cycles total sample time.
+        value: 3
+      _4:
+        description: 3 + 24 ADCK cycles; 19 ADCK cycles total sample time.
+        value: 4
+      _5:
+        description: 3 + 25 ADCK cycles; 35 ADCK cycles total sample time.
+        value: 5
+      _6:
+        description: 3 + 26 ADCK cycles; 67 ADCK cycles total sample time.
+        value: 6
+      _7:
+        description: 3 + 27 ADCK cycles; 131 ADCK cycles total sample time.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH3_CMPEN:
+    enum:
+      _0:
+        description: Compare disabled.
+        value: 0
+      _2:
+        description: Compare enabled. Store on true.
+        value: 2
+      _3:
+        description: Compare enabled. Repeat channel acquisition (sample/convert/compare)
+          until true.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDL4_ADCH:
+    enum:
+      _0:
+        description: Select CH0A or CH0B or CH0A/CH0B pair.
+        value: 0
+      _1:
+        description: Select CH1A or CH1B or CH1A/CH1B pair.
+        value: 1
+      _2:
+        description: Select CH2A or CH2B or CH2A/CH2B pair.
+        value: 2
+      _3:
+        description: Select CH3A or CH3B or CH3A/CH3B pair.
+        value: 3
+      _4:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 4
+      _5:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 5
+      _6:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 6
+      _7:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 7
+      _8:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 8
+      _9:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 9
+      _30:
+        description: Select CH30A or CH30B or CH30A/CH30B pair.
+        value: 30
+      _31:
+        description: Select CH31A or CH31B or CH31A/CH31B pair.
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH4_NEXT:
+    enum:
+      _0:
+        description: No next command defined. Terminate conversions at completion
+          of current command. If lower priority trigger pending, begin command associated
+          with lower priority trigger.
+        value: 0
+      _1:
+        description: Select CMD1 command buffer register as next command.
+        value: 1
+      _2:
+        description: Select corresponding CMD command buffer register as next command
+        value: 2
+      _3:
+        description: Select corresponding CMD command buffer register as next command
+        value: 3
+      _4:
+        description: Select corresponding CMD command buffer register as next command
+        value: 4
+      _5:
+        description: Select corresponding CMD command buffer register as next command
+        value: 5
+      _6:
+        description: Select corresponding CMD command buffer register as next command
+        value: 6
+      _7:
+        description: Select corresponding CMD command buffer register as next command
+        value: 7
+      _8:
+        description: Select corresponding CMD command buffer register as next command
+        value: 8
+      _9:
+        description: Select corresponding CMD command buffer register as next command
+        value: 9
+      _15:
+        description: Select CMD15 command buffer register as next command.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH4_LOOP:
+    enum:
+      _0:
+        description: Looping not enabled. Command executes 1 time.
+        value: 0
+      _1:
+        description: Loop 1 time. Command executes 2 times.
+        value: 1
+      _2:
+        description: Loop 2 times. Command executes 3 times.
+        value: 2
+      _3:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 3
+      _4:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 4
+      _5:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 5
+      _6:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 6
+      _7:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 7
+      _8:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 8
+      _9:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 9
+      _15:
+        description: Loop 15 times. Command executes 16 times.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH4_AVGS:
+    enum:
+      _0:
+        description: Single conversion.
+        value: 0
+      _1:
+        description: 2 conversions averaged.
+        value: 1
+      _2:
+        description: 4 conversions averaged.
+        value: 2
+      _3:
+        description: 8 conversions averaged.
+        value: 3
+      _4:
+        description: 16 conversions averaged.
+        value: 4
+      _5:
+        description: 32 conversions averaged.
+        value: 5
+      _6:
+        description: 64 conversions averaged.
+        value: 6
+      _7:
+        description: 128 conversions averaged.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH4_STS:
+    enum:
+      _0:
+        description: Minimum sample time of 3 ADCK cycles.
+        value: 0
+      _1:
+        description: 3 + 21 ADCK cycles; 5 ADCK cycles total sample time.
+        value: 1
+      _2:
+        description: 3 + 22 ADCK cycles; 7 ADCK cycles total sample time.
+        value: 2
+      _3:
+        description: 3 + 23 ADCK cycles; 11 ADCK cycles total sample time.
+        value: 3
+      _4:
+        description: 3 + 24 ADCK cycles; 19 ADCK cycles total sample time.
+        value: 4
+      _5:
+        description: 3 + 25 ADCK cycles; 35 ADCK cycles total sample time.
+        value: 5
+      _6:
+        description: 3 + 26 ADCK cycles; 67 ADCK cycles total sample time.
+        value: 6
+      _7:
+        description: 3 + 27 ADCK cycles; 131 ADCK cycles total sample time.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH4_CMPEN:
+    enum:
+      _0:
+        description: Compare disabled.
+        value: 0
+      _2:
+        description: Compare enabled. Store on true.
+        value: 2
+      _3:
+        description: Compare enabled. Repeat channel acquisition (sample/convert/compare)
+          until true.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDL5_ADCH:
+    enum:
+      _0:
+        description: Select CH0A or CH0B or CH0A/CH0B pair.
+        value: 0
+      _1:
+        description: Select CH1A or CH1B or CH1A/CH1B pair.
+        value: 1
+      _2:
+        description: Select CH2A or CH2B or CH2A/CH2B pair.
+        value: 2
+      _3:
+        description: Select CH3A or CH3B or CH3A/CH3B pair.
+        value: 3
+      _4:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 4
+      _5:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 5
+      _6:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 6
+      _7:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 7
+      _8:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 8
+      _9:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 9
+      _30:
+        description: Select CH30A or CH30B or CH30A/CH30B pair.
+        value: 30
+      _31:
+        description: Select CH31A or CH31B or CH31A/CH31B pair.
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH5_NEXT:
+    enum:
+      _0:
+        description: No next command defined. Terminate conversions at completion
+          of current command. If lower priority trigger pending, begin command associated
+          with lower priority trigger.
+        value: 0
+      _1:
+        description: Select CMD1 command buffer register as next command.
+        value: 1
+      _2:
+        description: Select corresponding CMD command buffer register as next command
+        value: 2
+      _3:
+        description: Select corresponding CMD command buffer register as next command
+        value: 3
+      _4:
+        description: Select corresponding CMD command buffer register as next command
+        value: 4
+      _5:
+        description: Select corresponding CMD command buffer register as next command
+        value: 5
+      _6:
+        description: Select corresponding CMD command buffer register as next command
+        value: 6
+      _7:
+        description: Select corresponding CMD command buffer register as next command
+        value: 7
+      _8:
+        description: Select corresponding CMD command buffer register as next command
+        value: 8
+      _9:
+        description: Select corresponding CMD command buffer register as next command
+        value: 9
+      _15:
+        description: Select CMD15 command buffer register as next command.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH5_LOOP:
+    enum:
+      _0:
+        description: Looping not enabled. Command executes 1 time.
+        value: 0
+      _1:
+        description: Loop 1 time. Command executes 2 times.
+        value: 1
+      _2:
+        description: Loop 2 times. Command executes 3 times.
+        value: 2
+      _3:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 3
+      _4:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 4
+      _5:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 5
+      _6:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 6
+      _7:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 7
+      _8:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 8
+      _9:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 9
+      _15:
+        description: Loop 15 times. Command executes 16 times.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH5_AVGS:
+    enum:
+      _0:
+        description: Single conversion.
+        value: 0
+      _1:
+        description: 2 conversions averaged.
+        value: 1
+      _2:
+        description: 4 conversions averaged.
+        value: 2
+      _3:
+        description: 8 conversions averaged.
+        value: 3
+      _4:
+        description: 16 conversions averaged.
+        value: 4
+      _5:
+        description: 32 conversions averaged.
+        value: 5
+      _6:
+        description: 64 conversions averaged.
+        value: 6
+      _7:
+        description: 128 conversions averaged.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH5_STS:
+    enum:
+      _0:
+        description: Minimum sample time of 3 ADCK cycles.
+        value: 0
+      _1:
+        description: 3 + 21 ADCK cycles; 5 ADCK cycles total sample time.
+        value: 1
+      _2:
+        description: 3 + 22 ADCK cycles; 7 ADCK cycles total sample time.
+        value: 2
+      _3:
+        description: 3 + 23 ADCK cycles; 11 ADCK cycles total sample time.
+        value: 3
+      _4:
+        description: 3 + 24 ADCK cycles; 19 ADCK cycles total sample time.
+        value: 4
+      _5:
+        description: 3 + 25 ADCK cycles; 35 ADCK cycles total sample time.
+        value: 5
+      _6:
+        description: 3 + 26 ADCK cycles; 67 ADCK cycles total sample time.
+        value: 6
+      _7:
+        description: 3 + 27 ADCK cycles; 131 ADCK cycles total sample time.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDL6_ADCH:
+    enum:
+      _0:
+        description: Select CH0A or CH0B or CH0A/CH0B pair.
+        value: 0
+      _1:
+        description: Select CH1A or CH1B or CH1A/CH1B pair.
+        value: 1
+      _2:
+        description: Select CH2A or CH2B or CH2A/CH2B pair.
+        value: 2
+      _3:
+        description: Select CH3A or CH3B or CH3A/CH3B pair.
+        value: 3
+      _4:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 4
+      _5:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 5
+      _6:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 6
+      _7:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 7
+      _8:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 8
+      _9:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 9
+      _30:
+        description: Select CH30A or CH30B or CH30A/CH30B pair.
+        value: 30
+      _31:
+        description: Select CH31A or CH31B or CH31A/CH31B pair.
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH6_NEXT:
+    enum:
+      _0:
+        description: No next command defined. Terminate conversions at completion
+          of current command. If lower priority trigger pending, begin command associated
+          with lower priority trigger.
+        value: 0
+      _1:
+        description: Select CMD1 command buffer register as next command.
+        value: 1
+      _2:
+        description: Select corresponding CMD command buffer register as next command
+        value: 2
+      _3:
+        description: Select corresponding CMD command buffer register as next command
+        value: 3
+      _4:
+        description: Select corresponding CMD command buffer register as next command
+        value: 4
+      _5:
+        description: Select corresponding CMD command buffer register as next command
+        value: 5
+      _6:
+        description: Select corresponding CMD command buffer register as next command
+        value: 6
+      _7:
+        description: Select corresponding CMD command buffer register as next command
+        value: 7
+      _8:
+        description: Select corresponding CMD command buffer register as next command
+        value: 8
+      _9:
+        description: Select corresponding CMD command buffer register as next command
+        value: 9
+      _15:
+        description: Select CMD15 command buffer register as next command.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH6_LOOP:
+    enum:
+      _0:
+        description: Looping not enabled. Command executes 1 time.
+        value: 0
+      _1:
+        description: Loop 1 time. Command executes 2 times.
+        value: 1
+      _2:
+        description: Loop 2 times. Command executes 3 times.
+        value: 2
+      _3:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 3
+      _4:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 4
+      _5:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 5
+      _6:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 6
+      _7:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 7
+      _8:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 8
+      _9:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 9
+      _15:
+        description: Loop 15 times. Command executes 16 times.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH6_AVGS:
+    enum:
+      _0:
+        description: Single conversion.
+        value: 0
+      _1:
+        description: 2 conversions averaged.
+        value: 1
+      _2:
+        description: 4 conversions averaged.
+        value: 2
+      _3:
+        description: 8 conversions averaged.
+        value: 3
+      _4:
+        description: 16 conversions averaged.
+        value: 4
+      _5:
+        description: 32 conversions averaged.
+        value: 5
+      _6:
+        description: 64 conversions averaged.
+        value: 6
+      _7:
+        description: 128 conversions averaged.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH6_STS:
+    enum:
+      _0:
+        description: Minimum sample time of 3 ADCK cycles.
+        value: 0
+      _1:
+        description: 3 + 21 ADCK cycles; 5 ADCK cycles total sample time.
+        value: 1
+      _2:
+        description: 3 + 22 ADCK cycles; 7 ADCK cycles total sample time.
+        value: 2
+      _3:
+        description: 3 + 23 ADCK cycles; 11 ADCK cycles total sample time.
+        value: 3
+      _4:
+        description: 3 + 24 ADCK cycles; 19 ADCK cycles total sample time.
+        value: 4
+      _5:
+        description: 3 + 25 ADCK cycles; 35 ADCK cycles total sample time.
+        value: 5
+      _6:
+        description: 3 + 26 ADCK cycles; 67 ADCK cycles total sample time.
+        value: 6
+      _7:
+        description: 3 + 27 ADCK cycles; 131 ADCK cycles total sample time.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDL7_ADCH:
+    enum:
+      _0:
+        description: Select CH0A or CH0B or CH0A/CH0B pair.
+        value: 0
+      _1:
+        description: Select CH1A or CH1B or CH1A/CH1B pair.
+        value: 1
+      _2:
+        description: Select CH2A or CH2B or CH2A/CH2B pair.
+        value: 2
+      _3:
+        description: Select CH3A or CH3B or CH3A/CH3B pair.
+        value: 3
+      _4:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 4
+      _5:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 5
+      _6:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 6
+      _7:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 7
+      _8:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 8
+      _9:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 9
+      _30:
+        description: Select CH30A or CH30B or CH30A/CH30B pair.
+        value: 30
+      _31:
+        description: Select CH31A or CH31B or CH31A/CH31B pair.
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH7_NEXT:
+    enum:
+      _0:
+        description: No next command defined. Terminate conversions at completion
+          of current command. If lower priority trigger pending, begin command associated
+          with lower priority trigger.
+        value: 0
+      _1:
+        description: Select CMD1 command buffer register as next command.
+        value: 1
+      _2:
+        description: Select corresponding CMD command buffer register as next command
+        value: 2
+      _3:
+        description: Select corresponding CMD command buffer register as next command
+        value: 3
+      _4:
+        description: Select corresponding CMD command buffer register as next command
+        value: 4
+      _5:
+        description: Select corresponding CMD command buffer register as next command
+        value: 5
+      _6:
+        description: Select corresponding CMD command buffer register as next command
+        value: 6
+      _7:
+        description: Select corresponding CMD command buffer register as next command
+        value: 7
+      _8:
+        description: Select corresponding CMD command buffer register as next command
+        value: 8
+      _9:
+        description: Select corresponding CMD command buffer register as next command
+        value: 9
+      _15:
+        description: Select CMD15 command buffer register as next command.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH7_LOOP:
+    enum:
+      _0:
+        description: Looping not enabled. Command executes 1 time.
+        value: 0
+      _1:
+        description: Loop 1 time. Command executes 2 times.
+        value: 1
+      _2:
+        description: Loop 2 times. Command executes 3 times.
+        value: 2
+      _3:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 3
+      _4:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 4
+      _5:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 5
+      _6:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 6
+      _7:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 7
+      _8:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 8
+      _9:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 9
+      _15:
+        description: Loop 15 times. Command executes 16 times.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH7_AVGS:
+    enum:
+      _0:
+        description: Single conversion.
+        value: 0
+      _1:
+        description: 2 conversions averaged.
+        value: 1
+      _2:
+        description: 4 conversions averaged.
+        value: 2
+      _3:
+        description: 8 conversions averaged.
+        value: 3
+      _4:
+        description: 16 conversions averaged.
+        value: 4
+      _5:
+        description: 32 conversions averaged.
+        value: 5
+      _6:
+        description: 64 conversions averaged.
+        value: 6
+      _7:
+        description: 128 conversions averaged.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH7_STS:
+    enum:
+      _0:
+        description: Minimum sample time of 3 ADCK cycles.
+        value: 0
+      _1:
+        description: 3 + 21 ADCK cycles; 5 ADCK cycles total sample time.
+        value: 1
+      _2:
+        description: 3 + 22 ADCK cycles; 7 ADCK cycles total sample time.
+        value: 2
+      _3:
+        description: 3 + 23 ADCK cycles; 11 ADCK cycles total sample time.
+        value: 3
+      _4:
+        description: 3 + 24 ADCK cycles; 19 ADCK cycles total sample time.
+        value: 4
+      _5:
+        description: 3 + 25 ADCK cycles; 35 ADCK cycles total sample time.
+        value: 5
+      _6:
+        description: 3 + 26 ADCK cycles; 67 ADCK cycles total sample time.
+        value: 6
+      _7:
+        description: 3 + 27 ADCK cycles; 131 ADCK cycles total sample time.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDL8_ADCH:
+    enum:
+      _0:
+        description: Select CH0A or CH0B or CH0A/CH0B pair.
+        value: 0
+      _1:
+        description: Select CH1A or CH1B or CH1A/CH1B pair.
+        value: 1
+      _2:
+        description: Select CH2A or CH2B or CH2A/CH2B pair.
+        value: 2
+      _3:
+        description: Select CH3A or CH3B or CH3A/CH3B pair.
+        value: 3
+      _4:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 4
+      _5:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 5
+      _6:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 6
+      _7:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 7
+      _8:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 8
+      _9:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 9
+      _30:
+        description: Select CH30A or CH30B or CH30A/CH30B pair.
+        value: 30
+      _31:
+        description: Select CH31A or CH31B or CH31A/CH31B pair.
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH8_NEXT:
+    enum:
+      _0:
+        description: No next command defined. Terminate conversions at completion
+          of current command. If lower priority trigger pending, begin command associated
+          with lower priority trigger.
+        value: 0
+      _1:
+        description: Select CMD1 command buffer register as next command.
+        value: 1
+      _2:
+        description: Select corresponding CMD command buffer register as next command
+        value: 2
+      _3:
+        description: Select corresponding CMD command buffer register as next command
+        value: 3
+      _4:
+        description: Select corresponding CMD command buffer register as next command
+        value: 4
+      _5:
+        description: Select corresponding CMD command buffer register as next command
+        value: 5
+      _6:
+        description: Select corresponding CMD command buffer register as next command
+        value: 6
+      _7:
+        description: Select corresponding CMD command buffer register as next command
+        value: 7
+      _8:
+        description: Select corresponding CMD command buffer register as next command
+        value: 8
+      _9:
+        description: Select corresponding CMD command buffer register as next command
+        value: 9
+      _15:
+        description: Select CMD15 command buffer register as next command.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH8_LOOP:
+    enum:
+      _0:
+        description: Looping not enabled. Command executes 1 time.
+        value: 0
+      _1:
+        description: Loop 1 time. Command executes 2 times.
+        value: 1
+      _2:
+        description: Loop 2 times. Command executes 3 times.
+        value: 2
+      _3:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 3
+      _4:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 4
+      _5:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 5
+      _6:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 6
+      _7:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 7
+      _8:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 8
+      _9:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 9
+      _15:
+        description: Loop 15 times. Command executes 16 times.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH8_AVGS:
+    enum:
+      _0:
+        description: Single conversion.
+        value: 0
+      _1:
+        description: 2 conversions averaged.
+        value: 1
+      _2:
+        description: 4 conversions averaged.
+        value: 2
+      _3:
+        description: 8 conversions averaged.
+        value: 3
+      _4:
+        description: 16 conversions averaged.
+        value: 4
+      _5:
+        description: 32 conversions averaged.
+        value: 5
+      _6:
+        description: 64 conversions averaged.
+        value: 6
+      _7:
+        description: 128 conversions averaged.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH8_STS:
+    enum:
+      _0:
+        description: Minimum sample time of 3 ADCK cycles.
+        value: 0
+      _1:
+        description: 3 + 21 ADCK cycles; 5 ADCK cycles total sample time.
+        value: 1
+      _2:
+        description: 3 + 22 ADCK cycles; 7 ADCK cycles total sample time.
+        value: 2
+      _3:
+        description: 3 + 23 ADCK cycles; 11 ADCK cycles total sample time.
+        value: 3
+      _4:
+        description: 3 + 24 ADCK cycles; 19 ADCK cycles total sample time.
+        value: 4
+      _5:
+        description: 3 + 25 ADCK cycles; 35 ADCK cycles total sample time.
+        value: 5
+      _6:
+        description: 3 + 26 ADCK cycles; 67 ADCK cycles total sample time.
+        value: 6
+      _7:
+        description: 3 + 27 ADCK cycles; 131 ADCK cycles total sample time.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDL9_ADCH:
+    enum:
+      _0:
+        description: Select CH0A or CH0B or CH0A/CH0B pair.
+        value: 0
+      _1:
+        description: Select CH1A or CH1B or CH1A/CH1B pair.
+        value: 1
+      _2:
+        description: Select CH2A or CH2B or CH2A/CH2B pair.
+        value: 2
+      _3:
+        description: Select CH3A or CH3B or CH3A/CH3B pair.
+        value: 3
+      _4:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 4
+      _5:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 5
+      _6:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 6
+      _7:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 7
+      _8:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 8
+      _9:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 9
+      _30:
+        description: Select CH30A or CH30B or CH30A/CH30B pair.
+        value: 30
+      _31:
+        description: Select CH31A or CH31B or CH31A/CH31B pair.
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH9_NEXT:
+    enum:
+      _0:
+        description: No next command defined. Terminate conversions at completion
+          of current command. If lower priority trigger pending, begin command associated
+          with lower priority trigger.
+        value: 0
+      _1:
+        description: Select CMD1 command buffer register as next command.
+        value: 1
+      _2:
+        description: Select corresponding CMD command buffer register as next command
+        value: 2
+      _3:
+        description: Select corresponding CMD command buffer register as next command
+        value: 3
+      _4:
+        description: Select corresponding CMD command buffer register as next command
+        value: 4
+      _5:
+        description: Select corresponding CMD command buffer register as next command
+        value: 5
+      _6:
+        description: Select corresponding CMD command buffer register as next command
+        value: 6
+      _7:
+        description: Select corresponding CMD command buffer register as next command
+        value: 7
+      _8:
+        description: Select corresponding CMD command buffer register as next command
+        value: 8
+      _9:
+        description: Select corresponding CMD command buffer register as next command
+        value: 9
+      _15:
+        description: Select CMD15 command buffer register as next command.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH9_LOOP:
+    enum:
+      _0:
+        description: Looping not enabled. Command executes 1 time.
+        value: 0
+      _1:
+        description: Loop 1 time. Command executes 2 times.
+        value: 1
+      _2:
+        description: Loop 2 times. Command executes 3 times.
+        value: 2
+      _3:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 3
+      _4:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 4
+      _5:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 5
+      _6:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 6
+      _7:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 7
+      _8:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 8
+      _9:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 9
+      _15:
+        description: Loop 15 times. Command executes 16 times.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH9_AVGS:
+    enum:
+      _0:
+        description: Single conversion.
+        value: 0
+      _1:
+        description: 2 conversions averaged.
+        value: 1
+      _2:
+        description: 4 conversions averaged.
+        value: 2
+      _3:
+        description: 8 conversions averaged.
+        value: 3
+      _4:
+        description: 16 conversions averaged.
+        value: 4
+      _5:
+        description: 32 conversions averaged.
+        value: 5
+      _6:
+        description: 64 conversions averaged.
+        value: 6
+      _7:
+        description: 128 conversions averaged.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH9_STS:
+    enum:
+      _0:
+        description: Minimum sample time of 3 ADCK cycles.
+        value: 0
+      _1:
+        description: 3 + 21 ADCK cycles; 5 ADCK cycles total sample time.
+        value: 1
+      _2:
+        description: 3 + 22 ADCK cycles; 7 ADCK cycles total sample time.
+        value: 2
+      _3:
+        description: 3 + 23 ADCK cycles; 11 ADCK cycles total sample time.
+        value: 3
+      _4:
+        description: 3 + 24 ADCK cycles; 19 ADCK cycles total sample time.
+        value: 4
+      _5:
+        description: 3 + 25 ADCK cycles; 35 ADCK cycles total sample time.
+        value: 5
+      _6:
+        description: 3 + 26 ADCK cycles; 67 ADCK cycles total sample time.
+        value: 6
+      _7:
+        description: 3 + 27 ADCK cycles; 131 ADCK cycles total sample time.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDL10_ADCH:
+    enum:
+      _0:
+        description: Select CH0A or CH0B or CH0A/CH0B pair.
+        value: 0
+      _1:
+        description: Select CH1A or CH1B or CH1A/CH1B pair.
+        value: 1
+      _2:
+        description: Select CH2A or CH2B or CH2A/CH2B pair.
+        value: 2
+      _3:
+        description: Select CH3A or CH3B or CH3A/CH3B pair.
+        value: 3
+      _4:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 4
+      _5:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 5
+      _6:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 6
+      _7:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 7
+      _8:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 8
+      _9:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 9
+      _30:
+        description: Select CH30A or CH30B or CH30A/CH30B pair.
+        value: 30
+      _31:
+        description: Select CH31A or CH31B or CH31A/CH31B pair.
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH10_NEXT:
+    enum:
+      _0:
+        description: No next command defined. Terminate conversions at completion
+          of current command. If lower priority trigger pending, begin command associated
+          with lower priority trigger.
+        value: 0
+      _1:
+        description: Select CMD1 command buffer register as next command.
+        value: 1
+      _2:
+        description: Select corresponding CMD command buffer register as next command
+        value: 2
+      _3:
+        description: Select corresponding CMD command buffer register as next command
+        value: 3
+      _4:
+        description: Select corresponding CMD command buffer register as next command
+        value: 4
+      _5:
+        description: Select corresponding CMD command buffer register as next command
+        value: 5
+      _6:
+        description: Select corresponding CMD command buffer register as next command
+        value: 6
+      _7:
+        description: Select corresponding CMD command buffer register as next command
+        value: 7
+      _8:
+        description: Select corresponding CMD command buffer register as next command
+        value: 8
+      _9:
+        description: Select corresponding CMD command buffer register as next command
+        value: 9
+      _15:
+        description: Select CMD15 command buffer register as next command.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH10_LOOP:
+    enum:
+      _0:
+        description: Looping not enabled. Command executes 1 time.
+        value: 0
+      _1:
+        description: Loop 1 time. Command executes 2 times.
+        value: 1
+      _2:
+        description: Loop 2 times. Command executes 3 times.
+        value: 2
+      _3:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 3
+      _4:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 4
+      _5:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 5
+      _6:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 6
+      _7:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 7
+      _8:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 8
+      _9:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 9
+      _15:
+        description: Loop 15 times. Command executes 16 times.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH10_AVGS:
+    enum:
+      _0:
+        description: Single conversion.
+        value: 0
+      _1:
+        description: 2 conversions averaged.
+        value: 1
+      _2:
+        description: 4 conversions averaged.
+        value: 2
+      _3:
+        description: 8 conversions averaged.
+        value: 3
+      _4:
+        description: 16 conversions averaged.
+        value: 4
+      _5:
+        description: 32 conversions averaged.
+        value: 5
+      _6:
+        description: 64 conversions averaged.
+        value: 6
+      _7:
+        description: 128 conversions averaged.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH10_STS:
+    enum:
+      _0:
+        description: Minimum sample time of 3 ADCK cycles.
+        value: 0
+      _1:
+        description: 3 + 21 ADCK cycles; 5 ADCK cycles total sample time.
+        value: 1
+      _2:
+        description: 3 + 22 ADCK cycles; 7 ADCK cycles total sample time.
+        value: 2
+      _3:
+        description: 3 + 23 ADCK cycles; 11 ADCK cycles total sample time.
+        value: 3
+      _4:
+        description: 3 + 24 ADCK cycles; 19 ADCK cycles total sample time.
+        value: 4
+      _5:
+        description: 3 + 25 ADCK cycles; 35 ADCK cycles total sample time.
+        value: 5
+      _6:
+        description: 3 + 26 ADCK cycles; 67 ADCK cycles total sample time.
+        value: 6
+      _7:
+        description: 3 + 27 ADCK cycles; 131 ADCK cycles total sample time.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDL11_ADCH:
+    enum:
+      _0:
+        description: Select CH0A or CH0B or CH0A/CH0B pair.
+        value: 0
+      _1:
+        description: Select CH1A or CH1B or CH1A/CH1B pair.
+        value: 1
+      _2:
+        description: Select CH2A or CH2B or CH2A/CH2B pair.
+        value: 2
+      _3:
+        description: Select CH3A or CH3B or CH3A/CH3B pair.
+        value: 3
+      _4:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 4
+      _5:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 5
+      _6:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 6
+      _7:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 7
+      _8:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 8
+      _9:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 9
+      _30:
+        description: Select CH30A or CH30B or CH30A/CH30B pair.
+        value: 30
+      _31:
+        description: Select CH31A or CH31B or CH31A/CH31B pair.
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH11_NEXT:
+    enum:
+      _0:
+        description: No next command defined. Terminate conversions at completion
+          of current command. If lower priority trigger pending, begin command associated
+          with lower priority trigger.
+        value: 0
+      _1:
+        description: Select CMD1 command buffer register as next command.
+        value: 1
+      _2:
+        description: Select corresponding CMD command buffer register as next command
+        value: 2
+      _3:
+        description: Select corresponding CMD command buffer register as next command
+        value: 3
+      _4:
+        description: Select corresponding CMD command buffer register as next command
+        value: 4
+      _5:
+        description: Select corresponding CMD command buffer register as next command
+        value: 5
+      _6:
+        description: Select corresponding CMD command buffer register as next command
+        value: 6
+      _7:
+        description: Select corresponding CMD command buffer register as next command
+        value: 7
+      _8:
+        description: Select corresponding CMD command buffer register as next command
+        value: 8
+      _9:
+        description: Select corresponding CMD command buffer register as next command
+        value: 9
+      _15:
+        description: Select CMD15 command buffer register as next command.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH11_LOOP:
+    enum:
+      _0:
+        description: Looping not enabled. Command executes 1 time.
+        value: 0
+      _1:
+        description: Loop 1 time. Command executes 2 times.
+        value: 1
+      _2:
+        description: Loop 2 times. Command executes 3 times.
+        value: 2
+      _3:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 3
+      _4:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 4
+      _5:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 5
+      _6:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 6
+      _7:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 7
+      _8:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 8
+      _9:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 9
+      _15:
+        description: Loop 15 times. Command executes 16 times.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH11_AVGS:
+    enum:
+      _0:
+        description: Single conversion.
+        value: 0
+      _1:
+        description: 2 conversions averaged.
+        value: 1
+      _2:
+        description: 4 conversions averaged.
+        value: 2
+      _3:
+        description: 8 conversions averaged.
+        value: 3
+      _4:
+        description: 16 conversions averaged.
+        value: 4
+      _5:
+        description: 32 conversions averaged.
+        value: 5
+      _6:
+        description: 64 conversions averaged.
+        value: 6
+      _7:
+        description: 128 conversions averaged.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH11_STS:
+    enum:
+      _0:
+        description: Minimum sample time of 3 ADCK cycles.
+        value: 0
+      _1:
+        description: 3 + 21 ADCK cycles; 5 ADCK cycles total sample time.
+        value: 1
+      _2:
+        description: 3 + 22 ADCK cycles; 7 ADCK cycles total sample time.
+        value: 2
+      _3:
+        description: 3 + 23 ADCK cycles; 11 ADCK cycles total sample time.
+        value: 3
+      _4:
+        description: 3 + 24 ADCK cycles; 19 ADCK cycles total sample time.
+        value: 4
+      _5:
+        description: 3 + 25 ADCK cycles; 35 ADCK cycles total sample time.
+        value: 5
+      _6:
+        description: 3 + 26 ADCK cycles; 67 ADCK cycles total sample time.
+        value: 6
+      _7:
+        description: 3 + 27 ADCK cycles; 131 ADCK cycles total sample time.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDL12_ADCH:
+    enum:
+      _0:
+        description: Select CH0A or CH0B or CH0A/CH0B pair.
+        value: 0
+      _1:
+        description: Select CH1A or CH1B or CH1A/CH1B pair.
+        value: 1
+      _2:
+        description: Select CH2A or CH2B or CH2A/CH2B pair.
+        value: 2
+      _3:
+        description: Select CH3A or CH3B or CH3A/CH3B pair.
+        value: 3
+      _4:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 4
+      _5:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 5
+      _6:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 6
+      _7:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 7
+      _8:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 8
+      _9:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 9
+      _30:
+        description: Select CH30A or CH30B or CH30A/CH30B pair.
+        value: 30
+      _31:
+        description: Select CH31A or CH31B or CH31A/CH31B pair.
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH12_NEXT:
+    enum:
+      _0:
+        description: No next command defined. Terminate conversions at completion
+          of current command. If lower priority trigger pending, begin command associated
+          with lower priority trigger.
+        value: 0
+      _1:
+        description: Select CMD1 command buffer register as next command.
+        value: 1
+      _2:
+        description: Select corresponding CMD command buffer register as next command
+        value: 2
+      _3:
+        description: Select corresponding CMD command buffer register as next command
+        value: 3
+      _4:
+        description: Select corresponding CMD command buffer register as next command
+        value: 4
+      _5:
+        description: Select corresponding CMD command buffer register as next command
+        value: 5
+      _6:
+        description: Select corresponding CMD command buffer register as next command
+        value: 6
+      _7:
+        description: Select corresponding CMD command buffer register as next command
+        value: 7
+      _8:
+        description: Select corresponding CMD command buffer register as next command
+        value: 8
+      _9:
+        description: Select corresponding CMD command buffer register as next command
+        value: 9
+      _15:
+        description: Select CMD15 command buffer register as next command.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH12_LOOP:
+    enum:
+      _0:
+        description: Looping not enabled. Command executes 1 time.
+        value: 0
+      _1:
+        description: Loop 1 time. Command executes 2 times.
+        value: 1
+      _2:
+        description: Loop 2 times. Command executes 3 times.
+        value: 2
+      _3:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 3
+      _4:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 4
+      _5:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 5
+      _6:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 6
+      _7:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 7
+      _8:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 8
+      _9:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 9
+      _15:
+        description: Loop 15 times. Command executes 16 times.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH12_AVGS:
+    enum:
+      _0:
+        description: Single conversion.
+        value: 0
+      _1:
+        description: 2 conversions averaged.
+        value: 1
+      _2:
+        description: 4 conversions averaged.
+        value: 2
+      _3:
+        description: 8 conversions averaged.
+        value: 3
+      _4:
+        description: 16 conversions averaged.
+        value: 4
+      _5:
+        description: 32 conversions averaged.
+        value: 5
+      _6:
+        description: 64 conversions averaged.
+        value: 6
+      _7:
+        description: 128 conversions averaged.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH12_STS:
+    enum:
+      _0:
+        description: Minimum sample time of 3 ADCK cycles.
+        value: 0
+      _1:
+        description: 3 + 21 ADCK cycles; 5 ADCK cycles total sample time.
+        value: 1
+      _2:
+        description: 3 + 22 ADCK cycles; 7 ADCK cycles total sample time.
+        value: 2
+      _3:
+        description: 3 + 23 ADCK cycles; 11 ADCK cycles total sample time.
+        value: 3
+      _4:
+        description: 3 + 24 ADCK cycles; 19 ADCK cycles total sample time.
+        value: 4
+      _5:
+        description: 3 + 25 ADCK cycles; 35 ADCK cycles total sample time.
+        value: 5
+      _6:
+        description: 3 + 26 ADCK cycles; 67 ADCK cycles total sample time.
+        value: 6
+      _7:
+        description: 3 + 27 ADCK cycles; 131 ADCK cycles total sample time.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDL13_ADCH:
+    enum:
+      _0:
+        description: Select CH0A or CH0B or CH0A/CH0B pair.
+        value: 0
+      _1:
+        description: Select CH1A or CH1B or CH1A/CH1B pair.
+        value: 1
+      _2:
+        description: Select CH2A or CH2B or CH2A/CH2B pair.
+        value: 2
+      _3:
+        description: Select CH3A or CH3B or CH3A/CH3B pair.
+        value: 3
+      _4:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 4
+      _5:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 5
+      _6:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 6
+      _7:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 7
+      _8:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 8
+      _9:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 9
+      _30:
+        description: Select CH30A or CH30B or CH30A/CH30B pair.
+        value: 30
+      _31:
+        description: Select CH31A or CH31B or CH31A/CH31B pair.
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH13_NEXT:
+    enum:
+      _0:
+        description: No next command defined. Terminate conversions at completion
+          of current command. If lower priority trigger pending, begin command associated
+          with lower priority trigger.
+        value: 0
+      _1:
+        description: Select CMD1 command buffer register as next command.
+        value: 1
+      _2:
+        description: Select corresponding CMD command buffer register as next command
+        value: 2
+      _3:
+        description: Select corresponding CMD command buffer register as next command
+        value: 3
+      _4:
+        description: Select corresponding CMD command buffer register as next command
+        value: 4
+      _5:
+        description: Select corresponding CMD command buffer register as next command
+        value: 5
+      _6:
+        description: Select corresponding CMD command buffer register as next command
+        value: 6
+      _7:
+        description: Select corresponding CMD command buffer register as next command
+        value: 7
+      _8:
+        description: Select corresponding CMD command buffer register as next command
+        value: 8
+      _9:
+        description: Select corresponding CMD command buffer register as next command
+        value: 9
+      _15:
+        description: Select CMD15 command buffer register as next command.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH13_LOOP:
+    enum:
+      _0:
+        description: Looping not enabled. Command executes 1 time.
+        value: 0
+      _1:
+        description: Loop 1 time. Command executes 2 times.
+        value: 1
+      _2:
+        description: Loop 2 times. Command executes 3 times.
+        value: 2
+      _3:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 3
+      _4:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 4
+      _5:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 5
+      _6:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 6
+      _7:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 7
+      _8:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 8
+      _9:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 9
+      _15:
+        description: Loop 15 times. Command executes 16 times.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH13_AVGS:
+    enum:
+      _0:
+        description: Single conversion.
+        value: 0
+      _1:
+        description: 2 conversions averaged.
+        value: 1
+      _2:
+        description: 4 conversions averaged.
+        value: 2
+      _3:
+        description: 8 conversions averaged.
+        value: 3
+      _4:
+        description: 16 conversions averaged.
+        value: 4
+      _5:
+        description: 32 conversions averaged.
+        value: 5
+      _6:
+        description: 64 conversions averaged.
+        value: 6
+      _7:
+        description: 128 conversions averaged.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH13_STS:
+    enum:
+      _0:
+        description: Minimum sample time of 3 ADCK cycles.
+        value: 0
+      _1:
+        description: 3 + 21 ADCK cycles; 5 ADCK cycles total sample time.
+        value: 1
+      _2:
+        description: 3 + 22 ADCK cycles; 7 ADCK cycles total sample time.
+        value: 2
+      _3:
+        description: 3 + 23 ADCK cycles; 11 ADCK cycles total sample time.
+        value: 3
+      _4:
+        description: 3 + 24 ADCK cycles; 19 ADCK cycles total sample time.
+        value: 4
+      _5:
+        description: 3 + 25 ADCK cycles; 35 ADCK cycles total sample time.
+        value: 5
+      _6:
+        description: 3 + 26 ADCK cycles; 67 ADCK cycles total sample time.
+        value: 6
+      _7:
+        description: 3 + 27 ADCK cycles; 131 ADCK cycles total sample time.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDL14_ADCH:
+    enum:
+      _0:
+        description: Select CH0A or CH0B or CH0A/CH0B pair.
+        value: 0
+      _1:
+        description: Select CH1A or CH1B or CH1A/CH1B pair.
+        value: 1
+      _2:
+        description: Select CH2A or CH2B or CH2A/CH2B pair.
+        value: 2
+      _3:
+        description: Select CH3A or CH3B or CH3A/CH3B pair.
+        value: 3
+      _4:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 4
+      _5:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 5
+      _6:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 6
+      _7:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 7
+      _8:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 8
+      _9:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 9
+      _30:
+        description: Select CH30A or CH30B or CH30A/CH30B pair.
+        value: 30
+      _31:
+        description: Select CH31A or CH31B or CH31A/CH31B pair.
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH14_NEXT:
+    enum:
+      _0:
+        description: No next command defined. Terminate conversions at completion
+          of current command. If lower priority trigger pending, begin command associated
+          with lower priority trigger.
+        value: 0
+      _1:
+        description: Select CMD1 command buffer register as next command.
+        value: 1
+      _2:
+        description: Select corresponding CMD command buffer register as next command
+        value: 2
+      _3:
+        description: Select corresponding CMD command buffer register as next command
+        value: 3
+      _4:
+        description: Select corresponding CMD command buffer register as next command
+        value: 4
+      _5:
+        description: Select corresponding CMD command buffer register as next command
+        value: 5
+      _6:
+        description: Select corresponding CMD command buffer register as next command
+        value: 6
+      _7:
+        description: Select corresponding CMD command buffer register as next command
+        value: 7
+      _8:
+        description: Select corresponding CMD command buffer register as next command
+        value: 8
+      _9:
+        description: Select corresponding CMD command buffer register as next command
+        value: 9
+      _15:
+        description: Select CMD15 command buffer register as next command.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH14_LOOP:
+    enum:
+      _0:
+        description: Looping not enabled. Command executes 1 time.
+        value: 0
+      _1:
+        description: Loop 1 time. Command executes 2 times.
+        value: 1
+      _2:
+        description: Loop 2 times. Command executes 3 times.
+        value: 2
+      _3:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 3
+      _4:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 4
+      _5:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 5
+      _6:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 6
+      _7:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 7
+      _8:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 8
+      _9:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 9
+      _15:
+        description: Loop 15 times. Command executes 16 times.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH14_AVGS:
+    enum:
+      _0:
+        description: Single conversion.
+        value: 0
+      _1:
+        description: 2 conversions averaged.
+        value: 1
+      _2:
+        description: 4 conversions averaged.
+        value: 2
+      _3:
+        description: 8 conversions averaged.
+        value: 3
+      _4:
+        description: 16 conversions averaged.
+        value: 4
+      _5:
+        description: 32 conversions averaged.
+        value: 5
+      _6:
+        description: 64 conversions averaged.
+        value: 6
+      _7:
+        description: 128 conversions averaged.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH14_STS:
+    enum:
+      _0:
+        description: Minimum sample time of 3 ADCK cycles.
+        value: 0
+      _1:
+        description: 3 + 21 ADCK cycles; 5 ADCK cycles total sample time.
+        value: 1
+      _2:
+        description: 3 + 22 ADCK cycles; 7 ADCK cycles total sample time.
+        value: 2
+      _3:
+        description: 3 + 23 ADCK cycles; 11 ADCK cycles total sample time.
+        value: 3
+      _4:
+        description: 3 + 24 ADCK cycles; 19 ADCK cycles total sample time.
+        value: 4
+      _5:
+        description: 3 + 25 ADCK cycles; 35 ADCK cycles total sample time.
+        value: 5
+      _6:
+        description: 3 + 26 ADCK cycles; 67 ADCK cycles total sample time.
+        value: 6
+      _7:
+        description: 3 + 27 ADCK cycles; 131 ADCK cycles total sample time.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDL15_ADCH:
+    enum:
+      _0:
+        description: Select CH0A or CH0B or CH0A/CH0B pair.
+        value: 0
+      _1:
+        description: Select CH1A or CH1B or CH1A/CH1B pair.
+        value: 1
+      _2:
+        description: Select CH2A or CH2B or CH2A/CH2B pair.
+        value: 2
+      _3:
+        description: Select CH3A or CH3B or CH3A/CH3B pair.
+        value: 3
+      _4:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 4
+      _5:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 5
+      _6:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 6
+      _7:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 7
+      _8:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 8
+      _9:
+        description: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair.
+        value: 9
+      _30:
+        description: Select CH30A or CH30B or CH30A/CH30B pair.
+        value: 30
+      _31:
+        description: Select CH31A or CH31B or CH31A/CH31B pair.
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH15_NEXT:
+    enum:
+      _0:
+        description: No next command defined. Terminate conversions at completion
+          of current command. If lower priority trigger pending, begin command associated
+          with lower priority trigger.
+        value: 0
+      _1:
+        description: Select CMD1 command buffer register as next command.
+        value: 1
+      _2:
+        description: Select corresponding CMD command buffer register as next command
+        value: 2
+      _3:
+        description: Select corresponding CMD command buffer register as next command
+        value: 3
+      _4:
+        description: Select corresponding CMD command buffer register as next command
+        value: 4
+      _5:
+        description: Select corresponding CMD command buffer register as next command
+        value: 5
+      _6:
+        description: Select corresponding CMD command buffer register as next command
+        value: 6
+      _7:
+        description: Select corresponding CMD command buffer register as next command
+        value: 7
+      _8:
+        description: Select corresponding CMD command buffer register as next command
+        value: 8
+      _9:
+        description: Select corresponding CMD command buffer register as next command
+        value: 9
+      _15:
+        description: Select CMD15 command buffer register as next command.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH15_LOOP:
+    enum:
+      _0:
+        description: Looping not enabled. Command executes 1 time.
+        value: 0
+      _1:
+        description: Loop 1 time. Command executes 2 times.
+        value: 1
+      _2:
+        description: Loop 2 times. Command executes 3 times.
+        value: 2
+      _3:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 3
+      _4:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 4
+      _5:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 5
+      _6:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 6
+      _7:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 7
+      _8:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 8
+      _9:
+        description: Loop corresponding number of times. Command executes LOOP+1 times.
+        value: 9
+      _15:
+        description: Loop 15 times. Command executes 16 times.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH15_AVGS:
+    enum:
+      _0:
+        description: Single conversion.
+        value: 0
+      _1:
+        description: 2 conversions averaged.
+        value: 1
+      _2:
+        description: 4 conversions averaged.
+        value: 2
+      _3:
+        description: 8 conversions averaged.
+        value: 3
+      _4:
+        description: 16 conversions averaged.
+        value: 4
+      _5:
+        description: 32 conversions averaged.
+        value: 5
+      _6:
+        description: 64 conversions averaged.
+        value: 6
+      _7:
+        description: 128 conversions averaged.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_CMDH15_STS:
+    enum:
+      _0:
+        description: Minimum sample time of 3 ADCK cycles.
+        value: 0
+      _1:
+        description: 3 + 21 ADCK cycles; 5 ADCK cycles total sample time.
+        value: 1
+      _2:
+        description: 3 + 22 ADCK cycles; 7 ADCK cycles total sample time.
+        value: 2
+      _3:
+        description: 3 + 23 ADCK cycles; 11 ADCK cycles total sample time.
+        value: 3
+      _4:
+        description: 3 + 24 ADCK cycles; 19 ADCK cycles total sample time.
+        value: 4
+      _5:
+        description: 3 + 25 ADCK cycles; 35 ADCK cycles total sample time.
+        value: 5
+      _6:
+        description: 3 + 26 ADCK cycles; 67 ADCK cycles total sample time.
+        value: 6
+      _7:
+        description: 3 + 27 ADCK cycles; 131 ADCK cycles total sample time.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_RESFIFO_CMDSRC:
+    enum:
+      _0:
+        description: Not a valid value CMDSRC value for a dataword in RESFIFO. 0x0
+          is only found in initial FIFO state prior to an ADC conversion result dataword
+          being stored to a RESFIFO buffer.
+        value: 0
+      _1:
+        description: CMD1 buffer used as control settings for this conversion.
+        value: 1
+      _2:
+        description: Corresponding command buffer used as control settings for this
+          conversion.
+        value: 2
+      _3:
+        description: Corresponding command buffer used as control settings for this
+          conversion.
+        value: 3
+      _4:
+        description: Corresponding command buffer used as control settings for this
+          conversion.
+        value: 4
+      _5:
+        description: Corresponding command buffer used as control settings for this
+          conversion.
+        value: 5
+      _6:
+        description: Corresponding command buffer used as control settings for this
+          conversion.
+        value: 6
+      _7:
+        description: Corresponding command buffer used as control settings for this
+          conversion.
+        value: 7
+      _8:
+        description: Corresponding command buffer used as control settings for this
+          conversion.
+        value: 8
+      _9:
+        description: Corresponding command buffer used as control settings for this
+          conversion.
+        value: 9
+      _15:
+        description: CMD15 buffer used as control settings for this conversion.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_RESFIFO_LOOPCNT:
+    enum:
+      _0:
+        description: Result is from initial conversion in command.
+        value: 0
+      _1:
+        description: Result is from second conversion in command.
+        value: 1
+      _2:
+        description: Result is from LOOPCNT+1 conversion in command.
+        value: 2
+      _3:
+        description: Result is from LOOPCNT+1 conversion in command.
+        value: 3
+      _4:
+        description: Result is from LOOPCNT+1 conversion in command.
+        value: 4
+      _5:
+        description: Result is from LOOPCNT+1 conversion in command.
+        value: 5
+      _6:
+        description: Result is from LOOPCNT+1 conversion in command.
+        value: 6
+      _7:
+        description: Result is from LOOPCNT+1 conversion in command.
+        value: 7
+      _8:
+        description: Result is from LOOPCNT+1 conversion in command.
+        value: 8
+      _9:
+        description: Result is from LOOPCNT+1 conversion in command.
+        value: 9
+      _15:
+        description: Result is from 16th conversion in command.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  LPADC1_RESFIFO_TSRC:
+    enum:
+      _0:
+        description: Trigger source 0 initiated this conversion.
+        value: 0
+      _1:
+        description: Trigger source 1 initiated this conversion.
+        value: 1
+      _2:
+        description: Corresponding trigger source initiated this conversion.
+        value: 2
+      _3:
+        description: Corresponding trigger source initiated this conversion.
+        value: 3
+      _4:
+        description: Corresponding trigger source initiated this conversion.
+        value: 4
+      _5:
+        description: Corresponding trigger source initiated this conversion.
+        value: 5
+      _6:
+        description: Corresponding trigger source initiated this conversion.
+        value: 6
+      _7:
+        description: Trigger source 7 initiated this conversion.
+        value: 7
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

@@ -1,0 +1,6259 @@
+---
+structs:
+  iomuxc_gpr:
+    description: IOMUXC GPR
+    instances:
+      - name: IOMUXC_GPR
+        address: '0x400E4000'
+    fields:
+      - name: GPR0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) GPR0 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR0_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR0_DWP
+          - name: SAI1_MCLK_DIR
+            description: SAI1_MCLK signal direction control
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: SAI1_MCLK3_SEL
+            description: SAI1 MCLK3 source select
+            index: 6
+            width: 2
+            read: true
+            write: true
+          - name: SAI1_MCLK2_SEL
+            description: SAI1 MCLK2 source select
+            index: 3
+            width: 3
+            read: true
+            write: true
+          - name: SAI1_MCLK1_SEL
+            description: SAI1 MCLK1 source select
+            index: 0
+            width: 3
+            read: true
+            write: true
+      - name: GPR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) GPR1 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR1_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR1_DWP
+          - name: SAI2_MCLK_DIR
+            description: SAI2_MCLK signal direction control
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: SAI2_MCLK3_SEL
+            description: SAI2 MCLK3 source select
+            index: 0
+            width: 2
+            read: true
+            write: true
+      - name: GPR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) GPR2 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR2_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR2_DWP
+          - name: SAI4_MCLK_DIR
+            description: SAI4_MCLK signal direction control
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: SAI3_MCLK_DIR
+            description: SAI3_MCLK signal direction control
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: SAI3_MCLK3_SEL
+            description: SAI3 MCLK3 source select
+            index: 0
+            width: 2
+            read: true
+            write: true
+      - name: GPR3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) GPR3 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR3_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR3_DWP
+          - name: MQS_OVERSAMPLE
+            description: Medium Quality Sound (MQS) Oversample
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: MQS_EN
+            description: MQS enable
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: MQS_SW_RST
+            description: MQS software reset
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: MQS_CLK_DIV
+            description: Divider ratio control for mclk from hmclk.
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: GPR4
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) GPR4 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR4_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR4_DWP
+          - name: ENET_EVENT0IN_SEL
+            description: ENET ENET_1588_EVENT0_IN source select
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ENET_TIME_SEL
+            description: ENET master timer source select
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ENET_REF_CLK_DIR
+            description: ENET_REF_CLK direction control
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ENET_TX_CLK_SEL
+            description: ENET TX_CLK select
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR5
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) GPR5 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR5_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR5_DWP
+          - name: ENET1G_EVENT0IN_SEL
+            description: ENET1G ENET_1588_EVENT0_IN source select
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: ENET1G_TIME_SEL
+            description: ENET1G master timer source select
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ENET1G_RGMII_EN
+            description: ENET1G RGMII TX clock output enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ENET1G_REF_CLK_DIR
+            description: ENET1G_REF_CLK direction control
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ENET1G_TX_CLK_SEL
+            description: ENET1G TX_CLK select
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR6
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) GPR6 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR6_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR6_DWP
+          - name: ENET_QOS_EVENT0IN_SEL
+            description: ENET_QOS ENET_1588_EVENT0_IN source select
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: ENET_QOS_CLKGEN_EN
+            description: ENET_QOS clock generator enable
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ENET_QOS_INTF_SEL
+            description: ENET_QOS PHY Interface Select
+            index: 3
+            width: 3
+            read: true
+            write: true
+          - name: ENET_QOS_TIME_SEL
+            description: ENET_QOS master timer source select
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ENET_QOS_RGMII_EN
+            description: ENET_QOS RGMII TX clock output enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ENET_QOS_REF_CLK_DIR
+            description: ENET_QOS_REF_CLK direction control
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR7
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) GPR7 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR7_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR7_DWP
+          - name: GINT
+            description: Global interrupt
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR8
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) GPR8 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR8_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR8_DWP
+          - name: WDOG1_MASK
+            description: WDOG1 timeout mask for WDOG_ANY
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR9
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) GPR9 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR9_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR9_DWP
+          - name: WDOG2_MASK
+            description: WDOG2 timeout mask for WDOG_ANY
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR10
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) GPR10 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR10_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR10_DWP
+      - name: GPR11
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) GPR11 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR11_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR11_DWP
+      - name: GPR12
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) GPR12 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR12_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR12_DWP
+          - name: QTIMER1_TRM3_INPUT_SEL
+            description: QTIMER1 TMR3 input select
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: QTIMER1_TRM2_INPUT_SEL
+            description: QTIMER1 TMR2 input select
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: QTIMER1_TRM1_INPUT_SEL
+            description: QTIMER1 TMR1 input select
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: QTIMER1_TRM0_INPUT_SEL
+            description: QTIMER1 TMR0 input select
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: QTIMER1_TMR_CNTS_FREEZE
+            description: QTIMER1 timer counter freeze
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR13
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 52
+        description: (read-write) GPR13 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR13_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR13_DWP
+          - name: QTIMER2_TRM3_INPUT_SEL
+            description: QTIMER2 TMR3 input select
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: QTIMER2_TRM2_INPUT_SEL
+            description: QTIMER2 TMR2 input select
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: QTIMER2_TRM1_INPUT_SEL
+            description: QTIMER2 TMR1 input select
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: QTIMER2_TRM0_INPUT_SEL
+            description: QTIMER2 TMR0 input select
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: QTIMER2_TMR_CNTS_FREEZE
+            description: QTIMER2 timer counter freeze
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR14
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 56
+        description: (read-write) GPR14 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR14_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR14_DWP
+          - name: QTIMER3_TRM3_INPUT_SEL
+            description: QTIMER3 TMR3 input select
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: QTIMER3_TRM2_INPUT_SEL
+            description: QTIMER3 TMR2 input select
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: QTIMER3_TRM1_INPUT_SEL
+            description: QTIMER3 TMR1 input select
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: QTIMER3_TRM0_INPUT_SEL
+            description: QTIMER3 TMR0 input select
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: QTIMER3_TMR_CNTS_FREEZE
+            description: QTIMER3 timer counter freeze
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR15
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 60
+        description: (read-write) GPR15 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR15_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR15_DWP
+          - name: QTIMER4_TRM3_INPUT_SEL
+            description: QTIMER4 TMR3 input select
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: QTIMER4_TRM2_INPUT_SEL
+            description: QTIMER4 TMR2 input select
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: QTIMER4_TRM1_INPUT_SEL
+            description: QTIMER4 TMR1 input select
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: QTIMER4_TRM0_INPUT_SEL
+            description: QTIMER4 TMR0 input select
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: QTIMER4_TMR_CNTS_FREEZE
+            description: QTIMER4 timer counter freeze
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR16
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 64
+        description: (read-write) GPR16 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR16_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR16_DWP
+          - name: M7_GPC_SLEEP_SEL
+            description: CM7 sleep request selection
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: CM7_FORCE_HCLK_EN
+            description: CM7 platform AHB clock enable
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: FLEXRAM_BANK_CFG_SEL
+            description: FlexRAM bank config source select
+            index: 2
+            width: 1
+            read: true
+            write: true
+      - name: GPR17
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 68
+        description: (read-write) GPR17 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR17_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR17_DWP
+          - name: FLEXRAM_BANK_CFG_LOW
+            description: FlexRAM bank config value
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: GPR18
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 72
+        description: (read-write) GPR18 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR18_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR18_DWP
+          - name: FLEXRAM_BANK_CFG_HIGH
+            description: FlexRAM bank config value
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: GPR20
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 80
+        description: (read-write) GPR20 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR20_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR20_DWP
+          - name: IOMUXC_XBAR_DIR_SEL_31
+            description: IOMUXC XBAR_INOUT31 function direction select
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_30
+            description: IOMUXC XBAR_INOUT30 function direction select
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_29
+            description: IOMUXC XBAR_INOUT29 function direction select
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_28
+            description: IOMUXC XBAR_INOUT28 function direction select
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_27
+            description: IOMUXC XBAR_INOUT27 function direction select
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_26
+            description: IOMUXC XBAR_INOUT26 function direction select
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_25
+            description: IOMUXC XBAR_INOUT25 function direction select
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_24
+            description: IOMUXC XBAR_INOUT24 function direction select
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_23
+            description: IOMUXC XBAR_INOUT23 function direction select
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_22
+            description: IOMUXC XBAR_INOUT22 function direction select
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_21
+            description: IOMUXC XBAR_INOUT21 function direction select
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_20
+            description: IOMUXC XBAR_INOUT20 function direction select
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_19
+            description: IOMUXC XBAR_INOUT19 function direction select
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_18
+            description: IOMUXC XBAR_INOUT18 function direction select
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_17
+            description: IOMUXC XBAR_INOUT17 function direction select
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_16
+            description: IOMUXC XBAR_INOUT16 function direction select
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_15
+            description: IOMUXC XBAR_INOUT15 function direction select
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_14
+            description: IOMUXC XBAR_INOUT14 function direction select
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_13
+            description: IOMUXC XBAR_INOUT13 function direction select
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_12
+            description: IOMUXC XBAR_INOUT12 function direction select
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_11
+            description: IOMUXC XBAR_INOUT11 function direction select
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_10
+            description: IOMUXC XBAR_INOUT10 function direction select
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_9
+            description: IOMUXC XBAR_INOUT9 function direction select
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_8
+            description: IOMUXC XBAR_INOUT8 function direction select
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_7
+            description: IOMUXC XBAR_INOUT7 function direction select
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_6
+            description: IOMUXC XBAR_INOUT6 function direction select
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_5
+            description: IOMUXC XBAR_INOUT5 function direction select
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_4
+            description: IOMUXC XBAR_INOUT4 function direction select
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR21
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 84
+        description: (read-write) GPR21 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR21_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR21_DWP
+          - name: IOMUXC_XBAR_DIR_SEL_42
+            description: IOMUXC XBAR_INOUT42 function direction select
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_41
+            description: IOMUXC XBAR_INOUT41 function direction select
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_40
+            description: IOMUXC XBAR_INOUT40 function direction select
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_39
+            description: IOMUXC XBAR_INOUT39 function direction select
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_38
+            description: IOMUXC XBAR_INOUT38 function direction select
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_37
+            description: IOMUXC XBAR_INOUT37 function direction select
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_36
+            description: IOMUXC XBAR_INOUT36 function direction select
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_35
+            description: IOMUXC XBAR_INOUT35 function direction select
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_34
+            description: IOMUXC XBAR_INOUT34 function direction select
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_33
+            description: IOMUXC XBAR_INOUT33 function direction select
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: IOMUXC_XBAR_DIR_SEL_32
+            description: IOMUXC XBAR_INOUT32 function direction select
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR22
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 88
+        description: (read-write) GPR22 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR22_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR22_DWP
+          - name: REF_1M_CLK_GPT1
+            description: GPT1 1 MHz clock source select
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR23
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 92
+        description: (read-write) GPR23 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR23_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR23_DWP
+          - name: GPT2_CAPIN2_SEL
+            description: GPT2 input capture channel 2 source select
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: GPT2_CAPIN1_SEL
+            description: GPT2 input capture channel 1 source select
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: REF_1M_CLK_GPT2
+            description: GPT2 1 MHz clock source select
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR24
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 96
+        description: (read-write) GPR24 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR24_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR24_DWP
+          - name: GPT3_CAPIN1_SEL
+            description: GPT3 input capture channel 1 source select
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: REF_1M_CLK_GPT3
+            description: GPT3 1 MHz clock source select
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR25
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 100
+        description: (read-write) GPR25 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR25_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR25_DWP
+          - name: REF_1M_CLK_GPT4
+            description: GPT4 1 MHz clock source select
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR26
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 104
+        description: (read-write) GPR26 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR26_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR26_DWP
+          - name: REF_1M_CLK_GPT5
+            description: GPT5 1 MHz clock source select
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR27
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 108
+        description: (read-write) GPR27 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR27_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR27_DWP
+          - name: REF_1M_CLK_GPT6
+            description: GPT6 1 MHz clock source select
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR28
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 112
+        description: (read-write) GPR28 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR28_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR28_DWP
+          - name: CACHE_USB
+            description: USB block cacheable attribute value of AXI transactions
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: CACHE_ENET
+            description: ENET block cacheable attribute value of AXI transactions
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: CACHE_ENET1G
+            description: no description available
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: AWCACHE_USDHC
+            description: uSDHC block cacheable attribute value of AXI write transactions
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ARCACHE_USDHC
+            description: uSDHC block cacheable attribute value of AXI read transactions
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR29
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 116
+        description: (read-write) GPR29 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR29_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR29_DWP
+          - name: USBPHY1_IPG_CLK_ACTIVE
+            description: USBPHY1 register access clock enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR30
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 120
+        description: (read-write) GPR30 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR30_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR30_DWP
+          - name: USBPHY2_IPG_CLK_ACTIVE
+            description: USBPHY2 register access clock enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR31
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 124
+        description: (read-write) GPR31 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR31_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR31_DWP
+          - name: OCRAM_M7_CLK_GATING
+            description: OCRAM M7 clock gating enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: RMW2_WAIT_BVALID_CPL
+            description: OCRAM M7 RMW wait enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR32
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 128
+        description: (read-write) GPR32 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR32_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR32_DWP
+          - name: RMW1_WAIT_BVALID_CPL
+            description: OCRAM1 RMW wait enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR33
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 132
+        description: (read-write) GPR33 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR33_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR33_DWP
+          - name: RMW2_WAIT_BVALID_CPL
+            description: OCRAM2 RMW wait enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR34
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 136
+        description: (read-write) GPR34 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR34_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR34_DWP
+          - name: FLEXSPI1_OTFAD_EN
+            description: FlexSPI1 OTFAD enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: XECC_FLEXSPI1_WAIT_BVALID_CPL
+            description: XECC_FLEXSPI1 RMW wait enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR35
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 140
+        description: (read-write) GPR35 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR35_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR35_DWP
+          - name: FLEXSPI2_OTFAD_EN
+            description: FlexSPI2 OTFAD enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: XECC_FLEXSPI2_WAIT_BVALID_CPL
+            description: XECC_FLEXSPI2 RMW wait enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR36
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 144
+        description: (read-write) GPR36 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR36_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR36_DWP
+          - name: XECC_SEMC_WAIT_BVALID_CPL
+            description: XECC_SEMC RMW wait enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR37
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 148
+        description: (read-write) GPR37 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR37_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR37_DWP
+          - name: M4_DBG_ACK_MASK
+            description: CM4 debug halt mask
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: M7_DBG_ACK_MASK
+            description: CM7 debug halt mask
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: EXC_MON
+            description: Exclusive monitor response select of illegal command
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: DBG_EN
+            description: ARM invasive debug enable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: NIDEN
+            description: ARM non-secure (non-invasive) debug enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR38
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 152
+        description: (read-write) GPR38 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR38_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR38_DWP
+      - name: GPR39
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 156
+        description: (read-write) GPR39 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR39_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR39_DWP
+      - name: GPR40
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 160
+        description: (read-write) GPR40 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR40_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR40_DWP
+          - name: GPIO_MUX2_GPIO_SEL_LOW
+            description: GPIO2 and CM7_GPIO2 share same IO MUX function, GPIO_MUX2
+              selects one GPIO function.
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: GPR41
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 164
+        description: (read-write) GPR41 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR41_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR41_DWP
+          - name: GPIO_MUX2_GPIO_SEL_HIGH
+            description: GPIO2 and CM7_GPIO2 share same IO MUX function, GPIO_MUX2
+              selects one GPIO function.
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: GPR42
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 168
+        description: (read-write) GPR42 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR42_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR42_DWP
+          - name: GPIO_MUX3_GPIO_SEL_LOW
+            description: GPIO3 and CM7_GPIO3 share same IO MUX function, GPIO_MUX3
+              selects one GPIO function.
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: GPR43
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 172
+        description: (read-write) GPR43 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR43_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR43_DWP
+          - name: GPIO_MUX3_GPIO_SEL_HIGH
+            description: GPIO3 and CM7_GPIO3 share same IO MUX function, GPIO_MUX3
+              selects one GPIO function.
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: GPR44
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 176
+        description: (read-write) GPR44 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR44_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR44_DWP
+      - name: GPR45
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 180
+        description: (read-write) GPR45 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR45_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR45_DWP
+      - name: GPR46
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 184
+        description: (read-write) GPR46 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR46_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR46_DWP
+      - name: GPR47
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 188
+        description: (read-write) GPR47 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR47_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR47_DWP
+      - name: GPR48
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 192
+        description: (read-write) GPR48 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR48_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR48_DWP
+      - name: GPR49
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 196
+        description: (read-write) GPR49 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR49_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR49_DWP
+      - name: GPR50
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 200
+        description: (read-write) GPR50 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR50_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR50_DWP
+          - name: CAAM_IPS_MGR
+            description: CAAM manager processor identifier
+            index: 0
+            width: 5
+            read: true
+            write: true
+      - name: GPR51
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 204
+        description: (read-write) GPR51 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR51_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR51_DWP
+          - name: M7_NMI_CLEAR
+            description: Clear CM7 NMI holding register
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR52
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 208
+        description: (read-write) GPR52 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR52_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR52_DWP
+      - name: GPR53
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 212
+        description: (read-write) GPR53 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR53_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR53_DWP
+      - name: GPR54
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 216
+        description: (read-write) GPR54 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR54_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR54_DWP
+      - name: GPR55
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 220
+        description: (read-write) GPR55 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR55_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR55_DWP
+      - name: GPR59
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 236
+        description: (read-write) GPR59 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR59_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR59_DWP
+          - name: MIPI_CSI_S_PRG_RXHS_SETTLE
+            description: Bits used to program T_HS_SETTLE.
+            index: 12
+            width: 6
+            read: true
+            write: true
+          - name: MIPI_CSI_RXLPRP
+            description: Programming bits that adjust the threshold voltage of LP-RX,
+              default setting 2'b01
+            index: 10
+            width: 2
+            read: true
+            write: true
+          - name: MIPI_CSI_RXCDRP
+            description: Programming bits that adjust the threshold voltage of LP-CD,
+              default setting 2'b01
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR59_MIPI_CSI_RXCDRP
+          - name: MIPI_CSI_RX_RCAL
+            description: MIPI CSI PHY on-chip termination control bits
+            index: 6
+            width: 2
+            read: true
+            write: true
+          - name: MIPI_CSI_RX_ENABLE
+            description: Assert to enable MIPI CSI Receive Enable
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: MIPI_CSI_PD_RX
+            description: Power Down input for MIPI CSI PHY.
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: MIPI_CSI_DDRCLK_EN
+            description: When high, enables received DDR clock on CLK_DRXHS
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: MIPI_CSI_CONT_CLK_MODE
+            description: Enables the slave clock lane feature to maintain HS reception
+              state during continuous clock mode operation, despite line glitches.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: MIPI_CSI_SOFT_RST_N
+            description: MIPI CSI APB clock domain and User interface clock domain
+              software reset bit
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: MIPI_CSI_AUTO_PD_EN
+            description: Powers down inactive lanes reported by CSI2X_CFG_NUM_LANES.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR62
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 248
+        description: (read-write) GPR62 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR62_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR62_DWP
+          - name: MIPI_DSI_ESC_SOFT_RESET_N
+            description: MIPI DSI Escape clock domain software reset bit
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: MIPI_DSI_DPI_SOFT_RESET_N
+            description: MIPI DSI Pixel clock domain software reset bit
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: MIPI_DSI_BYTE_SOFT_RESET_N
+            description: MIPI DSI Byte clock domain software reset bit
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: MIPI_DSI_PCLK_SOFT_RESET_N
+            description: MIPI DSI APB clock domain software reset bit
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: MIPI_DSI_TX_ULPS_ENABLE
+            description: DSI transmit ULPS mode enable
+            index: 11
+            width: 3
+            read: true
+            write: true
+          - name: MIPI_DSI_TX_RCAL
+            description: MIPI DSI PHY on-chip termination control bits
+            index: 9
+            width: 2
+            read: true
+            write: true
+          - name: MIPI_DSI_D1_TM
+            description: MIPI DSI Data Lane 1 triming bits
+            index: 6
+            width: 3
+            read: true
+            write: true
+          - name: MIPI_DSI_D0_TM
+            description: MIPI DSI Data Lane 0 triming bits
+            index: 3
+            width: 3
+            read: true
+            write: true
+          - name: MIPI_DSI_CLK_TM
+            description: MIPI DSI Clock Lane triming bits
+            index: 0
+            width: 3
+            read: true
+            write: true
+      - name: GPR63
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 252
+        description: (read-write) GPR63 General Purpose Register
+        fields:
+          - name: MIPI_DSI_TX_ULPS_ACTIVE
+            description: DSI transmit ULPS mode active flag
+            index: 0
+            width: 3
+            read: true
+            write: false
+      - name: GPR64
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 256
+        description: (read-write) GPR64 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR64_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR64_DWP
+          - name: GPIO_DISP1_NASRC
+            description: GPIO_DISP_B1 IO bank compensation codes
+            index: 21
+            width: 4
+            read: true
+            write: false
+          - name: GPIO_DISP1_COMPOK
+            description: GPIO_DISP_B1 IO bank compensation OK flag
+            index: 20
+            width: 1
+            read: true
+            write: false
+          - name: GPIO_DISP1_SUPLYDET_LATCH
+            description: GPIO_DISP_B1 IO bank power supply mode latch enable
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_DISP1_REFGEN_SLEEP
+            description: GPIO_DISP_B1 IO bank reference voltage generator cell sleep
+              enable
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_DISP1_SELECT_NASRC
+            description: GPIO_DISP1_NASRC selection
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_DISP1_RASRCN
+            description: GPIO_DISP_B1 IO bank's 4-bit NMOS compensation codes from
+              core
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: GPIO_DISP1_RASRCP
+            description: GPIO_DISP_B1 IO bank's 4-bit PMOS compensation codes from
+              core
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: GPIO_DISP1_FASTFRZ_EN
+            description: Compensation code fast freeze
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_DISP1_COMPEN
+            description: COMPEN and COMPTQ control the operating modes of the compensation
+              cell
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_DISP1_COMPTQ
+            description: COMPEN and COMPTQ control the operating modes of the compensation
+              cell
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_DISP1_FREEZE
+            description: Compensation code freeze
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR65
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 260
+        description: (read-write) GPR65 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR65_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR65_DWP
+          - name: GPIO_EMC1_NASRC
+            description: GPIO_EMC_B1 IO bank compensation codes
+            index: 21
+            width: 4
+            read: true
+            write: false
+          - name: GPIO_EMC1_COMPOK
+            description: GPIO_EMC_B1 IO bank compensation OK flag
+            index: 20
+            width: 1
+            read: true
+            write: false
+          - name: GPIO_EMC1_SUPLYDET_LATCH
+            description: GPIO_EMC_B1 IO bank power supply mode latch enable
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_EMC1_REFGEN_SLEEP
+            description: GPIO_EMC_B1 IO bank reference voltage generator cell sleep
+              enable
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_EMC1_SELECT_NASRC
+            description: GPIO_EMC1_NASRC selection
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_EMC1_RASRCN
+            description: GPIO_EMC_B1 IO bank's 4-bit NMOS compensation codes from
+              core
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: GPIO_EMC1_RASRCP
+            description: GPIO_EMC_B1 IO bank's 4-bit PMOS compensation codes from
+              core
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: GPIO_EMC1_FASTFRZ_EN
+            description: Compensation code fast freeze
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_EMC1_COMPEN
+            description: COMPEN and COMPTQ control the operating modes of the compensation
+              cell
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_EMC1_COMPTQ
+            description: COMPEN and COMPTQ control the operating modes of the compensation
+              cell
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_EMC1_FREEZE
+            description: Compensation code freeze
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR66
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 264
+        description: (read-write) GPR66 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR66_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR66_DWP
+          - name: GPIO_EMC2_NASRC
+            description: GPIO_EMC_B2 IO bank compensation codes
+            index: 21
+            width: 4
+            read: true
+            write: false
+          - name: GPIO_EMC2_COMPOK
+            description: GPIO_EMC_B2 IO bank compensation OK flag
+            index: 20
+            width: 1
+            read: true
+            write: false
+          - name: GPIO_EMC2_SUPLYDET_LATCH
+            description: GPIO_EMC_B2 IO bank power supply mode latch enable
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_EMC2_REFGEN_SLEEP
+            description: GPIO_EMC_B2 IO bank reference voltage generator cell sleep
+              enable
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_EMC2_SELECT_NASRC
+            description: GPIO_EMC2_NASRC selection
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_EMC2_RASRCN
+            description: GPIO_EMC_B2 IO bank's 4-bit NMOS compensation codes from
+              core
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: GPIO_EMC2_RASRCP
+            description: GPIO_EMC_B2 IO bank's 4-bit PMOS compensation codes from
+              core
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: GPIO_EMC2_FASTFRZ_EN
+            description: Compensation code fast freeze
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_EMC2_COMPEN
+            description: COMPEN and COMPTQ control the operating modes of the compensation
+              cell
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_EMC2_COMPTQ
+            description: COMPEN and COMPTQ control the operating modes of the compensation
+              cell
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_EMC2_FREEZE
+            description: Compensation code freeze
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR67
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 268
+        description: (read-write) GPR67 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR67_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR67_DWP
+          - name: GPIO_SD1_NASRC
+            description: GPIO_SD_B1 IO bank compensation codes
+            index: 21
+            width: 4
+            read: true
+            write: false
+          - name: GPIO_SD1_COMPOK
+            description: GPIO_SD_B1 IO bank compensation OK flag
+            index: 20
+            width: 1
+            read: true
+            write: false
+          - name: GPIO_SD1_SUPLYDET_LATCH
+            description: GPIO_SD_B1 IO bank power supply mode latch enable
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_SD1_REFGEN_SLEEP
+            description: GPIO_SD_B1 IO bank reference voltage generator cell sleep
+              enable
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_SD1_SELECT_NASRC
+            description: GPIO_SD1_NASRC selection
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_SD1_RASRCN
+            description: GPIO_SD_B1 IO bank's 4-bit NMOS compensation codes from core
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: GPIO_SD1_RASRCP
+            description: GPIO_SD_B1 IO bank's 4-bit PMOS compensation codes from core
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: GPIO_SD1_FASTFRZ_EN
+            description: Compensation code fast freeze
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_SD1_COMPEN
+            description: COMPEN and COMPTQ control the operating modes of the compensation
+              cell
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_SD1_COMPTQ
+            description: COMPEN and COMPTQ control the operating modes of the compensation
+              cell
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_SD1_FREEZE
+            description: Compensation code freeze
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR68
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 272
+        description: (read-write) GPR68 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR68_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR68_DWP
+          - name: GPIO_SD2_NASRC
+            description: GPIO_SD_B2 IO bank compensation codes
+            index: 21
+            width: 4
+            read: true
+            write: false
+          - name: GPIO_SD2_COMPOK
+            description: GPIO_SD_B2 IO bank compensation OK flag
+            index: 20
+            width: 1
+            read: true
+            write: false
+          - name: GPIO_SD2_SUPLYDET_LATCH
+            description: GPIO_SD_B2 IO bank power supply mode latch enable
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_SD2_REFGEN_SLEEP
+            description: GPIO_SD_B2 IO bank reference voltage generator cell sleep
+              enable
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_SD2_SELECT_NASRC
+            description: GPIO_SD2_NASRC selection
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_SD2_RASRCN
+            description: GPIO_SD_B2 IO bank's 4-bit NMOS compensation codes from core
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: GPIO_SD2_RASRCP
+            description: GPIO_SD_B2 IO bank's 4-bit PMOS compensation codes from core
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: GPIO_SD2_FASTFRZ_EN
+            description: Compensation code fast freeze
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_SD2_COMPEN
+            description: COMPEN and COMPTQ control the operating modes of the compensation
+              cell
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_SD2_COMPTQ
+            description: COMPEN and COMPTQ control the operating modes of the compensation
+              cell
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_SD2_FREEZE
+            description: Compensation code freeze
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR69
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 276
+        description: (read-write) GPR69 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR69_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR69_DWP
+          - name: SUPLYDET_SD2_SLEEP
+            description: GPIO_SD_B2 IO bank supply voltage detector sleep mode enable
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: SUPLYDET_SD1_SLEEP
+            description: GPIO_SD_B1 IO bank supply voltage detector sleep mode enable
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: SUPLYDET_EMC2_SLEEP
+            description: GPIO_EMC_B2 IO bank supply voltage detector sleep mode enable
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: SUPLYDET_EMC1_SLEEP
+            description: GPIO_EMC_B1 IO bank supply voltage detector sleep mode enable
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: SUPLYDET_DISP1_SLEEP
+            description: GPIO_DISP_B1 IO bank supply voltage detector sleep mode enable
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_AD1_LOW_RANGE
+            description: GPIO_LPSR IO bank supply voltage range selection for GPIO_AD_18
+              to GPIO_AD_35
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_AD1_HIGH_RANGE
+            description: GPIO_LPSR IO bank supply voltage range selection for GPIO_AD_18
+              to GPIO_AD_35
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_AD0_LOW_RANGE
+            description: GPIO_AD IO bank supply voltage range selection for GPIO_AD_00
+              to GPIO_AD_17
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_AD0_HIGH_RANGE
+            description: GPIO_AD IO bank supply voltage range selection for GPIO_AD_00
+              to GPIO_AD_17
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_DISP2_LOW_RANGE
+            description: GPIO_DISP_B2 IO bank supply voltage range selection
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: GPIO_DISP2_HIGH_RANGE
+            description: GPIO_DISP_B2 IO bank supply voltage range selection
+            index: 1
+            width: 1
+            read: true
+            write: true
+      - name: GPR70
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 280
+        description: (read-write) GPR70 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR70_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR70_DWP
+          - name: FLEXSPI2_STOP_REQ
+            description: FLEXSPI2 stop request
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: FLEXSPI2_IPG_DOZE
+            description: FLEXSPI2 doze mode
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: FLEXSPI1_STOP_REQ
+            description: FLEXSPI1 stop request
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: FLEXSPI1_IPG_DOZE
+            description: FLEXSPI1 doze mode
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: FLEXIO2_IPG_DOZE
+            description: FLEXIO2 doze mode
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: FLEXIO1_IPG_DOZE
+            description: FLEXIO2 doze mode
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: ENET1G_STOP_REQ
+            description: ENET1G stop request
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: ENET1G_IPG_DOZE
+            description: ENET1G doze mode
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: ENET_STOP_REQ
+            description: ENET stop request
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: ENET_IPG_DOZE
+            description: ENET doze mode
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: EDMA_LPSR_STOP_REQ
+            description: EDMA_LPSR stop request
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: EDMA_STOP_REQ
+            description: EDMA stop request
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: CAN3_STOP_REQ
+            description: CAN3 stop request
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: CAN3_IPG_DOZE
+            description: CAN3 doze mode
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: CAN2_STOP_REQ
+            description: CAN2 stop request
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: CAN2_IPG_DOZE
+            description: CAN2 doze mode
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: CAN1_STOP_REQ
+            description: CAN1 stop request
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: CAN1_IPG_DOZE
+            description: CAN1 doze mode
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: CAAM_STOP_REQ
+            description: CAAM stop request
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: CAAM_IPG_DOZE
+            description: CAN3 doze mode
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ADC2_IPG_STOP_MODE
+            description: ADC2 stop mode selection, cannot change when ADC2_STOP_REQ
+              is asserted.
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ADC2_STOP_REQ
+            description: ADC2 stop request
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: ADC2_IPG_DOZE
+            description: ADC2 doze mode
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ADC1_IPG_STOP_MODE
+            description: ADC1 stop mode selection, cannot change when ADC1_STOP_REQ
+              is asserted.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ADC1_STOP_REQ
+            description: ADC1 stop request
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ADC1_IPG_DOZE
+            description: ADC1 doze mode
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR71
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 284
+        description: (read-write) GPR71 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR71_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR71_DWP
+          - name: LPSPI1_IPG_STOP_MODE
+            description: LPSPI1 stop mode selection, cannot change when LPSPI1_STOP_REQ
+              is asserted.
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI1_STOP_REQ
+            description: LPSPI1 stop request
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI1_IPG_DOZE
+            description: LPSPI1 doze mode
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C6_IPG_STOP_MODE
+            description: LPI2C6 stop mode selection, cannot change when LPI2C6_STOP_REQ
+              is asserted.
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C6_STOP_REQ
+            description: LPI2C6 stop request
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C6_IPG_DOZE
+            description: LPI2C6 doze mode
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C5_IPG_STOP_MODE
+            description: LPI2C5 stop mode selection, cannot change when LPI2C5_STOP_REQ
+              is asserted.
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C5_STOP_REQ
+            description: LPI2C5 stop request
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C5_IPG_DOZE
+            description: LPI2C5 doze mode
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C4_IPG_STOP_MODE
+            description: LPI2C4 stop mode selection, cannot change when LPI2C4_STOP_REQ
+              is asserted.
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C4_STOP_REQ
+            description: LPI2C4 stop request
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C4_IPG_DOZE
+            description: LPI2C4 doze mode
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C3_IPG_STOP_MODE
+            description: LPI2C3 stop mode selection, cannot change when LPI2C3_STOP_REQ
+              is asserted.
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C3_STOP_REQ
+            description: LPI2C3 stop request
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C3_IPG_DOZE
+            description: LPI2C3 doze mode
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C2_IPG_STOP_MODE
+            description: LPI2C2 stop mode selection, cannot change when LPI2C2_STOP_REQ
+              is asserted.
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C2_STOP_REQ
+            description: LPI2C2 stop request
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C2_IPG_DOZE
+            description: LPI2C2 doze mode
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C1_IPG_STOP_MODE
+            description: LPI2C1 stop mode selection, cannot change when LPI2C1_STOP_REQ
+              is asserted.
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C1_STOP_REQ
+            description: LPI2C1 stop request
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: LPI2C1_IPG_DOZE
+            description: LPI2C1 doze mode
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: GPT6_IPG_DOZE
+            description: GPT6 doze mode
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: GPT5_IPG_DOZE
+            description: GPT5 doze mode
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: GPT4_IPG_DOZE
+            description: GPT4 doze mode
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: GPT3_IPG_DOZE
+            description: GPT3 doze mode
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: GPT2_IPG_DOZE
+            description: GPT2 doze mode
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: GPT1_IPG_DOZE
+            description: GPT1 doze mode
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR72
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 288
+        description: (read-write) GPR72 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR72_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR72_DWP
+          - name: LPUART4_IPG_STOP_MODE
+            description: LPUART4 stop mode selection, cannot change when LPUART4_STOP_REQ
+              is asserted.
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: LPUART4_STOP_REQ
+            description: LPUART4 stop request
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: LPUART4_IPG_DOZE
+            description: LPUART4 doze mode
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: LPUART3_IPG_STOP_MODE
+            description: LPUART3 stop mode selection, cannot change when LPUART3_STOP_REQ
+              is asserted.
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: LPUART3_STOP_REQ
+            description: LPUART3 stop request
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: LPUART3_IPG_DOZE
+            description: LPUART3 doze mode
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: LPUART2_IPG_STOP_MODE
+            description: LPUART2 stop mode selection, cannot change when LPUART2_STOP_REQ
+              is asserted.
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: LPUART2_STOP_REQ
+            description: LPUART2 stop request
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: LPUART2_IPG_DOZE
+            description: LPUART2 doze mode
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: LPUART1_IPG_STOP_MODE
+            description: LPUART1 stop mode selection, cannot change when LPUART1_STOP_REQ
+              is asserted.
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: LPUART1_STOP_REQ
+            description: LPUART1 stop request
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: LPUART1_IPG_DOZE
+            description: LPUART1 doze mode
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI6_IPG_STOP_MODE
+            description: LPSPI6 stop mode selection, cannot change when LPSPI6_STOP_REQ
+              is asserted.
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI6_STOP_REQ
+            description: LPSPI6 stop request
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI6_IPG_DOZE
+            description: LPSPI6 doze mode
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI5_IPG_STOP_MODE
+            description: LPSPI5 stop mode selection, cannot change when LPSPI5_STOP_REQ
+              is asserted.
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI5_STOP_REQ
+            description: LPSPI5 stop request
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI5_IPG_DOZE
+            description: LPSPI5 doze mode
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI4_IPG_STOP_MODE
+            description: LPSPI4 stop mode selection, cannot change when LPSPI4_STOP_REQ
+              is asserted.
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI4_STOP_REQ
+            description: LPSPI4 stop request
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI4_IPG_DOZE
+            description: LPSPI4 doze mode
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI3_IPG_STOP_MODE
+            description: LPSPI3 stop mode selection, cannot change when LPSPI3_STOP_REQ
+              is asserted.
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI3_STOP_REQ
+            description: LPSPI3 stop request
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI3_IPG_DOZE
+            description: LPSPI3 doze mode
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI2_IPG_STOP_MODE
+            description: LPSPI2 stop mode selection, cannot change when LPSPI2_STOP_REQ
+              is asserted.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI2_STOP_REQ
+            description: LPSPI2 stop request
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: LPSPI2_IPG_DOZE
+            description: LPSPI2 doze mode
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR73
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 292
+        description: (read-write) GPR73 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR73_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR73_DWP
+          - name: MIC_IPG_STOP_MODE
+            description: MIC stop mode selection, cannot change when MIC_STOP_REQ
+              is asserted.
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: MIC_STOP_REQ
+            description: MIC stop request
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: MIC_IPG_DOZE
+            description: MIC doze mode
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: LPUART12_IPG_STOP_MODE
+            description: LPUART12 stop mode selection, cannot change when LPUART12_STOP_REQ
+              is asserted.
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: LPUART12_STOP_REQ
+            description: LPUART12 stop request
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: LPUART12_IPG_DOZE
+            description: LPUART12 doze mode
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: LPUART11_IPG_STOP_MODE
+            description: LPUART11 stop mode selection, cannot change when LPUART11_STOP_REQ
+              is asserted.
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: LPUART11_STOP_REQ
+            description: LPUART11 stop request
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: LPUART11_IPG_DOZE
+            description: LPUART11 doze mode
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: LPUART10_IPG_STOP_MODE
+            description: LPUART10 stop mode selection, cannot change when LPUART10_STOP_REQ
+              is asserted.
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: LPUART10_STOP_REQ
+            description: LPUART10 stop request
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: LPUART10_IPG_DOZE
+            description: LPUART10 doze mode
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: LPUART9_IPG_STOP_MODE
+            description: LPUART9 stop mode selection, cannot change when LPUART9_STOP_REQ
+              is asserted.
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: LPUART9_STOP_REQ
+            description: LPUART9 stop request
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: LPUART9_IPG_DOZE
+            description: LPUART9 doze mode
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: LPUART8_IPG_STOP_MODE
+            description: LPUART8 stop mode selection, cannot change when LPUART8_STOP_REQ
+              is asserted.
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: LPUART8_STOP_REQ
+            description: LPUART8 stop request
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: LPUART8_IPG_DOZE
+            description: LPUART8 doze mode
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: LPUART7_IPG_STOP_MODE
+            description: LPUART7 stop mode selection, cannot change when LPUART7_STOP_REQ
+              is asserted.
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: LPUART7_STOP_REQ
+            description: LPUART7 stop request
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: LPUART7_IPG_DOZE
+            description: LPUART7 doze mode
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: LPUART6_IPG_STOP_MODE
+            description: LPUART6 stop mode selection, cannot change when LPUART6_STOP_REQ
+              is asserted.
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: LPUART6_STOP_REQ
+            description: LPUART6 stop request
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: LPUART6_IPG_DOZE
+            description: LPUART6 doze mode
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: LPUART5_IPG_STOP_MODE
+            description: LPUART5 stop mode selection, cannot change when LPUART5_STOP_REQ
+              is asserted.
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: LPUART5_STOP_REQ
+            description: LPUART5 stop request
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: LPUART5_IPG_DOZE
+            description: LPUART5 doze mode
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: GPR74
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 296
+        description: (read-write) GPR74 General Purpose Register
+        fields:
+          - name: DWP_LOCK
+            description: Domain write protection lock
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR74_DWP_LOCK
+          - name: DWP
+            description: Domain write protection
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: IOMUXC_GPR_GPR74_DWP
+          - name: FLEXIO2_STOP_REQ_PER
+            description: FLEXIO2 peripheral clock domain stop request
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: FLEXIO2_STOP_REQ_BUS
+            description: FLEXIO2 bus clock domain stop request
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: FLEXIO1_STOP_REQ_PER
+            description: FLEXIO1 peripheral clock domain stop request
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: FLEXIO1_STOP_REQ_BUS
+            description: FLEXIO1 bus clock domain stop request
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: SAI4_STOP_REQ
+            description: SAI4 stop request
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: SAI3_STOP_REQ
+            description: SAI3 stop request
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: SAI2_STOP_REQ
+            description: SAI2 stop request
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: SAI1_STOP_REQ
+            description: SAI1 stop request
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: WDOG2_IPG_DOZE
+            description: WDOG2 doze mode
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: WDOG1_IPG_DOZE
+            description: WDOG1 doze mode
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: SNVS_HP_STOP_REQ
+            description: SNVS_HP stop request
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: SNVS_HP_IPG_DOZE
+            description: SNVS_HP doze mode
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: SIM2_IPG_DOZE
+            description: SIM2 doze mode
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: SIM1_IPG_DOZE
+            description: SIM1 doze mode
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: SEMC_STOP_REQ
+            description: SEMC stop request
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: PIT2_STOP_REQ
+            description: PIT2 stop request
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: PIT1_STOP_REQ
+            description: PIT1 stop request
+            index: 1
+            width: 1
+            read: true
+            write: true
+      - name: GPR75
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 300
+        description: (read-write) GPR75 General Purpose Register
+        fields:
+          - name: LPUART8_STOP_ACK
+            description: LPUART8 stop acknowledge
+            index: 31
+            width: 1
+            read: true
+            write: false
+          - name: LPUART7_STOP_ACK
+            description: LPUART7 stop acknowledge
+            index: 30
+            width: 1
+            read: true
+            write: false
+          - name: LPUART6_STOP_ACK
+            description: LPUART6 stop acknowledge
+            index: 29
+            width: 1
+            read: true
+            write: false
+          - name: LPUART5_STOP_ACK
+            description: LPUART5 stop acknowledge
+            index: 28
+            width: 1
+            read: true
+            write: false
+          - name: LPUART4_STOP_ACK
+            description: LPUART4 stop acknowledge
+            index: 27
+            width: 1
+            read: true
+            write: false
+          - name: LPUART3_STOP_ACK
+            description: LPUART3 stop acknowledge
+            index: 26
+            width: 1
+            read: true
+            write: false
+          - name: LPUART2_STOP_ACK
+            description: LPUART2 stop acknowledge
+            index: 25
+            width: 1
+            read: true
+            write: false
+          - name: LPUART1_STOP_ACK
+            description: LPUART1 stop acknowledge
+            index: 24
+            width: 1
+            read: true
+            write: false
+          - name: LPSPI6_STOP_ACK
+            description: LPSPI6 stop acknowledge
+            index: 23
+            width: 1
+            read: true
+            write: false
+          - name: LPSPI5_STOP_ACK
+            description: LPSPI5 stop acknowledge
+            index: 22
+            width: 1
+            read: true
+            write: false
+          - name: LPSPI4_STOP_ACK
+            description: LPSPI4 stop acknowledge
+            index: 21
+            width: 1
+            read: true
+            write: false
+          - name: LPSPI3_STOP_ACK
+            description: LPSPI3 stop acknowledge
+            index: 20
+            width: 1
+            read: true
+            write: false
+          - name: LPSPI2_STOP_ACK
+            description: LPSPI2 stop acknowledge
+            index: 19
+            width: 1
+            read: true
+            write: false
+          - name: LPSPI1_STOP_ACK
+            description: LPSPI1 stop acknowledge
+            index: 18
+            width: 1
+            read: true
+            write: false
+          - name: LPI2C6_STOP_ACK
+            description: LPI2C6 stop acknowledge
+            index: 17
+            width: 1
+            read: true
+            write: false
+          - name: LPI2C5_STOP_ACK
+            description: LPI2C5 stop acknowledge
+            index: 16
+            width: 1
+            read: true
+            write: false
+          - name: LPI2C4_STOP_ACK
+            description: LPI2C4 stop acknowledge
+            index: 15
+            width: 1
+            read: true
+            write: false
+          - name: LPI2C3_STOP_ACK
+            description: LPI2C3 stop acknowledge
+            index: 14
+            width: 1
+            read: true
+            write: false
+          - name: LPI2C2_STOP_ACK
+            description: LPI2C2 stop acknowledge
+            index: 13
+            width: 1
+            read: true
+            write: false
+          - name: LPI2C1_STOP_ACK
+            description: LPI2C1 stop acknowledge
+            index: 12
+            width: 1
+            read: true
+            write: false
+          - name: FLEXSPI2_STOP_ACK
+            description: FLEXSPI2 stop acknowledge
+            index: 11
+            width: 1
+            read: true
+            write: false
+          - name: FLEXSPI1_STOP_ACK
+            description: FLEXSPI1 stop acknowledge
+            index: 10
+            width: 1
+            read: true
+            write: false
+          - name: ENET1G_STOP_ACK
+            description: ENET1G stop acknowledge
+            index: 9
+            width: 1
+            read: true
+            write: false
+          - name: ENET_STOP_ACK
+            description: ENET stop acknowledge
+            index: 8
+            width: 1
+            read: true
+            write: false
+          - name: EDMA_LPSR_STOP_ACK
+            description: EDMA_LPSR stop acknowledge
+            index: 7
+            width: 1
+            read: true
+            write: false
+          - name: EDMA_STOP_ACK
+            description: EDMA stop acknowledge
+            index: 6
+            width: 1
+            read: true
+            write: false
+          - name: CAN3_STOP_ACK
+            description: CAN3 stop acknowledge
+            index: 5
+            width: 1
+            read: true
+            write: false
+          - name: CAN2_STOP_ACK
+            description: CAN2 stop acknowledge
+            index: 4
+            width: 1
+            read: true
+            write: false
+          - name: CAN1_STOP_ACK
+            description: CAN1 stop acknowledge
+            index: 3
+            width: 1
+            read: true
+            write: false
+          - name: CAAM_STOP_ACK
+            description: CAAM stop acknowledge
+            index: 2
+            width: 1
+            read: true
+            write: false
+          - name: ADC2_STOP_ACK
+            description: ADC2 stop acknowledge
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: ADC1_STOP_ACK
+            description: ADC1 stop acknowledge
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: GPR76
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 304
+        description: (read-write) GPR76 General Purpose Register
+        fields:
+          - name: FLEXIO2_STOP_ACK_PER
+            description: FLEXIO2 stop acknowledge of peripheral clock domain
+            index: 16
+            width: 1
+            read: true
+            write: false
+          - name: FLEXIO2_STOP_ACK_BUS
+            description: FLEXIO2 stop acknowledge of bus clock domain
+            index: 15
+            width: 1
+            read: true
+            write: false
+          - name: FLEXIO1_STOP_ACK_PER
+            description: FLEXIO1 stop acknowledge of peripheral clock domain
+            index: 14
+            width: 1
+            read: true
+            write: false
+          - name: FLEXIO1_STOP_ACK_BUS
+            description: FLEXIO1 stop acknowledge of bus clock domain
+            index: 13
+            width: 1
+            read: true
+            write: false
+          - name: SAI4_STOP_ACK
+            description: SAI4 stop acknowledge
+            index: 12
+            width: 1
+            read: true
+            write: false
+          - name: SAI3_STOP_ACK
+            description: SAI3 stop acknowledge
+            index: 11
+            width: 1
+            read: true
+            write: false
+          - name: SAI2_STOP_ACK
+            description: SAI2 stop acknowledge
+            index: 10
+            width: 1
+            read: true
+            write: false
+          - name: SAI1_STOP_ACK
+            description: SAI1 stop acknowledge
+            index: 9
+            width: 1
+            read: true
+            write: false
+          - name: SNVS_HP_STOP_ACK
+            description: SNVS_HP stop acknowledge
+            index: 8
+            width: 1
+            read: true
+            write: false
+          - name: SEMC_STOP_ACK
+            description: SEMC stop acknowledge
+            index: 7
+            width: 1
+            read: true
+            write: false
+          - name: PIT2_STOP_ACK
+            description: PIT2 stop acknowledge
+            index: 6
+            width: 1
+            read: true
+            write: false
+          - name: PIT1_STOP_ACK
+            description: PIT1 stop acknowledge
+            index: 5
+            width: 1
+            read: true
+            write: false
+          - name: MIC_STOP_ACK
+            description: MIC stop acknowledge
+            index: 4
+            width: 1
+            read: true
+            write: false
+          - name: LPUART12_STOP_ACK
+            description: LPUART12 stop acknowledge
+            index: 3
+            width: 1
+            read: true
+            write: false
+          - name: LPUART11_STOP_ACK
+            description: LPUART11 stop acknowledge
+            index: 2
+            width: 1
+            read: true
+            write: false
+          - name: LPUART10_STOP_ACK
+            description: LPUART10 stop acknowledge
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: LPUART9_STOP_ACK
+            description: LPUART9 stop acknowledge
+            index: 0
+            width: 1
+            read: true
+            write: false
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  IOMUXC_GPR_GPR0_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR0_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR1_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR1_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR2_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR2_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR3_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR3_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR4_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR4_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR5_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR5_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR6_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR6_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR7_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR7_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR8_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR8_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR9_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR9_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR10_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR10_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR11_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR11_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR12_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR12_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR13_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR13_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR14_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR14_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR15_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR15_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR16_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR16_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR17_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR17_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR18_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR18_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR20_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR20_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR21_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR21_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR22_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR22_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR23_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR23_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR24_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR24_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR25_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR25_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR26_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR26_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR27_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR27_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR28_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR28_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR29_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR29_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR30_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR30_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR31_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR31_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR32_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR32_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR33_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR33_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR34_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR34_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR35_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR35_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR36_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR36_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR37_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR37_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR38_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR38_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR39_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR39_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR40_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR40_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR41_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR41_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR42_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR42_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR43_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR43_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR44_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR44_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR45_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR45_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR46_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR46_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR47_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR47_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR48_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR48_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR49_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR49_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR50_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR50_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR51_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR51_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR52_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR52_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR53_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR53_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR54_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR54_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR55_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR55_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR59_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR59_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR59_MIPI_CSI_RXCDRP:
+    enum:
+      _0:
+        description: 344mV
+        value: 0
+      _01:
+        description: 325mV (Default)
+        value: 1
+      _10:
+        description: 307mV
+        value: 2
+      _11:
+        description: Invalid
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR62_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR62_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR64_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR64_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR65_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR65_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR66_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR66_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR67_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR67_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR68_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR68_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR69_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR69_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR70_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR70_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR71_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR71_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR72_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR72_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR73_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR73_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR74_DWP_LOCK:
+    enum:
+      none:
+        description: Neither of DWP bits is locked
+        value: 0
+      low:
+        description: The lower DWP bit is locked
+        value: 1
+      high:
+        description: The higher DWP bit is locked
+        value: 2
+      both:
+        description: Both DWP bits are locked
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  IOMUXC_GPR_GPR74_DWP:
+    enum:
+      none:
+        description: Both cores are allowed
+        value: 0
+      CM7:
+        description: CM7 is forbidden
+        value: 1
+      CM4:
+        description: CM4 is forbidden
+        value: 2
+      both:
+        description: Both cores are forbidden
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

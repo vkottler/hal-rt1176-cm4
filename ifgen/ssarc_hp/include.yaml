@@ -1,0 +1,124 @@
+---
+structs:
+  DESC_instance:
+    description: no description available
+    fields:
+      - name: SRAM0_
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Description Address Register
+        fields:
+          - name: ADDR
+            description: Address field
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: SRAM1_
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Description Data Register
+        fields:
+          - name: DATA
+            description: Data field
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: SRAM2_
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) Description Control Register
+        fields:
+          - name: SIZE
+            description: Size field
+            index: 6
+            width: 2
+            read: true
+            write: true
+            type: SSARC_HP_SRAM2__SIZE
+          - name: RT_EN
+            description: Restore Enable
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: SV_EN
+            description: Save Enable
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: TYPE
+            description: Type field
+            index: 0
+            width: 3
+            read: true
+            write: true
+            type: SSARC_HP_SRAM2__TYPE
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+  ssarc_hp:
+    description: SRAM Registers
+    instances:
+      - name: SSARC_HP
+        address: '0x40CB4000'
+    fields:
+      - name: DESC
+        type: DESC_instance
+        array_length: 1024
+        description: no description available
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  SSARC_HP_SRAM2__SIZE:
+    enum:
+      _0:
+        description: 8-bit
+        value: 0
+      _1:
+        description: 16-bit
+        value: 1
+      _2:
+        description: 32-bit
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  SSARC_HP_SRAM2__TYPE:
+    enum:
+      SR:
+        description: SR
+        value: 0
+      WO:
+        description: WO
+        value: 1
+      RMW_OR:
+        description: RMW_OR
+        value: 2
+      RMW_AND:
+        description: RMW_AND
+        value: 3
+      DELAY:
+        description: DELAY
+        value: 4
+      POLLING_0:
+        description: POLLING_0
+        value: 5
+      POLLING_1:
+        description: POLLING_1
+        value: 6
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

@@ -1,0 +1,162 @@
+---
+structs:
+  dsi_host_apb_pkt_if:
+    description: DSI HOST APB PKT Interface
+    instances:
+      - name: DSI_HOST_APB_PKT_IF
+        address: '0x4080C280'
+    fields:
+      - name: TX_PAYLOAD
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) TX_PAYLOAD
+        fields:
+          - name: PAYLOAD
+            description: Tx Payload data write register. Write to this register loads
+              the payload FIFO with 32 bit values.
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: PKT_CONTROL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) PKT_CONTROL
+        fields:
+          - name: CTRL
+            description: Tx packet control
+            index: 0
+            width: 27
+            read: true
+            write: true
+      - name: SEND_PACKET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) SEND_PACKET
+        fields:
+          - name: TX_SEND
+            description: Tx send packet, writing to this register causes the packet
+              described in dsi_host_pkt_control to be sent.
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PKT_STATUS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) PKT_STATUS
+        fields:
+          - name: STATUS
+            description: Status of APB to packet interface.
+            index: 0
+            width: 9
+            read: true
+            write: false
+      - name: PKT_FIFO_WR_LEVEL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) PKT_FIFO_WR_LEVEL
+        fields:
+          - name: WR
+            description: Write level of APB to pkt interface FIFO
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: PKT_FIFO_RD_LEVEL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) PKT_FIFO_RD_LEVEL
+        fields:
+          - name: RD
+            description: Read level of APB to pkt interface FIFO
+            index: 0
+            width: 16
+            read: true
+            write: false
+      - name: PKT_RX_PAYLOAD
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) PKT_RX_PAYLOAD
+        fields:
+          - name: PAYLOAD
+            description: APB to pkt interface Rx payload read
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: PKT_RX_PKT_HEADER
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) PKT_RX_PKT_HEADER
+        fields:
+          - name: HEADER
+            description: APB to pkt interface Rx packet header
+            index: 0
+            width: 24
+            read: true
+            write: false
+      - name: IRQ_STATUS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) IRQ_STATUS
+        fields:
+          - name: STATUS
+            description: Status of APB to packet interface.
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: IRQ_STATUS2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) IRQ_STATUS2
+        fields:
+          - name: STATUS2
+            description: Status of APB to packet interface part 2, read part 2 first
+              then dsi_host_irq_status. Reading dsi_host_irq_status will clear both
+              status and status2.
+            index: 0
+            width: 3
+            read: true
+            write: false
+      - name: IRQ_MASK
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) IRQ_MASK
+        fields:
+          - name: MASK
+            description: IRQ Mask
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: IRQ_MASK2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) IRQ_MASK2
+        fields:
+          - name: MASK2
+            description: IRQ mask 2
+            index: 0
+            width: 3
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums: {}

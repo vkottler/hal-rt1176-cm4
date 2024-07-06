@@ -1,0 +1,1637 @@
+---
+structs:
+  asrc:
+    description: ASRC
+    instances:
+      - name: ASRC
+        address: '0x40414000'
+    fields:
+      - name: ASRCTR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) ASRC Control Register
+        fields:
+          - name: ATSC
+            description: ATSC
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: ATSB
+            description: ATSB
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: ATSA
+            description: ATSA
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: USRC
+            description: USRC
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: IDRC
+            description: IDRC
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: USRB
+            description: USRB
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: IDRB
+            description: IDRB
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: USRA
+            description: USRA
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: IDRA
+            description: IDRA
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: SRST
+            description: SRST
+            index: 4
+            width: 1
+            read: false
+            write: true
+          - name: ASREC
+            description: ASREC
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ASREB
+            description: ASREB
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ASREA
+            description: ASREA
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ASRCEN
+            description: ASRCEN
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: ASRIER
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) ASRC Interrupt Enable Register
+        fields:
+          - name: AFPWE
+            description: AFPWE
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: AOLIE
+            description: AOLIE
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: ADOEC
+            description: ADOEC
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ADOEB
+            description: ADOEB
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: ADOEA
+            description: ADOEA
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ADIEC
+            description: ADIEC
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ADIEB
+            description: ADIEB
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: ADIEA
+            description: ADIEA
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: ASRCNCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) ASRC Channel Number Configuration Register
+        fields:
+          - name: ANCC
+            description: ANCC
+            index: 8
+            width: 4
+            read: true
+            write: true
+            type: ASRC_ASRCNCR_ANCC
+          - name: ANCB
+            description: ANCB
+            index: 4
+            width: 4
+            read: true
+            write: true
+            type: ASRC_ASRCNCR_ANCB
+          - name: ANCA
+            description: ANCA
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: ASRC_ASRCNCR_ANCA
+      - name: ASRCFG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) ASRC Filter Configuration Status Register
+        fields:
+          - name: INIRQC
+            description: INIRQC
+            index: 23
+            width: 1
+            read: true
+            write: false
+          - name: INIRQB
+            description: INIRQB
+            index: 22
+            width: 1
+            read: true
+            write: false
+          - name: INIRQA
+            description: INIRQA
+            index: 21
+            width: 1
+            read: true
+            write: false
+          - name: NDPRC
+            description: NDPRC
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: NDPRB
+            description: NDPRB
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: NDPRA
+            description: NDPRA
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: POSTMODC
+            description: POSTMODC
+            index: 16
+            width: 2
+            read: true
+            write: true
+            type: ASRC_ASRCFG_POSTMODC
+          - name: PREMODC
+            description: PREMODC
+            index: 14
+            width: 2
+            read: true
+            write: true
+            type: ASRC_ASRCFG_PREMODC
+          - name: POSTMODB
+            description: POSTMODB
+            index: 12
+            width: 2
+            read: true
+            write: true
+            type: ASRC_ASRCFG_POSTMODB
+          - name: PREMODB
+            description: PREMODB
+            index: 10
+            width: 2
+            read: true
+            write: true
+            type: ASRC_ASRCFG_PREMODB
+          - name: POSTMODA
+            description: POSTMODA
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: ASRC_ASRCFG_POSTMODA
+          - name: PREMODA
+            description: PREMODA
+            index: 6
+            width: 2
+            read: true
+            write: true
+            type: ASRC_ASRCFG_PREMODA
+      - name: ASRCSR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) ASRC Clock Source Register
+        fields:
+          - name: AOCSC
+            description: AOCSC
+            index: 20
+            width: 4
+            read: true
+            write: true
+            type: ASRC_ASRCSR_AOCSC
+          - name: AOCSB
+            description: AOCSB
+            index: 16
+            width: 4
+            read: true
+            write: true
+            type: ASRC_ASRCSR_AOCSB
+          - name: AOCSA
+            description: AOCSA
+            index: 12
+            width: 4
+            read: true
+            write: true
+            type: ASRC_ASRCSR_AOCSA
+          - name: AICSC
+            description: AICSC
+            index: 8
+            width: 4
+            read: true
+            write: true
+            type: ASRC_ASRCSR_AICSC
+          - name: AICSB
+            description: AICSB
+            index: 4
+            width: 4
+            read: true
+            write: true
+            type: ASRC_ASRCSR_AICSB
+          - name: AICSA
+            description: AICSA
+            index: 0
+            width: 4
+            read: true
+            write: true
+            type: ASRC_ASRCSR_AICSA
+      - name: ASRCDR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) ASRC Clock Divider Register 1
+        fields:
+          - name: AOCDB
+            description: AOCDB
+            index: 21
+            width: 3
+            read: true
+            write: true
+          - name: AOCPB
+            description: AOCPB
+            index: 18
+            width: 3
+            read: true
+            write: true
+          - name: AOCDA
+            description: AOCDA
+            index: 15
+            width: 3
+            read: true
+            write: true
+          - name: AOCPA
+            description: AOCPA
+            index: 12
+            width: 3
+            read: true
+            write: true
+          - name: AICDB
+            description: AICDB
+            index: 9
+            width: 3
+            read: true
+            write: true
+          - name: AICPB
+            description: AICPB
+            index: 6
+            width: 3
+            read: true
+            write: true
+          - name: AICDA
+            description: AICDA
+            index: 3
+            width: 3
+            read: true
+            write: true
+          - name: AICPA
+            description: AICPA
+            index: 0
+            width: 3
+            read: true
+            write: true
+      - name: ASRCDR2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) ASRC Clock Divider Register 2
+        fields:
+          - name: AOCDC
+            description: AOCDC
+            index: 9
+            width: 3
+            read: true
+            write: true
+          - name: AOCPC
+            description: AOCPC
+            index: 6
+            width: 3
+            read: true
+            write: true
+          - name: AICDC
+            description: AICDC
+            index: 3
+            width: 3
+            read: true
+            write: true
+          - name: AICPC
+            description: AICPC
+            index: 0
+            width: 3
+            read: true
+            write: true
+      - name: ASRSTR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) ASRC Status Register
+        fields:
+          - name: DSLCNT
+            description: DSLCNT
+            index: 21
+            width: 1
+            read: true
+            write: false
+          - name: ATQOL
+            description: ATQOL
+            index: 20
+            width: 1
+            read: true
+            write: false
+          - name: AOOLC
+            description: AOOLC
+            index: 19
+            width: 1
+            read: true
+            write: false
+          - name: AOOLB
+            description: AOOLB
+            index: 18
+            width: 1
+            read: true
+            write: false
+          - name: AOOLA
+            description: AOOLA
+            index: 17
+            width: 1
+            read: true
+            write: false
+          - name: AIOLC
+            description: AIOLC
+            index: 16
+            width: 1
+            read: true
+            write: false
+          - name: AIOLB
+            description: AIOLB
+            index: 15
+            width: 1
+            read: true
+            write: false
+          - name: AIOLA
+            description: AIOLA
+            index: 14
+            width: 1
+            read: true
+            write: false
+          - name: AODOC
+            description: AODOC
+            index: 13
+            width: 1
+            read: true
+            write: false
+          - name: AODOB
+            description: AODOB
+            index: 12
+            width: 1
+            read: true
+            write: false
+          - name: AODOA
+            description: AODOA
+            index: 11
+            width: 1
+            read: true
+            write: false
+          - name: AIDUC
+            description: AIDUC
+            index: 10
+            width: 1
+            read: true
+            write: false
+          - name: AIDUB
+            description: AIDUB
+            index: 9
+            width: 1
+            read: true
+            write: false
+          - name: AIDUA
+            description: AIDUA
+            index: 8
+            width: 1
+            read: true
+            write: false
+          - name: FPWT
+            description: FPWT
+            index: 7
+            width: 1
+            read: true
+            write: false
+          - name: AOLE
+            description: AOLE
+            index: 6
+            width: 1
+            read: true
+            write: false
+          - name: AODFC
+            description: AODFC
+            index: 5
+            width: 1
+            read: true
+            write: false
+          - name: AODFB
+            description: AODFB
+            index: 4
+            width: 1
+            read: true
+            write: false
+          - name: AODFA
+            description: AODFA
+            index: 3
+            width: 1
+            read: true
+            write: false
+          - name: AIDEC
+            description: AIDEC
+            index: 2
+            width: 1
+            read: true
+            write: false
+          - name: AIDEB
+            description: AIDEB
+            index: 1
+            width: 1
+            read: true
+            write: false
+          - name: AIDEA
+            description: AIDEA
+            index: 0
+            width: 1
+            read: true
+            write: false
+      - name: ASRPM
+        type: uint32_t
+        expected_size: 20
+        expected_offset: 64
+        array_length: 5
+        description: (read-write) ASRC Parameter Register n
+        fields:
+          - name: PARAMETER_VALUE
+            description: PARAMETER_VALUE
+            index: 0
+            width: 24
+            read: true
+            write: true
+      - name: ASRTFR1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 84
+        description: (read-write) ASRC Task Queue FIFO Register 1
+        fields:
+          - name: TF_FILL
+            description: TF_FILL
+            index: 13
+            width: 7
+            read: true
+            write: false
+          - name: TF_BASE
+            description: TF_BASE
+            index: 6
+            width: 7
+            read: true
+            write: true
+      - name: ASRCCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 92
+        description: (read-write) ASRC Channel Counter Register
+        fields:
+          - name: ACOC
+            description: ACOC
+            index: 20
+            width: 4
+            read: true
+            write: true
+          - name: ACOB
+            description: ACOB
+            index: 16
+            width: 4
+            read: true
+            write: true
+          - name: ACOA
+            description: ACOA
+            index: 12
+            width: 4
+            read: true
+            write: true
+          - name: ACIC
+            description: ACIC
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: ACIB
+            description: ACIB
+            index: 4
+            width: 4
+            read: true
+            write: true
+          - name: ACIA
+            description: ACIA
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: ASRDIA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 96
+        description: (read-write) ASRC Data Input Register for Pair x
+        fields:
+          - name: DATA
+            description: DATA
+            index: 0
+            width: 24
+            read: false
+            write: true
+      - name: ASRDOA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 100
+        description: (read-write) ASRC Data Output Register for Pair x
+        fields:
+          - name: DATA
+            description: DATA
+            index: 0
+            width: 24
+            read: true
+            write: false
+      - name: ASRDIB
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 104
+        description: (read-write) ASRC Data Input Register for Pair x
+        fields:
+          - name: DATA
+            description: DATA
+            index: 0
+            width: 24
+            read: false
+            write: true
+      - name: ASRDOB
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 108
+        description: (read-write) ASRC Data Output Register for Pair x
+        fields:
+          - name: DATA
+            description: DATA
+            index: 0
+            width: 24
+            read: true
+            write: false
+      - name: ASRDIC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 112
+        description: (read-write) ASRC Data Input Register for Pair x
+        fields:
+          - name: DATA
+            description: DATA
+            index: 0
+            width: 24
+            read: false
+            write: true
+      - name: ASRDOC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 116
+        description: (read-write) ASRC Data Output Register for Pair x
+        fields:
+          - name: DATA
+            description: DATA
+            index: 0
+            width: 24
+            read: true
+            write: false
+      - name: ASRIDRHA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 128
+        description: (read-write) ASRC Ideal Ratio for Pair A-High Part
+        fields:
+          - name: IDRATIOA_H
+            description: IDRATIOA_H
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: ASRIDRLA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 132
+        description: (read-write) ASRC Ideal Ratio for Pair A -Low Part
+        fields:
+          - name: IDRATIOA_L
+            description: IDRATIOA_L
+            index: 0
+            width: 24
+            read: true
+            write: true
+      - name: ASRIDRHB
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 136
+        description: (read-write) ASRC Ideal Ratio for Pair B-High Part
+        fields:
+          - name: IDRATIOB_H
+            description: IDRATIOB_H
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: ASRIDRLB
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 140
+        description: (read-write) ASRC Ideal Ratio for Pair B-Low Part
+        fields:
+          - name: IDRATIOB_L
+            description: IDRATIOB_L
+            index: 0
+            width: 24
+            read: true
+            write: true
+      - name: ASRIDRHC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 144
+        description: (read-write) ASRC Ideal Ratio for Pair C-High Part
+        fields:
+          - name: IDRATIOC_H
+            description: IDRATIOC_H
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: ASRIDRLC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 148
+        description: (read-write) ASRC Ideal Ratio for Pair C-Low Part
+        fields:
+          - name: IDRATIOC_L
+            description: IDRATIOC_L
+            index: 0
+            width: 24
+            read: true
+            write: true
+      - name: ASR76K
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 152
+        description: (read-write) ASRC 76 kHz Period in terms of ASRC processing clock
+        fields:
+          - name: ASR76K
+            description: ASR76K
+            index: 0
+            width: 17
+            read: true
+            write: true
+      - name: ASR56K
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 156
+        description: (read-write) ASRC 56 kHz Period in terms of ASRC processing clock
+        fields:
+          - name: ASR56K
+            description: ASR56K
+            index: 0
+            width: 17
+            read: true
+            write: true
+      - name: ASRMCRA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 160
+        description: (read-write) ASRC Misc Control Register for Pair A
+        fields:
+          - name: ZEROBUFA
+            description: ZEROBUFA
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: EXTTHRSHA
+            description: EXTTHRSHA
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: BUFSTALLA
+            description: BUFSTALLA
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: BYPASSPOLYA
+            description: BYPASSPOLYA
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: OUTFIFO_THRESHOLDA
+            description: OUTFIFO_THRESHOLDA
+            index: 12
+            width: 6
+            read: true
+            write: true
+          - name: RSYNIFA
+            description: RSYNIFA
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: RSYNOFA
+            description: RSYNOFA
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: INFIFO_THRESHOLDA
+            description: INFIFO_THRESHOLDA
+            index: 0
+            width: 6
+            read: true
+            write: true
+      - name: ASRFSTA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 164
+        description: (read-write) ASRC FIFO Status Register for Pair A
+        fields:
+          - name: OAFA
+            description: OAFA
+            index: 23
+            width: 1
+            read: true
+            write: false
+          - name: OUTFIFO_FILLA
+            description: OUTFIFO_FILLA
+            index: 12
+            width: 7
+            read: true
+            write: false
+          - name: IAEA
+            description: IAEA
+            index: 11
+            width: 1
+            read: true
+            write: false
+          - name: INFIFO_FILLA
+            description: INFIFO_FILLA
+            index: 0
+            width: 7
+            read: true
+            write: false
+      - name: ASRMCRB
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 168
+        description: (read-write) ASRC Misc Control Register for Pair B
+        fields:
+          - name: ZEROBUFB
+            description: ZEROBUFB
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: EXTTHRSHB
+            description: EXTTHRSHB
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: BUFSTALLB
+            description: BUFSTALLB
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: BYPASSPOLYB
+            description: BYPASSPOLYB
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: OUTFIFO_THRESHOLDB
+            description: OUTFIFO_THRESHOLDB
+            index: 12
+            width: 6
+            read: true
+            write: true
+          - name: RSYNIFB
+            description: RSYNIFB
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: RSYNOFB
+            description: RSYNOFB
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: INFIFO_THRESHOLDB
+            description: INFIFO_THRESHOLDB
+            index: 0
+            width: 6
+            read: true
+            write: true
+      - name: ASRFSTB
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 172
+        description: (read-write) ASRC FIFO Status Register for Pair B
+        fields:
+          - name: OAFB
+            description: OAFB
+            index: 23
+            width: 1
+            read: true
+            write: false
+          - name: OUTFIFO_FILLB
+            description: OUTFIFO_FILLB
+            index: 12
+            width: 7
+            read: true
+            write: false
+          - name: IAEB
+            description: IAEB
+            index: 11
+            width: 1
+            read: true
+            write: false
+          - name: INFIFO_FILLB
+            description: INFIFO_FILLB
+            index: 0
+            width: 7
+            read: true
+            write: false
+      - name: ASRMCRC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 176
+        description: (read-write) ASRC Misc Control Register for Pair C
+        fields:
+          - name: ZEROBUFC
+            description: ZEROBUFC
+            index: 23
+            width: 1
+            read: true
+            write: true
+          - name: EXTTHRSHC
+            description: EXTTHRSHC
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: BUFSTALLC
+            description: BUFSTALLC
+            index: 21
+            width: 1
+            read: true
+            write: true
+          - name: BYPASSPOLYC
+            description: BYPASSPOLYC
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: OUTFIFO_THRESHOLDC
+            description: OUTFIFO_THRESHOLDC
+            index: 12
+            width: 6
+            read: true
+            write: true
+          - name: RSYNIFC
+            description: RSYNIFC
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: RSYNOFC
+            description: RSYNOFC
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: INFIFO_THRESHOLDC
+            description: INFIFO_THRESHOLDC
+            index: 0
+            width: 6
+            read: true
+            write: true
+      - name: ASRFSTC
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 180
+        description: (read-write) ASRC FIFO Status Register for Pair C
+        fields:
+          - name: OAFC
+            description: OAFC
+            index: 23
+            width: 1
+            read: true
+            write: false
+          - name: OUTFIFO_FILLC
+            description: OUTFIFO_FILLC
+            index: 12
+            width: 7
+            read: true
+            write: false
+          - name: IAEC
+            description: IAEC
+            index: 11
+            width: 1
+            read: true
+            write: false
+          - name: INFIFO_FILLC
+            description: INFIFO_FILLC
+            index: 0
+            width: 7
+            read: true
+            write: false
+      - name: ASRMCR1
+        type: uint32_t
+        expected_size: 12
+        expected_offset: 192
+        array_length: 3
+        description: (read-write) ASRC Misc Control Register 1 for Pair X
+        fields:
+          - name: IWD
+            description: IWD
+            index: 9
+            width: 2
+            read: true
+            write: true
+            type: ASRC_ASRMCR1_IWD
+          - name: IMSB
+            description: IMSB
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: OMSB
+            description: OMSB
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: OSGN
+            description: OSGN
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: OW16
+            description: OW16
+            index: 0
+            width: 1
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  ASRC_ASRCNCR_ANCC:
+    enum:
+      zero_chan:
+        description: 0 channels in C (Pair C is disabled)
+        value: 0
+      one_chan:
+        description: 1 channel in C
+        value: 1
+      two_chan:
+        description: 2 channels in C
+        value: 2
+      three_chan:
+        description: 3 channels in C
+        value: 3
+      four_chan:
+        description: 4 channels in C
+        value: 4
+      five_chan:
+        description: 5 channels in C
+        value: 5
+      six_chan:
+        description: 6 channels in C
+        value: 6
+      seven_chan:
+        description: 7 channels in C
+        value: 7
+      eight_chan:
+        description: 8 channels in C
+        value: 8
+      nine_chan:
+        description: 9 channels in C
+        value: 9
+      ten_chan:
+        description: 10 channels in C
+        value: 10
+      not_used:
+        description: Should not be used.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  ASRC_ASRCNCR_ANCB:
+    enum:
+      zero_chan:
+        description: 0 channels in B (Pair B is disabled)
+        value: 0
+      one_chan:
+        description: 1 channel in B
+        value: 1
+      two_chan:
+        description: 2 channels in B
+        value: 2
+      three_chan:
+        description: 3 channels in B
+        value: 3
+      four_chan:
+        description: 4 channels in B
+        value: 4
+      five_chan:
+        description: 5 channels in B
+        value: 5
+      six_chan:
+        description: 6 channels in B
+        value: 6
+      seven_chan:
+        description: 7 channels in B
+        value: 7
+      eight_chan:
+        description: 8 channels in B
+        value: 8
+      nine_chan:
+        description: 9 channels in B
+        value: 9
+      ten_chan:
+        description: 10 channels in B
+        value: 10
+      not_used:
+        description: Should not be used.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  ASRC_ASRCNCR_ANCA:
+    enum:
+      zero_chan:
+        description: 0 channels in A (Pair A is disabled)
+        value: 0
+      one_chan:
+        description: 1 channel in A
+        value: 1
+      two_chan:
+        description: 2 channels in A
+        value: 2
+      three_chan:
+        description: 3 channels in A
+        value: 3
+      four_chan:
+        description: 4 channels in A
+        value: 4
+      five_chan:
+        description: 5 channels in A
+        value: 5
+      six_chan:
+        description: 6 channels in A
+        value: 6
+      seven_chan:
+        description: 7 channels in A
+        value: 7
+      eight_chan:
+        description: 8 channels in A
+        value: 8
+      nine_chan:
+        description: 9 channels in A
+        value: 9
+      ten_chan:
+        description: 10 channels in A
+        value: 10
+      not_used:
+        description: Should not be used.
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  ASRC_ASRCFG_POSTMODC:
+    enum:
+      upsamp_2:
+        description: Select Upsampling-by-2 as defined in Signal Processing Flow.
+        value: 0
+      direct_connect:
+        description: Select Direct-Connection as defined in Signal Processing Flow.
+        value: 1
+      downsamp_2:
+        description: Select Downsampling-by-2 as defined in Signal Processing Flow.
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  ASRC_ASRCFG_PREMODC:
+    enum:
+      upsamp_2:
+        description: Select Upsampling-by-2
+        value: 0
+      direct_connect:
+        description: Select Direct-Connection
+        value: 1
+      downsamp_2:
+        description: Select Downsampling-by-2
+        value: 2
+      passthru:
+        description: Select passthrough mode. In this case, POSTMODC[1:0] have no
+          use.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  ASRC_ASRCFG_POSTMODB:
+    enum:
+      upsamp_2:
+        description: Select Upsampling-by-2
+        value: 0
+      direct_connect:
+        description: Select Direct-Connection
+        value: 1
+      downsamp_2:
+        description: Select Downsampling-by-2
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  ASRC_ASRCFG_PREMODB:
+    enum:
+      upsamp_2:
+        description: Select Upsampling-by-2
+        value: 0
+      direct_connect:
+        description: Select Direct-Connection
+        value: 1
+      downsamp_2:
+        description: Select Downsampling-by-2
+        value: 2
+      passthru:
+        description: Select passthrough mode. In this case, POSTMODB[1:0] have no
+          use.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  ASRC_ASRCFG_POSTMODA:
+    enum:
+      upsamp_2:
+        description: Select Upsampling-by-2
+        value: 0
+      direct_connect:
+        description: Select Direct-Connection
+        value: 1
+      downsamp_2:
+        description: Select Downsampling-by-2
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  ASRC_ASRCFG_PREMODA:
+    enum:
+      upsamp_2:
+        description: Select Upsampling-by-2
+        value: 0
+      direct_connect:
+        description: Select Direct-Connection
+        value: 1
+      downsamp_2:
+        description: Select Downsampling-by-2
+        value: 2
+      passthru:
+        description: Select passthrough mode. In this case, POSTMODA[1:0] have no
+          use.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  ASRC_ASRCSR_AOCSC:
+    enum:
+      bitclk0:
+        description: bit clock 0
+        value: 0
+      bitclk1:
+        description: bit clock 1
+        value: 1
+      bitclk2:
+        description: bit clock 2
+        value: 2
+      bitclk3:
+        description: bit clock 3
+        value: 3
+      bitclk4:
+        description: bit clock 4
+        value: 4
+      bitclk5:
+        description: bit clock 5
+        value: 5
+      bitclk6:
+        description: bit clock 6
+        value: 6
+      bitclk7:
+        description: bit clock 7
+        value: 7
+      bitclk8:
+        description: bit clock 8
+        value: 8
+      bitclk9:
+        description: bit clock 9
+        value: 9
+      bitclka:
+        description: bit clock A
+        value: 10
+      bitclkb:
+        description: bit clock B
+        value: 11
+      bitclkc:
+        description: bit clock C
+        value: 12
+      bitclkd:
+        description: bit clock D
+        value: 13
+      bitclke:
+        description: bit clock E
+        value: 14
+      clk_disabled:
+        description: clock disabled, connected to zero
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  ASRC_ASRCSR_AOCSB:
+    enum:
+      bitclk0:
+        description: bit clock 0
+        value: 0
+      bitclk1:
+        description: bit clock 1
+        value: 1
+      bitclk2:
+        description: bit clock 2
+        value: 2
+      bitclk3:
+        description: bit clock 3
+        value: 3
+      bitclk4:
+        description: bit clock 4
+        value: 4
+      bitclk5:
+        description: bit clock 5
+        value: 5
+      bitclk6:
+        description: bit clock 6
+        value: 6
+      bitclk7:
+        description: bit clock 7
+        value: 7
+      bitclk8:
+        description: bit clock 8
+        value: 8
+      bitclk9:
+        description: bit clock 9
+        value: 9
+      bitclka:
+        description: bit clock A
+        value: 10
+      bitclkb:
+        description: bit clock B
+        value: 11
+      bitclkc:
+        description: bit clock C
+        value: 12
+      bitclkd:
+        description: bit clock D
+        value: 13
+      bitclke:
+        description: bit clock E
+        value: 14
+      clk_disabled:
+        description: clock disabled, connected to zero
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  ASRC_ASRCSR_AOCSA:
+    enum:
+      bitclk0:
+        description: bit clock 0
+        value: 0
+      bitclk1:
+        description: bit clock 1
+        value: 1
+      bitclk2:
+        description: bit clock 2
+        value: 2
+      bitclk3:
+        description: bit clock 3
+        value: 3
+      bitclk4:
+        description: bit clock 4
+        value: 4
+      bitclk5:
+        description: bit clock 5
+        value: 5
+      bitclk6:
+        description: bit clock 6
+        value: 6
+      bitclk7:
+        description: bit clock 7
+        value: 7
+      bitclk8:
+        description: bit clock 8
+        value: 8
+      bitclk9:
+        description: bit clock 9
+        value: 9
+      bitclka:
+        description: bit clock A
+        value: 10
+      bitclkb:
+        description: bit clock B
+        value: 11
+      bitclkc:
+        description: bit clock C
+        value: 12
+      bitclkd:
+        description: bit clock D
+        value: 13
+      bitclke:
+        description: bit clock E
+        value: 14
+      clk_disabled:
+        description: clock disabled, connected to zero
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  ASRC_ASRCSR_AICSC:
+    enum:
+      bitclk0:
+        description: bit clock 0
+        value: 0
+      bitclk1:
+        description: bit clock 1
+        value: 1
+      bitclk2:
+        description: bit clock 2
+        value: 2
+      bitclk3:
+        description: bit clock 3
+        value: 3
+      bitclk4:
+        description: bit clock 4
+        value: 4
+      bitclk5:
+        description: bit clock 5
+        value: 5
+      bitclk6:
+        description: bit clock 6
+        value: 6
+      bitclk7:
+        description: bit clock 7
+        value: 7
+      bitclk8:
+        description: bit clock 8
+        value: 8
+      bitclk9:
+        description: bit clock 9
+        value: 9
+      bitclka:
+        description: bit clock A
+        value: 10
+      bitclkb:
+        description: bit clock B
+        value: 11
+      bitclkc:
+        description: bit clock C
+        value: 12
+      bitclkd:
+        description: bit clock D
+        value: 13
+      bitclke:
+        description: bit clock E
+        value: 14
+      clk_disabled:
+        description: clock disabled, connected to zero
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  ASRC_ASRCSR_AICSB:
+    enum:
+      bitclk0:
+        description: bit clock 0
+        value: 0
+      bitclk1:
+        description: bit clock 1
+        value: 1
+      bitclk2:
+        description: bit clock 2
+        value: 2
+      bitclk3:
+        description: bit clock 3
+        value: 3
+      bitclk4:
+        description: bit clock 4
+        value: 4
+      bitclk5:
+        description: bit clock 5
+        value: 5
+      bitclk6:
+        description: bit clock 6
+        value: 6
+      bitclk7:
+        description: bit clock 7
+        value: 7
+      bitclk8:
+        description: bit clock 8
+        value: 8
+      bitclk9:
+        description: bit clock 9
+        value: 9
+      bitclka:
+        description: bit clock A
+        value: 10
+      bitclkb:
+        description: bit clock B
+        value: 11
+      bitclkc:
+        description: bit clock C
+        value: 12
+      bitclkd:
+        description: bit clock D
+        value: 13
+      bitclke:
+        description: bit clock E
+        value: 14
+      clk_disabled:
+        description: clock disabled, connected to zero
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  ASRC_ASRCSR_AICSA:
+    enum:
+      bitclk0:
+        description: bit clock 0
+        value: 0
+      bitclk1:
+        description: bit clock 1
+        value: 1
+      bitclk2:
+        description: bit clock 2
+        value: 2
+      bitclk3:
+        description: bit clock 3
+        value: 3
+      bitclk4:
+        description: bit clock 4
+        value: 4
+      bitclk5:
+        description: bit clock 5
+        value: 5
+      bitclk6:
+        description: bit clock 6
+        value: 6
+      bitclk7:
+        description: bit clock 7
+        value: 7
+      bitclk8:
+        description: bit clock 8
+        value: 8
+      bitclk9:
+        description: bit clock 9
+        value: 9
+      bitclka:
+        description: bit clock A
+        value: 10
+      bitclkb:
+        description: bit clock B
+        value: 11
+      bitclkc:
+        description: bit clock C
+        value: 12
+      bitclkd:
+        description: bit clock D
+        value: 13
+      bitclke:
+        description: bit clock E
+        value: 14
+      clk_disabled:
+        description: clock disabled, connected to zero
+        value: 15
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  ASRC_ASRMCR1_IWD:
+    enum:
+      _24bit:
+        description: 24-bit audio data.
+        value: 0
+      _16bit:
+        description: 16-bit audio data.
+        value: 1
+      _8bit:
+        description: 8-bit audio data.
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

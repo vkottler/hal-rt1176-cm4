@@ -1,0 +1,38 @@
+---
+structs:
+  anadig_ldo_snvs_dig:
+    description: MX6RT_ANADIG_REGISTER
+    instances:
+      - name: ANADIG_LDO_SNVS_DIG
+        address: '0x40C84000'
+    fields:
+      - name: PMU_LDO_SNVS_DIG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 1344
+        description: (read-write) PMU_LDO_SNVS_DIG_REGISTER
+        fields:
+          - name: REG_EN
+            description: REG_EN
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: TEST_OVERRIDE
+            description: test_override
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: REG_LP_EN
+            description: REG_LP_EN
+            index: 0
+            width: 1
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums: {}

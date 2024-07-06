@@ -1,0 +1,338 @@
+---
+structs:
+  anadig_misc:
+    description: MX6RT_ANADIG_REGISTER
+    instances:
+      - name: ANADIG_MISC
+        address: '0x40C84000'
+    fields:
+      - name: MISC_DIFPROG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2048
+        description: (read-write) Chip Silicon Version Register
+        fields:
+          - name: CHIPID
+            description: Chip ID
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: VDDSOC_AI_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2080
+        description: (read-write) VDDSOC_AI_CTRL_REGISTER
+        fields:
+          - name: VDDSOC_AIRWB
+            description: VDDSOC_AIRWB
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: VDDSOC_AI_ADDR
+            description: VDDSOC_AI_ADDR
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: VDDSOC_AI_WDATA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2096
+        description: (read-write) VDDSOC_AI_WDATA_REGISTER
+        fields:
+          - name: VDDSOC_AI_WDATA
+            description: VDDSOC_AI_WDATA
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: VDDSOC_AI_RDATA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2112
+        description: (read-write) VDDSOC_AI_RDATA_REGISTER
+        fields:
+          - name: VDDSOC_AI_RDATA
+            description: VDDSOC_AI_RDATA
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: VDDSOC2PLL_AI_CTRL_1G
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2128
+        description: (read-write) VDDSOC2PLL_AI_CTRL_1G_REGISTER
+        fields:
+          - name: VDDSOC2PLL_AIRWB_1G
+            description: VDDSOC2PLL_AIRWB_1G
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: VDDSOC2PLL_AITOGGLE_DONE_1G
+            description: VDDSOC2PLL_AITOGGLE_DONE_1G
+            index: 9
+            width: 1
+            read: true
+            write: false
+          - name: VDDSOC2PLL_AITOGGLE_1G
+            description: VDDSOC2PLL_AITOGGLE_1G
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: VDDSOC2PLL_AIADDR_1G
+            description: VDDSOC2PLL_AIADDR_1G
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: VDDSOC2PLL_AI_WDATA_1G
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2144
+        description: (read-write) VDDSOC2PLL_AI_WDATA_1G_REGISTER
+        fields:
+          - name: VDDSOC2PLL_AI_WDATA_1G
+            description: VDDSOC2PLL_AI_WDATA_1G
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: VDDSOC2PLL_AI_RDATA_1G
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2160
+        description: (read-write) VDDSOC2PLL_AI_RDATA_1G_REGISTER
+        fields:
+          - name: VDDSOC2PLL_AI_RDATA_1G
+            description: VDDSOC2PLL_AI_RDATA_1G
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: VDDSOC2PLL_AI_CTRL_AUDIO
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2176
+        description: (read-write) VDDSOC_AI_CTRL_AUDIO_REGISTER
+        fields:
+          - name: VDDSOC2PLL_AIRWB_AUDIO
+            description: VDDSOC_AIRWB
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: VDDSOC2PLL_AITOGGLE_DONE_AUDIO
+            description: VDDSOC2PLL_AITOGGLE_DONE_AUDIO
+            index: 9
+            width: 1
+            read: true
+            write: false
+          - name: VDDSOC2PLL_AITOGGLE_AUDIO
+            description: VDDSOC2PLL_AITOGGLE_AUDIO
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: VDDSOC2PLL_AI_ADDR_AUDIO
+            description: VDDSOC2PLL_AI_ADDR_AUDIO
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: VDDSOC2PLL_AI_WDATA_AUDIO
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2192
+        description: (read-write) VDDSOC_AI_WDATA_AUDIO_REGISTER
+        fields:
+          - name: VDDSOC2PLL_AI_WDATA_AUDIO
+            description: VDDSOC2PLL_AI_WDATA_AUDIO
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: VDDSOC2PLL_AI_RDATA_AUDIO
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2208
+        description: (read-write) VDDSOC2PLL_AI_RDATA_REGISTER
+        fields:
+          - name: VDDSOC2PLL_AI_RDATA_AUDIO
+            description: VDDSOC2PLL_AI_RDATA_AUDIO
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: VDDSOC2PLL_AI_CTRL_VIDEO
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2224
+        description: (read-write) VDDSOC2PLL_AI_CTRL_VIDEO_REGISTER
+        fields:
+          - name: VDDSOC2PLL_AIRWB_VIDEO
+            description: VDDSOC2PLL_AIRWB_VIDEO
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: VDDSOC2PLL_AITOGGLE_DONE_VIDEO
+            description: VDDSOC2PLL_AITOGGLE_DONE_VIDEO
+            index: 9
+            width: 1
+            read: true
+            write: false
+          - name: VDDSOC2PLL_AITOGGLE_VIDEO
+            description: VDDSOC2PLL_AITOGGLE_VIDEO
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: VDDSOC2PLL_AIADDR_VIDEO
+            description: VDDSOC2PLL_AIADDR_VIDEO
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: VDDSOC2PLL_AI_WDATA_VIDEO
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2240
+        description: (read-write) VDDSOC2PLL_AI_WDATA_VIDEO_REGISTER
+        fields:
+          - name: VDDSOC2PLL_AI_WDATA_VIDEO
+            description: VDDSOC2PLL_AI_WDATA_VIDEO
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: VDDSOC2PLL_AI_RDATA_VIDEO
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2256
+        description: (read-write) VDDSOC2PLL_AI_RDATA_VIDEO_REGISTER
+        fields:
+          - name: VDDSOC2PLL_AI_RDATA_VIDEO
+            description: VDDSOC2PLL_AI_RDATA_VIDEO
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: VDDLPSR_AI_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2272
+        description: (read-write) VDDSOC_AI_CTRL_REGISTER
+        fields:
+          - name: VDDLPSR_AIRWB
+            description: VDDLPSR_AIRWB
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: VDDLPSR_AI_ADDR
+            description: VDDLPSR_AI_ADDR
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: VDDLPSR_AI_WDATA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2288
+        description: (read-write) VDDLPSR_AI_WDATA_REGISTER
+        fields:
+          - name: VDDLPSR_AI_WDATA
+            description: VDD_LPSR_AI_WDATA
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: VDDLPSR_AI_RDATA_REFTOP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2304
+        description: (read-write) VDDLPSR_AI_RDATA_REFTOP_REGISTER
+        fields:
+          - name: VDDLPSR_AI_RDATA_REFTOP
+            description: VDDLPSR_AI_RDATA_REFTOP
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: VDDLPSR_AI_RDATA_TMPSNS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2320
+        description: (read-write) VDDLPSR_AI_RDATA_TMPSNS_REGISTER
+        fields:
+          - name: VDDLPSR_AI_RDATA_TMPSNS
+            description: VDDLPSR_AI_RDATA_TMPSNS
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: VDDLPSR_AI400M_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2336
+        description: (read-write) VDDLPSR_AI400M_CTRL_REGISTER
+        fields:
+          - name: VDDLPSR_AI400M_RWB
+            description: VDDLPSR_AI400M_RWB
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: VDDLPSR_AITOGGLE_DONE_400M
+            description: VDDLPSR_AITOGGLE_DONE_400M
+            index: 9
+            width: 1
+            read: true
+            write: false
+          - name: VDDLPSR_AITOGGLE_400M
+            description: VDDLPSR_AITOGGLE_400M
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: VDDLPSR_AI400M_ADDR
+            description: VDDLPSR_AI400M_ADDR
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: VDDLPSR_AI400M_WDATA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2352
+        description: (read-write) VDDLPSR_AI400M_WDATA_REGISTER
+        fields:
+          - name: VDDLPSR_AI400M_WDATA
+            description: VDDLPSR_AI400M_WDATA
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: VDDLPSR_AI400M_RDATA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 2368
+        description: (read-write) VDDLPSR_AI400M_RDATA_REGISTER
+        fields:
+          - name: VDDLPSR_AI400M_RDATA
+            description: VDDLPSR_AI400M_RDATA
+            index: 0
+            width: 32
+            read: true
+            write: false
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums: {}

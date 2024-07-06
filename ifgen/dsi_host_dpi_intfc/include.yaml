@@ -1,0 +1,276 @@
+---
+structs:
+  dsi_host_dpi_intfc:
+    description: DSI Host DPI Interface
+    instances:
+      - name: DSI_HOST_DPI_INTFC
+        address: '0x4080C200'
+    fields:
+      - name: PIXEL_PAYLOAD_SIZE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) PEXEL_PAYLOAD_SIZE
+        fields:
+          - name: PAYLOAD_SIZE
+            description: Maximum number of pixels that should be sent as one DSI packet.
+              Recommended to be evenly divisible by the line size (in pixels).
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: PIXEL_FIFO_SEND_LEVEL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) PIXEL_FIFO_SEND_LEVEL
+        fields:
+          - name: FIFO_SEND_LEVEL
+            description: In order to optimize DSI utility, the DPI bridge buffers
+              a certain number of DPI pixels before initiating a DSI packet. This
+              configuration port controls the level at which the DPI Host bridge begins
+              sending pixels.
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: INTERFACE_COLOR_CODING
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) INTERFACE_COLOR_CODING
+        fields:
+          - name: RGB_CONFIG
+            description: Sets the distribution of RGB bits within the 24-bit d bus,
+              as specified by the DPI specification.
+            index: 0
+            width: 3
+            read: true
+            write: true
+            type: DSI_HOST_DPI_INTFC_INTERFACE_COLOR_CODING_RGB_CONFIG
+      - name: PIXEL_FORMAT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) PIXEL_FORMAT
+        fields:
+          - name: PIXEL_FORMAT
+            description: Sets the DSI packet type of the pixels
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: DSI_HOST_DPI_INTFC_PIXEL_FORMAT_PIXEL_FORMAT
+      - name: VSYNC_POLARITY
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) VSYNC_POLARITY
+        fields:
+          - name: VSYNC_POLARITY
+            description: Sets polarity of dpi_vsync_input
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: HSYNC_POLARITY
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) HSYNC_POLARITY
+        fields:
+          - name: HSYNC_POLARITY
+            description: Sets polarity of dpi_hsync_input
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: VIDEO_MODE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) VIDEO_MODE
+        fields:
+          - name: VIDEO_MODE
+            description: Select DSI video mode that the host DPI module should generate
+              packets for.
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: DSI_HOST_DPI_INTFC_VIDEO_MODE_VIDEO_MODE
+      - name: HFP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) HFP
+        fields:
+          - name: PAYLOAD_SIZE
+            description: Sets the DSI packet payload size, in bytes, of the horizontal
+              front porch blanking packet.
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: HBP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) HBP
+        fields:
+          - name: PAYLOAD_SIZE
+            description: Sets the DSI packet payload size, in bytes, of the horizontal
+              back porch blanking packet.
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: HSA
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) HSA
+        fields:
+          - name: PAYLOAD_SIZE
+            description: Sets the DSI packet payload size, in bytes, of the horizontal
+              sync width filler blanking packet.
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: ENABLE_MULT_PKTS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) ENABLE_MULT_PKTS
+        fields:
+          - name: ENABLE_MULT_PKTS
+            description: Enable Multiple packets per video line. When enabled, PIXEL_PAYLOAD_SIZE[PAYLOAD_SIZE]
+              must be set to exactly half the size of the video line
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: VBP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) VBP
+        fields:
+          - name: NUM_LINES
+            description: Sets the number of lines in the vertical back porch.
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: VFP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) VFP
+        fields:
+          - name: NUM_LINES
+            description: Sets the number of lines in the vertical front porch.
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: BLLP_MODE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 52
+        description: (read-write) BLLP_MODE
+        fields:
+          - name: LP
+            description: Optimize bllp periods to Low Power mode when possible
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: USE_NULL_PKT_BLLP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 56
+        description: (read-write) USE_NULL_PKT_BLLP
+        fields:
+          - name: 'NULL'
+            description: Selects type of blanking packet to be sent during bllp
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: VACTIVE
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 60
+        description: (read-write) VACTIVE
+        fields:
+          - name: NUM_LINES
+            description: Sets the number of lines in the vertical active aread.
+            index: 0
+            width: 14
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  DSI_HOST_DPI_INTFC_INTERFACE_COLOR_CODING_RGB_CONFIG:
+    enum:
+      _0:
+        description: 16-bit Configuration 1
+        value: 0
+      _1:
+        description: 16-bit Configuration 2
+        value: 1
+      _2:
+        description: 16-bit Configuration 3
+        value: 2
+      _3:
+        description: 18-bit Configuration 1
+        value: 3
+      _4:
+        description: 18-bit Configuration 2
+        value: 4
+      _5:
+        description: 24-bit
+        value: 5
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  DSI_HOST_DPI_INTFC_PIXEL_FORMAT_PIXEL_FORMAT:
+    enum:
+      _0:
+        description: 16 bit
+        value: 0
+      _1:
+        description: 18 bit
+        value: 1
+      _2:
+        description: 18 bit loosely packed
+        value: 2
+      _3:
+        description: 24 bit
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  DSI_HOST_DPI_INTFC_VIDEO_MODE_VIDEO_MODE:
+    enum:
+      _0:
+        description: Non-Burst mode with Sync Pulses
+        value: 0
+      _1:
+        description: Non-Burst mode with Sync Events
+        value: 1
+      _2:
+        description: Burst mode
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

@@ -1,0 +1,5318 @@
+{
+  "ADC_ETC": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x150",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "ADC_ETC_IRQ0",
+        "value": "145"
+      },
+      {
+        "name": "ADC_ETC_IRQ1",
+        "value": "146"
+      },
+      {
+        "name": "ADC_ETC_IRQ2",
+        "value": "147"
+      },
+      {
+        "name": "ADC_ETC_IRQ3",
+        "value": "148"
+      },
+      {
+        "name": "ADC_ETC_ERROR_IRQ",
+        "value": "149"
+      }
+    ]
+  },
+  "ANADIG_LDO_SNVS": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x534",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "ANADIG_LDO_SNVS_DIG": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x544",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "ANADIG_MISC": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x944",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "ANADIG_OSC": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0xC4",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "ANADIG_PLL": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x394",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "ANADIG_PMU": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x7D4",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "LPSR_LP8_BROWNOUT",
+        "value": "86"
+      },
+      {
+        "name": "LPSR_LP0_BROWNOUT",
+        "value": "87"
+      }
+    ]
+  },
+  "ANADIG_TEMPSENSOR": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x434",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "AOI1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x10",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "AOI2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x10",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "ASRC": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0xCC",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "ASRC",
+        "value": "97"
+      }
+    ]
+  },
+  "AUDIO_PLL": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x80",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "CAAM": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x100000",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "CAAM_IRQ0",
+        "value": "69"
+      },
+      {
+        "name": "CAAM_IRQ1",
+        "value": "70"
+      },
+      {
+        "name": "CAAM_IRQ2",
+        "value": "71"
+      },
+      {
+        "name": "CAAM_IRQ3",
+        "value": "72"
+      },
+      {
+        "name": "CAAM_RECORVE_ERRPR",
+        "value": "73"
+      },
+      {
+        "name": "CAAM_RTIC",
+        "value": "74"
+      }
+    ],
+    "register_groups": {
+      "C1MR_RNG": [
+        "C0C1MR",
+        "C0C1MR_PK",
+        "C0C1MR_RNG"
+      ],
+      "MAX_RSQ": [
+        "RTPKRMAX",
+        "RTPKRSQ"
+      ],
+      "NFIFO2": [
+        "C0NFIFO",
+        "C0NFIFO_2"
+      ],
+      "RTFRQ": [
+        "RTFRQCNT",
+        "RTFRQMAX",
+        "RTSCMC",
+        "RTSCML",
+        "RTSCR1C",
+        "RTSCR1L",
+        "RTSCR2C",
+        "RTSCR2L",
+        "RTSCR3C",
+        "RTSCR3L",
+        "RTSCR4C",
+        "RTSCR4L",
+        "RTSCR5C",
+        "RTSCR5L",
+        "RTSCR6PC",
+        "RTSCR6PL"
+      ],
+      "SBLIM_TOTSAM": [
+        "RTSBLIM",
+        "RTTOTSAM"
+      ]
+    }
+  },
+  "CAN1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0xC0C",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "CAN1",
+        "value": "44"
+      },
+      {
+        "name": "CAN1_ERROR",
+        "value": "45"
+      }
+    ],
+    "register_groups": {
+      "MB_SIZE": [
+        "CS0",
+        "MB0_16B_CS_L",
+        "MB0_32B_CS_L",
+        "MB0_64B_CS_L",
+        "MB0_8B_CS",
+        "ID0",
+        "MB0_16B_ID_L",
+        "MB0_32B_ID_L",
+        "MB0_64B_ID_L",
+        "MB0_8B_ID",
+        "MB0_16B_WORD0_L",
+        "MB0_32B_WORD0_L",
+        "MB0_64B_WORD0_L",
+        "MB0_8B_WORD0",
+        "WORD00",
+        "MB0_16B_WORD1_L",
+        "MB0_32B_WORD1_L",
+        "MB0_64B_WORD1_L",
+        "MB0_8B_WORD1",
+        "WORD10",
+        "CS1",
+        "MB0_16B_WORD2_L",
+        "MB0_32B_WORD2_L",
+        "MB0_64B_WORD2_L",
+        "MB1_8B_CS",
+        "ID1",
+        "MB0_16B_WORD3_L",
+        "MB0_32B_WORD3_L",
+        "MB0_64B_WORD3_L",
+        "MB1_8B_ID",
+        "MB0_32B_WORD4_L",
+        "MB0_64B_WORD4_L",
+        "MB1_16B_CS_L",
+        "MB1_8B_WORD0",
+        "WORD01",
+        "MB0_32B_WORD5_L",
+        "MB0_64B_WORD5_L",
+        "MB1_16B_ID_L",
+        "MB1_8B_WORD1",
+        "WORD11",
+        "CS2",
+        "MB0_32B_WORD6_L",
+        "MB0_64B_WORD6_L",
+        "MB1_16B_WORD0_L",
+        "MB2_8B_CS",
+        "ID2",
+        "MB0_32B_WORD7_L",
+        "MB0_64B_WORD7_L",
+        "MB1_16B_WORD1_L",
+        "MB2_8B_ID",
+        "MB0_64B_WORD8_L",
+        "MB1_16B_WORD2_L",
+        "MB1_32B_CS_L",
+        "MB2_8B_WORD0",
+        "WORD02",
+        "MB0_64B_WORD9_L",
+        "MB1_16B_WORD3_L",
+        "MB1_32B_ID_L",
+        "MB2_8B_WORD1",
+        "WORD12",
+        "CS3",
+        "MB0_64B_WORD10_L",
+        "MB1_32B_WORD0_L",
+        "MB2_16B_CS_L",
+        "MB3_8B_CS",
+        "ID3",
+        "MB0_64B_WORD11_L",
+        "MB1_32B_WORD1_L",
+        "MB2_16B_ID_L",
+        "MB3_8B_ID",
+        "MB0_64B_WORD12_L",
+        "MB1_32B_WORD2_L",
+        "MB2_16B_WORD0_L",
+        "MB3_8B_WORD0",
+        "WORD03",
+        "MB0_64B_WORD13_L",
+        "MB1_32B_WORD3_L",
+        "MB2_16B_WORD1_L",
+        "MB3_8B_WORD1",
+        "WORD13",
+        "CS4",
+        "MB0_64B_WORD14_L",
+        "MB1_32B_WORD4_L",
+        "MB2_16B_WORD2_L",
+        "MB4_8B_CS",
+        "ID4",
+        "MB0_64B_WORD15_L",
+        "MB1_32B_WORD5_L",
+        "MB2_16B_WORD3_L",
+        "MB4_8B_ID",
+        "MB1_32B_WORD6_L",
+        "MB1_64B_CS_L",
+        "MB3_16B_CS_L",
+        "MB4_8B_WORD0",
+        "WORD04",
+        "MB1_32B_WORD7_L",
+        "MB1_64B_ID_L",
+        "MB3_16B_ID_L",
+        "MB4_8B_WORD1",
+        "WORD14",
+        "CS5",
+        "MB1_64B_WORD0_L",
+        "MB2_32B_CS_L",
+        "MB3_16B_WORD0_L",
+        "MB5_8B_CS",
+        "ID5",
+        "MB1_64B_WORD1_L",
+        "MB2_32B_ID_L",
+        "MB3_16B_WORD1_L",
+        "MB5_8B_ID",
+        "MB1_64B_WORD2_L",
+        "MB2_32B_WORD0_L",
+        "MB3_16B_WORD2_L",
+        "MB5_8B_WORD0",
+        "WORD05",
+        "MB1_64B_WORD3_L",
+        "MB2_32B_WORD1_L",
+        "MB3_16B_WORD3_L",
+        "MB5_8B_WORD1",
+        "WORD15",
+        "CS6",
+        "MB1_64B_WORD4_L",
+        "MB2_32B_WORD2_L",
+        "MB4_16B_CS_L",
+        "MB6_8B_CS",
+        "ID6",
+        "MB1_64B_WORD5_L",
+        "MB2_32B_WORD3_L",
+        "MB4_16B_ID_L",
+        "MB6_8B_ID",
+        "MB1_64B_WORD6_L",
+        "MB2_32B_WORD4_L",
+        "MB4_16B_WORD0_L",
+        "MB6_8B_WORD0",
+        "WORD06",
+        "MB1_64B_WORD7_L",
+        "MB2_32B_WORD5_L",
+        "MB4_16B_WORD1_L",
+        "MB6_8B_WORD1",
+        "WORD16",
+        "CS7",
+        "MB1_64B_WORD8_L",
+        "MB2_32B_WORD6_L",
+        "MB4_16B_WORD2_L",
+        "MB7_8B_CS",
+        "ID7",
+        "MB1_64B_WORD9_L",
+        "MB2_32B_WORD7_L",
+        "MB4_16B_WORD3_L",
+        "MB7_8B_ID",
+        "MB1_64B_WORD10_L",
+        "MB3_32B_CS_L",
+        "MB5_16B_CS_L",
+        "MB7_8B_WORD0",
+        "WORD07",
+        "MB1_64B_WORD11_L",
+        "MB3_32B_ID_L",
+        "MB5_16B_ID_L",
+        "MB7_8B_WORD1",
+        "WORD17",
+        "CS8",
+        "MB1_64B_WORD12_L",
+        "MB3_32B_WORD0_L",
+        "MB5_16B_WORD0_L",
+        "MB8_8B_CS",
+        "ID8",
+        "MB1_64B_WORD13_L",
+        "MB3_32B_WORD1_L",
+        "MB5_16B_WORD1_L",
+        "MB8_8B_ID",
+        "MB1_64B_WORD14_L",
+        "MB3_32B_WORD2_L",
+        "MB5_16B_WORD2_L",
+        "MB8_8B_WORD0",
+        "WORD08",
+        "MB1_64B_WORD15_L",
+        "MB3_32B_WORD3_L",
+        "MB5_16B_WORD3_L",
+        "MB8_8B_WORD1",
+        "WORD18",
+        "CS9",
+        "MB2_64B_CS_L",
+        "MB3_32B_WORD4_L",
+        "MB6_16B_CS_L",
+        "MB9_8B_CS",
+        "ID9",
+        "MB2_64B_ID_L",
+        "MB3_32B_WORD5_L",
+        "MB6_16B_ID_L",
+        "MB9_8B_ID",
+        "MB2_64B_WORD0_L",
+        "MB3_32B_WORD6_L",
+        "MB6_16B_WORD0_L",
+        "MB9_8B_WORD0",
+        "WORD09",
+        "MB2_64B_WORD1_L",
+        "MB3_32B_WORD7_L",
+        "MB6_16B_WORD1_L",
+        "MB9_8B_WORD1",
+        "WORD19",
+        "CS10",
+        "MB10_8B_CS",
+        "MB2_64B_WORD2_L",
+        "MB4_32B_CS_L",
+        "MB6_16B_WORD2_L",
+        "ID10",
+        "MB10_8B_ID",
+        "MB2_64B_WORD3_L",
+        "MB4_32B_ID_L",
+        "MB6_16B_WORD3_L",
+        "MB10_8B_WORD0",
+        "MB2_64B_WORD4_L",
+        "MB4_32B_WORD0_L",
+        "MB7_16B_CS_L",
+        "WORD010",
+        "MB10_8B_WORD1",
+        "MB2_64B_WORD5_L",
+        "MB4_32B_WORD1_L",
+        "MB7_16B_ID_L",
+        "WORD110",
+        "CS11",
+        "MB11_8B_CS",
+        "MB2_64B_WORD6_L",
+        "MB4_32B_WORD2_L",
+        "MB7_16B_WORD0_L",
+        "ID11",
+        "MB11_8B_ID",
+        "MB2_64B_WORD7_L",
+        "MB4_32B_WORD3_L",
+        "MB7_16B_WORD1_L",
+        "MB11_8B_WORD0",
+        "MB2_64B_WORD8_L",
+        "MB4_32B_WORD4_L",
+        "MB7_16B_WORD2_L",
+        "WORD011",
+        "MB11_8B_WORD1",
+        "MB2_64B_WORD9_L",
+        "MB4_32B_WORD5_L",
+        "MB7_16B_WORD3_L",
+        "WORD111",
+        "CS12",
+        "MB12_8B_CS",
+        "MB2_64B_WORD10_L",
+        "MB4_32B_WORD6_L",
+        "MB8_16B_CS_L",
+        "ID12",
+        "MB12_8B_ID",
+        "MB2_64B_WORD11_L",
+        "MB4_32B_WORD7_L",
+        "MB8_16B_ID_L",
+        "MB12_8B_WORD0",
+        "MB2_64B_WORD12_L",
+        "MB5_32B_CS_L",
+        "MB8_16B_WORD0_L",
+        "WORD012",
+        "MB12_8B_WORD1",
+        "MB2_64B_WORD13_L",
+        "MB5_32B_ID_L",
+        "MB8_16B_WORD1_L",
+        "WORD112",
+        "CS13",
+        "MB13_8B_CS",
+        "MB2_64B_WORD14_L",
+        "MB5_32B_WORD0_L",
+        "MB8_16B_WORD2_L",
+        "ID13",
+        "MB13_8B_ID",
+        "MB2_64B_WORD15_L",
+        "MB5_32B_WORD1_L",
+        "MB8_16B_WORD3_L",
+        "MB13_8B_WORD0",
+        "MB3_64B_CS_L",
+        "MB5_32B_WORD2_L",
+        "MB9_16B_CS_L",
+        "WORD013",
+        "MB13_8B_WORD1",
+        "MB3_64B_ID_L",
+        "MB5_32B_WORD3_L",
+        "MB9_16B_ID_L",
+        "WORD113",
+        "CS14",
+        "MB14_8B_CS",
+        "MB3_64B_WORD0_L",
+        "MB5_32B_WORD4_L",
+        "MB9_16B_WORD0_L",
+        "ID14",
+        "MB14_8B_ID",
+        "MB3_64B_WORD1_L",
+        "MB5_32B_WORD5_L",
+        "MB9_16B_WORD1_L",
+        "MB14_8B_WORD0",
+        "MB3_64B_WORD2_L",
+        "MB5_32B_WORD6_L",
+        "MB9_16B_WORD2_L",
+        "WORD014",
+        "MB14_8B_WORD1",
+        "MB3_64B_WORD3_L",
+        "MB5_32B_WORD7_L",
+        "MB9_16B_WORD3_L",
+        "WORD114",
+        "CS15",
+        "MB10_16B_CS_L",
+        "MB15_8B_CS",
+        "MB3_64B_WORD4_L",
+        "MB6_32B_CS_L",
+        "ID15",
+        "MB10_16B_ID_L",
+        "MB15_8B_ID",
+        "MB3_64B_WORD5_L",
+        "MB6_32B_ID_L",
+        "MB10_16B_WORD0_L",
+        "MB15_8B_WORD0",
+        "MB3_64B_WORD6_L",
+        "MB6_32B_WORD0_L",
+        "WORD015",
+        "MB10_16B_WORD1_L",
+        "MB15_8B_WORD1",
+        "MB3_64B_WORD7_L",
+        "MB6_32B_WORD1_L",
+        "WORD115",
+        "CS16",
+        "MB10_16B_WORD2_L",
+        "MB16_8B_CS",
+        "MB3_64B_WORD8_L",
+        "MB6_32B_WORD2_L",
+        "ID16",
+        "MB10_16B_WORD3_L",
+        "MB16_8B_ID",
+        "MB3_64B_WORD9_L",
+        "MB6_32B_WORD3_L",
+        "MB11_16B_CS_L",
+        "MB16_8B_WORD0",
+        "MB3_64B_WORD10_L",
+        "MB6_32B_WORD4_L",
+        "WORD016",
+        "MB11_16B_ID_L",
+        "MB16_8B_WORD1",
+        "MB3_64B_WORD11_L",
+        "MB6_32B_WORD5_L",
+        "WORD116",
+        "CS17",
+        "MB11_16B_WORD0_L",
+        "MB17_8B_CS",
+        "MB3_64B_WORD12_L",
+        "MB6_32B_WORD6_L",
+        "ID17",
+        "MB11_16B_WORD1_L",
+        "MB17_8B_ID",
+        "MB3_64B_WORD13_L",
+        "MB6_32B_WORD7_L",
+        "MB11_16B_WORD2_L",
+        "MB17_8B_WORD0",
+        "MB3_64B_WORD14_L",
+        "MB7_32B_CS_L",
+        "WORD017",
+        "MB11_16B_WORD3_L",
+        "MB17_8B_WORD1",
+        "MB3_64B_WORD15_L",
+        "MB7_32B_ID_L",
+        "WORD117",
+        "CS18",
+        "MB12_16B_CS_L",
+        "MB18_8B_CS",
+        "MB4_64B_CS_L",
+        "MB7_32B_WORD0_L",
+        "ID18",
+        "MB12_16B_ID_L",
+        "MB18_8B_ID",
+        "MB4_64B_ID_L",
+        "MB7_32B_WORD1_L",
+        "MB12_16B_WORD0_L",
+        "MB18_8B_WORD0",
+        "MB4_64B_WORD0_L",
+        "MB7_32B_WORD2_L",
+        "WORD018",
+        "MB12_16B_WORD1_L",
+        "MB18_8B_WORD1",
+        "MB4_64B_WORD1_L",
+        "MB7_32B_WORD3_L",
+        "WORD118",
+        "CS19",
+        "MB12_16B_WORD2_L",
+        "MB19_8B_CS",
+        "MB4_64B_WORD2_L",
+        "MB7_32B_WORD4_L",
+        "ID19",
+        "MB12_16B_WORD3_L",
+        "MB19_8B_ID",
+        "MB4_64B_WORD3_L",
+        "MB7_32B_WORD5_L",
+        "MB13_16B_CS_L",
+        "MB19_8B_WORD0",
+        "MB4_64B_WORD4_L",
+        "MB7_32B_WORD6_L",
+        "WORD019",
+        "MB13_16B_ID_L",
+        "MB19_8B_WORD1",
+        "MB4_64B_WORD5_L",
+        "MB7_32B_WORD7_L",
+        "WORD119",
+        "CS20",
+        "MB13_16B_WORD0_L",
+        "MB20_8B_CS",
+        "MB4_64B_WORD6_L",
+        "MB8_32B_CS_L",
+        "ID20",
+        "MB13_16B_WORD1_L",
+        "MB20_8B_ID",
+        "MB4_64B_WORD7_L",
+        "MB8_32B_ID_L",
+        "MB13_16B_WORD2_L",
+        "MB20_8B_WORD0",
+        "MB4_64B_WORD8_L",
+        "MB8_32B_WORD0_L",
+        "WORD020",
+        "MB13_16B_WORD3_L",
+        "MB20_8B_WORD1",
+        "MB4_64B_WORD9_L",
+        "MB8_32B_WORD1_L",
+        "WORD120",
+        "CS21",
+        "MB14_16B_CS_L",
+        "MB21_8B_CS",
+        "MB4_64B_WORD10_L",
+        "MB8_32B_WORD2_L",
+        "ID21",
+        "MB14_16B_ID_L",
+        "MB21_8B_ID",
+        "MB4_64B_WORD11_L",
+        "MB8_32B_WORD3_L",
+        "MB14_16B_WORD0_L",
+        "MB21_8B_WORD0",
+        "MB4_64B_WORD12_L",
+        "MB8_32B_WORD4_L",
+        "WORD021",
+        "MB14_16B_WORD1_L",
+        "MB21_8B_WORD1",
+        "MB4_64B_WORD13_L",
+        "MB8_32B_WORD5_L",
+        "WORD121",
+        "CS22",
+        "MB14_16B_WORD2_L",
+        "MB22_8B_CS",
+        "MB4_64B_WORD14_L",
+        "MB8_32B_WORD6_L",
+        "ID22",
+        "MB14_16B_WORD3_L",
+        "MB22_8B_ID",
+        "MB4_64B_WORD15_L",
+        "MB8_32B_WORD7_L",
+        "MB15_16B_CS_L",
+        "MB22_8B_WORD0",
+        "MB5_64B_CS_L",
+        "MB9_32B_CS_L",
+        "WORD022",
+        "MB15_16B_ID_L",
+        "MB22_8B_WORD1",
+        "MB5_64B_ID_L",
+        "MB9_32B_ID_L",
+        "WORD122",
+        "CS23",
+        "MB15_16B_WORD0_L",
+        "MB23_8B_CS",
+        "MB5_64B_WORD0_L",
+        "MB9_32B_WORD0_L",
+        "ID23",
+        "MB15_16B_WORD1_L",
+        "MB23_8B_ID",
+        "MB5_64B_WORD1_L",
+        "MB9_32B_WORD1_L",
+        "MB15_16B_WORD2_L",
+        "MB23_8B_WORD0",
+        "MB5_64B_WORD2_L",
+        "MB9_32B_WORD2_L",
+        "WORD023",
+        "MB15_16B_WORD3_L",
+        "MB23_8B_WORD1",
+        "MB5_64B_WORD3_L",
+        "MB9_32B_WORD3_L",
+        "WORD123",
+        "CS24",
+        "MB16_16B_CS_L",
+        "MB24_8B_CS",
+        "MB5_64B_WORD4_L",
+        "MB9_32B_WORD4_L",
+        "ID24",
+        "MB16_16B_ID_L",
+        "MB24_8B_ID",
+        "MB5_64B_WORD5_L",
+        "MB9_32B_WORD5_L",
+        "MB16_16B_WORD0_L",
+        "MB24_8B_WORD0",
+        "MB5_64B_WORD6_L",
+        "MB9_32B_WORD6_L",
+        "WORD024",
+        "MB16_16B_WORD1_L",
+        "MB24_8B_WORD1",
+        "MB5_64B_WORD7_L",
+        "MB9_32B_WORD7_L",
+        "WORD124",
+        "CS25",
+        "MB10_32B_CS_L",
+        "MB16_16B_WORD2_L",
+        "MB25_8B_CS",
+        "MB5_64B_WORD8_L",
+        "ID25",
+        "MB10_32B_ID_L",
+        "MB16_16B_WORD3_L",
+        "MB25_8B_ID",
+        "MB5_64B_WORD9_L",
+        "MB10_32B_WORD0_L",
+        "MB17_16B_CS_L",
+        "MB25_8B_WORD0",
+        "MB5_64B_WORD10_L",
+        "WORD025",
+        "MB10_32B_WORD1_L",
+        "MB17_16B_ID_L",
+        "MB25_8B_WORD1",
+        "MB5_64B_WORD11_L",
+        "WORD125",
+        "CS26",
+        "MB10_32B_WORD2_L",
+        "MB17_16B_WORD0_L",
+        "MB26_8B_CS",
+        "MB5_64B_WORD12_L",
+        "ID26",
+        "MB10_32B_WORD3_L",
+        "MB17_16B_WORD1_L",
+        "MB26_8B_ID",
+        "MB5_64B_WORD13_L",
+        "MB10_32B_WORD4_L",
+        "MB17_16B_WORD2_L",
+        "MB26_8B_WORD0",
+        "MB5_64B_WORD14_L",
+        "WORD026",
+        "MB10_32B_WORD5_L",
+        "MB17_16B_WORD3_L",
+        "MB26_8B_WORD1",
+        "MB5_64B_WORD15_L",
+        "WORD126",
+        "CS27",
+        "MB10_32B_WORD6_L",
+        "MB18_16B_CS_L",
+        "MB27_8B_CS",
+        "MB6_64B_CS_L",
+        "ID27",
+        "MB10_32B_WORD7_L",
+        "MB18_16B_ID_L",
+        "MB27_8B_ID",
+        "MB6_64B_ID_L",
+        "MB11_32B_CS_L",
+        "MB18_16B_WORD0_L",
+        "MB27_8B_WORD0",
+        "MB6_64B_WORD0_L",
+        "WORD027",
+        "MB11_32B_ID_L",
+        "MB18_16B_WORD1_L",
+        "MB27_8B_WORD1",
+        "MB6_64B_WORD1_L",
+        "WORD127",
+        "CS28",
+        "MB11_32B_WORD0_L",
+        "MB18_16B_WORD2_L",
+        "MB28_8B_CS",
+        "MB6_64B_WORD2_L",
+        "ID28",
+        "MB11_32B_WORD1_L",
+        "MB18_16B_WORD3_L",
+        "MB28_8B_ID",
+        "MB6_64B_WORD3_L",
+        "MB11_32B_WORD2_L",
+        "MB19_16B_CS_L",
+        "MB28_8B_WORD0",
+        "MB6_64B_WORD4_L",
+        "WORD028",
+        "MB11_32B_WORD3_L",
+        "MB19_16B_ID_L",
+        "MB28_8B_WORD1",
+        "MB6_64B_WORD5_L",
+        "WORD128",
+        "CS29",
+        "MB11_32B_WORD4_L",
+        "MB19_16B_WORD0_L",
+        "MB29_8B_CS",
+        "MB6_64B_WORD6_L",
+        "ID29",
+        "MB11_32B_WORD5_L",
+        "MB19_16B_WORD1_L",
+        "MB29_8B_ID",
+        "MB6_64B_WORD7_L",
+        "MB11_32B_WORD6_L",
+        "MB19_16B_WORD2_L",
+        "MB29_8B_WORD0",
+        "MB6_64B_WORD8_L",
+        "WORD029",
+        "MB11_32B_WORD7_L",
+        "MB19_16B_WORD3_L",
+        "MB29_8B_WORD1",
+        "MB6_64B_WORD9_L",
+        "WORD129",
+        "CS30",
+        "MB20_16B_CS_L",
+        "MB30_8B_CS",
+        "MB6_64B_WORD10_L",
+        "ID30",
+        "MB20_16B_ID_L",
+        "MB30_8B_ID",
+        "MB6_64B_WORD11_L",
+        "MB20_16B_WORD0_L",
+        "MB30_8B_WORD0",
+        "MB6_64B_WORD12_L",
+        "WORD030",
+        "MB20_16B_WORD1_L",
+        "MB30_8B_WORD1",
+        "MB6_64B_WORD13_L",
+        "WORD130",
+        "CS31",
+        "MB20_16B_WORD2_L",
+        "MB31_8B_CS",
+        "MB6_64B_WORD14_L",
+        "ID31",
+        "MB20_16B_WORD3_L",
+        "MB31_8B_ID",
+        "MB6_64B_WORD15_L",
+        "MB31_8B_WORD0",
+        "WORD031",
+        "MB31_8B_WORD1",
+        "WORD131",
+        "CS32",
+        "MB0_16B_CS_H",
+        "MB0_32B_CS_H",
+        "MB0_64B_CS_H",
+        "MB32_8B_CS",
+        "ID32",
+        "MB0_16B_ID_H",
+        "MB0_32B_ID_H",
+        "MB0_64B_ID_H",
+        "MB32_8B_ID",
+        "MB0_16B_WORD0_H",
+        "MB0_32B_WORD0_H",
+        "MB0_64B_WORD0_H",
+        "MB32_8B_WORD0",
+        "WORD032",
+        "MB0_16B_WORD1_H",
+        "MB0_32B_WORD1_H",
+        "MB0_64B_WORD1_H",
+        "MB32_8B_WORD1",
+        "WORD132",
+        "CS33",
+        "MB0_16B_WORD2_H",
+        "MB0_32B_WORD2_H",
+        "MB0_64B_WORD2_H",
+        "MB33_8B_CS",
+        "ID33",
+        "MB0_16B_WORD3_H",
+        "MB0_32B_WORD3_H",
+        "MB0_64B_WORD3_H",
+        "MB33_8B_ID",
+        "MB0_32B_WORD4_H",
+        "MB0_64B_WORD4_H",
+        "MB1_16B_CS_H",
+        "MB33_8B_WORD0",
+        "WORD033",
+        "MB0_32B_WORD5_H",
+        "MB0_64B_WORD5_H",
+        "MB1_16B_ID_H",
+        "MB33_8B_WORD1",
+        "WORD133",
+        "CS34",
+        "MB0_32B_WORD6_H",
+        "MB0_64B_WORD6_H",
+        "MB1_16B_WORD0_H",
+        "MB34_8B_CS",
+        "ID34",
+        "MB0_32B_WORD7_H",
+        "MB0_64B_WORD7_H",
+        "MB1_16B_WORD1_H",
+        "MB34_8B_ID",
+        "MB0_64B_WORD8_H",
+        "MB1_16B_WORD2_H",
+        "MB1_32B_CS_H",
+        "MB34_8B_WORD0",
+        "WORD034",
+        "MB0_64B_WORD9_H",
+        "MB1_16B_WORD3_H",
+        "MB1_32B_ID_H",
+        "MB34_8B_WORD1",
+        "WORD134",
+        "CS35",
+        "MB0_64B_WORD10_H",
+        "MB1_32B_WORD0_H",
+        "MB2_16B_CS_H",
+        "MB35_8B_CS",
+        "ID35",
+        "MB0_64B_WORD11_H",
+        "MB1_32B_WORD1_H",
+        "MB2_16B_ID_H",
+        "MB35_8B_ID",
+        "MB0_64B_WORD12_H",
+        "MB1_32B_WORD2_H",
+        "MB2_16B_WORD0_H",
+        "MB35_8B_WORD0",
+        "WORD035",
+        "MB0_64B_WORD13_H",
+        "MB1_32B_WORD3_H",
+        "MB2_16B_WORD1_H",
+        "MB35_8B_WORD1",
+        "WORD135",
+        "CS36",
+        "MB0_64B_WORD14_H",
+        "MB1_32B_WORD4_H",
+        "MB2_16B_WORD2_H",
+        "MB36_8B_CS",
+        "ID36",
+        "MB0_64B_WORD15_H",
+        "MB1_32B_WORD5_H",
+        "MB2_16B_WORD3_H",
+        "MB36_8B_ID",
+        "MB1_32B_WORD6_H",
+        "MB1_64B_CS_H",
+        "MB36_8B_WORD0",
+        "MB3_16B_CS_H",
+        "WORD036",
+        "MB1_32B_WORD7_H",
+        "MB1_64B_ID_H",
+        "MB36_8B_WORD1",
+        "MB3_16B_ID_H",
+        "WORD136",
+        "CS37",
+        "MB1_64B_WORD0_H",
+        "MB2_32B_CS_H",
+        "MB37_8B_CS",
+        "MB3_16B_WORD0_H",
+        "ID37",
+        "MB1_64B_WORD1_H",
+        "MB2_32B_ID_H",
+        "MB37_8B_ID",
+        "MB3_16B_WORD1_H",
+        "MB1_64B_WORD2_H",
+        "MB2_32B_WORD0_H",
+        "MB37_8B_WORD0",
+        "MB3_16B_WORD2_H",
+        "WORD037",
+        "MB1_64B_WORD3_H",
+        "MB2_32B_WORD1_H",
+        "MB37_8B_WORD1",
+        "MB3_16B_WORD3_H",
+        "WORD137",
+        "CS38",
+        "MB1_64B_WORD4_H",
+        "MB2_32B_WORD2_H",
+        "MB38_8B_CS",
+        "MB4_16B_CS_H",
+        "ID38",
+        "MB1_64B_WORD5_H",
+        "MB2_32B_WORD3_H",
+        "MB38_8B_ID",
+        "MB4_16B_ID_H",
+        "MB1_64B_WORD6_H",
+        "MB2_32B_WORD4_H",
+        "MB38_8B_WORD0",
+        "MB4_16B_WORD0_H",
+        "WORD038",
+        "MB1_64B_WORD7_H",
+        "MB2_32B_WORD5_H",
+        "MB38_8B_WORD1",
+        "MB4_16B_WORD1_H",
+        "WORD138",
+        "CS39",
+        "MB1_64B_WORD8_H",
+        "MB2_32B_WORD6_H",
+        "MB39_8B_CS",
+        "MB4_16B_WORD2_H",
+        "ID39",
+        "MB1_64B_WORD9_H",
+        "MB2_32B_WORD7_H",
+        "MB39_8B_ID",
+        "MB4_16B_WORD3_H",
+        "MB1_64B_WORD10_H",
+        "MB39_8B_WORD0",
+        "MB3_32B_CS_H",
+        "MB5_16B_CS_H",
+        "WORD039",
+        "MB1_64B_WORD11_H",
+        "MB39_8B_WORD1",
+        "MB3_32B_ID_H",
+        "MB5_16B_ID_H",
+        "WORD139",
+        "CS40",
+        "MB1_64B_WORD12_H",
+        "MB3_32B_WORD0_H",
+        "MB40_8B_CS",
+        "MB5_16B_WORD0_H",
+        "ID40",
+        "MB1_64B_WORD13_H",
+        "MB3_32B_WORD1_H",
+        "MB40_8B_ID",
+        "MB5_16B_WORD1_H",
+        "MB1_64B_WORD14_H",
+        "MB3_32B_WORD2_H",
+        "MB40_8B_WORD0",
+        "MB5_16B_WORD2_H",
+        "WORD040",
+        "MB1_64B_WORD15_H",
+        "MB3_32B_WORD3_H",
+        "MB40_8B_WORD1",
+        "MB5_16B_WORD3_H",
+        "WORD140",
+        "CS41",
+        "MB2_64B_CS_H",
+        "MB3_32B_WORD4_H",
+        "MB41_8B_CS",
+        "MB6_16B_CS_H",
+        "ID41",
+        "MB2_64B_ID_H",
+        "MB3_32B_WORD5_H",
+        "MB41_8B_ID",
+        "MB6_16B_ID_H",
+        "MB2_64B_WORD0_H",
+        "MB3_32B_WORD6_H",
+        "MB41_8B_WORD0",
+        "MB6_16B_WORD0_H",
+        "WORD041",
+        "MB2_64B_WORD1_H",
+        "MB3_32B_WORD7_H",
+        "MB41_8B_WORD1",
+        "MB6_16B_WORD1_H",
+        "WORD141",
+        "CS42",
+        "MB2_64B_WORD2_H",
+        "MB42_8B_CS",
+        "MB4_32B_CS_H",
+        "MB6_16B_WORD2_H",
+        "ID42",
+        "MB2_64B_WORD3_H",
+        "MB42_8B_ID",
+        "MB4_32B_ID_H",
+        "MB6_16B_WORD3_H",
+        "MB2_64B_WORD4_H",
+        "MB42_8B_WORD0",
+        "MB4_32B_WORD0_H",
+        "MB7_16B_CS_H",
+        "WORD042",
+        "MB2_64B_WORD5_H",
+        "MB42_8B_WORD1",
+        "MB4_32B_WORD1_H",
+        "MB7_16B_ID_H",
+        "WORD142",
+        "CS43",
+        "MB2_64B_WORD6_H",
+        "MB43_8B_CS",
+        "MB4_32B_WORD2_H",
+        "MB7_16B_WORD0_H",
+        "ID43",
+        "MB2_64B_WORD7_H",
+        "MB43_8B_ID",
+        "MB4_32B_WORD3_H",
+        "MB7_16B_WORD1_H",
+        "MB2_64B_WORD8_H",
+        "MB43_8B_WORD0",
+        "MB4_32B_WORD4_H",
+        "MB7_16B_WORD2_H",
+        "WORD043",
+        "MB2_64B_WORD9_H",
+        "MB43_8B_WORD1",
+        "MB4_32B_WORD5_H",
+        "MB7_16B_WORD3_H",
+        "WORD143",
+        "CS44",
+        "MB2_64B_WORD10_H",
+        "MB44_8B_CS",
+        "MB4_32B_WORD6_H",
+        "MB8_16B_CS_H",
+        "ID44",
+        "MB2_64B_WORD11_H",
+        "MB44_8B_ID",
+        "MB4_32B_WORD7_H",
+        "MB8_16B_ID_H",
+        "MB2_64B_WORD12_H",
+        "MB44_8B_WORD0",
+        "MB5_32B_CS_H",
+        "MB8_16B_WORD0_H",
+        "WORD044",
+        "MB2_64B_WORD13_H",
+        "MB44_8B_WORD1",
+        "MB5_32B_ID_H",
+        "MB8_16B_WORD1_H",
+        "WORD144",
+        "CS45",
+        "MB2_64B_WORD14_H",
+        "MB45_8B_CS",
+        "MB5_32B_WORD0_H",
+        "MB8_16B_WORD2_H",
+        "ID45",
+        "MB2_64B_WORD15_H",
+        "MB45_8B_ID",
+        "MB5_32B_WORD1_H",
+        "MB8_16B_WORD3_H",
+        "MB3_64B_CS_H",
+        "MB45_8B_WORD0",
+        "MB5_32B_WORD2_H",
+        "MB9_16B_CS_H",
+        "WORD045",
+        "MB3_64B_ID_H",
+        "MB45_8B_WORD1",
+        "MB5_32B_WORD3_H",
+        "MB9_16B_ID_H",
+        "WORD145",
+        "CS46",
+        "MB3_64B_WORD0_H",
+        "MB46_8B_CS",
+        "MB5_32B_WORD4_H",
+        "MB9_16B_WORD0_H",
+        "ID46",
+        "MB3_64B_WORD1_H",
+        "MB46_8B_ID",
+        "MB5_32B_WORD5_H",
+        "MB9_16B_WORD1_H",
+        "MB3_64B_WORD2_H",
+        "MB46_8B_WORD0",
+        "MB5_32B_WORD6_H",
+        "MB9_16B_WORD2_H",
+        "WORD046",
+        "MB3_64B_WORD3_H",
+        "MB46_8B_WORD1",
+        "MB5_32B_WORD7_H",
+        "MB9_16B_WORD3_H",
+        "WORD146",
+        "CS47",
+        "MB10_16B_CS_H",
+        "MB3_64B_WORD4_H",
+        "MB47_8B_CS",
+        "MB6_32B_CS_H",
+        "ID47",
+        "MB10_16B_ID_H",
+        "MB3_64B_WORD5_H",
+        "MB47_8B_ID",
+        "MB6_32B_ID_H",
+        "MB10_16B_WORD0_H",
+        "MB3_64B_WORD6_H",
+        "MB47_8B_WORD0",
+        "MB6_32B_WORD0_H",
+        "WORD047",
+        "MB10_16B_WORD1_H",
+        "MB3_64B_WORD7_H",
+        "MB47_8B_WORD1",
+        "MB6_32B_WORD1_H",
+        "WORD147",
+        "CS48",
+        "MB10_16B_WORD2_H",
+        "MB3_64B_WORD8_H",
+        "MB48_8B_CS",
+        "MB6_32B_WORD2_H",
+        "ID48",
+        "MB10_16B_WORD3_H",
+        "MB3_64B_WORD9_H",
+        "MB48_8B_ID",
+        "MB6_32B_WORD3_H",
+        "MB11_16B_CS_H",
+        "MB3_64B_WORD10_H",
+        "MB48_8B_WORD0",
+        "MB6_32B_WORD4_H",
+        "WORD048",
+        "MB11_16B_ID_H",
+        "MB3_64B_WORD11_H",
+        "MB48_8B_WORD1",
+        "MB6_32B_WORD5_H",
+        "WORD148",
+        "CS49",
+        "MB11_16B_WORD0_H",
+        "MB3_64B_WORD12_H",
+        "MB49_8B_CS",
+        "MB6_32B_WORD6_H",
+        "ID49",
+        "MB11_16B_WORD1_H",
+        "MB3_64B_WORD13_H",
+        "MB49_8B_ID",
+        "MB6_32B_WORD7_H",
+        "MB11_16B_WORD2_H",
+        "MB3_64B_WORD14_H",
+        "MB49_8B_WORD0",
+        "MB7_32B_CS_H",
+        "WORD049",
+        "MB11_16B_WORD3_H",
+        "MB3_64B_WORD15_H",
+        "MB49_8B_WORD1",
+        "MB7_32B_ID_H",
+        "WORD149",
+        "CS50",
+        "MB12_16B_CS_H",
+        "MB4_64B_CS_H",
+        "MB50_8B_CS",
+        "MB7_32B_WORD0_H",
+        "ID50",
+        "MB12_16B_ID_H",
+        "MB4_64B_ID_H",
+        "MB50_8B_ID",
+        "MB7_32B_WORD1_H",
+        "MB12_16B_WORD0_H",
+        "MB4_64B_WORD0_H",
+        "MB50_8B_WORD0",
+        "MB7_32B_WORD2_H",
+        "WORD050",
+        "MB12_16B_WORD1_H",
+        "MB4_64B_WORD1_H",
+        "MB50_8B_WORD1",
+        "MB7_32B_WORD3_H",
+        "WORD150",
+        "CS51",
+        "MB12_16B_WORD2_H",
+        "MB4_64B_WORD2_H",
+        "MB51_8B_CS",
+        "MB7_32B_WORD4_H",
+        "ID51",
+        "MB12_16B_WORD3_H",
+        "MB4_64B_WORD3_H",
+        "MB51_8B_ID",
+        "MB7_32B_WORD5_H",
+        "MB13_16B_CS_H",
+        "MB4_64B_WORD4_H",
+        "MB51_8B_WORD0",
+        "MB7_32B_WORD6_H",
+        "WORD051",
+        "MB13_16B_ID_H",
+        "MB4_64B_WORD5_H",
+        "MB51_8B_WORD1",
+        "MB7_32B_WORD7_H",
+        "WORD151",
+        "CS52",
+        "MB13_16B_WORD0_H",
+        "MB4_64B_WORD6_H",
+        "MB52_8B_CS",
+        "MB8_32B_CS_H",
+        "ID52",
+        "MB13_16B_WORD1_H",
+        "MB4_64B_WORD7_H",
+        "MB52_8B_ID",
+        "MB8_32B_ID_H",
+        "MB13_16B_WORD2_H",
+        "MB4_64B_WORD8_H",
+        "MB52_8B_WORD0",
+        "MB8_32B_WORD0_H",
+        "WORD052",
+        "MB13_16B_WORD3_H",
+        "MB4_64B_WORD9_H",
+        "MB52_8B_WORD1",
+        "MB8_32B_WORD1_H",
+        "WORD152",
+        "CS53",
+        "MB14_16B_CS_H",
+        "MB4_64B_WORD10_H",
+        "MB53_8B_CS",
+        "MB8_32B_WORD2_H",
+        "ID53",
+        "MB14_16B_ID_H",
+        "MB4_64B_WORD11_H",
+        "MB53_8B_ID",
+        "MB8_32B_WORD3_H",
+        "MB14_16B_WORD0_H",
+        "MB4_64B_WORD12_H",
+        "MB53_8B_WORD0",
+        "MB8_32B_WORD4_H",
+        "WORD053",
+        "MB14_16B_WORD1_H",
+        "MB4_64B_WORD13_H",
+        "MB53_8B_WORD1",
+        "MB8_32B_WORD5_H",
+        "WORD153",
+        "CS54",
+        "MB14_16B_WORD2_H",
+        "MB4_64B_WORD14_H",
+        "MB54_8B_CS",
+        "MB8_32B_WORD6_H",
+        "ID54",
+        "MB14_16B_WORD3_H",
+        "MB4_64B_WORD15_H",
+        "MB54_8B_ID",
+        "MB8_32B_WORD7_H",
+        "MB15_16B_CS_H",
+        "MB54_8B_WORD0",
+        "MB5_64B_CS_H",
+        "MB9_32B_CS_H",
+        "WORD054",
+        "MB15_16B_ID_H",
+        "MB54_8B_WORD1",
+        "MB5_64B_ID_H",
+        "MB9_32B_ID_H",
+        "WORD154",
+        "CS55",
+        "MB15_16B_WORD0_H",
+        "MB55_8B_CS",
+        "MB5_64B_WORD0_H",
+        "MB9_32B_WORD0_H",
+        "ID55",
+        "MB15_16B_WORD1_H",
+        "MB55_8B_ID",
+        "MB5_64B_WORD1_H",
+        "MB9_32B_WORD1_H",
+        "MB15_16B_WORD2_H",
+        "MB55_8B_WORD0",
+        "MB5_64B_WORD2_H",
+        "MB9_32B_WORD2_H",
+        "WORD055",
+        "MB15_16B_WORD3_H",
+        "MB55_8B_WORD1",
+        "MB5_64B_WORD3_H",
+        "MB9_32B_WORD3_H",
+        "WORD155",
+        "CS56",
+        "MB16_16B_CS_H",
+        "MB56_8B_CS",
+        "MB5_64B_WORD4_H",
+        "MB9_32B_WORD4_H",
+        "ID56",
+        "MB16_16B_ID_H",
+        "MB56_8B_ID",
+        "MB5_64B_WORD5_H",
+        "MB9_32B_WORD5_H",
+        "MB16_16B_WORD0_H",
+        "MB56_8B_WORD0",
+        "MB5_64B_WORD6_H",
+        "MB9_32B_WORD6_H",
+        "WORD056",
+        "MB16_16B_WORD1_H",
+        "MB56_8B_WORD1",
+        "MB5_64B_WORD7_H",
+        "MB9_32B_WORD7_H",
+        "WORD156",
+        "CS57",
+        "MB10_32B_CS_H",
+        "MB16_16B_WORD2_H",
+        "MB57_8B_CS",
+        "MB5_64B_WORD8_H",
+        "ID57",
+        "MB10_32B_ID_H",
+        "MB16_16B_WORD3_H",
+        "MB57_8B_ID",
+        "MB5_64B_WORD9_H",
+        "MB10_32B_WORD0_H",
+        "MB17_16B_CS_H",
+        "MB57_8B_WORD0",
+        "MB5_64B_WORD10_H",
+        "WORD057",
+        "MB10_32B_WORD1_H",
+        "MB17_16B_ID_H",
+        "MB57_8B_WORD1",
+        "MB5_64B_WORD11_H",
+        "WORD157",
+        "CS58",
+        "MB10_32B_WORD2_H",
+        "MB17_16B_WORD0_H",
+        "MB58_8B_CS",
+        "MB5_64B_WORD12_H",
+        "ID58",
+        "MB10_32B_WORD3_H",
+        "MB17_16B_WORD1_H",
+        "MB58_8B_ID",
+        "MB5_64B_WORD13_H",
+        "MB10_32B_WORD4_H",
+        "MB17_16B_WORD2_H",
+        "MB58_8B_WORD0",
+        "MB5_64B_WORD14_H",
+        "WORD058",
+        "MB10_32B_WORD5_H",
+        "MB17_16B_WORD3_H",
+        "MB58_8B_WORD1",
+        "MB5_64B_WORD15_H",
+        "WORD158",
+        "CS59",
+        "MB10_32B_WORD6_H",
+        "MB18_16B_CS_H",
+        "MB59_8B_CS",
+        "MB6_64B_CS_H",
+        "ID59",
+        "MB10_32B_WORD7_H",
+        "MB18_16B_ID_H",
+        "MB59_8B_ID",
+        "MB6_64B_ID_H",
+        "MB11_32B_CS_H",
+        "MB18_16B_WORD0_H",
+        "MB59_8B_WORD0",
+        "MB6_64B_WORD0_H",
+        "WORD059",
+        "MB11_32B_ID_H",
+        "MB18_16B_WORD1_H",
+        "MB59_8B_WORD1",
+        "MB6_64B_WORD1_H",
+        "WORD159",
+        "CS60",
+        "MB11_32B_WORD0_H",
+        "MB18_16B_WORD2_H",
+        "MB60_8B_CS",
+        "MB6_64B_WORD2_H",
+        "ID60",
+        "MB11_32B_WORD1_H",
+        "MB18_16B_WORD3_H",
+        "MB60_8B_ID",
+        "MB6_64B_WORD3_H",
+        "MB11_32B_WORD2_H",
+        "MB19_16B_CS_H",
+        "MB60_8B_WORD0",
+        "MB6_64B_WORD4_H",
+        "WORD060",
+        "MB11_32B_WORD3_H",
+        "MB19_16B_ID_H",
+        "MB60_8B_WORD1",
+        "MB6_64B_WORD5_H",
+        "WORD160",
+        "CS61",
+        "MB11_32B_WORD4_H",
+        "MB19_16B_WORD0_H",
+        "MB61_8B_CS",
+        "MB6_64B_WORD6_H",
+        "ID61",
+        "MB11_32B_WORD5_H",
+        "MB19_16B_WORD1_H",
+        "MB61_8B_ID",
+        "MB6_64B_WORD7_H",
+        "MB11_32B_WORD6_H",
+        "MB19_16B_WORD2_H",
+        "MB61_8B_WORD0",
+        "MB6_64B_WORD8_H",
+        "WORD061",
+        "MB11_32B_WORD7_H",
+        "MB19_16B_WORD3_H",
+        "MB61_8B_WORD1",
+        "MB6_64B_WORD9_H",
+        "WORD161",
+        "CS62",
+        "MB20_16B_CS_H",
+        "MB62_8B_CS",
+        "MB6_64B_WORD10_H",
+        "ID62",
+        "MB20_16B_ID_H",
+        "MB62_8B_ID",
+        "MB6_64B_WORD11_H",
+        "MB20_16B_WORD0_H",
+        "MB62_8B_WORD0",
+        "MB6_64B_WORD12_H",
+        "WORD062",
+        "MB20_16B_WORD1_H",
+        "MB62_8B_WORD1",
+        "MB6_64B_WORD13_H",
+        "WORD162",
+        "CS63",
+        "MB20_16B_WORD2_H",
+        "MB63_8B_CS",
+        "MB6_64B_WORD14_H",
+        "ID63",
+        "MB20_16B_WORD3_H",
+        "MB63_8B_ID",
+        "MB6_64B_WORD15_H",
+        "MB63_8B_WORD0",
+        "WORD063",
+        "MB63_8B_WORD1",
+        "WORD163"
+      ]
+    }
+  },
+  "CAN1_WRAPPER": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x9E4",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "CAN2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0xC0C",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "CAN2",
+        "value": "46"
+      },
+      {
+        "name": "CAN2_ERROR",
+        "value": "47"
+      }
+    ]
+  },
+  "CAN2_WRAPPER": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x9E4",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "CAN3": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0xC0C",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "CAN3",
+        "value": "48"
+      },
+      {
+        "name": "CAN3_ERROR",
+        "value": "49"
+      }
+    ]
+  },
+  "CAN3_WRAPPER": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x9E4",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "CCM": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x7140",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "CCM_OBS": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x2CC",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "CDOG": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x4C",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "CDOG",
+        "value": "75"
+      }
+    ]
+  },
+  "CM7_GPIO2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x90",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "CM7_GPIO3": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x90",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "CMP1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x18",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "ACMP1",
+        "value": "157"
+      }
+    ]
+  },
+  "CMP2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x18",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "ACMP2",
+        "value": "158"
+      }
+    ]
+  },
+  "CMP3": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x18",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "ACMP3",
+        "value": "159"
+      }
+    ]
+  },
+  "CMP4": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x18",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "ACMP4",
+        "value": "160"
+      }
+    ]
+  },
+  "CSI": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x454",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "CSI",
+        "value": "56"
+      }
+    ]
+  },
+  "DAC": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x18",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "DAC",
+        "value": "63"
+      }
+    ]
+  },
+  "DCDC": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x70",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "DCIC1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x110",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "DCIC1",
+        "value": "95"
+      }
+    ]
+  },
+  "DCIC2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x110",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "DCIC2",
+        "value": "96"
+      }
+    ]
+  },
+  "DMA1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x1400",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "DMA0_DMA16",
+        "value": "0"
+      },
+      {
+        "name": "DMA1_DMA17",
+        "value": "1"
+      },
+      {
+        "name": "DMA2_DMA18",
+        "value": "2"
+      },
+      {
+        "name": "DMA3_DMA19",
+        "value": "3"
+      },
+      {
+        "name": "DMA4_DMA20",
+        "value": "4"
+      },
+      {
+        "name": "DMA5_DMA21",
+        "value": "5"
+      },
+      {
+        "name": "DMA6_DMA22",
+        "value": "6"
+      },
+      {
+        "name": "DMA7_DMA23",
+        "value": "7"
+      },
+      {
+        "name": "DMA8_DMA24",
+        "value": "8"
+      },
+      {
+        "name": "DMA9_DMA25",
+        "value": "9"
+      },
+      {
+        "name": "DMA10_DMA26",
+        "value": "10"
+      },
+      {
+        "name": "DMA11_DMA27",
+        "value": "11"
+      },
+      {
+        "name": "DMA12_DMA28",
+        "value": "12"
+      },
+      {
+        "name": "DMA13_DMA29",
+        "value": "13"
+      },
+      {
+        "name": "DMA14_DMA30",
+        "value": "14"
+      },
+      {
+        "name": "DMA15_DMA31",
+        "value": "15"
+      },
+      {
+        "name": "DMA_ERROR",
+        "value": "16"
+      }
+    ],
+    "register_groups": {
+      "TCD_BITER_ELINK": [
+        "TCD0_BITER_ELINKNO",
+        "TCD0_BITER_ELINKYES",
+        "TCD1_BITER_ELINKNO",
+        "TCD1_BITER_ELINKYES",
+        "TCD2_BITER_ELINKNO",
+        "TCD2_BITER_ELINKYES",
+        "TCD3_BITER_ELINKNO",
+        "TCD3_BITER_ELINKYES",
+        "TCD4_BITER_ELINKNO",
+        "TCD4_BITER_ELINKYES",
+        "TCD5_BITER_ELINKNO",
+        "TCD5_BITER_ELINKYES",
+        "TCD6_BITER_ELINKNO",
+        "TCD6_BITER_ELINKYES",
+        "TCD7_BITER_ELINKNO",
+        "TCD7_BITER_ELINKYES",
+        "TCD8_BITER_ELINKNO",
+        "TCD8_BITER_ELINKYES",
+        "TCD9_BITER_ELINKNO",
+        "TCD9_BITER_ELINKYES",
+        "TCD10_BITER_ELINKNO",
+        "TCD10_BITER_ELINKYES",
+        "TCD11_BITER_ELINKNO",
+        "TCD11_BITER_ELINKYES",
+        "TCD12_BITER_ELINKNO",
+        "TCD12_BITER_ELINKYES",
+        "TCD13_BITER_ELINKNO",
+        "TCD13_BITER_ELINKYES",
+        "TCD14_BITER_ELINKNO",
+        "TCD14_BITER_ELINKYES",
+        "TCD15_BITER_ELINKNO",
+        "TCD15_BITER_ELINKYES",
+        "TCD16_BITER_ELINKNO",
+        "TCD16_BITER_ELINKYES",
+        "TCD17_BITER_ELINKNO",
+        "TCD17_BITER_ELINKYES",
+        "TCD18_BITER_ELINKNO",
+        "TCD18_BITER_ELINKYES",
+        "TCD19_BITER_ELINKNO",
+        "TCD19_BITER_ELINKYES",
+        "TCD20_BITER_ELINKNO",
+        "TCD20_BITER_ELINKYES",
+        "TCD21_BITER_ELINKNO",
+        "TCD21_BITER_ELINKYES",
+        "TCD22_BITER_ELINKNO",
+        "TCD22_BITER_ELINKYES",
+        "TCD23_BITER_ELINKNO",
+        "TCD23_BITER_ELINKYES",
+        "TCD24_BITER_ELINKNO",
+        "TCD24_BITER_ELINKYES",
+        "TCD25_BITER_ELINKNO",
+        "TCD25_BITER_ELINKYES",
+        "TCD26_BITER_ELINKNO",
+        "TCD26_BITER_ELINKYES",
+        "TCD27_BITER_ELINKNO",
+        "TCD27_BITER_ELINKYES",
+        "TCD28_BITER_ELINKNO",
+        "TCD28_BITER_ELINKYES",
+        "TCD29_BITER_ELINKNO",
+        "TCD29_BITER_ELINKYES",
+        "TCD30_BITER_ELINKNO",
+        "TCD30_BITER_ELINKYES",
+        "TCD31_BITER_ELINKNO",
+        "TCD31_BITER_ELINKYES"
+      ],
+      "TCD_CITER_ELINK": [
+        "TCD0_CITER_ELINKNO",
+        "TCD0_CITER_ELINKYES",
+        "TCD1_CITER_ELINKNO",
+        "TCD1_CITER_ELINKYES",
+        "TCD2_CITER_ELINKNO",
+        "TCD2_CITER_ELINKYES",
+        "TCD3_CITER_ELINKNO",
+        "TCD3_CITER_ELINKYES",
+        "TCD4_CITER_ELINKNO",
+        "TCD4_CITER_ELINKYES",
+        "TCD5_CITER_ELINKNO",
+        "TCD5_CITER_ELINKYES",
+        "TCD6_CITER_ELINKNO",
+        "TCD6_CITER_ELINKYES",
+        "TCD7_CITER_ELINKNO",
+        "TCD7_CITER_ELINKYES",
+        "TCD8_CITER_ELINKNO",
+        "TCD8_CITER_ELINKYES",
+        "TCD9_CITER_ELINKNO",
+        "TCD9_CITER_ELINKYES",
+        "TCD10_CITER_ELINKNO",
+        "TCD10_CITER_ELINKYES",
+        "TCD11_CITER_ELINKNO",
+        "TCD11_CITER_ELINKYES",
+        "TCD12_CITER_ELINKNO",
+        "TCD12_CITER_ELINKYES",
+        "TCD13_CITER_ELINKNO",
+        "TCD13_CITER_ELINKYES",
+        "TCD14_CITER_ELINKNO",
+        "TCD14_CITER_ELINKYES",
+        "TCD15_CITER_ELINKNO",
+        "TCD15_CITER_ELINKYES",
+        "TCD16_CITER_ELINKNO",
+        "TCD16_CITER_ELINKYES",
+        "TCD17_CITER_ELINKNO",
+        "TCD17_CITER_ELINKYES",
+        "TCD18_CITER_ELINKNO",
+        "TCD18_CITER_ELINKYES",
+        "TCD19_CITER_ELINKNO",
+        "TCD19_CITER_ELINKYES",
+        "TCD20_CITER_ELINKNO",
+        "TCD20_CITER_ELINKYES",
+        "TCD21_CITER_ELINKNO",
+        "TCD21_CITER_ELINKYES",
+        "TCD22_CITER_ELINKNO",
+        "TCD22_CITER_ELINKYES",
+        "TCD23_CITER_ELINKNO",
+        "TCD23_CITER_ELINKYES",
+        "TCD24_CITER_ELINKNO",
+        "TCD24_CITER_ELINKYES",
+        "TCD25_CITER_ELINKNO",
+        "TCD25_CITER_ELINKYES",
+        "TCD26_CITER_ELINKNO",
+        "TCD26_CITER_ELINKYES",
+        "TCD27_CITER_ELINKNO",
+        "TCD27_CITER_ELINKYES",
+        "TCD28_CITER_ELINKNO",
+        "TCD28_CITER_ELINKYES",
+        "TCD29_CITER_ELINKNO",
+        "TCD29_CITER_ELINKYES",
+        "TCD30_CITER_ELINKNO",
+        "TCD30_CITER_ELINKYES",
+        "TCD31_CITER_ELINKNO",
+        "TCD31_CITER_ELINKYES"
+      ],
+      "TCD_NBYTES": [
+        "TCD0_NBYTES_MLNO",
+        "TCD0_NBYTES_MLOFFNO",
+        "TCD0_NBYTES_MLOFFYES",
+        "TCD1_NBYTES_MLNO",
+        "TCD1_NBYTES_MLOFFNO",
+        "TCD1_NBYTES_MLOFFYES",
+        "TCD2_NBYTES_MLNO",
+        "TCD2_NBYTES_MLOFFNO",
+        "TCD2_NBYTES_MLOFFYES",
+        "TCD3_NBYTES_MLNO",
+        "TCD3_NBYTES_MLOFFNO",
+        "TCD3_NBYTES_MLOFFYES",
+        "TCD4_NBYTES_MLNO",
+        "TCD4_NBYTES_MLOFFNO",
+        "TCD4_NBYTES_MLOFFYES",
+        "TCD5_NBYTES_MLNO",
+        "TCD5_NBYTES_MLOFFNO",
+        "TCD5_NBYTES_MLOFFYES",
+        "TCD6_NBYTES_MLNO",
+        "TCD6_NBYTES_MLOFFNO",
+        "TCD6_NBYTES_MLOFFYES",
+        "TCD7_NBYTES_MLNO",
+        "TCD7_NBYTES_MLOFFNO",
+        "TCD7_NBYTES_MLOFFYES",
+        "TCD8_NBYTES_MLNO",
+        "TCD8_NBYTES_MLOFFNO",
+        "TCD8_NBYTES_MLOFFYES",
+        "TCD9_NBYTES_MLNO",
+        "TCD9_NBYTES_MLOFFNO",
+        "TCD9_NBYTES_MLOFFYES",
+        "TCD10_NBYTES_MLNO",
+        "TCD10_NBYTES_MLOFFNO",
+        "TCD10_NBYTES_MLOFFYES",
+        "TCD11_NBYTES_MLNO",
+        "TCD11_NBYTES_MLOFFNO",
+        "TCD11_NBYTES_MLOFFYES",
+        "TCD12_NBYTES_MLNO",
+        "TCD12_NBYTES_MLOFFNO",
+        "TCD12_NBYTES_MLOFFYES",
+        "TCD13_NBYTES_MLNO",
+        "TCD13_NBYTES_MLOFFNO",
+        "TCD13_NBYTES_MLOFFYES",
+        "TCD14_NBYTES_MLNO",
+        "TCD14_NBYTES_MLOFFNO",
+        "TCD14_NBYTES_MLOFFYES",
+        "TCD15_NBYTES_MLNO",
+        "TCD15_NBYTES_MLOFFNO",
+        "TCD15_NBYTES_MLOFFYES",
+        "TCD16_NBYTES_MLNO",
+        "TCD16_NBYTES_MLOFFNO",
+        "TCD16_NBYTES_MLOFFYES",
+        "TCD17_NBYTES_MLNO",
+        "TCD17_NBYTES_MLOFFNO",
+        "TCD17_NBYTES_MLOFFYES",
+        "TCD18_NBYTES_MLNO",
+        "TCD18_NBYTES_MLOFFNO",
+        "TCD18_NBYTES_MLOFFYES",
+        "TCD19_NBYTES_MLNO",
+        "TCD19_NBYTES_MLOFFNO",
+        "TCD19_NBYTES_MLOFFYES",
+        "TCD20_NBYTES_MLNO",
+        "TCD20_NBYTES_MLOFFNO",
+        "TCD20_NBYTES_MLOFFYES",
+        "TCD21_NBYTES_MLNO",
+        "TCD21_NBYTES_MLOFFNO",
+        "TCD21_NBYTES_MLOFFYES",
+        "TCD22_NBYTES_MLNO",
+        "TCD22_NBYTES_MLOFFNO",
+        "TCD22_NBYTES_MLOFFYES",
+        "TCD23_NBYTES_MLNO",
+        "TCD23_NBYTES_MLOFFNO",
+        "TCD23_NBYTES_MLOFFYES",
+        "TCD24_NBYTES_MLNO",
+        "TCD24_NBYTES_MLOFFNO",
+        "TCD24_NBYTES_MLOFFYES",
+        "TCD25_NBYTES_MLNO",
+        "TCD25_NBYTES_MLOFFNO",
+        "TCD25_NBYTES_MLOFFYES",
+        "TCD26_NBYTES_MLNO",
+        "TCD26_NBYTES_MLOFFNO",
+        "TCD26_NBYTES_MLOFFYES",
+        "TCD27_NBYTES_MLNO",
+        "TCD27_NBYTES_MLOFFNO",
+        "TCD27_NBYTES_MLOFFYES",
+        "TCD28_NBYTES_MLNO",
+        "TCD28_NBYTES_MLOFFNO",
+        "TCD28_NBYTES_MLOFFYES",
+        "TCD29_NBYTES_MLNO",
+        "TCD29_NBYTES_MLOFFNO",
+        "TCD29_NBYTES_MLOFFYES",
+        "TCD30_NBYTES_MLNO",
+        "TCD30_NBYTES_MLOFFNO",
+        "TCD30_NBYTES_MLOFFYES",
+        "TCD31_NBYTES_MLNO",
+        "TCD31_NBYTES_MLOFFNO",
+        "TCD31_NBYTES_MLOFFYES"
+      ]
+    }
+  },
+  "DMAMUX1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x80",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "DSI_HOST": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x34",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "MIPI_DSI",
+        "value": "59"
+      }
+    ]
+  },
+  "DSI_HOST_APB_PKT_IF": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x30",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "DSI_HOST_DPHY_INTFC": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x48",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "DSI_HOST_DPI_INTFC": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x40",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "EMVSIM1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x4C",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "EMVSIM1",
+        "value": "204"
+      }
+    ]
+  },
+  "EMVSIM2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x4C",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "EMVSIM2",
+        "value": "205"
+      }
+    ]
+  },
+  "ENC1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x34",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "ENC1",
+        "value": "165"
+      }
+    ]
+  },
+  "ENC2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x34",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "ENC2",
+        "value": "166"
+      }
+    ]
+  },
+  "ENC3": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x34",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "ENC3",
+        "value": "167"
+      }
+    ]
+  },
+  "ENC4": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x34",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "ENC4",
+        "value": "168"
+      }
+    ]
+  },
+  "ENET": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x628",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "ENET",
+        "value": "137"
+      },
+      {
+        "name": "ENET_1588_Timer",
+        "value": "138"
+      }
+    ]
+  },
+  "ENET_1G": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x628",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "ENET_1G_MAC0_Tx_Rx_1",
+        "value": "139"
+      },
+      {
+        "name": "ENET_1G_MAC0_Tx_Rx_2",
+        "value": "140"
+      },
+      {
+        "name": "ENET_1G",
+        "value": "141"
+      },
+      {
+        "name": "ENET_1G_1588_Timer",
+        "value": "142"
+      }
+    ]
+  },
+  "ENET_QOS": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x1370",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "ENET_QOS",
+        "value": "216"
+      },
+      {
+        "name": "ENET_QOS_PMT",
+        "value": "217"
+      }
+    ]
+  },
+  "ETHERNET_PLL": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x80",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "EWM": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x6",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "EWM",
+        "value": "114"
+      }
+    ]
+  },
+  "FLEXIO1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x8A0",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "FLEXIO1",
+        "value": "110"
+      }
+    ]
+  },
+  "FLEXIO2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x8A0",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "FLEXIO2",
+        "value": "111"
+      }
+    ]
+  },
+  "FLEXRAM": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x110",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "FLEXRAM_ECC",
+        "value": "98"
+      }
+    ]
+  },
+  "FLEXSPI1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x460",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "FLEXSPI1",
+        "value": "130"
+      }
+    ]
+  },
+  "FLEXSPI2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x460",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "FLEXSPI2",
+        "value": "131"
+      }
+    ]
+  },
+  "GPC_CPU_MODE_CTRL_0": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x800",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "GPC_CPU_MODE_CTRL_1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x800",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "GPC_SET_POINT_CTRL": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x800",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "GPC_STBY_CTRL": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x800",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "GPIO1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x90",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "GPIO1_Combined_0_15",
+        "value": "100"
+      },
+      {
+        "name": "GPIO1_Combined_16_31",
+        "value": "101"
+      }
+    ]
+  },
+  "GPIO10": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x90",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "GPIO7_8_9_10_11",
+        "value": "99"
+      }
+    ]
+  },
+  "GPIO11": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x90",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "GPIO7_8_9_10_11",
+        "value": "99"
+      }
+    ]
+  },
+  "GPIO12": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x90",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "GPIO12_Combined_0_15",
+        "value": "61"
+      },
+      {
+        "name": "GPIO12_Combined_16_31",
+        "value": "62"
+      }
+    ]
+  },
+  "GPIO13": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x90",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "GPIO13_Combined_0_31",
+        "value": "93"
+      }
+    ]
+  },
+  "GPIO2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x90",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "GPIO2_Combined_0_15",
+        "value": "102"
+      },
+      {
+        "name": "GPIO2_Combined_16_31",
+        "value": "103"
+      }
+    ]
+  },
+  "GPIO3": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x90",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "GPIO3_Combined_0_15",
+        "value": "104"
+      },
+      {
+        "name": "GPIO3_Combined_16_31",
+        "value": "105"
+      }
+    ]
+  },
+  "GPIO4": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x90",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "GPIO4_Combined_0_15",
+        "value": "106"
+      },
+      {
+        "name": "GPIO4_Combined_16_31",
+        "value": "107"
+      }
+    ]
+  },
+  "GPIO5": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x90",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "GPIO5_Combined_0_15",
+        "value": "108"
+      },
+      {
+        "name": "GPIO5_Combined_16_31",
+        "value": "109"
+      }
+    ]
+  },
+  "GPIO6": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x90",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "GPIO7": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x90",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "GPIO7_8_9_10_11",
+        "value": "99"
+      }
+    ]
+  },
+  "GPIO8": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x90",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "GPIO7_8_9_10_11",
+        "value": "99"
+      }
+    ]
+  },
+  "GPIO9": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x90",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "GPIO7_8_9_10_11",
+        "value": "99"
+      }
+    ]
+  },
+  "GPT1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x28",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "GPT1",
+        "value": "119"
+      }
+    ]
+  },
+  "GPT2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x28",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "GPT2",
+        "value": "120"
+      }
+    ]
+  },
+  "GPT3": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x28",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "GPT3",
+        "value": "121"
+      }
+    ]
+  },
+  "GPT4": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x28",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "GPT4",
+        "value": "122"
+      }
+    ]
+  },
+  "GPT5": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x28",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "GPT5",
+        "value": "123"
+      }
+    ]
+  },
+  "GPT6": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x28",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "GPT6",
+        "value": "124"
+      }
+    ]
+  },
+  "IEE_APC": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x80",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "IEE__IEE_RT1170": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x10000000",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "IOMUXC": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x718",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "IOMUXC_GPR": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x134",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "GPR_IRQ",
+        "value": "53"
+      }
+    ]
+  },
+  "IOMUXC_LPSR": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0xE0",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "IOMUXC_LPSR_GPR": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0xA8",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "IOMUXC_SNVS": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x74",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "IOMUXC_SNVS_GPR": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x98",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "IPS_DOMAIN": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x254",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "KEY_MANAGER": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0xC00",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "KEY_MANAGER",
+        "value": "64"
+      }
+    ]
+  },
+  "KEY_MANAGER__PUF": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x2000",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "KPP": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x8",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "KPP",
+        "value": "51"
+      }
+    ]
+  },
+  "LCDIF": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0xB44",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "eLCDIF",
+        "value": "54"
+      }
+    ]
+  },
+  "LCDIFV2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x2000",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "LCDIFv2",
+        "value": "55"
+      }
+    ]
+  },
+  "LMEM": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x810",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "LPADC1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x304",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "ADC1",
+        "value": "88"
+      }
+    ]
+  },
+  "LPADC2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x304",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "ADC2",
+        "value": "89"
+      }
+    ]
+  },
+  "LPI2C1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x174",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "LPI2C1",
+        "value": "32"
+      }
+    ]
+  },
+  "LPI2C2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x174",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "LPI2C2",
+        "value": "33"
+      }
+    ]
+  },
+  "LPI2C3": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x174",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "LPI2C3",
+        "value": "34"
+      }
+    ]
+  },
+  "LPI2C4": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x174",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "LPI2C4",
+        "value": "35"
+      }
+    ]
+  },
+  "LPI2C5": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x174",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "LPI2C5",
+        "value": "36"
+      }
+    ]
+  },
+  "LPI2C6": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x174",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "LPI2C6",
+        "value": "37"
+      }
+    ]
+  },
+  "LPSPI1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x78",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "LPSPI1",
+        "value": "38"
+      }
+    ]
+  },
+  "LPSPI2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x78",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "LPSPI2",
+        "value": "39"
+      }
+    ]
+  },
+  "LPSPI3": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x78",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "LPSPI3",
+        "value": "40"
+      }
+    ]
+  },
+  "LPSPI4": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x78",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "LPSPI4",
+        "value": "41"
+      }
+    ]
+  },
+  "LPSPI5": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x78",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "LPSPI5",
+        "value": "42"
+      }
+    ]
+  },
+  "LPSPI6": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x78",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "LPSPI6",
+        "value": "43"
+      }
+    ]
+  },
+  "LPUART1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x30",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "LPUART1",
+        "value": "20"
+      }
+    ]
+  },
+  "LPUART10": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x30",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "LPUART10",
+        "value": "29"
+      }
+    ]
+  },
+  "LPUART11": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x30",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "LPUART11",
+        "value": "30"
+      }
+    ]
+  },
+  "LPUART12": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x30",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "LPUART12",
+        "value": "31"
+      }
+    ]
+  },
+  "LPUART2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x30",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "LPUART2",
+        "value": "21"
+      }
+    ]
+  },
+  "LPUART3": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x30",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "LPUART3",
+        "value": "22"
+      }
+    ]
+  },
+  "LPUART4": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x30",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "LPUART4",
+        "value": "23"
+      }
+    ]
+  },
+  "LPUART5": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x30",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "LPUART5",
+        "value": "24"
+      }
+    ]
+  },
+  "LPUART6": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x30",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "LPUART6",
+        "value": "25"
+      }
+    ]
+  },
+  "LPUART7": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x30",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "LPUART7",
+        "value": "26"
+      }
+    ]
+  },
+  "LPUART8": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x30",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "LPUART8",
+        "value": "27"
+      }
+    ]
+  },
+  "LPUART9": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x30",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "LPUART9",
+        "value": "28"
+      }
+    ]
+  },
+  "MCM": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x4A8",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "MECC1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x108",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "MECC1_INT",
+        "value": "206"
+      },
+      {
+        "name": "MECC1_FATAL_INT",
+        "value": "207"
+      },
+      {
+        "name": "MECC2_FATAL_INT",
+        "value": "209"
+      }
+    ]
+  },
+  "MECC2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x108",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "MECC2_INT",
+        "value": "208"
+      }
+    ]
+  },
+  "MIPI_CSI2RX": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x19C",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "MIPI_CSI",
+        "value": "58"
+      }
+    ]
+  },
+  "MMCAU": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x2C",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "MUB": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x28",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "MUB",
+        "value": "118"
+      }
+    ]
+  },
+  "NVIC": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0xE04",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "DMA0_DMA16",
+        "value": "0"
+      },
+      {
+        "name": "DMA1_DMA17",
+        "value": "1"
+      },
+      {
+        "name": "DMA2_DMA18",
+        "value": "2"
+      },
+      {
+        "name": "DMA3_DMA19",
+        "value": "3"
+      },
+      {
+        "name": "DMA4_DMA20",
+        "value": "4"
+      },
+      {
+        "name": "DMA5_DMA21",
+        "value": "5"
+      },
+      {
+        "name": "DMA6_DMA22",
+        "value": "6"
+      },
+      {
+        "name": "DMA7_DMA23",
+        "value": "7"
+      },
+      {
+        "name": "DMA8_DMA24",
+        "value": "8"
+      },
+      {
+        "name": "DMA9_DMA25",
+        "value": "9"
+      },
+      {
+        "name": "DMA10_DMA26",
+        "value": "10"
+      },
+      {
+        "name": "DMA11_DMA27",
+        "value": "11"
+      },
+      {
+        "name": "DMA12_DMA28",
+        "value": "12"
+      },
+      {
+        "name": "DMA13_DMA29",
+        "value": "13"
+      },
+      {
+        "name": "DMA14_DMA30",
+        "value": "14"
+      },
+      {
+        "name": "DMA15_DMA31",
+        "value": "15"
+      },
+      {
+        "name": "DMA_ERROR",
+        "value": "16"
+      },
+      {
+        "name": "Reserved33",
+        "value": "17"
+      },
+      {
+        "name": "Reserved34",
+        "value": "18"
+      },
+      {
+        "name": "CORE",
+        "value": "19"
+      },
+      {
+        "name": "LPUART1",
+        "value": "20"
+      },
+      {
+        "name": "LPUART2",
+        "value": "21"
+      },
+      {
+        "name": "LPUART3",
+        "value": "22"
+      },
+      {
+        "name": "LPUART4",
+        "value": "23"
+      },
+      {
+        "name": "LPUART5",
+        "value": "24"
+      },
+      {
+        "name": "LPUART6",
+        "value": "25"
+      },
+      {
+        "name": "LPUART7",
+        "value": "26"
+      },
+      {
+        "name": "LPUART8",
+        "value": "27"
+      },
+      {
+        "name": "LPUART9",
+        "value": "28"
+      },
+      {
+        "name": "LPUART10",
+        "value": "29"
+      },
+      {
+        "name": "LPUART11",
+        "value": "30"
+      },
+      {
+        "name": "LPUART12",
+        "value": "31"
+      },
+      {
+        "name": "LPI2C1",
+        "value": "32"
+      },
+      {
+        "name": "LPI2C2",
+        "value": "33"
+      },
+      {
+        "name": "LPI2C3",
+        "value": "34"
+      },
+      {
+        "name": "LPI2C4",
+        "value": "35"
+      },
+      {
+        "name": "LPI2C5",
+        "value": "36"
+      },
+      {
+        "name": "LPI2C6",
+        "value": "37"
+      },
+      {
+        "name": "LPSPI1",
+        "value": "38"
+      },
+      {
+        "name": "LPSPI2",
+        "value": "39"
+      },
+      {
+        "name": "LPSPI3",
+        "value": "40"
+      },
+      {
+        "name": "LPSPI4",
+        "value": "41"
+      },
+      {
+        "name": "LPSPI5",
+        "value": "42"
+      },
+      {
+        "name": "LPSPI6",
+        "value": "43"
+      },
+      {
+        "name": "CAN1",
+        "value": "44"
+      },
+      {
+        "name": "CAN1_ERROR",
+        "value": "45"
+      },
+      {
+        "name": "CAN2",
+        "value": "46"
+      },
+      {
+        "name": "CAN2_ERROR",
+        "value": "47"
+      },
+      {
+        "name": "CAN3",
+        "value": "48"
+      },
+      {
+        "name": "CAN3_ERROR",
+        "value": "49"
+      },
+      {
+        "name": "Reserved66",
+        "value": "50"
+      },
+      {
+        "name": "KPP",
+        "value": "51"
+      },
+      {
+        "name": "Reserved68",
+        "value": "52"
+      },
+      {
+        "name": "GPR_IRQ",
+        "value": "53"
+      },
+      {
+        "name": "eLCDIF",
+        "value": "54"
+      },
+      {
+        "name": "LCDIFv2",
+        "value": "55"
+      },
+      {
+        "name": "CSI",
+        "value": "56"
+      },
+      {
+        "name": "PXP",
+        "value": "57"
+      },
+      {
+        "name": "MIPI_CSI",
+        "value": "58"
+      },
+      {
+        "name": "MIPI_DSI",
+        "value": "59"
+      },
+      {
+        "name": "GPU2D",
+        "value": "60"
+      },
+      {
+        "name": "GPIO12_Combined_0_15",
+        "value": "61"
+      },
+      {
+        "name": "GPIO12_Combined_16_31",
+        "value": "62"
+      },
+      {
+        "name": "DAC",
+        "value": "63"
+      },
+      {
+        "name": "KEY_MANAGER",
+        "value": "64"
+      },
+      {
+        "name": "WDOG2",
+        "value": "65"
+      },
+      {
+        "name": "SNVS_HP_NON_TZ",
+        "value": "66"
+      },
+      {
+        "name": "SNVS_HP_TZ",
+        "value": "67"
+      },
+      {
+        "name": "SNVS_PULSE_EVENT",
+        "value": "68"
+      },
+      {
+        "name": "CAAM_IRQ0",
+        "value": "69"
+      },
+      {
+        "name": "CAAM_IRQ1",
+        "value": "70"
+      },
+      {
+        "name": "CAAM_IRQ2",
+        "value": "71"
+      },
+      {
+        "name": "CAAM_IRQ3",
+        "value": "72"
+      },
+      {
+        "name": "CAAM_RECORVE_ERRPR",
+        "value": "73"
+      },
+      {
+        "name": "CAAM_RTIC",
+        "value": "74"
+      },
+      {
+        "name": "CDOG",
+        "value": "75"
+      },
+      {
+        "name": "SAI1",
+        "value": "76"
+      },
+      {
+        "name": "SAI2",
+        "value": "77"
+      },
+      {
+        "name": "SAI3_RX",
+        "value": "78"
+      },
+      {
+        "name": "SAI3_TX",
+        "value": "79"
+      },
+      {
+        "name": "SAI4_RX",
+        "value": "80"
+      },
+      {
+        "name": "SAI4_TX",
+        "value": "81"
+      },
+      {
+        "name": "SPDIF",
+        "value": "82"
+      },
+      {
+        "name": "TMPSNS_INT",
+        "value": "83"
+      },
+      {
+        "name": "TMPSNS_LOW_HIGH",
+        "value": "84"
+      },
+      {
+        "name": "TMPSNS_PANIC",
+        "value": "85"
+      },
+      {
+        "name": "LPSR_LP8_BROWNOUT",
+        "value": "86"
+      },
+      {
+        "name": "LPSR_LP0_BROWNOUT",
+        "value": "87"
+      },
+      {
+        "name": "ADC1",
+        "value": "88"
+      },
+      {
+        "name": "ADC2",
+        "value": "89"
+      },
+      {
+        "name": "USBPHY1",
+        "value": "90"
+      },
+      {
+        "name": "USBPHY2",
+        "value": "91"
+      },
+      {
+        "name": "RDC",
+        "value": "92"
+      },
+      {
+        "name": "GPIO13_Combined_0_31",
+        "value": "93"
+      },
+      {
+        "name": "DCIC1",
+        "value": "95"
+      },
+      {
+        "name": "DCIC2",
+        "value": "96"
+      },
+      {
+        "name": "ASRC",
+        "value": "97"
+      },
+      {
+        "name": "FLEXRAM_ECC",
+        "value": "98"
+      },
+      {
+        "name": "GPIO7_8_9_10_11",
+        "value": "99"
+      },
+      {
+        "name": "GPIO1_Combined_0_15",
+        "value": "100"
+      },
+      {
+        "name": "GPIO1_Combined_16_31",
+        "value": "101"
+      },
+      {
+        "name": "GPIO2_Combined_0_15",
+        "value": "102"
+      },
+      {
+        "name": "GPIO2_Combined_16_31",
+        "value": "103"
+      },
+      {
+        "name": "GPIO3_Combined_0_15",
+        "value": "104"
+      },
+      {
+        "name": "GPIO3_Combined_16_31",
+        "value": "105"
+      },
+      {
+        "name": "GPIO4_Combined_0_15",
+        "value": "106"
+      },
+      {
+        "name": "GPIO4_Combined_16_31",
+        "value": "107"
+      },
+      {
+        "name": "GPIO5_Combined_0_15",
+        "value": "108"
+      },
+      {
+        "name": "GPIO5_Combined_16_31",
+        "value": "109"
+      },
+      {
+        "name": "FLEXIO1",
+        "value": "110"
+      },
+      {
+        "name": "FLEXIO2",
+        "value": "111"
+      },
+      {
+        "name": "WDOG1",
+        "value": "112"
+      },
+      {
+        "name": "RTWDOG4",
+        "value": "113"
+      },
+      {
+        "name": "EWM",
+        "value": "114"
+      },
+      {
+        "name": "OCOTP_READ_FUSE_ERROR",
+        "value": "115"
+      },
+      {
+        "name": "OCOTP_READ_DONE_ERROR",
+        "value": "116"
+      },
+      {
+        "name": "GPC",
+        "value": "117"
+      },
+      {
+        "name": "MUB",
+        "value": "118"
+      },
+      {
+        "name": "GPT1",
+        "value": "119"
+      },
+      {
+        "name": "GPT2",
+        "value": "120"
+      },
+      {
+        "name": "GPT3",
+        "value": "121"
+      },
+      {
+        "name": "GPT4",
+        "value": "122"
+      },
+      {
+        "name": "GPT5",
+        "value": "123"
+      },
+      {
+        "name": "GPT6",
+        "value": "124"
+      },
+      {
+        "name": "PWM1_0",
+        "value": "125"
+      },
+      {
+        "name": "PWM1_1",
+        "value": "126"
+      },
+      {
+        "name": "PWM1_2",
+        "value": "127"
+      },
+      {
+        "name": "PWM1_3",
+        "value": "128"
+      },
+      {
+        "name": "PWM1_FAULT",
+        "value": "129"
+      },
+      {
+        "name": "FLEXSPI2",
+        "value": "131"
+      },
+      {
+        "name": "SEMC",
+        "value": "132"
+      },
+      {
+        "name": "USDHC1",
+        "value": "133"
+      },
+      {
+        "name": "USDHC2",
+        "value": "134"
+      },
+      {
+        "name": "USB_OTG2",
+        "value": "135"
+      },
+      {
+        "name": "USB_OTG1",
+        "value": "136"
+      },
+      {
+        "name": "ENET",
+        "value": "137"
+      },
+      {
+        "name": "ENET_1588_Timer",
+        "value": "138"
+      },
+      {
+        "name": "ENET_1G_MAC0_Tx_Rx_1",
+        "value": "139"
+      },
+      {
+        "name": "ENET_1G_MAC0_Tx_Rx_2",
+        "value": "140"
+      },
+      {
+        "name": "ENET_1G",
+        "value": "141"
+      },
+      {
+        "name": "ENET_1G_1588_Timer",
+        "value": "142"
+      },
+      {
+        "name": "XBAR1_IRQ_0_1",
+        "value": "143"
+      },
+      {
+        "name": "XBAR1_IRQ_2_3",
+        "value": "144"
+      },
+      {
+        "name": "ADC_ETC_IRQ0",
+        "value": "145"
+      },
+      {
+        "name": "ADC_ETC_IRQ1",
+        "value": "146"
+      },
+      {
+        "name": "ADC_ETC_IRQ2",
+        "value": "147"
+      },
+      {
+        "name": "ADC_ETC_IRQ3",
+        "value": "148"
+      },
+      {
+        "name": "ADC_ETC_ERROR_IRQ",
+        "value": "149"
+      },
+      {
+        "name": "PIT1",
+        "value": "155"
+      },
+      {
+        "name": "PIT2",
+        "value": "156"
+      },
+      {
+        "name": "ACMP1",
+        "value": "157"
+      },
+      {
+        "name": "ACMP2",
+        "value": "158"
+      },
+      {
+        "name": "ACMP3",
+        "value": "159"
+      },
+      {
+        "name": "ACMP4",
+        "value": "160"
+      },
+      {
+        "name": "Reserved177",
+        "value": "161"
+      },
+      {
+        "name": "Reserved178",
+        "value": "162"
+      },
+      {
+        "name": "Reserved179",
+        "value": "163"
+      },
+      {
+        "name": "Reserved180",
+        "value": "164"
+      },
+      {
+        "name": "ENC1",
+        "value": "165"
+      },
+      {
+        "name": "ENC2",
+        "value": "166"
+      },
+      {
+        "name": "ENC3",
+        "value": "167"
+      },
+      {
+        "name": "ENC4",
+        "value": "168"
+      },
+      {
+        "name": "Reserved185",
+        "value": "169"
+      },
+      {
+        "name": "Reserved186",
+        "value": "170"
+      },
+      {
+        "name": "TMR1",
+        "value": "171"
+      },
+      {
+        "name": "TMR2",
+        "value": "172"
+      },
+      {
+        "name": "TMR3",
+        "value": "173"
+      },
+      {
+        "name": "TMR4",
+        "value": "174"
+      },
+      {
+        "name": "SEMA4_CP0",
+        "value": "175"
+      },
+      {
+        "name": "SEMA4_CP1",
+        "value": "176"
+      },
+      {
+        "name": "PWM2_0",
+        "value": "177"
+      },
+      {
+        "name": "PWM2_1",
+        "value": "178"
+      },
+      {
+        "name": "PWM2_2",
+        "value": "179"
+      },
+      {
+        "name": "PWM2_3",
+        "value": "180"
+      },
+      {
+        "name": "PWM2_FAULT",
+        "value": "181"
+      },
+      {
+        "name": "PWM3_0",
+        "value": "182"
+      },
+      {
+        "name": "PWM3_1",
+        "value": "183"
+      },
+      {
+        "name": "PWM3_2",
+        "value": "184"
+      },
+      {
+        "name": "PWM3_3",
+        "value": "185"
+      },
+      {
+        "name": "PWM3_FAULT",
+        "value": "186"
+      },
+      {
+        "name": "PWM4_0",
+        "value": "187"
+      },
+      {
+        "name": "PWM4_1",
+        "value": "188"
+      },
+      {
+        "name": "PWM4_2",
+        "value": "189"
+      },
+      {
+        "name": "PWM4_3",
+        "value": "190"
+      },
+      {
+        "name": "PWM4_FAULT",
+        "value": "191"
+      },
+      {
+        "name": "Reserved208",
+        "value": "192"
+      },
+      {
+        "name": "Reserved209",
+        "value": "193"
+      },
+      {
+        "name": "Reserved210",
+        "value": "194"
+      },
+      {
+        "name": "Reserved211",
+        "value": "195"
+      },
+      {
+        "name": "Reserved212",
+        "value": "196"
+      },
+      {
+        "name": "Reserved213",
+        "value": "197"
+      },
+      {
+        "name": "Reserved214",
+        "value": "198"
+      },
+      {
+        "name": "Reserved215",
+        "value": "199"
+      },
+      {
+        "name": "PDM_HWVAD_EVENT",
+        "value": "200"
+      },
+      {
+        "name": "PDM_HWVAD_ERROR",
+        "value": "201"
+      },
+      {
+        "name": "PDM_EVENT",
+        "value": "202"
+      },
+      {
+        "name": "PDM_ERROR",
+        "value": "203"
+      },
+      {
+        "name": "EMVSIM1",
+        "value": "204"
+      },
+      {
+        "name": "EMVSIM2",
+        "value": "205"
+      },
+      {
+        "name": "MECC1_INT",
+        "value": "206"
+      },
+      {
+        "name": "MECC1_FATAL_INT",
+        "value": "207"
+      },
+      {
+        "name": "MECC2_INT",
+        "value": "208"
+      },
+      {
+        "name": "MECC2_FATAL_INT",
+        "value": "209"
+      },
+      {
+        "name": "XECC_FLEXSPI1_INT",
+        "value": "210"
+      },
+      {
+        "name": "XECC_FLEXSPI1_FATAL_INT",
+        "value": "211"
+      },
+      {
+        "name": "XECC_FLEXSPI2_INT",
+        "value": "212"
+      },
+      {
+        "name": "XECC_FLEXSPI2_FATAL_INT",
+        "value": "213"
+      },
+      {
+        "name": "XECC_SEMC_INT",
+        "value": "214"
+      },
+      {
+        "name": "XECC_SEMC_FATAL_INT",
+        "value": "215"
+      },
+      {
+        "name": "ENET_QOS",
+        "value": "216"
+      },
+      {
+        "name": "ENET_QOS_PMT",
+        "value": "217"
+      }
+    ]
+  },
+  "OCOTP": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x10F4",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "OCOTP_READ_FUSE_ERROR",
+        "value": "115"
+      },
+      {
+        "name": "OCOTP_READ_DONE_ERROR",
+        "value": "116"
+      }
+    ]
+  },
+  "OSC_RC_400M": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x80",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "OTFAD1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0xDE0",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "OTFAD2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0xDE0",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "PDM": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0xAC",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "PDM_HWVAD_EVENT",
+        "value": "200"
+      },
+      {
+        "name": "PDM_HWVAD_ERROR",
+        "value": "201"
+      },
+      {
+        "name": "PDM_EVENT",
+        "value": "202"
+      },
+      {
+        "name": "PDM_ERROR",
+        "value": "203"
+      }
+    ]
+  },
+  "PGMC_BPC0": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x100",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "PGMC_BPC1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x100",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "PGMC_BPC2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x100",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "PGMC_BPC3": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x100",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "PGMC_BPC4": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x100",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "PGMC_BPC5": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x100",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "PGMC_BPC6": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x100",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "PGMC_BPC7": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x100",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "PGMC_CPC0": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x100",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "PGMC_CPC0_MIF0": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x100",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "PGMC_CPC0_MIF1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x100",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "PGMC_CPC1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x100",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "PGMC_CPC1_MIF0": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x100",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "PGMC_CPC1_MIF1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x100",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "PGMC_PPC0": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x100",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "PHY_LDO": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x80",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "PIT1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x140",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "PIT1",
+        "value": "155"
+      }
+    ]
+  },
+  "PIT2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x140",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "PIT2",
+        "value": "156"
+      }
+    ]
+  },
+  "PWM1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x196",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "PWM1_0",
+        "value": "125"
+      },
+      {
+        "name": "PWM1_1",
+        "value": "126"
+      },
+      {
+        "name": "PWM1_2",
+        "value": "127"
+      },
+      {
+        "name": "PWM1_3",
+        "value": "128"
+      },
+      {
+        "name": "PWM1_FAULT",
+        "value": "129"
+      }
+    ]
+  },
+  "PWM2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x196",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "PWM2_0",
+        "value": "177"
+      },
+      {
+        "name": "PWM2_1",
+        "value": "178"
+      },
+      {
+        "name": "PWM2_2",
+        "value": "179"
+      },
+      {
+        "name": "PWM2_3",
+        "value": "180"
+      },
+      {
+        "name": "PWM2_FAULT",
+        "value": "181"
+      }
+    ]
+  },
+  "PWM3": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x196",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "PWM3_0",
+        "value": "182"
+      },
+      {
+        "name": "PWM3_1",
+        "value": "183"
+      },
+      {
+        "name": "PWM3_2",
+        "value": "184"
+      },
+      {
+        "name": "PWM3_3",
+        "value": "185"
+      },
+      {
+        "name": "PWM3_FAULT",
+        "value": "186"
+      }
+    ]
+  },
+  "PWM4": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x196",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "PWM4_0",
+        "value": "187"
+      },
+      {
+        "name": "PWM4_1",
+        "value": "188"
+      },
+      {
+        "name": "PWM4_2",
+        "value": "189"
+      },
+      {
+        "name": "PWM4_3",
+        "value": "190"
+      },
+      {
+        "name": "PWM4_FAULT",
+        "value": "191"
+      }
+    ]
+  },
+  "PXP": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x444",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "PXP",
+        "value": "57"
+      }
+    ]
+  },
+  "RDC": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0xBB0",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "RDC",
+        "value": "92"
+      }
+    ]
+  },
+  "RDC_SEMAPHORE1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x44",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [],
+    "register_groups": {
+      "RSTGT_R_RSTGT_W": [
+        "RSTGT_R",
+        "RSTGT_W"
+      ]
+    }
+  },
+  "RDC_SEMAPHORE2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x44",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "RTWDOG3": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x10",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "RTWDOG4": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x10",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "RTWDOG4",
+        "value": "113"
+      }
+    ]
+  },
+  "SAI1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0xE4",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "SAI1",
+        "value": "76"
+      }
+    ]
+  },
+  "SAI2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0xE4",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "SAI2",
+        "value": "77"
+      }
+    ]
+  },
+  "SAI3": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0xE4",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "SAI3_RX",
+        "value": "78"
+      },
+      {
+        "name": "SAI3_TX",
+        "value": "79"
+      }
+    ]
+  },
+  "SAI4": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0xE4",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "SAI4_RX",
+        "value": "80"
+      },
+      {
+        "name": "SAI4_TX",
+        "value": "81"
+      }
+    ]
+  },
+  "SEMA4": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x106",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "SEMA4_CP0",
+        "value": "175"
+      },
+      {
+        "name": "SEMA4_CP1",
+        "value": "176"
+      }
+    ]
+  },
+  "SEMC": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x154",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "SEMC",
+        "value": "132"
+      }
+    ]
+  },
+  "SNVS": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0xC00",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "SNVS_HP_NON_TZ",
+        "value": "66"
+      },
+      {
+        "name": "SNVS_HP_TZ",
+        "value": "67"
+      },
+      {
+        "name": "SNVS_PULSE_EVENT",
+        "value": "68"
+      }
+    ]
+  },
+  "SPDIF": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x54",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "SPDIF",
+        "value": "82"
+      }
+    ],
+    "register_groups": {
+      "SIC_SIS": [
+        "SIC",
+        "SIS"
+      ]
+    }
+  },
+  "SRAM": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x3004",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "SRC": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x334",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "SSARC_HP": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x3FFC",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "SSARC_LP": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x224",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "TMPSNS": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x10000",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "TMPSNS_INT",
+        "value": "83"
+      },
+      {
+        "name": "TMPSNS_LOW_HIGH",
+        "value": "84"
+      },
+      {
+        "name": "TMPSNS_PANIC",
+        "value": "85"
+      }
+    ]
+  },
+  "TMR1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x7A",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "TMR1",
+        "value": "171"
+      }
+    ]
+  },
+  "TMR2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x7A",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "TMR2",
+        "value": "172"
+      }
+    ]
+  },
+  "TMR3": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x7A",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "TMR3",
+        "value": "173"
+      }
+    ]
+  },
+  "TMR4": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x7A",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "TMR4",
+        "value": "174"
+      }
+    ]
+  },
+  "USBHSDCD1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x1C",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [],
+    "register_groups": {
+      "TIMER2": [
+        "TIMER2_BC11",
+        "TIMER2_BC12"
+      ]
+    }
+  },
+  "USBHSDCD2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x1C",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "USBNC_OTG1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x14",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "USBNC_OTG2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x14",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "USBPHY1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x140",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "USBPHY1",
+        "value": "90"
+      }
+    ]
+  },
+  "USBPHY2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x140",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "USBPHY2",
+        "value": "91"
+      }
+    ]
+  },
+  "USB_OTG1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x1E0",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "USB_OTG1",
+        "value": "136"
+      }
+    ],
+    "register_groups": {
+      "ADDRESS_MODES": [
+        "DEVICEADDR",
+        "PERIODICLISTBASE",
+        "ASYNCLISTADDR",
+        "ENDPTLISTADDR"
+      ]
+    }
+  },
+  "USB_OTG2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x1E0",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "USB_OTG2",
+        "value": "135"
+      }
+    ]
+  },
+  "USDHC1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0xD0",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "USDHC1",
+        "value": "133"
+      }
+    ]
+  },
+  "USDHC2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0xD0",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "USDHC2",
+        "value": "134"
+      }
+    ]
+  },
+  "VIDEO_MUX": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x80",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "VIDEO_PLL": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x80",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "VMBANDGAP": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x80",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "WDOG1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0xA",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "WDOG1",
+        "value": "112"
+      }
+    ]
+  },
+  "WDOG2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0xA",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "WDOG2",
+        "value": "65"
+      }
+    ]
+  },
+  "XBARA1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0xB4",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "XBAR1_IRQ_0_1",
+        "value": "143"
+      },
+      {
+        "name": "XBAR1_IRQ_2_3",
+        "value": "144"
+      }
+    ]
+  },
+  "XBARB2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x10",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "XBARB3": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x10",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "XECC_FLEXSPI1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x5C",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "XECC_FLEXSPI1_INT",
+        "value": "210"
+      },
+      {
+        "name": "XECC_FLEXSPI1_FATAL_INT",
+        "value": "211"
+      }
+    ]
+  },
+  "XECC_FLEXSPI2": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x5C",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "XECC_FLEXSPI2_INT",
+        "value": "212"
+      },
+      {
+        "name": "XECC_FLEXSPI2_FATAL_INT",
+        "value": "213"
+      }
+    ]
+  },
+  "XECC_SEMC": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0x5C",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": [
+      {
+        "name": "XECC_SEMC_INT",
+        "value": "214"
+      },
+      {
+        "name": "XECC_SEMC_FATAL_INT",
+        "value": "215"
+      }
+    ]
+  },
+  "XRDC2_D0": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0xFFFC",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "XRDC2_D1": {
+    "address_blocks": [
+      {
+        "offset": "0",
+        "size": "0xFFFC",
+        "usage": "registers"
+      }
+    ],
+    "interrupts": []
+  },
+  "cpu": {
+    "endian": "little",
+    "fpuPresent": "true",
+    "mpuPresent": "true",
+    "name": "CM4",
+    "nvicPrioBits": "4",
+    "revision": "r0p1",
+    "vendorSystickConfig": "false",
+    "vtorPresent": "true"
+  },
+  "device": {
+    "addressUnitBits": "8",
+    "description": "MIMXRT1176DVMAA",
+    "licenseText": "\nCopyright 2016-2022 NXP\nAll rights reserved.\n\nSPDX-License-Identifier: BSD-3-Clause\n  ",
+    "name": "MIMXRT1176_cm4",
+    "vendor": "nxp.com",
+    "version": "1.0",
+    "width": "32"
+  },
+  "filtered_includes": {
+    "caam/include.yaml": "Register map not in reference manual / (#64).",
+    "dcic1/include.yaml": "(#64) dimIncrement not supported.",
+    "rdc/include.yaml": "(#64) dimIncrement not supported."
+  }
+}

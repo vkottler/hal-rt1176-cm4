@@ -1,0 +1,519 @@
+---
+structs:
+  ethernet_pll:
+    description: Fractional PLL
+    instances:
+      - name: ETHERNET_PLL
+        address: '0'
+    fields:
+      - name: CTRL0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Fractional PLL Control Register
+        fields:
+          - name: BIAS_SELECT
+            description: BIAS_SELECT
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: POST_DIV_SEL
+            description: Post Divide Select
+            index: 25
+            width: 3
+            read: true
+            write: true
+            type: ETHERNET_PLL_CTRL0_POST_DIV_SEL
+          - name: PLL_REG_EN
+            description: PLL_REG_EN
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: BIAS_TRIM
+            description: BIAS_TRIM
+            index: 19
+            width: 3
+            read: true
+            write: true
+          - name: DITHER_EN
+            description: DITHER_EN
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS
+            description: BYPASS
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE
+            description: ENABLE
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: POWERUP
+            description: POWERUP
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: HOLD_RING_OFF
+            description: PLL Start up initialization
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE_ALT
+            description: ENABLE_ALT
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: DIV_SELECT
+            description: DIV_SELECT
+            index: 0
+            width: 7
+            read: true
+            write: true
+      - name: CTRL0_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Fractional PLL Control Register
+        fields:
+          - name: BIAS_SELECT
+            description: BIAS_SELECT
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: POST_DIV_SEL
+            description: Post Divide Select
+            index: 25
+            width: 3
+            read: true
+            write: true
+          - name: PLL_REG_EN
+            description: PLL_REG_EN
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: BIAS_TRIM
+            description: BIAS_TRIM
+            index: 19
+            width: 3
+            read: true
+            write: true
+          - name: DITHER_EN
+            description: DITHER_EN
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS
+            description: BYPASS
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE
+            description: ENABLE
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: POWERUP
+            description: POWERUP
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: HOLD_RING_OFF
+            description: PLL Start up initialization
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE_ALT
+            description: ENABLE_ALT
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: DIV_SELECT
+            description: DIV_SELECT
+            index: 0
+            width: 7
+            read: true
+            write: true
+      - name: CTRL0_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) Fractional PLL Control Register
+        fields:
+          - name: BIAS_SELECT
+            description: BIAS_SELECT
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: POST_DIV_SEL
+            description: Post Divide Select
+            index: 25
+            width: 3
+            read: true
+            write: true
+          - name: PLL_REG_EN
+            description: PLL_REG_EN
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: BIAS_TRIM
+            description: BIAS_TRIM
+            index: 19
+            width: 3
+            read: true
+            write: true
+          - name: DITHER_EN
+            description: DITHER_EN
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS
+            description: BYPASS
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE
+            description: ENABLE
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: POWERUP
+            description: POWERUP
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: HOLD_RING_OFF
+            description: PLL Start up initialization
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE_ALT
+            description: ENABLE_ALT
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: DIV_SELECT
+            description: DIV_SELECT
+            index: 0
+            width: 7
+            read: true
+            write: true
+      - name: CTRL0_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) Fractional PLL Control Register
+        fields:
+          - name: BIAS_SELECT
+            description: BIAS_SELECT
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: POST_DIV_SEL
+            description: Post Divide Select
+            index: 25
+            width: 3
+            read: true
+            write: true
+          - name: PLL_REG_EN
+            description: PLL_REG_EN
+            index: 22
+            width: 1
+            read: true
+            write: true
+          - name: BIAS_TRIM
+            description: BIAS_TRIM
+            index: 19
+            width: 3
+            read: true
+            write: true
+          - name: DITHER_EN
+            description: DITHER_EN
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: BYPASS
+            description: BYPASS
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE
+            description: ENABLE
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: POWERUP
+            description: POWERUP
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: HOLD_RING_OFF
+            description: PLL Start up initialization
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: ENABLE_ALT
+            description: ENABLE_ALT
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: DIV_SELECT
+            description: DIV_SELECT
+            index: 0
+            width: 7
+            read: true
+            write: true
+      - name: SPREAD_SPECTRUM
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) Fractional PLL Spread Spectrum Control Register
+        fields:
+          - name: STOP
+            description: Stop
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: ENABLE
+            description: Enable
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: STEP
+            description: Step
+            index: 0
+            width: 15
+            read: true
+            write: true
+      - name: SPREAD_SPECTRUM_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) Fractional PLL Spread Spectrum Control Register
+        fields:
+          - name: STOP
+            description: Stop
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: ENABLE
+            description: Enable
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: STEP
+            description: Step
+            index: 0
+            width: 15
+            read: true
+            write: true
+      - name: SPREAD_SPECTRUM_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) Fractional PLL Spread Spectrum Control Register
+        fields:
+          - name: STOP
+            description: Stop
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: ENABLE
+            description: Enable
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: STEP
+            description: Step
+            index: 0
+            width: 15
+            read: true
+            write: true
+      - name: SPREAD_SPECTRUM_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) Fractional PLL Spread Spectrum Control Register
+        fields:
+          - name: STOP
+            description: Stop
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: ENABLE
+            description: Enable
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: STEP
+            description: Step
+            index: 0
+            width: 15
+            read: true
+            write: true
+      - name: NUMERATOR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) Fractional PLL Numerator Control Register
+        fields:
+          - name: NUM
+            description: Numerator
+            index: 0
+            width: 30
+            read: true
+            write: true
+      - name: NUMERATOR_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) Fractional PLL Numerator Control Register
+        fields:
+          - name: NUM
+            description: Numerator
+            index: 0
+            width: 30
+            read: true
+            write: true
+      - name: NUMERATOR_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) Fractional PLL Numerator Control Register
+        fields:
+          - name: NUM
+            description: Numerator
+            index: 0
+            width: 30
+            read: true
+            write: true
+      - name: NUMERATOR_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) Fractional PLL Numerator Control Register
+        fields:
+          - name: NUM
+            description: Numerator
+            index: 0
+            width: 30
+            read: true
+            write: true
+      - name: DENOMINATOR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) Fractional PLL Denominator Control Register
+        fields:
+          - name: DENOM
+            description: Denominator
+            index: 0
+            width: 30
+            read: true
+            write: true
+      - name: DENOMINATOR_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 52
+        description: (read-write) Fractional PLL Denominator Control Register
+        fields:
+          - name: DENOM
+            description: Denominator
+            index: 0
+            width: 30
+            read: true
+            write: true
+      - name: DENOMINATOR_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 56
+        description: (read-write) Fractional PLL Denominator Control Register
+        fields:
+          - name: DENOM
+            description: Denominator
+            index: 0
+            width: 30
+            read: true
+            write: true
+      - name: DENOMINATOR_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 60
+        description: (read-write) Fractional PLL Denominator Control Register
+        fields:
+          - name: DENOM
+            description: Denominator
+            index: 0
+            width: 30
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  ETHERNET_PLL_CTRL0_POST_DIV_SEL:
+    enum:
+      _1:
+        description: Divide by 1
+        value: 0
+      _2:
+        description: Divide by 2
+        value: 1
+      _4:
+        description: Divide by 4
+        value: 2
+      _8:
+        description: Divide by 8
+        value: 3
+      _16:
+        description: Divide by 16
+        value: 4
+      _32:
+        description: Divide by 32
+        value: 5
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

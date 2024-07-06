@@ -1,0 +1,828 @@
+---
+structs:
+  msci_msac_wk_instance:
+    description: no description available
+    fields:
+      - name: MSC_MSAC_W0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Memory Slot Access Control
+        fields:
+          - name: EALO
+            description: Exclusive Access Lock Owner
+            index: 24
+            width: 4
+            read: true
+            write: false
+          - name: D7ACP
+            description: Domain "x" access control policy
+            index: 21
+            width: 3
+            read: true
+            write: true
+          - name: D6ACP
+            description: Domain "x" access control policy
+            index: 18
+            width: 3
+            read: true
+            write: true
+          - name: D5ACP
+            description: Domain "x" access control policy
+            index: 15
+            width: 3
+            read: true
+            write: true
+          - name: D4ACP
+            description: Domain "x" access control policy
+            index: 12
+            width: 3
+            read: true
+            write: true
+          - name: D3ACP
+            description: Domain "x" access control policy
+            index: 9
+            width: 3
+            read: true
+            write: true
+          - name: D2ACP
+            description: Domain "x" access control policy
+            index: 6
+            width: 3
+            read: true
+            write: true
+          - name: D1ACP
+            description: Domain "x" access control policy
+            index: 3
+            width: 3
+            read: true
+            write: true
+          - name: D0ACP
+            description: Domain "x" access control policy
+            index: 0
+            width: 3
+            read: true
+            write: true
+      - name: MSC_MSAC_W1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Memory Slot Access Control
+        fields:
+          - name: VLD
+            description: Valid
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: DL2
+            description: Descriptor Lock
+            index: 29
+            width: 2
+            read: true
+            write: true
+            type: XRDC2_D0_MSC_MSAC_W1_DL2
+          - name: EAL
+            description: Exclusive Access Lock
+            index: 24
+            width: 2
+            read: true
+            write: true
+            type: XRDC2_D0_MSC_MSAC_W1_EAL
+          - name: D15ACP
+            description: Domain "x" access control policy
+            index: 21
+            width: 3
+            read: true
+            write: true
+          - name: D14ACP
+            description: Domain "x" access control policy
+            index: 18
+            width: 3
+            read: true
+            write: true
+          - name: D13ACP
+            description: Domain "x" access control policy
+            index: 15
+            width: 3
+            read: true
+            write: true
+          - name: D12ACP
+            description: Domain "x" access control policy
+            index: 12
+            width: 3
+            read: true
+            write: true
+          - name: D11ACP
+            description: Domain "x" access control policy
+            index: 9
+            width: 3
+            read: true
+            write: true
+          - name: D10ACP
+            description: Domain "x" access control policy
+            index: 6
+            width: 3
+            read: true
+            write: true
+          - name: D9ACP
+            description: Domain "x" access control policy
+            index: 3
+            width: 3
+            read: true
+            write: true
+          - name: D8ACP
+            description: Domain "x" access control policy
+            index: 0
+            width: 3
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+  mdaci_mdaj_instance:
+    description: no description available
+    fields:
+      - name: MDAC_MDA_W0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Master Domain Assignment
+        fields:
+          - name: MATCH
+            description: Match
+            index: 16
+            width: 16
+            read: true
+            write: true
+          - name: MASK
+            description: Mask
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: MDAC_MDA_W1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Master Domain Assignment
+        fields:
+          - name: VLD
+            description: Valid
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: DL
+            description: Descriptor Lock
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: SA
+            description: Secure attribute
+            index: 26
+            width: 2
+            read: true
+            write: true
+            type: XRDC2_D0_MDAC_MDA_W1_SA
+          - name: PA
+            description: Privileged attribute
+            index: 24
+            width: 2
+            read: true
+            write: true
+            type: XRDC2_D0_MDAC_MDA_W1_PA
+          - name: DID
+            description: Domain Identifier
+            index: 16
+            width: 4
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+  mdaci_instance:
+    description: no description available
+    fields:
+      - name: mdaci_mdaj
+        type: mdaci_mdaj_instance
+        array_length: 32
+        description: no description available
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+  paci_pdacj_instance:
+    description: no description available
+    fields:
+      - name: PAC_PDAC_W0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Peripheral Domain Access Control
+        fields:
+          - name: EALO
+            description: Exclusive Access Lock Owner
+            index: 24
+            width: 4
+            read: true
+            write: true
+          - name: D7ACP
+            description: Domain "x" access control policy
+            index: 21
+            width: 3
+            read: true
+            write: true
+          - name: D6ACP
+            description: Domain "x" access control policy
+            index: 18
+            width: 3
+            read: true
+            write: true
+          - name: D5ACP
+            description: Domain "x" access control policy
+            index: 15
+            width: 3
+            read: true
+            write: true
+          - name: D4ACP
+            description: Domain "x" access control policy
+            index: 12
+            width: 3
+            read: true
+            write: true
+          - name: D3ACP
+            description: Domain "x" access control policy
+            index: 9
+            width: 3
+            read: true
+            write: true
+          - name: D2ACP
+            description: Domain "x" access control policy
+            index: 6
+            width: 3
+            read: true
+            write: true
+          - name: D1ACP
+            description: Domain "x" access control policy
+            index: 3
+            width: 3
+            read: true
+            write: true
+          - name: D0ACP
+            description: Domain "x" access control policy
+            index: 0
+            width: 3
+            read: true
+            write: true
+      - name: PAC_PDAC_W1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Peripheral Domain Access Control
+        fields:
+          - name: VLD
+            description: Valid
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: DL2
+            description: Descriptor Lock
+            index: 29
+            width: 2
+            read: true
+            write: true
+            type: XRDC2_D0_PAC_PDAC_W1_DL2
+          - name: EAL
+            description: Exclusive Access Lock
+            index: 24
+            width: 2
+            read: true
+            write: true
+            type: XRDC2_D0_PAC_PDAC_W1_EAL
+          - name: D15ACP
+            description: Domain "x" access control policy
+            index: 21
+            width: 3
+            read: true
+            write: true
+          - name: D14ACP
+            description: Domain "x" access control policy
+            index: 18
+            width: 3
+            read: true
+            write: true
+          - name: D13ACP
+            description: Domain "x" access control policy
+            index: 15
+            width: 3
+            read: true
+            write: true
+          - name: D12ACP
+            description: Domain "x" access control policy
+            index: 12
+            width: 3
+            read: true
+            write: true
+          - name: D11ACP
+            description: Domain "x" access control policy
+            index: 9
+            width: 3
+            read: true
+            write: true
+          - name: D10ACP
+            description: Domain "x" access control policy
+            index: 6
+            width: 3
+            read: true
+            write: true
+          - name: D9ACP
+            description: Domain "x" access control policy
+            index: 3
+            width: 3
+            read: true
+            write: true
+          - name: D8ACP
+            description: Domain "x" access control policy
+            index: 0
+            width: 3
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+  paci_instance:
+    description: no description available
+    fields:
+      - name: paci_pdacj
+        type: paci_pdacj_instance
+        array_length: 256
+        description: no description available
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+  mrci_mrgdj_instance:
+    description: no description available
+    fields:
+      - name: MRC_MRGD_W0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Memory Region Descriptor
+        fields:
+          - name: SRTADDR
+            description: Start Address
+            index: 12
+            width: 20
+            read: true
+            write: true
+      - name: MRC_MRGD_W1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Memory Region Descriptor
+        fields:
+          - name: SRTADDR
+            description: Start Address
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: MRC_MRGD_W2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) Memory Region Descriptor
+        fields:
+          - name: ENDADDR
+            description: End Address
+            index: 12
+            width: 20
+            read: true
+            write: true
+      - name: MRC_MRGD_W3
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) Memory Region Descriptor
+        fields:
+          - name: ENDADDR
+            description: End Address
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: MRC_MRGD_W5
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) Memory Region Descriptor
+        fields:
+          - name: EALO
+            description: Exclusive Access Lock Owner
+            index: 24
+            width: 4
+            read: true
+            write: true
+          - name: D7ACP
+            description: Domain "x" access control policy
+            index: 21
+            width: 3
+            read: true
+            write: true
+          - name: D6ACP
+            description: Domain "x" access control policy
+            index: 18
+            width: 3
+            read: true
+            write: true
+          - name: D5ACP
+            description: Domain "x" access control policy
+            index: 15
+            width: 3
+            read: true
+            write: true
+          - name: D4ACP
+            description: Domain "x" access control policy
+            index: 12
+            width: 3
+            read: true
+            write: true
+          - name: D3ACP
+            description: Domain "x" access control policy
+            index: 9
+            width: 3
+            read: true
+            write: true
+          - name: D2ACP
+            description: Domain "x" access control policy
+            index: 6
+            width: 3
+            read: true
+            write: true
+          - name: D1ACP
+            description: Domain "x" access control policy
+            index: 3
+            width: 3
+            read: true
+            write: true
+          - name: D0ACP
+            description: Domain "x" access control policy
+            index: 0
+            width: 3
+            read: true
+            write: true
+      - name: MRC_MRGD_W6
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) Memory Region Descriptor
+        fields:
+          - name: VLD
+            description: Valid
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: DL2
+            description: Descriptor Lock
+            index: 29
+            width: 2
+            read: true
+            write: true
+            type: XRDC2_D0_MRC_MRGD_W6_DL2
+          - name: EAL
+            description: Exclusive Access Lock
+            index: 24
+            width: 2
+            read: true
+            write: true
+            type: XRDC2_D0_MRC_MRGD_W6_EAL
+          - name: D15ACP
+            description: Domain "x" access control policy
+            index: 21
+            width: 3
+            read: true
+            write: true
+          - name: D14ACP
+            description: Domain "x" access control policy
+            index: 18
+            width: 3
+            read: true
+            write: true
+          - name: D13ACP
+            description: Domain "x" access control policy
+            index: 15
+            width: 3
+            read: true
+            write: true
+          - name: D12ACP
+            description: Domain "x" access control policy
+            index: 12
+            width: 3
+            read: true
+            write: true
+          - name: D11ACP
+            description: Domain "x" access control policy
+            index: 9
+            width: 3
+            read: true
+            write: true
+          - name: D10ACP
+            description: Domain "x" access control policy
+            index: 6
+            width: 3
+            read: true
+            write: true
+          - name: D9ACP
+            description: Domain "x" access control policy
+            index: 3
+            width: 3
+            read: true
+            write: true
+          - name: D8ACP
+            description: Domain "x" access control policy
+            index: 0
+            width: 3
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+  mrci_instance:
+    description: no description available
+    fields:
+      - name: mrci_mrgdj
+        type: mrci_mrgdj_instance
+        array_length: 32
+        description: no description available
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+  xrdc2_d0:
+    description: XRDC2
+    instances:
+      - name: XRDC2_D0
+        address: '0x40CE0000'
+      - name: XRDC2_D1
+        address: '0x40CD0000'
+    fields:
+      - name: MCR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Module Control Register
+        fields:
+          - name: GCL
+            description: Global Configuration Lock
+            index: 4
+            width: 2
+            read: true
+            write: true
+            type: XRDC2_D0_MCR_GCL
+          - name: GVLDC
+            description: Global Valid Access Control
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: GVLDM
+            description: Global Valid MDAC
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: SR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Status Register
+        fields:
+          - name: GCLO
+            description: Global Configuration Lock Owner
+            index: 8
+            width: 4
+            read: true
+            write: false
+          - name: HRL
+            description: Hardware Revision Level
+            index: 4
+            width: 4
+            read: true
+            write: false
+          - name: DIN
+            description: Domain Identifier Number
+            index: 0
+            width: 4
+            read: true
+            write: false
+      - name: msci_msac_wk
+        type: msci_msac_wk_instance
+        array_length: 128
+        description: no description available
+      - name: mdaci
+        type: mdaci_instance
+        array_length: 32
+        description: no description available
+      - name: paci
+        type: paci_instance
+        array_length: 8
+        description: no description available
+      - name: mrci
+        type: mrci_instance
+        array_length: 32
+        description: no description available
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  XRDC2_D0_MCR_GCL:
+    enum:
+      disabled_00:
+        description: Lock disabled, registers can be written by any domain.
+        value: 0
+      disabled_01:
+        description: Lock disabled until the next reset, registers can be written
+          by any domain.
+        value: 1
+      enabled_10:
+        description: Lock enabled, only the global configuration lock owner (SR[GCLO])
+          can write to registers.
+        value: 2
+      enabled_11:
+        description: Lock enabled, all registers are read only until the next reset.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  XRDC2_D0_MSC_MSAC_W1_DL2:
+    enum:
+      disabled_00:
+        description: Lock disabled, descriptor registers can be written.
+        value: 0
+      disabled_01:
+        description: Lock disabled until the next reset, descriptor registers can
+          be written.
+        value: 1
+      enabled_10:
+        description: Lock enabled, only domain "x" can only update the DxACP field;
+          no other fields can be written.
+        value: 2
+      enabled_11:
+        description: Lock enabled, descriptor registers are read-only until the next
+          reset.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  XRDC2_D0_MSC_MSAC_W1_EAL:
+    enum:
+      disabled_00:
+        description: Lock disabled.
+        value: 0
+      disabled_01:
+        description: Lock disabled until next reset.
+        value: 1
+      enabled_10:
+        description: Lock enabled, lock state = available.
+        value: 2
+      enabled_11:
+        description: Lock enabled, lock state = not available.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  XRDC2_D0_MDAC_MDA_W1_SA:
+    enum:
+      _00:
+        description: Use the bus master's secure/nonsecure attribute directly.
+        value: 0
+      _01:
+        description: Use the bus master's secure/nonsecure attribute directly.
+        value: 1
+      _10:
+        description: Force the bus attribute for this master to secure.
+        value: 2
+      _11:
+        description: Force the bus attribute for this master to nonsecure.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  XRDC2_D0_MDAC_MDA_W1_PA:
+    enum:
+      _00:
+        description: Use the bus master's privileged/user attribute directly.
+        value: 0
+      _01:
+        description: Use the bus master's privileged/user attribute directly.
+        value: 1
+      _10:
+        description: Force the bus attribute for this master to user.
+        value: 2
+      _11:
+        description: Force the bus attribute for this master to privileged.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  XRDC2_D0_PAC_PDAC_W1_DL2:
+    enum:
+      disabled_00:
+        description: Lock disabled, descriptor registers can be written..
+        value: 0
+      disabled_01:
+        description: Lock disabled until the next reset, descriptor registers can
+          be written..
+        value: 1
+      enabled_10:
+        description: Lock enabled, only domain "x" can only update the DxACP field;
+          no other fields can be written..
+        value: 2
+      enabled_11:
+        description: Lock enabled, descriptor registers are read-only until the next
+          reset.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  XRDC2_D0_PAC_PDAC_W1_EAL:
+    enum:
+      disabled_00:
+        description: Lock disabled.
+        value: 0
+      disabled_01:
+        description: Lock disabled until next reset.
+        value: 1
+      enabled_10:
+        description: Lock enabled, lock state = available.
+        value: 2
+      enabled_11:
+        description: Lock enabled, lock state = not available.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  XRDC2_D0_MRC_MRGD_W6_DL2:
+    enum:
+      disabled_00:
+        description: Lock disabled, descriptor registers can be written.
+        value: 0
+      disabled_01:
+        description: Lock disabled until the next reset, descriptor registers can
+          be written.
+        value: 1
+      enabled_10:
+        description: Lock enabled, only domain "x" can only update the DxACP field;
+          no other fields can be written.
+        value: 2
+      enabled_11:
+        description: Lock enabled, descriptor registers are read-only until the next
+          reset.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  XRDC2_D0_MRC_MRGD_W6_EAL:
+    enum:
+      disabled_00:
+        description: Lock disabled.
+        value: 0
+      disabled_01:
+        description: Lock disabled until next reset.
+        value: 1
+      enabled_10:
+        description: Lock enabled, lock state = available.
+        value: 2
+      enabled_11:
+        description: Lock enabled, lock state = not available.
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

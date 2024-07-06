@@ -1,0 +1,488 @@
+---
+structs:
+  cdog:
+    description: CDOG
+    instances:
+      - name: CDOG
+        address: '0x41900000'
+    fields:
+      - name: CONTROL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Control
+        fields:
+          - name: DEBUG_HALT_CTRL
+            description: DEBUG_HALT control
+            index: 30
+            width: 2
+            read: true
+            write: true
+            type: CDOG_CONTROL_DEBUG_HALT_CTRL
+          - name: IRQ_PAUSE
+            description: IRQ pause control
+            index: 28
+            width: 2
+            read: true
+            write: true
+            type: CDOG_CONTROL_IRQ_PAUSE
+          - name: ADDRESS_CTRL
+            description: ADDRESS fault control
+            index: 17
+            width: 3
+            read: true
+            write: true
+            type: CDOG_CONTROL_ADDRESS_CTRL
+          - name: STATE_CTRL
+            description: STATE fault control
+            index: 14
+            width: 3
+            read: true
+            write: true
+            type: CDOG_CONTROL_STATE_CTRL
+          - name: CONTROL_CTRL
+            description: CONTROL fault control
+            index: 11
+            width: 3
+            read: true
+            write: true
+            type: CDOG_CONTROL_CONTROL_CTRL
+          - name: SEQUENCE_CTRL
+            description: SEQUENCE fault control
+            index: 8
+            width: 3
+            read: true
+            write: true
+            type: CDOG_CONTROL_SEQUENCE_CTRL
+          - name: MISCOMPARE_CTRL
+            description: MISCOMPARE fault control
+            index: 5
+            width: 3
+            read: true
+            write: true
+            type: CDOG_CONTROL_MISCOMPARE_CTRL
+          - name: TIMEOUT_CTRL
+            description: TIMEOUT fault control
+            index: 2
+            width: 3
+            read: true
+            write: true
+            type: CDOG_CONTROL_TIMEOUT_CTRL
+          - name: LOCK_CTRL
+            description: Lock control
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: CDOG_CONTROL_LOCK_CTRL
+      - name: RELOAD
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Instruction Timer reload
+        fields:
+          - name: RLOAD
+            description: Instruction Timer reload value
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: INSTRUCTION_TIMER
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) Instruction Timer
+        fields:
+          - name: INSTIM
+            description: Current value of the Instruction Timer
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: SECURE_COUNTER
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) Secure Counter
+        fields:
+          - name: SECCNT
+            description: Secure Counter
+            index: 0
+            width: 32
+            read: false
+            write: true
+      - name: STATUS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) Status 1
+        fields:
+          - name: CURST
+            description: Current State
+            index: 28
+            width: 4
+            read: true
+            write: false
+          - name: NUMILSEQF
+            description: Number of SEQUENCE faults since the last POR
+            index: 16
+            width: 8
+            read: true
+            write: false
+          - name: NUMMISCOMPF
+            description: Number of MISCOMPARE faults since the last POR
+            index: 8
+            width: 8
+            read: true
+            write: false
+          - name: NUMTOF
+            description: Number of TIMEOUT faults since the last POR
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: STATUS2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) Status 2
+        fields:
+          - name: NUMILLA
+            description: Number of ADDRESS faults since the last POR
+            index: 16
+            width: 8
+            read: true
+            write: false
+          - name: NUMILLSTF
+            description: Number of STATE faults since the last POR
+            index: 8
+            width: 8
+            read: true
+            write: false
+          - name: NUMCNTF
+            description: Number of CONTROL faults since the last POR
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: FLAGS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) Flags
+        fields:
+          - name: POR_FLAG
+            description: Power-on reset flag
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: ADDR_FLAG
+            description: ADDRESS fault flag
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: STATE_FLAG
+            description: STATE fault flag
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: CNT_FLAG
+            description: CONTROL fault flag
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: SEQ_FLAG
+            description: SEQUENCE fault flag
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: MISCOM_FLAG
+            description: MISCOMPARE fault flag
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: TO_FLAG
+            description: TIMEOUT fault flag
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PERSISTENT
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) Persistent Data Storage
+        fields:
+          - name: PERSIS
+            description: Persistent Storage
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: START
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) START Command
+        fields:
+          - name: STRT
+            description: Start command
+            index: 0
+            width: 32
+            read: false
+            write: true
+      - name: STOP
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) STOP Command
+        fields:
+          - name: STP
+            description: Stop command
+            index: 0
+            width: 32
+            read: false
+            write: true
+      - name: RESTART
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) RESTART Command
+        fields:
+          - name: RSTRT
+            description: Restart command
+            index: 0
+            width: 32
+            read: false
+            write: true
+      - name: ADD
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) ADD Command
+        fields:
+          - name: AD
+            description: ADD Write Value
+            index: 0
+            width: 32
+            read: false
+            write: true
+      - name: ADD1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) ADD1 Command
+        fields:
+          - name: AD1
+            description: ADD 1
+            index: 0
+            width: 32
+            read: false
+            write: true
+      - name: ADD16
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 52
+        description: (read-write) ADD16 Command
+        fields:
+          - name: AD16
+            description: ADD 16
+            index: 0
+            width: 32
+            read: false
+            write: true
+      - name: ADD256
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 56
+        description: (read-write) ADD256 Command
+        fields:
+          - name: AD256
+            description: ADD 256
+            index: 0
+            width: 32
+            read: false
+            write: true
+      - name: SUB
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 60
+        description: (read-write) SUB Command
+        fields:
+          - name: S0B
+            description: Subtract Write Value
+            index: 0
+            width: 32
+            read: false
+            write: true
+      - name: SUB1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 64
+        description: (read-write) SUB1 Command
+        fields:
+          - name: S1B
+            description: Subtract 1
+            index: 0
+            width: 32
+            read: false
+            write: true
+      - name: SUB16
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 68
+        description: (read-write) SUB16 Command
+        fields:
+          - name: SB16
+            description: Subtract 16
+            index: 0
+            width: 32
+            read: false
+            write: true
+      - name: SUB256
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 72
+        description: (read-write) SUB256 Command
+        fields:
+          - name: SB256
+            description: Subtract 256
+            index: 0
+            width: 32
+            read: false
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  CDOG_CONTROL_DEBUG_HALT_CTRL:
+    enum:
+      RUN_TIMER:
+        description: Keep the timer running
+        value: 1
+      PAUSE_TIMER:
+        description: Stop the timer
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CDOG_CONTROL_IRQ_PAUSE:
+    enum:
+      RUN_TIMER:
+        description: Keep the timer running
+        value: 1
+      PAUSE_TIMER:
+        description: Stop the timer
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CDOG_CONTROL_ADDRESS_CTRL:
+    enum:
+      ENABLE_RESET:
+        description: Enable reset
+        value: 1
+      ENABLE_INTERRUPT:
+        description: Enable interrupt
+        value: 2
+      DISABLE_BOTH:
+        description: Disable both reset and interrupt
+        value: 4
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CDOG_CONTROL_STATE_CTRL:
+    enum:
+      ENABLE_RESET:
+        description: Enable reset
+        value: 1
+      ENABLE_INTERRUPT:
+        description: Enable interrupt
+        value: 2
+      DISABLE_BOTH:
+        description: Disable both reset and interrupt
+        value: 4
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CDOG_CONTROL_CONTROL_CTRL:
+    enum:
+      ENABLE_RESET:
+        description: Enable reset
+        value: 1
+      DISABLE_BOTH:
+        description: Disable reset
+        value: 4
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CDOG_CONTROL_SEQUENCE_CTRL:
+    enum:
+      ENABLE_RESET:
+        description: Enable reset
+        value: 1
+      ENABLE_INTERRUPT:
+        description: Enable interrupt
+        value: 2
+      DISABLE_BOTH:
+        description: Disable both reset and interrupt
+        value: 4
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CDOG_CONTROL_MISCOMPARE_CTRL:
+    enum:
+      ENABLE_RESET:
+        description: Enable reset
+        value: 1
+      ENABLE_INTERRUPT:
+        description: Enable interrupt
+        value: 2
+      DISABLE_BOTH:
+        description: Disable both reset and interrupt
+        value: 4
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CDOG_CONTROL_TIMEOUT_CTRL:
+    enum:
+      ENABLE_RESET:
+        description: Enable reset
+        value: 1
+      ENABLE_INTERRUPT:
+        description: Enable interrupt
+        value: 2
+      DISABLE_BOTH:
+        description: Disable both reset and interrupt
+        value: 4
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  CDOG_CONTROL_LOCK_CTRL:
+    enum:
+      LOCKED:
+        description: Locked
+        value: 1
+      UNLOCKED:
+        description: Unlocked
+        value: 2
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

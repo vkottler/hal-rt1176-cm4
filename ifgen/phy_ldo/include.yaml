@@ -1,0 +1,222 @@
+---
+structs:
+  phy_ldo:
+    description: no description available
+    instances:
+      - name: PHY_LDO
+        address: '0'
+    fields:
+      - name: CTRL0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Analog Control Register CTRL0
+        fields:
+          - name: LINREG_PHY_ISO_B
+            description: Isolation control for attached PHY load
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: LINREG_OUTPUT_TRG
+            description: LinReg output voltage target setting
+            index: 4
+            width: 5
+            read: true
+            write: true
+            type: PHY_LDO_CTRL0_LINREG_OUTPUT_TRG
+          - name: LINREG_ILIMIT_EN
+            description: LinReg current-limit enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: LINREG_PWRUPLOAD_DIS
+            description: LinReg power-up load disable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: LINREG_EN
+            description: LinrReg master enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL0_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Analog Control Register CTRL0
+        fields:
+          - name: LINREG_PHY_ISO_B
+            description: Isolation control for attached PHY load
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: LINREG_OUTPUT_TRG
+            description: LinReg output voltage target setting
+            index: 4
+            width: 5
+            read: true
+            write: true
+          - name: LINREG_ILIMIT_EN
+            description: LinReg current-limit enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: LINREG_PWRUPLOAD_DIS
+            description: LinReg power-up load disable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: LINREG_EN
+            description: LinrReg master enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL0_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) Analog Control Register CTRL0
+        fields:
+          - name: LINREG_PHY_ISO_B
+            description: Isolation control for attached PHY load
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: LINREG_OUTPUT_TRG
+            description: LinReg output voltage target setting
+            index: 4
+            width: 5
+            read: true
+            write: true
+          - name: LINREG_ILIMIT_EN
+            description: LinReg current-limit enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: LINREG_PWRUPLOAD_DIS
+            description: LinReg power-up load disable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: LINREG_EN
+            description: LinrReg master enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: CTRL0_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) Analog Control Register CTRL0
+        fields:
+          - name: LINREG_PHY_ISO_B
+            description: Isolation control for attached PHY load
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: LINREG_OUTPUT_TRG
+            description: LinReg output voltage target setting
+            index: 4
+            width: 5
+            read: true
+            write: true
+          - name: LINREG_ILIMIT_EN
+            description: LinReg current-limit enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: LINREG_PWRUPLOAD_DIS
+            description: LinReg power-up load disable
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: LINREG_EN
+            description: LinrReg master enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: STAT0
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 80
+        description: (read-write) Analog Status Register STAT0
+        fields:
+          - name: LINREG_STAT
+            description: LinReg Status Bits
+            index: 0
+            width: 4
+            read: true
+            write: false
+      - name: STAT0_SET
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 84
+        description: (read-write) Analog Status Register STAT0
+        fields:
+          - name: LINREG_STAT
+            description: LinReg Status Bits
+            index: 0
+            width: 4
+            read: true
+            write: false
+      - name: STAT0_CLR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 88
+        description: (read-write) Analog Status Register STAT0
+        fields:
+          - name: LINREG_STAT
+            description: LinReg Status Bits
+            index: 0
+            width: 4
+            read: true
+            write: false
+      - name: STAT0_TOG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 92
+        description: (read-write) Analog Status Register STAT0
+        fields:
+          - name: LINREG_STAT
+            description: LinReg Status Bits
+            index: 0
+            width: 4
+            read: true
+            write: false
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  PHY_LDO_CTRL0_LINREG_OUTPUT_TRG:
+    enum:
+      _0:
+        description: Set output voltage to x.xV
+        value: 0
+      _16:
+        description: Sets output voltage to 1.0V
+        value: 16
+      _31:
+        description: Set output voltage to x.xV
+        value: 31
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

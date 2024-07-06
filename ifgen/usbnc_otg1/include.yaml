@@ -1,0 +1,155 @@
+---
+structs:
+  usbnc_otg1:
+    description: USBNC
+    instances:
+      - name: USBNC_OTG1
+        address: '0x40430200'
+      - name: USBNC_OTG2
+        address: '0x4042C200'
+    fields:
+      - name: CTRL1
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) USB OTG Control 1 Register
+        fields:
+          - name: WIR
+            description: WIR
+            index: 31
+            width: 1
+            read: true
+            write: false
+          - name: WKUP_DPDM_EN
+            description: Wake-up on DPDM change enable
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: WKUP_VBUS_EN
+            description: WKUP_VBUS_EN
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: WKUP_ID_EN
+            description: WKUP_ID_EN
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: WKUP_SW
+            description: WKUP_SW
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: WKUP_SW_EN
+            description: WKUP_SW_EN
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: WIE
+            description: WIE
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: PWR_POL
+            description: PWR_POL
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: OVER_CUR_POL
+            description: OVER_CUR_POL
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: OVER_CUR_DIS
+            description: OVER_CUR_DIS
+            index: 7
+            width: 1
+            read: true
+            write: true
+      - name: CTRL2
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) USB OTG Control 2 Register
+        fields:
+          - name: UTMI_CLK_VLD
+            description: UTMI_CLK_VLD
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: LOWSPEED_EN
+            description: LOWSPEED_EN
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: AUTURESUME_EN
+            description: Auto Resume Enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: VBUS_SOURCE_SEL
+            description: VBUS_SOURCE_SEL
+            index: 0
+            width: 2
+            read: true
+            write: true
+            type: USBNC_OTG1_CTRL2_VBUS_SOURCE_SEL
+      - name: HSIC_CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) USB Host HSIC Control Register
+        fields:
+          - name: CLK_VLD
+            description: CLK_VLD
+            index: 31
+            width: 1
+            read: true
+            write: false
+          - name: HSIC_EN
+            description: HSIC_EN
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: HSIC_CLK_ON
+            description: HSIC_CLK_ON
+            index: 11
+            width: 1
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  USBNC_OTG1_CTRL2_VBUS_SOURCE_SEL:
+    enum:
+      VBUS_VALID:
+        description: vbus_valid
+        value: 0
+      SESS_VALID_1:
+        description: sess_valid
+        value: 1
+      SESS_VALID_2:
+        description: sess_valid
+        value: 2
+      SESS_VALID_3:
+        description: sess_valid
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false

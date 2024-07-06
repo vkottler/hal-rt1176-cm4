@@ -1,0 +1,755 @@
+---
+structs:
+  emvsim1:
+    description: EMVSIM
+    instances:
+      - name: EMVSIM1
+        address: '0x40154000'
+      - name: EMVSIM2
+        address: '0x40158000'
+    fields:
+      - name: VER_ID
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 0
+        description: (read-write) Version ID Register
+        fields:
+          - name: VER
+            description: Version ID of the module
+            index: 0
+            width: 32
+            read: true
+            write: false
+      - name: PARAM
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 4
+        description: (read-write) Parameter Register
+        fields:
+          - name: TX_FIFO_DEPTH
+            description: Transmit FIFO Depth
+            index: 8
+            width: 8
+            read: true
+            write: false
+          - name: RX_FIFO_DEPTH
+            description: Receive FIFO Depth
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: CLKCFG
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 8
+        description: (read-write) Clock Configuration Register
+        fields:
+          - name: GPCNT0_CLK_SEL
+            description: General Purpose Counter 0 Clock Select
+            index: 10
+            width: 2
+            read: true
+            write: true
+            type: EMVSIM1_CLKCFG_GPCNT0_CLK_SEL
+          - name: GPCNT1_CLK_SEL
+            description: General Purpose Counter 1 Clock Select
+            index: 8
+            width: 2
+            read: true
+            write: true
+            type: EMVSIM1_CLKCFG_GPCNT1_CLK_SEL
+          - name: CLK_PRSC
+            description: Clock Prescaler Value
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: DIVISOR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 12
+        description: (read-write) Baud Rate Divisor Register
+        fields:
+          - name: DIVISOR_VALUE
+            description: Divisor (F/D) Value
+            index: 0
+            width: 9
+            read: true
+            write: true
+            type: EMVSIM1_DIVISOR_DIVISOR_VALUE
+      - name: CTRL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 16
+        description: (read-write) Control Register
+        fields:
+          - name: BWT_EN
+            description: Block Wait Time Counter Enable
+            index: 31
+            width: 1
+            read: true
+            write: true
+          - name: XMT_CRC_LRC
+            description: Transmit CRC or LRC Enable
+            index: 30
+            width: 1
+            read: true
+            write: true
+          - name: CRC_EN
+            description: CRC Enable
+            index: 29
+            width: 1
+            read: true
+            write: true
+          - name: LRC_EN
+            description: LRC Enable
+            index: 28
+            width: 1
+            read: true
+            write: true
+          - name: CWT_EN
+            description: Character Wait Time Counter Enable
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: CRC_IN_FLIP
+            description: CRC Input Byte's Bit Reversal or Flip Control
+            index: 26
+            width: 1
+            read: true
+            write: true
+          - name: CRC_OUT_FLIP
+            description: CRC Output Value Bit Reversal or Flip
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: INV_CRC_VAL
+            description: Invert bits in the CRC Output Value
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: TX_DMA_EN
+            description: Transmit DMA Enable
+            index: 20
+            width: 1
+            read: true
+            write: true
+          - name: RX_DMA_EN
+            description: Receive DMA Enable
+            index: 19
+            width: 1
+            read: true
+            write: true
+          - name: RCVR_11
+            description: Receiver 11 ETU Mode Enable
+            index: 18
+            width: 1
+            read: true
+            write: true
+          - name: XMT_EN
+            description: Transmitter Enable
+            index: 17
+            width: 1
+            read: true
+            write: true
+          - name: RCV_EN
+            description: Receiver Enable
+            index: 16
+            width: 1
+            read: true
+            write: true
+          - name: STOP_EN
+            description: STOP Enable
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: DOZE_EN
+            description: Doze Enable
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: KILL_CLOCKS
+            description: Kill all internal clocks
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: SW_RST
+            description: Software Reset Bit
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: FLSH_TX
+            description: Flush Transmitter Bit
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: FLSH_RX
+            description: Flush Receiver Bit
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: ONACK
+            description: Overrun NACK Enable
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: ANACK
+            description: Auto NACK Enable
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: ICM
+            description: Initial Character Mode
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: IC
+            description: Inverse Convention
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: INT_MASK
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 20
+        description: (read-write) Interrupt Mask Register
+        fields:
+          - name: PEF_IM
+            description: Parity Error Interrupt Mask
+            index: 15
+            width: 1
+            read: true
+            write: true
+          - name: RX_DATA_IM
+            description: Receive Data Interrupt Mask
+            index: 14
+            width: 1
+            read: true
+            write: true
+          - name: GPCNT1_IM
+            description: General Purpose Counter 1 Timeout Interrupt Mask
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: BGT_ERR_IM
+            description: Block Guard Time Error Interrupt
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: BWT_ERR_IM
+            description: Block Wait Time Error Interrupt Mask
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: RNACK_IM
+            description: Receiver NACK Threshold Interrupt Mask
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: CWT_ERR_IM
+            description: Character Wait Time Error Interrupt Mask
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: GPCNT0_IM
+            description: General Purpose Timer 0 Timeout Interrupt Mask
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: TDT_IM
+            description: Transmit Data Threshold Interrupt Mask
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: TFF_IM
+            description: Transmit FIFO Full Interrupt Mask
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: TNACK_IM
+            description: Transmit NACK Threshold Interrupt Mask
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: TFE_IM
+            description: Transmit FIFO Empty Interrupt Mask
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: ETC_IM
+            description: Early Transmit Complete Interrupt Mask
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: RFO_IM
+            description: Receive FIFO Overflow Interrupt Mask
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: TC_IM
+            description: Transmit Complete Interrupt Mask
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: RDT_IM
+            description: Receive Data Threshold Interrupt Mask
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: RX_THD
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 24
+        description: (read-write) Receiver Threshold Register
+        fields:
+          - name: RNCK_THD
+            description: Receiver NACK Threshold Value
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: RDT
+            description: Receiver Data Threshold Value
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: TX_THD
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 28
+        description: (read-write) Transmitter Threshold Register
+        fields:
+          - name: TNCK_THD
+            description: Transmitter NACK Threshold Value
+            index: 8
+            width: 4
+            read: true
+            write: true
+          - name: TDT
+            description: Transmitter Data Threshold Value
+            index: 0
+            width: 4
+            read: true
+            write: true
+      - name: RX_STATUS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 32
+        description: (read-write) Receive Status Register
+        fields:
+          - name: RX_CNT
+            description: Receive FIFO Byte Count
+            index: 24
+            width: 4
+            read: true
+            write: false
+            type: EMVSIM1_RX_STATUS_RX_CNT
+          - name: RX_WPTR
+            description: Receive FIFO Write Pointer Value
+            index: 16
+            width: 4
+            read: true
+            write: false
+          - name: FEF
+            description: Frame Error Flag
+            index: 13
+            width: 1
+            read: true
+            write: true
+          - name: PEF
+            description: Parity Error Flag
+            index: 12
+            width: 1
+            read: true
+            write: true
+          - name: BGT_ERR
+            description: Block Guard Time Error Flag
+            index: 11
+            width: 1
+            read: true
+            write: true
+          - name: BWT_ERR
+            description: Block Wait Time Error Flag
+            index: 10
+            width: 1
+            read: true
+            write: true
+          - name: RTE
+            description: Received NACK Threshold Error Flag
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: CWT_ERR
+            description: Character Wait Time Error Flag
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: CRC_OK
+            description: CRC Check OK Flag
+            index: 7
+            width: 1
+            read: true
+            write: false
+          - name: LRC_OK
+            description: LRC Check OK Flag
+            index: 6
+            width: 1
+            read: true
+            write: false
+          - name: RDTF
+            description: Receive Data Threshold Interrupt Flag
+            index: 5
+            width: 1
+            read: true
+            write: false
+          - name: RX_DATA
+            description: Receive Data Interrupt Flag
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: RFO
+            description: Receive FIFO Overflow Flag
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: TX_STATUS
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 36
+        description: (read-write) Transmitter Status Register
+        fields:
+          - name: TX_CNT
+            description: Transmit FIFO Byte Count
+            index: 24
+            width: 4
+            read: true
+            write: false
+            type: EMVSIM1_TX_STATUS_TX_CNT
+          - name: TX_RPTR
+            description: Transmit FIFO Read Pointer
+            index: 16
+            width: 4
+            read: true
+            write: false
+          - name: GPCNT1_TO
+            description: General Purpose Counter 1 Timeout Flag
+            index: 9
+            width: 1
+            read: true
+            write: true
+          - name: GPCNT0_TO
+            description: General Purpose Counter 0 Timeout Flag
+            index: 8
+            width: 1
+            read: true
+            write: true
+          - name: TDTF
+            description: Transmit Data Threshold Flag
+            index: 7
+            width: 1
+            read: true
+            write: false
+          - name: TFF
+            description: Transmit FIFO Full Flag
+            index: 6
+            width: 1
+            read: true
+            write: true
+          - name: TCF
+            description: Transmit Complete Flag
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: ETCF
+            description: Early Transmit Complete Flag
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: TFE
+            description: Transmit FIFO Empty Flag
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: TNTE
+            description: Transmit NACK Threshold Error Flag
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: PCSR
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 40
+        description: (read-write) Port Control and Status Register
+        fields:
+          - name: SPDES
+            description: SIM Presence Detect Edge Select
+            index: 27
+            width: 1
+            read: true
+            write: true
+          - name: SPDP
+            description: Smart Card Presence Detect Pin Status
+            index: 26
+            width: 1
+            read: true
+            write: false
+          - name: SPDIF
+            description: Smart Card Presence Detect Interrupt Flag
+            index: 25
+            width: 1
+            read: true
+            write: true
+          - name: SPDIM
+            description: Smart Card Presence Detect Interrupt Mask
+            index: 24
+            width: 1
+            read: true
+            write: true
+          - name: SPD
+            description: Auto Power Down Control
+            index: 7
+            width: 1
+            read: true
+            write: true
+          - name: SCSP
+            description: Smart Card Clock Stop Polarity
+            index: 5
+            width: 1
+            read: true
+            write: true
+          - name: SCEN
+            description: Clock Enable for Smart Card
+            index: 4
+            width: 1
+            read: true
+            write: true
+          - name: SRST
+            description: Reset to Smart Card
+            index: 3
+            width: 1
+            read: true
+            write: true
+          - name: VCCENP
+            description: VCC Enable Polarity Control
+            index: 2
+            width: 1
+            read: true
+            write: true
+          - name: SVCC_EN
+            description: Vcc Enable for Smart Card
+            index: 1
+            width: 1
+            read: true
+            write: true
+          - name: SAPD
+            description: Auto Power Down Enable
+            index: 0
+            width: 1
+            read: true
+            write: true
+      - name: RX_BUF
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 44
+        description: (read-write) Receive Data Read Buffer
+        fields:
+          - name: RX_BYTE
+            description: Receive Data Byte Read
+            index: 0
+            width: 8
+            read: true
+            write: false
+      - name: TX_BUF
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 48
+        description: (read-write) Transmit Data Buffer
+        fields:
+          - name: TX_BYTE
+            description: Transmit Data Byte
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: TX_GETU
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 52
+        description: (read-write) Transmitter Guard ETU Value Register
+        fields:
+          - name: GETU
+            description: Transmitter Guard Time Value in ETU
+            index: 0
+            width: 8
+            read: true
+            write: true
+      - name: CWT_VAL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 56
+        description: (read-write) Character Wait Time Value Register
+        fields:
+          - name: CWT
+            description: Character Wait Time Value
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: BWT_VAL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 60
+        description: (read-write) Block Wait Time Value Register
+        fields:
+          - name: BWT
+            description: Block Wait Time Value
+            index: 0
+            width: 32
+            read: true
+            write: true
+      - name: BGT_VAL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 64
+        description: (read-write) Block Guard Time Value Register
+        fields:
+          - name: BGT
+            description: Block Guard Time Value
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: GPCNT0_VAL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 68
+        description: (read-write) General Purpose Counter 0 Timeout Value Register
+        fields:
+          - name: GPCNT0
+            description: General Purpose Counter 0 Timeout Value
+            index: 0
+            width: 16
+            read: true
+            write: true
+      - name: GPCNT1_VAL
+        type: uint32_t
+        expected_size: 4
+        expected_offset: 72
+        description: (read-write) General Purpose Counter 1 Timeout Value
+        fields:
+          - name: GPCNT1
+            description: General Purpose Counter 1 Timeout Value
+            index: 0
+            width: 16
+            read: true
+            write: true
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+enums:
+  EMVSIM1_CLKCFG_GPCNT0_CLK_SEL:
+    enum:
+      disabled:
+        description: Disabled / Reset
+        value: 0
+      cardclk:
+        description: Card Clock
+        value: 1
+      rxclk:
+        description: Receive Clock
+        value: 2
+      txclk:
+        description: ETU Clock (transmit clock)
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  EMVSIM1_CLKCFG_GPCNT1_CLK_SEL:
+    enum:
+      disabled:
+        description: Disabled / Reset
+        value: 0
+      cardclk:
+        description: Card Clock
+        value: 1
+      rxclk:
+        description: Receive Clock
+        value: 2
+      txclk:
+        description: ETU Clock (transmit clock)
+        value: 3
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  EMVSIM1_DIVISOR_DIVISOR_VALUE:
+    enum:
+      invalid:
+        description: Invalid. As per ISO 7816 specification, minimum value of F/D
+          is 5
+        value: 4
+      valid:
+        description: Divisor value F/D
+        value: 9
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+    underlying: uint16_t
+  EMVSIM1_RX_STATUS_RX_CNT:
+    enum:
+      fifo_empty:
+        description: FIFO is emtpy
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
+  EMVSIM1_TX_STATUS_TX_CNT:
+    enum:
+      fifo_empty:
+        description: FIFO is emtpy
+        value: 0
+    unit_test: false
+    json: false
+    use_map: false
+    identifier: false
